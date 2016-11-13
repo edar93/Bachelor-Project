@@ -5,148 +5,231 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>vsb.cec0094.bakalarska-prace</groupId>
     <artifactId>port-royal</artifactId>
-    <packaging>jar</packaging>
-    <name>Spring OSGi Bundle</name>
+    <packaging>war</packaging>
+    <name>Port royal</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://www.springframework.org/osgi</url>
 
     <properties>
-        <slf4j.version>1.5.0</slf4j.version>
-        <spring.maven.artifact.version>2.5.6.SEC01</spring.maven.artifact.version>
-        <spring.osgi.version>1.2.1</spring.osgi.version>
-        <equinox.ver>3.2.2</equinox.ver>
+
+        <java.version>1.8</java.version>
+        <!-- dependency versions -->
+        <hamcrest.version>2.0.0.0</hamcrest.version>
+        <spring.bom.version>2.0.3.RELEASE</spring.bom.version>
+        <junit.version>4.12</junit.version>
+        <springsecurity-version>4.1.0.RELEASE</springsecurity-version>
+        <mockito.version>1.10.19</mockito.version>
+        <logback.version>1.1.7</logback.version>
+        <slf4j.version>1.7.21</slf4j.version>
+
+        <!-- maven plugin versions -->
+        <compiler.plugin.version>3.5.1</compiler.plugin.version>
+        <war.plugin.version>2.6</war.plugin.version>
+        <tomcat.plugin.version>2.2</tomcat.plugin.version>
     </properties>
 
     <dependencies>
 
+        <!--nevim-->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>org.springframework.beans</artifactId>
-            <version>${spring.maven.artifact.version}</version>
+            <artifactId>spring-test</artifactId>
+            <version>4.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- webjars for Angular, Bootstrap .... -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angularjs</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap-glyphicons</artifactId>
+            <version>bdd2cbfba0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+            <version>1.11.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angular-ui-router</artifactId>
+            <version>0.2.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angular-ui-bootstrap</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>4.6.1</version>
+        </dependency>
+
+        <!-- integrace se spring MVC -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-acl</artifactId>
+            <version>${springsecurity-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springsecurity-version}</version>
+        </dependency>
+
+        <!-- Spring .... -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.2.5.RELEASE</version>
             <exclusions>
+                <!-- Exclude Commons Logging in favor of SLF4j -->
                 <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>com.springsource.org.apache.commons.logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>org.springframework.core</artifactId>
-            <version>${spring.maven.artifact.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>com.springsource.org.apache.commons.logging</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.2.5.RELEASE</version>
         </dependency>
+
+        <!-- servlet -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>org.springframework.context</artifactId>
-            <version>${spring.maven.artifact.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>com.springsource.org.apache.commons.logging</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+            <version>3.1.0</version>
         </dependency>
+
+        <!-- SPRING SECURITY -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity-version}</version>
+        </dependency>
+
+        <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>com.springsource.slf4j.org.apache.commons.logging</artifactId>
+            <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>com.springsource.slf4j.api</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>provided</scope>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>com.springsource.slf4j.log4j</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.log4j</groupId>
-                    <artifactId>com.springsource.org.apache.log4j</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
         </dependency>
 
-        <!-- test scoped dependencies -->
+        <!-- Test -->
         <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>com.springsource.junit</artifactId>
-            <version>3.8.2</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-junit</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- KONFIGURACE JSON, REST -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.7.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.4</version>
+        </dependency>
+
+        <!-- DB -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>org.springframework.test</artifactId>
-            <version>${spring.maven.artifact.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>com.springsource.org.apache.commons.logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-test</artifactId>
-            <version>${spring.osgi.version}</version>
-            <scope>test</scope>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.2.5.RELEASE</version>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-annotation</artifactId>
-            <version>${spring.osgi.version}</version>
-            <scope>test</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.2.5.RELEASE</version>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-extender</artifactId>
-            <version>${spring.osgi.version}</version>
-            <scope>test</scope>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.1.0.Final</version>
         </dependency>
 
         <dependency>
-            <groupId>org.aopalliance</groupId>
-            <artifactId>com.springsource.org.aopalliance</artifactId>
-            <version>1.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Equinox OSGi platform -->
-        <dependency>
-            <groupId>org.eclipse.osgi</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
-            <version>${equinox.ver}</version>
-            <type>jar</type>
-            <!-- Uncomment the following line if you want it to be available only in test-->
-            <!--
-            <scope>test</scope>
-             -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.4.Final</version>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>log4j.osgi</artifactId>
-            <version>1.2.15-SNAPSHOT</version>
-            <scope>test</scope>
+            <groupId>org.hibernate.java-persistence</groupId>
+            <artifactId>jpa-api</artifactId>
+            <version>2.0-cr-1</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
     </dependencies>
 
 
@@ -168,67 +251,33 @@
 
         <plugins>
             <plugin>
-                <groupId>com.springsource.bundlor</groupId>
-                <artifactId>com.springsource.bundlor.maven</artifactId>
-                <version>1.0.0.M2</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.plugin.version}</version>
                 <configuration>
-                    <outputManifest>C:\Users\User\AppData\Local\Temp\archetypetmp/META-INF/MANIFEST.MF</outputManifest>
-                    <failOnWarnings>false</failOnWarnings>
-                    <removeNullHeaders>true</removeNullHeaders>
-                    <manifestHeaders><![CDATA[Bundle-ManifestVersion: 2
-Bundle-Name: port-royal
-Bundle-SymbolicName: port-royal
-Spring-DM-Version: ${pom.version}
-]]></manifestHeaders>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
-                <!-- generate the manifest automatically during packaging -->
-                <executions>
-                    <execution>
-                        <id>bundle-manifest</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>manifest</goal>
-                            <goal>transform</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
-            <!-- alternative maven-bundle-plugin configuration -->
-            <!-- see http://felix.apache.org/site/maven-bundle-plugin-bnd.html for more info -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${war.plugin.version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>port-royal-${user.name}</warName>
+                </configuration>
+            </plugin>
 
-            <!--
-                    <plugin>
-                        <groupId>org.apache.felix</groupId>
-                        <artifactId>maven-bundle-plugin</artifactId>
-                        <version>1.4.0</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <obrRepository>NONE</obrRepository>
-                            <manifestLocation>META-INF</manifestLocation>
-                            <instructions>
-                                <Export-Package>
-                                    !vsb.cec0094.bakalarska-prace.internal,vsb.cec0094.bakalarska-prace*
-                                </Export-Package>
-                                <Import-Package>*</Import-Package>
-                                <Include-Resource>src/main/resources</Include-Resource>
-                            </instructions>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.felix</groupId>
-                        <artifactId>maven-bundle-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>bundle-manifest</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>bundle</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-            -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>${tomcat.plugin.version}</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/port-royal</path>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
