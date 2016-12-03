@@ -1,0 +1,43 @@
+
+<div class="container-fluid">
+	<h2>Add or edit user</h2>
+	<form name="userForm">
+		<table>
+			<tr>
+				<th><label for="name">Name</label></th>
+				<th><input name="name" type="text" ng-model="newUsr.name"
+					minlength="3" maxlength="50" required>
+				 <errors path="userForm.name.$error"/>
+				</th>
+			</tr>
+			<tr>
+				<th><label for="surname">Surname</label></th>
+				<th><input name="surname" type="text" ng-model="newUsr.surname"
+					minlength="3" maxlength="255" required>
+					<errors path="userForm.surname.$error"/></th>
+			</tr>
+			<tr>
+				<th><label for="email">Email</label></th>
+				<th><input name="email" type="email" ng-model="newUsr.email"
+					minlength="3" maxlength="255" required><errors path="userForm.email.$error"/></th>
+			</tr>
+			<tr>
+				<th><label for="password">password</label></th>
+				<th><input name="password" type="text"
+					ng-model="newUsr.password" minlength="3" maxlength="100" required><errors path="userForm.password.$error"/></th>
+			</tr>
+			<tr>
+				<th><label for="groups">Group</label></th>
+				<th><select ng-model="newUsr.usrGroups" name="groups"
+					ng-options="option.ugName for option in groupsList" multiple required></select>
+					<errors path="userForm.groups.$error"/>
+				</th>
+			</tr>
+		</table>
+
+		<div>
+			<button type="submit" ng-click="add()" >Ok</button>
+			<button ng-click="cancel()" >Cancel</button>
+		</div>
+	</form>
+</div>

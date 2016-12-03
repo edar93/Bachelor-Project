@@ -1,0 +1,30 @@
+
+
+<div class="container-fluid">
+	<h2>Audit log</h2>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Email</th>
+			<th>State</th>
+			<th>Action</th>
+			<th>Date</th>
+			<th>Descriptions</th>
+			<th>Groups</th>
+		</tr>
+		<tr ng-repeat="log in logList | orderBy: log.alDate">
+			<td>{{log.usr.name}}</td>
+			<td>{{log.usr.surname}}</td>
+			<td>{{log.usr.email}}</td>
+			<td><span ng-show="log.usr.state == 'A'">Active</span> <span
+				ng-show="log.usr.state == 'D'">Deactive</span> <span
+				ng-show="log.usr.state == 'L'">Lock</span></td>
+			<td>{{log.auditAction.aaName}}</td>
+			<td>{{log.alDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+			<td>{{log.alDescription}}</td>
+			<td><span ng-repeat="gr in log.usr.usrGroups"><span>{{gr.ugName}}<br></span></span></td>
+		</tr>
+
+	</table>
+</div>

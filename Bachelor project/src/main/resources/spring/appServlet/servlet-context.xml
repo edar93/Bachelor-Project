@@ -14,6 +14,8 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
+
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/**" location="/" />
 
@@ -24,60 +26,35 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="vsb.cec0094.bachalorProject" />
-	
-<!--	<beans:bean id="oracleDataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver" />
-		<beans:property name="username" value="cech" />
-		<beans:property name="password" value="b0efab0368" />
-		<beans:property name="url" value="jdbc:oracle:thin:@10.29.8.156:1521:xe" />
-	</beans:bean>-->
-	
-<!--	<beans:bean id="oracleJpaVendorAdapter"
-	class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-	</beans:bean>-->
-
-<!--	<beans:bean id="oracleEntityManagerFactory"
-	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<beans:property name="dataSource" ref="oracleDataSource" />
-		<beans:property name="jpaVendorAdapter" ref="oracleJpaVendorAdapter" />		
-		<beans:property name="persistenceUnitName" value="sdb-ui-cech" />
-	</beans:bean>
-	
-	<tx:annotation-driven />
-	<beans:bean id="transactionManager"
-	class="org.springframework.orm.jpa.JpaTransactionManager">
-	<beans:property name="entityManagerFactory" ref="oracleEntityManagerFactory"/>
-	</beans:bean>
 
 
-	&lt;!&ndash; step 2 sqlSessionFactory &ndash;&gt;
-	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="oracleDataSource" />
-	</beans:bean>
+<!--		<tx:annotation-driven />-->
 
-	&lt;!&ndash; step 3 mapper &ndash;&gt;
-	<beans:bean id="usrMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" >
-		<beans:property name="mapperInterface" value="com.cgi.sdb.dao.mybatisImpl.UserMapper" />
-		<beans:property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</beans:bean>
+            <beans:bean id="mySQLDataSource"
+                  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+                <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+                <beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>
+                <beans:property name="username" value="root"/>
+                <beans:property name="password" value="Slepice1"/>
+            </beans:bean>
 
-	<beans:bean id="usrGroupMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" >
-		<beans:property name="mapperInterface" value="com.cgi.sdb.dao.mybatisImpl.UserGroupMapper" />
-		<beans:property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</beans:bean>
+            <beans:bean id="HibernateJpaVendorAdapter"
+            class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+            </beans:bean>
 
+            <beans:bean id="LocalContainerEntityManagerFactoryBean"
+            class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+                <beans:property name="dataSource" ref="mySQLDataSource" />
+                <beans:property name="jpaVendorAdapter" ref="HibernateJpaVendorAdapter" />
+                <beans:property name="persistenceUnitName" value="port-royal-cech" />
+            </beans:bean>
 
-	<view-controller path="/login.html" />-->
+            <beans:bean id="transactionManager"
+            class="org.springframework.orm.jpa.JpaTransactionManager">
+            <beans:property name="entityManagerFactory" ref="LocalContainerEntityManagerFactoryBean"/>
+            </beans:bean>
 
-
-	<!--<beans:bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-		<!--<beans:property name="dataSource" ref="oracleDataSource"/>-->
-
-		<!--<beans:property name="configLocation" value="classpath:sqlMapConfig.xml"/>-->
-
-		<!--<beans:property name="mapperLocations" value="classpath:User.xml"/>-->
-
-	<!--</beans:bean>-->
+	<!--
+        <view-controller path="/login.html" />-->
 
 </beans:beans>

@@ -1,0 +1,71 @@
+
+<div id="useradm" class="container-fluid">
+	<h2>User administration</h2>
+	<div id="buttons">
+		<button  ng-click="addUser()" ng-show="roles.admin">Add</button>
+		<button  type="submit" ng-click="editUser()" ng-show="roles.admin"
+			ng-disabled="disabledOneSelected">Update</button>
+		<button type="submit" ng-click="changeStatus('D')" ng-show="roles.admin"
+			ng-disabled="disabledMoreSelected">Delete</button>
+		<button type="submit" ng-click="changeStatus('L')" ng-show="roles.admin"
+			ng-disabled="disabledMoreSelected">Lock</button>
+		<button type="submit" ng-click="changeStatus('A')" ng-show="roles.admin"
+			ng-disabled="disabledMoreSelected">Activate</button>
+	</div>
+
+	<table class="userstable">
+		<tr>
+			<th><input type="checkbox" ng-model="selectAll"
+				ng-change="selectAllUsrs()"></th>
+			<th>
+				<button ng-click="order('name')">Name</button> <span
+				class="sortorder" ng-show="predicate === 'name'"
+				ng-class="{reverse:reverse}"></span><br> <input type="text"
+				ng-model="search.name">
+			</th>
+			<th>
+				<button ng-click="order('surname')">Surname</button> <span
+				class="sortorder" ng-show="predicate === 'surname'"
+				ng-class="{reverse:reverse}"></span><br> <input type="text"
+				ng-model="search.surname">
+			</th>
+			<th>
+				<button ng-click="order('email')">Email</button> <span
+				class="sortorder" ng-show="predicate === 'email'"
+				ng-class="{reverse:reverse}"></span><br> <input type="text"
+				ng-model="search.email">
+			</th>
+			<th>
+				<button ng-click="order('state')">State</button> <span
+				class="sortorder" ng-show="predicate === 'state'"
+				ng-class="{reverse:reverse}"></span> <br> <input type="text"
+				ng-model="search.state">
+			</th>
+			<th>
+				<button ng-click="order('lastLogin')">Last login</button> <span
+				class="sortorder" ng-show="predicate === 'lastLogin'"
+				ng-class="{reverse:reverse}"></span> <br> <input type="text"
+				ng-model="search.lastLogin">
+			</th>
+			<th>
+				<button ng-click="order('usrGroups.ugName')">User groups</button> <span
+				class="sortorder" ng-show="predicate === 'usrGroups.ugName'"
+				ng-class="{reverse:reverse}"></span> <br> <input type="text"
+				ng-model="search.usrGroups.ugName">
+			</th>
+		</tr>
+		<tr
+			ng-repeat="u in usersList  | orderBy:predicate:reverse  | filter:search">
+			<td><input type="checkbox" ng-model="u.selected"
+				ng-change="changed()"></td>
+			<td>{{u.name}}</td>
+			<td>{{u.surname}}</td>
+			<td>{{u.email}}</td>
+			<td>{{u.state}}</td>
+			<td>{{u.lastLogin}}</td>
+			<td><span ng-repeat="gr in u.usrGroups"><span>{{gr.ugName}}<br></span></span>
+			</td>
+		</tr>
+	</table>
+
+</div>

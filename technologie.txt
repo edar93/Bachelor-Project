@@ -1,1 +1,5 @@
 mySQL - hibernate - spring - angularJS
+
+testy
+angular - jasmine, protractor
+java - junit

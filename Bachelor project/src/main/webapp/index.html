@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sdbApp" ng-controller="mainCtrl">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Port Royal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css">
+
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    <script src="webjars/jquery/2.2.3/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular-route.js"></script>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+      data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <h1>Port royal</h1>
+        <h1>{{testVariable}}</h1>
+
+    </div>
+</nav>
+
+<div id="main">
+    <div ng-view></div>
+</div>
+<footer class="container-fluid text-center">
+    <p>
+        Bootstrap Theme Made By <a href="http://www.w3schools.com"
+                                   title="Visit w3schools">www.w3schools.com</a>. <br /> This project
+        is part of <strong>CGI Java Boot Camp</strong>. Author: {{author}}. <br />
+        <a class="copy" href="http://www.cgi.com/en/ceska-republika">&copy;
+            CGI IT CZECH REPUBLIC S.R.O.</a>
+    </p>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/home.js"></script>
+<script src="assets/js/user administration.js"></script>
+<script src="assets/js/selecteduser.js"></script>
+<script src="assets/js/edit user.js"></script>
+<script src="assets/js/audit log.js"></script>
+</body>
+</html>
