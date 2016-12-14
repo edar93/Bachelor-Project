@@ -1,95 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Root Context: defines shared resources visible to all other web components -->
-
-<!--	<bean id="oracleDataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
-		<property name="username" value="cech" />
-		<property name="password" value="b0efab0368" />
-		<property name="url" value="jdbc:oracle:thin:@10.29.8.156:1521:xe" />
-	</bean>-->
+    <!-- Root Context: defines shared resources visible to all other web components -->
 
 
-<!--    ROLE_ADMINISTRATOR, ROLE_BUSINESS, ROLE_USER -->
-<!--
-	<security:http auto-config="true">
-		<security:csrf disabled="true" />
-		<security:intercept-url pattern="/login*"
-			access="permitAll" />
-		<security:intercept-url pattern="/logout*"
-			access="permitAll" />
-		<security:intercept-url pattern="/css/**"
-			access="permitAll" />
-		<security:intercept-url pattern="/resources/**"
-			access="permitAll" />
+    <!--    ROLE_ADMINISTRATOR, ROLE_BUSINESS, ROLE_USER -->
 
-		<security:intercept-url pattern="/rest/users**"
-			access="hasRole('ROLE_BUSINESS')" />
-		<security:intercept-url pattern="/rest/groups**"
-			access="hasRole('ROLE_BUSINESS')" />
-		<security:intercept-url pattern="/rest/auditlog**"
-			access="hasRole('ROLE_BUSINESS')" />
-			
-		<security:intercept-url pattern="/#/useradministration**"
-			access="hasRole('ROLE_BUSINESS')" />	
-		<security:intercept-url pattern="/#/auditlog**"
-			access="hasRole('ROLE_BUSINESS')" />		
+    <!--auto-config="true"-->
+    <security:http auto-config="true">
+        <security:csrf disabled="true"/>
 
-		<security:intercept-url pattern="/*"
-			access="hasRole('ROLE_USER')" />
-		
-				<security:intercept-url pattern="/resources/**"
-			access="permitAll" />
+        <security:intercept-url pattern="/rest/**"
+                                access="hasRole('ROLE_USER')"/>
+
+        <security:intercept-url pattern="/webapp/**"
+                                access="permitAll"/>
+
+        <security:intercept-url pattern="/loginProcess"
+                                access="permitAll"/>
+
+        <security:form-login login-processing-url="/loginProcess"
+                             default-target-url="/"
+                             authentication-failure-url="/fail?login_error=1"
+                             authentication-success-handler-ref="SuccessLogin"
+                             authentication-failure-handler-ref="UnauthorizedLogin"/>
+
+        <security:logout logout-url="/logout" success-handler-ref="SuccessLogout"/>
+
+    </security:http>
+
+    <bean id="SuccessLogin" class="vsb.cec0094.bachalorProject.LoginHandlers.SuccessLogin"/>
+    <bean id="SuccessLogout" class="vsb.cec0094.bachalorProject.LoginHandlers.SuccessLogout"/>
+    <bean id="UnauthorizedLogin" class="vsb.cec0094.bachalorProject.LoginHandlers.UnauthorizedLogin"/>
+
+    <security:global-method-security
+            secured-annotations="enabled"/>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="user" password="user"
+                               authorities="ROLE_USER"/>
+                <security:user name="admin" password="admin"
+                               authorities="ROLE_ADMIN,ROLE_USER"
+                />
+            </security:user-service>
+            <!-- <security:password-encoder ref="passwordEncoder"/>-->
 
 
+<!--            <security:jdbc-user-service
+                    data-source-ref="mySQLDataSource"
+                    users-by-username-query="select username, password, enabled from users where username=?"
+                    authorities-by-username-query="select username, role from user_roles where username=?"/>-->
 
-		&lt;!&ndash; <security:http-basic /> &ndash;&gt;
 
-		<security:form-login login-page="/login.html"
-			login-processing-url="/loginProcess" default-target-url="/"
-			authentication-failure-url="/fail?login_error=1"
-			authentication-success-handler-ref="SuccessLogin"
-			authentication-failure-handler-ref="UnauthorizedLogin"
-			 />
-			 
-			
-		<security:logout logout-url="/logout" success-handler-ref="SuccessLogout" />
+        </security:authentication-provider>
+    </security:authentication-manager>
 
-	</security:http>
-
-	<bean id="SuccessLogin" class="com.cgi.sdb.loginhandlers.SuccessLogin" />
-	<bean id="SuccessLogout" class="com.cgi.sdb.loginhandlers.SuccessLogout" />
-	<bean id="UnauthorizedLogin" class="com.cgi.sdb.loginhandlers.UnauthorizedLogin"/>
-
-	<security:global-method-security
-		secured-annotations="enabled" />
-
-	<security:authentication-manager>
-		<security:authentication-provider>
-			&lt;!&ndash; <security:user-service> <security:user name="user" password="user" &ndash;&gt;
-			&lt;!&ndash; authorities="ROLE_USER" /> <security:user name="admin" password="admin"
-				authorities="ROLE_ADMIN,ROLE_USER" &ndash;&gt;
-			&lt;!&ndash; /> </security:user-service> &ndash;&gt;
-			<security:password-encoder ref="passwordEncoder" />
-			<security:jdbc-user-service
-				data-source-ref="oracleDataSource"
-				users-by-username-query=
-				"select u.u_email, u.u_password, el.enabled  from usr u   join enable_login el on u.u_state = el.U_state  where u.u_email = ?"
-				authorities-by-username-query="select u.u_email, us.ug_name from usr u inner join usr_roles ur on u.u_id = ur.ur_u_id inner join
-					usr_group us on ur.ur_g_id = us.ug_id where u.u_email = ?" />
-		</security:authentication-provider>
-	</security:authentication-manager>
-
-	<bean id="passwordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-	</bean>
--->
-
+    <!--
+    <bean id="passwordEncoder"
+            class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        </bean>
+    -->
 
 
 </beans>
