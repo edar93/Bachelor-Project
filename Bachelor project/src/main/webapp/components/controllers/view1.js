@@ -7,7 +7,9 @@ angular.module('portRoyalApp.view1', ['ngRoute'])
     controller: 'View1Ctrl'
   });
 }])
-.controller('View1Ctrl', function($http) {
+.controller('View1Ctrl', function($http, backendGateway) {
+
+    backendGateway.sayHello();
 
     var promise = $http({
         method : 'GET',
