@@ -2,11 +2,24 @@
 
  var  backendGateway = function($http){
 
-    this.sayHello = function(){
+    this.sayHello = sayHello;
+    this.post = post;
+
+    var URL = {
+        LOGIN_URL: 'loginProcess'
+    }
+
+    function sayHello(){
         console.log('hello from backendGateway');
     };
 
-    this.post = function(){
+    function translateUrl(url){
+        if (URL[url]){ return URL[url]; }
+        return url;
+    }
+
+    function post(url, data, config){
+        return $http.post(translateUrl(url), data, config);
     }
 
 };

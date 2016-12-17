@@ -9,15 +9,23 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+<!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
+  <link rel="stylesheet" href="bootstrap/bootstrap.css">
+  <link rel="stylesheet/less" href="bootstrap/bootswatch.less">
+  <link rel="stylesheet/less" href="bootstrap/variables.less">
+
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-  <ul class="menu">
+<body ng-cloak>
+
+<div ng-include="'components/templates/user_strip.html'"></div>
+
+<ul class="menu">
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
+    <li><a href="#!/login">login</a></li>
   </ul>
 
   <!--[if lt IE 7]>
@@ -26,16 +34,14 @@
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
   <script src="components/controllers/view1.js"></script>
   <script src="components/controllers/view2.js"></script>
+  <script src="components/controllers/loginCtrl.js"></script>
+  <script src="components/controllers/routeConfig.js"></script>
   <script src="components/services/backendGateway.js"></script>
+  <script src="components/services/loginService.js"></script>
 </body>
 </html>

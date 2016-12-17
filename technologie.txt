@@ -4,4 +4,6 @@ testy
 angular - jasmine, protractor
 java - junit
 
+UI Bootstrap - no jQuery
+
 prihlaseni - autentizace jen na strane JS ?

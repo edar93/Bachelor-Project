@@ -14,7 +14,8 @@
     "karma-jasmine": "^0.3.8",
     "karma-junit-reporter": "^0.4.1",
     "protractor": "^4.0.9",
-    "angular-http-auth": "1.4.1"
+    "angular-http-auth": "1.4.1",
+    "angular-ui-bootstrap": "2.2.0"
   },
   "scripts": {
     "postinstall": "bower install",
