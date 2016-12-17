@@ -1,5 +1,4 @@
 'use strict'
-
  var  backendGateway = function($http){
 
     this.sayHello = sayHello;
@@ -21,7 +20,6 @@
     function post(url, data, config){
         return $http.post(translateUrl(url), data, config);
     }
-
 };
 
 angular.module('portRoyalApp.backendGateway', [])

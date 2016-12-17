@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('portRoyalApp.loginCtrl', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
@@ -9,7 +8,7 @@ angular.module('portRoyalApp.loginCtrl', ['ngRoute'])
 }])
 .controller('loginCtrl', function(loginService, $scope) {
 
-    $scope.testVariable = 'test';
+    $scope.testVariable = 'TEST';
     $scope.userName;
     $scope.password;
 
