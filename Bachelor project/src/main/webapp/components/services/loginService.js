@@ -1,6 +1,6 @@
 'use strict'
 
- var  loginService = function(backendGateway, $q){
+var loginService = function(backendGateway, $q){
 
     this.login = login;
     this.getUser = getUser;
@@ -14,7 +14,7 @@
     function login(userNameToLogin, password){
         var transform = function(data){
                 return data;
-            }
+            };
         var config = {
             params: {
             username: userNameToLogin,
@@ -23,6 +23,7 @@
             ignoreAuthModule: 'ignoreAuthModule',
             transformResponse: transform
         };
+
         return backendGateway.post('LOGIN_URL', '', config)
             .then(function(response){
                     userName = userNameToLogin;
@@ -32,7 +33,7 @@
                     return $q.reject(response);
                 }
             )
-    };
+    }
 
 };
 

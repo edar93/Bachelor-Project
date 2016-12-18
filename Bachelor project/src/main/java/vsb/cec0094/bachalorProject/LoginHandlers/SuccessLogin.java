@@ -20,6 +20,7 @@ public class SuccessLogin extends SavedRequestAwareAuthenticationSuccessHandler
 		implements AuthenticationSuccessHandler {
 
 	public static void sendResponse(HttpServletResponse response, int status, String message) throws IOException {
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
 		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter writer = response.getWriter();
 		writer.write(message);

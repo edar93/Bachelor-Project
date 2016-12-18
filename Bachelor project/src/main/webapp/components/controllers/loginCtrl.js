@@ -1,21 +1,26 @@
 'use strict';
-angular.module('portRoyalApp.loginCtrl', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/login', {
-    templateUrl: 'components/templates/login_page.html',
-    controller: 'loginCtrl'
-  });
-}])
-.controller('loginCtrl', function(loginService, $scope) {
 
-    $scope.testVariable = 'TEST';
-    $scope.userName;
-    $scope.password;
+loginCtrl
+    .controller('loginCtrl', function (loginService, $scope) {
 
-    loginService.login('user','user')
-        .then(function(response){
-            console.log(loginService.getUser(), 'user was logged');
-        },function(response){
-            console.log(loginService.getUser(), 'fail');
-        });
-});
+        $scope.userName;
+        $scope.password;
+        $scope.invalidCredentials = false;
+
+        $scope.logIn = logIn;
+
+        function logIn() {
+            loginService.login($scope.userName, $scope.password)
+                .then(function (response) {
+                    console.log(loginService.getUser(), 'user was logged');
+                    console.log(response);
+                    $scope.invalidCredentials = false;
+                }, function (response) {
+                    console.log(loginService.getUser(), 'fail');
+                    console.log(response);
+                    $scope.invalidCredentials = true;
+                });
+        }
+
+
+    });

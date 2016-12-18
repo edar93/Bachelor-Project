@@ -9,10 +9,6 @@ angular.module('portRoyalApp.view1', ['ngRoute'])
 }])
 .controller('View1Ctrl', function($http, backendGateway, loginService) {
 
-    console.log(loginService.getUser(), 'user');
-
-    backendGateway.sayHello();
-
     var promise = $http({
         method : 'GET',
         url : 'http://localhost:8080/port-royal/rest/testlist'

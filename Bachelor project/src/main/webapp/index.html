@@ -6,11 +6,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Port Royal</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
   <link rel="stylesheet" href="bootstrap/bootstrap.css">
   <link rel="stylesheet/less" href="bootstrap/bootswatch.less">
   <link rel="stylesheet/less" href="bootstrap/variables.less">
@@ -19,7 +17,6 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-cloak>
-
 
 <div ng-include="'components/templates/user_strip.html'"></div>
 
@@ -39,15 +36,16 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>
 
-  <!--<script src="bower_components/ng-translation/dist/ng-translation.js"></script>-->
 
-  <script src="app.js"></script>
+  <script src="components/config.js"></script>
   <script src="components/controllers/view1.js"></script>
   <script src="components/controllers/view2.js"></script>
+  <script src="components/controllers/welcomeCtrl.js"></script>
   <script src="components/controllers/loginCtrl.js"></script>
-  <script src="components/controllers/routeConfig.js"></script>
   <script src="components/services/backendGateway.js"></script>
   <script src="components/services/loginService.js"></script>
+  <script src="components/services/translationService.js"></script>
+  <script src="components/json/dictionary_cz.js"></script>
 
 
 </body>
