@@ -1,0 +1,24 @@
+<div class="centeredDiv">
+    <div>
+        <h3>{{'REGISTRATION_LABEL' | translate }}</h3>
+    </div>
+
+    <div>
+        <div>
+            <p ng-show="invalidCredentials">{{'INVALID_CREDENTIALS' | translate }}</p>
+        </div>
+        <div>
+            <label class="control-label" for="login">{{'ENTER_LOGIN' | translate }}</label>
+            <input id="login" type="text" ng-model="userName" required="required" class="form-control"/>
+        </div>
+        <br/>
+        <div>
+            <label class="control-label" for="password">{{'PASSWORD' | translate }}</label>
+            <input id="password" type="password" ng-model="password" required="required" class="form-control"/>
+        </div>
+        <br/>
+        <div>
+            <button ng-click="RegisterAction()">{{'REGISTER_ACTION' | translate }}</button>
+        </div>
+    </div>
+</div>

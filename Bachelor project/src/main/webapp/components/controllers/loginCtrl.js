@@ -21,6 +21,4 @@ loginCtrl
                     $scope.invalidCredentials = true;
                 });
         }
-
-
     });
