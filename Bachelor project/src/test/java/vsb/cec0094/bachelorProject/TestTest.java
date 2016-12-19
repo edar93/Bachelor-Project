@@ -1,4 +1,4 @@
-package vsb.cec0094.bachalorProject;
+package vsb.cec0094.bachelorProject;
 
 import org.junit.Test;
 

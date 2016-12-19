@@ -3,12 +3,17 @@
 registerCtrl
     .controller('registerCtrl', function($scope, loginService, $location){
 
-        $scope.user = loginService.getUser();
+        $scope.userName;
+        $scope.password;
 
         $scope.RegisterAction = RegisterAction;
 
         function RegisterAction(){
-            // rest to register
+            var user = {
+                login: $scope.userName,
+                password: $scope.password
+            };
+            loginService.register(user);
             // login
         }
     });

@@ -8,7 +8,8 @@
 
     var URL = {
         LOGIN_URL: 'loginProcess',
-        DICTIONARY_CZ: 'components/json/translation-cz.json'
+        DICTIONARY_CZ: 'components/json/translation-cz.json',
+        REGISTER_URL: 'accounts/register'
     };
 
     function translateUrl(url){

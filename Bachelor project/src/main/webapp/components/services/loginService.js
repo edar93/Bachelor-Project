@@ -3,6 +3,7 @@
 var loginService = function (backendGateway, $q) {
 
     this.login = login;
+    this.register = register;
     this.getUser = getUser;
 
     var userName = null;
@@ -33,6 +34,10 @@ var loginService = function (backendGateway, $q) {
                 return $q.reject(response);
             }
         )
+    }
+
+    function register(user){
+        backendGateway.post('REGISTER_URL', user);
     }
 
 };

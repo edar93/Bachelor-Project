@@ -1,4 +1,4 @@
-package vsb.cec0094.bachalorProject.LoginHandlers;
+package vsb.cec0094.bachelorProject.LoginHandlers;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;

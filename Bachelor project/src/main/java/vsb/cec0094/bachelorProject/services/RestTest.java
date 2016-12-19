@@ -1,14 +1,13 @@
-package vsb.cec0094.bachalorProject.services;
+package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import vsb.cec0094.bachalorProject.dao.TestDao;
-import vsb.cec0094.bachalorProject.models.Test;
+import vsb.cec0094.bachelorProject.dao.TestDao;
+import vsb.cec0094.bachelorProject.models.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +28,8 @@ public class RestTest{
         array.add("svete");
         return array;
     };
+
+
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value="/testlist")

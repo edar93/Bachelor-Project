@@ -22,7 +22,7 @@
     </beans:bean>-->
 
     <!--    <tx:annotation-driven />-->
-    <context:component-scan base-package="vsb.cec0094.bachalorProject"/>
+    <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
 
     <beans:bean id="mySQLDataSource"
                 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -48,6 +48,6 @@
         <beans:property name="entityManagerFactory" ref="LocalContainerEntityManagerFactoryBean"/>
     </beans:bean>
 
-    <!--<tx:annotation-driven/>-->
+    <tx:annotation-driven/>
 
 </beans:beans>

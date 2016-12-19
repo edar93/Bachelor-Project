@@ -1,8 +1,8 @@
-package vsb.cec0094.bachalorProject.dao;
+package vsb.cec0094.bachelorProject.dao;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import vsb.cec0094.bachalorProject.models.Test;
+import vsb.cec0094.bachelorProject.models.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

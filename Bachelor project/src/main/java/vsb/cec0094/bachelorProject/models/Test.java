@@ -1,6 +1,4 @@
-package vsb.cec0094.bachalorProject.models;
-
-import org.hibernate.annotations.common.util.StringHelper;
+package vsb.cec0094.bachelorProject.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

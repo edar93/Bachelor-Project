@@ -7,6 +7,13 @@
 
     <!-- Root Context: defines shared resources visible to all other web components -->
 
+    <bean id="mySQLDataSource"
+                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>
+        <property name="username" value="root"/>
+        <property name="password" value="Slepice1"/>
+    </bean>
 
     <!--    ROLE_ADMINISTRATOR, ROLE_BUSINESS, ROLE_USER -->
 
@@ -33,30 +40,28 @@
 
     </security:http>
 
-    <bean id="SuccessLogin" class="vsb.cec0094.bachalorProject.LoginHandlers.SuccessLogin"/>
-    <bean id="SuccessLogout" class="vsb.cec0094.bachalorProject.LoginHandlers.SuccessLogout"/>
-    <bean id="UnauthorizedLogin" class="vsb.cec0094.bachalorProject.LoginHandlers.UnauthorizedLogin"/>
+    <bean id="SuccessLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogin"/>
+    <bean id="SuccessLogout" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogout"/>
+    <bean id="UnauthorizedLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.UnauthorizedLogin"/>
 
     <security:global-method-security
             secured-annotations="enabled"/>
 
     <security:authentication-manager>
         <security:authentication-provider>
-            <security:user-service>
+<!--            <security:user-service>
                 <security:user name="user" password="user"
                                authorities="ROLE_USER"/>
                 <security:user name="admin" password="admin"
                                authorities="ROLE_ADMIN,ROLE_USER"
                 />
-            </security:user-service>
-            <!-- <security:password-encoder ref="passwordEncoder"/>-->
+            </security:user-service>-->
 
-
-<!--            <security:jdbc-user-service
+            <security:jdbc-user-service
                     data-source-ref="mySQLDataSource"
-                    users-by-username-query="select username, password, enabled from users where username=?"
-                    authorities-by-username-query="select username, role from user_roles where username=?"/>-->
-
+                    users-by-username-query="SELECT login AS username, password, enabled FROM user WHERE login=?"
+                    authorities-by-username-query="select u.login AS username, 'ROLE_USER' as 'role' from role r, user u WHERE u.login=?"/>
+            <!-- <security:password-encoder ref="passwordEncoder"/>-->
 
         </security:authentication-provider>
     </security:authentication-manager>
