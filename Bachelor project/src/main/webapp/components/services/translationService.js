@@ -13,12 +13,6 @@ var translationService = function($translate, backendGateway){
                console.log(response, 'err');
         })
     }
-
-    //    translationService.getDictionary('cz')
-//        .then(function(dictionary){
-//          $translateProvider
-//            .translations('cz', dictionary)
-//        });
 };
 
 angular.module('portRoyalApp.translationService', [])

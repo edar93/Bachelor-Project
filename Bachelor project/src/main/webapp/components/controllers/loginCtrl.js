@@ -15,6 +15,7 @@ loginCtrl
                     console.log(loginService.getUser(), 'user was logged');
                     console.log(response);
                     $scope.invalidCredentials = false;
+                    $location.path("/welcome");
                 }, function (response) {
                     console.log(loginService.getUser(), 'fail');
                     console.log(response);

@@ -60,7 +60,7 @@
             <security:jdbc-user-service
                     data-source-ref="mySQLDataSource"
                     users-by-username-query="SELECT login AS username, password, enabled FROM user WHERE login=?"
-                    authorities-by-username-query="select u.login AS username, 'ROLE_USER' as 'role' from role r, user u WHERE u.login=?"/>
+                    authorities-by-username-query="select u.login AS username, 'ROLE_USER' as 'role' from user u WHERE u.login=?"/>
             <!-- <security:password-encoder ref="passwordEncoder"/>-->
 
         </security:authentication-provider>

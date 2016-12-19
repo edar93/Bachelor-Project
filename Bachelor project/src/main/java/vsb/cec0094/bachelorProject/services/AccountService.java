@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,4 +27,12 @@ public class AccountService {
         user.setEnabled(1);
         accountDao.createUser(user);
     };
+
+    @RequestMapping(method = RequestMethod.GET, value="/getLoggedUserLogin")
+    @ResponseBody
+    public String getLogin(){
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
+        return user;
+    };
+
 }

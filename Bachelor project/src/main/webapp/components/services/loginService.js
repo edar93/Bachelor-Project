@@ -6,10 +6,15 @@ var loginService = function (backendGateway, $q) {
     this.register = register;
     this.getUser = getUser;
 
-    var userName = null;
-
     function getUser() {
-        return userName;
+        return backendGateway.get('GET_USER', null, true)
+            .then(function(response){
+                console.log(response.data);
+                if (response.data == 'anonymousUser'){
+                    return null;
+                }
+                return response.data
+            })
     }
 
     function login(userNameToLogin, password) {
@@ -27,17 +32,15 @@ var loginService = function (backendGateway, $q) {
 
         return backendGateway.post('LOGIN_URL', '', config)
             .then(function (response) {
-                userName = userNameToLogin;
                 return $q.resolve(response);
             }, function (response) {
-                userName = null;
                 return $q.reject(response);
             }
         )
     }
 
     function register(user){
-        backendGateway.post('REGISTER_URL', user);
+         return backendGateway.post('REGISTER_URL', user)
     }
 
 };
