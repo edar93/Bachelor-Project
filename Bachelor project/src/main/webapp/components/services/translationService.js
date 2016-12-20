@@ -1,5 +1,6 @@
 'use strict'
 
+// never used
 var translationService = function($translate, backendGateway){
 
     this.getDictionary = getDictionary;

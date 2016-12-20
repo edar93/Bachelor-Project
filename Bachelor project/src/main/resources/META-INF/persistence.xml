@@ -6,6 +6,7 @@
 
         <class>vsb.cec0094.bachelorProject.models.Test</class>
         <class>vsb.cec0094.bachelorProject.models.User</class>
+        <class>vsb.cec0094.bachelorProject.models.GameInQueue</class>
 
 
         <properties>

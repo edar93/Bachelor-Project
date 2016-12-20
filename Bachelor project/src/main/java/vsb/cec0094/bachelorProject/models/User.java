@@ -17,7 +17,6 @@ public class User {
     @Size(max = 100)
     private String login;
 
-
     @Column(name = "password")
     @NotNull
     @Size(max = 100)
@@ -26,7 +25,19 @@ public class User {
     @Column(name = "enabled")
     private int enabled;
 
+    @ManyToOne
+    @JoinColumn(name = "gameinqueue")
+    private GameInQueue gameInQueue;
+
     public User() {
+    }
+
+    public GameInQueue getGameInQueue() {
+        return gameInQueue;
+    }
+
+    public void setGameInQueue(GameInQueue gameInQueue) {
+        this.gameInQueue = gameInQueue;
     }
 
     public String getLogin() {

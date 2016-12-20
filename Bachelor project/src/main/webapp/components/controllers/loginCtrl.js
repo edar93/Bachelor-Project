@@ -1,7 +1,7 @@
 'use strict';
 
 loginCtrl
-    .controller('loginCtrl', function (loginService, $scope) {
+    .controller('loginCtrl', function (loginService, $scope, $location) {
 
         $scope.userName;
         $scope.password;
@@ -12,14 +12,11 @@ loginCtrl
         function logIn() {
             loginService.login($scope.userName, $scope.password)
                 .then(function (response) {
-                    console.log(loginService.getUser(), 'user was logged');
-                    console.log(response);
                     $scope.invalidCredentials = false;
                     $location.path("/welcome");
                 }, function (response) {
-                    console.log(loginService.getUser(), 'fail');
-                    console.log(response);
                     $scope.invalidCredentials = true;
-                });
+                }
+            );
         }
     });

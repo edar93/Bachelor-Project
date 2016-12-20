@@ -33,9 +33,7 @@ public class SuccessLogin extends SavedRequestAwareAuthenticationSuccessHandler
 		System.out.println("succ");
 		System.out.println(arg0.getParameter("password"));
 		System.out.println(arg0.getParameter("username"));
-		//arg1.sendRedirect(arg0.getContextPath() + "/index.html");
-
-		sendResponse(arg1, 200, "message from login handler");
+		sendResponse(arg1, 200, arg0.getParameter("username"));
 	}
 
 

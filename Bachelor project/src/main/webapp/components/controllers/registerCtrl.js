@@ -25,7 +25,7 @@ registerCtrl
                     )
                 }, function (response) {
                     $scope.invalidRegistration = true;
-                });
-            // login
+                }
+            );
         }
     });

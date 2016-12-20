@@ -29,8 +29,6 @@ public class RestTest{
         return array;
     };
 
-
-
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value="/testlist")
     @ResponseBody
