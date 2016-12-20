@@ -12,7 +12,8 @@ angular.module('portRoyalApp.view1', ['ngRoute'])
     var promise = $http({
         method : 'GET',
         url : 'http://localhost:8080/port-royal/rest/testlist'
-    })
+    });
+
     promise.then(function(response) {
         console.log('ok');
         console.log(response, 'response');

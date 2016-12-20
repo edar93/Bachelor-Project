@@ -2,21 +2,21 @@ package vsb.cec0094.bachelorProject.dao.JPAImpl;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import vsb.cec0094.bachelorProject.dao.AccountDao;
-import vsb.cec0094.bachelorProject.models.User;
+import vsb.cec0094.bachelorProject.dao.GameDao;
+import vsb.cec0094.bachelorProject.models.GameInQueue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Repository
 @Transactional
-public class AccountDaoImpl implements AccountDao {
+public class GameDaoImpl implements GameDao {
 
     @PersistenceContext
-    private EntityManager em;
+    EntityManager em;
 
     @Override
-    public void createUser(User user) {
-        em.persist(user);
+    public void createGameInQueue(GameInQueue gameInQueue) {
+        em.persist(gameInQueue);
     }
 }

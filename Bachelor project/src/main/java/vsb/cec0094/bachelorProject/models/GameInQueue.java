@@ -3,6 +3,8 @@ package vsb.cec0094.bachelorProject.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -19,7 +21,8 @@ public class GameInQueue {
     private List<User> playersList;
 
     @Column(name = "maxPlayersCount")
-    @Size(min = 2, max = 6)
+    @Min(2)
+    @Max(6)
     private int maxPlayersCount;
 
     public GameInQueue() {

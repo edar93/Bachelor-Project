@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
 var gameService = function (backendGateway, $q) {
 
-    this.getUser = createGame;
+    this.createGame = createGame;
 
     function createGame() {
-        return backendGateway.get('GET_USER', null, true)
+        return backendGateway.post('CREATE_NEW_GAME')
     }
 };
 

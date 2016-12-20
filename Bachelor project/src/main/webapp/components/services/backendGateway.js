@@ -10,7 +10,8 @@
         LOGIN_URL: 'loginProcess',
         DICTIONARY_CZ: 'components/json/translation-cz.json',
         REGISTER_URL: 'accounts/register',
-        GET_USER: 'accounts/getLoggedUserLogin'
+        GET_USER: 'accounts/getLoggedUserLogin',
+        CREATE_NEW_GAME: 'game/cratenewgame'
     };
 
     function post(url, data, config, nonJsonResponce){

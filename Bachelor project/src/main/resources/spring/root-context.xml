@@ -23,6 +23,8 @@
 
         <security:intercept-url pattern="/rest/**"
                                 access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/game/**"
+                                access="hasRole('ROLE_USER')"/>
 
         <security:intercept-url pattern="/webapp/**"
                                 access="permitAll"/>
