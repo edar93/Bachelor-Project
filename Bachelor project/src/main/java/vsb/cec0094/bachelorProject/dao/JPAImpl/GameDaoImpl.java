@@ -19,4 +19,9 @@ public class GameDaoImpl implements GameDao {
     public void createGameInQueue(GameInQueue gameInQueue) {
         em.persist(gameInQueue);
     }
+
+    @Override
+    public GameInQueue getGameInQueue(String owner) {
+        return em.find(GameInQueue.class, owner);
+    }
 }

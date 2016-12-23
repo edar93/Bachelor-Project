@@ -24,15 +24,22 @@ public class GameService {
     @RequestMapping(method = RequestMethod.POST, value = "/cratenewgame")
     @ResponseBody
     public GameInQueue createGameInQueue() {
-        System.out.println("method was called");
         GameInQueue gameInQueue = new GameInQueue();
         gameInQueue.setMaxPlayersCount(3);
         String owner = SecurityContextHolder.getContext().getAuthentication().getName();
         gameInQueue.setOwner(owner);
-        System.out.println(owner);
+
         gameDao.createGameInQueue(gameInQueue);
         return gameInQueue;
-    }
+    };
 
-    ;
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, value = "/basegamestatus")
+    @ResponseBody
+    public GameInQueue getBaseGameStatus() {
+        String owner = SecurityContextHolder.getContext().getAuthentication().getName();
+        return gameDao.getGameInQueue(owner);
+    };
+
 }

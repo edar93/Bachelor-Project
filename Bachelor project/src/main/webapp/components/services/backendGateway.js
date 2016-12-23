@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
  var  backendGateway = function($http){
 
     this.post = post;
@@ -11,7 +11,9 @@
         DICTIONARY_CZ: 'components/json/translation-cz.json',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
-        CREATE_NEW_GAME: 'game/cratenewgame'
+        CREATE_NEW_GAME: 'game/cratenewgame',
+        BASIC_GAME_STATUS: 'game/basegamestatus',
+        LOGOUT: 'logout'
     };
 
     function post(url, data, config, nonJsonResponce){

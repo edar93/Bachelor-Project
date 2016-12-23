@@ -5,6 +5,11 @@ var loginService = function (backendGateway, $q) {
     this.login = login;
     this.register = register;
     this.getUser = getUser;
+    this.logout = logout;
+
+    function logout(){
+        return backendGateway.post('LOGOUT');
+    }
 
     function getUser() {
         return backendGateway.get('GET_USER', null, true)

@@ -6,4 +6,6 @@ import vsb.cec0094.bachelorProject.models.User;
 public interface GameDao {
 
     void createGameInQueue(GameInQueue gameInQueue);
+
+    GameInQueue getGameInQueue(String owner);
 }

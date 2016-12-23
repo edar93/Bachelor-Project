@@ -14,7 +14,6 @@ public class SuccessLogout extends SimpleUrlLogoutSuccessHandler {
 	@Override
 	public void onLogoutSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication arg2)
 			throws IOException {
-		//arg1.sendRedirect(arg0.getContextPath() + "/rest/logout?auth=" + arg2.getName());
-
+		System.out.println("Logout");
 	}
 }
