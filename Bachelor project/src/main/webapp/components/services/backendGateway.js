@@ -1,33 +1,63 @@
 'use strict';
- var  backendGateway = function($http){
+ var  backendGateway = function($http, $q){
 
     this.post = post;
     this.get = get;
+    this.put = put;
 
     var serverURL = 'http://localhost:8080/port-royal/';
 
     var URL = {
         LOGIN_URL: 'loginProcess',
-        DICTIONARY_CZ: 'components/json/translation-cz.json',
+        LOGOUT: 'logout',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
         CREATE_NEW_GAME: 'game/cratenewgame',
         BASIC_GAME_STATUS: 'game/basegamestatus',
-        LOGOUT: 'logout'
+        GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
+        JOIN_GAME: 'game/joingame'
     };
+
+     function put(url, data, config, nonJsonResponce){
+         if(nonJsonResponce){
+             config = addNonJsonTransform(config);
+         }
+         return $http.put(translateUrl(url), data, config)
+             .then(function(responese){
+                 return $q.resolve(responese);
+             },function(responese){
+                 console.log('put fail', url, data, config, nonJsonResponce, responese);
+                 return $q.reject(responese);
+             }
+         );
+     }
 
     function post(url, data, config, nonJsonResponce){
         if(nonJsonResponce){
             config = addNonJsonTransform(config);
         }
-        return $http.post(translateUrl(url), data, config);
+        return $http.post(translateUrl(url), data, config)
+            .then(function(responese){
+                return $q.resolve(responese);
+            },function(responese){
+                console.log('post fail', url, data, config, nonJsonResponce, responese);
+                return $q.reject(responese);
+            }
+        );
     }
 
     function get(url, config, nonJsonResponce){
         if(nonJsonResponce){
             config = addNonJsonTransform(config);
         }
-        return $http.get(translateUrl(url), config);
+        return $http.get(translateUrl(url), config)
+            .then(function(responese){
+                return $q.resolve(responese);
+            },function(responese){
+                console.log('get fail', url, config, nonJsonResponce, responese);
+                return $q.reject(responese);
+            }
+        );
     }
 
      function translateUrl(url){

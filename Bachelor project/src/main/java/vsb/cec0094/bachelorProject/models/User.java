@@ -1,12 +1,10 @@
 package vsb.cec0094.bachelorProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-/**
- * Created by User on 19. 12. 2016.
- */
 
 @Entity
 @Table(name ="user")
@@ -25,6 +23,7 @@ public class User {
     @Column(name = "enabled")
     private int enabled;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "gameinqueue")
     private GameInQueue gameInQueue;

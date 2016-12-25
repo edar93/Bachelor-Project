@@ -1,0 +1,41 @@
+<div class="centeredDiv">
+    <div ng-if="!user">
+        <h1>{{'WELCOME_TEXT' | translate}}</h1>
+        <button ng-click="goToLoginPage()">
+            {{'LOG_IN' | translate}}
+        </button>
+        <button ng-click="goToRegistrationPage()">
+            {{'REGISTER' | translate}}
+        </button>
+    </div>
+
+    <div ng-if="user">
+        <h4>{{'WELCOME_PLAYER' | translate}} {{user}}</h4>
+        <button ng-click="createGame()">
+            {{'CREATE_GAME' | translate}}
+        </button>
+        <div>
+            <table>
+                <tr>
+                    <th>{{'CREATOR' | translate}}</th>
+                    <th>{{'COUNT_OF_PLAYERS' | translate}}</th>
+                </tr>
+                <tr ng-repeat="games in gamesForJoin track by $index">
+                    <td>{{games.owner}}</td>
+                    <td>{{games.playersList.length + 1}} / {{games.maxPlayersCount}}</td>
+                    <td>
+                        <button ng-click="joinGame(games.owner)">{{'JOIN_GAME' | translate}}</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <button ng-click="logout()">
+            {{'LOGOUT' | translate}}
+        </button>
+    </div>
+</div>
+
+
+
+
