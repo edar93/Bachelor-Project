@@ -22,7 +22,7 @@
                 </tr>
                 <tr ng-repeat="games in gamesForJoin track by $index">
                     <td>{{games.owner}}</td>
-                    <td>{{games.playersList.length + 1}} / {{games.maxPlayersCount}}</td>
+                    <td>{{games.playersList.length}} / {{games.maxPlayersCount}}</td>
                     <td>
                         <button ng-click="joinGame(games.owner)">{{'JOIN_GAME' | translate}}</button>
                     </td>

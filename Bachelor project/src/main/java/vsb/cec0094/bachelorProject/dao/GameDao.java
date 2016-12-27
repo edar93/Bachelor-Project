@@ -14,4 +14,6 @@ public interface GameDao {
     List<GameInQueue> getAllGames();
 
     void joinGame(String owner, String player);
+
+    GameInQueue getPlayersGame(String player);
 }

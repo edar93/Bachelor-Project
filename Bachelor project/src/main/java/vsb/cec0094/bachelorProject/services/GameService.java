@@ -54,6 +54,13 @@ public class GameService {
         gameDao.joinGame(owner, player);
     };
 
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/getplayersgame")
+    @ResponseBody
+    public GameInQueue getPlayersGame(@RequestBody String player) {
+        return gameDao.getPlayersGame( player);
+    };
+
 
 
 }

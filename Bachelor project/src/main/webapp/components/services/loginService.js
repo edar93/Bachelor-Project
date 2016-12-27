@@ -7,19 +7,28 @@ var loginService = function (backendGateway, $q) {
     this.getUser = getUser;
     this.logout = logout;
 
-    function logout(){
+    var user;
+
+    function logout() {
+        user = null;
         return backendGateway.post('LOGOUT');
     }
 
     function getUser() {
-        return backendGateway.get('GET_USER', null, true)
-            .then(function(response){
-                console.log(response.data);
-                if (response.data == 'anonymousUser'){
-                    return null;
+        if (user) {
+            return user;
+        } else {
+            return backendGateway.get('GET_USER', null, true)
+                .then(function (response) {
+                    console.log(response.data);
+                    if (response.data == 'anonymousUser') {
+                        return null;
+                    }
+                    user = response.data;
+                    return response.data;
                 }
-                return response.data
-            })
+            )
+        }
     }
 
     function login(userNameToLogin, password) {
@@ -44,8 +53,8 @@ var loginService = function (backendGateway, $q) {
         )
     }
 
-    function register(user){
-         return backendGateway.post('REGISTER_URL', user)
+    function register(user) {
+        return backendGateway.post('REGISTER_URL', user)
     }
 
 };

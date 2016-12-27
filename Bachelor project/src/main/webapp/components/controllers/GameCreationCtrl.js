@@ -1,20 +1,18 @@
 'use strict';
 
 gameCreationCtrl
-    .controller('gameCreationCtrl', function ($scope, gameService) {
+    .controller('gameCreationCtrl', function ($scope, gameService, loginService) {
 
         $scope.maxPlayers = maxPlayers;
         var maxPlayers = 1;
 
-
-        console.log(gameService.getBaseGameStatus(), 'gameService.getBaseGameStatus()');
-
         init();
 
         function init(){
-            gameService.getBaseGameStatus().then(
-                function(response){
-                    maxPlayers = response.data.maxPlayersCount;
+            gameService.getPlayersGame(loginService.getUser()).then(
+                function(data){
+                    console.log(data);
+                    maxPlayers = data.maxPlayersCount;
                     $scope.maxPlayers = maxPlayers;
                 }
             )

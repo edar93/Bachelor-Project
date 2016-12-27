@@ -3,7 +3,7 @@
 var gameService = function (backendGateway) {
 
     this.createGame = createGame;
-    this.getBaseGameStatus = getBaseGameStatus;
+    this.getPlayersGame = getPlayersGame;
     this.getAllGamesToJoin = getAllGamesToJoin;
     this.joinGame = joinGame;
 
@@ -11,8 +11,14 @@ var gameService = function (backendGateway) {
         return backendGateway.put('JOIN_GAME', owner);
     }
 
-    function getBaseGameStatus(){
-        return backendGateway.get('BASIC_GAME_STATUS')
+    function getPlayersGame(player){
+        return backendGateway.post('GET_PLAYERS_GAME',player)
+            .then(function(response){
+                if(response){
+                    return response.data;
+                }
+            }
+        );
     }
 
     function getAllGamesToJoin(){
@@ -21,7 +27,8 @@ var gameService = function (backendGateway) {
                 if(response){
                     return response.data;
                 }
-            });
+            }
+        );
     }
 
     function createGame() {

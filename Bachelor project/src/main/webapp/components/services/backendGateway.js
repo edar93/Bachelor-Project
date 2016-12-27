@@ -13,7 +13,7 @@
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
         CREATE_NEW_GAME: 'game/cratenewgame',
-        BASIC_GAME_STATUS: 'game/basegamestatus',
+        GET_PLAYERS_GAME: 'game/getplayersgame',
         GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
         JOIN_GAME: 'game/joingame'
     };
