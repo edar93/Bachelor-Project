@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5813718-71ff-497f-a9b0-77621894c557" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCtrl.js" />
-      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\components\controllers\GameCreationCtrl.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/JPAImpl/GameDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/JPAImpl/GameDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/config.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/dictionary_cz.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/dictionary_cz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/game_creation.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game_creation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/services/locationService.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/services/locationService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/services/loginService.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/services/loginService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tables.sql" afterPath="$PROJECT_DIR$/src/main/resources/tables.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Port Royal.iws" />
@@ -38,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="registerCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registerCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/components/controllers/registerCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6481481">
+            <state vertical-scroll-proportion="0.0">
               <caret line="28" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameCreationCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.94207835">
+              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -195,12 +194,12 @@
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/dictionary_cz.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game_creation.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/locationService.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/game.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/config.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" />
       </list>
     </option>
   </component>
@@ -1128,7 +1127,7 @@
       <workItem from="1482679443051" duration="1301000" />
       <workItem from="1482863383530" duration="6507000" />
       <workItem from="1482877838307" duration="378000" />
-      <workItem from="1482894561154" duration="3986000" />
+      <workItem from="1482894561154" duration="4044000" />
     </task>
     <task id="LOCAL-00001" summary="added working login page">
       <created>1482094446979</created>
@@ -1208,11 +1207,17 @@
       <option name="project" value="LOCAL" />
       <updated>1482878109225</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add game page, still fixing problem with gameCreation.js">
+      <created>1482898594041</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1482898594041</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89902000" />
+    <option name="totallyTimeSpent" value="89960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1220,7 +1225,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37381703" sideWeight="0.5058565" order="14" side_tool="true" content_ui="tabs" />
@@ -1279,7 +1284,8 @@
     <MESSAGE value="add rest which return yours game" />
     <MESSAGE value="recreate gameCreationCtrl - probably bug in git" />
     <MESSAGE value="add game page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add game page" />
+    <MESSAGE value="add game page, still fixing problem with gameCreation.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="add game page, still fixing problem with gameCreation.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1667,8 +1673,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/components/controllers/registerCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6481481">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94207835">
+          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
           <folding />
         </state>
       </provider>
