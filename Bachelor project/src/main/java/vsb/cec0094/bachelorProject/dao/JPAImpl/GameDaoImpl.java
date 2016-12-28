@@ -53,15 +53,13 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public GameInQueue getPlayersGame(String player) {
-
+        System.out.println("------------------");
+        System.out.println(player);
+        System.out.println("------------------");
         Object result;
         result = em.createQuery(GET_PLAYERS_GAME)
                 .setParameter("player", player)
                 .getSingleResult();
         return (GameInQueue) result;
-
-
     }
-
-
 }

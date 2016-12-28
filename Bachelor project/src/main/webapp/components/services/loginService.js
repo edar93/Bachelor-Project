@@ -16,16 +16,15 @@ var loginService = function (backendGateway, $q) {
 
     function getUser() {
         if (user) {
-            return user;
+            return $q.resolve(user);
         } else {
             return backendGateway.get('GET_USER', null, true)
                 .then(function (response) {
-                    console.log(response.data);
                     if (response.data == 'anonymousUser') {
-                        return null;
+                        return $q.resolve(null);
                     }
                     user = response.data;
-                    return response.data;
+                    return $q.resolve(response.data);
                 }
             )
         }

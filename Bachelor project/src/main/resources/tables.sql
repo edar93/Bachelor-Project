@@ -9,3 +9,13 @@ enabled int,
 gameinqueue varchar(100),
 FOREIGN KEY (gameinqueue) REFERENCES gameinqueue(owner)
 );
+
+
+/*suport scripts*/
+
+select * from user;
+select * from gameinqueue;
+
+SET SQL_SAFE_UPDATES = 0;
+update user set gameinqueue = null ;
+delete from gameinqueue;

@@ -20,6 +20,7 @@ public class User {
     @Size(max = 100)
     private String password;
 
+    @JsonIgnore
     @Column(name = "enabled")
     private int enabled;
 

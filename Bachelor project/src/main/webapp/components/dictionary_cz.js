@@ -17,4 +17,8 @@ var dictionaryCZ =
     LOGOUT: 'Odhlásit se',
     CREATOR: 'Kapitán',
     COUNT_OF_PLAYERS: 'počet hráčů',
-    JOIN_GAME: 'Připojit se do hry'};
+    START_GAME: 'spustit hru',
+    MAX_PLAYERS_COUNT: 'maximální počet hráčů:',
+    JOIN_GAME: 'Připojit se do hry',
+    GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',
+    PLAYERS: 'Hráči'};
