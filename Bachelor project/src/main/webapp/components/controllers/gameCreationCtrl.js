@@ -39,9 +39,7 @@ gameCreationCtrl
             );
         }
 
-        function startGame(){
+        function startGame() {
             locationService.goToGame();
         }
-    }
-
-);
+    });

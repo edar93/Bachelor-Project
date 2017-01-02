@@ -1,10 +1,9 @@
-var dictionaryCZ =
-    {FOO: 'hovinko',
+var dictionaryCZ = {
     LOG_IN: 'příhlásit se',
     REGISTER: 'Založit nový účet',
     WELCOME_TEXT: 'Vítejte ve hře port royal',
     LOGIN_LABEL: 'Zde se můžete přihlásit',
-    REGISTRATION_LABEL: 'Zde vyplńte údaje pod kterými se budete přihlašovat',
+    REGISTRATION_LABEL: 'Zde vyplńte údaje pod kterými se budete registrovat',
     PASSWORD: 'Heslo',
     ENTER_LOGIN: 'Login',
     LOGIN_ACTION: 'Přihlásit se',
@@ -21,4 +20,5 @@ var dictionaryCZ =
     MAX_PLAYERS_COUNT: 'maximální počet hráčů:',
     JOIN_GAME: 'Připojit se do hry',
     GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',
-    PLAYERS: 'Hráči'};
+    PLAYERS: 'Hráči'
+};

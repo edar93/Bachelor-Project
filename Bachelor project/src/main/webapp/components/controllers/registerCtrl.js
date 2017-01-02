@@ -1,7 +1,11 @@
-'use strict'
+'use strict';
+
+//TODO does not work
 
 registerCtrl
-    .controller('registerCtrl', function ($scope, loginService, $location) {
+    .controller('registerCtrl', function ($scope, loginService, locationService) {
+
+        console.log('register ctrl');
 
         $scope.userName;
         $scope.password;
@@ -14,13 +18,14 @@ registerCtrl
                 login: $scope.userName,
                 password: $scope.password
             };
-
+            console.log('RegisterAction was called');
             loginService.register(user)
                 .then(function (response) {
+                    console.log('RegisterAction-then was called');
                     $scope.invalidRegistration = false;
                     loginService.login(user.login, user.password)
-                        .then(function(){
-                            $location.path("/welcome");
+                        .then(function () {
+                            locationService.goToWelcome();
                         }
                     )
                 }, function (response) {

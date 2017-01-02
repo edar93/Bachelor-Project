@@ -1,7 +1,6 @@
-'use strict'
+'use strict';
 
 gameCtrl
     .controller('registerCtrl', function ($scope, loginService, $location) {
 
-    }
-);
+    });

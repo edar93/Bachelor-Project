@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-var loginService = function (backendGateway, $q) {
+var loginService = function ($q, backendGateway) {
 
     this.login = login;
     this.register = register;

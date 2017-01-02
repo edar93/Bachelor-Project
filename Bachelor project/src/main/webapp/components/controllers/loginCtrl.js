@@ -1,7 +1,7 @@
 'use strict';
 
 loginCtrl
-    .controller('loginCtrl', function (loginService, $scope, $location) {
+    .controller('loginCtrl', function ($scope, $location, loginService) {
 
         $scope.userName;
         $scope.password;

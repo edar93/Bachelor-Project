@@ -7,24 +7,24 @@ var gameService = function (backendGateway) {
     this.getAllGamesToJoin = getAllGamesToJoin;
     this.joinGame = joinGame;
 
-    function joinGame(owner){
+    function joinGame(owner) {
         return backendGateway.put('JOIN_GAME', owner);
     }
 
-    function getPlayersGame(player){
-        return backendGateway.post('GET_PLAYERS_GAME',player)
-            .then(function(response){
-                if(response){
+    function getPlayersGame(player) {
+        return backendGateway.post('GET_PLAYERS_GAME', player)
+            .then(function (response) {
+                if (response) {
                     return response.data;
                 }
             }
         );
     }
 
-    function getAllGamesToJoin(){
+    function getAllGamesToJoin() {
         return backendGateway.get('GET_ALL_GAMES_IN_QUEUE')
-            .then(function(response){
-                if(response){
+            .then(function (response) {
+                if (response) {
                     return response.data;
                 }
             }

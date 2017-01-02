@@ -5,21 +5,26 @@ var locationService = function ($location) {
     this.goToLoginPage = goToLoginPage;
     this.goToRegistrationPage = goToRegistrationPage;
     this.goToGameCretion = goToGameCretion;
+    this.goToWelcome = goToWelcome;
     this.goToGame = goToGame;
 
-    function goToGameCretion(){
+    function goToWelcome() {
+        $location.path("/welcome");
+    }
+
+    function goToGameCretion() {
         $location.path("/gamecreation");
     }
 
-    function goToGame(){
+    function goToGame() {
         $location.path("/game");
     }
 
-    function goToLoginPage(){
+    function goToLoginPage() {
         $location.path("/login");
     }
 
-    function goToRegistrationPage(){
+    function goToRegistrationPage() {
         $location.path("/register");
     }
 };

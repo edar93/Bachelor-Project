@@ -15,8 +15,6 @@
         <property name="password" value="Slepice1"/>
     </bean>
 
-    <!--    ROLE_ADMINISTRATOR, ROLE_BUSINESS, ROLE_USER -->
-
     <!--auto-config="true"-->
     <security:http auto-config="true">
         <security:csrf disabled="true"/>

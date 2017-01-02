@@ -16,7 +16,7 @@ welcomeCtrl
 
         function joinGame(owner) {
             gameService.joinGame(owner)
-                .then(function(){
+                .then(function () {
                     locationService.goToGameCretion();
                 });
         }
