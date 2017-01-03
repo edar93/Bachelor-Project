@@ -1,11 +1,7 @@
 'use strict';
 
-//TODO does not work
-
 registerCtrl
     .controller('registerCtrl', function ($scope, loginService, locationService) {
-
-        console.log('register ctrl');
 
         $scope.userName;
         $scope.password;
