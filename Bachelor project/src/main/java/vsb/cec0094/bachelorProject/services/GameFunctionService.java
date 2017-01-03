@@ -5,15 +5,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import vsb.cec0094.bachelorProject.dao.GameDao;
-import vsb.cec0094.bachelorProject.dao.TestDao;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/game")
-public class GameService {
+public class GameFunctionService {
 
     @Autowired
     private GameDao gameDao;

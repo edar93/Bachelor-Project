@@ -1,0 +1,8 @@
+package vsb.cec0094.bachelorProject.gameLogic;
+
+public enum CardType {
+    PINACE, FLUTE, SKIFF, FRIGATE, GALLEON, //ships
+    TRADER, SETTLER, CAPTAIN, PRIEST, JACK_OF_ALL_TRADES, SAILOR, PIRATE, MADEMOISELLE, JESTER, ADMIRAL, GOVERNOR, //characters
+    EXPEDITION,
+    TAX_INCREASE
+}

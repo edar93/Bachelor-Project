@@ -4,7 +4,6 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="port-royal-cech">
 
-        <class>vsb.cec0094.bachelorProject.models.Test</class>
         <class>vsb.cec0094.bachelorProject.models.User</class>
         <class>vsb.cec0094.bachelorProject.models.UserRegistration</class>
         <class>vsb.cec0094.bachelorProject.models.GameInQueue</class>
