@@ -15,15 +15,6 @@ public class User {
     @Size(max = 100)
     private String login;
 
-    @Column(name = "password")
-    @NotNull
-    @Size(max = 100)
-    private String password;
-
-    @JsonIgnore
-    @Column(name = "enabled")
-    private int enabled;
-
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "gameinqueue")
@@ -46,21 +37,5 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(int enabled) {
-        this.enabled = enabled;
     }
 }

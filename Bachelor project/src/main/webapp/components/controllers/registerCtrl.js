@@ -14,10 +14,8 @@ registerCtrl
                 login: $scope.userName,
                 password: $scope.password
             };
-            console.log('RegisterAction was called');
             loginService.register(user)
                 .then(function (response) {
-                    console.log('RegisterAction-then was called');
                     $scope.invalidRegistration = false;
                     loginService.login(user.login, user.password)
                         .then(function () {

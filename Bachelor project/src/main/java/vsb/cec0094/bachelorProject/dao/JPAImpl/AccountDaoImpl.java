@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.User;
+import vsb.cec0094.bachelorProject.models.UserRegistration;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +17,7 @@ public class AccountDaoImpl implements AccountDao {
     private EntityManager em;
 
     @Override
-    public void createUser(User user) {
-        em.persist(user);
+    public void createUser(UserRegistration userRegistration) {
+        em.persist(userRegistration);
     }
 }
