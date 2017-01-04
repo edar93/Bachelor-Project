@@ -8,24 +8,32 @@ var locationService = function ($location) {
     this.goToWelcome = goToWelcome;
     this.goToGame = goToGame;
 
+    var paths = {
+        welcome: '/welcome',
+        gamecreation: '/gamecreation',
+        game: '/game',
+        login: '/login',
+        register: '/register'
+    };
+
     function goToWelcome() {
-        $location.path("/welcome");
+        $location.path(paths.welcome);
     }
 
     function goToGameCretion() {
-        $location.path("/gamecreation");
+        $location.path(paths.gamecreation);
     }
 
     function goToGame() {
-        $location.path("/game");
+        $location.path(paths.game);
     }
 
     function goToLoginPage() {
-        $location.path("/login");
+        $location.path(paths.login);
     }
 
     function goToRegistrationPage() {
-        $location.path("/register");
+        $location.path(paths.register);
     }
 };
 
