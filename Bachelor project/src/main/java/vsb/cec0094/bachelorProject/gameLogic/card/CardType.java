@@ -1,4 +1,4 @@
-package vsb.cec0094.bachelorProject.gameLogic;
+package vsb.cec0094.bachelorProject.gameLogic.card;
 
 public enum CardType {
     PINACE, FLUTE, SKIFF, FRIGATE, GALLEON, //ships

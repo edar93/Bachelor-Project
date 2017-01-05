@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+
 import java.util.ArrayList;
 import java.util.List;
 
