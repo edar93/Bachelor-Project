@@ -15,19 +15,7 @@ var loginService = function ($q, backendGateway) {
     }
 
     function getUser() {
-        if (user) {
-            return $q.resolve(user);
-        } else {
-            return backendGateway.get('GET_USER', null, true)
-                .then(function (response) {
-                    if (response.data == 'anonymousUser') {
-                        return $q.resolve(null);
-                    }
-                    user = response.data;
-                    return $q.resolve(response.data);
-                }
-            )
-        }
+        return user;
     }
 
     function login(userNameToLogin, password) {
@@ -45,9 +33,17 @@ var loginService = function ($q, backendGateway) {
 
         return backendGateway.post('LOGIN_URL', '', config)
             .then(function (response) {
-                return $q.resolve(response);
-            }, function (response) {
-                return $q.reject(response);
+
+                return backendGateway.get('GET_USER', null, true)
+                    .then(function (response) {
+                        if (response.data == 'anonymousUser') {
+                            user = null;
+                            return $q.resolve(null);
+                        }
+                        user = response.data;
+                        return $q.resolve(response.data);
+                    }
+                )
             }
         )
     }

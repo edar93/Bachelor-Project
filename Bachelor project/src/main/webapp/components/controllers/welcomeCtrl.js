@@ -3,8 +3,8 @@
 welcomeCtrl
     .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService) {
 
-        $scope.user = null;
         $scope.gamesForJoin = null;
+        $scope.user = loginService.getUser();
 
         $scope.createGame = createGame;
         $scope.goToLoginPage = goToLoginPage;
@@ -13,6 +13,9 @@ welcomeCtrl
         $scope.joinGame = joinGame;
 
         updateGamesForJoin();
+
+
+
 
         function joinGame(owner) {
             gameService.joinGame(owner)
@@ -45,11 +48,6 @@ welcomeCtrl
             locationService.goToGameCretion();
         }
 
-        loginService.getUser().then(
-            function (data) {
-                $scope.user = data
-            }
-        );
 
         function goToLoginPage() {
             locationService.goToLoginPage();
