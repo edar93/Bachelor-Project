@@ -7,7 +7,7 @@ var loginService = function ($q, backendGateway) {
     this.getUser = getUser;
     this.logout = logout;
 
-    var user;
+    var user = null;
 
     function logout() {
         user = null;
@@ -19,29 +19,31 @@ var loginService = function ($q, backendGateway) {
     }
 
     function login(userNameToLogin, password) {
-        var transform = function (data) {
-            return data;
-        };
         var config = {
             params: {
                 username: userNameToLogin,
                 password: password
             },
-            ignoreAuthModule: 'ignoreAuthModule',
-            transformResponse: transform
+            ignoreAuthModule: 'ignoreAuthModule'
         };
 
-        return backendGateway.post('LOGIN_URL', '', config)
+        var test = backendGateway.post();
+        return backendGateway.post('LOGIN_URL', '', config, true)
             .then(function (response) {
-
                 return backendGateway.get('GET_USER', null, true)
                     .then(function (response) {
+                        if(response == undefined || response.data == undefined){
+                            user = null;
+                            return $q.resolve(undefined);
+                        }
                         if (response.data == 'anonymousUser') {
                             user = null;
                             return $q.resolve(null);
                         }
                         user = response.data;
                         return $q.resolve(response.data);
+                    },function(response){
+                        user = null;
                     }
                 )
             }
