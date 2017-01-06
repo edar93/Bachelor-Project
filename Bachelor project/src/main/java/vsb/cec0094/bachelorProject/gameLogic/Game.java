@@ -14,12 +14,16 @@ public class Game {
     private List<Player> players;
     private DrawPile drawPile;
     private Table table;
+    private int playersCount;
+    private int playerOnTurn;
 
     public Game(GameInQueue gameInQueue){
+        playersCount = gameInQueue.getPlayersList().size();
+        playerOnTurn = 1;
         table = new Table();
-        drawPile = new DrawPile(true, gameInQueue.getPlayersList().size() == 5);
+        drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();
-        players = new ArrayList<>(gameInQueue.getPlayersList().size());
+        players = new ArrayList<>(playersCount);
         players = gameInQueue.getPlayersList().stream()
                 .map (p -> new Player(p.getLogin()))
                 .collect(Collectors.toList());
@@ -55,5 +59,21 @@ public class Game {
 
     public void setTable(Table table) {
         this.table = table;
+    }
+
+    public int getPlayersCount() {
+        return playersCount;
+    }
+
+    public void setPlayersCount(int playersCount) {
+        this.playersCount = playersCount;
+    }
+
+    public int getPlayerOnTurn() {
+        return playerOnTurn;
+    }
+
+    public void setPlayerOnTurn(int playerOnTurn) {
+        this.playerOnTurn = playerOnTurn;
     }
 }
