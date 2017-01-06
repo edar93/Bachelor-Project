@@ -3,8 +3,6 @@
 loginCtrl
     .controller('loginCtrl', function ($scope, $location, loginService) {
 
-        console.log('loginCtrl');
-
         $scope.userName;
         $scope.password;
         $scope.invalidCredentials = false;

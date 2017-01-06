@@ -26,7 +26,7 @@ public class DrawPile {
                 cards.add(new Exptedition(CardType.EXPEDITION, 3, 5, 1, 1, 1));
             }
 
-            for(int i = 2; i < 2; i++){
+            for (int i = 0; i < 2; i++) {
                 cards.add(new Card(CardType.TAX_INFLUENCE));
                 cards.add(new Card(CardType.TAX_SWORDS));
             }
@@ -43,6 +43,12 @@ public class DrawPile {
                 cards.add(new Card(CardType.MADEMOISELLE, 7, 2));
                 cards.add(new Card(CardType.MADEMOISELLE, 9, 3));
                 cards.add(new Card(CardType.ADMIRAL, 9, 3));
+                cards.add(new Card(CardType.TRADER_FLUTE, 3, 1));
+                cards.add(new Card(CardType.TRADER_FRIGADE, 3, 1));
+                cards.add(new Card(CardType.TRADER_GALLEON, 3, 1));
+                cards.add(new Card(CardType.TRADER_PINACE, 3, 1));
+                cards.add(new Card(CardType.TRADER_SKIFF, 3, 1));
+
             }
             for (int i = 0; i < 3; i++) {
                 cards.add(new Card(CardType.JACK_OF_ALL_TRADES, 6, 1));
@@ -62,11 +68,11 @@ public class DrawPile {
             }
 
 
-            cards.add(new Card(CardType.BRIGA, 2, 1));
+            cards.add(new Card(CardType.SKIFF, 2, 1));
             cards.add(new Card(CardType.FLUTE, 2, 1));
             cards.add(new Card(CardType.FLUTE, 3, 2));
-            cards.add(new Card(CardType.BRIGA, 3, 3));
-            cards.add(new Card(CardType.BRIGA, 4, 5));
+            cards.add(new Card(CardType.SKIFF, 3, 3));
+            cards.add(new Card(CardType.SKIFF, 4, 5));
             cards.add(new Card(CardType.FLUTE, 4, 5));
             cards.add(new Card(CardType.FRIGATE, 3, 1000));
             cards.add(new Card(CardType.FRIGATE, 4, 1000));
@@ -76,9 +82,9 @@ public class DrawPile {
             cards.add(new Card(CardType.PINACE, 3, 2));
             cards.add(new Card(CardType.PINACE, 4, 4));
             for (int i = 0; i < 2; i++) {
-                cards.add(new Card(CardType.BRIGA, 2, 3));
+                cards.add(new Card(CardType.SKIFF, 2, 3));
                 cards.add(new Card(CardType.FLUTE, 2, 2));
-                cards.add(new Card(CardType.BRIGA, 3, 5));
+                cards.add(new Card(CardType.SKIFF, 3, 5));
                 cards.add(new Card(CardType.FLUTE, 3, 5));
                 cards.add(new Card(CardType.FRIGATE, 3, 6));
                 cards.add(new Card(CardType.GALLEON, 3, 7));
@@ -86,7 +92,7 @@ public class DrawPile {
                 cards.add(new Card(CardType.PINACE, 3, 4));
             }
             for (int i = 0; i < 3; i++) {
-                cards.add(new Card(CardType.BRIGA, 1, 1));
+                cards.add(new Card(CardType.SKIFF, 1, 1));
                 cards.add(new Card(CardType.FLUTE, 1, 1));
                 cards.add(new Card(CardType.FRIGATE, 1, 1));
                 cards.add(new Card(CardType.FRIGATE, 2, 3));

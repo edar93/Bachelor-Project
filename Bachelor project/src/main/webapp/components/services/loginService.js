@@ -27,7 +27,6 @@ var loginService = function ($q, backendGateway) {
             ignoreAuthModule: 'ignoreAuthModule'
         };
 
-        var test = backendGateway.post();
         return backendGateway.post('LOGIN_URL', '', config, true)
             .then(function (response) {
                 return backendGateway.get('GET_USER', null, true)
