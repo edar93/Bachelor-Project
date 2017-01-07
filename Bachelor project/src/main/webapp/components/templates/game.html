@@ -1,6 +1,21 @@
-<h1>game</h1>
+<div id="localPlayer">
+    <h4>{{localPlayer.login}}</h4>
+    <p>{{localPlayer.coins}}</p>
+    <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
+    <div ng-repeat="card in localPlayer.cards">
+        <img src="images/{{card}}">
+    </div>
+</div>
 
-<h2>playersList : {{playersList}}</h2>
-<h2>localPlayer : {{localPlayer}}</h2>
-<img src="images/SETTLER_4_1.jpg">
-<img src="images/coin.jpg">
+<div id="table">
+    <h3>Table</h3>
+    <div ng-repeat="card in table.cards">
+        <img src="images/{{card}}">
+    </div>
+
+</div>
+
+playersList : {{playersList}}<br/>
+localPlayer : {{localPlayer}}<p>
+    <!--<img src="images/SETTLER_4_1.jpg">-->
+    <!--<img src="images/coin.jpg">-->

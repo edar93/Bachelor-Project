@@ -67,7 +67,6 @@ public class DrawPile {
                 cards.add(new Card(CardType.SAILOR, 3, 1));
             }
 
-
             cards.add(new Card(CardType.SKIFF, 2, 1));
             cards.add(new Card(CardType.FLUTE, 2, 1));
             cards.add(new Card(CardType.FLUTE, 3, 2));
@@ -101,8 +100,8 @@ public class DrawPile {
                 cards.add(new Card(CardType.PINACE, 1, 1));
             }
         }
-
-        Collections.shuffle(cards);
+        //TODO restore shuffle
+        //Collections.shuffle(cards);
 
     }
 

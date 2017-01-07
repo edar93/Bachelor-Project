@@ -76,4 +76,5 @@ public class Game {
     public void setPlayerOnTurn(int playerOnTurn) {
         this.playerOnTurn = playerOnTurn;
     }
+
 }

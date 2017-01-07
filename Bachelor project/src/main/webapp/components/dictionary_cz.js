@@ -20,5 +20,6 @@ var dictionaryCZ = {
     MAX_PLAYERS_COUNT: 'maximální počet hráčů:',
     JOIN_GAME: 'Připojit se do hry',
     GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',
+    INFLUENCE_POINTS: 'Body vlivu',
     PLAYERS: 'Hráči'
 };

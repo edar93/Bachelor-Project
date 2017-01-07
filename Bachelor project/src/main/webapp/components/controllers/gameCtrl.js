@@ -6,5 +6,4 @@ gameCtrl
         gameStatusService.setScope($scope);
         gameStatusService.updateGame(loginService.getUser());
 
-
     });

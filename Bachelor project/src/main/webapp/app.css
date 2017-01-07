@@ -1,4 +1,8 @@
-/* app css stylesheet */
+
+img {
+  max-width: 11%;
+  max-height: 11%;
+}
 
 .centeredDiv {
   text-align:center;

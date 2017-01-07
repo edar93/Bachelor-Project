@@ -5,6 +5,7 @@ var gameStatusService = function (backendGateway, gameService) {
     this.updateGame = updateGame;
     this.setScope = setScope;
 
+    var imageFormat = '.jpg';
     var localUser;
     var playersList;
     var table;
@@ -13,11 +14,11 @@ var gameStatusService = function (backendGateway, gameService) {
 
     var gameScope;
 
-    function setScope(scope){
+    function setScope(scope) {
         gameScope = scope;
     }
 
-    function updateGame(user){
+    function updateGame(user) {
         localUser = user;
         gameService.getPlayersGame(user)
             .then(function (data) {
@@ -33,20 +34,41 @@ var gameStatusService = function (backendGateway, gameService) {
         );
     }
 
-    function parseGameToService(game){
-        for(var i = game.players.length - 1; i >= 0; i--){
-            if(game.players[i].login == localUser){
+    function parseGameToService(game) {
+        game = transformAddCards(game);
+        for (var i = game.players.length - 1; i >= 0; i--) {
+            if (game.players[i].login == localUser) {
                 localPlayer = game.players[i];
-                game.players.splice(i,1);
+                game.players.splice(i, 1);
             }
         }
 
         playersList = game.players;
-        table = game.table.cards;
+        table = game.table;
         playersCount = game.playersCount;
     }
 
-    function setToScope(){
+    function transformAddCards(game) {
+
+        //TODO discovered expeditions
+
+        for (var i = 0; i < game.players.length; i++) {
+            for (var j = 0; j < game.players[i].cards.length; j++) {
+                game.players[i].cards[j] = transformCard(game.players[i].cards[j]);
+            }
+        }
+        for (var i = 0; i < game.table.cards.length; i++) {
+            game.table.cards[i] = transformCard(game.table.cards[i]);
+        }
+        return game;
+    }
+
+    function transformCard(card) {
+        //TODO expeditions, taxes;
+        return card.cardType + '_' + card.coin + '_' + card.influence + imageFormat;
+    }
+
+    function setToScope() {
         gameScope.table = table;
         gameScope.playersCount = playersCount;
         gameScope.playersList = playersList;
