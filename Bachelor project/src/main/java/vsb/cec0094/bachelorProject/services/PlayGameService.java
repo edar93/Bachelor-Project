@@ -21,6 +21,7 @@ public class PlayGameService {
     @RequestMapping(method = RequestMethod.POST, value = "/gettestgame")
     @ResponseBody
     public Game createGameInQueue(@RequestBody GameInQueue game) {
+       // Game activeGame = new Game(game);
         return new Game(game);
     };
 }
