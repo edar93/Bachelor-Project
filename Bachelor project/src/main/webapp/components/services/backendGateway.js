@@ -20,9 +20,12 @@ var backendGateway = function ($http, $q) {
         TEST: 'play/gettestgame'
     };
 
-    function put(url, data, config, nonJsonResponce) {
+    function put(url, data, config, jsonRequest, nonJsonResponce) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
+        }
+        if(jsonRequest){
+            data = JSON.stringify(data);
         }
         return $http.put(translateUrl(url), data, config)
             .then(function (responese) {
@@ -34,9 +37,12 @@ var backendGateway = function ($http, $q) {
         );
     }
 
-    function post(url, data, config, nonJsonResponce) {
+    function post(url, data, config, jsonRequest, nonJsonResponce) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
+        }
+        if(jsonRequest){
+                data = JSON.stringify(data);
         }
         return $http.post(translateUrl(url), data, config)
             .then(function (responese) {

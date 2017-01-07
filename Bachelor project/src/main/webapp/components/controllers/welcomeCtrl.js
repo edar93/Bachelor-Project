@@ -41,11 +41,12 @@ welcomeCtrl
             gameService.createGame().then
             (function (response) {
                 console.log(response.data, 'game was created');
+                locationService.goToGameCretion();
             }, function (response) {
                 console.log(response.data, 'game creation fail');
             });
 
-            locationService.goToGameCretion();
+
         }
 
 

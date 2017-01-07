@@ -27,7 +27,7 @@ var loginService = function ($q, backendGateway) {
             ignoreAuthModule: 'ignoreAuthModule'
         };
 
-        return backendGateway.post('LOGIN_URL', '', config, true)
+        return backendGateway.post('LOGIN_URL', '', config, false, true)
             .then(function (response) {
                 return backendGateway.get('GET_USER', null, true)
                     .then(function (response) {
@@ -50,7 +50,7 @@ var loginService = function ($q, backendGateway) {
     }
 
     function register(user) {
-        return backendGateway.post('REGISTER_URL', user)
+        return backendGateway.post('REGISTER_URL', user);
     }
 
 };

@@ -8,7 +8,7 @@ var gameStatusService = function (backendGateway, gameService) {
         gameService.getPlayersGame(user)
             .then(function (data) {
                 console.log('data', data);
-                backendGateway.post('TEST', JSON.stringify(data)).then(
+                backendGateway.post('TEST', data, undefined, true).then(
                     function (resoponse) {
                         console.log(resoponse);
                     }
