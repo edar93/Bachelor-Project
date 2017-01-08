@@ -59,7 +59,6 @@ public class PlayGameService {
         GameInQueue game = gameDao.getPlayersGame(player);
         if (player.equals(game.getOwner())) {
             gamesHolder.addGame(new Game(game));
-            System.out.println("game was added");
         }
     }
 
@@ -69,7 +68,6 @@ public class PlayGameService {
     public Game getMyGame() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
-        System.out.println("founded game " + game);
         return gamesHolder.getGame(game.getOwner());
     }
 
@@ -82,6 +80,14 @@ public class PlayGameService {
         return game.faceCard();
     }
 
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
+    @ResponseBody
+    public void pickCard(@RequestBody Integer id) {
+        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        Game game = getValidatedGame (player);
+        game.playerGetCardFromTable(id);
+    }
 
     /**
      * Check if player is on turn

@@ -3,7 +3,7 @@
     <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>
     <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
     <div ng-repeat="card in localPlayer.cards track by $index">
-        <img src="images/{{card}}">
+        <img src="images/{{card.image}}">
     </div>
 </div>
 
@@ -11,7 +11,7 @@
     <h3>Table</h3>
     <button ng-show="localUser == activePlayer" ng-click="faceCard()">{{'FACE_CARD' | translate}}</button>
     <div ng-repeat="card in table.cards track by $index">
-        <img src="images/{{card}}">
+        <img src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>
 </div>
 
@@ -20,7 +20,7 @@
     <p>{{'COINS' | translate}} {{player.coins}}</p>
     <p>{{'INFLUENCE_POINTS' | translate}} {{player.influencePoints}}</p>
     <div ng-repeat="card in player.cards track by $index">
-        <img src="images/{{card}}">
+        <img src="images/{{card.image}}">
     </div>
 
 </div>

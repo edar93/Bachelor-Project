@@ -34,6 +34,10 @@ public class Game {
         return table.getCardFroDrawPile(drawPile);
     };
 
+    public void playerGetCardFromTable(int cardPosition){
+        players.get(playerOnTurn).getCardFromTable(table, cardPosition);
+    }
+
     public String getOwner() {
         return owner;
     }

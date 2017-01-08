@@ -51,11 +51,11 @@ var gameStatusService = function (backendGateway, gameService) {
         //TODO discovered expeditions
         for (var i = 0; i < game.players.length; i++) {
             for (var j = 0; j < game.players[i].cards.length; j++) {
-                game.players[i].cards[j] = transformCard(game.players[i].cards[j]);
+                game.players[i].cards[j].image = transformCard(game.players[i].cards[j]);
             }
         }
         for (var i = 0; i < game.table.cards.length; i++) {
-            game.table.cards[i] = transformCard(game.table.cards[i]);
+            game.table.cards[i].image = transformCard(game.table.cards[i]);
         }
         return game;
     }

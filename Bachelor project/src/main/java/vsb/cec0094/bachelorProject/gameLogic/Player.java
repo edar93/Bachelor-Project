@@ -1,6 +1,8 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import javafx.scene.control.Tab;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,14 @@ public class Player {
     private int influencePoints;
     private int swords;
     private List<Card> cards;
+
+    public boolean getCardFromTable(Table table, int position){
+        Card card = table.getCards().get(position);
+        //TODO validation
+        cards.add(card);
+        table.getCards().remove(position);
+        return true;
+    }
 
     public Player(String login){
         this.login = login;

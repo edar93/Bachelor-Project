@@ -20,6 +20,7 @@ var backendGateway = function ($http, $q) {
         TEST: 'play/gettestgame',
         START_GAME: 'play/startGame',
         FACE_CARD: 'play/facecard',
+        PICK_CARD: 'play/pickcard',
         GET_MY_GAME: 'play/getMyGame'
     };
 
@@ -34,7 +35,7 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('put fail', url, data, config, nonJsonResponce, responese);
+                console.log('put fail', url, data, config, jsonRequest, nonJsonResponce, responese);
                 return $q.reject(responese);
             }
         );
@@ -51,13 +52,14 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('post fail', url, data, config, nonJsonResponce, responese);
+                console.log('post fail', url, data, config, jsonRequest, nonJsonResponce, responese);
                 return $q.reject(responese);
             }
         );
     }
 
     function get(url, config, nonJsonResponce) {
+        //TODO add jsonRequest
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
