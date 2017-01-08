@@ -6,6 +6,7 @@ var gameService = function (backendGateway) {
     this.getPlayersGame = getPlayersGame;
     this.getAllGamesToJoin = getAllGamesToJoin;
     this.joinGame = joinGame;
+    this.startGame = startGame;
 
     function joinGame(owner) {
         return backendGateway.put('JOIN_GAME', owner);
@@ -33,6 +34,10 @@ var gameService = function (backendGateway) {
 
     function createGame() {
         return backendGateway.post('CREATE_NEW_GAME')
+    }
+
+    function startGame() {
+        return backendGateway.post('START_GAME');
     }
 };
 

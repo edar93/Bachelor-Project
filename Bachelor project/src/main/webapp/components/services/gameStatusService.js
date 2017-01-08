@@ -3,7 +3,7 @@
 var gameStatusService = function (backendGateway, gameService) {
 
     this.updateGame = updateGame;
-    this.setScope = setScope;
+    this.setScopeAndPlayer = setScopeAndPlayer;
 
     var imageFormat = '.jpg';
     var localUser;
@@ -15,24 +15,20 @@ var gameStatusService = function (backendGateway, gameService) {
 
     var gameScope;
 
-    function setScope(scope) {
+    function setScopeAndPlayer(scope, player) {
         gameScope = scope;
+        console.log(player, 'player');
+        localUser = player;
     }
 
-    function updateGame(user) {
-        localUser = user;
-        gameService.getPlayersGame(user)
-            .then(function (data) {
-                backendGateway.post('TEST', data, undefined, true).then(
-                    function (resoponse) {
-                        var game = resoponse.data;
-                        parseGameToService(game);
-                        setToScope();
-                        console.log(game);
-                    }
-                );
-            }
-        );
+    function updateGame() {
+        backendGateway.get('GET_MY_GAME').then(
+            function (resoponse) {
+                var game = resoponse.data;
+                console.log(game);
+                parseGameToService(game);
+                setToScope();
+            });
     }
 
     function parseGameToService(game) {

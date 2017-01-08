@@ -5,7 +5,7 @@ gameCtrl
 
         $scope.faceCard = gameActionService.faceCard;
 
-        gameStatusService.setScope($scope);
+        gameStatusService.setScopeAndPlayer($scope, loginService.getUser());
         gameStatusService.updateGame(loginService.getUser());
 
     });

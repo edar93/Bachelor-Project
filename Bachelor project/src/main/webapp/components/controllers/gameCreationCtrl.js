@@ -31,11 +31,13 @@ gameCreationCtrl
                     } else {
                         $scope.creator = false;
                     }
-                }
-            );
+                });
         }
 
         function startGame() {
-            locationService.goToGame();
+            gameService.startGame()
+                .then(function () {
+                    locationService.goToGame();
+                });
         }
     });

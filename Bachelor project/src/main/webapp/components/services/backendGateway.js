@@ -17,7 +17,9 @@ var backendGateway = function ($http, $q) {
         GET_PLAYERS_GAME: 'game/getplayersgame',
         GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
         JOIN_GAME: 'game/joingame',
-        TEST: 'play/gettestgame'
+        TEST: 'play/gettestgame',
+        START_GAME: 'play/startGame',
+        GET_MY_GAME: 'play/getMyGame'
     };
 
     function put(url, data, config, jsonRequest, nonJsonResponce) {

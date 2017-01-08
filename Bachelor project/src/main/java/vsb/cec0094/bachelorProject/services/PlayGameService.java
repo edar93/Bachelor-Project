@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import vsb.cec0094.bachelorProject.dao.GameDao;
@@ -27,7 +28,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/gettestgame")
     @ResponseBody
-    public Game createGameInQueue(@RequestBody GameInQueue game) {
+    public Game createTestGameInQueue(@RequestBody GameInQueue game) {
         Game activeGame = new Game(game);
         List cardList = new ArrayList<Card>();
         Player p = new Player("lojzik");
@@ -37,7 +38,7 @@ public class PlayGameService {
 
         List<Player> playerList = activeGame.getPlayers();
 
-        playerList.set(1,p);
+        playerList.set(1, p);
         Player activePlayer = playerList.get(0);
         activePlayer.setCards(cardList);
 
@@ -47,4 +48,27 @@ public class PlayGameService {
 
         return activeGame;
     }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/startGame")
+    @ResponseBody
+    public void createGameInQueue() {
+        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        GameInQueue game = gameDao.getPlayersGame(player);
+        if (player.equals(game.getOwner())) {
+            gamesHolder.addGame(new Game(game));
+            System.out.println("game was added");
+        }
+    }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
+    @ResponseBody
+    public Game getMyGame() {
+        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        GameInQueue game = gameDao.getPlayersGame(player);
+        System.out.println("founded game " + game);
+        return gamesHolder.getGame(game.getOwner());
+    }
+
 }
