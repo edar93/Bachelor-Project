@@ -38,6 +38,8 @@ public class DrawPile {
             cards.add(new Card(CardType.PIRATE, 7, 2));
             cards.add(new Card(CardType.PIRATE, 9, 3));
             cards.add(new Card(CardType.ADMIRAL, 5, 1));
+            cards.add(new Card(CardType.TRADER_PINACE, 3, 1));
+            cards.add(new Card(CardType.TRADER_PINACE, 5, 2));
             for (int i = 0; i < 2; i++) {
                 cards.add(new Card(CardType.SAILOR, 5, 2));
                 cards.add(new Card(CardType.MADEMOISELLE, 7, 2));
@@ -46,7 +48,6 @@ public class DrawPile {
                 cards.add(new Card(CardType.TRADER_FLUTE, 3, 1));
                 cards.add(new Card(CardType.TRADER_FRIGADE, 3, 1));
                 cards.add(new Card(CardType.TRADER_GALLEON, 3, 1));
-                cards.add(new Card(CardType.TRADER_PINACE, 3, 1));
                 cards.add(new Card(CardType.TRADER_SKIFF, 3, 1));
 
             }

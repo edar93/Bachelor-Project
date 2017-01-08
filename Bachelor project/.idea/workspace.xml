@@ -1,12 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5813718-71ff-497f-a9b0-77621894c557" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/services/gameService.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/services/gameService.js" />
+    <list default="true" id="a5813718-71ff-497f-a9b0-77621894c557" name="Default" comment="card displaying now work for all types of card">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/ADMIRAL_5_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/ADMIRAL_7_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/ADMIRAL_9_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/CAPTAIN_6_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_0_0_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_0_2_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_0_2_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_1_1_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_2_0_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/EXPEDITION_2_0_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_1_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_2_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_2_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_3_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_3_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FLUTE_4_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FRIGATE_1_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FRIGATE_2_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FRIGATE_3_1000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FRIGATE_3_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/FRIGATE_4_1000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GALLEON_1_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GALLEON_2_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GALLEON_3_1000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GALLEON_3_7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GALLEON_4_1000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/GOVERNOR_8_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/JACK_OF_ALL_TRADES_6_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/JESTER_5_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/JESTER_7_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/JESTER_9_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/MADEMOISELLE_7_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/MADEMOISELLE_9_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_1_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_2_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_2_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_3_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_3_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PINACE_4_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PIRATE_5_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PIRATE_7_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PIRATE_9_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/PRIEST_4_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SAILOR_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SAILOR_5_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SAILOR_7_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SETTLER_4_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_1_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_2_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_2_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_3_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_3_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/SKIFF_4_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TAX_INFLUENCE.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TAX_SWORDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_FLUTE_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_FLUTE_5_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_FRIGADE_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_GALLEON_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_PINACE_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_PINACE_5_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/TRADER_SKIFF_3_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/coin.jpg" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0007.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0009.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0010.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0011.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0012.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0013.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0014.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0015.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0018.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0019.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0020.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0021.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0022.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0023.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0025.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0026.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0027.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0028.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0029.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0030.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0031.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0032.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0033.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0034.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0035.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0036.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0037.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0038.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0039.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0040.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0041.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0042.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0043.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0044.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0045.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0046.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0047.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0048.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0049.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0050.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0051.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0052.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0053.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0054.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0055.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0056.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0057.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0058.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0059.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0060.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0061.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0062.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0063.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0064.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0065.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0066.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0067.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0068.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0069.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0070.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0071.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0072.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0073.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0074.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0075.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0076.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0077.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0078.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0079.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0080.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0081.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0082.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0083.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0084.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0085.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0086.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0087.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0088.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0089.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0090.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0091.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0092.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0093.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0094.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0095.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0096.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0097.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0098.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0099.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0101.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0102.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0103.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0104.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0105.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0106.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0107.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0108.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0109.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0110.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0111.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0112.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0113.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0114.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0115.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0116.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0117.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0118.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0119.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0120.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0121.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\User\Desktop\vyvoj\portRoyalGame\Bachelor project\src\main\webapp\images\SKM_C224e16122813170_0122.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -32,21 +209,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gameStatusService.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gameStatusService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4741036">
-              <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+            <state vertical-scroll-proportion="-41.03448">
+              <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameService.js">
+      <file leaf-file-name="ADMIRAL_5_1.jpg" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/images/ADMIRAL_5_1.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameActionService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="22" />
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/CardType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrawPile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -56,17 +280,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backendGateway.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="48" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="48" />
+              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -78,29 +292,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamesHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-              <folding>
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -175,19 +366,19 @@
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/GameFunctionService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/welcomeCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/loginService.js" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/app.css" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/dictionary_cz.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/config.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameService.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCreationCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCtrl.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js" />
       </list>
     </option>
@@ -279,36 +470,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bachelorProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -372,127 +533,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bachelorProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,7 +619,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="gameLogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pack" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,11 +653,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="gameLogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JPAImpl" />
+              <option name="myItemId" value="card" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1093,7 +1138,7 @@
       <workItem from="1483707235484" duration="1745000" />
       <workItem from="1483714708843" duration="14205000" />
       <workItem from="1483779118411" duration="16391000" />
-      <workItem from="1483869231566" duration="8009000" />
+      <workItem from="1483869231566" duration="11087000" />
     </task>
     <task id="LOCAL-00001" summary="added working login page">
       <created>1482094446979</created>
@@ -1269,11 +1314,17 @@
       <option name="project" value="LOCAL" />
       <updated>1483878066017</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="add game creation">
+      <created>1483886983232</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1483886983232</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183579000" />
+    <option name="totallyTimeSpent" value="186657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1288,7 +1339,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4519685" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48346457" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32283464" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1329,7 +1380,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="use DB in spring sec, create register backend and base registration functionality on angularJS" />
     <MESSAGE value="work on registration and login" />
     <MESSAGE value="add gameInQueue model, fi login bug" />
     <MESSAGE value="add creation gameInQueue from front end to back end" />
@@ -1354,7 +1404,8 @@
     <MESSAGE value="add loading game to scope" />
     <MESSAGE value="add displaying of images" />
     <MESSAGE value="add gameActionService" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gameActionService" />
+    <MESSAGE value="add game creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add game creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1367,13 +1418,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/login_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.307693">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/root-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.9259257">
@@ -1473,6 +1517,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="100" selection-start-line="8" selection-start-column="100" selection-end-line="8" selection-end-column="100" />
+          <folding>
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#657#658#0" expanded="false" />
+            <element signature="e#686#687#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#753#754#0" expanded="false" />
+            <element signature="e#787#788#0" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#846#847#0" expanded="false" />
+            <element signature="e#887#888#0" expanded="false" />
+            <element signature="e#923#924#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#976#977#0" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
+            <element signature="e#1041#1042#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1480,6 +1540,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27868852">
           <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#254#255#0" expanded="false" />
+            <element signature="e#300#301#0" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1509,21 +1575,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="121" column="63" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/CardType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1557,14 +1608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.263587">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1628,14 +1671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1705,14 +1740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.17417417">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1725,14 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1761,12 +1780,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4741036">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/services/PlayGameService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/CardType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-41.03448">
+          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/ADMIRAL_5_1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
