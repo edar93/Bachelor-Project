@@ -19,7 +19,7 @@ public class Game {
 
     public Game(GameInQueue gameInQueue){
         playersCount = gameInQueue.getPlayersList().size();
-        playerOnTurn = 1;
+        playerOnTurn = 0;
         table = new Table();
         drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();

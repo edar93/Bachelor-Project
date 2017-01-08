@@ -11,6 +11,7 @@ var gameStatusService = function (backendGateway, gameService) {
     var table;
     var playersCount;
     var localPlayer;
+    var activePlayer;
 
     var gameScope;
 
@@ -35,6 +36,8 @@ var gameStatusService = function (backendGateway, gameService) {
     }
 
     function parseGameToService(game) {
+        activePlayer = game.players[game.playerOnTurn].login;
+
         game = transformAddCards(game);
         for (var i = game.players.length - 1; i >= 0; i--) {
             if (game.players[i].login == localUser) {

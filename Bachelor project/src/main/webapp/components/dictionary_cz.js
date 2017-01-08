@@ -21,5 +21,7 @@ var dictionaryCZ = {
     JOIN_GAME: 'Připojit se do hry',
     GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',
     INFLUENCE_POINTS: 'Body vlivu',
+    COINS: 'Mince',
+    FACE_CARD: 'Otočit kartu',
     PLAYERS: 'Hráči'
 };

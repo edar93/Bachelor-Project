@@ -47,6 +47,4 @@ public class PlayGameService {
 
         return activeGame;
     }
-
-    ;
 }
