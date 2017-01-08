@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
@@ -28,6 +29,10 @@ public class Game {
                 .map (p -> new Player(p.getLogin()))
                 .collect(Collectors.toList());
     }
+
+    public Card faceCard(){
+        return table.getCardFroDrawPile(drawPile);
+    };
 
     public String getOwner() {
         return owner;

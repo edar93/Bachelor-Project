@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
+import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
@@ -70,5 +72,43 @@ public class PlayGameService {
         System.out.println("founded game " + game);
         return gamesHolder.getGame(game.getOwner());
     }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/facecard")
+    @ResponseBody
+    public Card faceCard() {
+        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        Game game = getValidatedGame (player);
+        return game.faceCard();
+    }
+
+
+    /**
+     * Check if player is on turn
+     * @param localPlayer
+     * @return game in which player is
+     */
+    private Game getValidatedGame(String localPlayer){
+        GameInQueue gameInQueue = gameDao.getPlayersGame(localPlayer);
+        if(gameInQueue == null){
+            throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in database");
+        }
+        Game game = gamesHolder.getGame(gameInQueue.getOwner());
+        if(game == null){
+            throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in memory");
+        }
+        List<Player> playerList = game.getPlayers();
+        String playerOnTurn = playerList.get(game.getPlayerOnTurn()).getLogin();
+
+        if (! playerOnTurn.equals(localPlayer)){
+            throw new NotPlayersTurnException(" not \"" + localPlayer + "\" turn");
+        }
+
+        return game;
+    }
+
+
+
+    ;
 
 }

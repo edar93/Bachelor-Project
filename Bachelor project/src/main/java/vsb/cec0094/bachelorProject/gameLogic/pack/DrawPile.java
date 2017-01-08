@@ -6,12 +6,17 @@ import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.card.Exptedition;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DrawPile {
 
     private List<Card> cards;
+
+
+    public Card giveCard(){
+        //TODO if cards 0
+        return cards.remove(0);
+    };
 
     public DrawPile(boolean full, boolean fivePlayers) {
         this.cards = new ArrayList<>();

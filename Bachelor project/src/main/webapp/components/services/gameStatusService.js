@@ -48,9 +48,7 @@ var gameStatusService = function (backendGateway, gameService) {
     }
 
     function transformAddCards(game) {
-
         //TODO discovered expeditions
-
         for (var i = 0; i < game.players.length; i++) {
             for (var j = 0; j < game.players[i].cards.length; j++) {
                 game.players[i].cards[j] = transformCard(game.players[i].cards[j]);
@@ -67,7 +65,7 @@ var gameStatusService = function (backendGateway, gameService) {
             return card.cardType + imageFormat;
         }
         if(card.cardType == 'EXPEDITION'){
-            return card.cardType + '_' + card.anchor + '_' + card.cross + '_' + card.hut + '_' + imageFormat;
+            return card.cardType + '_' + card.anchor + '_' + card.cross + '_' + card.hut + imageFormat;
         }
         return card.cardType + '_' + card.coin + '_' + card.influence + imageFormat;
     }
