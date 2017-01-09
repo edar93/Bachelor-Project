@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="portRoyalApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="portRoyalApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="portRoyalApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Port Royal</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap/bootstrap.css">
-  <link rel="stylesheet/less" href="bootstrap/bootswatch.less">
-  <link rel="stylesheet/less" href="bootstrap/variables.less">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Port Royal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet/less" href="bootstrap/bootswatch.less">
+    <link rel="stylesheet/less" href="bootstrap/variables.less">
 
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-cloak>
 
@@ -22,34 +26,45 @@
 
 <ul class="menu">
     <li><a href="#!/login">login</a></li>
-  </ul>
+</ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <div ng-view></div>
+<div ng-view></div>
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
 
-  <script src="components/config.js"></script>
 
-  <script src="components/controllers/welcomeCtrl.js"></script>
-  <script src="components/controllers/loginCtrl.js"></script>
-  <script src="components/controllers/registerCtrl.js"></script>
-  <script src="components/controllers/gameCreationCtrl.js"></script>
-  <script src="components/controllers/gameCtrl.js"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<script src="bower_components/sockjs/sockjs.js"></script>
+<!--<script src="bower_components/stomp-websocket/index.js"></script>-->
+<script src="bower_components/stomp-websocket/lib/stomp.js"></script>
+<!--<script src="bower_components/stomp-websocket/lib/stomp-node.js"></script>-->
 
-  <script src="components/services/backendGateway.js"></script>
-  <script src="components/services/loginService.js"></script>
-  <script src="components/services/gameService.js"></script>
-  <script src="components/services/gameStatusService.js"></script>
-  <script src="components/services/gameActionService.js"></script>
-  <script src="components/services/locationService.js"></script>
+<script src="components/config.js"></script>
 
-  <script src="components/dictionary_cz.js"></script>
+<script src="components/controllers/welcomeCtrl.js"></script>
+<script src="components/controllers/loginCtrl.js"></script>
+<script src="components/controllers/registerCtrl.js"></script>
+<script src="components/controllers/gameCreationCtrl.js"></script>
+<script src="components/controllers/gameCtrl.js"></script>
+
+<script src="components/services/backendGateway.js"></script>
+<script src="components/services/loginService.js"></script>
+<script src="components/services/gameService.js"></script>
+<script src="components/services/gameStatusService.js"></script>
+<script src="components/services/gameActionService.js"></script>
+<script src="components/services/locationService.js"></script>
+<script src="components/services/globalChatService.js"></script>
+
+<script src="components/services/stompService.js"></script>
+
+<script src="components/dictionary_cz.js"></script>
 
 </body>
 </html>

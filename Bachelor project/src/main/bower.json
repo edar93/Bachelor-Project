@@ -5,6 +5,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "sockjs": "0.3.4",
+    "requirejs": "2.3.2",
+    "stomp-websocket": "2.3.4",
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",

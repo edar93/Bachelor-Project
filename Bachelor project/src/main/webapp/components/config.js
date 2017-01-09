@@ -4,11 +4,13 @@
 var portRoyalApp = angular.module('portRoyalApp', [
     'ngRoute',
     'pascalprecht.translate',
+    'portRoyalApp.stompService',
     'portRoyalApp.backendGateway',
     'portRoyalApp.loginService',
     'portRoyalApp.locationService',
     'portRoyalApp.gameStatusService',
     'portRoyalApp.gameActionService',
+    'portRoyalApp.globalChatService',
     'portRoyalApp.gameService',
     'portRoyalApp.gameCreationCtrl',
     'portRoyalApp.loginCtrl',

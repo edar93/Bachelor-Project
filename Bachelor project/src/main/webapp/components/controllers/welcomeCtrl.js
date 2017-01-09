@@ -1,7 +1,9 @@
 'use strict';
 
 welcomeCtrl
-    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService) {
+    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService) {
+
+        globalChatService.initChat($scope);
 
         $scope.gamesForJoin = null;
         $scope.user = loginService.getUser();
@@ -13,9 +15,6 @@ welcomeCtrl
         $scope.joinGame = joinGame;
 
         updateGamesForJoin();
-
-
-
 
         function joinGame(owner) {
             gameService.joinGame(owner)

@@ -1,4 +1,18 @@
 <div class="centeredDiv">
+
+    <div>
+        <div>
+            <div>
+                <h1>{{'GLOBAL_CHAT' | translate}}</h1>
+                <p ng-repeat="message in messages track by $index">{{message}}</p>
+            </div>
+            <div ng-disabled="$scope.client != undefined">
+                <label>{{'MESSAGE' | translate}}</label><input type="text" ng-model="text"/>
+                <button id="sendName" ng-click="sendName();">{{'SEND_MESSAGE' | translate}}</button>
+            </div>
+        </div>
+    </div>
+
     <div ng-if="!user">
         <h1>{{'WELCOME_TEXT' | translate}}</h1>
         <button ng-click="goToLoginPage()">
