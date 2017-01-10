@@ -1,26 +1,36 @@
-<div id="localPlayer">
-    <h4>{{localPlayer.login}}</h4>
-    <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>
-    <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
-    <div ng-repeat="card in localPlayer.cards track by $index">
-        <img src="images/{{card.image}}">
-    </div>
-</div>
 
-<div id="table">
+
+<div id="table" class="table">
     <h3>Table</h3>
-    <button ng-show="localUser == activePlayer" ng-click="faceCard()">{{'FACE_CARD' | translate}}</button>
-    <div ng-repeat="card in table.cards track by $index">
+    <img src="images/coin.jpg" class="cards" ng-show="localUser == activePlayer" ng-click="faceCard()">
+    <div class="cards" ng-repeat="card in table.cards track by $index">
         <img src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>
 </div>
 
-<div id="players" ng-repeat="player in playersList">
+<div id="players" ng-repeat="player in playersList" class="playerOther">
     <h4>{{player.login}}</h4>
-    <p>{{'COINS' | translate}} {{player.coins}}</p>
-    <p>{{'INFLUENCE_POINTS' | translate}} {{player.influencePoints}}</p>
-    <div ng-repeat="card in player.cards track by $index">
+
+    <div class="cards" ng-repeat="card in player.cards track by $index">
         <img src="images/{{card.image}}">
     </div>
 
+    <div class="playersStats">
+        <p>{{'COINS' | translate}} {{player.coins}}</p>
+
+        <p>{{'INFLUENCE_POINTS' | translate}} {{player.influencePoints}}</p>
+    </div>
+</div>
+
+<div id="localPlayer" class="playerLocal">
+    <h4>{{localPlayer.login}}</h4>
+
+    <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
+        <img src="images/{{card.image}}">
+    </div>
+    <div class="playersStats">
+        <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>
+
+        <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
+    </div>
 </div>

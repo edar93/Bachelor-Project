@@ -1,35 +1,60 @@
 
 img {
-  max-width: 11%;
-  max-height: 11%;
+    max-height: 14em
+}
+
+.table{
+    text-align: center;
+}
+
+.playerOther {
+    display: inline
+}
+
+.playerLocal {
+    text-align: center;
+    display: inline
+}
+
+.playersStats {
+    display: inline-block
+}
+
+.cards {
+    display: inline-block
+}
+
+.globalChat {
+    float: right;
+    display: inline-block;
 }
 
 .centeredDiv {
-  text-align:center;
-  width: 35%;
-  margin: 0px auto;
+    text-align: center;
+    width: 35%;
+    margin: 0px auto;
 }
 
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
 }
 
 .menu:before {
-  content: "[";
+    content: "[";
 }
 
 .menu:after {
-  content: "]";
+    content: "]";
 }
 
 .menu > li {
-  display: inline;
+    display: inline;
 }
 
 .menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+    content: "|";
+    padding-right: 0.3em;
 }
