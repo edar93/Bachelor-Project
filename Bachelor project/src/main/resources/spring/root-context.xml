@@ -8,14 +8,13 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
 
     <bean id="mySQLDataSource"
-                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>
         <property name="username" value="root"/>
         <property name="password" value="Slepice1"/>
     </bean>
 
-    <!--auto-config="true"-->
     <security:http auto-config="true">
         <security:csrf disabled="true"/>
 
@@ -49,28 +48,17 @@
 
     <security:authentication-manager>
         <security:authentication-provider>
-<!--            <security:user-service>
-                <security:user name="user" password="user"
-                               authorities="ROLE_USER"/>
-                <security:user name="admin" password="admin"
-                               authorities="ROLE_ADMIN,ROLE_USER"
-                />
-            </security:user-service>-->
-
             <security:jdbc-user-service
                     data-source-ref="mySQLDataSource"
                     users-by-username-query="SELECT login AS username, password, enabled FROM user WHERE login=?"
                     authorities-by-username-query="select u.login AS username, 'ROLE_USER' as 'role' from user u WHERE u.login=?"/>
-            <!-- <security:password-encoder ref="passwordEncoder"/>-->
-
+            <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>
     </security:authentication-manager>
 
-    <!--
     <bean id="passwordEncoder"
-            class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-        </bean>
-    -->
+          class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    </bean>
 
 
 </beans>

@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
-
-/**
- * Created by User on 19. 12. 2016.
- */
 
 @Controller
 @RequestMapping("/accounts")
@@ -26,6 +23,7 @@ public class AccountService {
     @ResponseBody
     public void register(@RequestBody UserRegistration userRegistration){
         userRegistration.setEnabled(1);
+        userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
     };
 
