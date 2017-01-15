@@ -3,6 +3,11 @@
 var globalChatService = function (stompService) {
 
     this.initChat = initChat;
+    this.disconnect = disconnect;
+
+    function disconnect(){
+        stompService.disconnect();
+    }
 
     function initChat(scope){
         scope.messages = [];

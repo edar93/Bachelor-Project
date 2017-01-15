@@ -40,20 +40,20 @@ welcomeCtrl
             gameService.createGame().then
             (function (response) {
                 console.log(response.data, 'game was created');
+                globalChatService.disconnect();
                 locationService.goToGameCretion();
             }, function (response) {
                 console.log(response.data, 'game creation fail');
             });
-
-
         }
 
-
         function goToLoginPage() {
+            globalChatService.disconnect();
             locationService.goToLoginPage();
         }
 
         function goToRegistrationPage() {
+            globalChatService.disconnect();
             locationService.goToRegistrationPage();
         }
     }
