@@ -10,10 +10,10 @@ import java.io.IOException;
 
 public class SuccessLogout extends SimpleUrlLogoutSuccessHandler {
 
-	@CrossOrigin
-	@Override
-	public void onLogoutSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication arg2)
-			throws IOException {
-		System.out.println("Logout");
-	}
+    @CrossOrigin
+    @Override
+    public void onLogoutSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication arg2)
+            throws IOException {
+        System.out.println("Logout");
+    }
 }

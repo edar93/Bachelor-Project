@@ -16,14 +16,14 @@ public class DrawPile {
     @JsonIgnore
     private List<Card> usedCards;
 
-    public Card giveCard(){
-        if(cards.size() == 0){
+    public Card giveCard() {
+        if (cards.size() == 0) {
             Collections.shuffle(usedCards);
             cards.addAll(usedCards);
             usedCards = new ArrayList<>();
         }
         return cards.remove(0);
-    };
+    }
 
     public DrawPile(boolean full, boolean fivePlayers) {
         this.usedCards = new ArrayList<>();
@@ -115,10 +115,6 @@ public class DrawPile {
             }
         }
         Collections.shuffle(cards);
-    }
-
-    public void getusedCards(List usedCards){
-        this.usedCards.addAll(usedCards);
     }
 
     public List<Card> getCards() {

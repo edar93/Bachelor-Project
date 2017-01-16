@@ -16,8 +16,6 @@ public class GameDaoImpl implements GameDao {
 
     private static final String SELECT_ALL_GAMES = "SELECT g FROM GameInQueue g";
     private static final String JOIN_GAME = "UPDATE User SET gameInQueue = :game WHERE login = :player";
-//    private static final String GET_PLAYERS_GAME = "SELECT g FROM GameInQueue g, (SELECT gameInQueue FROM User WHERE login = :player) p WHERE g = p";
-
     private static final String GET_PLAYERS_GAME = "SELECT gameInQueue FROM User WHERE login = :player";
 
     @PersistenceContext
@@ -27,7 +25,7 @@ public class GameDaoImpl implements GameDao {
     public void createGameInQueue(GameInQueue gameInQueue) {
         em.persist(gameInQueue);
         String owner = gameInQueue.getOwner();
-        User player =  em.find(User.class, owner);
+        User player = em.find(User.class, owner);
         player.setGameInQueue(gameInQueue);
         em.merge(player);
     }

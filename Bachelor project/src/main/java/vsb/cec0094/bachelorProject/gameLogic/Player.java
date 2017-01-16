@@ -21,7 +21,7 @@ public class Player {
 
     public boolean getCardFromTable(Table table, int position) {
         Card card = table.getCards().get(position);
-        if(! canCardBeTaken(card)){
+        if (!canCardBeTaken(card)) {
             return false;
         }
         cards.add(card);

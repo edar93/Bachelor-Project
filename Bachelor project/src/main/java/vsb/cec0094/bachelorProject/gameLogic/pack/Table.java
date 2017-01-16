@@ -14,11 +14,11 @@ public class Table {
         this.cards = new ArrayList<>();
     }
 
-    public Card faceCard(DrawPile drawPile){
+    public Card faceCard(DrawPile drawPile) {
         Card card = drawPile.giveCard();
         cards.add(card);
         return card;
-    };
+    }
 
     public List<Card> getCards() {
         return cards;

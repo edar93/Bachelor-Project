@@ -28,7 +28,7 @@ var backendGateway = function ($http, $q) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
-        if(jsonRequest){
+        if (jsonRequest) {
             data = JSON.stringify(data);
         }
         return $http.put(translateUrl(url), data, config)
@@ -45,8 +45,8 @@ var backendGateway = function ($http, $q) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
-        if(jsonRequest){
-                data = JSON.stringify(data);
+        if (jsonRequest) {
+            data = JSON.stringify(data);
         }
         return $http.post(translateUrl(url), data, config)
             .then(function (responese) {
@@ -92,6 +92,5 @@ var backendGateway = function ($http, $q) {
         return config;
     }
 };
-
 angular.module('portRoyalApp.backendGateway', [])
     .service('backendGateway', backendGateway);

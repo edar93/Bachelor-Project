@@ -1,6 +1,7 @@
 <div id="table" class="table">
     <h3>Table</h3>
     <img src="images/coin.jpg" class="cards" ng-show="localUser == activePlayer" ng-click="faceCard()">
+
     <div class="cards" ng-repeat="card in table.cards track by $index">
         <img src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>

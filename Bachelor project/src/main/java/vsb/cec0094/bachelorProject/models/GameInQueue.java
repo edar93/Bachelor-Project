@@ -1,7 +1,5 @@
 package vsb.cec0094.bachelorProject.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -9,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name ="gameinqueue")
+@Table(name = "gameinqueue")
 public class GameInQueue {
 
     @Id

@@ -1,6 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic.card;
 
-public class Exptedition extends Card{
+public class Exptedition extends Card {
 
     private int cross;
     private int anchor;

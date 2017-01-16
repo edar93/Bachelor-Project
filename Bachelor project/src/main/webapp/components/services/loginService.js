@@ -31,7 +31,7 @@ var loginService = function ($q, backendGateway) {
             .then(function (response) {
                 return backendGateway.get('GET_USER', null, true)
                     .then(function (response) {
-                        if(response == undefined || response.data == undefined){
+                        if (response == undefined || response.data == undefined) {
                             user = null;
                             return $q.resolve(undefined);
                         }
@@ -41,12 +41,10 @@ var loginService = function ($q, backendGateway) {
                         }
                         user = response.data;
                         return $q.resolve(response.data);
-                    },function(response){
+                    }, function (response) {
                         user = null;
-                    }
-                )
-            }
-        )
+                    })
+            })
     }
 
     function register(user) {
@@ -54,6 +52,5 @@ var loginService = function ($q, backendGateway) {
     }
 
 };
-
 angular.module('portRoyalApp.loginService', [])
     .service('loginService', loginService);

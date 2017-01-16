@@ -3,11 +3,10 @@ package vsb.cec0094.bachelorProject.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name ="user")
+@Table(name = "user")
 public class User {
 
     @Id

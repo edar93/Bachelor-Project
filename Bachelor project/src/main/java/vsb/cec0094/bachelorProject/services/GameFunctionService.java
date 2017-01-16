@@ -27,7 +27,7 @@ public class GameFunctionService {
 
         gameDao.createGameInQueue(gameInQueue);
         return gameInQueue;
-    };
+    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/basegamestatus")
@@ -35,14 +35,14 @@ public class GameFunctionService {
     public GameInQueue getBaseGameStatus() {
         String owner = SecurityContextHolder.getContext().getAuthentication().getName();
         return gameDao.getGameInQueue(owner);
-    };
+    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getallgamesinqueue")
     @ResponseBody
     public List<GameInQueue> getAllGames() {
         return gameDao.getAllGames();
-    };
+    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, value = "/joingame")
@@ -50,15 +50,13 @@ public class GameFunctionService {
     public void joinGame(@RequestBody String owner) {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         gameDao.joinGame(owner, player);
-    };
+    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/getplayersgame")
     @ResponseBody
     public GameInQueue getPlayersGame(@RequestBody String player) {
-        return gameDao.getPlayersGame( player);
-    };
-
-
+        return gameDao.getPlayersGame(player);
+    }
 
 }

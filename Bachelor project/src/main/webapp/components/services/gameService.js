@@ -18,8 +18,7 @@ var gameService = function (backendGateway) {
                 if (response) {
                     return response.data;
                 }
-            }
-        );
+            });
     }
 
     function getAllGamesToJoin() {
@@ -28,8 +27,7 @@ var gameService = function (backendGateway) {
                 if (response) {
                     return response.data;
                 }
-            }
-        );
+            });
     }
 
     function createGame() {
@@ -40,6 +38,5 @@ var gameService = function (backendGateway) {
         return backendGateway.post('START_GAME');
     }
 };
-
 angular.module('portRoyalApp.gameService', [])
     .service('gameService', gameService);

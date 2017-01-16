@@ -1,7 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
@@ -21,7 +20,7 @@ public class Game {
     @JsonIgnore
     private DrawPile drawPile;
 
-    public Game(GameInQueue gameInQueue){
+    public Game(GameInQueue gameInQueue) {
         exceptions = new Exception();
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
@@ -30,15 +29,15 @@ public class Game {
         owner = gameInQueue.getOwner();
         players = new ArrayList<>(playersCount);
         players = gameInQueue.getPlayersList().stream()
-                .map (p -> new Player(p.getLogin()))
+                .map(p -> new Player(p.getLogin()))
                 .collect(Collectors.toList());
     }
 
-    public void faceCard(){
+    public void faceCard() {
         table.faceCard(drawPile);
-    };
+    }
 
-    public void playerGetCardFromTable(int cardPosition){
+    public void playerGetCardFromTable(int cardPosition) {
         players.get(playerOnTurn).getCardFromTable(table, cardPosition);
     }
 
@@ -97,5 +96,4 @@ public class Game {
     public void setPlayerOnTurn(int playerOnTurn) {
         this.playerOnTurn = playerOnTurn;
     }
-
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
-import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 
 @Controller
@@ -19,19 +18,19 @@ public class AccountService {
     @Autowired
     private AccountDao accountDao;
 
-    @RequestMapping(method = RequestMethod.POST, value="/register")
+    @RequestMapping(method = RequestMethod.POST, value = "/register")
     @ResponseBody
-    public void register(@RequestBody UserRegistration userRegistration){
+    public void register(@RequestBody UserRegistration userRegistration) {
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
-    };
+    }
 
-    @RequestMapping(method = RequestMethod.GET, value="/getLoggedUserLogin")
+    @RequestMapping(method = RequestMethod.GET, value = "/getLoggedUserLogin")
     @ResponseBody
-    public String getLogin(){
+    public String getLogin() {
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
         return user;
-    };
+    }
 
 }

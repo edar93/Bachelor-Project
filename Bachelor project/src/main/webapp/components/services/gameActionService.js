@@ -56,6 +56,5 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
             })
     }
 };
-
 angular.module('portRoyalApp.gameActionService', [])
     .service('gameActionService', gameActionService);
