@@ -6,7 +6,8 @@ var globalChatService = function (stompService) {
     this.disconnect = disconnect;
 
     function disconnect(){
-        stompService.disconnect();
+        //TODO does not work - scope not variable of
+        scope.chat.disconnect();
     }
 
     function initChat(scope){
@@ -25,7 +26,6 @@ var globalChatService = function (stompService) {
             scope.chat.send("/port-royal/sendMessage", {}, JSON.stringify({ 'text': scope.text }));
         }
     }
-
 
 };
 

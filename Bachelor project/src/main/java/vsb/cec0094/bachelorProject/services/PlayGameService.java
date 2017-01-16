@@ -1,6 +1,9 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +17,7 @@ import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
+import vsb.cec0094.bachelorProject.models.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,20 @@ public class PlayGameService {
     private GameDao gameDao;
     @Autowired
     private GamesHolder gamesHolder;
+
+
+    @MessageMapping("/sendAction/{owner}")
+    @SendTo("/myGame/{owner}")
+    public Message broadcastTest(@DestinationVariable String owner) {
+//        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        String player = "adam";
+        Game game = getValidatedGame(player);
+        System.out.println(owner + "<---- owner");
+        owner = game.getOwner();
+        System.out.println(owner + "<---- owner");
+        System.out.println(player + "<---- player");
+        return new Message("it is work !");
+    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/gettestgame")
@@ -114,7 +132,5 @@ public class PlayGameService {
     }
 
 
-
-    ;
 
 }

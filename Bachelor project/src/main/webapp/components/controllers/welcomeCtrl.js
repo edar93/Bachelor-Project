@@ -40,7 +40,7 @@ welcomeCtrl
             gameService.createGame().then
             (function (response) {
                 console.log(response.data, 'game was created');
-                globalChatService.disconnect();
+                //globalChatService.disconnect();
                 locationService.goToGameCretion();
             }, function (response) {
                 console.log(response.data, 'game creation fail');
@@ -48,12 +48,12 @@ welcomeCtrl
         }
 
         function goToLoginPage() {
-            globalChatService.disconnect();
+            //globalChatService.disconnect();
             locationService.goToLoginPage();
         }
 
         function goToRegistrationPage() {
-            globalChatService.disconnect();
+            //globalChatService.disconnect();
             locationService.goToRegistrationPage();
         }
     }
