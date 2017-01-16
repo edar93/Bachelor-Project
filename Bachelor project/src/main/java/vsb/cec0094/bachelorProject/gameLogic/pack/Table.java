@@ -14,7 +14,7 @@ public class Table {
         this.cards = new ArrayList<>();
     }
 
-    public Card getCardFroDrawPile(DrawPile drawPile){
+    public Card faceCard(DrawPile drawPile){
         Card card = drawPile.giveCard();
         cards.add(card);
         return card;

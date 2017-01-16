@@ -1,10 +1,11 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
-import javafx.scene.control.Tab;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Player {
@@ -15,15 +16,28 @@ public class Player {
     private int swords;
     private List<Card> cards;
 
-    public boolean getCardFromTable(Table table, int position){
+    private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
+    //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
+
+    public boolean getCardFromTable(Table table, int position) {
         Card card = table.getCards().get(position);
-        //TODO validation
+        if(! canCardBeTaken(card)){
+            return false;
+        }
         cards.add(card);
         table.getCards().remove(position);
         return true;
     }
 
-    public Player(String login){
+    private boolean canCardBeTaken(Card card) {
+        if (invalidTypes.contains(card.getCardType())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public Player(String login) {
         this.login = login;
         coins = 3;
         influencePoints = 0;

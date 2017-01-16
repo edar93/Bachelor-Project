@@ -1,24 +1,32 @@
 package vsb.cec0094.bachelorProject.gameLogic.pack;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.card.Exptedition;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DrawPile {
 
     private List<Card> cards;
-
+    @JsonIgnore
+    private List<Card> usedCards;
 
     public Card giveCard(){
-        //TODO if cards 0
+        if(cards.size() == 0){
+            Collections.shuffle(usedCards);
+            cards.addAll(usedCards);
+            usedCards = new ArrayList<>();
+        }
         return cards.remove(0);
     };
 
     public DrawPile(boolean full, boolean fivePlayers) {
+        this.usedCards = new ArrayList<>();
         this.cards = new ArrayList<>();
 
         if (full) {
@@ -106,9 +114,11 @@ public class DrawPile {
                 cards.add(new Card(CardType.PINACE, 1, 1));
             }
         }
-        //TODO restore shuffle
-        //Collections.shuffle(cards);
+        Collections.shuffle(cards);
+    }
 
+    public void getusedCards(List usedCards){
+        this.usedCards.addAll(usedCards);
     }
 
     public List<Card> getCards() {

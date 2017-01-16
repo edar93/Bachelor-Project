@@ -14,13 +14,15 @@ public class Game {
 
     private String owner;
     private List<Player> players;
-    @JsonIgnore
-    private DrawPile drawPile;
     private Table table;
     private int playersCount;
     private int playerOnTurn;
+    private Exception exceptions;
+    @JsonIgnore
+    private DrawPile drawPile;
 
     public Game(GameInQueue gameInQueue){
+        exceptions = new Exception();
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
         table = new Table();
@@ -32,12 +34,20 @@ public class Game {
                 .collect(Collectors.toList());
     }
 
-    public Card faceCard(){
-        return table.getCardFroDrawPile(drawPile);
+    public void faceCard(){
+        table.faceCard(drawPile);
     };
 
     public void playerGetCardFromTable(int cardPosition){
         players.get(playerOnTurn).getCardFromTable(table, cardPosition);
+    }
+
+    public Exception getExceptions() {
+        return exceptions;
+    }
+
+    public void setExceptions(Exception exceptions) {
+        this.exceptions = exceptions;
     }
 
     public String getOwner() {

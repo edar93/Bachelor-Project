@@ -86,10 +86,10 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
     @ResponseBody
-    public Card faceCard() {
+    public void faceCard() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         Game game = getValidatedGame (player);
-        return game.faceCard();
+        game.faceCard();
     }
 
     @CrossOrigin
