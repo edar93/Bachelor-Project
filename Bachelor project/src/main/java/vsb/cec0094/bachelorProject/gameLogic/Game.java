@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -13,6 +14,7 @@ public class Game {
 
     private String owner;
     private List<Player> players;
+    @JsonIgnore
     private DrawPile drawPile;
     private Table table;
     private int playersCount;

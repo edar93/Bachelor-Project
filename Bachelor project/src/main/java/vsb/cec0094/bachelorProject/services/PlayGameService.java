@@ -34,40 +34,34 @@ public class PlayGameService {
 
     @MessageMapping("/sendAction/{owner}")
     @SendTo("/myGame/{owner}")
-    public Message broadcastTest(@DestinationVariable String owner) {
-//        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        String player = "adam";
-        Game game = getValidatedGame(player);
-        System.out.println(owner + "<---- owner");
-        owner = game.getOwner();
-        System.out.println(owner + "<---- owner");
-        System.out.println(player + "<---- player");
-        return new Message("it is work !");
+    public Game updateGame(@DestinationVariable String owner) {
+        Game game = getValidatedGame(owner);
+        return game;
     }
 
-    @CrossOrigin
-    @RequestMapping(method = RequestMethod.POST, value = "/gettestgame")
-    @ResponseBody
-    public Game createTestGameInQueue(@RequestBody GameInQueue game) {
-        Game activeGame = new Game(game);
-        List cardList = new ArrayList<Card>();
-        Player p = new Player("lojzik");
-
-        cardList.add(new Card(CardType.SETTLER, 4, 1));
-        p.setCards(cardList);
-
-        List<Player> playerList = activeGame.getPlayers();
-
-        playerList.set(1, p);
-        Player activePlayer = playerList.get(0);
-        activePlayer.setCards(cardList);
-
-        Table table = new Table();
-        table.setCards(cardList);
-        activeGame.setTable(table);
-
-        return activeGame;
-    }
+//    @CrossOrigin
+//    @RequestMapping(method = RequestMethod.POST, value = "/gettestgame")
+//    @ResponseBody
+//    public Game createTestGameInQueue(@RequestBody GameInQueue game) {
+//        Game activeGame = new Game(game);
+//        List cardList = new ArrayList<Card>();
+//        Player p = new Player("lojzik");
+//
+//        cardList.add(new Card(CardType.SETTLER, 4, 1));
+//        p.setCards(cardList);
+//
+//        List<Player> playerList = activeGame.getPlayers();
+//
+//        playerList.set(1, p);
+//        Player activePlayer = playerList.get(0);
+//        activePlayer.setCards(cardList);
+//
+//        Table table = new Table();
+//        table.setCards(cardList);
+//        activeGame.setTable(table);
+//
+//        return activeGame;
+//    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")

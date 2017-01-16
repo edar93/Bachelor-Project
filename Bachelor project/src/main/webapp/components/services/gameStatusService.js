@@ -17,18 +17,20 @@ var gameStatusService = function (backendGateway, gameService) {
 
     function setScopeAndPlayer(scope, player) {
         gameScope = scope;
-        console.log(player, 'player');
         localUser = player;
     }
 
-    function updateGame() {
-        backendGateway.get('GET_MY_GAME').then(
-            function (resoponse) {
-                var game = resoponse.data;
-                console.log(game);
-                parseGameToService(game);
-                setToScope();
-            });
+    function updateGame(game) {
+        if (game) {
+            parseGameToService(game);
+            updateScope();
+        } else {
+            backendGateway.get('GET_MY_GAME').then(
+                function (resoponse) {
+                    parseGameToService(resoponse.data);
+                    updateScope();
+                });
+        }
     }
 
     function parseGameToService(game) {
@@ -61,16 +63,16 @@ var gameStatusService = function (backendGateway, gameService) {
     }
 
     function transformCard(card) {
-        if(card.cardType == 'TAX_INFLUENCE' || card.cardType == 'TAX_SWORDS'){
+        if (card.cardType == 'TAX_INFLUENCE' || card.cardType == 'TAX_SWORDS') {
             return card.cardType + imageFormat;
         }
-        if(card.cardType == 'EXPEDITION'){
+        if (card.cardType == 'EXPEDITION') {
             return card.cardType + '_' + card.anchor + '_' + card.cross + '_' + card.hut + imageFormat;
         }
         return card.cardType + '_' + card.coin + '_' + card.influence + imageFormat;
     }
 
-    function setToScope() {
+    function updateScope() {
         gameScope.table = table;
         gameScope.playersCount = playersCount;
         gameScope.playersList = playersList;
