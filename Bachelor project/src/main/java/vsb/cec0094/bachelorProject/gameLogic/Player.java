@@ -7,8 +7,9 @@ import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Player {
+public class Player implements Cloneable {
 
     private String login;
     private int coins;
@@ -18,6 +19,26 @@ public class Player {
 
     private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
     //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
+
+    public static List<Player> cloneList(List<Player> source) {
+        return source.stream()
+                .map(p -> {
+                    try {
+                        return (Player) p.clone();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                        return null;
+                    }
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Player clone = (Player) super.clone();
+        clone.setCards(Card.cloneList(cards));
+        return clone;
+    }
 
     public boolean getCardFromTable(Table table, int position) {
         Card card = table.getCards().get(position);

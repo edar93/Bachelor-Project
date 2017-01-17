@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
+import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
@@ -9,19 +10,36 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Game {
+public class Game implements Cloneable {
 
     private String owner;
     private List<Player> players;
     private Table table;
     private int playersCount;
     private int playerOnTurn;
-    private Exception exceptions;
+    private Expeditions expeditions;
     @JsonIgnore
     private DrawPile drawPile;
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        try {
+            Game clone = (Game) super.clone();
+            clone.setOwner(this.owner);
+            clone.setPlayers(Player.cloneList(this.players));
+            clone.setTable((Table) this.table.clone());
+            clone.setExpeditions((Expeditions) this.expeditions.clone());
+            clone.setDrawPile((DrawPile) this.drawPile.clone());
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            System.out.println("Cloning not allowed.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public Game(GameInQueue gameInQueue) {
-        exceptions = new Exception();
+        expeditions = new Expeditions();
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
         table = new Table();
@@ -41,12 +59,12 @@ public class Game {
         players.get(playerOnTurn).getCardFromTable(table, cardPosition);
     }
 
-    public Exception getExceptions() {
-        return exceptions;
+    public Expeditions getExpeditions() {
+        return expeditions;
     }
 
-    public void setExceptions(Exception exceptions) {
-        this.exceptions = exceptions;
+    public void setExpeditions(Expeditions exceptions) {
+        this.expeditions = exceptions;
     }
 
     public String getOwner() {

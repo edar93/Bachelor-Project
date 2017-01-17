@@ -10,11 +10,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DrawPile {
+public class DrawPile implements Cloneable {
 
     private List<Card> cards;
     @JsonIgnore
     private List<Card> usedCards;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        DrawPile clone = (DrawPile) super.clone();
+        clone.setCards(Card.cloneList(cards));
+        clone.setUsedCards(Card.cloneList(usedCards));
+        return clone;
+    }
 
     public Card giveCard() {
         if (cards.size() == 0) {
@@ -123,5 +131,13 @@ public class DrawPile {
 
     public void setCards(List<Card> cards) {
         this.cards = cards;
+    }
+
+    public List<Card> getUsedCards() {
+        return usedCards;
+    }
+
+    public void setUsedCards(List<Card> usedCards) {
+        this.usedCards = usedCards;
     }
 }

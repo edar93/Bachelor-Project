@@ -28,8 +28,24 @@ public class PlayGameService {
 
     @MessageMapping("/sendAction/{owner}")
     @SendTo("/myGame/{owner}")
-    public Game updateGame(@DestinationVariable String owner) {
+    public Game updateGame(@DestinationVariable String owner) throws CloneNotSupportedException {
         Game game = getValidatedGame(owner);
+        System.out.println("-----------------------------");
+        System.out.println("game --->" + game);
+        System.out.println("game.getTable() --->" + game.getTable());
+        System.out.println("game.getPlayers().get(0).getLogin() --->" + game.getPlayers().get(0).getLogin());
+        System.out.println("game.getTable().getCards() --->" + game.getTable().getCards());
+        System.out.println("game.getTable().getCards().get(0) --->" + game.getTable().getCards().get(0));
+        System.out.println("game.getOwner() --->" + game.getOwner());
+        Game game2 = (Game) game.clone();
+        System.out.println("game2 --->" + game2);
+        System.out.println("game2.getTable() --->" + game2.getTable());
+        System.out.println("game2.getPlayers().get(0).getLogin() --->" + game2.getPlayers().get(0).getLogin());
+        System.out.println("game2.getTable().getCards() --->" + game2.getTable().getCards());
+        System.out.println("game2.getTable().getCards().get(0) --->" + game2.getTable().getCards().get(0));
+        System.out.println("game2.getOwner() --->" + game2.getOwner());
+        System.out.println("-----------------------------");
+
         return game;
     }
 
