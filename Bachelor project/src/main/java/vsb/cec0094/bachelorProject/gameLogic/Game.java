@@ -6,11 +6,12 @@ import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Game implements Cloneable {
+public class Game implements Cloneable, Serializable {
 
     private String owner;
     private List<Player> players;

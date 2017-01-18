@@ -33,7 +33,8 @@ var gameStatusService = function (backendGateway, gameService) {
         }
     }
 
-    function parseGameToService(game) {
+    function parseGameToService(gameManipulator) {
+        var game = gameManipulator.currentGame;
         activePlayer = game.players[game.playerOnTurn].login;
 
         game = transformAddCards(game);

@@ -14,6 +14,7 @@ import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
 import vsb.cec0094.bachelorProject.gameLogic.Player;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
+import vsb.cec0094.bachelorProject.models.GameManipulator;
 
 import java.util.List;
 
@@ -28,42 +29,26 @@ public class PlayGameService {
 
     @MessageMapping("/sendAction/{owner}")
     @SendTo("/myGame/{owner}")
-    public Game updateGame(@DestinationVariable String owner) throws CloneNotSupportedException {
-        Game game = getValidatedGame(owner);
-        System.out.println("-----------------------------");
-        System.out.println("game --->" + game);
-        System.out.println("game.getTable() --->" + game.getTable());
-        System.out.println("game.getPlayers().get(0).getLogin() --->" + game.getPlayers().get(0).getLogin());
-        System.out.println("game.getTable().getCards() --->" + game.getTable().getCards());
-        System.out.println("game.getTable().getCards().get(0) --->" + game.getTable().getCards().get(0));
-        System.out.println("game.getOwner() --->" + game.getOwner());
-        Game game2 = (Game) game.clone();
-        System.out.println("game2 --->" + game2);
-        System.out.println("game2.getTable() --->" + game2.getTable());
-        System.out.println("game2.getPlayers().get(0).getLogin() --->" + game2.getPlayers().get(0).getLogin());
-        System.out.println("game2.getTable().getCards() --->" + game2.getTable().getCards());
-        System.out.println("game2.getTable().getCards().get(0) --->" + game2.getTable().getCards().get(0));
-        System.out.println("game2.getOwner() --->" + game2.getOwner());
-        System.out.println("-----------------------------");
-
-        return game;
+    public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException {
+        GameManipulator gameManipulator = getValidatedGame(owner);
+        return gameManipulator;
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
     @ResponseBody
-    public void createGameInQueue() {
+    public void createGameInQueue() throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
         if (player.equals(game.getOwner())) {
-            gamesHolder.addGame(new Game(game));
+            gamesHolder.addGame(new GameManipulator(game));
         }
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
     @ResponseBody
-    public Game getMyGame() {
+    public GameManipulator getMyGame() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
         return gamesHolder.getGame(game.getOwner());
@@ -74,7 +59,7 @@ public class PlayGameService {
     @ResponseBody
     public void faceCard() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        Game game = getValidatedGame(player);
+        GameManipulator game = getValidatedGame(player);
         game.faceCard();
     }
 
@@ -83,7 +68,7 @@ public class PlayGameService {
     @ResponseBody
     public void pickCard(@RequestBody Integer id) {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        Game game = getValidatedGame(player);
+        GameManipulator game = getValidatedGame(player);
         game.playerGetCardFromTable(id);
     }
 
@@ -93,17 +78,17 @@ public class PlayGameService {
      * @param localPlayer
      * @return game in which player is
      */
-    private Game getValidatedGame(String localPlayer) {
+    private GameManipulator getValidatedGame(String localPlayer) {
         GameInQueue gameInQueue = gameDao.getPlayersGame(localPlayer);
         if (gameInQueue == null) {
             throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in database");
         }
-        Game game = gamesHolder.getGame(gameInQueue.getOwner());
+        GameManipulator game = gamesHolder.getGame(gameInQueue.getOwner());
         if (game == null) {
             throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in memory");
         }
-        List<Player> playerList = game.getPlayers();
-        String playerOnTurn = playerList.get(game.getPlayerOnTurn()).getLogin();
+        List<Player> playerList = game.getCurrentGame().getPlayers();
+        String playerOnTurn = playerList.get(game.getCurrentGame().getPlayerOnTurn()).getLogin();
 
         if (!playerOnTurn.equals(localPlayer)) {
             throw new NotPlayersTurnException(" not \"" + localPlayer + "\" turn");
