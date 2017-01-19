@@ -9,7 +9,9 @@ public class GameManipulator {
     private Game currentGame;
     private Game semiState;
 
-    public void faceCard() {
+
+    public void faceCard() throws CloneNotSupportedException {
+        semiState = (Game) currentGame.clone();
         currentGame.faceCard();
     }
 

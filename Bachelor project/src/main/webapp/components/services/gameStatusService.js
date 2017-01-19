@@ -12,7 +12,6 @@ var gameStatusService = function (backendGateway, gameService) {
     var playersCount;
     var localPlayer;
     var activePlayer;
-
     var gameScope;
 
     function setScopeAndPlayer(scope, player) {
