@@ -3,8 +3,8 @@
     <img src="images/coin.jpg" class="cards" ng-show="localUser == activePlayer" ng-click="faceCard()">
 
     <div class="cards" ng-repeat="card in table.cards track by $index">
-        <img ng-class="{marked: $index == 1}" src="images/{{card.image}}" ng-click="pickCard($index)">
-        <p>{{$index}}</p>
+        <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"
+             src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>
 </div>
 
@@ -12,7 +12,8 @@
     <h4>{{player.login}}</h4>
 
     <div class="cards" ng-repeat="card in player.cards track by $index">
-        <img  src="images/{{card.image}}">
+        <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(player.login) !== -1}"
+             src="images/{{card.image}}">
     </div>
 
     <div class="playersStats">
@@ -26,7 +27,8 @@
     <h4>{{localPlayer.login}}</h4>
 
     <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
-        <img src="images/{{card.image}}">
+        <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(localPlayer.login) !== -1}"
+             src="images/{{card.image}}">
     </div>
     <div class="playersStats">
         <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>

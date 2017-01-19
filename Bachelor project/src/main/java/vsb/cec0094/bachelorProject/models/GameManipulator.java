@@ -1,18 +1,33 @@
 package vsb.cec0094.bachelorProject.models;
 
 import vsb.cec0094.bachelorProject.gameLogic.Game;
+import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameManipulator {
 
     private String owner;
-    private ActionToShow lastAction;
+    private List<ActionToShow> actionsToShows;
+    private List<Game> semiStates;
+    private ActionToShow currentMove;
     private Game currentGame;
-    private Game semiState;
 
 
     public void faceCard() throws CloneNotSupportedException {
-        semiState = (Game) currentGame.clone();
-        currentGame.faceCard();
+        actionsToShows = new ArrayList<>();
+        actionsToShows.add(currentGame.faceCard());
+
+        //TODO test data - here
+        List<Integer> ids = new ArrayList();
+        ids.add(1);
+        List<String> who = new ArrayList();
+        who.add(Table.TABLE);
+        currentMove.setIds(ids);
+        currentMove.setMarked(who);
+
+//        currentMove = new ActionToShow(Action.PICK_CARD);
     }
 
     public void playerGetCardFromTable(int id) {
@@ -22,11 +37,12 @@ public class GameManipulator {
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
         owner = gameInQueue.getOwner();
         currentGame = new Game(gameInQueue);
-        semiState = (Game) currentGame.clone();
+        semiStates = new ArrayList<>();
+        actionsToShows = new ArrayList<>();
+        currentMove = new ActionToShow(Action.PICK_CARD);
     }
 
     public GameManipulator() {
-
     }
 
     public String getOwner() {
@@ -37,12 +53,12 @@ public class GameManipulator {
         this.owner = owner;
     }
 
-    public ActionToShow getLastAction() {
-        return lastAction;
+    public List<ActionToShow> getActionsToShows() {
+        return actionsToShows;
     }
 
-    public void setLastAction(ActionToShow lastAction) {
-        this.lastAction = lastAction;
+    public void setActionsToShows(List<ActionToShow> actionsToShows) {
+        this.actionsToShows = actionsToShows;
     }
 
     public Game getCurrentGame() {
@@ -53,11 +69,19 @@ public class GameManipulator {
         this.currentGame = currentGame;
     }
 
-    public Game getSemiState() {
-        return semiState;
+    public List<Game> getSemiStates() {
+        return semiStates;
     }
 
-    public void setSemiState(Game semiState) {
-        this.semiState = semiState;
+    public void setSemiStates(List<Game> semiStates) {
+        this.semiStates = semiStates;
+    }
+
+    public ActionToShow getCurrentMove() {
+        return currentMove;
+    }
+
+    public void setCurrentMove(ActionToShow currentMove) {
+        this.currentMove = currentMove;
     }
 }

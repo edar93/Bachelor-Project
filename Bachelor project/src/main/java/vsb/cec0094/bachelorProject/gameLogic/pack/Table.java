@@ -2,12 +2,14 @@ package vsb.cec0094.bachelorProject.gameLogic.pack;
 
 
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+import vsb.cec0094.bachelorProject.models.ActionToShow;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Table implements Cloneable {
 
+    public final static String TABLE = "TABLE";
     private List<Card> cards;
 
     @Override
@@ -17,10 +19,13 @@ public class Table implements Cloneable {
         return clone;
     }
 
-    public Card faceCard(DrawPile drawPile) {
+    public ActionToShow faceCard(DrawPile drawPile, ActionToShow actionToShow) {
         Card card = drawPile.giveCard();
         cards.add(card);
-        return card;
+        List<String> marked = new ArrayList<String>();
+        actionToShow.getMarked().add(TABLE);
+        actionToShow.getIds().add(cards.size());
+        return actionToShow;
     }
 
     public Table() {

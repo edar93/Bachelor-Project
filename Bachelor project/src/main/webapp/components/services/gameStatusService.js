@@ -13,6 +13,8 @@ var gameStatusService = function (backendGateway, gameService) {
     var localPlayer;
     var activePlayer;
     var gameScope;
+    var markedType;
+    var markedId;
 
     function setScopeAndPlayer(scope, player) {
         gameScope = scope;
@@ -21,19 +23,24 @@ var gameStatusService = function (backendGateway, gameService) {
 
     function updateGame(game) {
         if (game) {
-            parseGameToService(game);
-            updateScope();
+            showState(game);
         } else {
             backendGateway.get('GET_MY_GAME').then(
                 function (resoponse) {
-                    parseGameToService(resoponse.data);
-                    updateScope();
+                    showState(resoponse.data);
                 });
         }
     }
 
-    function parseGameToService(gameManipulator) {
-        var game = gameManipulator.currentGame;
+    function showState(game) {
+        prepair(game.currentGame, game.currentMove);
+        updateScope();
+    }
+
+    function prepair(game, action) {
+        markedType = action.marked;
+        markedId = action.ids;
+
         activePlayer = game.players[game.playerOnTurn].login;
 
         game = transformAddCards(game);
@@ -73,6 +80,8 @@ var gameStatusService = function (backendGateway, gameService) {
     }
 
     function updateScope() {
+        gameScope.markedType = markedType;
+        gameScope.markedId = markedId;
         gameScope.table = table;
         gameScope.playersCount = playersCount;
         gameScope.playersList = playersList;

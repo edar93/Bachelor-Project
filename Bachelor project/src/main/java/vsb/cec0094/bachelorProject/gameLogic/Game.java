@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+import vsb.cec0094.bachelorProject.models.ActionToShow;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
 import java.io.Serializable;
@@ -21,6 +22,14 @@ public class Game implements Cloneable, Serializable {
     private Expeditions expeditions;
     @JsonIgnore
     private DrawPile drawPile;
+
+    public ActionToShow faceCard() {
+        return table.faceCard(drawPile, new ActionToShow());
+    }
+
+    public void playerGetCardFromTable(int cardPosition) {
+        players.get(playerOnTurn).getCardFromTable(table, cardPosition);
+    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
@@ -50,14 +59,6 @@ public class Game implements Cloneable, Serializable {
         players = gameInQueue.getPlayersList().stream()
                 .map(p -> new Player(p.getLogin()))
                 .collect(Collectors.toList());
-    }
-
-    public void faceCard() {
-        table.faceCard(drawPile);
-    }
-
-    public void playerGetCardFromTable(int cardPosition) {
-        players.get(playerOnTurn).getCardFromTable(table, cardPosition);
     }
 
     public Expeditions getExpeditions() {
