@@ -13,18 +13,10 @@
 
     <!--sockets-->
     <websocket:message-broker application-destination-prefix="/port-royal">
-        <websocket:stomp-endpoint path="/chat">
+        <websocket:stomp-endpoint path="/chat , /game">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/topic"/>
-    </websocket:message-broker>
-
-    <!--sockets-->
-    <websocket:message-broker application-destination-prefix="/port-royal">
-        <websocket:stomp-endpoint path="/game">
-            <websocket:sockjs/>
-        </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/myGame"/>
+        <websocket:simple-broker prefix="/topic, /myGame"/>
     </websocket:message-broker>
 
     <!-- Enables the Spring MVC @Controller programming model -->
