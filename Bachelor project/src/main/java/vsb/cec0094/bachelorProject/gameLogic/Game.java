@@ -24,11 +24,11 @@ public class Game implements Cloneable, Serializable {
     private DrawPile drawPile;
 
     public ActionToShow faceCard() {
-        return table.faceCard(drawPile, new ActionToShow());
+        return table.faceCard(drawPile);
     }
 
-    public void playerGetCardFromTable(int cardPosition) {
-        players.get(playerOnTurn).getCardFromTable(table, cardPosition);
+    public ActionToShow playerGetCardFromTable(int cardPosition) {
+        return players.get(playerOnTurn).getCardFromTable(table, cardPosition);
     }
 
     @Override

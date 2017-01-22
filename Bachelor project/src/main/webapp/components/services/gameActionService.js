@@ -6,6 +6,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     var game;
     var gameOwner;
+    var notSubscribing;
 
     function init(scope) {
         initWebSockets();
@@ -18,6 +19,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     }
 
     function initWebSockets() {
+        notSubscribing = true;
         gameService.getPlayersGame(loginService.getUser())
             .then(function (data) {
                 gameOwner = data.owner;
@@ -26,13 +28,16 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
                 game = stompService('/port-royal/game');
 
                 game.connect('not needed username', 'not needed password', function () {
-                    game.subscribe(url, function (response) {
-                        console.log(response, 'get websocket clean');
-                        console.log(JSON.parse(response.body), 'get websocket body');
-                        if (response && response.body) {
-                            gameStatusService.updateGame(JSON.parse(response.body));
-                        }
-                    });
+                    if (notSubscribing) {
+                        notSubscribing = false;
+                        game.subscribe(url, function (response) {
+                            //TODO remove
+                            //console.log(JSON.parse(response.body), 'get websocket body');
+                            if (response && response.body) {
+                                gameStatusService.updateGame(JSON.parse(response.body));
+                            }
+                        });
+                    }
                 });
             });
     }

@@ -3,9 +3,9 @@ img {
     max-height: 14em
 }
 
-.marked{
-    background-color: orangered;
-    padding: 10px;
+.marked {
+    background-color: rgba(80, 224, 80, 0.8);
+    padding: 8px;
 }
 
 .table {
@@ -13,7 +13,7 @@ img {
 }
 
 .playerOther {
-    display: inline
+    display: inline float : left;
 }
 
 .playerLocal {
@@ -26,7 +26,12 @@ img {
 }
 
 .cards {
-    display: inline-block
+    display: inline-block;
+    box-shadow: 3px 3px 12px #303030;
+    background-color: rgba(224, 224, 64, 0.7);
+    padding: 2px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 .globalChat {

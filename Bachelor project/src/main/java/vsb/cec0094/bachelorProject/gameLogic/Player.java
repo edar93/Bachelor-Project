@@ -3,6 +3,8 @@ package vsb.cec0094.bachelorProject.gameLogic;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+import vsb.cec0094.bachelorProject.models.Action;
+import vsb.cec0094.bachelorProject.models.ActionToShow;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,14 +42,14 @@ public class Player implements Cloneable {
         return clone;
     }
 
-    public boolean getCardFromTable(Table table, int position) {
+    public ActionToShow getCardFromTable(Table table, int position) {
         Card card = table.getCards().get(position);
         if (!canCardBeTaken(card)) {
-            return false;
+            return null;
         }
         cards.add(card);
         table.getCards().remove(position);
-        return true;
+        return new ActionToShow(Action.GET_CARD, new String[]{this.login}, new Integer[]{cards.indexOf(card)});
     }
 
     private boolean canCardBeTaken(Card card) {

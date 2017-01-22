@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ActionToShow {
@@ -13,6 +14,12 @@ public class ActionToShow {
         this.action = action;
         marked = new ArrayList<>();
         ids = new ArrayList<>();
+    }
+
+    public ActionToShow(Action action, String[] marked, Integer[] ids) {
+        this.action = action;
+        this.marked = new ArrayList<>(Arrays.asList(marked));
+        this.ids = new ArrayList<>(Arrays.asList(ids));
     }
 
     public ActionToShow(Action action, List<String> marked, List<Integer> ids) {

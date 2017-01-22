@@ -16,22 +16,36 @@ public class GameManipulator {
 
 
     public void faceCard() throws CloneNotSupportedException {
-        actionsToShows = new ArrayList<>();
-        actionsToShows.add(currentGame.faceCard());
+        actionsToShows.clear();
+        semiStates.clear();
 
+
+        actionsToShows.add(currentGame.faceCard());
+        semiStates.add((Game) currentGame.clone());
+        currentMove = null;
         //TODO test data - here
-        List<Integer> ids = new ArrayList();
-        ids.add(1);
-        List<String> who = new ArrayList();
-        who.add(Table.TABLE);
-        currentMove.setIds(ids);
-        currentMove.setMarked(who);
+//        List<Integer> ids = new ArrayList();
+//        ids.add(1);
+//        List<String> who = new ArrayList();
+//        who.add(Table.TABLE);
+//        currentMove.setIds(ids);
+//        currentMove.setMarked(who);
 
 //        currentMove = new ActionToShow(Action.PICK_CARD);
     }
 
-    public void playerGetCardFromTable(int id) {
-        currentGame.playerGetCardFromTable(id);
+    public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
+        actionsToShows.clear();
+        semiStates.clear();
+
+        //display picked card
+        semiStates.add((Game) currentGame.clone());
+        actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
+
+        actionsToShows.add(currentGame.playerGetCardFromTable(id));
+        semiStates.add((Game) currentGame.clone());
+
+        currentMove = null;
     }
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {

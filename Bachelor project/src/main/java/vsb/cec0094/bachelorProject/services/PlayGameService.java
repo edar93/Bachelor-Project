@@ -66,7 +66,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
     @ResponseBody
-    public void pickCard(@RequestBody Integer id) {
+    public void pickCard(@RequestBody Integer id) throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerGetCardFromTable(id);
