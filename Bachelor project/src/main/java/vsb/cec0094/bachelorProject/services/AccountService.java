@@ -1,6 +1,8 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
@@ -19,18 +21,17 @@ public class AccountService {
     private AccountDao accountDao;
 
     @RequestMapping(method = RequestMethod.POST, value = "/register")
-    @ResponseBody
-    public void register(@RequestBody UserRegistration userRegistration) {
+    public ResponseEntity<Void> register(@RequestBody UserRegistration userRegistration) {
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
+        return ResponseEntity.ok().build();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getLoggedUserLogin")
-    @ResponseBody
-    public String getLogin() {
+    public ResponseEntity<String> getLogin() {
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
-        return user;
+        return ResponseEntity.ok().body(user);
     }
 
 }

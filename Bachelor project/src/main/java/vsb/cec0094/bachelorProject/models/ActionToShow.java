@@ -3,12 +3,33 @@ package vsb.cec0094.bachelorProject.models;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class ActionToShow {
+public class ActionToShow implements Cloneable {
 
     private Action action;
     private List<String> marked;
     private List<Integer> ids;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        ActionToShow clone = (ActionToShow) super.clone();
+        clone.setMarked(
+                marked.stream()
+                        .map(c -> {
+                            return c;
+                        })
+                        .collect(Collectors.toList())
+        );
+        clone.setIds(
+                marked.stream()
+                        .map(c -> {
+                            return new Integer(c);
+                        })
+                        .collect(Collectors.toList())
+        );
+        return clone;
+    }
 
     public ActionToShow(Action action) {
         this.action = action;

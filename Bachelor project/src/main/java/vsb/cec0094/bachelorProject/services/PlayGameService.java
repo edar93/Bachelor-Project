@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -11,7 +12,6 @@ import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
-import vsb.cec0094.bachelorProject.gameLogic.Game;
 import vsb.cec0094.bachelorProject.gameLogic.Player;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.GameManipulator;
@@ -37,39 +37,42 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
     @ResponseBody
-    public void createGameInQueue() throws CloneNotSupportedException {
+    public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
         if (player.equals(game.getOwner())) {
             gamesHolder.addGame(new GameManipulator(game));
         }
+        return ResponseEntity.ok().build();
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
     @ResponseBody
-    public GameManipulator getMyGame() {
+    public ResponseEntity<GameManipulator> getMyGame() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
-        return gamesHolder.getGame(game.getOwner());
+        return ResponseEntity.ok().body(gamesHolder.getGame(game.getOwner()));
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
     @ResponseBody
-    public void faceCard() throws CloneNotSupportedException {
+    public ResponseEntity<Void> faceCard() throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.faceCard();
+        return ResponseEntity.ok().build();
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
     @ResponseBody
-    public void pickCard(@RequestBody Integer id) throws CloneNotSupportedException {
+    public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerGetCardFromTable(id);
+        return ResponseEntity.ok().build();
     }
 
     /**

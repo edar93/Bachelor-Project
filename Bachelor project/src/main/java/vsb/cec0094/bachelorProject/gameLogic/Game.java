@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -27,7 +28,7 @@ public class Game implements Cloneable, Serializable {
         return table.faceCard(drawPile);
     }
 
-    public ActionToShow playerGetCardFromTable(int cardPosition) {
+    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
         return players.get(playerOnTurn).getCardFromTable(table, cardPosition);
     }
 

@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 
@@ -11,41 +13,47 @@ public class GameManipulator {
     private String owner;
     private List<ActionToShow> actionsToShows;
     private List<Game> semiStates;
-    private ActionToShow currentMove;
+    private ActionToShow currentAction;
     private Game currentGame;
-
+    @JsonIgnore
+    private Game backupGame;
+    @JsonIgnore
+    private ActionToShow backupAction;
 
     public void faceCard() throws CloneNotSupportedException {
-        actionsToShows.clear();
-        semiStates.clear();
-
+        prepaireForAction();
 
         actionsToShows.add(currentGame.faceCard());
         semiStates.add((Game) currentGame.clone());
-        currentMove = null;
-        //TODO test data - here
-//        List<Integer> ids = new ArrayList();
-//        ids.add(1);
-//        List<String> who = new ArrayList();
-//        who.add(Table.TABLE);
-//        currentMove.setIds(ids);
-//        currentMove.setMarked(who);
-
-//        currentMove = new ActionToShow(Action.PICK_CARD);
+        currentAction = null;
     }
 
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
+        prepaireForAction();
+
+        try {
+            //display picked card
+            semiStates.add((Game) currentGame.clone());
+            actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
+            actionsToShows.add(currentGame.playerGetCardFromTable(id));
+            semiStates.add((Game) currentGame.clone());
+            currentAction = null;
+        } catch (InvalidActionException e) {
+            rollback();
+            e.printStackTrace();
+        }
+    }
+
+    private void rollback() {
+        currentGame = backupGame;
+        currentAction = backupAction;
+    }
+
+    private void prepaireForAction() throws CloneNotSupportedException {
         actionsToShows.clear();
         semiStates.clear();
-
-        //display picked card
-        semiStates.add((Game) currentGame.clone());
-        actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
-
-        actionsToShows.add(currentGame.playerGetCardFromTable(id));
-        semiStates.add((Game) currentGame.clone());
-
-        currentMove = null;
+        backupGame = (Game) currentGame.clone();
+        backupAction = (ActionToShow) currentAction.clone();
     }
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
@@ -53,7 +61,7 @@ public class GameManipulator {
         currentGame = new Game(gameInQueue);
         semiStates = new ArrayList<>();
         actionsToShows = new ArrayList<>();
-        currentMove = new ActionToShow(Action.PICK_CARD);
+        currentAction = new ActionToShow(Action.PICK_CARD);
     }
 
     public GameManipulator() {
@@ -91,11 +99,11 @@ public class GameManipulator {
         this.semiStates = semiStates;
     }
 
-    public ActionToShow getCurrentMove() {
-        return currentMove;
+    public ActionToShow getCurrentAction() {
+        return currentAction;
     }
 
-    public void setCurrentMove(ActionToShow currentMove) {
-        this.currentMove = currentMove;
+    public void setCurrentAction(ActionToShow currentAction) {
+        this.currentAction = currentAction;
     }
 }

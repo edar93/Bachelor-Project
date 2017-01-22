@@ -6,7 +6,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         this.setScopeAndPlayer = setScopeAndPlayer;
 
         var imageFormat = '.jpg';
-        var timeout = 1350;
+        var timeout = 800;
 
         var localUser;
         var playersList;
@@ -49,7 +49,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
                 }, i * timeout);
             }
             $timeout(function () {
-                show(lastGameToShow.currentGame, lastGameToShow.currentMove)
+                show(lastGameToShow.currentGame, lastGameToShow.currentAction)
             }, phasesCount * timeout);
         }
 

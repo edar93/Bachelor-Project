@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -42,22 +43,18 @@ public class Player implements Cloneable {
         return clone;
     }
 
-    public ActionToShow getCardFromTable(Table table, int position) {
+    public ActionToShow getCardFromTable(Table table, int position) throws InvalidActionException {
         Card card = table.getCards().get(position);
-        if (!canCardBeTaken(card)) {
-            return null;
-        }
+        canBeCardTaken(card);
         cards.add(card);
         table.getCards().remove(position);
         return new ActionToShow(Action.GET_CARD, new String[]{this.login}, new Integer[]{cards.indexOf(card)});
     }
 
-    private boolean canCardBeTaken(Card card) {
+    private void canBeCardTaken(Card card) throws InvalidActionException {
         if (invalidTypes.contains(card.getCardType())) {
-            return false;
+            throw new InvalidActionException("invalid card type");
         }
-
-        return true;
     }
 
     public Player(String login) {

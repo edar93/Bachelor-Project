@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,23 +19,21 @@ public class GameFunctionService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/cratenewgame")
-    @ResponseBody
-    public GameInQueue createGameInQueue() {
+    public ResponseEntity<Void> createGameInQueue() {
         GameInQueue gameInQueue = new GameInQueue();
         gameInQueue.setMaxPlayersCount(3);
         String owner = SecurityContextHolder.getContext().getAuthentication().getName();
         gameInQueue.setOwner(owner);
 
         gameDao.createGameInQueue(gameInQueue);
-        return gameInQueue;
+        return ResponseEntity.ok().build();
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/basegamestatus")
-    @ResponseBody
-    public GameInQueue getBaseGameStatus() {
+    public ResponseEntity<GameInQueue> getBaseGameStatus() {
         String owner = SecurityContextHolder.getContext().getAuthentication().getName();
-        return gameDao.getGameInQueue(owner);
+        return ResponseEntity.ok().body(gameDao.getGameInQueue(owner));
     }
 
     @CrossOrigin
@@ -46,17 +45,16 @@ public class GameFunctionService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, value = "/joingame")
-    @ResponseBody
-    public void joinGame(@RequestBody String owner) {
+    public ResponseEntity<Void> joinGame(@RequestBody String owner) {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         gameDao.joinGame(owner, player);
+        return ResponseEntity.ok().build();
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/getplayersgame")
-    @ResponseBody
-    public GameInQueue getPlayersGame(@RequestBody String player) {
-        return gameDao.getPlayersGame(player);
+    public ResponseEntity<GameInQueue> getPlayersGame(@RequestBody String player) {
+        return ResponseEntity.ok().body(gameDao.getPlayersGame(player));
     }
 
 }
