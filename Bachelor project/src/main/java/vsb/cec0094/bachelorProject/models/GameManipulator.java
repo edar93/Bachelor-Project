@@ -53,7 +53,9 @@ public class GameManipulator {
         actionsToShows.clear();
         semiStates.clear();
         backupGame = (Game) currentGame.clone();
-        backupAction = (ActionToShow) currentAction.clone();
+        if(currentAction != null) {
+            backupAction = (ActionToShow) currentAction.clone();
+        }
     }
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {

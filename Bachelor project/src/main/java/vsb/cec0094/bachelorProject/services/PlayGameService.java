@@ -36,7 +36,6 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
-    @ResponseBody
     public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
@@ -48,7 +47,6 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
-    @ResponseBody
     public ResponseEntity<GameManipulator> getMyGame() {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
@@ -57,7 +55,6 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
-    @ResponseBody
     public ResponseEntity<Void> faceCard() throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
@@ -67,7 +64,6 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
-    @ResponseBody
     public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
