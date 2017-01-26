@@ -14,7 +14,7 @@ import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.gameLogic.Player;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
-import vsb.cec0094.bachelorProject.models.GameManipulator;
+import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 
 import java.util.List;
 

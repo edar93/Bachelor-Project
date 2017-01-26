@@ -1,9 +1,12 @@
-package vsb.cec0094.bachelorProject.models;
+package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+import vsb.cec0094.bachelorProject.models.Action;
+import vsb.cec0094.bachelorProject.models.ActionToShow;
+import vsb.cec0094.bachelorProject.models.GameInQueue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,7 @@ public class GameManipulator {
     public void faceCard() throws CloneNotSupportedException {
         prepaireForAction();
 
-        actionsToShows.add(currentGame.faceCard());
+        actionsToShows.add(currentGame.faceCard(this));
         semiStates.add((Game) currentGame.clone());
         currentAction = null;
     }
@@ -42,6 +45,11 @@ public class GameManipulator {
             rollback();
             e.printStackTrace();
         }
+    }
+
+    public void addActionForCurrentState(ActionToShow actionToShow) throws CloneNotSupportedException {
+        semiStates.add((Game) this.currentGame.clone());
+        actionsToShows.add(actionToShow);
     }
 
     private void rollback() {

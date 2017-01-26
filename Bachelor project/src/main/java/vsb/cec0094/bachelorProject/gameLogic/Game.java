@@ -2,6 +2,8 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
+import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -24,7 +26,14 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private DrawPile drawPile;
 
-    public ActionToShow faceCard() {
+    public ActionToShow faceCard(GameManipulator gameManipulator) {
+//        List<Game,ActionToShow> list;
+        Card card = drawPile.giveCard();
+        if(card.getCardType() == CardType.EXPEDITION){
+            // implement
+        }else if(card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS){
+            // implement
+        }
         return table.faceCard(drawPile);
     }
 

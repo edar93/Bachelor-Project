@@ -1,8 +1,7 @@
 package vsb.cec0094.bachelorProject.dao;
 
 import org.springframework.stereotype.Repository;
-import vsb.cec0094.bachelorProject.gameLogic.Game;
-import vsb.cec0094.bachelorProject.models.GameManipulator;
+import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
