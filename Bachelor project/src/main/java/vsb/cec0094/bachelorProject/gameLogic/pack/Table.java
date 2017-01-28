@@ -13,8 +13,7 @@ public class Table implements Cloneable {
     public final static String TABLE = "TABLE";
     private List<Card> cards;
 
-    public ActionToShow faceCard(DrawPile drawPile) {
-        Card card = drawPile.giveCard();
+    public ActionToShow faceCard(Card card) {
         cards.add(card);
         return new ActionToShow(Action.FACE_CARD, new String[]{TABLE}, new Integer[]{cards.size() - 1});
     }

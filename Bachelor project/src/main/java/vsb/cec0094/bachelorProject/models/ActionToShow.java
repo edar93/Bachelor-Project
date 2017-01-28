@@ -22,9 +22,9 @@ public class ActionToShow implements Cloneable {
                         .collect(Collectors.toList())
         );
         clone.setIds(
-                marked.stream()
-                        .map(c -> {
-                            return new Integer(c);
+                ids.stream()
+                        .map(i -> {
+                            return new Integer(i);
                         })
                         .collect(Collectors.toList())
         );

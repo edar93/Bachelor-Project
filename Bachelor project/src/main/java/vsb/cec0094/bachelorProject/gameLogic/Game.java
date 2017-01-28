@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javafx.util.Pair;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
@@ -26,15 +27,19 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private DrawPile drawPile;
 
-    public ActionToShow faceCard(GameManipulator gameManipulator) {
-//        List<Game,ActionToShow> list;
+    public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException {
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+
         Card card = drawPile.giveCard();
         if(card.getCardType() == CardType.EXPEDITION){
             // implement
         }else if(card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS){
             // implement
+        }else{
+            ActionToShow cardAddedToTable = table.faceCard(card);
+            actionAndSemiStateHolder.addState(this, cardAddedToTable);
         }
-        return table.faceCard(drawPile);
+        return actionAndSemiStateHolder;
     }
 
     public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
