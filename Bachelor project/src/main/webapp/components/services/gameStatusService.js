@@ -11,6 +11,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         var localUser;
         var playersList;
         var table;
+        var expeditions;
         var playersCount;
         var localPlayer;
         var activePlayer;
@@ -80,6 +81,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
                 }
             }
 
+            expeditions = game.expeditions;
             playersList = game.players;
             table = game.table;
             playersCount = game.playersCount;
@@ -94,6 +96,9 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             }
             for (var i = 0; i < game.table.cards.length; i++) {
                 game.table.cards[i].image = transformCard(game.table.cards[i]);
+            }
+            for (var i = 0; i < game.expeditions.cards.length; i++) {
+                game.expeditions.cards[i].image = transformCard(game.expeditions.cards[i]);
             }
             return game;
         }
@@ -115,6 +120,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             gameScope.playersCount = playersCount;
             gameScope.playersList = playersList;
             gameScope.localPlayer = localPlayer;
+            gameScope.expeditions = expeditions;
         }
     }
     ;

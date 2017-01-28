@@ -8,6 +8,15 @@
     </div>
 </div>
 
+<div id="expeditions" class="expeditions">
+    <h3>Expeditions</h3>
+
+    <div class="cards" ng-repeat="card in expeditions.cards track by $index">
+        <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('EXPEDITION') !== -1}"
+             src="images/{{card.image}}" ng-click="pickCard($index)">
+    </div>
+</div>
+
 <div id="players" ng-repeat="player in playersList" class="playerOther">
     <h4>{{player.login}}</h4>
 
