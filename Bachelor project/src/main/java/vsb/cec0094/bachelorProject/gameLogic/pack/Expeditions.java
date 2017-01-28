@@ -7,7 +7,13 @@ import java.util.List;
 
 public class Expeditions implements Cloneable {
 
+    public final static String EXPEDITIONS = "EXPEDITIONS";
+
     private List<Card> cards;
+
+    public void addCard(Card card){
+        cards.add(card);
+    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {

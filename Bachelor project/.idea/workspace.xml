@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5813718-71ff-497f-a9b0-77621894c557" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/ActionAndSemiStateHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Port Royal.iws" />
@@ -45,17 +46,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionAndSemiStateHolder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActionAndSemiStateHolder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/ActionAndSemiStateHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3007712">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#680#681#0" expanded="true" />
@@ -71,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.73036647">
+              <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java">
+      <file leaf-file-name="GameInQueue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/GameInQueue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -97,38 +98,46 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Integer.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Integer.java">
+      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="866" column="0" selection-start-line="866" selection-start-column="0" selection-end-line="866" selection-end-column="0" />
+              <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameStatusService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
+      <file leaf-file-name="Expeditions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
-              <folding />
+              <caret line="9" column="57" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="57" />
+              <folding>
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
+      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="97" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-              <folding />
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="47" />
+              <folding>
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,11 +191,9 @@
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ShowAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/SemiState.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Card.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/DrawPile.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Actions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/gameCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameActionService.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/globalChatService.js" />
@@ -200,13 +207,15 @@
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/GameManipulator.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/ActionAndSemistateHolder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/ActionAndSemiStateHolder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" />
       </list>
     </option>
   </component>
@@ -1243,13 +1252,7 @@
       <workItem from="1485264598673" duration="686000" />
       <workItem from="1485408446652" duration="746000" />
       <workItem from="1485597263635" duration="10984000" />
-      <workItem from="1485631937692" duration="178000" />
-    </task>
-    <task id="LOCAL-00005" summary="add gameInQueue model, fi login bug">
-      <created>1482244306682</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1482244306682</updated>
+      <workItem from="1485631937692" duration="2063000" />
     </task>
     <task id="LOCAL-00006" summary="add creation gameInQueue from front end to back end">
       <created>1482251402633</created>
@@ -1539,11 +1542,17 @@
       <option name="project" value="LOCAL" />
       <updated>1485631824601</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="refactor faceCard">
+      <created>1485632125649</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1485632125649</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401426000" />
+    <option name="totallyTimeSpent" value="403311000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1566,7 +1575,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38110235" sideWeight="0.511713" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31181103" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31181103" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32283464" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1579,17 +1589,16 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21303074" sideWeight="0.5093023" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32283464" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1744,13 +1753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/GameInQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/node_modules/adm-zip/adm-zip.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33167082">
@@ -1820,13 +1822,6 @@
         <state vertical-scroll-proportion="-6.296296">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08395062">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1935,33 +1930,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50708216">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="97" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -1974,52 +1946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="866" column="0" selection-start-line="866" selection-start-column="0" selection-end-line="866" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/ActionAndSemiStateHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3007712">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#680#681#0" expanded="true" />
@@ -2030,6 +1960,104 @@
             <element signature="e#921#922#0" expanded="true" />
             <element signature="e#973#974#0" expanded="true" />
             <element signature="e#1013#1014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.7777777">
+          <caret line="866" column="0" selection-start-line="866" selection-start-column="0" selection-end-line="867" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="599" column="6" selection-start-line="599" selection-start-column="6" selection-end-line="599" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/GameInQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/ActionToShow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048295453">
+          <caret line="14" column="98" selection-start-line="14" selection-start-column="98" selection-end-line="14" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="47" />
+          <folding>
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/pack/Expeditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="57" />
+          <folding>
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73036647">
+          <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

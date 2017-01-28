@@ -8,6 +8,7 @@ import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
@@ -31,11 +32,18 @@ public class Game implements Cloneable, Serializable {
         ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
 
         Card card = drawPile.giveCard();
-        if(card.getCardType() == CardType.EXPEDITION){
+        if (card.getCardType() == CardType.EXPEDITION) {
+            //show card on table
+            table.addCard(card);
+            ActionToShow actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_TABLE, Table.TABLE, table.getCards().size() - 1);
+            actionAndSemiStateHolder.addState(this, actionToShow);
+            //show card between expeditions
+            expeditions.addCard(table.removeLastCard());
+            actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
+            actionAndSemiStateHolder.addState(this, actionToShow);
+        } else if (card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS) {
             // implement
-        }else if(card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS){
-            // implement
-        }else{
+        } else {
             ActionToShow cardAddedToTable = table.faceCard(card);
             actionAndSemiStateHolder.addState(this, cardAddedToTable);
         }
