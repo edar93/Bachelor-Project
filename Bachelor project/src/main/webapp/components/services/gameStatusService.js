@@ -71,7 +71,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             }
 
             console.log(game, 'game');
-            activePlayer = game.players[game.playerOnTurn].login;
+            activePlayer = game.players[game.activePlayer].login;
 
             game = transformAddCards(game);
             for (var i = game.players.length - 1; i >= 0; i--) {
@@ -88,7 +88,6 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         }
 
         function transformAddCards(game) {
-            //TODO discovered expeditions
             for (var i = 0; i < game.players.length; i++) {
                 for (var j = 0; j < game.players[i].cards.length; j++) {
                     game.players[i].cards[j].image = transformCard(game.players[i].cards[j]);

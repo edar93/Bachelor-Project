@@ -39,8 +39,8 @@ public class GameFunctionService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getallgamesinqueue")
     @ResponseBody
-    public List<GameInQueue> getAllGames() {
-        return gameDao.getAllGames();
+    public ResponseEntity<List> getAllGames() {
+        return ResponseEntity.ok().body(gameDao.getAllGames());
     }
 
     @CrossOrigin

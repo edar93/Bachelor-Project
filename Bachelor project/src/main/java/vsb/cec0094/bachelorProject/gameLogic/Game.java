@@ -1,7 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javafx.util.Pair;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
@@ -24,6 +23,7 @@ public class Game implements Cloneable, Serializable {
     private Table table;
     private int playersCount;
     private int playerOnTurn;
+    private int activePlayer;
     private Expeditions expeditions;
     @JsonIgnore
     private DrawPile drawPile;
@@ -51,7 +51,7 @@ public class Game implements Cloneable, Serializable {
     }
 
     public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
-        return players.get(playerOnTurn).getCardFromTable(table, cardPosition);
+        return players.get(activePlayer).getCardFromTable(table, cardPosition);
     }
 
     @Override
@@ -75,6 +75,7 @@ public class Game implements Cloneable, Serializable {
         expeditions = new Expeditions();
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
+        activePlayer = 0;
         table = new Table();
         drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();
@@ -138,5 +139,13 @@ public class Game implements Cloneable, Serializable {
 
     public void setPlayerOnTurn(int playerOnTurn) {
         this.playerOnTurn = playerOnTurn;
+    }
+
+    public int getActivePlayer() {
+        return activePlayer;
+    }
+
+    public void setActivePlayer(int activePlayer) {
+        this.activePlayer = activePlayer;
     }
 }
