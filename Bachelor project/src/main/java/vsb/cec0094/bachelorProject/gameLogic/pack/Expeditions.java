@@ -13,7 +13,7 @@ public class Expeditions implements Cloneable {
     private List<Card> cards;
 
     public Expedition getExpedition(int id) {
-        return (Expedition) cards.get(id);
+        return (Expedition) cards.remove(id);
     }
 
     public void addCard(Card card) {

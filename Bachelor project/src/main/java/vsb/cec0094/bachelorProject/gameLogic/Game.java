@@ -36,7 +36,7 @@ public class Game implements Cloneable, Serializable {
         players.get(activePlayer).canTakeExpedition(expedition); // if not throws exeption
 
         actionAndSemiStateHolder.addState(this, new ActionToShow(Action.SHOW_EXPEDITION_WHICH_WILL_BE_TAKEN, Expeditions.EXPEDITIONS, id));
-        ActionToShow takeExpeditionAction = players.get(activePlayer).takeExpedition(expeditions.getExpedition(id), drawPile);
+        ActionToShow takeExpeditionAction = players.get(activePlayer).takeExpedition(expedition, drawPile);
 
         actionAndSemiStateHolder.addState(this, takeExpeditionAction);
         return actionAndSemiStateHolder;

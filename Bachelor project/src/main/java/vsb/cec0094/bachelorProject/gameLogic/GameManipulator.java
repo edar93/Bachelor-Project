@@ -30,11 +30,16 @@ public class GameManipulator {
         currentAction = null;
     }
 
-    public void playerPickExpedition(int id) throws CloneNotSupportedException, TooExpensiveExpeditionException {
-        prepaireForAction();
+    public void playerPickExpedition(int id) {
+        try {
+            prepaireForAction();
 
-        ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
-        currentAction = null;
+            ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
+            currentAction = null;
+        } catch (TooExpensiveExpeditionException | CloneNotSupportedException e){
+            rollback();
+            e.printStackTrace();
+        }
     }
 
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
