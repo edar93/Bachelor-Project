@@ -38,10 +38,6 @@
     <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(localPlayer.login) !== -1}"
              src="images/{{card.image}}">
-
-        <p>{{markedId.indexOf($index)}}</p>
-
-        <p>{{markedType.indexOf(localPlayer.login)}}</p>
     </div>
     <div class="playersStats">
         <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>

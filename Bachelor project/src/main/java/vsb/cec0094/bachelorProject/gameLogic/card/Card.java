@@ -3,7 +3,7 @@ package vsb.cec0094.bachelorProject.gameLogic.card;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Card implements Cloneable {
+public class Card implements Cloneable, Comparable<Card> {
 
     private CardType cardType;
     private int coin;
@@ -20,6 +20,27 @@ public class Card implements Cloneable {
                     }
                 })
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public int compareTo(Card card) {
+        int comparingCardValue = card.getCardType().ordinal();
+        int localCardValue = this.cardType.ordinal();
+        if (comparingCardValue < localCardValue) {
+            return 1;
+        } else if (comparingCardValue > localCardValue) {
+            return -1;
+        } else {
+            int localInfluence = this.getInfluence();
+            int comparingInfluence = card.getInfluence();
+            if (comparingInfluence < localInfluence) {
+                return 1;
+            } else if (comparingInfluence > localInfluence) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
     }
 
     @Override

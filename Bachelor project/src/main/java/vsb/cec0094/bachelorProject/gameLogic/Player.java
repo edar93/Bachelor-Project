@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
@@ -9,6 +10,7 @@ import vsb.cec0094.bachelorProject.models.ActionToShow;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,8 +22,45 @@ public class Player implements Cloneable {
     private int swords;
     private List<Card> cards;
 
+    @JsonIgnore
+    private int crossCount;
+    @JsonIgnore
+    private int anchorCount;
+    @JsonIgnore
+    private int hutCount;
+    @JsonIgnore
+    private int jackOfAllTradesCount;
+    @JsonIgnore
+    private int discount;
+    @JsonIgnore
+    private int jestersCount;
+    @JsonIgnore
+    private int admiralsCount;
+    @JsonIgnore
+    private int baseCardsToTake;
+    @JsonIgnore
+    private int traderPinaceCount;
+    @JsonIgnore
+    private int traderFluteCount;
+    @JsonIgnore
+    private int traderSkiffCount;
+    @JsonIgnore
+    private int traderFrigadeCount;
+    @JsonIgnore
+    private int traderGalleonCount;
+
+
     private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
     //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
+
+    public ActionToShow getCardFromTable(Table table, int position) throws InvalidActionException {
+        Card card = table.getCards().get(position);
+        canBeCardTaken(card);
+        cards.add(card);
+        table.getCards().remove(position);
+        updateVariables();
+        return new ActionToShow(Action.GET_CARD, new String[]{this.login}, new Integer[]{cards.indexOf(card)});
+    }
 
     public static List<Player> cloneList(List<Player> source) {
         return source.stream()
@@ -43,12 +82,78 @@ public class Player implements Cloneable {
         return clone;
     }
 
-    public ActionToShow getCardFromTable(Table table, int position) throws InvalidActionException {
-        Card card = table.getCards().get(position);
-        canBeCardTaken(card);
-        cards.add(card);
-        table.getCards().remove(position);
-        return new ActionToShow(Action.GET_CARD, new String[]{this.login}, new Integer[]{cards.indexOf(card)});
+    private void updateVariables() {
+        cleanVariables();
+
+        for (Card card : cards) {
+            switch (card.getCardType()) {
+                case ADMIRAL:
+                    admiralsCount++;
+                    break;
+                case CAPTAIN:
+                    anchorCount++;
+                    break;
+                case GOVERNOR:
+                    baseCardsToTake++;
+                    break;
+                case JACK_OF_ALL_TRADES:
+                    jackOfAllTradesCount++;
+                    break;
+                case JESTER:
+                    jestersCount++;
+                    break;
+                case MADEMOISELLE:
+                    discount++;
+                    break;
+                case PIRATE:
+                    swords = swords + 2;
+                    break;
+                case PRIEST:
+                    crossCount++;
+                    break;
+                case SAILOR:
+                    swords++;
+                    break;
+                case SETTLER:
+                    hutCount++;
+                    break;
+                case TRADER_FLUTE:
+                    traderFluteCount++;
+                    break;
+                case TRADER_FRIGADE:
+                    traderFrigadeCount++;
+                    break;
+                case TRADER_GALLEON:
+                    traderGalleonCount++;
+                    break;
+                case TRADER_PINACE:
+                    traderPinaceCount++;
+                    break;
+                case TRADER_SKIFF:
+                    traderSkiffCount++;
+                    break;
+            }
+            influencePoints += card.getInfluence();
+        }
+        Collections.sort(cards);
+    }
+
+    private void cleanVariables() {
+        this.influencePoints = 0;
+        this.swords = 0;
+        this.crossCount = 0;
+        this.anchorCount = 0;
+        this.hutCount = 0;
+        this.jackOfAllTradesCount = 0;
+        this.discount = 0;
+        this.jestersCount = 0;
+        this.admiralsCount = 0;
+        this.baseCardsToTake = 0;
+        this.traderPinaceCount = 0;
+        this.traderFluteCount = 0;
+        this.traderSkiffCount = 0;
+        this.traderFrigadeCount = 0;
+        this.traderGalleonCount = 0;
     }
 
     private void canBeCardTaken(Card card) throws InvalidActionException {
@@ -60,9 +165,8 @@ public class Player implements Cloneable {
     public Player(String login) {
         this.login = login;
         coins = 3;
-        influencePoints = 0;
-        swords = 0;
         cards = new ArrayList<>();
+        cleanVariables();
     }
 
     public String getLogin() {
@@ -103,5 +207,113 @@ public class Player implements Cloneable {
 
     public void setCards(List<Card> cards) {
         this.cards = cards;
+    }
+
+    public int getCrossCount() {
+        return crossCount;
+    }
+
+    public void setCrossCount(int crossCount) {
+        this.crossCount = crossCount;
+    }
+
+    public int getAnchorCount() {
+        return anchorCount;
+    }
+
+    public void setAnchorCount(int anchorCount) {
+        this.anchorCount = anchorCount;
+    }
+
+    public int getHutCount() {
+        return hutCount;
+    }
+
+    public void setHutCount(int hutCount) {
+        this.hutCount = hutCount;
+    }
+
+    public int getJackOfAllTradesCount() {
+        return jackOfAllTradesCount;
+    }
+
+    public void setJackOfAllTradesCount(int jackOfAllTradesCount) {
+        this.jackOfAllTradesCount = jackOfAllTradesCount;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
+
+    public int getJestersCount() {
+        return jestersCount;
+    }
+
+    public void setJestersCount(int jestersCount) {
+        this.jestersCount = jestersCount;
+    }
+
+    public int getAdmiralsCount() {
+        return admiralsCount;
+    }
+
+    public void setAdmiralsCount(int admiralsCount) {
+        this.admiralsCount = admiralsCount;
+    }
+
+    public int getBaseCardsToTake() {
+        return baseCardsToTake;
+    }
+
+    public void setBaseCardsToTake(int baseCardsToTake) {
+        this.baseCardsToTake = baseCardsToTake;
+    }
+
+    public int getTraderPinaceCount() {
+        return traderPinaceCount;
+    }
+
+    public void setTraderPinaceCount(int traderPinaceCount) {
+        this.traderPinaceCount = traderPinaceCount;
+    }
+
+    public int getTraderFluteCount() {
+        return traderFluteCount;
+    }
+
+    public void setTraderFluteCount(int traderFluteCount) {
+        this.traderFluteCount = traderFluteCount;
+    }
+
+    public int getTraderSkiffCount() {
+        return traderSkiffCount;
+    }
+
+    public void setTraderSkiffCount(int traderSkiffCount) {
+        this.traderSkiffCount = traderSkiffCount;
+    }
+
+    public int getTraderFrigadeCount() {
+        return traderFrigadeCount;
+    }
+
+    public void setTraderFrigadeCount(int traderFrigadeCount) {
+        this.traderFrigadeCount = traderFrigadeCount;
+    }
+
+    public int getTraderGalleonCount() {
+        return traderGalleonCount;
+    }
+
+    public void setTraderGalleonCount(int traderGalleonCount) {
+        this.traderGalleonCount = traderGalleonCount;
+    }
+
+    public static List<CardType> getInvalidTypes() {
+        return invalidTypes;
     }
 }
