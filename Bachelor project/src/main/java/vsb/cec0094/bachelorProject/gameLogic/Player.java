@@ -49,7 +49,6 @@ public class Player implements Cloneable {
     @JsonIgnore
     private int traderGalleonCount;
 
-
     private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
     //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
 

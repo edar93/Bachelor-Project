@@ -71,6 +71,15 @@ public class PlayGameService {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/pickexpedition")
+    public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException {
+        String player = SecurityContextHolder.getContext().getAuthentication().getName();
+        GameManipulator game = getValidatedGame(player);
+        game.playerPickExpedition(id);
+        return ResponseEntity.ok().build();
+    }
+
     /**
      * Check if player is on turn
      *

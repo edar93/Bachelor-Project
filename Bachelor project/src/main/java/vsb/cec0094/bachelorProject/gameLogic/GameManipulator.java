@@ -31,6 +31,13 @@ public class GameManipulator {
         currentAction = null;
     }
 
+    public void playerPickExpedition(int id) throws CloneNotSupportedException {
+        prepaireForAction();
+
+        game.pickExpedition(id);
+
+    }
+
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
         prepaireForAction();
 

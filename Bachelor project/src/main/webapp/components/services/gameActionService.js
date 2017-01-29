@@ -16,6 +16,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     function setToScope(scope) {
         scope.faceCard = faceCard;
         scope.pickCard = pickCard;
+        scope.pickExpedition = pickExpedition;
     }
 
     function initWebSockets() {
@@ -56,6 +57,13 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     function pickCard(id) {
         backendGateway.post('PICK_CARD', id, undefined, true)
+            .then(function () {
+                globalUpdate();
+            })
+    }
+
+    function pickExpedition(id){
+        backendGateway.post('PICK_EXPEDITION', id, undefined, true)
             .then(function () {
                 globalUpdate();
             })

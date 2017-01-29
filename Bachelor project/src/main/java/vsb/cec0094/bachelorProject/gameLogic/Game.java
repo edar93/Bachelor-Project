@@ -28,6 +28,10 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private DrawPile drawPile;
 
+    public ActionAndSemiStateHolder pickExpedition(int id){
+
+    }
+
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException {
         ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
 

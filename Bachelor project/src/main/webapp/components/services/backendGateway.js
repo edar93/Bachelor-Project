@@ -21,6 +21,7 @@ var backendGateway = function ($http, $q) {
         START_GAME: 'play/startGame',
         FACE_CARD: 'play/facecard',
         PICK_CARD: 'play/pickcard',
+        PICK_EXPEDITION: 'play/pickexpedition',
         GET_MY_GAME: 'play/getMyGame'
     };
 
