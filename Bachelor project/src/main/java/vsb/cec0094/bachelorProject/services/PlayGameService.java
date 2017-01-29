@@ -7,14 +7,18 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
+import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.gameLogic.Player;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
-import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 
 import java.util.List;
 
@@ -29,7 +33,7 @@ public class PlayGameService {
 
     @MessageMapping("/sendAction/{owner}")
     @SendTo("/myGame/{owner}")
-    public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException {
+    public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         GameManipulator gameManipulator = getValidatedGame(owner);
         return gameManipulator;
     }
@@ -55,7 +59,7 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
-    public ResponseEntity<Void> faceCard() throws CloneNotSupportedException {
+    public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.faceCard();
@@ -64,7 +68,7 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
-    public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException {
+    public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerGetCardFromTable(id);
@@ -73,7 +77,7 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickexpedition")
-    public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException {
+    public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerPickExpedition(id);
@@ -86,7 +90,7 @@ public class PlayGameService {
      * @param localPlayer
      * @return game in which player is
      */
-    private GameManipulator getValidatedGame(String localPlayer) {
+    private GameManipulator getValidatedGame(String localPlayer) throws GameDoesNotExist, NotPlayersTurnException {
         GameInQueue gameInQueue = gameDao.getPlayersGame(localPlayer);
         if (gameInQueue == null) {
             throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in database");

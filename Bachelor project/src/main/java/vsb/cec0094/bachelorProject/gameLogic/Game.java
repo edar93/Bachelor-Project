@@ -2,8 +2,10 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
+import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -28,8 +30,16 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private DrawPile drawPile;
 
-    public ActionAndSemiStateHolder pickExpedition(int id){
+    public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+        Expedition expedition = expeditions.getExpedition(id);
+        players.get(activePlayer).canTakeExpedition(expedition); // if not throws exeption
 
+        actionAndSemiStateHolder.addState(this, new ActionToShow(Action.SHOW_EXPEDITION_WHICH_WILL_BE_TAKEN, Expeditions.EXPEDITIONS, id));
+        ActionToShow takeExpeditionAction = players.get(activePlayer).takeExpedition(expeditions.getExpedition(id), drawPile);
+
+        actionAndSemiStateHolder.addState(this, takeExpeditionAction);
+        return actionAndSemiStateHolder;
     }
 
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException {

@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic.pack;
 
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
+import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,11 @@ public class Expeditions implements Cloneable {
 
     private List<Card> cards;
 
-    public void addCard(Card card){
+    public Expedition getExpedition(int id) {
+        return (Expedition) cards.get(id);
+    }
+
+    public void addCard(Card card) {
         cards.add(card);
     }
 

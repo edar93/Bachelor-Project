@@ -1,9 +1,8 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javafx.util.Pair;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
-import vsb.cec0094.bachelorProject.gameLogic.Game;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
@@ -31,11 +30,11 @@ public class GameManipulator {
         currentAction = null;
     }
 
-    public void playerPickExpedition(int id) throws CloneNotSupportedException {
+    public void playerPickExpedition(int id) throws CloneNotSupportedException, TooExpensiveExpeditionException {
         prepaireForAction();
 
-        game.pickExpedition(id);
-
+        ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
+        currentAction = null;
     }
 
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
@@ -59,7 +58,7 @@ public class GameManipulator {
         actionsToShows.add(actionToShow);
     }
 
-    private void ProcessActionAndSemiStateHolder(ActionAndSemiStateHolder actionAndSemiStateHolder){
+    private void ProcessActionAndSemiStateHolder(ActionAndSemiStateHolder actionAndSemiStateHolder) {
         semiStates.addAll(actionAndSemiStateHolder.getGameList());
         actionsToShows.addAll(actionAndSemiStateHolder.getActionToShowList());
     }
@@ -73,7 +72,7 @@ public class GameManipulator {
         actionsToShows.clear();
         semiStates.clear();
         backupGame = (Game) currentGame.clone();
-        if(currentAction != null) {
+        if (currentAction != null) {
             backupAction = (ActionToShow) currentAction.clone();
         }
     }

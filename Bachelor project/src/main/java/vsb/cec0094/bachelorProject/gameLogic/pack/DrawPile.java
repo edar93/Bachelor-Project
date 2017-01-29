@@ -24,6 +24,10 @@ public class DrawPile implements Cloneable {
         return clone;
     }
 
+    public void getUsedCard(Card card) {
+        usedCards.add(card);
+    }
+
     public Card giveCard() {
         if (cards.size() == 0) {
             Collections.shuffle(usedCards);

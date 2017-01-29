@@ -2,8 +2,11 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
+import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
+import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
@@ -51,6 +54,48 @@ public class Player implements Cloneable {
 
     private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
     //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
+
+    public void canTakeExpedition(Expedition expedition) throws TooExpensiveExpeditionException {
+        expedition.canBeTaken(crossCount, anchorCount, hutCount, jackOfAllTradesCount);
+    }
+
+    public ActionToShow takeExpedition(Expedition expedition, DrawPile drawPile) {
+        coins += expedition.getCoin();
+        int anchors = expedition.getAnchor();
+        int huts = expedition.getHut();
+        int crosses = expedition.getCross();
+
+        for (int i = cards.size() - 1; i >= 0; i--) {
+            if (cards.get(i).getCardType().equals(CardType.CAPTAIN) && anchors > 0) {
+                anchors--;
+                drawPile.getUsedCard(cards.remove(i));
+            } else if (cards.get(i).getCardType().equals(CardType.SETTLER) && huts > 0) {
+                huts--;
+                drawPile.getUsedCard(cards.remove(i));
+            } else if (cards.get(i).getCardType().equals(CardType.PRIEST) && crosses > 0) {
+                crosses--;
+                drawPile.getUsedCard(cards.remove(i));
+            }
+        }
+
+        for (int i = cards.size() - 1; i >= 0; i--) {
+            if (cards.get(i).getCardType().equals(CardType.JACK_OF_ALL_TRADES) && anchors > 0) {
+                anchors--;
+                drawPile.getUsedCard(cards.remove(i));
+            } else if (cards.get(i).getCardType().equals(CardType.JACK_OF_ALL_TRADES) && huts > 0) {
+                huts--;
+                drawPile.getUsedCard(cards.remove(i));
+            } else if (cards.get(i).getCardType().equals(CardType.JACK_OF_ALL_TRADES) && crosses > 0) {
+                crosses--;
+                drawPile.getUsedCard(cards.remove(i));
+            }
+        }
+
+        cards.add(expedition);
+        updateVariables();
+
+        return new ActionToShow(null, this.login, cards.indexOf(expedition));
+    }
 
     public ActionToShow getCardFromTable(Table table, int position) throws InvalidActionException {
         Card card = table.getCards().get(position);
