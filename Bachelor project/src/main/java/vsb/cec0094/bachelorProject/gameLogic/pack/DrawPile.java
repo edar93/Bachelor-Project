@@ -4,7 +4,7 @@ package vsb.cec0094.bachelorProject.gameLogic.pack;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
-import vsb.cec0094.bachelorProject.gameLogic.card.Exptedition;
+import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,13 +38,13 @@ public class DrawPile implements Cloneable {
         this.cards = new ArrayList<>();
 
         if (full) {
-            cards.add(new Exptedition(CardType.EXPEDITION, 2, 4, 2, 0, 0));
-            cards.add(new Exptedition(CardType.EXPEDITION, 2, 4, 0, 2, 0));
-            cards.add(new Exptedition(CardType.EXPEDITION, 2, 4, 0, 0, 2));
-            cards.add(new Exptedition(CardType.EXPEDITION, 3, 6, 0, 2, 1));
-            cards.add(new Exptedition(CardType.EXPEDITION, 3, 6, 2, 0, 1));
+            cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 2, 0, 0));
+            cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 0, 2, 0));
+            cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 0, 0, 2));
+            cards.add(new Expedition(CardType.EXPEDITION, 3, 6, 0, 2, 1));
+            cards.add(new Expedition(CardType.EXPEDITION, 3, 6, 2, 0, 1));
             if (fivePlayers) {
-                cards.add(new Exptedition(CardType.EXPEDITION, 3, 5, 1, 1, 1));
+                cards.add(new Expedition(CardType.EXPEDITION, 3, 5, 1, 1, 1));
             }
 
             for (int i = 0; i < 2; i++) {

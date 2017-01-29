@@ -1,26 +1,26 @@
 package vsb.cec0094.bachelorProject.gameLogic.card;
 
-public class Exptedition extends Card {
+public class Expedition extends Card {
 
     private int cross;
     private int anchor;
     private int hut;
 
-    public Exptedition(CardType cardType, int coin, int influence, int cross, int anchor, int hut) {
+    public Expedition(CardType cardType, int coin, int influence, int cross, int anchor, int hut) {
         super(cardType, coin, influence);
         this.cross = cross;
         this.anchor = anchor;
         this.hut = hut;
     }
 
-    public Exptedition(CardType cardType, int cross, int anchor, int hut) {
+    public Expedition(CardType cardType, int cross, int anchor, int hut) {
         super(cardType);
         this.cross = cross;
         this.anchor = anchor;
         this.hut = hut;
     }
 
-    public Exptedition(CardType cardType) {
+    public Expedition(CardType cardType) {
         super(cardType);
     }
 
