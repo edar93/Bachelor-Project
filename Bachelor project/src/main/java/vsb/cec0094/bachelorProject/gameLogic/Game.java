@@ -29,9 +29,25 @@ public class Game implements Cloneable, Serializable {
     private Expeditions expeditions;
     @JsonIgnore
     private DrawPile drawPile;
+    private Phase phase;
+    private int cardsToTake;
 
-    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
-        return players.get(activePlayer).getCardFromTable(table, cardPosition);
+    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException {
+        // TODO remove comment
+        //phase = Phase.TRADING;
+
+        Card card = table.getCards().remove(cardPosition);
+        cardTypeValidation(card);
+
+        if (Card.shipTypes.contains(card.getCardType())) {
+            return null;
+        } else {
+            Player playerDoingAction = players.get(activePlayer);
+            playerDoingAction.takeCharacterCard(card, true);
+            playerDoingAction.updateVariables();
+            return new ActionToShow(Action.GET_CARD, new String[]{playerDoingAction.getLogin()}, new Integer[]{playerDoingAction.getCards().indexOf(card)});
+        }
+//        return players.get(activePlayer).getCardFromTable(table, cardPosition);
     }
 
     public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
@@ -46,17 +62,59 @@ public class Game implements Cloneable, Serializable {
         return actionAndSemiStateHolder;
     }
 
-    public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException {
+    public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException, InvalidActionException {
+        if (!Phase.EXPLORING.equals(phase)) {
+            throw new InvalidActionException("face card is not allowed now");
+        }
         Card card = drawPile.giveCard();
 
         if (card.getCardType() == CardType.EXPEDITION) {
             return faceExpedition(card);
         } else if (card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS) {
             return faceTaxes(card);
+        } else if (Card.shipTypes.contains(card.getCardType())) {
+            //TODO repel ship
+            ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+            actionAndSemiStateHolder.addState(this, table.faceCard(card));
+            //TODO too much ships
+            recalculateCardsToTake();
+            return actionAndSemiStateHolder;
         } else {
             ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
             actionAndSemiStateHolder.addState(this, table.faceCard(card));
             return actionAndSemiStateHolder;
+        }
+    }
+
+    private void recalculateCardsToTake() {
+        cardsToTake = players.get(activePlayer).getCardsToTake();
+        if (!Phase.OTHERS_PLAYERS_TRADING.equals(phase)) {
+            int skiff = 0, flute = 0, pinace = 0, frigate = 0, galleon = 0;
+            for (Card card : table.getCards()) {
+                switch (card.getCardType()) {
+                    case SKIFF:
+                        skiff = 1;
+                        break;
+                    case FLUTE:
+                        flute = 1;
+                        break;
+                    case PINACE:
+                        pinace = 1;
+                        break;
+                    case FRIGATE:
+                        frigate = 1;
+                        break;
+                    case GALLEON:
+                        galleon = 1;
+                        break;
+                }
+            }
+            int typesCount = skiff + flute + pinace + frigate + galleon;
+            if (typesCount == 4) {
+                cardsToTake += 1;
+            } else if (typesCount == 5) {
+                cardsToTake += 2;
+            }
         }
     }
 
@@ -90,7 +148,7 @@ public class Game implements Cloneable, Serializable {
         for (Player player : players) {
             if (card.getCardType() == CardType.TAX_SWORDS && player.getSwords() == comparingValue) {
                 player.setCoins(player.getCoins() + 1);
-            }else if (card.getCardType() == CardType.TAX_INFLUENCE && player.getInfluencePoints() == comparingValue) {
+            } else if (card.getCardType() == CardType.TAX_INFLUENCE && player.getInfluencePoints() == comparingValue) {
                 player.setCoins(player.getCoins() + 1);
             }
         }
@@ -110,6 +168,12 @@ public class Game implements Cloneable, Serializable {
         actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
         actionAndSemiStateHolder.addState(this, actionToShow);
         return actionAndSemiStateHolder;
+    }
+
+    private void cardTypeValidation(Card card) throws InvalidActionException {
+        if (Card.noActionTypes.contains(card.getCardType())) {
+            throw new InvalidActionException("invalid card type");
+        }
     }
 
     @Override
@@ -134,6 +198,7 @@ public class Game implements Cloneable, Serializable {
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
         activePlayer = 0;
+        phase = Phase.EXPLORING;
         table = new Table();
         drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();

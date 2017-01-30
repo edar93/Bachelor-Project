@@ -12,7 +12,6 @@ import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,14 +25,24 @@ public class Player implements Cloneable {
     private List<Card> cards;
 
     @JsonIgnore
-    private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, baseCardsToTake,
+    private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, cardsToTake,
             traderPinaceCount, traderFluteCount, traderSkiffCount, traderFrigadeCount, traderGalleonCount;
-
-    private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
-    //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
 
     public void canTakeExpedition(Expedition expedition) throws TooExpensiveExpeditionException {
         expedition.canBeTaken(crossCount, anchorCount, hutCount, jackOfAllTradesCount);
+    }
+
+    public void takeCharacterCard(Card card, Boolean isOnTurn) throws TooExpensiveExpeditionException {
+        int price = card.getCoin() - discount;
+        if (!isOnTurn) {
+            price += 1;
+        }
+        if (price < 0){ price = 0;}
+        coins -= price;
+        if (coins < 0){
+            throw new TooExpensiveExpeditionException(card + "is too expensive");
+        }
+        cards.add(card);
     }
 
     public ActionToShow takeExpedition(Expedition expedition, DrawPile drawPile) {
@@ -74,15 +83,6 @@ public class Player implements Cloneable {
         return new ActionToShow(null, this.login, cards.indexOf(expedition));
     }
 
-    public ActionToShow getCardFromTable(Table table, int position) throws InvalidActionException {
-        Card card = table.getCards().get(position);
-        canBeCardTaken(card);
-        cards.add(card);
-        table.getCards().remove(position);
-        updateVariables();
-        return new ActionToShow(Action.GET_CARD, new String[]{this.login}, new Integer[]{cards.indexOf(card)});
-    }
-
     public static List<Player> cloneList(List<Player> source) {
         return source.stream()
                 .map(p -> {
@@ -96,14 +96,7 @@ public class Player implements Cloneable {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        Player clone = (Player) super.clone();
-        clone.setCards(Card.cloneList(cards));
-        return clone;
-    }
-
-    private void updateVariables() {
+    public void updateVariables() {
         cleanVariables();
 
         for (Card card : cards) {
@@ -115,7 +108,7 @@ public class Player implements Cloneable {
                     anchorCount++;
                     break;
                 case GOVERNOR:
-                    baseCardsToTake++;
+                    cardsToTake++;
                     break;
                 case JACK_OF_ALL_TRADES:
                     jackOfAllTradesCount++;
@@ -160,7 +153,7 @@ public class Player implements Cloneable {
     }
 
     private void cleanVariables() {
-        this.baseCardsToTake = 1;
+        this.cardsToTake = 1;
         this.influencePoints = 0;
         this.swords = 0;
         this.crossCount = 0;
@@ -177,10 +170,11 @@ public class Player implements Cloneable {
         this.traderGalleonCount = 0;
     }
 
-    private void canBeCardTaken(Card card) throws InvalidActionException {
-        if (invalidTypes.contains(card.getCardType())) {
-            throw new InvalidActionException("invalid card type");
-        }
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Player clone = (Player) super.clone();
+        clone.setCards(Card.cloneList(cards));
+        return clone;
     }
 
     public Player(String login) {
@@ -286,12 +280,12 @@ public class Player implements Cloneable {
         this.admiralsCount = admiralsCount;
     }
 
-    public int getBaseCardsToTake() {
-        return baseCardsToTake;
+    public int getCardsToTake() {
+        return cardsToTake;
     }
 
-    public void setBaseCardsToTake(int baseCardsToTake) {
-        this.baseCardsToTake = baseCardsToTake;
+    public void setCardsToTake(int cardsToTake) {
+        this.cardsToTake = cardsToTake;
     }
 
     public int getTraderPinaceCount() {
@@ -332,9 +326,5 @@ public class Player implements Cloneable {
 
     public void setTraderGalleonCount(int traderGalleonCount) {
         this.traderGalleonCount = traderGalleonCount;
-    }
-
-    public static List<CardType> getInvalidTypes() {
-        return invalidTypes;
     }
 }

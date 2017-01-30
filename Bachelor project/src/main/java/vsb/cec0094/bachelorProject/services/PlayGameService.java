@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
+import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
@@ -59,7 +60,7 @@ public class PlayGameService {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
-    public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
+    public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.faceCard();

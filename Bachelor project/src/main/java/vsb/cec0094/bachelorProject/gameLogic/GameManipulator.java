@@ -23,7 +23,7 @@ public class GameManipulator {
     @JsonIgnore
     private ActionToShow backupAction;
 
-    public void faceCard() throws CloneNotSupportedException {
+    public void faceCard() throws CloneNotSupportedException, InvalidActionException {
         prepaireForAction();
 
         ProcessActionAndSemiStateHolder(currentGame.faceCard(this));
@@ -36,7 +36,7 @@ public class GameManipulator {
 
             ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
             currentAction = null;
-        } catch (TooExpensiveExpeditionException | CloneNotSupportedException e){
+        } catch (TooExpensiveExpeditionException | CloneNotSupportedException e) {
             rollback();
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class GameManipulator {
             actionsToShows.add(currentGame.playerGetCardFromTable(id));
             semiStates.add((Game) currentGame.clone());
             currentAction = null;
-        } catch (InvalidActionException e) {
+        } catch (InvalidActionException | TooExpensiveExpeditionException e) {
             rollback();
             e.printStackTrace();
         }
@@ -69,6 +69,8 @@ public class GameManipulator {
     }
 
     private void rollback() {
+        actionsToShows.clear();
+        semiStates.clear();
         currentGame = backupGame;
         currentAction = backupAction;
     }

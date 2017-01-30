@@ -1,9 +1,14 @@
 package vsb.cec0094.bachelorProject.gameLogic.card;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Card implements Cloneable, Comparable<Card> {
+
+    public static final List<CardType> noActionTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
+    public static final List<CardType> shipTypes = Arrays.asList(CardType.FLUTE, CardType.FRIGATE,
+            CardType.GALLEON, CardType.PINACE, CardType.SKIFF);
 
     private CardType cardType;
     private int coin;
