@@ -15,6 +15,13 @@ public class ActionAndSemiStateHolder {
         actionToShowList.add((ActionToShow) actionToShow.clone());
     }
 
+    public ActionAndSemiStateHolder(Game game, ActionToShow actionToShow) throws CloneNotSupportedException {
+        gameList = new ArrayList<>();
+        actionToShowList = new ArrayList<>();
+        gameList.add((Game) game.clone());
+        actionToShowList.add((ActionToShow) actionToShow.clone());
+    }
+
     public ActionAndSemiStateHolder() {
         gameList = new ArrayList<>();
         actionToShowList = new ArrayList<>();

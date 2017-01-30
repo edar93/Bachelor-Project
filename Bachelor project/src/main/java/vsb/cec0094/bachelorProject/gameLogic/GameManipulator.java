@@ -44,13 +44,11 @@ public class GameManipulator {
 
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
         prepaireForAction();
-
         try {
             //display picked card
             semiStates.add((Game) currentGame.clone());
             actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
-            actionsToShows.add(currentGame.playerGetCardFromTable(id));
-            semiStates.add((Game) currentGame.clone());
+            ProcessActionAndSemiStateHolder (currentGame.playerGetCardFromTable(id));
             currentAction = null;
         } catch (InvalidActionException | TooExpensiveExpeditionException e) {
             rollback();
@@ -58,14 +56,11 @@ public class GameManipulator {
         }
     }
 
-    public void addActionForCurrentState(ActionToShow actionToShow) throws CloneNotSupportedException {
-        semiStates.add((Game) this.currentGame.clone());
-        actionsToShows.add(actionToShow);
-    }
-
     private void ProcessActionAndSemiStateHolder(ActionAndSemiStateHolder actionAndSemiStateHolder) {
-        semiStates.addAll(actionAndSemiStateHolder.getGameList());
-        actionsToShows.addAll(actionAndSemiStateHolder.getActionToShowList());
+        if (actionAndSemiStateHolder != null) {
+            semiStates.addAll(actionAndSemiStateHolder.getGameList());
+            actionsToShows.addAll(actionAndSemiStateHolder.getActionToShowList());
+        }
     }
 
     private void rollback() {

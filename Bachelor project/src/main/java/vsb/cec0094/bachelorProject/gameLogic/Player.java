@@ -1,14 +1,11 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
-import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
-import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
 
 import java.util.ArrayList;
@@ -32,15 +29,34 @@ public class Player implements Cloneable {
         expedition.canBeTaken(crossCount, anchorCount, hutCount, jackOfAllTradesCount);
     }
 
+    public void getCoinsFromShip(Card card) {
+        coins += card.getCoin();
+
+        CardType shipType = card.getCardType();
+        if (CardType.FRIGATE.equals(shipType)) {
+            coins += traderFrigadeCount;
+        } else if (CardType.GALLEON.equals(shipType)) {
+            coins += traderGalleonCount;
+        } else if (CardType.PINACE.equals(shipType)) {
+            coins += traderPinaceCount;
+        } else if (CardType.FLUTE.equals(shipType)) {
+            coins += traderFluteCount;
+        } else if (CardType.SKIFF.equals(shipType)) {
+            coins += traderSkiffCount;
+        }
+    }
+
     public void takeCharacterCard(Card card, Boolean isOnTurn) throws TooExpensiveExpeditionException {
         int price = card.getCoin() - discount;
         if (!isOnTurn) {
             price += 1;
         }
-        if (price < 0){ price = 0;}
+        if (price < 0) {
+            price = 0;
+        }
         coins -= price;
-        if (coins < 0){
-            throw new TooExpensiveExpeditionException(card + "is too expensive");
+        if (coins < 0) {
+            throw new TooExpensiveExpeditionException(card + " is too expensive");
         }
         cards.add(card);
     }

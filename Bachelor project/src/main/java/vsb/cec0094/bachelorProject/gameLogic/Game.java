@@ -32,7 +32,7 @@ public class Game implements Cloneable, Serializable {
     private Phase phase;
     private int cardsToTake;
 
-    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException {
+    public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
         // TODO remove comment
         //phase = Phase.TRADING;
 
@@ -40,14 +40,16 @@ public class Game implements Cloneable, Serializable {
         cardTypeValidation(card);
 
         if (Card.shipTypes.contains(card.getCardType())) {
+            Player playerDoingAction = players.get(activePlayer);
+            playerDoingAction.getCoinsFromShip(card);
+            drawPile.getUsedCard(card);
             return null;
         } else {
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.takeCharacterCard(card, true);
             playerDoingAction.updateVariables();
-            return new ActionToShow(Action.GET_CARD, new String[]{playerDoingAction.getLogin()}, new Integer[]{playerDoingAction.getCards().indexOf(card)});
+            return new ActionAndSemiStateHolder(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
         }
-//        return players.get(activePlayer).getCardFromTable(table, cardPosition);
     }
 
     public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
