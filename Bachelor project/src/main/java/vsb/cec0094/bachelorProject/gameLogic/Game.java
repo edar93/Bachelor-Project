@@ -43,24 +43,68 @@ public class Game implements Cloneable, Serializable {
     }
 
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException {
-        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
-
         Card card = drawPile.giveCard();
+
         if (card.getCardType() == CardType.EXPEDITION) {
-            //show card on table
-            table.addCard(card);
-            ActionToShow actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_TABLE, Table.TABLE, table.getCards().size() - 1);
-            actionAndSemiStateHolder.addState(this, actionToShow);
-            //show card between expeditions
-            expeditions.addCard(table.removeLastCard());
-            actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
-            actionAndSemiStateHolder.addState(this, actionToShow);
+            return faceExpedition(card);
         } else if (card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS) {
-            // implement
+            return faceTaxes(card);
         } else {
-            ActionToShow cardAddedToTable = table.faceCard(card);
-            actionAndSemiStateHolder.addState(this, cardAddedToTable);
+            ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+            actionAndSemiStateHolder.addState(this, table.faceCard(card));
+            return actionAndSemiStateHolder;
         }
+    }
+
+    private ActionAndSemiStateHolder faceTaxes(Card card) throws CloneNotSupportedException {
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+        int comparingValue;
+
+        actionAndSemiStateHolder.addState(this, new ActionToShow(Action.SHOW_FACED_TAXES_PRE, Table.TABLE, table.getCards().size() - 1));
+        if (card.getCardType() == CardType.TAX_SWORDS) {
+            comparingValue = 0;
+        } else {
+            comparingValue = 1000;
+        }
+
+        for (Player player : players) {
+            if (player.getCoins() > 11) {
+                player.setCoins(player.getCoins() / 2);
+            }
+
+            if (card.getCardType() == CardType.TAX_SWORDS) {
+                if (player.getSwords() > comparingValue) {
+                    comparingValue = player.getSwords();
+                }
+            } else if (card.getCardType() == CardType.TAX_INFLUENCE) {
+                if (player.getInfluencePoints() < comparingValue) {
+                    comparingValue = player.getInfluencePoints();
+                }
+            }
+        }
+
+        for (Player player : players) {
+            if (card.getCardType() == CardType.TAX_SWORDS && player.getSwords() == comparingValue) {
+                player.setCoins(player.getCoins() + 1);
+            }else if (card.getCardType() == CardType.TAX_INFLUENCE && player.getInfluencePoints() == comparingValue) {
+                player.setCoins(player.getCoins() + 1);
+            }
+        }
+
+        actionAndSemiStateHolder.addState(this, table.faceCard(card));
+        return actionAndSemiStateHolder;
+    }
+
+    private ActionAndSemiStateHolder faceExpedition(Card card) throws CloneNotSupportedException {
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+        //show card on table
+        table.addCard(card);
+        ActionToShow actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_TABLE, Table.TABLE, table.getCards().size() - 1);
+        actionAndSemiStateHolder.addState(this, actionToShow);
+        //show card between expeditions
+        expeditions.addCard(table.removeLastCard());
+        actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
+        actionAndSemiStateHolder.addState(this, actionToShow);
         return actionAndSemiStateHolder;
     }
 
