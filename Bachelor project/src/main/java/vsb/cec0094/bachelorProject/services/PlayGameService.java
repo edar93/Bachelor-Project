@@ -100,7 +100,7 @@ public class PlayGameService {
             throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in memory");
         }
         List<Player> playerList = game.getCurrentGame().getPlayers();
-        String playerOnTurn = playerList.get(game.getCurrentGame().getPlayerOnTurn()).getLogin();
+        String playerOnTurn = playerList.get(game.getCurrentGame().getActivePlayer()).getLogin();
 
         if (!playerOnTurn.equals(localPlayer)) {
             throw new NotPlayersTurnException(" not \"" + localPlayer + "\" turn");

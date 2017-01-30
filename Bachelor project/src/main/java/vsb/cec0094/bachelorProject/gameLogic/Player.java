@@ -26,31 +26,8 @@ public class Player implements Cloneable {
     private List<Card> cards;
 
     @JsonIgnore
-    private int crossCount;
-    @JsonIgnore
-    private int anchorCount;
-    @JsonIgnore
-    private int hutCount;
-    @JsonIgnore
-    private int jackOfAllTradesCount;
-    @JsonIgnore
-    private int discount;
-    @JsonIgnore
-    private int jestersCount;
-    @JsonIgnore
-    private int admiralsCount;
-    @JsonIgnore
-    private int baseCardsToTake;
-    @JsonIgnore
-    private int traderPinaceCount;
-    @JsonIgnore
-    private int traderFluteCount;
-    @JsonIgnore
-    private int traderSkiffCount;
-    @JsonIgnore
-    private int traderFrigadeCount;
-    @JsonIgnore
-    private int traderGalleonCount;
+    private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, baseCardsToTake,
+            traderPinaceCount, traderFluteCount, traderSkiffCount, traderFrigadeCount, traderGalleonCount;
 
     private static final List<CardType> invalidTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
     //CardType.FLUTE, CardType.FRIGATE, CardType.GALLEON, CardType.PINACE, CardType.SKIFF
@@ -183,6 +160,7 @@ public class Player implements Cloneable {
     }
 
     private void cleanVariables() {
+        this.baseCardsToTake = 1;
         this.influencePoints = 0;
         this.swords = 0;
         this.crossCount = 0;
@@ -192,7 +170,6 @@ public class Player implements Cloneable {
         this.discount = 0;
         this.jestersCount = 0;
         this.admiralsCount = 0;
-        this.baseCardsToTake = 0;
         this.traderPinaceCount = 0;
         this.traderFluteCount = 0;
         this.traderSkiffCount = 0;

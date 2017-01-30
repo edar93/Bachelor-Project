@@ -30,6 +30,10 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private DrawPile drawPile;
 
+    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
+        return players.get(activePlayer).getCardFromTable(table, cardPosition);
+    }
+
     public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
         ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
         Expedition expedition = expeditions.getExpedition(id);
@@ -106,10 +110,6 @@ public class Game implements Cloneable, Serializable {
         actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
         actionAndSemiStateHolder.addState(this, actionToShow);
         return actionAndSemiStateHolder;
-    }
-
-    public ActionToShow playerGetCardFromTable(int cardPosition) throws InvalidActionException {
-        return players.get(activePlayer).getCardFromTable(table, cardPosition);
     }
 
     @Override

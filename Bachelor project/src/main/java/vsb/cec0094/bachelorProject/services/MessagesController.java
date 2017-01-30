@@ -11,7 +11,7 @@ public class MessagesController {
 
     @MessageMapping("/sendMessage")
     @SendTo("/topic/messages")
-    public Message receive(Message message) throws Exception {
+    public Message receive(Message message) {
         return message;
     }
 }
