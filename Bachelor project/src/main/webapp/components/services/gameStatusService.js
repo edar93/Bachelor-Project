@@ -15,6 +15,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         var playersCount;
         var localPlayer;
         var activePlayer;
+        var cardsToTake;
         var gameScope;
         var markedType;
         var markedId;
@@ -85,6 +86,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             playersList = game.players;
             table = game.table;
             playersCount = game.playersCount;
+            cardsToTake = game.cardsToTake;
         }
 
         function transformAddCards(game) {
@@ -120,6 +122,8 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             gameScope.playersList = playersList;
             gameScope.localPlayer = localPlayer;
             gameScope.expeditions = expeditions;
+            gameScope.playerTakingCard = activePlayer;
+            gameScope.cardsToTake = cardsToTake;
         }
     }
     ;

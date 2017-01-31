@@ -6,6 +6,7 @@
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"
              src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>
+    <p>{{playerTakingCard}} {{'CAN_TAKE' | translate}} {{player.cardsToTake}} {{'CARDS' | translate}} </p>
 </div>
 
 <div id="expeditions" class="expeditions">

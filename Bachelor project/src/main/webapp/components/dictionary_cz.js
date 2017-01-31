@@ -22,6 +22,8 @@ var dictionaryCZ = {
     GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',
     INFLUENCE_POINTS: 'Body vlivu',
     COINS: 'Mince',
+    CAN_TAKE: 'může vzit',
+    CARDS: 'karet',
     GLOBAL_CHAT: 'Chat',
     SEND_MESSAGE: 'Odeslat',
     MESSAGE: 'Zprava',

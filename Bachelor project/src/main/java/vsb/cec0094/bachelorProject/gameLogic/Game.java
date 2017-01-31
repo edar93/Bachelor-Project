@@ -28,10 +28,10 @@ public class Game implements Cloneable, Serializable {
     private int playerOnTurn;
     private int activePlayer;
     private Expeditions expeditions;
-    @JsonIgnore
-    private DrawPile drawPile;
     private Phase phase;
     private int cardsToTake;
+    @JsonIgnore
+    private DrawPile drawPile;
 
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
         // TODO remove comment
@@ -58,9 +58,9 @@ public class Game implements Cloneable, Serializable {
     }
 
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException, InvalidActionException {
-        if (!Phase.EXPLORING.equals(phase)) {
-            throw new InvalidActionException("face card is not allowed now");
-        }
+//        if (!Phase.EXPLORING.equals(phase)) {
+//            throw new InvalidActionException("face card is not allowed now");
+//        }
         Card card = drawPile.giveCard();
 
         if (card.getCardType() == CardType.EXPEDITION) {
@@ -214,7 +214,7 @@ public class Game implements Cloneable, Serializable {
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
         activePlayer = 0;
-        phase = Phase.EXPLORING;
+//        phase = Phase.EXPLORING;
         table = new Table();
         drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();
@@ -286,5 +286,21 @@ public class Game implements Cloneable, Serializable {
 
     public void setActivePlayer(int activePlayer) {
         this.activePlayer = activePlayer;
+    }
+
+    public Phase getPhase() {
+        return phase;
+    }
+
+    public void setPhase(Phase phase) {
+        this.phase = phase;
+    }
+
+    public int getCardsToTake() {
+        return cardsToTake;
+    }
+
+    public void setCardsToTake(int cardsToTake) {
+        this.cardsToTake = cardsToTake;
     }
 }
