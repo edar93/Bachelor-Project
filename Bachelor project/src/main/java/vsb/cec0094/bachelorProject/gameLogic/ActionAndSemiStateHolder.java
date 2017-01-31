@@ -15,6 +15,13 @@ public class ActionAndSemiStateHolder {
         actionToShowList.add((ActionToShow) actionToShow.clone());
     }
 
+    public void emphasizeLastAction(){
+        for (int i = 0; i < 2; i++){
+            gameList.add(gameList.get(gameList.size() - 1));
+            actionToShowList.add(actionToShowList.get(actionToShowList.size() - 1));
+        }
+    }
+
     public ActionAndSemiStateHolder(Game game, ActionToShow actionToShow) throws CloneNotSupportedException {
         gameList = new ArrayList<>();
         actionToShowList = new ArrayList<>();

@@ -25,8 +25,25 @@ public class Player implements Cloneable {
     private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, cardsToTake,
             traderPinaceCount, traderFluteCount, traderSkiffCount, traderFrigadeCount, traderGalleonCount;
 
+    public static List<Player> cloneList(List<Player> source) {
+        return source.stream()
+                .map(p -> {
+                    try {
+                        return (Player) p.clone();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                        return null;
+                    }
+                })
+                .collect(Collectors.toList());
+    }
+
     public void canTakeExpedition(Expedition expedition) throws TooExpensiveExpeditionException {
         expedition.canBeTaken(crossCount, anchorCount, hutCount, jackOfAllTradesCount);
+    }
+
+    public void addCoin(){
+        coins++;
     }
 
     public void getCoinsFromShip(Card card) {
@@ -97,19 +114,6 @@ public class Player implements Cloneable {
         updateVariables();
 
         return new ActionToShow(null, this.login, cards.indexOf(expedition));
-    }
-
-    public static List<Player> cloneList(List<Player> source) {
-        return source.stream()
-                .map(p -> {
-                    try {
-                        return (Player) p.clone();
-                    } catch (CloneNotSupportedException e) {
-                        e.printStackTrace();
-                        return null;
-                    }
-                })
-                .collect(Collectors.toList());
     }
 
     public void updateVariables() {

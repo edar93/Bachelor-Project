@@ -3,6 +3,7 @@ package vsb.cec0094.bachelorProject.gameLogic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
+import vsb.cec0094.bachelorProject.exceptions.TwoShipsOfSameTypeOnTableException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
@@ -39,6 +40,10 @@ public class Game implements Cloneable, Serializable {
         Card card = table.getCards().remove(cardPosition);
         cardTypeValidation(card);
 
+        if(activePlayer != playerOnTurn){
+            players.get(playerOnTurn).addCoin();
+        }
+
         if (Card.shipTypes.contains(card.getCardType())) {
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.getCoinsFromShip(card);
@@ -50,18 +55,6 @@ public class Game implements Cloneable, Serializable {
             playerDoingAction.updateVariables();
             return new ActionAndSemiStateHolder(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
         }
-    }
-
-    public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
-        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
-        Expedition expedition = expeditions.getExpedition(id);
-        players.get(activePlayer).canTakeExpedition(expedition); // if not throws exeption
-
-        actionAndSemiStateHolder.addState(this, new ActionToShow(Action.SHOW_EXPEDITION_WHICH_WILL_BE_TAKEN, Expeditions.EXPEDITIONS, id));
-        ActionToShow takeExpeditionAction = players.get(activePlayer).takeExpedition(expedition, drawPile);
-
-        actionAndSemiStateHolder.addState(this, takeExpeditionAction);
-        return actionAndSemiStateHolder;
     }
 
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException, InvalidActionException {
@@ -78,8 +71,13 @@ public class Game implements Cloneable, Serializable {
             //TODO repel ship
             ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
             actionAndSemiStateHolder.addState(this, table.faceCard(card));
-            //TODO too much ships
-            recalculateCardsToTake();
+
+            try {
+                recalculateShips();
+            } catch (TwoShipsOfSameTypeOnTableException e) {
+                actionAndSemiStateHolder.emphasizeLastAction();
+            }
+
             return actionAndSemiStateHolder;
         } else {
             ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
@@ -88,29 +86,45 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
-    private void recalculateCardsToTake() {
+    public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
+        Expedition expedition = expeditions.getExpedition(id);
+        players.get(activePlayer).canTakeExpedition(expedition); // if not throws exeption
+
+        actionAndSemiStateHolder.addState(this, new ActionToShow(Action.SHOW_EXPEDITION_WHICH_WILL_BE_TAKEN, Expeditions.EXPEDITIONS, id));
+        ActionToShow takeExpeditionAction = players.get(activePlayer).takeExpedition(expedition, drawPile);
+
+        actionAndSemiStateHolder.addState(this, takeExpeditionAction);
+        return actionAndSemiStateHolder;
+    }
+
+    private void recalculateShips() throws TwoShipsOfSameTypeOnTableException {
         cardsToTake = players.get(activePlayer).getCardsToTake();
         if (!Phase.OTHERS_PLAYERS_TRADING.equals(phase)) {
             int skiff = 0, flute = 0, pinace = 0, frigate = 0, galleon = 0;
             for (Card card : table.getCards()) {
                 switch (card.getCardType()) {
                     case SKIFF:
-                        skiff = 1;
+                        skiff += 1;
                         break;
                     case FLUTE:
-                        flute = 1;
+                        flute += 1;
                         break;
                     case PINACE:
-                        pinace = 1;
+                        pinace += 1;
                         break;
                     case FRIGATE:
-                        frigate = 1;
+                        frigate += 1;
                         break;
                     case GALLEON:
-                        galleon = 1;
+                        galleon += 1;
                         break;
                 }
             }
+            if(skiff == 2 || flute == 2 || pinace == 2 || frigate ==2 || galleon == 2){
+                throw new TwoShipsOfSameTypeOnTableException();
+            }
+
             int typesCount = skiff + flute + pinace + frigate + galleon;
             if (typesCount == 4) {
                 cardsToTake += 1;
