@@ -8,19 +8,8 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         var imageFormat = '.jpg';
         var timeout = 800;
 
-        var localUser;
-        var playersList;
-        var table;
-        var expeditions;
-        var playersCount;
-        var localPlayer;
-        var activePlayer;
-        var cardsToTake;
-        var gameScope;
-        var markedType;
-        var markedId;
-        var lastGameToShow;
-        var phase;
+        var localUser, playersList, table, expeditions, playersCount, localPlayer, activePlayer, cardsToTake,
+            gameScope, markedType, markedId, lastGameToShow, phase, playerOnTurn;
 
         function setScopeAndPlayer(scope, player) {
             gameScope = scope;
@@ -73,6 +62,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
 
             console.log(game, 'game');
             activePlayer = game.players[game.activePlayer].login;
+            playerOnTurn = game.players[game.playerOnTurn].login;
 
             game = transformAddCards(game);
             for (var i = game.players.length - 1; i >= 0; i--) {
@@ -123,6 +113,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             gameScope.localPlayer = localPlayer;
             gameScope.expeditions = expeditions;
             gameScope.playerTakingCard = activePlayer;
+            gameScope.playerOnTurn = playerOnTurn;
             gameScope.cardsToTake = cardsToTake;
         }
     }

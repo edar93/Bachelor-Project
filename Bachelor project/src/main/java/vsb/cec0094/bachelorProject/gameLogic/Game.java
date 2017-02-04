@@ -34,13 +34,14 @@ public class Game implements Cloneable, Serializable {
     private DrawPile drawPile;
 
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
-        // TODO remove comment
-        //phase = Phase.TRADING;
+        if (Phase.EXPLORING.equals(phase)) {
+            phase = Phase.TRADING;
+        }
 
         Card card = table.getCards().remove(cardPosition);
         cardTypeValidation(card);
 
-        if(activePlayer != playerOnTurn){
+        if (activePlayer != playerOnTurn) {
             players.get(playerOnTurn).addCoin();
         }
 
@@ -48,19 +49,29 @@ public class Game implements Cloneable, Serializable {
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.getCoinsFromShip(card);
             drawPile.getUsedCard(card);
+
+            if (--cardsToTake == 0) {
+                shiftPlayer(false);
+            }
             return null;
         } else {
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.takeCharacterCard(card, true);
             playerDoingAction.updateVariables();
+
+            if (--cardsToTake == 0) {
+                shiftPlayer(false);
+            }
             return new ActionAndSemiStateHolder(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
         }
+
+
     }
 
     public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException, InvalidActionException {
-//        if (!Phase.EXPLORING.equals(phase)) {
-//            throw new InvalidActionException("face card is not allowed now");
-//        }
+        if (!Phase.EXPLORING.equals(phase)) {
+            throw new InvalidActionException("face card is not allowed now");
+        }
         Card card = drawPile.giveCard();
 
         if (card.getCardType() == CardType.EXPEDITION) {
@@ -76,8 +87,10 @@ public class Game implements Cloneable, Serializable {
                 recalculateShips();
             } catch (TwoShipsOfSameTypeOnTableException e) {
                 actionAndSemiStateHolder.emphasizeLastAction();
+                shiftPlayer(true);
+                actionAndSemiStateHolder.addState(this, new ActionToShow(Action.PICK_CARD));
+                return actionAndSemiStateHolder;
             }
-
             return actionAndSemiStateHolder;
         } else {
             ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
@@ -96,6 +109,61 @@ public class Game implements Cloneable, Serializable {
 
         actionAndSemiStateHolder.addState(this, takeExpeditionAction);
         return actionAndSemiStateHolder;
+    }
+
+    private void cleanTable() {
+        drawPile.getUsedCards(table.removeCards());
+    }
+
+    private void shiftPlayer(Boolean twoShips) {
+        if (twoShips) {
+            for (Player player : players) {
+                player.setCoins(player.getCoins() + player.getJestersCount());
+            }
+            nextActivePlayer(true);
+            phase = Phase.EXPLORING;
+        } else {
+            //TODO jester
+            //TODO no cards
+            nextActivePlayer(false);
+        }
+        try {
+            recalculateShips();
+        } catch (TwoShipsOfSameTypeOnTableException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void nextActivePlayer(boolean twoShips) {
+        raiseActivePlayer();
+        if (twoShips) {
+            raisePlayerOnTurn();
+            phase = Phase.EXPLORING;
+            cleanTable();
+        } else {
+            if (activePlayer == playerOnTurn) {
+                cleanTable();
+                phase = Phase.EXPLORING;
+                raisePlayerOnTurn();
+                raiseActivePlayer();
+            } else {
+                phase = Phase.OTHERS_PLAYERS_TRADING;
+            }
+        }
+    }
+
+    private void raiseActivePlayer(){
+        activePlayer++;
+        if (activePlayer == playersCount) {
+            activePlayer = 0;
+        }
+    }
+
+    private void raisePlayerOnTurn(){
+        playerOnTurn++;
+        if (playerOnTurn == playersCount) {
+            playerOnTurn = 0;
+        }
     }
 
     private void recalculateShips() throws TwoShipsOfSameTypeOnTableException {
@@ -121,7 +189,7 @@ public class Game implements Cloneable, Serializable {
                         break;
                 }
             }
-            if(skiff == 2 || flute == 2 || pinace == 2 || frigate ==2 || galleon == 2){
+            if (skiff == 2 || flute == 2 || pinace == 2 || frigate == 2 || galleon == 2) {
                 throw new TwoShipsOfSameTypeOnTableException();
             }
 
@@ -214,7 +282,7 @@ public class Game implements Cloneable, Serializable {
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
         activePlayer = 0;
-//        phase = Phase.EXPLORING;
+        phase = Phase.EXPLORING;
         table = new Table();
         drawPile = new DrawPile(true, playersCount == 5);
         owner = gameInQueue.getOwner();

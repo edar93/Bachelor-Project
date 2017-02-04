@@ -9,9 +9,9 @@
         <class>vsb.cec0094.bachelorProject.models.GameInQueue</class>
 
 
-        <properties>
-            <property name="hibernate.show_sql" value="true" />
-        </properties>
+        <!--<properties>-->
+            <!--<property name="hibernate.show_sql" value="true" />-->
+        <!--</properties>-->
     </persistence-unit>
 
 

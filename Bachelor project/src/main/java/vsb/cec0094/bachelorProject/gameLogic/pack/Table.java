@@ -26,6 +26,16 @@ public class Table implements Cloneable {
         return new ActionToShow(Action.FACE_CARD, new String[]{TABLE}, new Integer[]{cards.size() - 1});
     }
 
+    public List<Card> removeCards(){
+        List<Card> list = cards;
+        cards = new ArrayList<>();
+        return list;
+    }
+
+    public int getCountOfCards(){
+        return cards.size();
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         Table clone = (Table) super.clone();

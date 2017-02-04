@@ -40,9 +40,14 @@ public class ActionToShow implements Cloneable {
     public ActionToShow(Action action, String marked, Integer id) {
         this.action = action;
         this.marked = new ArrayList<>();
-        this.marked.add(marked);
         this.ids = new ArrayList<>();
-        this.ids.add(id);
+        if(marked != null){
+            this.marked.add(marked);
+        }
+        if(id != null){
+            this.ids.add(id);
+        }
+
     }
 
     public ActionToShow(Action action, String[] marked, Integer[] ids) {
