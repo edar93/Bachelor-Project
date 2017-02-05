@@ -8,6 +8,8 @@ var baseInitService = function (loginService, locationService) {
 
     function setVariables(scope) {
         localScope = scope;
+
+
         scope.testVARiable = 'test';
     }
 

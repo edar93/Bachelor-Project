@@ -12,25 +12,36 @@ gameCreationCtrl
         var maxPlayers = 1;
         var owner = null;
         var playersList;
+        var user;
 
         init();
 
         function init() {
             var user = loginService.getUser();
-            gameService.getPlayersGame(user)
-                .then(function (data) {
-                    maxPlayers = data.maxPlayersCount;
-                    owner = data.owner;
-                    playersList = data.playersList;
-                    $scope.maxPlayers = maxPlayers;
-                    $scope.playersList = playersList;
 
-                    if (user === owner) {
-                        $scope.creator = true;
-                    } else {
-                        $scope.creator = false;
-                    }
-                });
+            loginService.getUser()
+                .then(setUser)
+                .then(gameService.getPlayersGame)
+                .then(displayGame);
+        }
+
+        function setUser(player){
+            user = player;
+            return player
+        }
+
+        function displayGame(data){
+            maxPlayers = data.maxPlayersCount;
+            owner = data.owner;
+            playersList = data.playersList;
+            $scope.maxPlayers = maxPlayers;
+            $scope.playersList = playersList;
+
+            if (user === owner) {
+                $scope.creator = true;
+            } else {
+                $scope.creator = false;
+            }
         }
 
         function startGame() {

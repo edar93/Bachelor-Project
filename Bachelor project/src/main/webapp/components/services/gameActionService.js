@@ -22,31 +22,33 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     function initWebSockets() {
         notSubscribing = true;
-        gameService.getPlayersGame(loginService.getUser())
-            .then(function (data) {
-                gameOwner = data.owner;
-                var url = '/myGame/' + gameOwner;
+        loginService.getUser()
+            .then(gameService.getPlayersGame)
+            .then(startSockets);
+    }
 
-                game = stompService('/port-royal/game');
+    function startSockets(gameOwner) {
+        var url = '/myGame/' + gameOwner;
 
-                game.connect('not needed username', 'not needed password', function () {
-                    if (notSubscribing) {
-                        notSubscribing = false;
-                        game.subscribe(url, function (response) {
-                            //TODO remove
-                            //console.log(JSON.parse(response.body), 'get websocket body');
-                            if (response && response.body) {
-                                gameStatusService.updateGame(JSON.parse(response.body));
-                            }
-                        });
+        game = stompService('/port-royal/game');
+
+        game.connect('not needed username', 'not needed password', function () {
+            if (notSubscribing) {
+                notSubscribing = false;
+                game.subscribe(url, function (response) {
+                    //TODO remove
+                    //console.log(JSON.parse(response.body), 'get websocket body');
+                    if (response && response.body) {
+                        gameStatusService.updateGame(JSON.parse(response.body));
                     }
                 });
-            });
+            }
+        });
     }
 
     function globalUpdate() {
         //TODO message is not needed
-        game.send("/port-royal/sendAction/" + gameOwner, {}, JSON.stringify({'text': loginService.getUser()}));
+        game.send("/port-royal/sendAction/" + gameOwner, {}, JSON.stringify({'text': 'does not matter'}));
     }
 
     function skipAction(){
@@ -71,7 +73,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
             })
     }
 
-    function pickExpedition(id){
+    function pickExpedition(id) {
         backendGateway.post('PICK_EXPEDITION', id, undefined, true)
             .then(function () {
                 globalUpdate();

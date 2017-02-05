@@ -6,7 +6,10 @@ welcomeCtrl
         globalChatService.initChat($scope);
 
         $scope.gamesForJoin = null;
-        $scope.user = loginService.getUser();
+        loginService.getUser()
+            .then(function (user) {
+                $scope.user = user;
+            });
 
         $scope.createGame = createGame;
         $scope.goToLoginPage = goToLoginPage;

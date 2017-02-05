@@ -1,3 +1,4 @@
+//TODO getUser was refactored !!!!!!!!
 'use strict';
 
 describe('portRoyalApp.loginService', function () {
