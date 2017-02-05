@@ -10,6 +10,7 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.locationService',
     'portRoyalApp.gameStatusService',
     'portRoyalApp.gameActionService',
+    'portRoyalApp.baseInitService',
     'portRoyalApp.globalChatService',
     'portRoyalApp.gameService',
     'portRoyalApp.gameCreationCtrl',

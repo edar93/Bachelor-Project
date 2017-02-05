@@ -19,7 +19,6 @@ gameCreationCtrl
             var user = loginService.getUser();
             gameService.getPlayersGame(user)
                 .then(function (data) {
-                    console.log(data);
                     maxPlayers = data.maxPlayersCount;
                     owner = data.owner;
                     playersList = data.playersList;

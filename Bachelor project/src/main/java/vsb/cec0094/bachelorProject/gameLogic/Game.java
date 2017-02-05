@@ -37,6 +37,8 @@ public class Game implements Cloneable, Serializable {
         if (Phase.EXPLORING.equals(phase)) {
             phase = Phase.TRADING;
         }
+        ActionToShow actionToShow = new ActionToShow(Action.GET_CARD, Table.TABLE, cardPosition);
+        ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder(this, actionToShow);
 
         Card card = table.getCards().remove(cardPosition);
         cardTypeValidation(card);
@@ -46,6 +48,7 @@ public class Game implements Cloneable, Serializable {
         }
 
         if (Card.shipTypes.contains(card.getCardType())) {
+
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.getCoinsFromShip(card);
             drawPile.getUsedCard(card);
@@ -53,7 +56,7 @@ public class Game implements Cloneable, Serializable {
             if (--cardsToTake == 0) {
                 shiftPlayer(false);
             }
-            return null;
+            return actionAndSemiStateHolder;
         } else {
             Player playerDoingAction = players.get(activePlayer);
             playerDoingAction.takeCharacterCard(card, true);
@@ -62,7 +65,8 @@ public class Game implements Cloneable, Serializable {
             if (--cardsToTake == 0) {
                 shiftPlayer(false);
             }
-            return new ActionAndSemiStateHolder(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
+            actionAndSemiStateHolder.addState(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
+            return actionAndSemiStateHolder;
         }
 
 
@@ -290,6 +294,12 @@ public class Game implements Cloneable, Serializable {
         players = gameInQueue.getPlayersList().stream()
                 .map(p -> new Player(p.getLogin()))
                 .collect(Collectors.toList());
+        try {
+            recalculateShips();
+        } catch (TwoShipsOfSameTypeOnTableException e) {
+            //can not occur
+            e.printStackTrace();
+        }
     }
 
     public Expeditions getExpeditions() {

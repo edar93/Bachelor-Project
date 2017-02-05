@@ -22,6 +22,8 @@
                                 access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/game/**"
                                 access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/play/**"
+                                access="hasRole('ROLE_USER')"/>
 
         <security:intercept-url pattern="/webapp/**"
                                 access="permitAll"/>

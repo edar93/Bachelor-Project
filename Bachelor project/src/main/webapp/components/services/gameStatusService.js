@@ -17,6 +17,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         }
 
         function updateGame(game) {
+            console.log(game, 'game after global update');
             if (game) {
                 lastGameToShow = game;
                 showStates();
@@ -115,6 +116,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             gameScope.playerTakingCard = activePlayer;
             gameScope.playerOnTurn = playerOnTurn;
             gameScope.cardsToTake = cardsToTake;
+            gameScope.localUser = localUser;
         }
     }
     ;

@@ -17,6 +17,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
         scope.faceCard = faceCard;
         scope.pickCard = pickCard;
         scope.pickExpedition = pickExpedition;
+        scope.skipAction = skipAction;
     }
 
     function initWebSockets() {
@@ -46,6 +47,14 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     function globalUpdate() {
         //TODO message is not needed
         game.send("/port-royal/sendAction/" + gameOwner, {}, JSON.stringify({'text': loginService.getUser()}));
+    }
+
+    function skipAction(){
+        //TODO add implementation
+        backendGateway.post('SKIP_ACTION')
+            .then(function () {
+                globalUpdate();
+            })
     }
 
     function faceCard() {

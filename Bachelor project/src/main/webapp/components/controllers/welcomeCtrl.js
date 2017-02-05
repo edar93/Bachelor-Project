@@ -1,7 +1,7 @@
 'use strict';
 
 welcomeCtrl
-    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService) {
+    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService, baseInitService) {
 
         globalChatService.initChat($scope);
 
@@ -15,6 +15,8 @@ welcomeCtrl
         $scope.joinGame = joinGame;
 
         updateGamesForJoin();
+
+        baseInitService.setVariables($scope);
 
         function joinGame(owner) {
             gameService.joinGame(owner)
@@ -36,7 +38,6 @@ welcomeCtrl
         }
 
         function createGame() {
-            console.log('createGame was called');
             gameService.createGame().then
             (function (response) {
                 //globalChatService.disconnect();
