@@ -27,7 +27,8 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
             .then(startSockets);
     }
 
-    function startSockets(gameOwner) {
+    function startSockets(data) {
+        gameOwner = data.owner;
         var url = '/myGame/' + gameOwner;
 
         game = stompService('/port-royal/game');
