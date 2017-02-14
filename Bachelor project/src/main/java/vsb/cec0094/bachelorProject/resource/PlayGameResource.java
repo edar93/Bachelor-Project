@@ -23,6 +23,7 @@ import vsb.cec0094.bachelorProject.service.UsersProvider;
 @EnableAspectJAutoProxy
 public class PlayGameResource {
 
+    //TODO check if is crossorgin needed
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);
     @Autowired
     private GamesHolder gamesHolder;
@@ -67,6 +68,22 @@ public class PlayGameResource {
     public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickExpedition was called");
         usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerPickExpedition(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/skipaction")
+    public ResponseEntity<Void> skipAction() throws NotPlayersTurnException {
+        LOGGER.debug("skipAction was called");
+        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().skipAction();
+        return ResponseEntity.ok().build();
+    }
+
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/applyadmiral")
+    public ResponseEntity<Void> applyAdmiral() throws NotPlayersTurnException {
+        LOGGER.debug("evaluateAdmirals was called");
+        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().applyAdmiral();
         return ResponseEntity.ok().build();
     }
 

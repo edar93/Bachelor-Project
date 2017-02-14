@@ -8,16 +8,17 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     var gameOwner;
     var notSubscribing;
 
-    function init(scope) {
-        initWebSockets();
-        setToScope(scope);
-    }
-
     function setToScope(scope) {
         scope.faceCard = faceCard;
         scope.pickCard = pickCard;
         scope.pickExpedition = pickExpedition;
         scope.skipAction = skipAction;
+        scope.evaluateAdmirals = evaluateAdmirals;
+    }
+
+    function init(scope) {
+        initWebSockets();
+        setToScope(scope);
     }
 
     function initWebSockets() {
@@ -55,6 +56,14 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     function skipAction(){
         //TODO add implementation
         backendGateway.post('SKIP_ACTION')
+            .then(function () {
+                globalUpdate();
+            })
+    }
+
+    function evaluateAdmirals() {
+        //TODO add implementation
+        backendGateway.post('EVALUATE_ADMIRALS')
             .then(function () {
                 globalUpdate();
             })

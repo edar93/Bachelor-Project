@@ -5,11 +5,16 @@
     <div class="cards" ng-repeat="card in table.cards track by $index">
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"
              src="images/{{card.image}}" ng-click="pickCard($index)">
-
-        <button ng-show="localUser == playerTakingCard && localUser != playerOnTurn"
-                ng-click="skipAction()"> Skip action</button>
     </div>
+    <button ng-show="localUser == playerTakingCard && localUser != playerOnTurn"
+            ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
+    </button>
+
+    <button ng-show="localUser == playerTakingCard && localUser != playerOnTurn && admiralApplied == false && table.cards.length > 4"
+            ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
+    </button>
     <p>{{playerTakingCard}} {{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' | translate}} </p>
+
     <p>{{localUser}} loc p </p>
 </div>
 

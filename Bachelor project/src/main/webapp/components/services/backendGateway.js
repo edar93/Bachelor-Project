@@ -22,7 +22,9 @@ var backendGateway = function ($http, $q) {
         FACE_CARD: 'play/facecard',
         PICK_CARD: 'play/pickcard',
         PICK_EXPEDITION: 'play/pickexpedition',
-        GET_MY_GAME: 'play/getMyGame'
+        SKIP_ACTION: 'play/skipaction',
+        GET_MY_GAME: 'play/getMyGame',
+        EVALUATE_ADMIRALS: 'play/applyadmiral'
     };
 
     function put(url, data, config, jsonRequest, nonJsonResponce) {

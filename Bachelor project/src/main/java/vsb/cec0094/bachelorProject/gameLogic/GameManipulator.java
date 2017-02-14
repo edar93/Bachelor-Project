@@ -23,6 +23,25 @@ public class GameManipulator {
     @JsonIgnore
     private ActionToShow backupAction;
 
+    public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
+        owner = gameInQueue.getOwner();
+        currentGame = new Game(gameInQueue);
+        semiStates = new ArrayList<>();
+        actionsToShows = new ArrayList<>();
+        currentAction = new ActionToShow(Action.PICK_CARD);
+    }
+
+    public GameManipulator() {
+    }
+
+    public void skipAction() {
+        currentGame.skipAction();
+    }
+
+    public void applyAdmiral() {
+        currentGame.applyAdmiral();
+    }
+
     public void faceCard() throws CloneNotSupportedException, InvalidActionException {
         prepaireForAction();
 
@@ -33,7 +52,6 @@ public class GameManipulator {
     public void playerPickExpedition(int id) {
         try {
             prepaireForAction();
-
             ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
             currentAction = null;
         } catch (TooExpensiveExpeditionException | CloneNotSupportedException e) {
@@ -77,17 +95,6 @@ public class GameManipulator {
         if (currentAction != null) {
             backupAction = (ActionToShow) currentAction.clone();
         }
-    }
-
-    public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
-        owner = gameInQueue.getOwner();
-        currentGame = new Game(gameInQueue);
-        semiStates = new ArrayList<>();
-        actionsToShows = new ArrayList<>();
-        currentAction = new ActionToShow(Action.PICK_CARD);
-    }
-
-    public GameManipulator() {
     }
 
     public String getOwner() {

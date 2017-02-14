@@ -30,8 +30,52 @@ public class Game implements Cloneable, Serializable {
     private Expeditions expeditions;
     private Phase phase;
     private int cardsToTake;
+    private boolean admiralApplied;
     @JsonIgnore
     private DrawPile drawPile;
+
+    public Game(GameInQueue gameInQueue) {
+        expeditions = new Expeditions();
+        playersCount = gameInQueue.getPlayersList().size();
+        playerOnTurn = 0;
+        activePlayer = 0;
+        phase = Phase.EXPLORING;
+        table = new Table();
+        drawPile = new DrawPile(true, playersCount == 5);
+        owner = gameInQueue.getOwner();
+        players = new ArrayList<>(playersCount);
+        admiralApplied = false;
+        players = gameInQueue.getPlayersList().stream()
+                .map(p -> new Player(p.getLogin()))
+                .collect(Collectors.toList());
+        try {
+            recalculateShips();
+        } catch (TwoShipsOfSameTypeOnTableException e) {
+            //can not occur
+            e.printStackTrace();
+        }
+    }
+
+    public void applyAdmiral() {
+        if (table.getCountOfCards() > 4) {
+            admiralApplied = true;
+            phase = Phase.TRADING;
+            Player activeP = players.get(activePlayer);
+            activeP.setCoins(activeP.getCoins() * activeP.getAdmiralsCount() * 2);
+        }
+    }
+
+    public void skipAction() {
+        shiftPlayer(false);
+    }
+
+    private void applyJester() {
+        if (table.getCountOfCards() == 0) {
+            Player activeP = players.get(activePlayer);
+            activeP.setCoins(activeP.getCoins() * activeP.getJestersCount());
+        }
+
+    }
 
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
         if (Phase.EXPLORING.equals(phase)) {
@@ -68,7 +112,6 @@ public class Game implements Cloneable, Serializable {
             actionAndSemiStateHolder.addState(this, new ActionToShow(Action.GET_CARD, playerDoingAction.getLogin(), playerDoingAction.getCards().indexOf(card)));
             return actionAndSemiStateHolder;
         }
-
 
     }
 
@@ -127,14 +170,19 @@ public class Game implements Cloneable, Serializable {
             nextActivePlayer(true);
             phase = Phase.EXPLORING;
         } else {
-            //TODO jester
-            //TODO no cards
+            applyJester();
+            applyAdmiral();
             nextActivePlayer(false);
         }
         try {
             recalculateShips();
         } catch (TwoShipsOfSameTypeOnTableException e) {
+            // can not occur
             e.printStackTrace();
+        }
+        admiralApplied = false;
+        if (table.getCountOfCards() == 0 && !(Phase.EXPLORING.equals(phase))) {
+            shiftPlayer(false);
         }
     }
 
@@ -156,14 +204,14 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
-    private void raiseActivePlayer(){
+    private void raiseActivePlayer() {
         activePlayer++;
         if (activePlayer == playersCount) {
             activePlayer = 0;
         }
     }
 
-    private void raisePlayerOnTurn(){
+    private void raisePlayerOnTurn() {
         playerOnTurn++;
         if (playerOnTurn == playersCount) {
             playerOnTurn = 0;
@@ -281,25 +329,12 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
-    public Game(GameInQueue gameInQueue) {
-        expeditions = new Expeditions();
-        playersCount = gameInQueue.getPlayersList().size();
-        playerOnTurn = 0;
-        activePlayer = 0;
-        phase = Phase.EXPLORING;
-        table = new Table();
-        drawPile = new DrawPile(true, playersCount == 5);
-        owner = gameInQueue.getOwner();
-        players = new ArrayList<>(playersCount);
-        players = gameInQueue.getPlayersList().stream()
-                .map(p -> new Player(p.getLogin()))
-                .collect(Collectors.toList());
-        try {
-            recalculateShips();
-        } catch (TwoShipsOfSameTypeOnTableException e) {
-            //can not occur
-            e.printStackTrace();
-        }
+    public boolean isAdmiralApplied() {
+        return admiralApplied;
+    }
+
+    public void setAdmiralApplied(boolean admiralApplied) {
+        this.admiralApplied = admiralApplied;
     }
 
     public Expeditions getExpeditions() {

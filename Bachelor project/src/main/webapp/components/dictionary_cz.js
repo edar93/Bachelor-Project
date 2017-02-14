@@ -28,5 +28,7 @@ var dictionaryCZ = {
     SEND_MESSAGE: 'Odeslat',
     MESSAGE: 'Zprava',
     FACE_CARD: 'Otočit kartu',
+    SKIP_ACTION: 'Zdržet se akce',
+    EVALUATE_ADMIRALS: 'Zdržet se akce',
     PLAYERS: 'Hráči'
 };
