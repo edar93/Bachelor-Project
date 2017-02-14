@@ -5,23 +5,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
-import vsb.cec0094.bachelorProject.gameLogic.Player;
-import vsb.cec0094.bachelorProject.models.GameInQueue;
-
-import java.util.List;
+import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 @Controller
 @RequestMapping("/play")
@@ -30,18 +25,16 @@ public class PlayGameResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);
     @Autowired
-    private GameDao gameDao;
-    @Autowired
     private GamesHolder gamesHolder;
+    @Autowired
+    private UsersProvider usersProvider;
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
     public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
         LOGGER.debug("createGameInQueue was called");
-        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        GameInQueue game = gameDao.getPlayersGame(player);
-        if (player.equals(game.getOwner())) {
-            gamesHolder.addGame(new GameManipulator(game));
+        if (usersProvider.getLogin().equals(usersProvider.getGameInQueue().getOwner())) {
+            gamesHolder.addGame(new GameManipulator(usersProvider.getGameInQueue()));
         }
         return ResponseEntity.ok().build();
     }
@@ -50,18 +43,14 @@ public class PlayGameResource {
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
     public ResponseEntity<GameManipulator> getMyGame() {
         LOGGER.debug("getMyGame was called");
-        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        GameInQueue game = gameDao.getPlayersGame(player);
-        return ResponseEntity.ok().body(gamesHolder.getGame(game.getOwner()));
+        return ResponseEntity.ok().body(usersProvider.getGameManipulator());
     }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
     public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
         LOGGER.debug("faceCard was called");
-        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        GameManipulator game = getValidatedGame(player);
-        game.faceCard();
+        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().faceCard();
         return ResponseEntity.ok().build();
     }
 
@@ -69,9 +58,7 @@ public class PlayGameResource {
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
     public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickCard was called");
-        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        GameManipulator game = getValidatedGame(player);
-        game.playerGetCardFromTable(id);
+        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerGetCardFromTable(id);
         return ResponseEntity.ok().build();
     }
 
@@ -79,35 +66,8 @@ public class PlayGameResource {
     @RequestMapping(method = RequestMethod.POST, value = "/pickexpedition")
     public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickExpedition was called");
-        String player = SecurityContextHolder.getContext().getAuthentication().getName();
-        GameManipulator game = getValidatedGame(player);
-        game.playerPickExpedition(id);
+        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerPickExpedition(id);
         return ResponseEntity.ok().build();
-    }
-
-    /**
-     * Check if player is on turn
-     *
-     * @param localPlayer
-     * @return game in which player is
-     */
-    private GameManipulator getValidatedGame(String localPlayer) throws GameDoesNotExist, NotPlayersTurnException {
-        LOGGER.debug("getValidatedGame was called");
-        GameInQueue gameInQueue = gameDao.getPlayersGame(localPlayer);
-        if (gameInQueue == null) {
-            throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in database");
-        }
-        GameManipulator game = gamesHolder.getGame(gameInQueue.getOwner());
-        if (game == null) {
-            throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in memory");
-        }
-        List<Player> playerList = game.getCurrentGame().getPlayers();
-        String playerOnTurn = playerList.get(game.getCurrentGame().getActivePlayer()).getLogin();
-
-        if (!playerOnTurn.equals(localPlayer)) {
-            throw new NotPlayersTurnException(" not \"" + localPlayer + "\" turn");
-        }
-        return game;
     }
 
 }
