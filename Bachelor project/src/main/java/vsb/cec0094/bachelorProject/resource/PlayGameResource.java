@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +15,7 @@ import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
+import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 @Controller
@@ -23,14 +23,12 @@ import vsb.cec0094.bachelorProject.service.UsersProvider;
 @EnableAspectJAutoProxy
 public class PlayGameResource {
 
-    //TODO check if is crossorgin needed
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);
     @Autowired
     private GamesHolder gamesHolder;
     @Autowired
     private UsersProvider usersProvider;
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
     public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
         LOGGER.debug("createGameInQueue was called");
@@ -40,14 +38,12 @@ public class PlayGameResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
     public ResponseEntity<GameManipulator> getMyGame() {
         LOGGER.debug("getMyGame was called");
         return ResponseEntity.ok().body(usersProvider.getGameManipulator());
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
     public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
         LOGGER.debug("faceCard was called");
@@ -55,7 +51,6 @@ public class PlayGameResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
     public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickCard was called");
@@ -63,7 +58,6 @@ public class PlayGameResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickexpedition")
     public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickExpedition was called");
@@ -71,7 +65,6 @@ public class PlayGameResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/skipaction")
     public ResponseEntity<Void> skipAction() throws NotPlayersTurnException {
         LOGGER.debug("skipAction was called");
@@ -79,12 +72,23 @@ public class PlayGameResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/applyadmiral")
     public ResponseEntity<Void> applyAdmiral() throws NotPlayersTurnException {
         LOGGER.debug("evaluateAdmirals was called");
         usersProvider.getGameManipulatorWhenIsPlayerOnTurn().applyAdmiral();
         return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getmylocation")
+    public ResponseEntity<LocationOnPage> getMyLocation() throws NotPlayersTurnException {
+        LOGGER.debug("getMyLocation was called");
+        if (usersProvider.getGameManipulator() != null) {
+            return ResponseEntity.ok().body(LocationOnPage.GAME);
+        } else if (usersProvider.getGameInQueue() != null) {
+            return ResponseEntity.ok().body(LocationOnPage.GAME_CREATION);
+        } else {
+            return ResponseEntity.ok().body(LocationOnPage.FREE);
+        }
     }
 
 }

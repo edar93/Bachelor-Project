@@ -54,7 +54,6 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     }
 
     function skipAction(){
-        //TODO add implementation
         backendGateway.post('SKIP_ACTION')
             .then(function () {
                 globalUpdate();
@@ -62,7 +61,6 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     }
 
     function evaluateAdmirals() {
-        //TODO add implementation
         backendGateway.post('EVALUATE_ADMIRALS')
             .then(function () {
                 globalUpdate();

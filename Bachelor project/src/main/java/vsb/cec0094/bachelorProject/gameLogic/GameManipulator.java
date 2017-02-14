@@ -22,10 +22,6 @@ public class GameManipulator {
     private Game backupGame;
     @JsonIgnore
     private ActionToShow backupAction;
-    @JsonIgnore
-    private List<ActionToShow> backupActionsToShows;
-    @JsonIgnore
-    private List<Game> backupSemiStates;
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
         owner = gameInQueue.getOwner();
@@ -86,24 +82,19 @@ public class GameManipulator {
     }
 
     private void rollback() {
-        actionsToShows = backupActionsToShows;
-        semiStates = backupSemiStates;
+        actionsToShows.clear();
+        semiStates.clear();
         currentGame = backupGame;
         currentAction = backupAction;
-
     }
 
     private void prepareForAction() throws CloneNotSupportedException {
-        backupActionsToShows = ActionToShow.getClonedList(actionsToShows);
-        backupSemiStates = Game.getClonedList(semiStates);
+        actionsToShows.clear();
+        semiStates.clear();
         backupGame = (Game) currentGame.clone();
         if (currentAction != null) {
             backupAction = (ActionToShow) currentAction.clone();
-        } else {
-            backupAction = null;
         }
-        actionsToShows.clear();
-        semiStates.clear();
     }
 
     public String getOwner() {

@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
@@ -17,13 +20,6 @@ public class GameFunctionResource {
     @Autowired
     private GameDao gameDao;
 
-//    @CrossOrigin
-//    @RequestMapping(method = RequestMethod.POST, value = "/getmystate")
-//    public ResponseEntity<String> getMyState() {
-//        getPlayersGame()
-//    }
-
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/cratenewgame")
     public ResponseEntity<Void> createGameInQueue() {
         GameInQueue gameInQueue = new GameInQueue();
@@ -35,21 +31,18 @@ public class GameFunctionResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/basegamestatus")
     public ResponseEntity<GameInQueue> getBaseGameStatus() {
         String owner = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok().body(gameDao.getGameInQueue(owner));
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getallgamesinqueue")
     @ResponseBody
     public ResponseEntity<List> getAllGames() {
         return ResponseEntity.ok().body(gameDao.getAllGames());
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, value = "/joingame")
     public ResponseEntity<Void> joinGame(@RequestBody String owner) {
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -57,7 +50,6 @@ public class GameFunctionResource {
         return ResponseEntity.ok().build();
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/getplayersgame")
     public ResponseEntity<GameInQueue> getPlayersGame(@RequestBody String player) {
         return ResponseEntity.ok().body(gameDao.getPlayersGame(player));
