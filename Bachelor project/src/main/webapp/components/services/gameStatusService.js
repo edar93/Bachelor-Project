@@ -47,12 +47,12 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
 
         function show(cards, move) {
             console.log(cards, move, 'cards, move');
-            prepair(cards, move);
+            prepare(cards, move);
             updateScope();
             phase++;
         }
 
-        function prepair(game, action) {
+        function prepare(game, action) {
             if (action) {
                 markedType = action.marked;
                 markedId = action.ids;

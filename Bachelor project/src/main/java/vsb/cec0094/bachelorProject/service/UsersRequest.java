@@ -1,7 +1,6 @@
 package vsb.cec0094.bachelorProject.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
@@ -20,8 +19,7 @@ public class UsersRequest {
     private GameInQueue gameInQueue;
     private GameManipulator gameManipulator;
 
-    public void prepareUser() {
-        login = SecurityContextHolder.getContext().getAuthentication().getName();
+    public void prepareUser(String login) {
         if (login != null) {
             gameInQueue = gameDao.getPlayersGame(login);
         }

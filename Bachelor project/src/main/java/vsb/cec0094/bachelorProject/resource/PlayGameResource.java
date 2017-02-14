@@ -5,9 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.handler.annotation.DestinationVariable;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,14 +33,6 @@ public class PlayGameResource {
     private GameDao gameDao;
     @Autowired
     private GamesHolder gamesHolder;
-
-    @MessageMapping("/sendAction/{owner}")
-    @SendTo("/myGame/{owner}")
-    public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
-        LOGGER.debug("updateGame was called");
-        GameManipulator gameManipulator = getValidatedGame(owner);
-        return gameManipulator;
-    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
