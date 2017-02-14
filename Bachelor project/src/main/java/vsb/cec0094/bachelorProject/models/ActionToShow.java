@@ -11,26 +11,6 @@ public class ActionToShow implements Cloneable {
     private List<String> marked;
     private List<Integer> ids;
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        ActionToShow clone = (ActionToShow) super.clone();
-        clone.setMarked(
-                marked.stream()
-                        .map(c -> {
-                            return c;
-                        })
-                        .collect(Collectors.toList())
-        );
-        clone.setIds(
-                ids.stream()
-                        .map(i -> {
-                            return new Integer(i);
-                        })
-                        .collect(Collectors.toList())
-        );
-        return clone;
-    }
-
     public ActionToShow(Action action) {
         this.action = action;
         marked = new ArrayList<>();
@@ -41,10 +21,10 @@ public class ActionToShow implements Cloneable {
         this.action = action;
         this.marked = new ArrayList<>();
         this.ids = new ArrayList<>();
-        if(marked != null){
+        if (marked != null) {
             this.marked.add(marked);
         }
-        if(id != null){
+        if (id != null) {
             this.ids.add(id);
         }
 
@@ -65,6 +45,37 @@ public class ActionToShow implements Cloneable {
     public ActionToShow() {
         marked = new ArrayList<>();
         ids = new ArrayList<>();
+    }
+
+    public static List<ActionToShow> getClonedList(List<ActionToShow> actionToShowList) throws CloneNotSupportedException {
+        if (actionToShowList == null) {
+            return null;
+        }
+        List<ActionToShow> clonedList = new ArrayList<>();
+        for (ActionToShow action : actionToShowList) {
+            clonedList.add((ActionToShow) action.clone());
+        }
+        return clonedList;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        ActionToShow clone = (ActionToShow) super.clone();
+        clone.setMarked(
+                marked.stream()
+                        .map(c -> {
+                            return c;
+                        })
+                        .collect(Collectors.toList())
+        );
+        clone.setIds(
+                ids.stream()
+                        .map(i -> {
+                            return new Integer(i);
+                        })
+                        .collect(Collectors.toList())
+        );
+        return clone;
     }
 
     public Action getAction() {

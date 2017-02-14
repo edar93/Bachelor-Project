@@ -56,6 +56,17 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
+    public static List<Game> getClonedList(List<Game> gameList) throws CloneNotSupportedException {
+        if (gameList == null) {
+            return null;
+        }
+        List<Game> clonedList = new ArrayList<>();
+        for (Game game : gameList) {
+            clonedList.add((Game) game.clone());
+        }
+        return clonedList;
+    }
+
     public void applyAdmiral() {
         if (table.getCountOfCards() > 4) {
             admiralApplied = true;
@@ -67,14 +78,6 @@ public class Game implements Cloneable, Serializable {
 
     public void skipAction() {
         shiftPlayer(false);
-    }
-
-    private void applyJester() {
-        if (table.getCountOfCards() == 0) {
-            Player activeP = players.get(activePlayer);
-            activeP.setCoins(activeP.getCoins() * activeP.getJestersCount());
-        }
-
     }
 
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
@@ -180,7 +183,12 @@ public class Game implements Cloneable, Serializable {
             // can not occur
             e.printStackTrace();
         }
-        admiralApplied = false;
+        if (getActivePlayerAsPlayer().getAdmiralsCount() > 1) {
+            admiralApplied = false;
+        } else {
+            admiralApplied = true;
+        }
+
         if (table.getCountOfCards() == 0 && !(Phase.EXPLORING.equals(phase))) {
             shiftPlayer(false);
         }
@@ -202,6 +210,10 @@ public class Game implements Cloneable, Serializable {
                 phase = Phase.OTHERS_PLAYERS_TRADING;
             }
         }
+    }
+
+    private Player getActivePlayerAsPlayer() {
+        return players.get(activePlayer);
     }
 
     private void raiseActivePlayer() {
@@ -304,6 +316,13 @@ public class Game implements Cloneable, Serializable {
         actionToShow = new ActionToShow(Action.SHOW_FACED_EXPEDITION_ON_EXPEDITIONS_PACK, Expeditions.EXPEDITIONS, expeditions.getCards().size() - 1);
         actionAndSemiStateHolder.addState(this, actionToShow);
         return actionAndSemiStateHolder;
+    }
+
+    private void applyJester() {
+        if (table.getCountOfCards() == 0) {
+            Player activeP = players.get(activePlayer);
+            activeP.setCoins(activeP.getCoins() * activeP.getJestersCount());
+        }
     }
 
     private void cardTypeValidation(Card card) throws InvalidActionException {

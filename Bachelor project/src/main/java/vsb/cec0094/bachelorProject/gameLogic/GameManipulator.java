@@ -22,6 +22,10 @@ public class GameManipulator {
     private Game backupGame;
     @JsonIgnore
     private ActionToShow backupAction;
+    @JsonIgnore
+    private List<ActionToShow> backupActionsToShows;
+    @JsonIgnore
+    private List<Game> backupSemiStates;
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
         owner = gameInQueue.getOwner();
@@ -43,7 +47,7 @@ public class GameManipulator {
     }
 
     public void faceCard() throws CloneNotSupportedException, InvalidActionException {
-        prepaireForAction();
+        prepareForAction();
 
         ProcessActionAndSemiStateHolder(currentGame.faceCard(this));
         currentAction = null;
@@ -51,7 +55,7 @@ public class GameManipulator {
 
     public void playerPickExpedition(int id) {
         try {
-            prepaireForAction();
+            prepareForAction();
             ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
             currentAction = null;
         } catch (TooExpensiveExpeditionException | CloneNotSupportedException e) {
@@ -61,12 +65,12 @@ public class GameManipulator {
     }
 
     public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
-        prepaireForAction();
+        prepareForAction();
         try {
             //display picked card
             semiStates.add((Game) currentGame.clone());
             actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
-            ProcessActionAndSemiStateHolder (currentGame.playerGetCardFromTable(id));
+            ProcessActionAndSemiStateHolder(currentGame.playerGetCardFromTable(id));
             currentAction = null;
         } catch (InvalidActionException | TooExpensiveExpeditionException e) {
             rollback();
@@ -82,19 +86,24 @@ public class GameManipulator {
     }
 
     private void rollback() {
-        actionsToShows.clear();
-        semiStates.clear();
+        actionsToShows = backupActionsToShows;
+        semiStates = backupSemiStates;
         currentGame = backupGame;
         currentAction = backupAction;
+
     }
 
-    private void prepaireForAction() throws CloneNotSupportedException {
-        actionsToShows.clear();
-        semiStates.clear();
+    private void prepareForAction() throws CloneNotSupportedException {
+        backupActionsToShows = ActionToShow.getClonedList(actionsToShows);
+        backupSemiStates = Game.getClonedList(semiStates);
         backupGame = (Game) currentGame.clone();
         if (currentAction != null) {
             backupAction = (ActionToShow) currentAction.clone();
+        } else {
+            backupAction = null;
         }
+        actionsToShows.clear();
+        semiStates.clear();
     }
 
     public String getOwner() {
