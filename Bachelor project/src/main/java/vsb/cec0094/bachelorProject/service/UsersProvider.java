@@ -36,24 +36,12 @@ public class UsersProvider {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public GameInQueue getGameInQueue() {
         return gameInQueue;
     }
 
-    public void setGameInQueue(GameInQueue gameInQueue) {
-        this.gameInQueue = gameInQueue;
-    }
-
     public GameManipulator getGameManipulator() {
         return gameManipulator;
-    }
-
-    public void setGameManipulator(GameManipulator gameManipulator) {
-        this.gameManipulator = gameManipulator;
     }
 
     public GameManipulator getGameManipulatorWhenIsPlayerOnTurn() throws NotPlayersTurnException {
