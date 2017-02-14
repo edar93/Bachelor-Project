@@ -1,6 +1,9 @@
-package vsb.cec0094.bachelorProject.services;
+package vsb.cec0094.bachelorProject.resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -25,8 +28,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/play")
-public class PlayGameService {
+@EnableAspectJAutoProxy
+public class PlayGameResource {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);
     @Autowired
     private GameDao gameDao;
     @Autowired
@@ -35,6 +40,7 @@ public class PlayGameService {
     @MessageMapping("/sendAction/{owner}")
     @SendTo("/myGame/{owner}")
     public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
+        LOGGER.debug("updateGame was called");
         GameManipulator gameManipulator = getValidatedGame(owner);
         return gameManipulator;
     }
@@ -42,6 +48,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
     public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
+        LOGGER.debug("createGameInQueue was called");
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
         if (player.equals(game.getOwner())) {
@@ -53,6 +60,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/getMyGame")
     public ResponseEntity<GameManipulator> getMyGame() {
+        LOGGER.debug("getMyGame was called");
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameInQueue game = gameDao.getPlayersGame(player);
         return ResponseEntity.ok().body(gamesHolder.getGame(game.getOwner()));
@@ -61,6 +69,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/facecard")
     public ResponseEntity<Void> faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
+        LOGGER.debug("faceCard was called");
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.faceCard();
@@ -70,6 +79,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickcard")
     public ResponseEntity<Void> pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
+        LOGGER.debug("pickCard was called");
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerGetCardFromTable(id);
@@ -79,6 +89,7 @@ public class PlayGameService {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/pickexpedition")
     public ResponseEntity<Void> pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
+        LOGGER.debug("pickExpedition was called");
         String player = SecurityContextHolder.getContext().getAuthentication().getName();
         GameManipulator game = getValidatedGame(player);
         game.playerPickExpedition(id);
@@ -92,6 +103,7 @@ public class PlayGameService {
      * @return game in which player is
      */
     private GameManipulator getValidatedGame(String localPlayer) throws GameDoesNotExist, NotPlayersTurnException {
+        LOGGER.debug("getValidatedGame was called");
         GameInQueue gameInQueue = gameDao.getPlayersGame(localPlayer);
         if (gameInQueue == null) {
             throw new GameDoesNotExist(" game for player: \"" + localPlayer + "\" goes not exist in database");

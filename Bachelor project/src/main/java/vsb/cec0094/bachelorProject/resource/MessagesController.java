@@ -1,4 +1,4 @@
-package vsb.cec0094.bachelorProject.services;
+package vsb.cec0094.bachelorProject.resource;
 
 
 import org.springframework.messaging.handler.annotation.MessageMapping;

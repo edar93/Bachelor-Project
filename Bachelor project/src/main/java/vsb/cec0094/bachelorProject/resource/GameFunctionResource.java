@@ -1,4 +1,4 @@
-package vsb.cec0094.bachelorProject.services;
+package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,16 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/game")
-public class GameFunctionService {
+public class GameFunctionResource {
 
     @Autowired
     private GameDao gameDao;
+
+//    @CrossOrigin
+//    @RequestMapping(method = RequestMethod.POST, value = "/getmystate")
+//    public ResponseEntity<String> getMyState() {
+//        getPlayersGame()
+//    }
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/cratenewgame")

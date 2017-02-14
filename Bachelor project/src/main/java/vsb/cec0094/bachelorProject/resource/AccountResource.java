@@ -1,7 +1,6 @@
-package vsb.cec0094.bachelorProject.services;
+package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -9,13 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 
 @Controller
 @RequestMapping("/accounts")
-public class AccountService {
+public class AccountResource {
 
     @Autowired
     private AccountDao accountDao;
