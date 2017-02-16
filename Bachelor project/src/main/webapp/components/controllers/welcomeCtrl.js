@@ -20,6 +20,7 @@ welcomeCtrl
         updateGamesForJoin();
 
         baseInitService.setVariables($scope);
+        baseInitService.init();
 
         function joinGame(owner) {
             gameService.joinGame(owner)

@@ -3,8 +3,13 @@
 var baseInitService = function (loginService, locationService) {
 
     this.setVariables = setVariables;
+    this.init = init;
 
     var localScope;
+
+    function init() {
+        locationService.startLocationCheck();
+    }
 
     function setVariables(scope) {
         localScope = scope;

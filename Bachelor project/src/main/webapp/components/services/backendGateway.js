@@ -24,6 +24,7 @@ var backendGateway = function ($http, $q) {
         PICK_EXPEDITION: 'play/pickexpedition',
         SKIP_ACTION: 'play/skipaction',
         GET_MY_GAME: 'play/getMyGame',
+        GET_LOCATION: 'play/getmylocation',
         EVALUATE_ADMIRALS: 'play/applyadmiral'
     };
 
