@@ -1,7 +1,9 @@
 'use strict';
 
 gameCreationCtrl
-    .controller('gameCreationCtrl', function ($scope, gameService, loginService, locationService) {
+    .controller('gameCreationCtrl', function ($scope, gameService, loginService, locationService, baseInitService) {
+
+        baseInitService.setVariables($scope);
 
         $scope.maxPlayers = maxPlayers;
         $scope.playersList = playersList;

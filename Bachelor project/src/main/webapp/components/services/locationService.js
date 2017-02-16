@@ -30,6 +30,8 @@ var locationService = function ($location, $timeout, backendGateway) {
                     goToGameCretion();
                 } else if (locationOnPage == 'GAME' && $location.path() != 'game') {
                     goToGame();
+                } else if (locationOnPage == 'FREE' && ($location.path() != 'game' || $location.path() != 'gamecreation')) {
+                    goToWelcome();
                 }
             });
         $timeout(locationCheck, 1500);

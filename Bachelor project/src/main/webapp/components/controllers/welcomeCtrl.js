@@ -14,7 +14,6 @@ welcomeCtrl
         $scope.createGame = createGame;
         $scope.goToLoginPage = goToLoginPage;
         $scope.goToRegistrationPage = goToRegistrationPage;
-        $scope.logout = logout;
         $scope.joinGame = joinGame;
 
         updateGamesForJoin();
@@ -35,10 +34,6 @@ welcomeCtrl
                     $scope.gamesForJoin = data;
                 }
             );
-        }
-
-        function logout() {
-            console.log(loginService.logout(), 'loginService.logout()');
         }
 
         function createGame() {

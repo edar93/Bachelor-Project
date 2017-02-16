@@ -12,10 +12,16 @@ var baseInitService = function (loginService, locationService) {
     }
 
     function setVariables(scope) {
-        localScope = scope;
+        loginService.getUser()
+            .then(function (user) {
+                scope.user = user;
+                scope.logout = logout;
+            });
+    }
 
-
-        scope.testVARiable = 'test';
+    function logout() {
+        console.log(loginService.logout(), 'user logged out');
+        locationService.goToWelcome();
     }
 
 };

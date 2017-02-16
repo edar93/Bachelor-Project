@@ -1,7 +1,9 @@
 'use strict';
 
 gameCtrl
-    .controller('gameCtrl', function ($scope, loginService, gameStatusService, gameActionService) {
+    .controller('gameCtrl', function ($scope, loginService, gameStatusService, gameActionService, baseInitService) {
+
+        baseInitService.setVariables($scope);
 
         loginService.getUser()
             .then(function(user){
