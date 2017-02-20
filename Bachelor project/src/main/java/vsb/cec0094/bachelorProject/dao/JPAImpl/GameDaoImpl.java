@@ -10,6 +10,7 @@ import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -63,9 +64,13 @@ public class GameDaoImpl implements GameDao {
     public GameInQueue getPlayersGame(String player) {
         LOGGER.debug("getPlayersGame was called");
         Object result;
-        result = em.createQuery(GET_PLAYERS_GAME)
-                .setParameter("player", player)
-                .getSingleResult();
+        try {
+            result = em.createQuery(GET_PLAYERS_GAME)
+                    .setParameter("player", player)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
         return (GameInQueue) result;
     }
 

@@ -1,55 +1,28 @@
 'use strict';
 
 gameCreationCtrl
-    .controller('gameCreationCtrl', function ($scope, gameService, loginService, locationService, baseInitService) {
+    .controller('gameCreationCtrl', function ($scope, gameService, loginService, locationService, baseInitService, gameCreationService) {
+
+
+        $scope.slider = {
+            value: 5,
+            options: {
+                floor: 0,
+                ceil: 10,
+                showTicks: true
+            }
+        };
 
         baseInitService.setVariables($scope);
+        gameCreationService.initAndSetScope($scope);
 
-        $scope.maxPlayers = maxPlayers;
-        $scope.playersList = playersList;
-        $scope.creator = false;
+        $scope.maxPlayers = 1;
+        $scope.$watch('maxPlayers', maxPlayersChange, true)
 
-        $scope.startGame = startGame;
-
-        var maxPlayers = 1;
-        var owner = null;
-        var playersList;
-        var user;
-
-        init();
-
-        function init() {
-            var user = loginService.getUser();
-
-            loginService.getUser()
-                .then(setUser)
-                .then(gameService.getPlayersGame)
-                .then(displayGame);
+        function maxPlayersChange(newValue) {
+            console.log('was aaaaaaaaaaaaa');
+            console.log(newValue);
+            console.log('was aaaaaaaaaaaaaa');
         }
 
-        function setUser(player){
-            user = player;
-            return player
-        }
-
-        function displayGame(data){
-            maxPlayers = data.maxPlayersCount;
-            owner = data.owner;
-            playersList = data.playersList;
-            $scope.maxPlayers = maxPlayers;
-            $scope.playersList = playersList;
-
-            if (user === owner) {
-                $scope.creator = true;
-            } else {
-                $scope.creator = false;
-            }
-        }
-
-        function startGame() {
-            gameService.startGame()
-                .then(function () {
-                    locationService.goToGame();
-                });
-        }
     });

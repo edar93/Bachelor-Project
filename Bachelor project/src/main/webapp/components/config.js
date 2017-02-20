@@ -3,6 +3,7 @@
 /* load modules */
 var portRoyalApp = angular.module('portRoyalApp', [
     'ngRoute',
+    'rzModule',
     'pascalprecht.translate',
     'portRoyalApp.stompService',
     'portRoyalApp.backendGateway',
@@ -13,6 +14,7 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.baseInitService',
     'portRoyalApp.globalChatService',
     'portRoyalApp.gameService',
+    'portRoyalApp.gameCreationService',
     'portRoyalApp.gameCreationCtrl',
     'portRoyalApp.loginCtrl',
     'portRoyalApp.welcomeCtrl',

@@ -7,8 +7,11 @@
         <h4>{{'GAME_CREATION_TITTLE' | translate}}</h4>
         <label class="control-label" for="count">{{'MAX_PLAYERS_COUNT' | translate }}</label>
         <input id="count" ng-model="maxPlayers">
+        {{maxPlayers}}
 
         <h3>! ADD SLIDER !</h3>
+        <rzslider rz-slider-model="slider.value"
+                  rz-slider-options="slider.options"></rzslider>
 
 
         <div>
