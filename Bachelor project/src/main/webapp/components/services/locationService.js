@@ -9,6 +9,8 @@ var locationService = function ($location, $timeout, backendGateway) {
     this.goToGame = goToGame;
     this.startLocationCheck = startLocationCheck;
 
+    var timeout;
+
     var paths = {
         welcome: '/welcome',
         gamecreation: '/gamecreation',
@@ -18,7 +20,8 @@ var locationService = function ($location, $timeout, backendGateway) {
     };
 
     function startLocationCheck() {
-        $timeout(locationCheck, 1500);
+        timeout = 20;
+        $timeout(locationCheck, timeout);
 
     }
 
@@ -26,6 +29,12 @@ var locationService = function ($location, $timeout, backendGateway) {
         backendGateway.get('GET_LOCATION')
             .then(function (responce) {
                 var locationOnPage = responce.data;
+                if(locationOnPage == 'GAME_CREATION'){
+                    timeout = 600;
+                }else {
+                    timeout = 10000
+                }
+
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != 'gamecreation') {
                     goToGameCretion();
                 } else if (locationOnPage == 'GAME' && $location.path() != 'game') {
@@ -34,7 +43,7 @@ var locationService = function ($location, $timeout, backendGateway) {
                     goToWelcome();
                 }
             });
-        $timeout(locationCheck, 1500);
+        $timeout(locationCheck, timeout);
     }
 
     function goToWelcome() {

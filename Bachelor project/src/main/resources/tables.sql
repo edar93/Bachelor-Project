@@ -10,9 +10,7 @@ gameinqueue varchar(100),
 FOREIGN KEY (gameinqueue) REFERENCES gameinqueue(owner)
 );
 
-
 /*suport scripts*/
-
 select * from user;
 select * from gameinqueue;
 

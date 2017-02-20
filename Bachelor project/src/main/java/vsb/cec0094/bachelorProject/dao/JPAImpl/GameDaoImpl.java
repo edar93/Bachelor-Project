@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.GameDao;
+import vsb.cec0094.bachelorProject.exceptions.NoEmptyPlaceInGame;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.User;
 
@@ -48,9 +49,10 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public void joinGame(String owner, String player) {
+    public void joinGame(String owner, String player) throws NoEmptyPlaceInGame {
         LOGGER.debug("joinGame was called");
         GameInQueue game = em.find(GameInQueue.class, owner);
+        isEmptyPlaceInGame(game);
         em.createQuery(JOIN_GAME)
                 .setParameter("game", game)
                 .setParameter("player", player)
@@ -65,5 +67,11 @@ public class GameDaoImpl implements GameDao {
                 .setParameter("player", player)
                 .getSingleResult();
         return (GameInQueue) result;
+    }
+
+    private void isEmptyPlaceInGame(GameInQueue gameInQueue) throws NoEmptyPlaceInGame {
+        if (gameInQueue.getPlayersList().size() == gameInQueue.getMaxPlayersCount()) {
+            throw new NoEmptyPlaceInGame("No empty place in game");
+        }
     }
 }

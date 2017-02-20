@@ -31,10 +31,12 @@ public class Game implements Cloneable, Serializable {
     private Phase phase;
     private int cardsToTake;
     private boolean admiralApplied;
+    private boolean gameOver;
     @JsonIgnore
     private DrawPile drawPile;
 
     public Game(GameInQueue gameInQueue) {
+        gameOver = false;
         expeditions = new Expeditions();
         playersCount = gameInQueue.getPlayersList().size();
         playerOnTurn = 0;
@@ -161,6 +163,15 @@ public class Game implements Cloneable, Serializable {
         return actionAndSemiStateHolder;
     }
 
+    private boolean isGameInOverCheck() {
+        for (Player player : players) {
+            if (player.getInfluencePoints() >= 12) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void cleanTable() {
         drawPile.getUsedCards(table.removeCards());
     }
@@ -223,10 +234,23 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
+    private void endGame() {
+        //TODO
+    }
+
     private void raisePlayerOnTurn() {
-        playerOnTurn++;
-        if (playerOnTurn == playersCount) {
-            playerOnTurn = 0;
+        if (isGameInOverCheck()) {
+            playerOnTurn++;
+            if (playerOnTurn == playersCount) {
+                playerOnTurn = 0;
+                gameOver = true;
+                endGame();
+            }
+        } else {
+            playerOnTurn++;
+            if (playerOnTurn == playersCount) {
+                playerOnTurn = 0;
+            }
         }
     }
 
@@ -346,6 +370,14 @@ public class Game implements Cloneable, Serializable {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
     }
 
     public boolean isAdmiralApplied() {
