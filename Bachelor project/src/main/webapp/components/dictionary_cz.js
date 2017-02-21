@@ -30,5 +30,6 @@ var dictionaryCZ = {
     FACE_CARD: 'Otočit kartu',
     SKIP_ACTION: 'Zdržet se akce',
     EVALUATE_ADMIRALS: 'Zdržet se akce',
+    LEFT_GAME: 'Opustit hru',
     PLAYERS: 'Hráči'
 };

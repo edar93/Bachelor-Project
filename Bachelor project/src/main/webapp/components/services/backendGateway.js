@@ -16,6 +16,7 @@ var backendGateway = function ($http, $q) {
         CREATE_NEW_GAME: 'game/cratenewgame',
         GET_PLAYERS_GAME: 'game/getplayersgame',
         GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
+        LEFT_GAME: 'game/leftgame',
         JOIN_GAME: 'game/joingame',
         TEST: 'play/gettestgame',
         START_GAME: 'play/startGame',

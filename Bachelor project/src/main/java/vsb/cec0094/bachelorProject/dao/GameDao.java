@@ -16,4 +16,6 @@ public interface GameDao {
     void joinGame(String owner, String player) throws NoEmptyPlaceInGame;
 
     GameInQueue getPlayersGame(String player);
+
+    void leftGame(String login, GameInQueue gameInQueue);
 }

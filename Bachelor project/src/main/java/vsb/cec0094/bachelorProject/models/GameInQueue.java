@@ -26,6 +26,15 @@ public class GameInQueue {
     public GameInQueue() {
     }
 
+    @Override
+    public String toString() {
+        return new org.apache.commons.lang3.builder.ToStringBuilder(this)
+                .append("owner", owner)
+                .append("playersList", playersList)
+                .append("maxPlayersCount", maxPlayersCount)
+                .toString();
+    }
+
     public String getOwner() {
         return owner;
     }

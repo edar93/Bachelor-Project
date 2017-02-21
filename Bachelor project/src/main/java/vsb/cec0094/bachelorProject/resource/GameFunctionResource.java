@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/game")
 public class GameFunctionResource {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(GameFunctionResource.class);
 
     @Autowired
     private GameDao gameDao;
@@ -59,5 +63,15 @@ public class GameFunctionResource {
     public ResponseEntity<GameInQueue> getPlayersGame(@RequestBody String player) {
         return ResponseEntity.ok().body(gameDao.getPlayersGame(player));
     }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/leftgame")
+    public ResponseEntity<Void> leftGame() {
+        LOGGER.debug(usersProvider.getLogin() + ">>>>>>>>>>>>>>>>>>> login");
+        LOGGER.debug(usersProvider.getGameInQueue().toString() + ">>>>>>>>>>>>>>>>>>> game in q");
+
+        gameDao.leftGame(usersProvider.getLogin(), usersProvider.getGameInQueue());
+        return ResponseEntity.ok().build();
+    }
+
 
 }

@@ -33,16 +33,18 @@
         <h4>{{'GAME_JOINER_TITTLE' | translate}}</h4>
 
         <p>{{'MAX_PLAYERS_COUNT' | translate}} {{maxPlayers}}</p>
-
-        <div>
-            <table>
-                <tr>
-                    <th>{{'PLAYERS' | translate}}</th>
-                </tr>
-                <tr ng-repeat="players in playersList track by $index">
-                    <td>{{players.login}}</td>
-                </tr>
-            </table>
-        </div>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>{{'PLAYERS' | translate}}</th>
+            </tr>
+            <tr ng-repeat="players in playersList track by $index">
+                <td>{{players.login}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button ng-click="leftGame()">{{'LEFT_GAME' | translate}}</button>
     </div>
 </div>

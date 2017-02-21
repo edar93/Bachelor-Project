@@ -13,7 +13,7 @@ public class UserSaver {
     private UsersProvider usersProvider;
 
     @Before("execution (* vsb.cec0094.bachelorProject.resource.PlayGameResource.*(..))," +
-            " package vsb.cec0094.bachelorProject.resource.GameFunctionResource.*(..)")
+            "package vsb.cec0094.bachelorProject.resource.GameFunctionResource.*(..)")
     public void setUser() {
         String login = SecurityContextHolder.getContext().getAuthentication().getName();
         usersProvider.prepareUser(login);

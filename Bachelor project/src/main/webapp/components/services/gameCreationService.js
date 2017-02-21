@@ -1,6 +1,6 @@
 'use strict';
 
-var gameCreationService = function (loginService, gameService) {
+var gameCreationService = function (backendGateway, loginService, gameService, locationService) {
 
     this.initAndSetScope = initAndSetScope;
 
@@ -11,7 +11,7 @@ var gameCreationService = function (loginService, gameService) {
     function initAndSetScope(scope) {
         localScope = scope;
         scope.startGame = startGame;
-
+        scope.leftGame = leftGame;
         scope.creator = false;
 
         init();
@@ -23,6 +23,11 @@ var gameCreationService = function (loginService, gameService) {
     //function getMaxPlayers() {
     //    return $scope.selecteditem.selectedType;
     //}
+
+    function leftGame() {
+        backendGateway.post('LEFT_GAME')
+            .then(locationService.goToWelcome);
+    }
 
     function maxPlayersChange(newValue) {
         console.log('was callllllllllllllll');
@@ -48,7 +53,6 @@ var gameCreationService = function (loginService, gameService) {
         owner = data.owner;
         localScope.maxPlayers = data.maxPlayersCount;
         localScope.playersList = data.playersList;
-        ;
 
         if (user === owner) {
             localScope.creator = true;

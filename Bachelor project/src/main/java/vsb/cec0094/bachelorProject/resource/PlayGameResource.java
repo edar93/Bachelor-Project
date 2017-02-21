@@ -81,7 +81,7 @@ public class PlayGameResource {
 
     @RequestMapping(method = RequestMethod.GET, value = "/getmylocation")
     public ResponseEntity<LocationOnPage> getMyLocation() throws NotPlayersTurnException {
-        LOGGER.debug("getMyLocation was called");
+        //LOGGER.debug("getMyLocation was called");
         if (usersProvider.getGameManipulator() != null) {
             return ResponseEntity.ok().body(LocationOnPage.GAME);
         } else if (usersProvider.getGameInQueue() != null) {

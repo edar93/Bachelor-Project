@@ -14,6 +14,7 @@ import vsb.cec0094.bachelorProject.models.GameInQueue;
 public class UsersProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersProvider.class);
+
     @Autowired
     private GameDao gameDao;
     @Autowired

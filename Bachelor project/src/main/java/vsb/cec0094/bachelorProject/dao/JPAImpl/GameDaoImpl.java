@@ -21,6 +21,8 @@ public class GameDaoImpl implements GameDao {
     private static final String SELECT_ALL_GAMES = "SELECT g FROM GameInQueue g";
     private static final String JOIN_GAME = "UPDATE User SET gameInQueue = :game WHERE login = :player";
     private static final String GET_PLAYERS_GAME = "SELECT gameInQueue FROM User WHERE login = :player";
+    private static final String DELETE_PLAYERS_GAME = "UPDATE User u SET u.gameInQueue = null WHERE u.gameInQueue = :game";
+    private static final String DELETE_PLAYERS_GAME_FOR_PLAYER = "UPDATE User u SET u.gameInQueue = null WHERE u.login = :login";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameDaoImpl.class);
 
@@ -62,7 +64,7 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public GameInQueue getPlayersGame(String player) {
-        LOGGER.debug("getPlayersGame was called");
+        //LOGGER.debug("getPlayersGame was called");
         Object result;
         try {
             result = em.createQuery(GET_PLAYERS_GAME)
@@ -72,6 +74,26 @@ public class GameDaoImpl implements GameDao {
             return null;
         }
         return (GameInQueue) result;
+    }
+
+    @Override
+    public void leftGame(String login, GameInQueue gameInQueue) {
+        LOGGER.debug("leftGame was called");
+
+        if (login.equals(gameInQueue.getOwner())) {
+            gameInQueue = em.find(GameInQueue.class, login);
+            em.createQuery(DELETE_PLAYERS_GAME)
+                    .setParameter("game", gameInQueue)
+                    .executeUpdate();
+            em.remove(gameInQueue);
+        } else {
+            em.createQuery(DELETE_PLAYERS_GAME_FOR_PLAYER)
+                    .setParameter("login", login)
+                    .executeUpdate();
+
+//            User user = em.find(User.class, login);
+//            user.setGameInQueue(null);
+        }
     }
 
     private void isEmptyPlaceInGame(GameInQueue gameInQueue) throws NoEmptyPlaceInGame {
