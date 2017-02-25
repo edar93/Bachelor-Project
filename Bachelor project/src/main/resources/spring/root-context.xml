@@ -37,7 +37,6 @@
                              authentication-success-handler-ref="SuccessLogin"
                              authentication-failure-handler-ref="UnauthorizedLogin"/>
         <security:logout logout-url="/logout" success-handler-ref="SuccessLogout"/>
-
     </security:http>
 
     <bean id="SuccessLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogin"/>

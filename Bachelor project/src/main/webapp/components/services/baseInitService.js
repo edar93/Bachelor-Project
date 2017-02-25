@@ -1,6 +1,6 @@
 'use strict';
 
-var baseInitService = function (loginService, locationService) {
+var baseInitService = function ($route, loginService, locationService) {
 
     this.setVariables = setVariables;
     this.init = init;
@@ -22,6 +22,7 @@ var baseInitService = function (loginService, locationService) {
     function logout() {
         console.log(loginService.logout(), 'user logged out');
         locationService.goToWelcome();
+        $route.reload();
     }
 
 };

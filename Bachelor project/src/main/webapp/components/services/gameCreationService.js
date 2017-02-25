@@ -13,16 +13,12 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
         scope.startGame = startGame;
         scope.leftGame = leftGame;
         scope.creator = false;
+        scope.maxPlayers = 2;
 
         init();
 
         scope.$watch('maxPlayers', maxPlayersChange, true)
     }
-
-    //
-    //function getMaxPlayers() {
-    //    return $scope.selecteditem.selectedType;
-    //}
 
     function leftGame() {
         backendGateway.post('LEFT_GAME')

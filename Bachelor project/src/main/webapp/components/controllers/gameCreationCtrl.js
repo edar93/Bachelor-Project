@@ -15,14 +15,4 @@ gameCreationCtrl
 
         baseInitService.setVariables($scope);
         gameCreationService.initAndSetScope($scope);
-
-        $scope.maxPlayers = 1;
-        $scope.$watch('maxPlayers', maxPlayersChange, true)
-
-        function maxPlayersChange(newValue) {
-            console.log('was aaaaaaaaaaaaa');
-            console.log(newValue);
-            console.log('was aaaaaaaaaaaaaa');
-        }
-
     });

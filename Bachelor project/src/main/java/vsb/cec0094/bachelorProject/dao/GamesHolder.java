@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 
@@ -9,6 +11,8 @@ import java.util.HashMap;
 
 @Repository
 public class GamesHolder implements Serializable{
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(GamesHolder.class);
 
     private HashMap<String, GameManipulator> games;
 
