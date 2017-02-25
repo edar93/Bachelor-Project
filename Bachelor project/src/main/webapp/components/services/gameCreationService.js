@@ -3,6 +3,7 @@
 var gameCreationService = function (backendGateway, loginService, gameService, locationService) {
 
     this.initAndSetScope = initAndSetScope;
+    this.setSlider = setSlider;
 
     var localScope;
     var owner = null;
@@ -13,11 +14,26 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
         scope.startGame = startGame;
         scope.leftGame = leftGame;
         scope.creator = false;
-        scope.maxPlayers = 2;
+        scope.maxPlayers = {count: 4};
+        //scope.maxPlayersChange = maxPlayersChange;
 
         init();
 
-        scope.$watch('maxPlayers', maxPlayersChange, true)
+        scope.$watch(getMaxPlayers, maxPlayersChange, true);
+    }
+
+    function getMaxPlayers(scope) {
+        return localScope.maxPlayers.count;
+    }
+
+    function setSlider(scope) {
+        scope.slider = {
+            options: {
+                floor: 2,
+                ceil: 5,
+                showTicks: true
+            }
+        };
     }
 
     function leftGame() {
@@ -26,14 +42,12 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
     }
 
     function maxPlayersChange(newValue) {
-        console.log('was callllllllllllllll');
         console.log(newValue);
         console.log('was callllllllllllllll');
     }
 
     function init() {
         var user = loginService.getUser();
-
         loginService.getUser()
             .then(setUser)
             .then(gameService.getPlayersGame)
@@ -47,7 +61,7 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
 
     function displayGame(data) {
         owner = data.owner;
-        localScope.maxPlayers = data.maxPlayersCount;
+        localScope.maxPlayers.count = data.maxPlayersCount;
         localScope.playersList = data.playersList;
 
         if (user === owner) {
