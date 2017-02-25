@@ -28,7 +28,9 @@ public class UsersProvider {
         if (login != null) {
             this.gameInQueue = gameDao.getPlayersGame(login);
         }
-        if (gameInQueue != null) {
+        if (gameInQueue == null) {
+            this.gameManipulator = null;
+        } else {
             this.gameManipulator = gamesHolder.getGame(gameInQueue.getOwner());
         }
     }

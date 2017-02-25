@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -94,6 +95,19 @@ public class GameManipulator {
         if (currentAction != null) {
             backupAction = (ActionToShow) currentAction.clone();
         }
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("owner", owner)
+                .append("actionsToShows", actionsToShows)
+                .append("semiStates", semiStates)
+                .append("currentAction", currentAction)
+                .append("currentGame", currentGame)
+                .append("backupGame", backupGame)
+                .append("backupAction", backupAction)
+                .toString();
     }
 
     public String getOwner() {
