@@ -9,7 +9,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
     var timeout = 800;
 
     var localUser, playersList, table, expeditions, playersCount, localPlayer, activePlayer, cardsToTake,
-        gameScope, markedType, markedId, lastGameToShow, phase, playerOnTurn, admiralApplied;
+        gameScope, markedType, markedId, lastGameToShow, phaseShow, playerOnTurn, admiralApplied, phase;
 
     function setScopeAndPlayer(scope, player) {
         gameScope = scope;
@@ -32,24 +32,24 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
 
     function showStates() {
         console.log(lastGameToShow, 'showstates.game');
-        var phasesCount = lastGameToShow.semiStates.length;
-        phase = 0;
-        for (var i = 0; i < phasesCount; i++) {
+        var phaseShowCount = lastGameToShow.semiStates.length;
+        phaseShow = 0;
+        for (var i = 0; i < phaseShowCount; i++) {
             console.log(lastGameToShow.semiStates[i], 'game.semiStates[i]');
             $timeout(function () {
-                show(lastGameToShow.semiStates[phase], lastGameToShow.actionsToShows[phase])
+                show(lastGameToShow.semiStates[phaseShow], lastGameToShow.actionsToShows[phaseShow])
             }, i * timeout);
         }
         $timeout(function () {
             show(lastGameToShow.currentGame, lastGameToShow.currentAction)
-        }, phasesCount * timeout);
+        }, phaseShowCount * timeout);
     }
 
     function show(cards, move) {
         console.log(cards, move, 'cards, move');
         prepare(cards, move);
         updateScope();
-        phase++;
+        phaseShow++;
     }
 
     function prepare(game, action) {
@@ -79,6 +79,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         playersCount = game.playersCount;
         cardsToTake = game.cardsToTake;
         admiralApplied = game.admiralApplied;
+        phase = game.phase;
     }
 
     function transformAddCards(game) {
@@ -119,6 +120,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
         gameScope.cardsToTake = cardsToTake;
         gameScope.localUser = localUser;
         gameScope.admiralApplied = admiralApplied;
+        gameScope.phase = phase;
     }
 };
 

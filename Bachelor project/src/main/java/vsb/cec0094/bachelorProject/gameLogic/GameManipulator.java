@@ -37,6 +37,8 @@ public class GameManipulator {
 
     public void skipAction() {
         currentGame.skipAction();
+        actionsToShows.clear();
+        semiStates.clear();
     }
 
     public void applyAdmiral() {

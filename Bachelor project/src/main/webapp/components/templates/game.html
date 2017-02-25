@@ -2,7 +2,8 @@
 
 <div id="table" class="table">
     <h3>Table</h3>
-    <img src="images/coin.jpg" class="cards" ng-show="localUser == playerOnTurn" ng-click="faceCard()">
+    <img src="images/coin.jpg" class="cards" ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
+         ng-click="faceCard()">
 
     <div class="cards" ng-repeat="card in table.cards track by $index">
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"

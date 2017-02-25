@@ -6,33 +6,12 @@
 
         <h4>{{'GAME_CREATION_TITTLE' | translate}}</h4>
         <label class="control-label" for="count">{{'MAX_PLAYERS_COUNT' | translate }}</label>
-        <input id="maxPlayersCount" data-ng-model="maxPlayers.count">
-        {{maxPlayers.count}}
+        <!--<input id="maxPlayersCount" data-ng-model="maxPlayers.count">-->
+        <!--{{maxPlayers.count}}-->
 
         <rzslider rz-slider-model="maxPlayers.count"
                   rz-slider-options="slider.options"></rzslider>
 
-        <div>
-            <table>
-                <tr>
-                    <th>{{'PLAYERS' | translate}}</th>
-                </tr>
-                <tr ng-repeat="players in playersList track by $index">
-                    <td>{{players.login}}</td>
-                </tr>
-            </table>
-        </div>
-
-        <button ng-click="startGame()">{{'START_GAME' | translate}}</button>
-    </div>
-
-    <div ng-if="!creator">
-
-        <h4>{{'GAME_JOINER_TITTLE' | translate}}</h4>
-
-        <p>{{'MAX_PLAYERS_COUNT' | translate}} {{maxPlayers}}</p>
-    </div>
-    <div>
         <table>
             <tr>
                 <th>{{'PLAYERS' | translate}}</th>
@@ -41,6 +20,29 @@
                 <td>{{players.login}}</td>
             </tr>
         </table>
+
+        <button ng-click="startGame()">{{'START_GAME' | translate}}</button>
+    </div>
+
+
+    <div ng-if="!creator">
+
+        <h4>{{'GAME_JOINER_TITTLE' | translate}}</h4>
+
+        <p>{{'MAX_PLAYERS_COUNT' | translate}} {{maxPlayers.count}}</p>
+
+        <table>
+            <tr>
+                <th>{{'PLAYERS' | translate}}</th>
+            </tr>
+            <tr ng-repeat="players in playersList track by $index">
+                <td>{{players.login}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+
     </div>
     <div>
         <button ng-click="leftGame()">{{'LEFT_GAME' | translate}}</button>

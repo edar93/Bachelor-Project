@@ -10,6 +10,12 @@ import java.util.List;
 @Table(name = "gameinqueue")
 public class GameInQueue {
 
+
+//    @SequenceGenerator(name = "SEQ_GAME_ID", sequenceName = "SEQ_GAME_ID")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GAME_ID")
+//    @Column(name = "id")
+//    private int id;
+
     @Id
     @Column(name = "owner")
     @Size(max = 100)
@@ -20,7 +26,7 @@ public class GameInQueue {
 
     @Column(name = "maxPlayersCount")
     @Min(2)
-    @Max(6)
+    @Max(5)
     private int maxPlayersCount;
 
     public GameInQueue() {

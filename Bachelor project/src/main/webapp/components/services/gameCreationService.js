@@ -13,13 +13,15 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
         localScope = scope;
         scope.startGame = startGame;
         scope.leftGame = leftGame;
+
         scope.creator = false;
         scope.maxPlayers = {count: 4};
-        //scope.maxPlayersChange = maxPlayersChange;
-
         init();
-
         scope.$watch(getMaxPlayers, maxPlayersChange, true);
+    }
+
+    function kickPlayer() {
+
     }
 
     function getMaxPlayers(scope) {
