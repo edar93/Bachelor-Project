@@ -50,9 +50,9 @@ public class GameFunctionResource {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/joingame")
-    public ResponseEntity<Void> joinGame(@RequestBody String owner) {
+    public ResponseEntity<Void> joinGame(@RequestBody Integer id) {
         try {
-            gameDao.joinGame(owner, usersProvider.getLogin());
+            gameDao.joinGame(id, usersProvider.getLogin());
         } catch (NoEmptyPlaceInGame noEmptyPlaceInGame) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -66,9 +66,6 @@ public class GameFunctionResource {
 
     @RequestMapping(method = RequestMethod.POST, value = "/leftgame")
     public ResponseEntity<Void> leftGame() {
-        LOGGER.debug(usersProvider.getLogin() + ">>>>>>>>>>>>>>>>>>> login");
-        LOGGER.debug(usersProvider.getGameInQueue().toString() + ">>>>>>>>>>>>>>>>>>> game in q");
-
         gameDao.leftGame(usersProvider.getLogin(), usersProvider.getGameInQueue());
         return ResponseEntity.ok().build();
     }

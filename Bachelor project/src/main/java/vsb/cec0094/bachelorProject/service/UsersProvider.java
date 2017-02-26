@@ -31,7 +31,7 @@ public class UsersProvider {
         if (gameInQueue == null) {
             this.gameManipulator = null;
         } else {
-            this.gameManipulator = gamesHolder.getGame(gameInQueue.getOwner());
+            this.gameManipulator = gamesHolder.getGame(gameInQueue.getId());
         }
     }
 

@@ -29,6 +29,7 @@ public class Game implements Cloneable, Serializable {
     @JsonIgnore
     private final PlayerSwittchingService playerSwittchingService = new PlayerSwittchingService(this);
 
+    private Integer id;
     private String owner;
     private List<Player> players;
     private Table table;
@@ -46,6 +47,7 @@ public class Game implements Cloneable, Serializable {
 
 
     public Game(GameInQueue gameInQueue) {
+        this.id = gameInQueue.getId();
         gameOver = false;
         expeditions = new Expeditions();
         playersCount = gameInQueue.getPlayersList().size();
@@ -114,6 +116,14 @@ public class Game implements Cloneable, Serializable {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getOwner() {

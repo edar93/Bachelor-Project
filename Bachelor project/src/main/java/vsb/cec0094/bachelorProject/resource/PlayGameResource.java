@@ -30,8 +30,8 @@ public class PlayGameResource {
     private UsersProvider usersProvider;
 
     @RequestMapping(method = RequestMethod.POST, value = "/startGame")
-    public ResponseEntity<Void> createGameInQueue() throws CloneNotSupportedException {
-        LOGGER.debug("createGameInQueue was called");
+    public ResponseEntity<Void> startGame() throws CloneNotSupportedException {
+        LOGGER.debug("startGame was called");
         if (usersProvider.getLogin().equals(usersProvider.getGameInQueue().getOwner())) {
             gamesHolder.addGame(new GameManipulator(usersProvider.getGameInQueue()));
         }

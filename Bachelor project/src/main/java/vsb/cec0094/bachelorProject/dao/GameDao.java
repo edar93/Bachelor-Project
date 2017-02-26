@@ -13,7 +13,9 @@ public interface GameDao {
 
     List<GameInQueue> getAllGames();
 
-    void joinGame(String owner, String player) throws NoEmptyPlaceInGame;
+    void joinGame(Integer id, String player) throws NoEmptyPlaceInGame;
+
+    GameInQueue getGameById(Integer id);
 
     GameInQueue getPlayersGame(String player);
 

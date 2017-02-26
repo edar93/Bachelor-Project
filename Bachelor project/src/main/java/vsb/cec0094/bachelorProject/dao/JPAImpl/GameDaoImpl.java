@@ -10,6 +10,7 @@ import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -23,15 +24,30 @@ public class GameDaoImpl implements GameDao {
     private static final String GET_PLAYERS_GAME = "SELECT gameInQueue FROM User WHERE login = :player";
     private static final String DELETE_PLAYERS_GAME = "UPDATE User u SET u.gameInQueue = null WHERE u.gameInQueue = :game";
     private static final String DELETE_PLAYERS_GAME_FOR_PLAYER = "UPDATE User u SET u.gameInQueue = null WHERE u.login = :login";
+    private static final String GET_HIGHEST_ID = "SELECT MAX(id) FROM GameInQueue";
+    private static final String GET_GAME_BY_ID = "SELECT GameInQueue FROM GameInQueue WHERE id = :id";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameDaoImpl.class);
 
     @PersistenceContext
     EntityManager em;
 
+    private int getIdForNewGame() {
+        try {
+            return ((Integer) em.createQuery(GET_HIGHEST_ID)
+                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+                    .getSingleResult()
+            )
+                    + 1;
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
+
     @Override
     public void createGameInQueue(GameInQueue gameInQueue) {
         LOGGER.debug("createGameInQueue was called");
+        gameInQueue.setId(getIdForNewGame());
         em.persist(gameInQueue);
         String owner = gameInQueue.getOwner();
         User player = em.find(User.class, owner);
@@ -49,17 +65,32 @@ public class GameDaoImpl implements GameDao {
     public List<GameInQueue> getAllGames() {
         LOGGER.debug("getAllGames was called");
         return em.createQuery(SELECT_ALL_GAMES, GameInQueue.class).getResultList();
+
     }
 
     @Override
-    public void joinGame(String owner, String player) throws NoEmptyPlaceInGame {
+    public void joinGame(Integer id, String player) throws NoEmptyPlaceInGame {
         LOGGER.debug("joinGame was called");
-        GameInQueue game = em.find(GameInQueue.class, owner);
+        GameInQueue game = em.find(GameInQueue.class, id);
         isEmptyPlaceInGame(game);
         em.createQuery(JOIN_GAME)
                 .setParameter("game", game)
                 .setParameter("player", player)
                 .executeUpdate();
+    }
+
+    @Override
+    public GameInQueue getGameById(Integer id) {
+        //LOGGER.debug("getGameById was called");
+        Object result;
+        try {
+            result = em.createQuery(GET_GAME_BY_ID)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+        return (GameInQueue) result;
     }
 
     @Override

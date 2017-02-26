@@ -5,7 +5,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     this.init = init;
 
     var game;
-    var gameOwner;
+    var gameId;
     var notSubscribing;
 
     function setToScope(scope) {
@@ -29,8 +29,8 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     }
 
     function startSockets(data) {
-        gameOwner = data.owner;
-        var url = '/myGame/' + gameOwner;
+        gameId = data.id;
+        var url = '/myGame/' + gameId;
 
         game = stompService('/port-royal/game');
 
@@ -50,7 +50,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     function globalUpdate() {
         //TODO message is not needed
-        game.send("/port-royal/sendAction/" + gameOwner, {}, JSON.stringify({'text': 'does not matter'}));
+        game.send("/port-royal/sendAction/" + gameId, {}, JSON.stringify({'text': 'does not matter'}));
     }
 
     function skipAction(){

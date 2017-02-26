@@ -21,8 +21,8 @@ welcomeCtrl
         baseInitService.setVariables($scope);
         baseInitService.init();
 
-        function joinGame(owner) {
-            gameService.joinGame(owner)
+        function joinGame(id) {
+            gameService.joinGame(id)
                 .then(function () {
                     locationService.goToGameCretion();
                 });

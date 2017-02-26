@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.models;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -11,12 +13,10 @@ import java.util.List;
 public class GameInQueue {
 
 
-//    @SequenceGenerator(name = "SEQ_GAME_ID", sequenceName = "SEQ_GAME_ID")
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GAME_ID")
-//    @Column(name = "id")
-//    private int id;
-
     @Id
+    @Column(name = "id")
+    private int id;
+
     @Column(name = "owner")
     @Size(max = 100)
     private String owner;
@@ -34,11 +34,20 @@ public class GameInQueue {
 
     @Override
     public String toString() {
-        return new org.apache.commons.lang3.builder.ToStringBuilder(this)
+        return new ToStringBuilder(this)
+                .append("id", id)
                 .append("owner", owner)
                 .append("playersList", playersList)
                 .append("maxPlayersCount", maxPlayersCount)
                 .toString();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getOwner() {

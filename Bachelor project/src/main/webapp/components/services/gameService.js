@@ -8,8 +8,8 @@ var gameService = function (backendGateway) {
     this.joinGame = joinGame;
     this.startGame = startGame;
 
-    function joinGame(owner) {
-        return backendGateway.put('JOIN_GAME', owner);
+    function joinGame(id) {
+        return backendGateway.put('JOIN_GAME', id);
     }
 
     function getPlayersGame(player) {

@@ -14,6 +14,7 @@ import java.util.List;
 
 public class GameManipulator {
 
+    private Integer id;
     private String owner;
     private List<ActionToShow> actionsToShows;
     private List<Game> semiStates;
@@ -25,6 +26,7 @@ public class GameManipulator {
     private ActionToShow backupAction;
 
     public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
+        this.id = gameInQueue.getId();
         owner = gameInQueue.getOwner();
         currentGame = new Game(gameInQueue);
         semiStates = new ArrayList<>();
@@ -111,6 +113,30 @@ public class GameManipulator {
                 .append("backupGame", backupGame)
                 .append("backupAction", backupAction)
                 .toString();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Game getBackupGame() {
+        return backupGame;
+    }
+
+    public void setBackupGame(Game backupGame) {
+        this.backupGame = backupGame;
+    }
+
+    public ActionToShow getBackupAction() {
+        return backupAction;
+    }
+
+    public void setBackupAction(ActionToShow backupAction) {
+        this.backupAction = backupAction;
     }
 
     public String getOwner() {

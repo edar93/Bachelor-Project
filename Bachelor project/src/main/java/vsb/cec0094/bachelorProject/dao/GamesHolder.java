@@ -14,7 +14,7 @@ public class GamesHolder implements Serializable{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GamesHolder.class);
 
-    private HashMap<String, GameManipulator> games;
+    private HashMap<Integer, GameManipulator> games;
 
     @PostConstruct
     public void init() {
@@ -22,18 +22,18 @@ public class GamesHolder implements Serializable{
     }
 
     public void addGame(GameManipulator game) {
-        games.put(game.getOwner(), game);
+        games.put(game.getId(), game);
     }
 
-    public GameManipulator getGame(String owner) {
-        return games.get(owner);
+    public GameManipulator getGame(Integer id) {
+        return games.get(id);
     }
 
-    public HashMap<String, GameManipulator> getGames() {
+    public HashMap<Integer, GameManipulator> getGames() {
         return games;
     }
 
-    public void setGames(HashMap<String, GameManipulator> games) {
+    public void setGames(HashMap<Integer, GameManipulator> games) {
         this.games = games;
     }
 }

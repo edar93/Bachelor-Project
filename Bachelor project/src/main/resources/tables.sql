@@ -1,5 +1,6 @@
 create table gameinqueue (
-owner varchar(100) primary key,
+id int primary key,
+owner varchar(100),
 maxPlayersCount int);
 
 create table user(

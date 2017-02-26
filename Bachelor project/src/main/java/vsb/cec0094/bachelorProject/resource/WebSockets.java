@@ -32,15 +32,15 @@ public class WebSockets {
         return message;
     }
 
-    @MessageMapping("/sendAction/{owner}")
-    @SendTo("/myGame/{owner}")
-    public GameManipulator updateGame(@DestinationVariable String owner) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
+    @MessageMapping("/sendAction/{id}")
+    @SendTo("/myGame/{id}")
+    public GameManipulator updateGame(@DestinationVariable Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("updateGame was called");
-        GameInQueue gameInQueue = gameDao.getPlayersGame(owner);
+        GameInQueue gameInQueue = gameDao.getGameById(id);
         if (gameInQueue == null) {
-            throw new GameDoesNotExist(" game for owner: \"" + owner + "\" goes not exist in database");
+            throw new GameDoesNotExist(" game for id: \"" + id + "\" does not exist in database");
         }
-        return gamesHolder.getGame(gameInQueue.getOwner());
+        return gamesHolder.getGame(gameInQueue.getId());
     }
 
 }
