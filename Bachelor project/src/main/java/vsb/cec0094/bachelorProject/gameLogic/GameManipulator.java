@@ -47,7 +47,7 @@ public class GameManipulator {
 
     public void faceCard() throws CloneNotSupportedException, InvalidActionException {
         prepareForAction();
-        ProcessActionAndSemiStateHolder(currentGame.faceCard(this));
+        ProcessActionAndSemiStateHolder(currentGame.faceCard());
         currentAction = null;
     }
 

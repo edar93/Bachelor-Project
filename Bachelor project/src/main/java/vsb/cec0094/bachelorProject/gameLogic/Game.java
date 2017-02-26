@@ -10,6 +10,8 @@ import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Expeditions;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
+import vsb.cec0094.bachelorProject.gameLogic.services.FaceCardService;
+import vsb.cec0094.bachelorProject.gameLogic.services.GetCardFromTableService;
 import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
@@ -21,17 +23,21 @@ import java.util.stream.Collectors;
 
 public class Game implements Cloneable, Serializable {
 
+    @JsonIgnore
+    private final FaceCardService faceCardService = new FaceCardService(this);
+    @JsonIgnore
+    private final GetCardFromTableService getCardFromTableService = new GetCardFromTableService(this);
     private String owner;
     private List<Player> players;
     private Table table;
-    private int playersCount;
-    private int playerOnTurn;
-    private int activePlayer;
+    private Integer playersCount;
+    private Integer playerOnTurn;
+    private Integer activePlayer;
     private Expeditions expeditions;
     private Phase phase;
-    private int cardsToTake;
-    private boolean admiralApplied;
-    private boolean gameOver;
+    private Integer cardsToTake;
+    private Boolean admiralApplied;
+    private Boolean gameOver;
     @JsonIgnore
     private DrawPile drawPile;
 
@@ -120,35 +126,8 @@ public class Game implements Cloneable, Serializable {
 
     }
 
-    public ActionAndSemiStateHolder faceCard(GameManipulator gameManipulator) throws CloneNotSupportedException, InvalidActionException {
-        if (!Phase.EXPLORING.equals(phase)) {
-            throw new InvalidActionException("face card is not allowed now");
-        }
-        Card card = drawPile.giveCard();
-
-        if (card.getCardType() == CardType.EXPEDITION) {
-            return faceExpedition(card);
-        } else if (card.getCardType() == CardType.TAX_INFLUENCE || card.getCardType() == CardType.TAX_SWORDS) {
-            return faceTaxes(card);
-        } else if (Card.shipTypes.contains(card.getCardType())) {
-            //TODO repel ship
-            ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
-            actionAndSemiStateHolder.addState(this, table.faceCard(card));
-
-            try {
-                recalculateShips();
-            } catch (TwoShipsOfSameTypeOnTableException e) {
-                actionAndSemiStateHolder.emphasizeLastAction();
-                shiftPlayer(true);
-                actionAndSemiStateHolder.addState(this, new ActionToShow(Action.PICK_CARD));
-                return actionAndSemiStateHolder;
-            }
-            return actionAndSemiStateHolder;
-        } else {
-            ActionAndSemiStateHolder actionAndSemiStateHolder = new ActionAndSemiStateHolder();
-            actionAndSemiStateHolder.addState(this, table.faceCard(card));
-            return actionAndSemiStateHolder;
-        }
+    public ActionAndSemiStateHolder faceCard() throws CloneNotSupportedException, InvalidActionException {
+        return faceCardService.faceCard();
     }
 
     public ActionAndSemiStateHolder pickExpedition(int id) throws TooExpensiveExpeditionException, CloneNotSupportedException {
@@ -372,30 +351,6 @@ public class Game implements Cloneable, Serializable {
         }
     }
 
-    public boolean isGameOver() {
-        return gameOver;
-    }
-
-    public void setGameOver(boolean gameOver) {
-        this.gameOver = gameOver;
-    }
-
-    public boolean isAdmiralApplied() {
-        return admiralApplied;
-    }
-
-    public void setAdmiralApplied(boolean admiralApplied) {
-        this.admiralApplied = admiralApplied;
-    }
-
-    public Expeditions getExpeditions() {
-        return expeditions;
-    }
-
-    public void setExpeditions(Expeditions exceptions) {
-        this.expeditions = exceptions;
-    }
-
     public String getOwner() {
         return owner;
     }
@@ -412,14 +367,6 @@ public class Game implements Cloneable, Serializable {
         this.players = players;
     }
 
-    public DrawPile getDrawPile() {
-        return drawPile;
-    }
-
-    public void setDrawPile(DrawPile drawPile) {
-        this.drawPile = drawPile;
-    }
-
     public Table getTable() {
         return table;
     }
@@ -428,28 +375,36 @@ public class Game implements Cloneable, Serializable {
         this.table = table;
     }
 
-    public int getPlayersCount() {
+    public Integer getPlayersCount() {
         return playersCount;
     }
 
-    public void setPlayersCount(int playersCount) {
+    public void setPlayersCount(Integer playersCount) {
         this.playersCount = playersCount;
     }
 
-    public int getPlayerOnTurn() {
+    public Integer getPlayerOnTurn() {
         return playerOnTurn;
     }
 
-    public void setPlayerOnTurn(int playerOnTurn) {
+    public void setPlayerOnTurn(Integer playerOnTurn) {
         this.playerOnTurn = playerOnTurn;
     }
 
-    public int getActivePlayer() {
+    public Integer getActivePlayer() {
         return activePlayer;
     }
 
-    public void setActivePlayer(int activePlayer) {
+    public void setActivePlayer(Integer activePlayer) {
         this.activePlayer = activePlayer;
+    }
+
+    public Expeditions getExpeditions() {
+        return expeditions;
+    }
+
+    public void setExpeditions(Expeditions expeditions) {
+        this.expeditions = expeditions;
     }
 
     public Phase getPhase() {
@@ -460,11 +415,35 @@ public class Game implements Cloneable, Serializable {
         this.phase = phase;
     }
 
-    public int getCardsToTake() {
+    public Integer getCardsToTake() {
         return cardsToTake;
     }
 
-    public void setCardsToTake(int cardsToTake) {
+    public void setCardsToTake(Integer cardsToTake) {
         this.cardsToTake = cardsToTake;
+    }
+
+    public Boolean getAdmiralApplied() {
+        return admiralApplied;
+    }
+
+    public void setAdmiralApplied(Boolean admiralApplied) {
+        this.admiralApplied = admiralApplied;
+    }
+
+    public Boolean getGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(Boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+
+    public DrawPile getDrawPile() {
+        return drawPile;
+    }
+
+    public void setDrawPile(DrawPile drawPile) {
+        this.drawPile = drawPile;
     }
 }
