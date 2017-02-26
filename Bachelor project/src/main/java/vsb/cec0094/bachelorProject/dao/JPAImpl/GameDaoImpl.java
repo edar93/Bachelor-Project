@@ -71,17 +71,20 @@ public class GameDaoImpl implements GameDao {
     @Override
     public void joinGame(Integer id, String player) throws NoEmptyPlaceInGame {
         LOGGER.debug("joinGame was called");
-        GameInQueue game = em.find(GameInQueue.class, id);
-        isEmptyPlaceInGame(game);
-        em.createQuery(JOIN_GAME)
-                .setParameter("game", game)
-                .setParameter("player", player)
-                .executeUpdate();
+        GameInQueue gameInQueue = em.find(GameInQueue.class, id);
+        isEmptyPlaceInGame(gameInQueue);
+        User user = em.find(User.class, player);
+        user.setGameInQueue(gameInQueue);
+        gameInQueue.getPlayersList().add(user);
+//        em.createQuery(JOIN_GAME)
+//                .setParameter("game", game)
+//                .setParameter("player", player)
+//                .executeUpdate();
     }
 
     @Override
     public GameInQueue getGameById(Integer id) {
-        //LOGGER.debug("getGameById was called");
+        LOGGER.debug("getGameById was called with id :" + id);
         Object result;
         try {
             result = em.createQuery(GET_GAME_BY_ID)
@@ -90,6 +93,7 @@ public class GameDaoImpl implements GameDao {
         } catch (NoResultException e) {
             return null;
         }
+        LOGGER.debug("getGameById was called returns:" + (GameInQueue) result);
         return (GameInQueue) result;
     }
 
