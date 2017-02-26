@@ -70,7 +70,8 @@ public class GameManipulator {
             actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
             ProcessActionAndSemiStateHolder(currentGame.playerGetCardFromTable(id));
             currentAction = null;
-        } catch (InvalidActionException | TooExpensiveExpeditionException e) {
+        } catch (InvalidActionException | TooExpensiveExpeditionException | IndexOutOfBoundsException e) {
+            // IndexOutOfBoundsException if player call getCard while he can not take card;
             rollback();
             e.printStackTrace();
         }
