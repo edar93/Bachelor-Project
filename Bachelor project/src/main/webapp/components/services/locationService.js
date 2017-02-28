@@ -10,7 +10,7 @@ var locationService = function ($location, $timeout, backendGateway) {
     this.startLocationCheck = startLocationCheck;
 
     var timeout;
-
+    var startedCheckCount = 0;
     var paths = {
         welcome: '/welcome',
         gamecreation: '/gamecreation',
@@ -21,6 +21,7 @@ var locationService = function ($location, $timeout, backendGateway) {
 
     function startLocationCheck() {
         timeout = 20;
+        startedCheckCount++;
         $timeout(locationCheck, timeout);
 
     }
@@ -44,7 +45,13 @@ var locationService = function ($location, $timeout, backendGateway) {
                 //    goToWelcome();
                 //}
             });
-        $timeout(locationCheck, timeout);
+        startedCheckCount--;
+        if (startedCheckCount == 0) {
+            startedCheck++;
+            $timeout(locationCheck, timeout);
+        }
+
+
     }
 
     function goToWelcome() {

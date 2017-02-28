@@ -29,6 +29,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
     }
 
     function startSockets(data) {
+        console.log(data, 'starting sockets');
         gameId = data.id;
         var url = '/myGame/' + gameId;
 
