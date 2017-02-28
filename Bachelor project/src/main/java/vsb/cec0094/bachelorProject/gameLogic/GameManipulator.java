@@ -49,8 +49,15 @@ public class GameManipulator {
 
     public void faceCard() throws CloneNotSupportedException, InvalidActionException {
         prepareForAction();
-        ProcessActionAndSemiStateHolder(currentGame.faceCard());
-        currentAction = null;
+        try {
+            prepareForAction();
+            ProcessActionAndSemiStateHolder(currentGame.faceCard());
+            currentAction = null;
+        } catch (Exception e) {
+            rollback();
+            e.printStackTrace();
+        }
+
     }
 
     public void playerPickExpedition(int id) throws CloneNotSupportedException {
@@ -58,7 +65,8 @@ public class GameManipulator {
         try {
             ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
             currentAction = null;
-        } catch (TooExpensiveExpeditionException e) {
+        } catch (Exception e) {
+            //TooExpensiveExpeditionException
             rollback();
             e.printStackTrace();
         }

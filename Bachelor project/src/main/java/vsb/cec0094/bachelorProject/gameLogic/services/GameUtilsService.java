@@ -20,14 +20,14 @@ public class GameUtilsService {
             game.setAdmiralApplied(true);
             game.setPhase(Phase.TRADING);
             Player activeP = game.getPlayers().get(game.getActivePlayer());
-            activeP.setCoins(activeP.getCoins() * activeP.getAdmiralsCount() * 2);
+            activeP.setCoins(activeP.getCoins() + (activeP.getAdmiralsCount() * 2));
         }
     }
 
     public void applyJester() {
         if (game.getTable().getCountOfCards() == 0) {
             Player activeP = game.getPlayers().get(game.getActivePlayer());
-            activeP.setCoins(activeP.getCoins() * activeP.getJestersCount());
+            activeP.setCoins(activeP.getCoins() + activeP.getJestersCount());
         }
     }
 
