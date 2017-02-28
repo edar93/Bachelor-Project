@@ -1,6 +1,6 @@
 'use strict';
 
-var locationService = function ($location, $timeout, backendGateway) {
+var locationService = function ($rootScope, $location, $timeout, backendGateway) {
 
     this.goToLoginPage = goToLoginPage;
     this.goToRegistrationPage = goToRegistrationPage;
@@ -10,7 +10,6 @@ var locationService = function ($location, $timeout, backendGateway) {
     this.startLocationCheck = startLocationCheck;
 
     var timeout;
-    var startedCheckCount = 0;
     var paths = {
         welcome: '/welcome',
         gamecreation: '/gamecreation',
@@ -20,8 +19,11 @@ var locationService = function ($location, $timeout, backendGateway) {
     };
 
     function startLocationCheck() {
+        if ($rootScope.startedCheckCount == undefined) {
+            $rootScope.startedCheckCount = 0;
+        }
         timeout = 20;
-        startedCheckCount++;
+        $rootScope.startedCheckCount++;
         $timeout(locationCheck, timeout);
 
     }
@@ -44,9 +46,9 @@ var locationService = function ($location, $timeout, backendGateway) {
                 //else if (locationOnPage == 'FREE' && ($location.path() != 'game' || $location.path() != 'gamecreation')) {
                 //    goToWelcome();
                 //}
-                startedCheckCount--;
-                if (startedCheckCount == 0) {
-                    startedCheckCount++;
+                $rootScope.startedCheckCount--;
+                if ($rootScope.startedCheckCount == 0) {
+                    $rootScope.startedCheckCount++;
                     $timeout(locationCheck, timeout);
                 }
             });

@@ -15,7 +15,7 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
         scope.leftGame = leftGame;
 
         scope.creator = false;
-        scope.maxPlayers = {count: 4};
+        scope.maxPlayers = {count: 3};
         init();
         scope.$watch(getMaxPlayers, maxPlayersChange, true);
     }
@@ -45,11 +45,9 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
 
     function maxPlayersChange(newValue) {
         console.log(newValue);
-        console.log('was callllllllllllllll');
     }
 
     function init() {
-        var user = loginService.getUser();
         loginService.getUser()
             .then(setUser)
             .then(gameService.getPlayersGame)
