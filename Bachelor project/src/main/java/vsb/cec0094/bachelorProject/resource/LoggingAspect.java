@@ -12,7 +12,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @Order(1)
 public class LoggingAspect {
 
-    @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))")
+    @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
+            "&& !execution(* vsb.cec0094.bachelorProject.resource.WebSockets.*(..))")
     public void logAction(JoinPoint joinPoint) {
         final Logger LOGGER = LoggerFactory.getLogger(joinPoint.getSignature().getDeclaringType());
         String logMessage = "LOGGED BY ASPECT - Method: \"" + joinPoint.getSignature().getName();

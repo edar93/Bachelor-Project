@@ -25,7 +25,7 @@ public class GameDaoImpl implements GameDao {
     private static final String DELETE_PLAYERS_GAME = "UPDATE User u SET u.gameInQueue = null WHERE u.gameInQueue = :game";
     private static final String DELETE_PLAYERS_GAME_FOR_PLAYER = "UPDATE User u SET u.gameInQueue = null WHERE u.login = :login";
     private static final String GET_HIGHEST_ID = "SELECT MAX(id) FROM GameInQueue";
-    private static final String GET_GAME_BY_ID = "SELECT GameInQueue FROM GameInQueue WHERE id = :id";
+    private static final String GET_GAME_BY_ID = "SELECT g FROM GameInQueue g WHERE id = :id";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameDaoImpl.class);
 

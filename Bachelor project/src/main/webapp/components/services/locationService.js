@@ -30,9 +30,9 @@ var locationService = function ($location, $timeout, backendGateway) {
         backendGateway.get('GET_LOCATION')
             .then(function (responce) {
                 var locationOnPage = responce.data;
-                if(locationOnPage == 'GAME_CREATION'){
+                if (locationOnPage == 'GAME_CREATION') {
                     timeout = 600;
-                }else {
+                } else {
                     timeout = 10000
                 }
 
@@ -44,14 +44,12 @@ var locationService = function ($location, $timeout, backendGateway) {
                 //else if (locationOnPage == 'FREE' && ($location.path() != 'game' || $location.path() != 'gamecreation')) {
                 //    goToWelcome();
                 //}
+                startedCheckCount--;
+                if (startedCheckCount == 0) {
+                    startedCheckCount++;
+                    $timeout(locationCheck, timeout);
+                }
             });
-        startedCheckCount--;
-        if (startedCheckCount == 0) {
-            startedCheck++;
-            $timeout(locationCheck, timeout);
-        }
-
-
     }
 
     function goToWelcome() {

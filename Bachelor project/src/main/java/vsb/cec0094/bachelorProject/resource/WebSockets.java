@@ -35,7 +35,7 @@ public class WebSockets {
     @MessageMapping("/sendAction/{id}")
     @SendTo("/myGame/{id}")
     public GameManipulator updateGame(@DestinationVariable Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
-        LOGGER.debug("updateGame was called");
+        LOGGER.debug("updateGame was called with id:" + id);
         GameInQueue gameInQueue = gameDao.getGameById(id);
         if (gameInQueue == null) {
             throw new GameDoesNotExist(" game for id: \"" + id + "\" does not exist in database");
