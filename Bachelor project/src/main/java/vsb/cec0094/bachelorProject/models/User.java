@@ -15,7 +15,7 @@ public class User {
     private String login;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "gameinqueue")
     private GameInQueue gameInQueue;
 

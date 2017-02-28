@@ -20,6 +20,10 @@
     <beans:bean id="LoggingAspect" class="vsb.cec0094.bachelorProject.resource.LoggingAspect" scope="request">
         <aop:scoped-proxy/>
     </beans:bean>
+    <beans:bean id="UsersProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider" scope="request">
+        <aop:scoped-proxy/>
+    </beans:bean>
+
 
     <!--sockets-->
     <websocket:message-broker application-destination-prefix="/port-royal">

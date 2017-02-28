@@ -54,6 +54,7 @@ public class GameFunctionResource {
         try {
             gameDao.joinGame(id, usersProvider.getLogin());
         } catch (NoEmptyPlaceInGame noEmptyPlaceInGame) {
+            LOGGER.debug(usersProvider.getLogin() + " tried to join full game:" + id);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         return ResponseEntity.ok().build();

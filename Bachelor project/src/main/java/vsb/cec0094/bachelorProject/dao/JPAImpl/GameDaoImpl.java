@@ -70,7 +70,7 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public void joinGame(Integer id, String player) throws NoEmptyPlaceInGame {
-        LOGGER.debug("joinGame was called");
+        LOGGER.debug("joinGame was called with:" + id + " - " + player);
         GameInQueue gameInQueue = em.find(GameInQueue.class, id);
         isEmptyPlaceInGame(gameInQueue);
         User user = em.find(User.class, player);

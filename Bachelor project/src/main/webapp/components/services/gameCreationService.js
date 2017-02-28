@@ -1,10 +1,11 @@
 'use strict';
 
-var gameCreationService = function (backendGateway, loginService, gameService, locationService) {
+var gameCreationService = function ($timeout, $location, backendGateway, loginService, gameService, locationService) {
 
     this.initAndSetScope = initAndSetScope;
     this.setSlider = setSlider;
 
+    var updateGameInterval = 1000;
     var localScope;
     var owner = null;
     var user;
@@ -48,6 +49,13 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
     }
 
     function init() {
+        updateGame();
+        if ($location.path() == 'gamecreation') {
+            $timeout(updateGame, updateGameInterval);
+        }
+    }
+
+    function updateGame() {
         loginService.getUser()
             .then(setUser)
             .then(gameService.getPlayersGame)
@@ -68,6 +76,12 @@ var gameCreationService = function (backendGateway, loginService, gameService, l
             localScope.creator = true;
         } else {
             localScope.creator = false;
+        }
+        conosle.log($location.path(), "here");
+        if ($location.path() == 'gamecreation') {
+            conosle.log("here2");
+            $timeout(updateGame, updateGameInterval);
+            conosle.log("here3");
         }
     }
 
