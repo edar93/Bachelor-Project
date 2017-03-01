@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ import vsb.cec0094.bachelorProject.service.UsersProvider;
 @Controller
 @RequestMapping("/play")
 @EnableAspectJAutoProxy
+@Scope("request")
 public class PlayGameResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);

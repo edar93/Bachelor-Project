@@ -3,8 +3,6 @@ package vsb.cec0094.bachelorProject.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
@@ -13,7 +11,9 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
 @Service
-@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS, value = "request")
+//@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS, value = "request")
+
+//@Scope("request")
 public class UsersProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersProvider.class);
