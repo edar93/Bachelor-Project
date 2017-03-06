@@ -13,7 +13,9 @@
     <properties>
 
         <java.version>1.8</java.version>
+
         <!-- dependency versions -->
+        <h2.version>1.4.187</h2.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <spring.bom.version>2.0.3.RELEASE</spring.bom.version>
         <junit.version>4.12</junit.version>
@@ -31,7 +33,18 @@
 
     <dependencies>
 
-
+        <!--oracle-->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.1.0</version>
+        </dependency>
+        <!--h2-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+        </dependency>
         <!--sockets-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -334,6 +347,7 @@
         </resources>
 
         <plugins>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${compiler.plugin.version}</version>

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "user")
+@Table(name = "players")
 public class User {
 
     @Id
@@ -16,7 +16,7 @@ public class User {
 
     @JsonIgnore
     @ManyToOne//(fetch = FetchType.EAGER)
-    @JoinColumn(name = "gameinqueue")
+    @JoinColumn(name = "game_id")
     private GameInQueue gameInQueue;
 
     public User() {
