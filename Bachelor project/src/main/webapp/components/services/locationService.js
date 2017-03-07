@@ -1,6 +1,6 @@
 'use strict';
 
-var locationService = function ($rootScope, $location, $timeout, backendGateway) {
+var locationService = function ($rootScope, $route, $location, $timeout, backendGateway, gameCreationService, welcomeService) {
 
     this.goToLoginPage = goToLoginPage;
     this.goToRegistrationPage = goToRegistrationPage;
@@ -10,6 +10,8 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
     this.startLocationCheck = startLocationCheck;
 
     var timeout = 1000;
+    //gameCreationService - use url too (without wariable)
+    // to avoid circular dependency
     var paths = {
         welcome: '/welcome',
         gamecreation: '/gamecreation',
@@ -20,9 +22,6 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
 
     function startLocationCheck() {
         $rootScope.startedCheckDate = new Date();
-        console.log('time :', $rootScope.startedCheckDate.getTime());
-        console.log('time :', $rootScope.startedCheckDate.toString());
-
         locationCheck();
         $timeout(locationCheck, timeout);
     }
@@ -36,10 +35,19 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
                 //    timeout = 1000;
                 //}
 
+                console.log($location.path(), 'location path');
+
+                if($location.path() == '/gamecreation'){
+                    gameCreationService.updateGame();
+                }
+                if($location.path() == '/welcome'){
+                    welcomeService.updateGamesForJoin();
+                }
+
                 var locationOnPage = responce.data;
-                if (locationOnPage == 'GAME_CREATION' && $location.path() != 'gamecreation') {
+                if (locationOnPage == 'GAME_CREATION' && $location.path() != '/gamecreation') {
                     goToGameCretion();
-                } else if (locationOnPage == 'GAME' && $location.path() != 'game') {
+                } else if (locationOnPage == 'GAME' && $location.path() != '/game') {
                     goToGame();
                 }
 

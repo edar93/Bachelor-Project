@@ -1,7 +1,10 @@
 'use strict';
 
 welcomeCtrl
-    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService, baseInitService) {
+    .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService, baseInitService, welcomeService) {
+
+        baseInitService.setVariables($scope);
+        baseInitService.init();
 
         globalChatService.initChat($scope);
 
@@ -16,24 +19,14 @@ welcomeCtrl
         $scope.goToRegistrationPage = goToRegistrationPage;
         $scope.joinGame = joinGame;
 
-        updateGamesForJoin();
-
-        baseInitService.setVariables($scope);
-        baseInitService.init();
+        welcomeService.init($scope);
+        welcomeService.updateGamesForJoin();
 
         function joinGame(id) {
             gameService.joinGame(id)
                 .then(function () {
                     locationService.goToGameCretion();
                 });
-        }
-
-        function updateGamesForJoin() {
-            gameService.getAllGamesToJoin()
-                .then(function (data) {
-                    $scope.gamesForJoin = data;
-                }
-            );
         }
 
         function createGame() {
@@ -46,7 +39,6 @@ welcomeCtrl
         }
 
         function goToLoginPage() {
-            //globalChatService.disconnect();
             locationService.goToLoginPage();
         }
 

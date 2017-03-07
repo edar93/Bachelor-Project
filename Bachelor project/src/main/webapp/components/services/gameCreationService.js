@@ -1,9 +1,10 @@
 'use strict';
 
-var gameCreationService = function ($timeout, $location, backendGateway, loginService, gameService, locationService) {
+var gameCreationService = function ($timeout, $location, backendGateway, loginService, gameService) {
 
     this.initAndSetScope = initAndSetScope;
     this.setSlider = setSlider;
+    this.updateGame = updateGame;
 
     var updateGameInterval = 1000;
     var localScope;
@@ -17,7 +18,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
 
         scope.creator = false;
         scope.maxPlayers = {count: 3};
-        init();
+        updateGame();
         scope.$watch(getMaxPlayers, maxPlayersChange, true);
     }
 
@@ -41,19 +42,14 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
 
     function leftGame() {
         backendGateway.post('LEFT_GAME')
-            .then(locationService.goToWelcome);
+            .then(function(){
+                $location.path('/welcome');
+            });
     }
 
     function maxPlayersChange(newValue) {
         //TODO
         console.log(newValue);
-    }
-
-    function init() {
-        updateGame();
-        if ($location.path() == 'gamecreation') {
-            $timeout(updateGame, updateGameInterval);
-        }
     }
 
     function updateGame() {
@@ -78,18 +74,12 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         } else {
             localScope.creator = false;
         }
-        console.log($location.path(), "here");
-        if ($location.path() == 'gamecreation') {
-            console.log("here2");
-            $timeout(updateGame, updateGameInterval);
-            console.log("here3");
-        }
     }
 
     function startGame() {
         gameService.startGame()
             .then(function () {
-                locationService.goToGame();
+                $location.path('/game');
             });
     }
 
