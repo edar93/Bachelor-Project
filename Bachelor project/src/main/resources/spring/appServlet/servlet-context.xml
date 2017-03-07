@@ -17,15 +17,14 @@
     <beans:bean id="UserSaver" class="vsb.cec0094.bachelorProject.resource.UserSaver" scope="request">
         <aop:scoped-proxy/>
     </beans:bean>
-    <!--<beans:bean id="UserSaver" class="vsb.cec0094.bachelorProject.resource.UserSaver" />-->
-    <!--<aop:scoped-proxy/>-->
 
     <beans:bean id="LoggingAspect" class="vsb.cec0094.bachelorProject.resource.LoggingAspect" scope="request">
         <aop:scoped-proxy/>
     </beans:bean>
-    <!--<beans:bean id="UserProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider" scope="request">-->
-    <!--<aop:scoped-proxy/>-->
-    <!--</beans:bean>-->
+
+    <beans:bean id="UserProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider" scope="request">
+        <aop:scoped-proxy/>
+    </beans:bean>
 
     <!--sockets-->
     <websocket:message-broker application-destination-prefix="/port-royal">
@@ -45,29 +44,29 @@
     <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
 
     <!-- TODO properties to external file-->
-        <!--mySQL-->
+    <!--mySQL-->
     <!--<beans:bean id="SQLDataSource"-->
-                <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-        <!--<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
-        <!--<beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>-->
-        <!--<beans:property name="username" value="root"/>-->
-        <!--<beans:property name="password" value="Slepice1"/>-->
+    <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+    <!--<beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>-->
+    <!--<beans:property name="username" value="root"/>-->
+    <!--<beans:property name="password" value="Slepice1"/>-->
     <!--</beans:bean>-->
     <!--h2 test-->
     <!--<beans:bean id="SQLDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
-        <!--<beans:property name="driverClass" value="org.h2.Driver" />-->
-        <!--<beans:property name="url" value="jdbc:h2:mem:test;MODE=ORACLE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />-->
-        <!--<beans:property name="username" value="sa" />-->
-        <!--<beans:property name="password" value="" />-->
+    <!--<beans:property name="driverClass" value="org.h2.Driver" />-->
+    <!--<beans:property name="url" value="jdbc:h2:mem:test;MODE=ORACLE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />-->
+    <!--<beans:property name="username" value="sa" />-->
+    <!--<beans:property name="password" value="" />-->
     <!--</beans:bean>-->
 
 
     <beans:bean id="SQLDataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="oracle.jdbc.OracleDriver" />
-        <beans:property name="username" value="Honza" />
-        <beans:property name="password" value="Slepice1" />
-        <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+        <beans:property name="username" value="Honza"/>
+        <beans:property name="password" value="Slepice1"/>
+        <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
     </beans:bean>
 
     <beans:bean id="HibernateJpaVendorAdapter"
