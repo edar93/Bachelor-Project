@@ -9,6 +9,7 @@ welcomeCtrl
         globalChatService.initChat($scope);
 
         $scope.gamesForJoin = null;
+
         loginService.getUser()
             .then(function (user) {
                 $scope.user = user;

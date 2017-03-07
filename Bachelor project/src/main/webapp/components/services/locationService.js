@@ -21,6 +21,7 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
     };
 
     function startLocationCheck() {
+        console.log('starting loc check');
         $rootScope.startedCheckDate = new Date();
         locationCheck();
         $timeout(locationCheck, timeout);
@@ -29,6 +30,7 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
     function locationCheck() {
         backendGateway.get('GET_LOCATION')
             .then(function (responce) {
+
                 if ($location.path() == '/gamecreation') {
                     gameCreationService.updateGame();
                 }
@@ -41,6 +43,8 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
                     goToGameCretion();
                 } else if (locationOnPage == 'GAME' && $location.path() != '/game') {
                     goToGame();
+                } else if (locationOnPage == 'FREE' && ($location.path() == '/game' || $location.path() == '/gamecreation')){
+                    goToWelcome();
                 }
 
                 var newDate = new Date();
@@ -48,6 +52,8 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
                     $rootScope.startedCheckDate = newDate;
                     $timeout(locationCheck, timeout);
                 }
+
+                console.log(locationOnPage, 'location check done');
             });
     }
 

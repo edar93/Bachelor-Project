@@ -24,9 +24,8 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
     }
 
     function kickPlayer(player) {
-        console.log('kicking', player);
         backendGateway.post('KICK', player, undefined, false);
-}
+    }
 
     function maxPlayersChange(newValue) {
         backendGateway.post('NEW_MAX_PLAYERS_COUNT', newValue);
@@ -48,7 +47,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
 
     function leftGame() {
         backendGateway.post('LEFT_GAME')
-            .then(function(){
+            .then(function () {
                 $location.path('/welcome');
             });
     }

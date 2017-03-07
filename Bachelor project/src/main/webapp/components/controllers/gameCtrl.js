@@ -4,6 +4,7 @@ gameCtrl
     .controller('gameCtrl', function ($scope, loginService, gameStatusService, gameActionService, baseInitService) {
 
         baseInitService.setVariables($scope);
+        baseInitService.init();
 
         loginService.getUser()
             .then(function(user){

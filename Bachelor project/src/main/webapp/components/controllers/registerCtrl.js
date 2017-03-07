@@ -1,7 +1,10 @@
 'use strict';
 
 registerCtrl
-    .controller('registerCtrl', function ($scope, loginService, locationService) {
+    .controller('registerCtrl', function ($scope, loginService, locationService, baseInitService) {
+
+        baseInitService.setVariables($scope);
+        baseInitService.init();
 
         $scope.userName;
         $scope.password;

@@ -155,12 +155,6 @@
             <version>${springsecurity-version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${springsecurity-version}</version>
-        </dependency>
-
         <!-- Spring .... -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -173,11 +167,6 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring-version}</version>
         </dependency>
 
         <!-- servlet -->
