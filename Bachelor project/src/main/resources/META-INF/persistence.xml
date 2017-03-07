@@ -7,6 +7,7 @@
         <class>vsb.cec0094.bachelorProject.models.User</class>
         <class>vsb.cec0094.bachelorProject.models.UserRegistration</class>
         <class>vsb.cec0094.bachelorProject.models.GameInQueue</class>
+        <class>vsb.cec0094.bachelorProject.models.UserRole</class>
 
         <properties>
             <property name="hibernate.show_sql" value="false"/>

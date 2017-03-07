@@ -3,7 +3,7 @@ id int primary key,
 owner varchar(100),
 maxPlayersCount int);
 
-create table user(
+create table players(
 login varchar(100) primary key,
 password varchar(100),
 enabled int,

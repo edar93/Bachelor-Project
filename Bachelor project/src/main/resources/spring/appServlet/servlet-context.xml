@@ -45,12 +45,29 @@
     <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
 
     <!-- TODO properties to external file-->
-    <beans:bean id="mySQLDataSource"
-                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>
-        <beans:property name="username" value="root"/>
-        <beans:property name="password" value="Slepice1"/>
+        <!--mySQL-->
+    <!--<beans:bean id="SQLDataSource"-->
+                <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<beans:property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>-->
+        <!--<beans:property name="username" value="root"/>-->
+        <!--<beans:property name="password" value="Slepice1"/>-->
+    <!--</beans:bean>-->
+    <!--h2 test-->
+    <!--<beans:bean id="SQLDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
+        <!--<beans:property name="driverClass" value="org.h2.Driver" />-->
+        <!--<beans:property name="url" value="jdbc:h2:mem:test;MODE=ORACLE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />-->
+        <!--<beans:property name="username" value="sa" />-->
+        <!--<beans:property name="password" value="" />-->
+    <!--</beans:bean>-->
+
+
+    <beans:bean id="SQLDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+        <beans:property name="username" value="Honza" />
+        <beans:property name="password" value="Slepice1" />
+        <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
     </beans:bean>
 
     <beans:bean id="HibernateJpaVendorAdapter"
@@ -59,7 +76,7 @@
 
     <beans:bean id="LocalContainerEntityManagerFactoryBean"
                 class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <beans:property name="dataSource" ref="mySQLDataSource"/>
+        <beans:property name="dataSource" ref="SQLDataSource"/>
         <beans:property name="jpaVendorAdapter" ref="HibernateJpaVendorAdapter"/>
         <beans:property name="persistenceUnitName" value="port-royal-cech"/>
     </beans:bean>
