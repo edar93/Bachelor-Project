@@ -22,7 +22,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
     }
 
     function kickPlayer() {
-
+        //TODO
     }
 
     function getMaxPlayers(scope) {
@@ -45,6 +45,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
     }
 
     function maxPlayersChange(newValue) {
+        //TODO
         console.log(newValue);
     }
 
@@ -77,11 +78,11 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         } else {
             localScope.creator = false;
         }
-        conosle.log($location.path(), "here");
+        console.log($location.path(), "here");
         if ($location.path() == 'gamecreation') {
-            conosle.log("here2");
+            console.log("here2");
             $timeout(updateGame, updateGameInterval);
-            conosle.log("here3");
+            console.log("here3");
         }
     }
 

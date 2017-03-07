@@ -23,7 +23,9 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
             $rootScope.startedCheckCount = 0;
         }
         timeout = 20;
+
         $rootScope.startedCheckCount++;
+        console.log('location check starting count :', $rootScope.startedCheckCount);
         $timeout(locationCheck, timeout);
 
     }
@@ -35,7 +37,7 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
                 if (locationOnPage == 'GAME_CREATION') {
                     timeout = 600;
                 } else {
-                    timeout = 10000
+                    timeout = 1000;
                 }
 
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != 'gamecreation') {
@@ -47,6 +49,7 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
                 //    goToWelcome();
                 //}
                 $rootScope.startedCheckCount--;
+                console.log('location check ending count :', $rootScope.startedCheckCount);
                 if ($rootScope.startedCheckCount == 0) {
                     $rootScope.startedCheckCount++;
                     $timeout(locationCheck, timeout);
