@@ -9,7 +9,7 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
     this.goToGame = goToGame;
     this.startLocationCheck = startLocationCheck;
 
-    var timeout;
+    var timeout = 1000;
     var paths = {
         welcome: '/welcome',
         gamecreation: '/gamecreation',
@@ -19,41 +19,36 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway)
     };
 
     function startLocationCheck() {
-        if ($rootScope.startedCheckCount == undefined) {
-            $rootScope.startedCheckCount = 0;
-        }
-        timeout = 20;
+        $rootScope.startedCheckDate = new Date();
+        console.log('time :', $rootScope.startedCheckDate.getTime());
+        console.log('time :', $rootScope.startedCheckDate.toString());
 
-        $rootScope.startedCheckCount++;
-        console.log('location check starting count :', $rootScope.startedCheckCount);
+        locationCheck();
         $timeout(locationCheck, timeout);
-
     }
 
     function locationCheck() {
         backendGateway.get('GET_LOCATION')
             .then(function (responce) {
-                var locationOnPage = responce.data;
-                if (locationOnPage == 'GAME_CREATION') {
-                    timeout = 600;
-                } else {
-                    timeout = 1000;
-                }
+                //if (locationOnPage == 'GAME_CREATION') {
+                //    timeout = 1000;
+                //} else {
+                //    timeout = 1000;
+                //}
 
+                var locationOnPage = responce.data;
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != 'gamecreation') {
                     goToGameCretion();
                 } else if (locationOnPage == 'GAME' && $location.path() != 'game') {
                     goToGame();
                 }
-                //else if (locationOnPage == 'FREE' && ($location.path() != 'game' || $location.path() != 'gamecreation')) {
-                //    goToWelcome();
-                //}
-                $rootScope.startedCheckCount--;
-                console.log('location check ending count :', $rootScope.startedCheckCount);
-                if ($rootScope.startedCheckCount == 0) {
-                    $rootScope.startedCheckCount++;
+
+                var newDate = new Date();
+                if ($rootScope.startedCheckDate.getTime() + timeout <= newDate.getTime()){
+                    $rootScope.startedCheckDate = newDate;
                     $timeout(locationCheck, timeout);
                 }
+
             });
     }
 
