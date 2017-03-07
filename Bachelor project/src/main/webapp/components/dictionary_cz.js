@@ -26,6 +26,7 @@ var dictionaryCZ = {
     CARDS: 'karet',
     GLOBAL_CHAT: 'Chat',
     SEND_MESSAGE: 'Odeslat',
+    KICK_PLAYER: 'Vyhodit hráče',
     MESSAGE: 'Zprava',
     FACE_CARD: 'Otočit kartu',
     SKIP_ACTION: 'Zdržet se akce',

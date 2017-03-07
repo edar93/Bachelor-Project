@@ -15,6 +15,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         localScope = scope;
         scope.startGame = startGame;
         scope.leftGame = leftGame;
+        scope.kickPlayer = kickPlayer;
 
         scope.creator = false;
         scope.maxPlayers = {count: 3};
@@ -22,8 +23,13 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         scope.$watch(getMaxPlayers, maxPlayersChange, true);
     }
 
-    function kickPlayer() {
-        //TODO
+    function kickPlayer(player) {
+        console.log('kicking', player);
+        backendGateway.post('KICK', player, undefined, false);
+}
+
+    function maxPlayersChange(newValue) {
+        backendGateway.post('NEW_MAX_PLAYERS_COUNT', newValue);
     }
 
     function getMaxPlayers(scope) {
@@ -47,11 +53,6 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
             });
     }
 
-    function maxPlayersChange(newValue) {
-        //TODO
-        console.log(newValue);
-    }
-
     function updateGame() {
         loginService.getUser()
             .then(setUser)
@@ -68,6 +69,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         owner = data.owner;
         localScope.maxPlayers.count = data.maxPlayersCount;
         localScope.playersList = data.playersList;
+        localScope.owner = data.owner;
 
         if (user === owner) {
             localScope.creator = true;

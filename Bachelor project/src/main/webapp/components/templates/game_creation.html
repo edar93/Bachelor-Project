@@ -17,6 +17,7 @@
                 <th>{{'PLAYERS' | translate}}</th>
             </tr>
             <tr ng-repeat="players in playersList track by $index">
+                <td><button ng-click="kickPlayer(players.login)" ng-if="players.login != owner">{{'KICK_PLAYER' | translate}}</button></td>
                 <td>{{players.login}}</td>
             </tr>
         </table>

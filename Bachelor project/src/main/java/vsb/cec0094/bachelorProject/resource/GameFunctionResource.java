@@ -75,5 +75,18 @@ public class GameFunctionResource {
         return ResponseEntity.ok().build();
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/kick")
+    public ResponseEntity<Void> kickPlayer(@RequestBody String player) {
+        gameDao.leftGame(player, gameDao.getPlayersGame(player));
+        return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/changeplayersmaxcount")
+    public ResponseEntity<Void> changeMaxPlayersCount(@RequestBody Integer newCount) {
+        if (usersProvider.getGameInQueue().getPlayersList().size() <= newCount){
+            gameDao.setNewMaxPlayersCount(newCount, usersProvider.getGameInQueue());
+        }
+        return ResponseEntity.ok().build();
+    }
 
 }

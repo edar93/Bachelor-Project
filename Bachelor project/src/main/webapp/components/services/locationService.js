@@ -29,18 +29,10 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
     function locationCheck() {
         backendGateway.get('GET_LOCATION')
             .then(function (responce) {
-                //if (locationOnPage == 'GAME_CREATION') {
-                //    timeout = 1000;
-                //} else {
-                //    timeout = 1000;
-                //}
-
-                console.log($location.path(), 'location path');
-
-                if($location.path() == '/gamecreation'){
+                if ($location.path() == '/gamecreation') {
                     gameCreationService.updateGame();
                 }
-                if($location.path() == '/welcome'){
+                if ($location.path() == '/welcome') {
                     welcomeService.updateGamesForJoin();
                 }
 
@@ -52,11 +44,10 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
                 }
 
                 var newDate = new Date();
-                if ($rootScope.startedCheckDate.getTime() + timeout <= newDate.getTime()){
+                if ($rootScope.startedCheckDate.getTime() + timeout <= newDate.getTime()) {
                     $rootScope.startedCheckDate = newDate;
                     $timeout(locationCheck, timeout);
                 }
-
             });
     }
 

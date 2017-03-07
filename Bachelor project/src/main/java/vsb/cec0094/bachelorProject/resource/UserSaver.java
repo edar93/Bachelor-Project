@@ -22,7 +22,8 @@ public class UserSaver {
     @Autowired
     private UsersProvider usersProvider;
 
-    @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..)),")
+    @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
+            "&& !execution(* vsb.cec0094.bachelorProject.resource.WebSockets.*(..))")
     public void setUser(JoinPoint joinPoint) {
 //        HttpServletRequest httpRequest = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 //        String login = httpRequest.getUserPrincipal().getName();
