@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <!--MySQL-->
+    <!--<bean id="SQLDataSource"-->
+          <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/port_royal"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="Slepice1"/>-->
+    <!--</bean>-->
+
+    <!--h2 test-->
+    <!--<bean id="SQLDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
+        <!--<property name="driverClass" value="org.h2.Driver" />-->
+        <!--<property name="url" value="jdbc:h2:mem:test;MODE=ORACLE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />-->
+        <!--<property name="username" value="sa" />-->
+        <!--<property name="password" value="" />-->
+    <!--</bean>-->
+
+    <!--<bean id="SQLDataSource"-->
+          <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="oracle.jdbc.OracleDriver" />-->
+        <!--<property name="username" value="Honza" />-->
+        <!--<property name="password" value="Slepice1" />-->
+        <!--<property name="url" value="jdbc:oracle:thin:@127:0.0.1:1521:xe" />-->
+    <!--</bean>-->
+
+    <bean id="SQLDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="username" value="Honza" />
+        <property name="password" value="Slepice1" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+    </bean>
+
+    <security:http auto-config="true">
+        <security:csrf disabled="true"/>
+
+        <security:intercept-url pattern="/rest/**"
+                                access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/game/**"
+                                access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/play/**"
+                                access="hasRole('ROLE_USER')"/>
+
+        <security:intercept-url pattern="/webapp/**"
+                                access="permitAll"/>
+
+        <security:intercept-url pattern="/loginProcess"
+                                access="permitAll"/>
+
+        <security:form-login login-processing-url="/loginProcess"
+                             default-target-url="/"
+                             authentication-failure-url="/fail?login_error=1"
+                             authentication-success-handler-ref="SuccessLogin"
+                             authentication-failure-handler-ref="UnauthorizedLogin"/>
+        <security:logout logout-url="/logout" success-handler-ref="SuccessLogout"/>
+    </security:http>
+
+    <bean id="SuccessLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogin"/>
+    <bean id="SuccessLogout" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogout"/>
+    <bean id="UnauthorizedLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.UnauthorizedLogin"/>
+
+    <security:global-method-security
+            secured-annotations="enabled"/>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service
+                    data-source-ref="SQLDataSource"
+                    users-by-username-query="SELECT login AS username, password, enabled FROM players WHERE login=?"
+                    authorities-by-username-query="SELECT login as username, r.user_role as role  FROM players p join USER_ROLES r on p.LOGIN = r.user_login and p.login=?"/>
+            <security:password-encoder ref="passwordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="passwordEncoder"
+          class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    </bean>
+
+
+</beans>
