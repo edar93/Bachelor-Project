@@ -116,7 +116,7 @@ public class GameDaoImpl implements GameDao {
         LOGGER.debug("leftGame was called login={}, gameInQueue={}", login, gameInQueue);
 
         if (login.equals(gameInQueue.getOwner())) {
-            gameInQueue = em.find(GameInQueue.class, login);
+            gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
             em.createQuery(DELETE_PLAYERS_GAME)
                     .setParameter("game", gameInQueue)
                     .executeUpdate();

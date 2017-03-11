@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:websocket="http://www.springframework.org/schema/websocket"
+             xmlns="http://www.springframework.org/schema/mvc"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
-    <import resource="classpath:spring/root-context.xml"/>
-    <import resource="classpath:spring/appServlet/servlet-context.xml"/>
+    <beans:import resource="classpath:jersey-PU-and-DB.xml"/>
 
-</beans>
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <annotation-driven/>
+    <tx:annotation-driven />
+    <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
+
+    <!--asi navic-->
+    <resources mapping="/**" location="/"/>
+
+    <!--<context:component-scan base-package="vsb.cec0094.bachelorProject.dao"/>-->
+    <!--<context:component-scan base-package="vsb.cec0094.bachelorProject.dao.JPAImpl"/>-->
+    <!--<context:component-scan base-package="vsb.cec0094.bachelorProject.resource"/>-->
+
+    <!--<beans:bean id="AccountResource" class="vsb.cec0094.bachelorProject.resource.AccountResource" />-->
+    <!--<beans:bean id="AccountDao" class="vsb.cec0094.bachelorProject.dao.JPAImpl.AccountDaoImpl" />-->
+
+</beans:beans>

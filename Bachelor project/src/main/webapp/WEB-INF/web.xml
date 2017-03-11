@@ -47,6 +47,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!--<servlet>-->
+		<!--<servlet-name>Jersey REST Service</servlet-name>-->
+		<!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+		<!--<init-param>-->
+			<!--<param-name>org.glassfish.jersey.config.property.packages</param-name>-->
+			<!--<param-value>vsb.cec0094.bachelorProject.resource</param-value>-->
+		<!--</init-param>-->
+		<!--<load-on-startup>2</load-on-startup>-->
+	<!--</servlet>-->
+
+	<!--<servlet-mapping>-->
+		<!--<servlet-name>Jersey REST Service</servlet-name>-->
+		<!--<url-pattern>/*</url-pattern>-->
+	<!--</servlet-mapping>-->
+
 	<!--for request scope-->
 	<filter>
 		<filter-name>requestContextFilter</filter-name>
