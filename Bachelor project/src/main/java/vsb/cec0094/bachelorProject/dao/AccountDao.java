@@ -5,4 +5,6 @@ import vsb.cec0094.bachelorProject.models.UserRegistration;
 public interface AccountDao {
 
     void createUser(UserRegistration userRegistration);
+
+    void grantRoleToUser(String login, String role);
 }

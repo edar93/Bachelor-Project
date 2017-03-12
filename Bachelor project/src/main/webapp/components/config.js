@@ -17,8 +17,10 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.gameService',
     'portRoyalApp.gameCreationService',
     'portRoyalApp.gameCreationCtrl',
+    'portRoyalApp.administrationService',
     'portRoyalApp.loginCtrl',
     'portRoyalApp.welcomeCtrl',
+    'portRoyalApp.administrationCtrl',
     'portRoyalApp.registerCtrl',
     'portRoyalApp.gameCtrl'
 ]);
@@ -28,6 +30,7 @@ var welcomeCtrl = angular.module('portRoyalApp.welcomeCtrl', ['ngRoute']);
 var registerCtrl = angular.module('portRoyalApp.registerCtrl', ['ngRoute']);
 var gameCreationCtrl = angular.module('portRoyalApp.gameCreationCtrl', ['ngRoute']);
 var gameCtrl = angular.module('portRoyalApp.gameCtrl', ['ngRoute']);
+var administrationCtrl = angular.module('portRoyalApp.administrationCtrl', ['ngRoute']);
 
 /* routing */
 loginCtrl
@@ -35,6 +38,14 @@ loginCtrl
         $routeProvider.when('/login', {
             templateUrl: 'components/templates/login_page.html',
             controller: 'loginCtrl'
+        });
+    }]);
+
+administrationCtrl
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/administration', {
+            templateUrl: 'components/templates/administration.html',
+            controller: 'administrationCtrl'
         });
     }]);
 

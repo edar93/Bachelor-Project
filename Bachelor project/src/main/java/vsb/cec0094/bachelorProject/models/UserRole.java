@@ -9,8 +9,9 @@ public class UserRole {
     @Id
     private int id;
 
-    @Column(name = "user_login")
-    private String user;
+//    @ManyToOne//(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "userRoleList")
+//    private AdministrationUser administrationUser;
 
     @Column(name="user_role")
     private String role;
@@ -21,14 +22,6 @@ public class UserRole {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public String getRole() {

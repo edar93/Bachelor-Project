@@ -3,12 +3,15 @@ package vsb.cec0094.bachelorProject.dao.JPAImpl;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
+import vsb.cec0094.bachelorProject.models.AdministrationUser;
+import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 import vsb.cec0094.bachelorProject.models.UserRole;
 
 import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 
 @Repository
 @Transactional
@@ -33,11 +36,19 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public void createUser(UserRegistration userRegistration) {
-        UserRole userRole = new UserRole();
-        userRole.setUser(userRegistration.getLogin());
-        userRole.setRole("ROLE_USER");
-        userRole.setId(getIdForNewRole());
-        em.persist(userRole);
         em.persist(userRegistration);
+    }
+
+    @Override
+    public void grantRoleToUser(String login, String role) {
+        AdministrationUser administrationUser = em.find(AdministrationUser.class, login);
+
+        UserRole userRole = new UserRole();
+        userRole.setId(getIdForNewRole());
+        userRole.setRole(role);
+        em.persist(userRole);
+
+//        administrationUser.setUserRoleList(new ArrayList<>());
+        administrationUser.getUserRoleList().add(userRole);
     }
 }

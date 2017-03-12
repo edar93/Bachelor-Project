@@ -23,6 +23,7 @@ public class AccountResource {
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
+        accountDao.grantRoleToUser(userRegistration.getLogin(), "ROLE_USER");
         return ResponseEntity.ok().build();
     }
 

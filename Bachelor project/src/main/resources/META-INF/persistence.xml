@@ -8,9 +8,10 @@
         <class>vsb.cec0094.bachelorProject.models.UserRegistration</class>
         <class>vsb.cec0094.bachelorProject.models.GameInQueue</class>
         <class>vsb.cec0094.bachelorProject.models.UserRole</class>
+        <class>vsb.cec0094.bachelorProject.models.AdministrationUser</class>
 
         <properties>
-            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.generate_statistics" value="false"/>
             <property name="hibernate.use_sql_comments" value="false"/>
 
