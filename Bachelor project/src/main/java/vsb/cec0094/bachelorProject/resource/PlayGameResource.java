@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
@@ -19,7 +20,7 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
-@Controller
+@RestController
 @RequestMapping("/play")
 @EnableAspectJAutoProxy
 @Scope("request")

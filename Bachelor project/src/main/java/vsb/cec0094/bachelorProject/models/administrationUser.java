@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.models;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -16,7 +18,7 @@ public class AdministrationUser {
     @Column(name = "enabled")
     private int enabled;
 
-    @OneToMany
+    @OneToMany(fetch=FetchType.EAGER)
     @JoinColumn(name = "login")
     private List<UserRole> userRoleList;
 
@@ -42,5 +44,14 @@ public class AdministrationUser {
 
     public void setUserRoleList(List<UserRole> userRoleList) {
         this.userRoleList = userRoleList;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("login", login)
+                .append("enabled", enabled)
+                .append("userRoleList", userRoleList)
+                .toString();
     }
 }

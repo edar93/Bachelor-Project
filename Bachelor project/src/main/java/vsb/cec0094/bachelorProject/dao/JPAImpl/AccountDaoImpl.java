@@ -12,12 +12,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 @Transactional
 public class AccountDaoImpl implements AccountDao {
 
     private static final String GET_HIGHEST_ROLE_ID = "SELECT MAX(id) FROM UserRole";
+    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au";
 
     @PersistenceContext
     private EntityManager em;
@@ -50,5 +52,11 @@ public class AccountDaoImpl implements AccountDao {
 
 //        administrationUser.setUserRoleList(new ArrayList<>());
         administrationUser.getUserRoleList().add(userRole);
+    }
+
+    @Override
+    public List<AdministrationUser> getAllUsers() {
+        return em.createQuery(SELECT_ALL_ADMINISTRATIVE_USERS)
+                    .getResultList();
     }
 }

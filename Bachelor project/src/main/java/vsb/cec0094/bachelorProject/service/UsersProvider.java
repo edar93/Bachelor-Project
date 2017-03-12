@@ -14,7 +14,6 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 
 @Component
-//@Scope(value="request")//, proxyMode = ScopedProxyMode.TARGET_CLASS
 public class UsersProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersProvider.class);

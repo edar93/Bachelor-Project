@@ -1,10 +1,15 @@
 package vsb.cec0094.bachelorProject.dao;
 
+import vsb.cec0094.bachelorProject.models.AdministrationUser;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
+
+import java.util.List;
 
 public interface AccountDao {
 
     void createUser(UserRegistration userRegistration);
 
     void grantRoleToUser(String login, String role);
+
+    List<AdministrationUser> getAllUsers();
 }

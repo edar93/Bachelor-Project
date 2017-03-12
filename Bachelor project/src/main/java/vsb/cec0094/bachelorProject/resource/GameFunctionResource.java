@@ -8,10 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.exceptions.NoEmptyPlaceInGame;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
@@ -19,7 +16,7 @@ import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/game")
 @EnableAspectJAutoProxy
 @Scope("request")
