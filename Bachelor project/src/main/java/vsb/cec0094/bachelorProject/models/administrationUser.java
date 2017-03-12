@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "players")
-public class administrationUser {
+public class AdministrationUser {
 
     @Id
     @Column(name = "login")
