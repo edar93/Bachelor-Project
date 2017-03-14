@@ -37,13 +37,11 @@ public class AccountResource {
         accountDao.createUser(userRegistration);
         accountDao.grantRoleToUser(userRegistration.getLogin(), "ROLE_USER");
         return Response.ok().build();
-
     }
 
     @Path("/getLoggedUserLogin")
     @GET
     public Response getLogin() {
-        System.out.println("llllll:::::::?<<<");
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
         if("anonymousUser".equals(user)){
             return Response.status(401).entity(user).build();

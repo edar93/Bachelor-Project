@@ -17,6 +17,7 @@ var dictionaryCZ = {
     CREATOR: 'Kapitán',
     COUNT_OF_PLAYERS: 'počet hráčů',
     START_GAME: 'spustit hru',
+    NAME: 'jméno',
     MAX_PLAYERS_COUNT: 'maximální počet hráčů:',
     JOIN_GAME: 'Připojit se do hry',
     GAME_JOINER_TITTLE: 'Připojil/a jste se do hry',

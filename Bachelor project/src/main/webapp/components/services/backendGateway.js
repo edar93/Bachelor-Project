@@ -11,6 +11,8 @@ var backendGateway = function ($http, $q) {
     var URL = {
         LOGIN_URL: 'loginProcess',
         LOGOUT: 'logout',
+        GET_ALL_ADMIN_USERS: 'useradministration',
+        GET_PAGES_COUNT: 'useradministration/pagesCount',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
         CREATE_NEW_GAME: 'game/cratenewgame',
@@ -31,14 +33,14 @@ var backendGateway = function ($http, $q) {
         EVALUATE_ADMIRALS: 'play/applyadmiral'
     };
 
-    function put(url, data, config, jsonRequest, nonJsonResponce) {
+    function put(url, data, config, jsonRequest, nonJsonResponce, pathParam) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
         if (jsonRequest) {
             data = JSON.stringify(data);
         }
-        return $http.put(translateUrl(url), data, config)
+        return $http.put(translateUrl(url, pathParam), data, config)
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
@@ -48,14 +50,14 @@ var backendGateway = function ($http, $q) {
         );
     }
 
-    function post(url, data, config, jsonRequest, nonJsonResponce) {
+    function post(url, data, config, jsonRequest, nonJsonResponce, pathParam) {
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
         if (jsonRequest) {
             data = JSON.stringify(data);
         }
-        return $http.post(translateUrl(url), data, config)
+        return $http.post(translateUrl(url, pathParam), data, config)
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
@@ -65,12 +67,13 @@ var backendGateway = function ($http, $q) {
         );
     }
 
-    function get(url, config, nonJsonResponce) {
+    function get(url, config, nonJsonResponce, pathParam) {
+        console.log(url, config, nonJsonResponce, pathParam, 'init params');
         //TODO add jsonRequest
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }
-        return $http.get(translateUrl(url), config)
+        return $http.get(translateUrl(url, pathParam), config)
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
@@ -80,9 +83,15 @@ var backendGateway = function ($http, $q) {
         );
     }
 
-    function translateUrl(url) {
+    function translateUrl(url, pathParam) {
         if (URL[url]) {
+            if(pathParam){
+                return serverURL + URL[url] + '/' + pathParam;
+            }
             return serverURL + URL[url];
+        }
+        if(pathParam){
+            return serverURL + url + '/' + pathParam;
         }
         return serverURL + url;
     }

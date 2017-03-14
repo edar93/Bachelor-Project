@@ -1,10 +1,10 @@
 'use strict';
 
 administrationCtrl
-    .controller('administrationCtrl', function ($scope, gameService, loginService, locationService, baseInitService, gameCreationService) {
+    .controller('administrationCtrl', function ($scope, baseInitService, administrationService) {
 
         baseInitService.setVariables($scope);
         baseInitService.init();
 
-        //gameCreationService.initAndSetScope($scope);
+        administrationService.initPage($scope);
     });

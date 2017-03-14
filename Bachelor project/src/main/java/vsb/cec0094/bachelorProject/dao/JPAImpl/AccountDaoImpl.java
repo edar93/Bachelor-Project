@@ -19,7 +19,8 @@ import java.util.List;
 public class AccountDaoImpl implements AccountDao {
 
     private static final String GET_HIGHEST_ROLE_ID = "SELECT MAX(id) FROM UserRole";
-    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au";
+    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au ORDER BY au.login";
+    private static final String PLAYERS_COUNT = "SELECT count(au) FROM AdministrationUser au";
 
     @PersistenceContext
     private EntityManager em;
@@ -55,8 +56,17 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public List<AdministrationUser> getAllUsers() {
+    public List<AdministrationUser> getAllUsers(Integer page, Integer resultsCount) {
         return em.createQuery(SELECT_ALL_ADMINISTRATIVE_USERS)
-                    .getResultList();
+                .setFirstResult(page * resultsCount)
+                .setMaxResults(resultsCount)
+                .getResultList();
+    }
+
+    @Override
+    public Integer getPagesCount(Integer pageSize) {
+        long resultsConut = em.createQuery(PLAYERS_COUNT, Long.class)
+                .getSingleResult();
+        return ((int) resultsConut) / pageSize;
     }
 }

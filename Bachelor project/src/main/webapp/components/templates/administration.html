@@ -1,1 +1,17 @@
 <div ng-include="'components/templates/upper_strip.html'"></div>
+<div>
+    <table>
+        <th>{{'NAME' | translate}}</th>
+        <tr ng-repeat="AdministrativeUser in usersList">
+            <td>{{AdministrativeUser.login}}</td>
+        </tr>
+    </table>
+
+    </br>
+
+    <ul >
+        <li ng-repeat="page in pagesCount"> {{ page }} </li>
+    </ul>
+
+
+</div>

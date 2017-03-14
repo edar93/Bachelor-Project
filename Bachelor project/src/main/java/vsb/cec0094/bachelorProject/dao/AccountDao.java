@@ -11,5 +11,7 @@ public interface AccountDao {
 
     void grantRoleToUser(String login, String role);
 
-    List<AdministrationUser> getAllUsers();
+    List<AdministrationUser> getAllUsers(Integer page, Integer resultsCount);
+
+    Integer getPagesCount(Integer pageSize);
 }

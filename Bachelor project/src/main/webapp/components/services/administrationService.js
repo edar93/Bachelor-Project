@@ -1,61 +1,42 @@
 'use strict';
 
-var administrationService = function ($q, backendGateway) {
+var administrationService = function (backendGateway) {
 
-    this.login = login;
-    this.register = register;
-    this.getUser = getUser;
-    this.logout = logout;
+    this.initPage = initPage;
 
-    var user = null;
+    var localScope;
 
-    function logout() {
-        user = null;
-        return backendGateway.post('LOGOUT');
+    function initPage(scope) {
+        localScope = scope;
+        getPagesCount(scope);
+        showPage(1);
+
+        scope.currentPage = 1;
+        scope.showPage = showPage;
     }
 
-    function getUser() {
-        return backendGateway.get('GET_USER', null, true)
-            .then(parseSuccessLoginData,
-            parseFailLoginData
-        );
+    function showPage(page){
+        backendGateway.get('GET_ALL_ADMIN_USERS', false, false, 1)
+            .then(function(response){
+                localScope.usersList = response.data;
+                console.log(response.data, 'response all users');
+            });
     }
-
-    function parseSuccessLoginData(response) {
-        if (response == undefined || response.data == undefined) {
-            return $q.resolve(null);
-        }
-        if (response.data == 'anonymousUser') {
-            return $q.resolve(null);
-        }
-        return $q.resolve(response.data);
-    }
-
-    function parseFailLoginData(response) {
-        return $q.reject(response.data);
-    }
-
-    function login(userNameToLogin, password) {
-        var config = {
-            params: {
-                username: userNameToLogin,
-                password: password
-            },
-            ignoreAuthModule: 'ignoreAuthModule'
-        };
-
-        return backendGateway.post('LOGIN_URL', '', config, false, true)
-            .then(function () {
-                return backendGateway.get('GET_USER', null, true)
-                    .then(parseSuccessLoginData
-                    , parseFailLoginData
-                )
+    
+    function getPagesCount(scope){
+        backendGateway.get('GET_PAGES_COUNT')
+            .then(function(response){
+                scope.pagesCount = createArray(response.data);
             })
     }
 
-    function register(user) {
-        return backendGateway.post('REGISTER_URL', user);
-    }
+    function createArray (size) {
+        var output = new Array();
+        for (var i=0; i<size; i++) {
+            output.push(i);
+        }
+        return output
+    };
 
 };
 angular.module('portRoyalApp.administrationService', [])

@@ -1,5 +1,7 @@
 package vsb.cec0094.bachelorProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,11 +9,8 @@ import javax.persistence.*;
 public class UserRole {
 
     @Id
+    @JsonIgnore
     private int id;
-
-//    @ManyToOne//(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "userRoleList")
-//    private AdministrationUser administrationUser;
 
     @Column(name="user_role")
     private String role;
