@@ -1,41 +1,53 @@
 package vsb.cec0094.bachelorProject.resource;
 
-import javax.ws.rs.core.Response;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
+import vsb.cec0094.bachelorProject.models.Message;
 
+import javax.inject.Inject;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
-@RestController
-@RequestMapping("/administration")
+@Component
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+@Path("/administration")
 public class AdministrationResource {
 
-    @Autowired
+    @Inject
     AccountDao accountDao;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/test")
+    @GET
+    @Path("/test")
     public Response getAllUsers() {
 
-        List<AdministrationUser> administrationUserList = accountDao.getAllUsers();
-        System.out.println("output <>>>><>><><><");
-        System.out.println(administrationUserList.get(0));
-        System.out.println("output <>>>><>><><><");
-        return Response.ok().entity(administrationUserList).build();
+//        List<AdministrationUser> administrationUserList = accountDao.getAllUsers();
+//        System.out.println("output 11111 <>>>><>><><><");
+//        System.out.println(administrationUserList.get(0));
+//        System.out.println("output 11111 <>>>><>><><><");
+        System.out.println("just test ---++");
+        Message message = new Message();
+        message.setText("test string");
+        return Response.ok().entity(message).build();
+//        return "test2";
+//        return Response.ok().entity(administrationUserList).build();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/test")
-//    public List<AdministrationUser> getAllUsers() {
-//
-//        List<AdministrationUser> administrationUserList = accountDao.getAllUsers();
-//        System.out.println("output <>>>><>><><><");
-//        System.out.println(administrationUserList.get(0));
-//        System.out.println("output <>>>><>><><><");
-//        return administrationUserList;
-//    }
+    @RequestMapping(method = RequestMethod.GET, value = "/administration/test2")
+    public List<AdministrationUser> getAllUsers2() {
+
+        List<AdministrationUser> administrationUserList = accountDao.getAllUsers();
+        System.out.println("output 2222222 <>>>><>><><><");
+        System.out.println(administrationUserList.get(0));
+        System.out.println("output 2222222 <>>>><>><><><");
+        return administrationUserList;
+    }
 }

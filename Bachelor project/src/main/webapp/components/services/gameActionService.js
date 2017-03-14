@@ -33,7 +33,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
         gameId = data.id;
         var url = '/myGame/' + gameId;
 
-        game = stompService('/port-royal/game');
+        game = stompService('/port-royal/rest/game');
 
         game.connect('not needed username', 'not needed password', function () {
             if (notSubscribing) {
@@ -51,7 +51,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     function globalUpdate() {
         //TODO message is not needed
-        game.send("/port-royal/sendAction/" + gameId, {}, JSON.stringify({'text': 'does not matter'}));
+        game.send("/port-royal/rest/sendAction/" + gameId, {}, JSON.stringify({'text': 'does not matter'}));
     }
 
     function skipAction(){

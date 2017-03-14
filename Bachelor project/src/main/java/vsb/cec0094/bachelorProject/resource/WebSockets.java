@@ -16,14 +16,16 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.Message;
 
+import javax.inject.Inject;
+
 @Controller
 public class WebSockets {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WebSockets.class);
 
-    @Autowired
+    @Inject
     private GameDao gameDao;
-    @Autowired
+    @Inject
     private GamesHolder gamesHolder;
 
     @MessageMapping("/sendMessage")

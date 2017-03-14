@@ -12,6 +12,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 @Aspect
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 public class UserSaver {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserSaver.class);
-    @Autowired
+    @Inject
     private UsersProvider usersProvider;
 
     @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +

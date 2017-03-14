@@ -4,7 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +25,6 @@ public class SuccessLogin extends SavedRequestAwareAuthenticationSuccessHandler
         writer.close();
     }
 
-    @CrossOrigin
     @Override
     public void onAuthenticationSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication arg2)
             throws IOException, ServletException {

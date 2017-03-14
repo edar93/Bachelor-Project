@@ -6,7 +6,7 @@ var backendGateway = function ($http, $q) {
     this.get = get;
     this.put = put;
 
-    var serverURL = 'http://localhost:8090/port-royal/';
+    var serverURL = 'http://localhost:8090/port-royal/rest/';
 
     var URL = {
         LOGIN_URL: 'loginProcess',

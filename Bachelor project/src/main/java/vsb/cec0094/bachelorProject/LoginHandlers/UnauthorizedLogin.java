@@ -2,7 +2,6 @@ package vsb.cec0094.bachelorProject.LoginHandlers;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +21,6 @@ public class UnauthorizedLogin implements AuthenticationFailureHandler {
         writer.close();
     }
 
-    @CrossOrigin
     @Override
     public void onAuthenticationFailure(HttpServletRequest arg0, HttpServletResponse arg1, AuthenticationException arg2)
             throws IOException, ServletException {

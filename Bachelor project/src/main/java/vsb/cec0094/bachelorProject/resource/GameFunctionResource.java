@@ -2,88 +2,99 @@ package vsb.cec0094.bachelorProject.resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.exceptions.NoEmptyPlaceInGame;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
-@RestController
-@RequestMapping("/game")
+@Component
+@Produces(MediaType.APPLICATION_JSON)
+@Path("/game")
 @EnableAspectJAutoProxy
 @Scope("request")
 public class GameFunctionResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameFunctionResource.class);
 
-    @Autowired
+    @Inject
     private GameDao gameDao;
-    @Autowired
+    @Inject
     private UsersProvider usersProvider;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/cratenewgame")
-    public ResponseEntity<Void> createGameInQueue() {
+    @POST
+    @Path("/cratenewgame")
+    public Response createGameInQueue() {
         GameInQueue gameInQueue = new GameInQueue();
         gameInQueue.setMaxPlayersCount(3);
         gameInQueue.setOwner(usersProvider.getLogin());
 
         gameDao.createGameInQueue(gameInQueue);
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/basegamestatus")
-    public ResponseEntity<GameInQueue> getBaseGameStatus() {
-        return ResponseEntity.ok().body(gameDao.getGameInQueue(usersProvider.getLogin()));
+    @GET
+    @Path("/basegamestatus")
+    public Response getBaseGameStatus() {
+        return Response.ok().entity(gameDao.getGameInQueue(usersProvider.getLogin())).build();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getallgamesinqueue")
-    @ResponseBody
-    public ResponseEntity<List> getAllGames() {
-        return ResponseEntity.ok().body(gameDao.getAllGames());
+    @GET
+    @Path("/getallgamesinqueue")
+    public Response getAllGames() {
+        return Response.ok().entity(gameDao.getAllGames()).build();
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/joingame")
-    public ResponseEntity<Void> joinGame(@RequestBody Integer id) {
+    @PUT
+    @Path("/joingame")
+    public Response joinGame(@RequestBody Integer id) {
         try {
             gameDao.joinGame(id, usersProvider.getLogin());
         } catch (NoEmptyPlaceInGame noEmptyPlaceInGame) {
             LOGGER.debug(usersProvider.getLogin() + " tried to join full game:" + id);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return Response.status(Response.Status.FORBIDDEN).build();
         }
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/getplayersgame")
-    public ResponseEntity<GameInQueue> getPlayersGame(@RequestBody String player) {
-        return ResponseEntity.ok().body(gameDao.getPlayersGame(player));
+    @POST
+    @Path("/getplayersgame")
+    public Response getPlayersGame(@RequestBody String player) {
+        return Response.ok().entity(gameDao.getPlayersGame(player)).build();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/leftgame")
-    public ResponseEntity<Void> leftGame() {
+    @POST
+    @Path("/leftgame")
+    public Response leftGame() {
         gameDao.leftGame(usersProvider.getLogin(), usersProvider.getGameInQueue());
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/kick")
-    public ResponseEntity<Void> kickPlayer(@RequestBody String player) {
+    @POST
+    @Path("/kick")
+    public Response kickPlayer(@RequestBody String player) {
         gameDao.leftGame(player, gameDao.getPlayersGame(player));
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/changeplayersmaxcount")
-    public ResponseEntity<Void> changeMaxPlayersCount(@RequestBody Integer newCount) {
+    @POST
+    @Path("/changeplayersmaxcount")
+    public Response changeMaxPlayersCount(@RequestBody Integer newCount) {
         if (usersProvider.getGameInQueue().getPlayersList().size() <= newCount){
             gameDao.setNewMaxPlayersCount(newCount, usersProvider.getGameInQueue());
         }
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
     }
 
 }

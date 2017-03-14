@@ -42,11 +42,9 @@
     <security:http auto-config="true">
         <security:csrf disabled="true"/>
 
-        <security:intercept-url pattern="/rest/**"
+        <security:intercept-url pattern="/rest/game/**"
                                 access="hasRole('ROLE_USER')"/>
-        <security:intercept-url pattern="/game/**"
-                                access="hasRole('ROLE_USER')"/>
-        <security:intercept-url pattern="/play/**"
+        <security:intercept-url pattern="/rest/play/**"
                                 access="hasRole('ROLE_USER')"/>
 
         <security:intercept-url pattern="/webapp/**"
@@ -55,12 +53,12 @@
         <security:intercept-url pattern="/loginProcess"
                                 access="permitAll"/>
 
-        <security:form-login login-processing-url="/loginProcess"
+        <security:form-login login-processing-url="/rest/loginProcess"
                              default-target-url="/"
                              authentication-failure-url="/fail?login_error=1"
                              authentication-success-handler-ref="SuccessLogin"
                              authentication-failure-handler-ref="UnauthorizedLogin"/>
-        <security:logout logout-url="/logout" success-handler-ref="SuccessLogout"/>
+        <security:logout logout-url="/rest/logout" success-handler-ref="SuccessLogout"/>
     </security:http>
 
     <bean id="SuccessLogin" class="vsb.cec0094.bachelorProject.LoginHandlers.SuccessLogin"/>

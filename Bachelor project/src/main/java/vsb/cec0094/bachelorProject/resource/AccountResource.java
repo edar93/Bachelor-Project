@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,27 +13,42 @@ import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 @RestController
-@RequestMapping("/accounts")
+//@Component
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+@Path("/accounts")
 public class AccountResource {
 
-    @Autowired
+    @Inject
     private AccountDao accountDao;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/register")
-    public ResponseEntity<Void> register(@RequestBody UserRegistration userRegistration) {
+    @POST
+    @Path("/register")
+    //@QuerryParam
+    public Response register(@RequestBody UserRegistration userRegistration) {
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
         accountDao.grantRoleToUser(userRegistration.getLogin(), "ROLE_USER");
-        return ResponseEntity.ok().build();
+        return Response.ok().build();
+
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getLoggedUserLogin")
-    public ResponseEntity<String> getLogin() {
+    @Path("/getLoggedUserLogin")
+    @GET
+    public Response getLogin() {
         System.out.println("llllll:::::::?<<<");
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
-        return ResponseEntity.ok().body(user);
+        if("anonymousUser".equals(user)){
+            return Response.status(401).entity(user).build();
+        }
+        return Response.ok().entity(user).build();
     }
 
 }
