@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add isAdmin rest">
-      <change type="DELETED" beforePath="C:\Gits\portRoyalGame\Bachelor project\src\main\webapp\bootstrap\bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Gits\portRoyalGame\Bachelor project\src\main\webapp\bootstrap\bootswatch.less" afterPath="" />
-      <change type="DELETED" beforePath="C:\Gits\portRoyalGame\Bachelor project\src\main\webapp\bootstrap\variables.less" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/config.js" afterPath="$PROJECT_DIR$/src/main/webapp/components/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
+    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="fix administration user git bug">
+      <change type="MOVED" beforePath="C:\Gits\portRoyalGame\Bachelor project\src\main\java\vsb\cec0094\bachelorProject\models\administrationUser.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/administrationUser2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -108,7 +104,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37777779">
+            <state vertical-scroll-proportion="0.37918216">
               <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding>
                 <marker date="1489576848062" expanded="true" signature="728:881" placeholder="..." />
@@ -853,7 +849,7 @@
       <workItem from="1489415681607" duration="756000" />
       <workItem from="1489428977231" duration="8612000" />
       <workItem from="1489478585424" duration="40547000" />
-      <workItem from="1489566715458" duration="6709000" />
+      <workItem from="1489566715458" duration="6861000" />
     </task>
     <task id="LOCAL-00001" summary="probably fix wrong user bug">
       <created>1488902987847</created>
@@ -921,11 +917,17 @@
       <option name="project" value="LOCAL" />
       <updated>1489575891759</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add bootstrap">
+      <created>1489576946814</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1489576946814</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165794000" />
+    <option name="totallyTimeSpent" value="165946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -933,14 +935,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41042346" sideWeight="0.50208336" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32681867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32681867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5103149" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -987,7 +989,9 @@
     <MESSAGE value="refactoring form org.springframework.web.bind.annotation annotations to  javax.ws.rs,  !!! web sockets stop to work !!!" />
     <MESSAGE value="add base administration page" />
     <MESSAGE value="add isAdmin rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add isAdmin rest" />
+    <MESSAGE value="add bootstrap" />
+    <MESSAGE value="fix administration user git bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix administration user git bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1285,14 +1289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/models/AdministrationUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/JPAImpl/GameDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33262712">
@@ -1424,7 +1420,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37777779">
+        <state vertical-scroll-proportion="0.37918216">
           <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding>
             <marker date="1489576848062" expanded="true" signature="728:881" placeholder="..." />
