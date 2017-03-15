@@ -2,6 +2,7 @@
 
 /* load modules */
 var portRoyalApp = angular.module('portRoyalApp', [
+    'ui.bootstrap',
     'ngRoute',
     'rzModule',
     'pascalprecht.translate',
