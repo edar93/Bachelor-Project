@@ -18,6 +18,9 @@ public class AdministrationResource {
 
     private final static int pageSize = 3;
 
+    private final static String RESET_PASSWORD = "RESET_PASSWORD";
+    private final static String GRANT_ADMIN_ROLE = "GRANT_ADMIN_ROLE";
+
     @Inject
     AccountDao accountDao;
 
@@ -34,5 +37,17 @@ public class AdministrationResource {
     public Response getPagesCount(){
         int pagesCount = accountDao.getPagesCount(pageSize);
         return Response.ok().entity(pagesCount).build();
+    }
+
+    @PUT
+    @Path("{login}/{action}")
+    public Response grantAdminRole(@PathParam("login") String login, @PathParam("action") String action) {
+        if (RESET_PASSWORD.equals(action)) {
+            accountDao.resetPassword(login);
+        }
+        if (GRANT_ADMIN_ROLE.equals(action)) {
+            accountDao.grantRoleToUser(login, "ROLE_ADMINISTRATOR");
+        }
+        return Response.ok().build();
     }
 }

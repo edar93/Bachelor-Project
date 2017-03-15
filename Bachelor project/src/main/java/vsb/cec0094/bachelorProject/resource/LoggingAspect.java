@@ -17,12 +17,16 @@ public class LoggingAspect {
     public void logAction(JoinPoint joinPoint) {
         final Logger LOGGER = LoggerFactory.getLogger(joinPoint.getSignature().getDeclaringType());
         String logMessage = "LOGGED BY ASPECT - Method: \"" + joinPoint.getSignature().getName();
-        if (joinPoint.getArgs().length == 0) {
+        if (joinPoint.getArgs().length == 0 || joinPoint.getArgs() == null) {
             logMessage += "\" was called without args ";
         } else {
             logMessage += "\" was called with args: ";
             for (Object o : joinPoint.getArgs()) {
-                logMessage += "\"" + (o.toString()) + "\" ";
+                if (o == null) {
+                    logMessage += "\"" + "null" + "\" ";
+                } else {
+                    logMessage += "\"" + (o.toString()) + "\" ";
+                }
             }
         }
         logMessage += "by :\"" + SecurityContextHolder.getContext().getAuthentication().getName() + "\"";

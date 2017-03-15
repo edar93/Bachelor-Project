@@ -17,4 +17,6 @@ public interface AccountDao {
     Integer getPagesCount(Integer pageSize);
 
     Boolean isAdmin(String player) throws NoResultException;
+
+    void resetPassword(String login);
 }

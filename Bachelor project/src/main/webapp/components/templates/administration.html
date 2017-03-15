@@ -2,8 +2,19 @@
 <div>
     <table>
         <th>{{'NAME' | translate}}</th>
+        <th>{{'LOCKED' | translate}}</th>
         <tr ng-repeat="AdministrativeUser in usersList">
             <td>{{AdministrativeUser.login}}</td>
+            <td>{{AdministrativeUser.enabled}}</td>
+            <td>
+                <button ng-click="resetPassword(AdministrativeUser.login)">{{'RESET_PASSWORD' | translate}}</button>
+            </td>
+            <td>
+                <button ng-click="promoteToAdmin(AdministrativeUser.login)">{{'PROMOTE_TO_ADMIN' | translate}}</button>
+            </td>
+            <td>
+                <button ng-click="deleteAccount(AdministrativeUser.login)">{{'DELETE_ACCOUNT' | translate}}</button>
+            </td>
         </tr>
     </table>
 

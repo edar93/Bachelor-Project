@@ -13,10 +13,13 @@ var administrationService = function (backendGateway) {
 
         scope.currentPage = 1;
         scope.showPage = showPage;
+        scope.resetPassword = resetPassword;
+        scope.promoteToAdmin = promoteToAdmin;
+        scope.deleteAccount = deleteAccount;
     }
 
     function showPage(page){
-        backendGateway.get('GET_ALL_ADMIN_USERS', false, false, 1)
+        backendGateway.get('USER_ADMINISTRATION', false, false, 1)
             .then(function(response){
                 localScope.usersList = response.data;
                 console.log(response.data, 'response all users');
@@ -37,6 +40,26 @@ var administrationService = function (backendGateway) {
         }
         return output
     };
+
+    function resetPassword(login) {
+        var urlSufix = login + '/RESET_PASSWORD';
+        backendGateway.put('USER_ADMINISTRATION', undefined, undefined, true, false, urlSufix)
+            .then(function (response) {
+                showPage(localScope.currentPage);
+            })
+    }
+
+    function promoteToAdmin(login) {
+        var urlSufix = login + '/GRANT_ADMIN_ROLE';
+        backendGateway.put('USER_ADMINISTRATION', undefined, undefined, true, false, urlSufix)
+            .then(function (response) {
+                showPage(localScope.currentPage);
+            })
+    }
+
+    function deleteAccount(login) {
+
+    }
 
 };
 angular.module('portRoyalApp.administrationService', [])

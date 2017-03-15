@@ -19,7 +19,8 @@ var globalChatService = function (stompService) {
         scope.messages = [];
         scope.text = "";
         //scope.chat = stompService('/port-royal/chat');
-        scope.chat = stompService('/port-royal/rest/chat');
+        //scope.chat = stompService('/port-royal/rest/chat');
+        scope.chat = stompService('/chat');
 
         if (notConnected) {
             notConnected = false;

@@ -11,7 +11,7 @@ var backendGateway = function ($http, $q) {
     var URL = {
         LOGIN_URL: 'loginProcess',
         LOGOUT: 'logout',
-        GET_ALL_ADMIN_USERS: 'useradministration',
+        USER_ADMINISTRATION: 'useradministration',
         GET_PAGES_COUNT: 'useradministration/pagesCount',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
