@@ -4,14 +4,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
-import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 import vsb.cec0094.bachelorProject.models.UserRole;
 
 import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -19,8 +18,9 @@ import java.util.List;
 public class AccountDaoImpl implements AccountDao {
 
     private static final String GET_HIGHEST_ROLE_ID = "SELECT MAX(id) FROM UserRole";
-    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au ORDER BY au.login";
+    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au ORDER BY au.login DESC ";
     private static final String PLAYERS_COUNT = "SELECT count(au) FROM AdministrationUser au";
+    private static final String IS_ADMIN = "SELECT au FROM AdministrationUser au WHERE au.login = :login";
 
     @PersistenceContext
     private EntityManager em;
@@ -68,5 +68,19 @@ public class AccountDaoImpl implements AccountDao {
         long resultsConut = em.createQuery(PLAYERS_COUNT, Long.class)
                 .getSingleResult();
         return ((int) resultsConut) / pageSize;
+    }
+
+    @Override
+    public Boolean isAdmin(String player) throws NoResultException {
+        AdministrationUser user = em.createQuery(IS_ADMIN, AdministrationUser.class)
+                .setParameter("login", player)
+                .getSingleResult();
+        for (UserRole role : user.getUserRoleList()) {
+            if ("ROLE_ADMINISTRATOR".equals(role.getRole())) {
+                return true;
+            }
+        }
+        return false;
+
     }
 }

@@ -1,11 +1,8 @@
 package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
-import vsb.cec0094.bachelorProject.models.Message;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;

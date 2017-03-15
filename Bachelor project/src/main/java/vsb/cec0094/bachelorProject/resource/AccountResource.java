@@ -1,19 +1,15 @@
 package vsb.cec0094.bachelorProject.resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
-
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
+import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -25,6 +21,8 @@ import javax.ws.rs.core.Response;
 @Path("/accounts")
 public class AccountResource {
 
+    @Inject
+    UsersProvider usersProvider;
     @Inject
     private AccountDao accountDao;
 
@@ -47,6 +45,18 @@ public class AccountResource {
             return Response.status(401).entity(user).build();
         }
         return Response.ok().entity(user).build();
+    }
+
+    @GET
+    @Path("/isAdmin")
+    public Response isAdmin() {
+        Boolean hasRole;
+        try {
+            hasRole = accountDao.isAdmin(usersProvider.getLogin());
+        } catch (NoResultException e) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        return Response.ok().entity(hasRole).build();
     }
 
 }
