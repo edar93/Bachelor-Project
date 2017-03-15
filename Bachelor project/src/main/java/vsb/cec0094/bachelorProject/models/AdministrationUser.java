@@ -18,7 +18,7 @@ public class AdministrationUser {
     @Column(name = "enabled")
     private int enabled;
 
-    @OneToMany(fetch=FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "login")
     private List<UserRole> userRoleList;
 
