@@ -5,23 +5,29 @@
         <th>{{'LOCKED' | translate}}</th>
         <tr ng-repeat="AdministrativeUser in usersList">
             <td>{{AdministrativeUser.login}}</td>
-            <td>{{AdministrativeUser.enabled}}</td>
+            <td><input type="checkbox" ng-model="AdministrativeUser.enabled"
+                       ng-true-value="1" ng-false-value="0"
+                       ng-click="lockUser(AdministrativeUser.login, AdministrativeUser.enabled)"></td>
             <td>
                 <button ng-click="resetPassword(AdministrativeUser.login)">{{'RESET_PASSWORD' | translate}}</button>
             </td>
-            <td>
+
+            <td ng-if="!AdministrativeUser.admin">
                 <button ng-click="promoteToAdmin(AdministrativeUser.login)">{{'PROMOTE_TO_ADMIN' | translate}}</button>
             </td>
-            <td>
+            <td ng-if="!AdministrativeUser.admin">
                 <button ng-click="deleteAccount(AdministrativeUser.login)">{{'DELETE_ACCOUNT' | translate}}</button>
             </td>
+            <td><span ng-if="AdministrativeUser.admin">admin </span></td>
         </tr>
     </table>
 
     </br>
 
-    <ul >
-        <li ng-repeat="page in pagesCount"> {{ page }} </li>
+    <ul>
+        <li ng-repeat="page in pagesCount">
+            <button ng-click="showPage(page + 1)">{{ page + 1 }}</button>
+        </li>
     </ul>
 
 

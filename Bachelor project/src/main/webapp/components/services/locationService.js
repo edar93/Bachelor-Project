@@ -9,7 +9,7 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
     this.goToGame = goToGame;
     this.startLocationCheck = startLocationCheck;
 
-    var timeout = 1000;
+    var timeout = 2200;
     //gameCreationService - use url too (without wariable)
     // to avoid circular dependency
     var paths = {

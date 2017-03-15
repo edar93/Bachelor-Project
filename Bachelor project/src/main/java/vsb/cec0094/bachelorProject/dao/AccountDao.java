@@ -19,4 +19,8 @@ public interface AccountDao {
     Boolean isAdmin(String player) throws NoResultException;
 
     void resetPassword(String login);
+
+    void setUserLock(String login, Boolean locked);
+
+    void deteleUser(String login);
 }

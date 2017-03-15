@@ -25,6 +25,9 @@ public class AccountDaoImpl implements AccountDao {
     private static final String PLAYERS_COUNT = "SELECT count(au) FROM AdministrationUser au";
     private static final String IS_ADMIN = "SELECT au FROM AdministrationUser au WHERE au.login = :login";
     private static final String RESET_PASSWORD = "UPDATE UserRegistration ur set ur.password = :newPassword WHERE ur.login = :login";
+    private static final String SET_LOCK = "UPDATE UserRegistration ur set ur.enabled = :lock WHERE ur.login = :login";
+    private static final String DELETE_ROLES_NATIVE = "DELETE USER_ROLES where login = :login";
+    private static final String DELETE_USER_NATIVE = "DELETE PLAYERS where login = :login";
 
     @PersistenceContext
     private EntityManager em;
@@ -69,9 +72,13 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Integer getPagesCount(Integer pageSize) {
+        int plus = 0;
         long resultsConut = em.createQuery(PLAYERS_COUNT, Long.class)
                 .getSingleResult();
-        return ((int) resultsConut) / pageSize;
+        if (resultsConut % pageSize != 0) {
+            plus = 1;
+        }
+        return (((int) resultsConut) / pageSize) + plus;
     }
 
     @Override
@@ -93,6 +100,30 @@ public class AccountDaoImpl implements AccountDao {
         em.createQuery(RESET_PASSWORD)
                 .setParameter("login", login)
                 .setParameter("newPassword", newPassword)
+                .executeUpdate();
+    }
+
+    @Override
+    public void setUserLock(String login, Boolean locked) {
+        int lock;
+        if (locked) {
+            lock = 0;
+        } else {
+            lock = 1;
+        }
+        em.createQuery(SET_LOCK)
+                .setParameter("login", login)
+                .setParameter("lock", lock)
+                .executeUpdate();
+    }
+
+    @Override
+    public void deteleUser(String login) {
+        em.createNativeQuery(DELETE_ROLES_NATIVE)
+                .setParameter("login", login)
+                .executeUpdate();
+        em.createNativeQuery(DELETE_USER_NATIVE)
+                .setParameter("login", login)
                 .executeUpdate();
     }
 }

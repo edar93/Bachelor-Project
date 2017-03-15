@@ -18,7 +18,7 @@ var dictionaryCZ = {
     COUNT_OF_PLAYERS: 'počet hráčů',
     START_GAME: 'spustit hru',
     NAME: 'jméno',
-    LOCKED: 'Uzamčen',
+    LOCKED: 'Aktivni účet',
     RESET_PASSWORD: 'Resetovat heslo',
     PROMOTE_TO_ADMIN: 'Přidat roli admina',
     DELETE_ACCOUNT: 'Smazat účet',

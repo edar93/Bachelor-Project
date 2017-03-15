@@ -42,6 +42,10 @@
     <security:http auto-config="true">
         <security:csrf disabled="true"/>
 
+        <!--TODO: uncomment-->
+        <!--<security:intercept-url pattern="/rest/useradministration/**"-->
+        <!--access="hasRole('ROLE_ADMINISTRATOR')"/>-->
+
         <security:intercept-url pattern="/rest/game/**"
                                 access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/rest/play/**"

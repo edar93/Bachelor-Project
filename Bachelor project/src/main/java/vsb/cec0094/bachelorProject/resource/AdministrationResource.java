@@ -20,6 +20,8 @@ public class AdministrationResource {
 
     private final static String RESET_PASSWORD = "RESET_PASSWORD";
     private final static String GRANT_ADMIN_ROLE = "GRANT_ADMIN_ROLE";
+    private final static String UNLOCKED = "LOCK1";
+    private final static String LOCKED = "LOCK0";
 
     @Inject
     AccountDao accountDao;
@@ -44,10 +46,27 @@ public class AdministrationResource {
     public Response grantAdminRole(@PathParam("login") String login, @PathParam("action") String action) {
         if (RESET_PASSWORD.equals(action)) {
             accountDao.resetPassword(login);
+            return Response.ok().build();
         }
         if (GRANT_ADMIN_ROLE.equals(action)) {
             accountDao.grantRoleToUser(login, "ROLE_ADMINISTRATOR");
+            return Response.ok().build();
         }
+        if (LOCKED.equals(action)) {
+            accountDao.setUserLock(login, true);
+            return Response.ok().build();
+        }
+        if (UNLOCKED.equals(action)) {
+            accountDao.setUserLock(login, false);
+            return Response.ok().build();
+        }
+        return Response.status(Response.Status.BAD_REQUEST).build();
+    }
+
+    @DELETE
+    @Path("{login}")
+    public Response deleteUser(@PathParam("login") String login) {
+        accountDao.deteleUser(login);
         return Response.ok().build();
     }
 }

@@ -5,6 +5,7 @@ var backendGateway = function ($http, $q) {
     this.post = post;
     this.get = get;
     this.put = put;
+    this.deleteHttp = deleteHttp;
 
     var serverURL = 'http://localhost:8090/port-royal/rest/';
 
@@ -44,7 +45,7 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('put fail', url, data, config, jsonRequest, nonJsonResponce, responese);
+                console.log('put fail', url, data, config, jsonRequest, nonJsonResponce, responese, pathParam);
                 return $q.reject(responese);
             }
         );
@@ -61,7 +62,7 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('post fail', url, data, config, jsonRequest, nonJsonResponce, responese);
+                console.log('post fail', url, data, config, jsonRequest, nonJsonResponce, responese, pathParam);
                 return $q.reject(responese);
             }
         );
@@ -77,7 +78,18 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('get fail', url, config, nonJsonResponce, responese);
+                console.log('get fail', url, config, nonJsonResponce, responese, pathParam);
+                return $q.reject(responese);
+            }
+        );
+    }
+
+    function deleteHttp(url, pathParam) {
+        return $http.delete(translateUrl(url, pathParam))
+            .then(function (responese) {
+                return $q.resolve(responese);
+            }, function (responese) {
+                console.log('get fail', url, pathParam);
                 return $q.reject(responese);
             }
         );
