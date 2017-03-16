@@ -5,15 +5,11 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 
 @Aspect
 @Order(2)
@@ -24,7 +20,7 @@ public class UserSaver {
     private UsersProvider usersProvider;
 
     @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
-            "&& !execution(* vsb.cec0094.bachelorProject.resource.WebSockets.*(..))")
+            "&& !execution(* vsb.cec0094.bachelorProject.webSockets.WebSockets.*(..))")
     public void setUser(JoinPoint joinPoint) {
 //        HttpServletRequest httpRequest = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 //        String login = httpRequest.getUserPrincipal().getName();

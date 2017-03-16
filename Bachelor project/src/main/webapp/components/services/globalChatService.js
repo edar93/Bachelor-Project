@@ -18,9 +18,7 @@ var globalChatService = function (stompService) {
         notConnected = true;
         scope.messages = [];
         scope.text = "";
-        //scope.chat = stompService('/port-royal/chat');
-        //scope.chat = stompService('/port-royal/rest/chat');
-        scope.chat = stompService('/chat');
+        scope.chat = stompService('/port-royal/old-backend/chat');
 
         if (notConnected) {
             notConnected = false;
@@ -37,7 +35,7 @@ var globalChatService = function (stompService) {
         }
 
         scope.sendName = function () {
-            scope.chat.send("/port-royal/sendMessage", {}, JSON.stringify({'text': scope.text}));
+            scope.chat.send("/port-royal/old-backend/sendMessage", {}, JSON.stringify({'text': scope.text}));
         }
     }
 };

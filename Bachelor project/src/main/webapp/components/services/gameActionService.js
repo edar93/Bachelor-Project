@@ -33,17 +33,14 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
         gameId = data.id;
         var url = '/myGame/' + gameId;
 
-        game = stompService('/port-royal/rest/game');
+        game = stompService('/port-royal/old-backend/game');
 
         game.connect('not needed username', 'not needed password', function () {
             if (notSubscribing) {
                 notSubscribing = false;
                 game.subscribe(url, function (response) {
-                    //TODO remove
-                    //console.log(JSON.parse(response.body), 'get websocket body');
-                    if (response && response.body) {
-                        gameStatusService.updateGame(JSON.parse(response.body));
-                    }
+                    console.log('sockets updated');
+                    gameStatusService.updateGame();
                 });
             }
         });
@@ -51,7 +48,7 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
 
     function globalUpdate() {
         //TODO message is not needed
-        game.send("/port-royal/rest/sendAction/" + gameId, {}, JSON.stringify({'text': 'does not matter'}));
+        game.send("/port-royal/old-backend/sendAction/" + gameId, {}, JSON.stringify({'text': 'does not matter'}));
     }
 
     function skipAction(){

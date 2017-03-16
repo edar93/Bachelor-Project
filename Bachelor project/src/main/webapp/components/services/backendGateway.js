@@ -69,7 +69,6 @@ var backendGateway = function ($http, $q) {
     }
 
     function get(url, config, nonJsonResponce, pathParam) {
-        console.log(url, config, nonJsonResponce, pathParam, 'init params');
         //TODO add jsonRequest
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
@@ -89,7 +88,7 @@ var backendGateway = function ($http, $q) {
             .then(function (responese) {
                 return $q.resolve(responese);
             }, function (responese) {
-                console.log('get fail', url, pathParam);
+                console.log('delete fail', url, pathParam);
                 return $q.reject(responese);
             }
         );

@@ -28,7 +28,6 @@ public class AccountResource {
 
     @POST
     @Path("/register")
-    //@QuerryParam
     public Response register(@RequestBody UserRegistration userRegistration) {
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));

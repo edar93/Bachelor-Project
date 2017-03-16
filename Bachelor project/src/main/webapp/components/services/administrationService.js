@@ -40,7 +40,6 @@ var administrationService = function (backendGateway) {
                 }
             }
         }
-
     }
 
     function getPagesCount(scope){
@@ -56,7 +55,7 @@ var administrationService = function (backendGateway) {
             output.push(i);
         }
         return output
-    };
+    }
 
     function resetPassword(login) {
         var urlSufix = login + '/RESET_PASSWORD';

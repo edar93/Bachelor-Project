@@ -6,7 +6,6 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
     this.setSlider = setSlider;
     this.updateGame = updateGame;
 
-    var updateGameInterval = 1000;
     var localScope;
     var owner = null;
     var user;
