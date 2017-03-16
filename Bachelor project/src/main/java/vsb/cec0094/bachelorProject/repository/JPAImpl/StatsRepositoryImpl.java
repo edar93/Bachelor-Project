@@ -10,6 +10,5 @@ public class StatsRepositoryImpl implements StatsRepository {
 
     @Override
     public void Test() {
-        StatsRecord
     }
 }
