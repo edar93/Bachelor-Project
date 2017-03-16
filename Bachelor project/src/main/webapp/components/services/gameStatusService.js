@@ -17,7 +17,6 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
     }
 
     function updateGame(game) {
-        console.log(game, 'game after global update');
         if (game) {
             lastGameToShow = game;
             showStates();
@@ -31,11 +30,10 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
     }
 
     function showStates() {
-        console.log(lastGameToShow, 'showstates.game');
+        console.log(lastGameToShow, 'game manipulator');
         var phaseShowCount = lastGameToShow.semiStates.length;
         phaseShow = 0;
         for (var i = 0; i < phaseShowCount; i++) {
-            console.log(lastGameToShow.semiStates[i], 'game.semiStates[i]');
             $timeout(function () {
                 show(lastGameToShow.semiStates[phaseShow], lastGameToShow.actionsToShows[phaseShow])
             }, i * timeout);
@@ -46,7 +44,6 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
     }
 
     function show(cards, move) {
-        console.log(cards, move, 'cards, move');
         prepare(cards, move);
         updateScope();
         phaseShow++;

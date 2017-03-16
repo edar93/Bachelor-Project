@@ -8,22 +8,49 @@ import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
+@Table(name = "Stats_player")
 public class Player implements Cloneable {
 
+    @Id
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "login")
     private String login;
+
+    @Column(name = "coins")
     private int coins;
+
+    @Column(name = "influencePoints")
     private int influencePoints;
+
+    @Column(name = "swords")
     private int swords;
+
+    @Transient
     private List<Card> cards;
 
     @JsonIgnore
+    @Transient
     private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, cardsToTake,
             traderPinaceCount, traderFluteCount, traderSkiffCount, traderFrigadeCount, traderGalleonCount;
+
+    public Player(String login) {
+        this.login = login;
+        coins = 3;
+        cards = new ArrayList<>();
+        cleanVariables();
+    }
+
+    public Player() {
+    }
 
     public static List<Player> cloneList(List<Player> source) {
         return source.stream()
@@ -197,11 +224,12 @@ public class Player implements Cloneable {
         return clone;
     }
 
-    public Player(String login) {
-        this.login = login;
-        coins = 3;
-        cards = new ArrayList<>();
-        cleanVariables();
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getLogin() {

@@ -10,6 +10,9 @@
         <class>vsb.cec0094.bachelorProject.models.UserRole</class>
         <class>vsb.cec0094.bachelorProject.models.AdministrationUser</class>
 
+        <class>vsb.cec0094.bachelorProject.gameLogic.Player</class>
+        <class>vsb.cec0094.bachelorProject.models.statsmodel.statsRecord</class>
+
         <properties>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.generate_statistics" value="false"/>

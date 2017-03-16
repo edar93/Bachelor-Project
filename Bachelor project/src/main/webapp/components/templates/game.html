@@ -9,7 +9,8 @@
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"
              src="images/{{card.image}}" ng-click="pickCard($index)">
     </div>
-    <button ng-show="localUser == playerTakingCard && localUser != playerOnTurn"
+    <!--&& localUser != playerOnTurn-->
+    <button ng-show="localUser == playerTakingCard "
             ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
     </button>
 

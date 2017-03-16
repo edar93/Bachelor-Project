@@ -2,6 +2,8 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameManipulator {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(GameManipulator.class);
 
     private Integer id;
     private String owner;
@@ -81,6 +85,7 @@ public class GameManipulator {
             ProcessActionAndSemiStateHolder(currentGame.playerGetCardFromTable(id));
             currentAction = null;
         } catch (InvalidActionException | TooExpensiveExpeditionException | IndexOutOfBoundsException e) {
+            LOGGER.debug("exeption > " + e.getMessage() + " was catched");
             // IndexOutOfBoundsException if player call getCard while he can not take card;
             rollback();
             e.printStackTrace();

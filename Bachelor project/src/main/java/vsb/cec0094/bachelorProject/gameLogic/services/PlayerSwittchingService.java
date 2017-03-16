@@ -15,6 +15,11 @@ public class PlayerSwittchingService {
         gameUtilsService = new GameUtilsService(game);
     }
 
+    /**
+     * evaluate carrds
+     *
+     * @param twoShips
+     */
     public void shiftPlayer(Boolean twoShips) {
         if (twoShips) {
             for (Player player : game.getPlayers()) {
@@ -44,6 +49,10 @@ public class PlayerSwittchingService {
         }
     }
 
+    /**
+     * switch active player
+     * @param twoShips
+     */
     private void nextActivePlayer(boolean twoShips) {
         raiseActivePlayer();
         if (twoShips) {
