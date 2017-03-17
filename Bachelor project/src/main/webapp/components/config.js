@@ -15,6 +15,8 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.welcomeService',
     'portRoyalApp.baseInitService',
     'portRoyalApp.globalChatService',
+    'portRoyalApp.statsService',
+    'portRoyalApp.statsListService',
     'portRoyalApp.gameService',
     'portRoyalApp.gameCreationService',
     'portRoyalApp.gameCreationCtrl',
@@ -23,7 +25,9 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.welcomeCtrl',
     'portRoyalApp.administrationCtrl',
     'portRoyalApp.registerCtrl',
-    'portRoyalApp.gameCtrl'
+    'portRoyalApp.gameCtrl',
+    'portRoyalApp.statsCtrl',
+    'portRoyalApp.statsListCtrl'
 ]);
 
 var loginCtrl = angular.module('portRoyalApp.loginCtrl', ['ngRoute']);
@@ -32,8 +36,26 @@ var registerCtrl = angular.module('portRoyalApp.registerCtrl', ['ngRoute']);
 var gameCreationCtrl = angular.module('portRoyalApp.gameCreationCtrl', ['ngRoute']);
 var gameCtrl = angular.module('portRoyalApp.gameCtrl', ['ngRoute']);
 var administrationCtrl = angular.module('portRoyalApp.administrationCtrl', ['ngRoute']);
+var statsListCtrl = angular.module('portRoyalApp.statsListCtrl', ['ngRoute']);
+var statsCtrl = angular.module('portRoyalApp.statsCtrl', ['ngRoute']);
 
 /* routing */
+statsListCtrl
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/statslist/:player', {
+            templateUrl: 'components/templates/stats_list.html',
+            controller: 'statsListCtrl'
+        });
+    }]);
+
+statsCtrl
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/stats/:game', {
+            templateUrl: 'components/templates/stats.html',
+            controller: 'statsCtrl'
+        });
+    }]);
+
 loginCtrl
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login', {

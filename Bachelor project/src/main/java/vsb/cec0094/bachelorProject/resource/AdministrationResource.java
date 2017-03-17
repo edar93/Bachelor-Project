@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject.resource;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
@@ -14,6 +15,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/useradministration")
+@EnableAspectJAutoProxy
 public class AdministrationResource {
 
     private final static int pageSize = 3;

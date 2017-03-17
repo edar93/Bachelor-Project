@@ -7,6 +7,7 @@ import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.gameLogic.card.Expedition;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
+import vsb.cec0094.bachelorProject.models.statsModel.StatsRecord;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -34,7 +35,12 @@ public class Player implements Cloneable {
     @Column(name = "swords")
     private int swords;
 
-    @Transient
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
+    private StatsRecord record;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "card_owner")
     private List<Card> cards;
 
     @JsonIgnore
@@ -222,6 +228,14 @@ public class Player implements Cloneable {
         Player clone = (Player) super.clone();
         clone.setCards(Card.cloneList(cards));
         return clone;
+    }
+
+    public StatsRecord getRecord() {
+        return record;
+    }
+
+    public void setRecord(StatsRecord record) {
+        this.record = record;
     }
 
     public long getId() {

@@ -1,11 +1,13 @@
 package vsb.cec0094.bachelorProject.resource;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
+import vsb.cec0094.bachelorProject.repository.StatsRepository;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
@@ -18,6 +20,7 @@ import javax.ws.rs.core.Response;
 //@Component
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@EnableAspectJAutoProxy
 @Path("/accounts")
 public class AccountResource {
 
@@ -26,9 +29,14 @@ public class AccountResource {
     @Inject
     private AccountDao accountDao;
 
+    @Inject
+    private StatsRepository statsRepository;
+
     @POST
     @Path("/register")
     public Response register(@RequestBody UserRegistration userRegistration) {
+
+        statsRepository.test();
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);

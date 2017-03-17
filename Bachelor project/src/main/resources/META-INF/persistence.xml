@@ -11,7 +11,7 @@
         <class>vsb.cec0094.bachelorProject.models.AdministrationUser</class>
 
         <class>vsb.cec0094.bachelorProject.gameLogic.Player</class>
-        <class>vsb.cec0094.bachelorProject.models.statsmodel.statsRecord</class>
+        <class>vsb.cec0094.bachelorProject.models.statsModel.StatsRecord</class>
 
         <properties>
             <property name="hibernate.show_sql" value="false"/>

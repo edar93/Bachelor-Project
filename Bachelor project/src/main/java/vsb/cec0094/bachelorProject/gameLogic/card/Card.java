@@ -1,18 +1,44 @@
 package vsb.cec0094.bachelorProject.gameLogic.card;
 
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
+@Table(name = "card")
 public class Card implements Cloneable, Comparable<Card> {
 
+    @Transient
     public static final List<CardType> noActionTypes = Arrays.asList(CardType.EXPEDITION, CardType.TAX_INFLUENCE, CardType.TAX_SWORDS);
+    @Transient
     public static final List<CardType> shipTypes = Arrays.asList(CardType.FLUTE, CardType.FRIGATE,
             CardType.GALLEON, CardType.PINACE, CardType.SKIFF);
-
+    @Id
+    @Column(name = "id")
+    private int id;
+    @Column(name = "Card_type")
+    @Enumerated(EnumType.STRING)
     private CardType cardType;
+
+    @Column(name = "coin")
     private int coin;
+
+    @Column(name = "influence")
     private int influence;
+
+    public Card(CardType cardType, int coin, int influence) {
+        this.cardType = cardType;
+        this.coin = coin;
+        this.influence = influence;
+    }
+
+    public Card() {
+    }
+
+    public Card(CardType cardType) {
+        this.cardType = cardType;
+    }
 
     public static List<Card> cloneList(List<Card> source) {
         return source.stream()
@@ -25,6 +51,14 @@ public class Card implements Cloneable, Comparable<Card> {
                     }
                 })
                 .collect(Collectors.toList());
+    }
+
+    public static List<CardType> getNoActionTypes() {
+        return noActionTypes;
+    }
+
+    public static List<CardType> getShipTypes() {
+        return shipTypes;
     }
 
     @Override
@@ -53,14 +87,12 @@ public class Card implements Cloneable, Comparable<Card> {
         return super.clone();
     }
 
-    public Card(CardType cardType, int coin, int influence) {
-        this.cardType = cardType;
-        this.coin = coin;
-        this.influence = influence;
+    public int getId() {
+        return id;
     }
 
-    public Card(CardType cardType) {
-        this.cardType = cardType;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public CardType getCardType() {
