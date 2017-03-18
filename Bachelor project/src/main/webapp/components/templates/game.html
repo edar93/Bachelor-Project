@@ -13,8 +13,8 @@
     <button ng-show="localUser == playerTakingCard "
             ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
     </button>
-
-    <button ng-show="localUser == playerTakingCard && localUser != playerOnTurn && admiralApplied == false && table.cards.length > 4"
+    <!--&& admiralApplied == false-->
+    <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4"
             ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
     </button>
     <p>{{playerTakingCard}} {{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' | translate}} </p>

@@ -60,11 +60,12 @@ public class GameManipulator {
         } catch (Exception e) {
             rollback();
             e.printStackTrace();
+            throw new InvalidActionException("invalid action", e);
         }
 
     }
 
-    public void playerPickExpedition(int id) throws CloneNotSupportedException {
+    public void playerPickExpedition(int id) throws CloneNotSupportedException, InvalidActionException {
         prepareForAction();
         try {
             ProcessActionAndSemiStateHolder(currentGame.pickExpedition(id));
@@ -73,10 +74,11 @@ public class GameManipulator {
             //TooExpensiveExpeditionException
             rollback();
             e.printStackTrace();
+            throw new InvalidActionException("invalid action", e);
         }
     }
 
-    public void playerGetCardFromTable(int id) throws CloneNotSupportedException {
+    public void playerGetCardFromTable(int id) throws CloneNotSupportedException, InvalidActionException {
         prepareForAction();
         try {
             //display picked card
@@ -89,6 +91,7 @@ public class GameManipulator {
             // IndexOutOfBoundsException if player call getCard while he can not take card;
             rollback();
             e.printStackTrace();
+            throw new InvalidActionException("invalid action", e);
         }
     }
 

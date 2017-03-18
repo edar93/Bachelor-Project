@@ -47,6 +47,11 @@ public class PlayerSwittchingService {
         if (game.getTable().getCountOfCards() == 0 && !(Phase.EXPLORING.equals(game.getPhase()))) {
             shiftPlayer(false);
         }
+
+        if (game.getTable().getCountOfCards() == 0 && (Phase.EXPLORING.equals(game.getPhase())) && (game.getCardsToTake() == 1)
+                && (game.getActivePlayerAsPlayer().getAdmiralsCount() > 0)) {
+            shiftPlayer(false);
+        }
     }
 
     /**

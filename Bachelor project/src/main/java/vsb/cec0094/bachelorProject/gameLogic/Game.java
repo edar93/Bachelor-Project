@@ -21,13 +21,13 @@ import java.util.stream.Collectors;
 public class Game implements Cloneable, Serializable {
 
     @JsonIgnore
-    private final FaceCardService faceCardService = new FaceCardService(this);
+    private FaceCardService faceCardService = new FaceCardService(this);
     @JsonIgnore
-    private final GetCardFromTableService getCardFromTableService = new GetCardFromTableService(this);
+    private GetCardFromTableService getCardFromTableService = new GetCardFromTableService(this);
     @JsonIgnore
-    private final GameUtilsService gameUtilsService = new GameUtilsService(this);
+    private GameUtilsService gameUtilsService = new GameUtilsService(this);
     @JsonIgnore
-    private final PlayerSwittchingService playerSwittchingService = new PlayerSwittchingService(this);
+    private PlayerSwittchingService playerSwittchingService = new PlayerSwittchingService(this);
 
     private Integer id;
     private String owner;
@@ -41,12 +41,14 @@ public class Game implements Cloneable, Serializable {
     private Integer cardsToTake;
     private Boolean admiralApplied;
     private Boolean gameOver;
+
     // TODO remove comment
     //@JsonIgnore
     private DrawPile drawPile;
 
 
     public Game(GameInQueue gameInQueue) {
+        initServices();
         this.id = gameInQueue.getId();
         gameOver = false;
         expeditions = new Expeditions();
@@ -81,6 +83,17 @@ public class Game implements Cloneable, Serializable {
         return clonedList;
     }
 
+    public Player getActivePlayerAsPlayer() {
+        return players.get(activePlayer);
+    }
+
+    public void initServices() {
+        faceCardService = new FaceCardService(this);
+        getCardFromTableService = new GetCardFromTableService(this);
+        gameUtilsService = new GameUtilsService(this);
+        playerSwittchingService = new PlayerSwittchingService(this);
+    }
+
     public void applyAdmiral() {
         gameUtilsService.applyAdmiral();
     }
@@ -110,6 +123,7 @@ public class Game implements Cloneable, Serializable {
             clone.setTable((Table) this.table.clone());
             clone.setExpeditions((Expeditions) this.expeditions.clone());
             clone.setDrawPile((DrawPile) this.drawPile.clone());
+            clone.initServices();
             return clone;
         } catch (CloneNotSupportedException e) {
             System.out.println("Cloning not allowed.");

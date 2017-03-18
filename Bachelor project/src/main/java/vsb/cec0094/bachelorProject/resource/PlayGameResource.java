@@ -2,10 +2,8 @@ package vsb.cec0094.bachelorProject.resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
@@ -17,10 +15,13 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
-import javax.ws.rs.core.Response;
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Component
 @Produces(MediaType.APPLICATION_JSON)
@@ -56,7 +57,12 @@ public class PlayGameResource {
     @Path("/facecard")
     public Response faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
         LOGGER.debug("faceCard was called");
-        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().faceCard();
+        try {
+            usersProvider.getGameManipulatorWhenIsPlayerOnTurn().faceCard();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
         return Response.ok().build();
     }
 
@@ -64,7 +70,12 @@ public class PlayGameResource {
     @Path("/pickcard")
     public Response pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickCard was called");
-        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerGetCardFromTable(id);
+        try {
+            usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerGetCardFromTable(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
         return Response.ok().build();
     }
 
@@ -72,7 +83,12 @@ public class PlayGameResource {
     @Path("/pickexpedition")
     public Response pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
         LOGGER.debug("pickExpedition was called");
-        usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerPickExpedition(id);
+        try {
+            usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerPickExpedition(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
         return Response.ok().build();
     }
 
