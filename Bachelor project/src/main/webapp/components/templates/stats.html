@@ -1,1 +1,30 @@
 <div ng-include="'components/templates/upper_strip.html'"></div>
+
+<div>
+    <h2>{{'GAME_RECORD' | translate}}</h2>
+
+    <p>{{'GAME_OVER_DATE' | translate}} {{gameStats.createDate | date:'dd-MM-yyyy HH:mm'}}</p>
+
+    <div>
+        <table>
+            <th>{{'STATS_ORDER' | translate}}</th>
+            <th>{{'STATS_LOGIN' | translate}}</th>
+            <th>{{'STATS_POINTS' | translate}}</th>
+            <th>{{'STATS_CARDS' | translate}}</th>
+
+            <tr ng-repeat="player in gameStats.playerList | orderBy: ['-influencePoints', '-coins'] track by $index">
+                <td>{{$index + 1}}</td>
+                <td>{{player.login}}</td>
+                <td>{{'STATS_INFLUENCE' | translate}}{{player.influencePoints}} </br>{{'STATS_COINS' |
+                    translate}}{{player.coins}} </br>{{'STATS_SWORDS' | translate}}{{player.swords}}
+                </td>
+                <td>
+                    <span ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">
+                     <img src="images/{{card.image}}">
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>

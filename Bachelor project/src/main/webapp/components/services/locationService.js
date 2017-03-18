@@ -8,8 +8,13 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
     this.goToWelcome = goToWelcome;
     this.goToGame = goToGame;
     this.startLocationCheck = startLocationCheck;
+    this.showStatsRecord = showStatsRecord;
+    this.showPlayersStats = showPlayersStats;
+    this.tellScopeLocationStatus = tellScopeLocationStatus;
 
     var timeout = 2200;
+    var localScope;
+
     //gameCreationService - use url too (without wariable)
     // to avoid circular dependency
     var paths = {
@@ -17,8 +22,14 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
         gamecreation: '/gamecreation',
         game: '/game',
         login: '/login',
-        register: '/register'
+        register: '/register',
+        stats: '/stats',
+        playersStats: '/statslist'
     };
+
+    function tellScopeLocationStatus(scope) {
+        localScope = scope;
+    }
 
     function startLocationCheck() {
         console.log('starting loc check');
@@ -39,11 +50,12 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
                 }
 
                 var locationOnPage = responce.data;
+                localScope.gameLocation = responce.data;
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != '/gamecreation') {
                     goToGameCretion();
                 } else if (locationOnPage == 'GAME' && $location.path() != '/game') {
                     goToGame();
-                } else if (locationOnPage == 'FREE' && ($location.path() == '/game' || $location.path() == '/gamecreation')){
+                } else if (locationOnPage == 'FREE' && ($location.path() == '/game' || $location.path() == '/gamecreation')) {
                     goToWelcome();
                 }
 
@@ -55,6 +67,14 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
 
                 console.log(locationOnPage, 'location check done');
             });
+    }
+
+    function showPlayersStats(login) {
+        $location.path(paths.playersStats + '/' + login);
+    }
+
+    function showStatsRecord(gameId) {
+        $location.path(paths.stats + '/' + gameId);
     }
 
     function goToWelcome() {

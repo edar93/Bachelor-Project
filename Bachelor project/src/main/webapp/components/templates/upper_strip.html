@@ -1,14 +1,22 @@
 <div class="menu">
-    <div ng-if="user">
-        <div>
-            <p>{{user}}</p>
-            <button ng-click="logout()">
-                {{'LOGOUT' | translate}}
-            </button>
-        </div>
+
+    <div ng-if="gameLocation == 'FREE'">
+        <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
+        <a ng-href="#!/statslist/{{user}}">{{'SHOW_MY_STATS' | translate}}</a>
     </div>
-    <div class="notLogged" ng-if="user == null">
-        <a href="#!/login">login</a>
-        <li><a href="#!/register">register</a>
+
+    <div id="loginInfo">
+        <div ng-if="user">
+            <div>
+                <p>{{user}}</p>
+                <button ng-click="logout()">
+                    {{'LOGOUT' | translate}}
+                </button>
+            </div>
+        </div>
+        <div class="notLogged" ng-if="user == null">
+            <a href="#!/login">{{'UPPER_LOGIN' | translate}}</a>
+            <a href="#!/register">{{'UPPER_REGISTER' | translate}}</a>
+        </div>
     </div>
 </div>

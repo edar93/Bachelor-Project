@@ -11,9 +11,12 @@ var backendGateway = function ($http, $q) {
 
     var URL = {
         LOGIN_URL: 'loginProcess',
+        IS_ADMIN: 'accounts/isAdmin',
         LOGOUT: 'logout',
         USER_ADMINISTRATION: 'useradministration',
         GET_PAGES_COUNT: 'useradministration/pagesCount',
+        STATS_PLAYER: 'stats',
+        STATS_GAME: 'stats/game',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
         CREATE_NEW_GAME: 'game/cratenewgame',
@@ -69,7 +72,6 @@ var backendGateway = function ($http, $q) {
     }
 
     function get(url, config, nonJsonResponce, pathParam) {
-        //TODO add jsonRequest
         if (nonJsonResponce) {
             config = addNonJsonTransform(config);
         }

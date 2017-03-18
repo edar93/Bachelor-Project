@@ -9,6 +9,9 @@
                        ng-true-value="1" ng-false-value="0"
                        ng-click="lockUser(AdministrativeUser.login, AdministrativeUser.enabled)"></td>
             <td>
+                <button ng-click="showStats(AdministrativeUser.login)">{{'SHOW_STATS' | translate}}</button>
+            </td>
+            <td>
                 <button ng-click="resetPassword(AdministrativeUser.login)">{{'RESET_PASSWORD' | translate}}</button>
             </td>
 

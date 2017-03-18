@@ -24,6 +24,8 @@ INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (0, CURRENT_TIMESTAMP);
 INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (1, CURRENT_TIMESTAMP);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (0,	0,	3,	'adam',	2,	0);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (1,	0,	2,	'lojza',	2,	0);
+INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (2,	0,	2,	'adam',	2,	1);
 INSERT INTO CARD (id, card_type, coin, influence, card_owner) VALUES (0,	'ADMIRAL',	5,	1,	0);
 INSERT INTO CARD (id, card_type, coin, influence, card_owner) VALUES (1,	'PIRATE',	7,	2,	0);
 INSERT INTO CARD (id, card_type, coin, influence, card_owner) VALUES (2,	'PIRATE',	7,	2,	1);
+INSERT INTO CARD (id, card_type, coin, influence, card_owner) VALUES (3,	'PIRATE',	7,	2,	2);

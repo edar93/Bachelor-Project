@@ -1,6 +1,6 @@
 'use strict';
 
-var administrationService = function (backendGateway) {
+var administrationService = function (backendGateway, locationService) {
 
     this.initPage = initPage;
 
@@ -17,15 +17,21 @@ var administrationService = function (backendGateway) {
         scope.promoteToAdmin = promoteToAdmin;
         scope.deleteAccount = deleteAccount;
         scope.lockUser = lockUser;
+        scope.showStats = showStats;
     }
 
     function showPage(page){
+        localScope.currentPage = page;
         backendGateway.get('USER_ADMINISTRATION', false, false, page)
             .then(function(response){
                 localScope.usersList = response.data;
                 addAdminParam(localScope.usersList);
                 console.log(response.data, 'response all users');
             });
+    }
+
+    function showStats(login) {
+        locationService.showPlayersStats(login);
     }
 
     function addAdminParam(list) {

@@ -5,7 +5,7 @@ import vsb.cec0094.bachelorProject.gameLogic.Player;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "stats_record")
@@ -21,7 +21,7 @@ public class StatsRecord {
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "record_id")
-    private List<Player> playerList;
+    private Set<Player> playerList;
 
     public long getId() {
         return id;
@@ -39,11 +39,11 @@ public class StatsRecord {
         this.createDate = createDate;
     }
 
-    public List<Player> getPlayerList() {
+    public Set<Player> getPlayerList() {
         return playerList;
     }
 
-    public void setPlayerList(List<Player> playerList) {
+    public void setPlayerList(Set<Player> playerList) {
         this.playerList = playerList;
     }
 }

@@ -34,7 +34,7 @@
 <div id="players" ng-repeat="player in playersList" class="playerOther">
     <h4>{{player.login}}</h4>
 
-    <div class="cards" ng-repeat="card in player.cards track by $index">
+    <div class="cards" ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">
         <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(player.login) !== -1}"
              src="images/{{card.image}}">
     </div>

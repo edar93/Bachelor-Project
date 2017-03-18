@@ -1,4 +1,23 @@
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 img {
     max-height: 14em
 }
@@ -50,6 +69,7 @@ img {
 }
 
 .menu {
+    right: 0;
     list-style: none;
     border-bottom: 0.1em solid black;
     margin-bottom: 2em;

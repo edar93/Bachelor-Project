@@ -10,22 +10,20 @@ import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Repository
 @Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
-    private static final String GET_PLAYERS_GAME = "SELECT sr from StatsRecord sr join Player p on p.record.id = sr.id where p.login = :login";
+    private static final String GET_PLAYERS_GAME = "SELECT sr from StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
 
     @PersistenceContext
     EntityManager em;
 
     @Override
     public List<StatsRecord> getPlayersStats(String login) {
-        Player test = em.find(Player.class, 0L);
+        StatsRecord test = em.find(StatsRecord.class, 0L);
         List<StatsRecord> statsRecordList = em.createQuery(GET_PLAYERS_GAME, StatsRecord.class)
                 .setParameter("login", login)
                 .getResultList();
@@ -34,6 +32,7 @@ public class StatsRepositoryImpl implements StatsRepository {
 
     @Override
     public StatsRecord getGame(Long gameId) {
+        StatsRecord test = em.find(StatsRecord.class, 0L);
         return em.find(StatsRecord.class, gameId);
     }
 
@@ -68,7 +67,7 @@ public class StatsRepositoryImpl implements StatsRepository {
         StatsRecord statsRecord = new StatsRecord();
         statsRecord.setId(1);
         statsRecord.setCreateDate(new Date());
-        List<Player> playerList = new ArrayList<>();
+        Set<Player> playerList = new HashSet<>();
         playerList.add(player);
         statsRecord.setPlayerList(playerList);
 
