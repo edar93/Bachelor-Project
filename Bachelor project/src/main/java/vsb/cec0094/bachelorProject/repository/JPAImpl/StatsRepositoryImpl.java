@@ -2,12 +2,15 @@ package vsb.cec0094.bachelorProject.repository.JPAImpl;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import vsb.cec0094.bachelorProject.dao.JPAImpl.IdGeneratorDao;
+import vsb.cec0094.bachelorProject.gameLogic.Game;
 import vsb.cec0094.bachelorProject.gameLogic.Player;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
 import vsb.cec0094.bachelorProject.models.statsModel.StatsRecord;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.*;
@@ -16,7 +19,11 @@ import java.util.*;
 @Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
-    private static final String GET_PLAYERS_GAME = "SELECT sr from StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
+    private static final String GET_PLAYERS_GAME = "SELECT sr FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
+    private static final String GET_LATEST_GAME_ID = "SELECT sr.id FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
+
+    @Inject
+    IdGeneratorDao idGenerator;
 
     @PersistenceContext
     EntityManager em;
@@ -34,6 +41,36 @@ public class StatsRepositoryImpl implements StatsRepository {
     public StatsRecord getGame(Long gameId) {
         StatsRecord test = em.find(StatsRecord.class, 0L);
         return em.find(StatsRecord.class, gameId);
+    }
+
+    @Override
+    public void CreateNewRecoed(Game game) {
+        StatsRecord statsRecord = new StatsRecord();
+        statsRecord.setCreateDate(new Date());
+
+        statsRecord.setId(idGenerator.getIdForNewStatsRecord());
+        Long playersId = idGenerator.getIdForNewPlayer();
+        Integer cardId = idGenerator.getIdForNewCard();
+
+        for (Player player : game.getPlayers()) {
+            player.setId(playersId++);
+            for (Card card : player.getCards()) {
+                card.setId(cardId++);
+                em.persist(card);
+            }
+            em.persist(player);
+        }
+
+        statsRecord.setPlayerList(new HashSet<>(game.getPlayers()));
+        em.persist(statsRecord);
+    }
+
+    @Override
+    public Long getLatesGameId(String login) {
+        return em.createQuery(GET_LATEST_GAME_ID, Long.class)
+                .setParameter("login", login)
+                .setFirstResult(1)
+                .getSingleResult();
     }
 
     @Override

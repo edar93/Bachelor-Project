@@ -12,7 +12,6 @@ import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
-import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
@@ -39,7 +38,6 @@ public class PlayGameResource {
     @POST
     @Path("/startGame")
     public Response startGame() throws CloneNotSupportedException {
-        LOGGER.debug("startGame was called");
         if (usersProvider.getLogin().equals(usersProvider.getGameInQueue().getOwner())) {
             gamesHolder.addGame(new GameManipulator(usersProvider.getGameInQueue()));
         }
@@ -49,14 +47,18 @@ public class PlayGameResource {
     @GET
     @Path("/getMyGame")
     public Response getMyGame() {
-        LOGGER.debug("getMyGame was called");
-        return Response.ok().entity(usersProvider.getGameManipulator()).build();
+        GameManipulator gameManipulator = usersProvider.getGameManipulator();
+        if (gameManipulator != null) {
+            return Response.ok().entity(usersProvider.getGameManipulator()).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+
     }
 
     @POST
     @Path("/facecard")
     public Response faceCard() throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException, InvalidActionException {
-        LOGGER.debug("faceCard was called");
         try {
             usersProvider.getGameManipulatorWhenIsPlayerOnTurn().faceCard();
         } catch (Exception e) {
@@ -69,7 +71,6 @@ public class PlayGameResource {
     @POST
     @Path("/pickcard")
     public Response pickCard(@RequestBody Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
-        LOGGER.debug("pickCard was called");
         try {
             usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerGetCardFromTable(id);
         } catch (Exception e) {
@@ -82,7 +83,6 @@ public class PlayGameResource {
     @POST
     @Path("/pickexpedition")
     public Response pickExpedition(@RequestBody Integer id) throws CloneNotSupportedException, TooExpensiveExpeditionException, GameDoesNotExist, NotPlayersTurnException {
-        LOGGER.debug("pickExpedition was called");
         try {
             usersProvider.getGameManipulatorWhenIsPlayerOnTurn().playerPickExpedition(id);
         } catch (Exception e) {
@@ -95,7 +95,6 @@ public class PlayGameResource {
     @POST
     @Path("/skipaction")
     public Response skipAction() throws NotPlayersTurnException {
-        LOGGER.debug("skipAction was called");
         usersProvider.getGameManipulatorWhenIsPlayerOnTurn().skipAction();
         return Response.ok().build();
     }
@@ -103,22 +102,8 @@ public class PlayGameResource {
     @POST
     @Path("/applyadmiral")
     public Response applyAdmiral() throws NotPlayersTurnException {
-        LOGGER.debug("evaluateAdmirals was called");
         usersProvider.getGameManipulatorWhenIsPlayerOnTurn().applyAdmiral();
         return Response.ok().build();
-    }
-
-    @GET
-    @Path("/getmylocation")
-    public Response getMyLocation() throws NotPlayersTurnException {
-        //LOGGER.debug("getMyLocation was called");
-        if (usersProvider.getGameManipulator() != null) {
-            return Response.ok().entity(LocationOnPage.GAME).build();
-        } else if (usersProvider.getGameInQueue() != null) {
-            return Response.ok().entity(LocationOnPage.GAME_CREATION).build();
-        } else {
-            return Response.ok().entity(LocationOnPage.FREE).build();
-        }
     }
 
 }

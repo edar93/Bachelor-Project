@@ -19,6 +19,7 @@ var backendGateway = function ($http, $q) {
         STATS_GAME: 'stats/game',
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
+        GET_LOCATION: 'accounts/getmylocation',
         CREATE_NEW_GAME: 'game/cratenewgame',
         GET_PLAYERS_GAME: 'game/getplayersgame',
         GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
@@ -33,7 +34,6 @@ var backendGateway = function ($http, $q) {
         PICK_EXPEDITION: 'play/pickexpedition',
         SKIP_ACTION: 'play/skipaction',
         GET_MY_GAME: 'play/getMyGame',
-        GET_LOCATION: 'play/getmylocation',
         EVALUATE_ADMIRALS: 'play/applyadmiral'
     };
 

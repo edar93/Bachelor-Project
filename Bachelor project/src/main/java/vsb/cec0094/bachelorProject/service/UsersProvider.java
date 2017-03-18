@@ -3,15 +3,14 @@ package vsb.cec0094.bachelorProject.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
+import vsb.cec0094.bachelorProject.exceptions.GameOverExeption;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
+import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
 @Component
 public class UsersProvider {
@@ -22,6 +21,9 @@ public class UsersProvider {
     private GameDao gameDao;
     @Autowired
     private GamesHolder gamesHolder;
+    @Autowired
+    private StatsRepository statsRepository;
+
     private String login;
     private GameInQueue gameInQueue;
     private GameManipulator gameManipulator;
@@ -35,7 +37,13 @@ public class UsersProvider {
         if (gameInQueue == null) {
             this.gameManipulator = null;
         } else {
-            this.gameManipulator = gamesHolder.getGame(gameInQueue.getId());
+            try {
+                this.gameManipulator = gamesHolder.getGame(gameInQueue.getId());
+            } catch (GameOverExeption e) {
+                statsRepository.CreateNewRecoed(e.getGame());
+                gamesHolder.removeGame(gameInQueue.getId());
+                gameDao.releasePlayers(gameInQueue);
+            }
         }
     }
 

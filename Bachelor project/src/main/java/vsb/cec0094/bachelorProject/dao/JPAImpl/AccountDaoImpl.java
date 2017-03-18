@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
+import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 import vsb.cec0094.bachelorProject.models.UserRole;
 
@@ -125,5 +126,10 @@ public class AccountDaoImpl implements AccountDao {
         em.createNativeQuery(DELETE_USER_NATIVE)
                 .setParameter("login", login)
                 .executeUpdate();
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        return em.find(User.class, login);
     }
 }

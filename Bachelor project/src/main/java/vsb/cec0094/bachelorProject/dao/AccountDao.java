@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.dao;
 
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
+import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 
 import javax.persistence.NoResultException;
@@ -23,4 +24,6 @@ public interface AccountDao {
     void setUserLock(String login, Boolean locked);
 
     void deteleUser(String login);
+
+    User getUserByLogin(String login);
 }

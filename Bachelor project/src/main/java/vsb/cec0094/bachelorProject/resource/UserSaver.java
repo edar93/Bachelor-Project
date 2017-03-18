@@ -40,7 +40,6 @@ public class UserSaver {
 
         try {
             login = SecurityContextHolder.getContext().getAuthentication().getName();
-            LOGGER.debug("login from request is :" + login);
             //HttpSecurityUtils.getUsername(httpRequest);
             //String login = SecurityContextHolder.getContext().getAuthentication().getName();
             usersProvider.prepareUser(login);

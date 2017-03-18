@@ -41,6 +41,10 @@ public class GameManipulator {
     public GameManipulator() {
     }
 
+    public Boolean isGameOver() {
+        return currentGame.getGameOver();
+    }
+
     public void skipAction() {
         currentGame.skipAction();
         actionsToShows.clear();

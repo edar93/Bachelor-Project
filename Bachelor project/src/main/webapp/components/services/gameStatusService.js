@@ -13,6 +13,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
 
     function setScopeAndPlayer(scope, player) {
         gameScope = scope;
+        gameScope.loadedGame = false;
         localUser = player;
     }
 
@@ -25,12 +26,14 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
                 function (resoponse) {
                     lastGameToShow = resoponse.data;
                     showStates();
+                    gameScope.loadedGame = true;
+                }, function (resoponse) {
+                    gameScope.loadedGame = true;
                 });
         }
     }
 
     function showStates() {
-        console.log(lastGameToShow, 'game manipulator');
         var phaseShowCount = lastGameToShow.semiStates.length;
         phaseShow = 0;
         for (var i = 0; i < phaseShowCount; i++) {
@@ -57,8 +60,6 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             markedType = [];
             markedId = [];
         }
-
-        console.log(game, 'game');
         activePlayer = game.players[game.activePlayer].login;
         playerOnTurn = game.players[game.playerOnTurn].login;
 

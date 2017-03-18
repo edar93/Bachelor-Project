@@ -17,6 +17,7 @@ public class Card implements Cloneable, Comparable<Card> {
     @Id
     @Column(name = "id")
     private int id;
+
     @Column(name = "Card_type")
     @Enumerated(EnumType.STRING)
     private CardType cardType;

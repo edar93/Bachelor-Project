@@ -22,4 +22,6 @@ public interface GameDao {
     void leftGame(String login, GameInQueue gameInQueue);
 
     void setNewMaxPlayersCount(Integer newMaxPlayersCount, GameInQueue gameInQueue);
+
+    void releasePlayers(GameInQueue gameInQueue);
 }

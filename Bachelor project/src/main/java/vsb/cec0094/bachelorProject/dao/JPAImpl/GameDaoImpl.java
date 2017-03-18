@@ -114,7 +114,6 @@ public class GameDaoImpl implements GameDao {
     @Override
     public void leftGame(String login, GameInQueue gameInQueue) {
         LOGGER.debug("leftGame was called login={}, gameInQueue={}", login, gameInQueue);
-
         if (login.equals(gameInQueue.getOwner())) {
             gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
             em.createQuery(DELETE_PLAYERS_GAME)
@@ -129,9 +128,19 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public void setNewMaxPlayersCount(Integer newMaxPlayersCount, GameInQueue gameInQueue){
+    public void setNewMaxPlayersCount(Integer newMaxPlayersCount, GameInQueue gameInQueue) {
         gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
         gameInQueue.setMaxPlayersCount(newMaxPlayersCount);
+    }
+
+    @Override
+    public void releasePlayers(GameInQueue gameInQueue) {
+        gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
+        for (User user : gameInQueue.getPlayersList()) {
+            user.setGameInQueue(null);
+            user.setInEndedGame(1);
+        }
+        em.remove(gameInQueue);
     }
 
     private void isEmptyPlaceInGame(GameInQueue gameInQueue) throws NoEmptyPlaceInGame {

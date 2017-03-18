@@ -32,4 +32,10 @@ public class StatsResource {
     public Response getGame(@PathParam("gameId") Long gameId) {
         return Response.ok().entity(statsRepository.getGame(gameId)).build();
     }
+
+    @GET
+    @Path("/latestid/{login}")
+    public Response getLatestGame(@PathParam("login") String login) {
+        return Response.ok().entity(statsRepository.getLatesGameId(login)).build();
+    }
 }

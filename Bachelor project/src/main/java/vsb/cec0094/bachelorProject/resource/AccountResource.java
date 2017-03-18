@@ -6,6 +6,8 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
+import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
+import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
@@ -35,8 +37,6 @@ public class AccountResource {
     @POST
     @Path("/register")
     public Response register(@RequestBody UserRegistration userRegistration) {
-
-        statsRepository.test();
         userRegistration.setEnabled(1);
         userRegistration.setPassword(BCrypt.hashpw(userRegistration.getPassword(), BCrypt.gensalt(12)));
         accountDao.createUser(userRegistration);
@@ -48,7 +48,7 @@ public class AccountResource {
     @GET
     public Response getLogin() {
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
-        if("anonymousUser".equals(user)){
+        if ("anonymousUser".equals(user)) {
             return Response.status(401).entity(user).build();
         }
         return Response.ok().entity(user).build();
@@ -64,6 +64,23 @@ public class AccountResource {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         return Response.ok().entity(hasRole).build();
+    }
+
+    @GET
+    @Path("/getmylocation")
+    public Response getMyLocation() throws NotPlayersTurnException {
+        if (usersProvider.getGameManipulator() != null) {
+            return Response.ok().entity(LocationOnPage.GAME).build();
+        } else if (usersProvider.getGameInQueue() != null) {
+            return Response.ok().entity(LocationOnPage.GAME_CREATION).build();
+        } else if ("anonymousUser".equals(usersProvider.getLogin())) {
+            return Response.ok().entity(LocationOnPage.UNLOGGED).build();
+        } else {
+            if (accountDao.getUserByLogin(usersProvider.getLogin()).getInEndedGame() == 1) {
+                return Response.ok().entity(LocationOnPage.GAME_OVER).build();
+            }
+            return Response.ok().entity(LocationOnPage.FREE).build();
+        }
     }
 
 }

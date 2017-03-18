@@ -15,11 +15,20 @@ public class User {
     private String login;
 
     @JsonIgnore
-    @ManyToOne//(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "game_id")
     private GameInQueue gameInQueue;
 
-    public User() {
+    @JsonIgnore
+    @Column(name = "in_ended_game")
+    private Integer inEndedGame;
+
+    public Integer getInEndedGame() {
+        return inEndedGame;
+    }
+
+    public void setInEndedGame(Integer inEndedGame) {
+        this.inEndedGame = inEndedGame;
     }
 
     public GameInQueue getGameInQueue() {

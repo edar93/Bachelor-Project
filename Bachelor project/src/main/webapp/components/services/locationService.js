@@ -48,14 +48,15 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
                 if ($location.path() == '/welcome') {
                     welcomeService.updateGamesForJoin();
                 }
-
                 var locationOnPage = responce.data;
                 localScope.gameLocation = responce.data;
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != '/gamecreation') {
                     goToGameCretion();
-                } else if (locationOnPage == 'GAME' && $location.path() != '/game') {
+                } else if ((locationOnPage == 'GAME' || locationOnPage == 'GAME_OVER') && $location.path() != '/game') {
                     goToGame();
                 } else if (locationOnPage == 'FREE' && ($location.path() == '/game' || $location.path() == '/gamecreation')) {
+                    goToWelcome();
+                } else if (locationOnPage == 'UNLOGGED' && ($location.path() == '/game' || $location.path() == '/gamecreation' || $location.path() == '/administration')) {
                     goToWelcome();
                 }
 

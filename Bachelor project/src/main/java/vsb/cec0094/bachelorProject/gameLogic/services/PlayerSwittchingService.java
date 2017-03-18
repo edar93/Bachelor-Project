@@ -7,6 +7,8 @@ import vsb.cec0094.bachelorProject.gameLogic.Player;
 
 public class PlayerSwittchingService {
 
+    private static final int POINTS_TO_VICTORY = 1;
+
     private GameUtilsService gameUtilsService;
     private Game game;
 
@@ -56,6 +58,7 @@ public class PlayerSwittchingService {
 
     /**
      * switch active player
+     *
      * @param twoShips
      */
     private void nextActivePlayer(boolean twoShips) {
@@ -84,31 +87,20 @@ public class PlayerSwittchingService {
     }
 
     private void raisePlayerOnTurn() {
-        if (isGameInOverCheck()) {
-            game.setPlayerOnTurn(game.getPlayerOnTurn() + 1);
-            if (game.getPlayerOnTurn().equals(game.getPlayersCount())) {
-                game.setPlayerOnTurn(0);
-                game.setGameOver(true);
-            }
-        } else {
-            game.setPlayerOnTurn(game.getPlayerOnTurn() + 1);
-            if (game.getPlayerOnTurn().equals(game.getPlayersCount())) {
-                game.setPlayerOnTurn(0);
-            }
+        game.setPlayerOnTurn(game.getPlayerOnTurn() + 1);
+        if (game.getPlayerOnTurn().equals(game.getPlayersCount())) {
+            game.setPlayerOnTurn(0);
+            game.setGameOver(isGameInOverCheck());
         }
     }
 
     private boolean isGameInOverCheck() {
         for (Player player : game.getPlayers()) {
-            if (player.getInfluencePoints() >= 12) {
+            if (player.getInfluencePoints() >= POINTS_TO_VICTORY) {
                 return true;
             }
         }
         return false;
-    }
-
-    private void endGame() {
-        //TODO
     }
 
     private Player getActivePlayerAsPlayer() {
