@@ -5,14 +5,11 @@ var baseInitService = function ($route, backendGateway, loginService, locationSe
     this.setVariables = setVariables;
     this.init = init;
 
-    var localScope;
-
     function init() {
         locationService.startLocationCheck();
     }
 
     function setVariables(scope) {
-        localScope = scope;
         scope.searchForPlayer = searchForPlayer;
         locationService.tellScopeLocationStatus(scope);
         loginService.getUser()

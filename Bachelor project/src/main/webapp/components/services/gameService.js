@@ -22,7 +22,7 @@ var gameService = function (backendGateway) {
     }
 
     function getAllGamesToJoin() {
-        return backendGateway.get('GET_ALL_GAMES_IN_QUEUE')
+        return backendGateway.get('GET_ALL_FREE_GAMES_IN_QUEUE')
             .then(function (response) {
                 if (response) {
                     return response.data;

@@ -23,7 +23,7 @@ var backendGateway = function ($http, $q) {
         GAME_END: 'game/gameend',
         CREATE_NEW_GAME: 'game/cratenewgame',
         GET_PLAYERS_GAME: 'game/getplayersgame',
-        GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',
+        GET_ALL_FREE_GAMES_IN_QUEUE: 'game/getallfreegamesinqueue',
         KICK: 'game/kick',
         NEW_MAX_PLAYERS_COUNT: 'game/changeplayersmaxcount',
         LEFT_GAME: 'game/leftgame',

@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import vsb.cec0094.bachelorProject.dao.GameDao;
+import vsb.cec0094.bachelorProject.dao.GamesHolder;
+import vsb.cec0094.bachelorProject.exceptions.GameOverExeption;
 import vsb.cec0094.bachelorProject.exceptions.NoEmptyPlaceInGame;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
@@ -16,6 +18,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Component
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,6 +29,8 @@ public class GameFunctionResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameFunctionResource.class);
 
+    @Inject
+    GamesHolder gamesHolder;
     @Inject
     private GameDao gameDao;
     @Inject
@@ -51,9 +56,19 @@ public class GameFunctionResource {
     }
 
     @GET
-    @Path("/getallgamesinqueue")
+    @Path("/getallfreegamesinqueue")
     public Response getAllGames() {
-        return Response.ok().entity(gameDao.getAllGames()).build();
+        List<GameInQueue> gameInQueueList = gameDao.getAllGames();
+        for (int i = gameInQueueList.size() - 1; i >= 0; i--) {
+            try {
+                if (gamesHolder.getGame(gameInQueueList.get(i).getId()) != null) {
+                    gameInQueueList.remove(i);
+                }
+            } catch (GameOverExeption gameOverExeption) {
+                //this exeptin should not be processed here
+            }
+        }
+        return Response.ok().entity(gameInQueueList).build();
     }
 
     @PUT
@@ -91,8 +106,10 @@ public class GameFunctionResource {
     @POST
     @Path("/changeplayersmaxcount")
     public Response changeMaxPlayersCount(@RequestBody Integer newCount) {
-        if (usersProvider.getGameInQueue().getPlayersList().size() <= newCount){
-            gameDao.setNewMaxPlayersCount(newCount, usersProvider.getGameInQueue());
+        if (usersProvider.getLogin().equals(usersProvider.getGameInQueue().getOwner())) {
+            if (usersProvider.getGameInQueue().getPlayersList().size() <= newCount) {
+                gameDao.setNewMaxPlayersCount(newCount, usersProvider.getGameInQueue());
+            }
         }
         return Response.ok().build();
     }
