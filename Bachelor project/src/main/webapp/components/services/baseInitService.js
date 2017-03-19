@@ -12,6 +12,8 @@ var baseInitService = function ($route, backendGateway, loginService, locationSe
     }
 
     function setVariables(scope) {
+        localScope = scope;
+        scope.searchForPlayer = searchForPlayer;
         locationService.tellScopeLocationStatus(scope);
         loginService.getUser()
             .then(function (user) {
@@ -22,6 +24,10 @@ var baseInitService = function ($route, backendGateway, loginService, locationSe
             .then(function (response) {
                 scope.isAdmin = response.data;
             });
+    }
+
+    function searchForPlayer(searchPlayer) {
+        locationService.showPlayersStats(searchPlayer);
     }
 
     function logout() {

@@ -1,5 +1,9 @@
 <div ng-include="'components/templates/upper_strip.html'"></div>
 
+<div ng-if="playerDoesNotExist">
+    <h1>{{'STATS_PLAYER_DOES_NOT_EXIST' | translate}}</h1>
+</div>
+
 <div ng-if="gamesList.length != null">
     <div ng-show="gamesList.length == 0">
         <h1>{{'NO_RECORD' | translate}}</h1>

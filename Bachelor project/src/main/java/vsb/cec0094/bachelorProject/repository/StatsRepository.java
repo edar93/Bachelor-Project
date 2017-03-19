@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface StatsRepository {
 
-    void test();
-
     List<StatsRecord> getPlayersStats(String login);
 
     StatsRecord getGame(Long gameId);

@@ -10,11 +10,16 @@ var statsListService = function (backendGateway, locationService) {
         localScope = scope;
         scope.showGame = showGame;
         backendGateway.get('STATS_PLAYER', undefined, undefined, playerLogin)
-            .then(setData);
+            .then(setData, badResponse);
     }
 
     function setData(response) {
+        console.log(response, 'succ');
         localScope.gamesList = response.data;
+    }
+
+    function badResponse(response) {
+        localScope.playerDoesNotExist = true;
     }
 
     function showGame(gameId) {

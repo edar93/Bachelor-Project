@@ -1,9 +1,14 @@
 <div class="menu">
 
-    <div ng-if="gameLocation == 'FREE'">
+    <div ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
         <a ng-if="isAdmin" href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
         <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
-        <a ng-href="#!/statslist/{{user}}">{{'SHOW_MY_STATS' | translate}}</a>
+        <a ng-if="user" ng-href="#!/statslist/{{user}}">{{'SHOW_MY_STATS' | translate}}</a>
+
+        <div>
+            <input ng-model="searchPlayer">
+            <button ng-click="searchForPlayer(searchPlayer)">{{'UPPER_SEARCH_FOR_PLAYER' | translate}}</button>
+        </div>
     </div>
 
     <div id="loginInfo">

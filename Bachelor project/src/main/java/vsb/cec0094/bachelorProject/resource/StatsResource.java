@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
+import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
 import javax.inject.Inject;
@@ -20,11 +21,16 @@ public class StatsResource {
 
     @Inject
     StatsRepository statsRepository;
-
+    @Inject
+    AccountDao accountDao;
     @GET
     @Path("/{login}")
     public Response getPlayersGames(@PathParam("login") String login) {
-        return Response.ok().entity(statsRepository.getPlayersStats(login)).build();
+        if (accountDao.getUserByLogin(login) != null) {
+            return Response.ok().entity(statsRepository.getPlayersStats(login)).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @GET

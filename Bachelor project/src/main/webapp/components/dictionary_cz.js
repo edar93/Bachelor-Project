@@ -8,6 +8,8 @@ var dictionaryCZ = {
     GAME_OVER: 'Hra skončila',
     GAME_SHOW_RESULTS: 'Zobrazit výsledky',
     GO_TO_WELCOME: 'přejít na hlavní stránku',
+    STATS_PLAYER_DOES_NOT_EXIST: 'Hráč neexistuje',
+    UPPER_SEARCH_FOR_PLAYER: 'Vyhledat hráče',
     GAME_OVER_DATE: 'Datum dohrání hry:',
     NO_RECORD: 'Hráč nemá odehrané žádné hry',
     REGISTER: 'Založit nový účet',
