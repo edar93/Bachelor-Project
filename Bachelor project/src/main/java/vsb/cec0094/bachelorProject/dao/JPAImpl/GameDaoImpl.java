@@ -25,7 +25,7 @@ public class GameDaoImpl implements GameDao {
     private static final String DELETE_PLAYERS_GAME = "UPDATE User u SET u.gameInQueue = null WHERE u.gameInQueue = :game";
     private static final String DELETE_PLAYERS_GAME_FOR_PLAYER = "UPDATE User u SET u.gameInQueue = null WHERE u.login = :login";
     private static final String GET_HIGHEST_ID = "SELECT MAX(id) FROM GameInQueue";
-    private static final String GET_GAME_BY_ID = "SELECT g FROM GameInQueue g WHERE id = :id";
+    private static final String GET_GAME_BY_ID = "SELECT g FROM GameInQueue g WHERE g.id = :id";
     private static final String RELEASE_PLAYER = "UPDATE User u SET u.inEndedGame = null WHERE u.login = :login ";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameDaoImpl.class);
@@ -77,15 +77,10 @@ public class GameDaoImpl implements GameDao {
         User user = em.find(User.class, player);
         user.setGameInQueue(gameInQueue);
         gameInQueue.getPlayersList().add(user);
-//        em.createQuery(JOIN_GAME)
-//                .setParameter("game", game)
-//                .setParameter("player", player)
-//                .executeUpdate();
     }
 
     @Override
     public GameInQueue getGameById(Integer id) {
-        LOGGER.debug("getGameById was called with id :" + id);
         Object result;
         try {
             result = em.createQuery(GET_GAME_BY_ID)
@@ -94,7 +89,6 @@ public class GameDaoImpl implements GameDao {
         } catch (NoResultException e) {
             return null;
         }
-        LOGGER.debug("getGameById was called returns:" + (GameInQueue) result);
         return (GameInQueue) result;
     }
 

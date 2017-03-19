@@ -7,8 +7,6 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
-import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.models.Message;
 
 @Controller
@@ -24,7 +22,7 @@ public class WebSockets {
 
     @MessageMapping("/sendAction/{id}")
     @SendTo("/myGame/{id}")
-    public Boolean updateGame(@DestinationVariable Integer id) throws CloneNotSupportedException, GameDoesNotExist, NotPlayersTurnException {
+    public Boolean updateGame(@DestinationVariable Integer id) {
         LOGGER.debug("updateGame was called with id={}:", id);
         return true;
     }

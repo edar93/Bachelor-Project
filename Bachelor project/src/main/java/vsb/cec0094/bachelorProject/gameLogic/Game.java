@@ -57,7 +57,7 @@ public class Game implements Cloneable, Serializable {
         activePlayer = 0;
         phase = Phase.EXPLORING;
         table = new Table();
-        drawPile = new DrawPile(true, playersCount == 5);
+        drawPile = new DrawPile(playersCount == 5);
         owner = gameInQueue.getOwner();
         players = new ArrayList<>(playersCount);
         admiralApplied = false;

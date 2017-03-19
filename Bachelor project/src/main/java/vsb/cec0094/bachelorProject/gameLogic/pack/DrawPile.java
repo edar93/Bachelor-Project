@@ -16,36 +16,10 @@ public class DrawPile implements Cloneable {
     @JsonIgnore
     private List<Card> usedCards;
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        DrawPile clone = (DrawPile) super.clone();
-        clone.setCards(Card.cloneList(cards));
-        clone.setUsedCards(Card.cloneList(usedCards));
-        return clone;
-    }
-
-    public void getUsedCard(Card card) {
-        usedCards.add(card);
-    }
-
-    public void getUsedCards(List<Card> cardList){
-        usedCards.addAll(cardList);
-    }
-
-    public Card giveCard() {
-        if (cards.size() == 0) {
-            Collections.shuffle(usedCards);
-            cards.addAll(usedCards);
-            usedCards = new ArrayList<>();
-        }
-        return cards.remove(0);
-    }
-
-    public DrawPile(boolean full, boolean fivePlayers) {
+    public DrawPile(boolean fivePlayers) {
         this.usedCards = new ArrayList<>();
         this.cards = new ArrayList<>();
 
-        if (full) {
             cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 2, 0, 0));
             cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 0, 2, 0));
             cards.add(new Expedition(CardType.EXPEDITION, 2, 4, 0, 0, 2));
@@ -129,8 +103,32 @@ public class DrawPile implements Cloneable {
                 cards.add(new Card(CardType.GALLEON, 2, 4));
                 cards.add(new Card(CardType.PINACE, 1, 1));
             }
-        }
         Collections.shuffle(cards);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        DrawPile clone = (DrawPile) super.clone();
+        clone.setCards(Card.cloneList(cards));
+        clone.setUsedCards(Card.cloneList(usedCards));
+        return clone;
+    }
+
+    public void getUsedCard(Card card) {
+        usedCards.add(card);
+    }
+
+    public void getUsedCards(List<Card> cardList) {
+        usedCards.addAll(cardList);
+    }
+
+    public Card giveCard() {
+        if (cards.size() == 0) {
+            Collections.shuffle(usedCards);
+            cards.addAll(usedCards);
+            usedCards = new ArrayList<>();
+        }
+        return cards.remove(0);
     }
 
     public List<Card> getCards() {

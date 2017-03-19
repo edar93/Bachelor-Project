@@ -31,16 +31,13 @@ public class StatsRepositoryImpl implements StatsRepository {
 
     @Override
     public List<StatsRecord> getPlayersStats(String login) {
-        StatsRecord test = em.find(StatsRecord.class, 0L);
-        List<StatsRecord> statsRecordList = em.createQuery(GET_PLAYERS_GAME, StatsRecord.class)
+        return em.createQuery(GET_PLAYERS_GAME, StatsRecord.class)
                 .setParameter("login", login)
                 .getResultList();
-        return statsRecordList;
     }
 
     @Override
     public StatsRecord getGame(Long gameId) {
-        StatsRecord test = em.find(StatsRecord.class, 0L);
         return em.find(StatsRecord.class, gameId);
     }
 

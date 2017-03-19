@@ -50,7 +50,8 @@ public class GetCardFromTableService {
             return actionAndSemiStateHolder;
         } else {
             Player playerDoingAction = game.getPlayers().get(game.getActivePlayer());
-            playerDoingAction.takeCharacterCard(card, true);
+            Boolean isOnTurn = (game.getActivePlayer().equals(game.getPlayerOnTurn()));
+            playerDoingAction.takeCharacterCard(card, isOnTurn);
             playerDoingAction.updateVariables();
 
             game.setCardsToTake(game.getCardsToTake() - 1);

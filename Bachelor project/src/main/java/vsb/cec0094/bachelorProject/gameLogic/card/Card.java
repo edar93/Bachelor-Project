@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic.card;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -63,7 +64,7 @@ public class Card implements Cloneable, Comparable<Card> {
     }
 
     @Override
-    public int compareTo(Card card) {
+    public int compareTo(@NotNull Card card) {
         int comparingCardValue = card.getCardType().ordinal();
         int localCardValue = this.cardType.ordinal();
         if (comparingCardValue < localCardValue) {

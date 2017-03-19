@@ -65,7 +65,7 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public List<AdministrationUser> getAllUsers(Integer page, Integer resultsCount) {
-        return em.createQuery(SELECT_ALL_ADMINISTRATIVE_USERS)
+        return em.createQuery(SELECT_ALL_ADMINISTRATIVE_USERS, AdministrationUser.class)
                 .setFirstResult(page * resultsCount)
                 .setMaxResults(resultsCount)
                 .getResultList();

@@ -22,22 +22,7 @@ public class UserSaver {
     @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
             "&& !execution(* vsb.cec0094.bachelorProject.webSockets.WebSockets.*(..))")
     public void setUser(JoinPoint joinPoint) {
-//        HttpServletRequest httpRequest = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-//        String login = httpRequest.getUserPrincipal().getName();
-        String login = null;
-
-//        if(SecurityContextHolder.getContext() == null){
-//            LOGGER.debug("SecurityContextHolder.getContext() is null");
-//        }
-//
-//        if(SecurityContextHolder.getContext().getAuthentication() == null){
-//            LOGGER.debug("SecurityContextHolder.getContext().getAuthentication() is null");
-//        }
-//
-//        if(SecurityContextHolder.getContext().getAuthentication().getName() == null){
-//            LOGGER.debug("SecurityContextHolder.getContext().getAuthentication().getName() is null");
-//        }
-
+        String login;
         try {
             login = SecurityContextHolder.getContext().getAuthentication().getName();
             //HttpSecurityUtils.getUsername(httpRequest);

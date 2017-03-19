@@ -17,7 +17,7 @@ public class LoggingAspect {
     public void logAction(JoinPoint joinPoint) {
         final Logger LOGGER = LoggerFactory.getLogger(joinPoint.getSignature().getDeclaringType());
         String logMessage = "LOGGED BY ASPECT - Method: \"" + joinPoint.getSignature().getName();
-        if (joinPoint.getArgs().length == 0 || joinPoint.getArgs() == null) {
+        if (joinPoint.getArgs().length == 0) {
             logMessage += "\" was called without args ";
         } else {
             logMessage += "\" was called with args: ";

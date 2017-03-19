@@ -29,7 +29,7 @@ public class GameManipulator {
     @JsonIgnore
     private ActionToShow backupAction;
 
-    public GameManipulator(GameInQueue gameInQueue) throws CloneNotSupportedException {
+    public GameManipulator(GameInQueue gameInQueue) {
         this.id = gameInQueue.getId();
         owner = gameInQueue.getOwner();
         currentGame = new Game(gameInQueue);
