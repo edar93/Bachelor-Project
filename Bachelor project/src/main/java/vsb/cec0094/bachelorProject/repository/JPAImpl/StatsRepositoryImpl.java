@@ -19,8 +19,8 @@ import java.util.*;
 @Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
-    private static final String GET_PLAYERS_GAME = "SELECT sr FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
-    private static final String GET_LATEST_GAME_ID = "SELECT sr.id FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate";
+    private static final String GET_PLAYERS_GAME = "SELECT sr FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC";
+    private static final String GET_LATEST_GAME_ID = "SELECT sr.id FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC ";
 
     @Inject
     IdGeneratorDao idGenerator;
@@ -69,7 +69,7 @@ public class StatsRepositoryImpl implements StatsRepository {
     public Long getLatesGameId(String login) {
         return em.createQuery(GET_LATEST_GAME_ID, Long.class)
                 .setParameter("login", login)
-                .setFirstResult(1)
+                .setMaxResults(1)
                 .getSingleResult();
     }
 

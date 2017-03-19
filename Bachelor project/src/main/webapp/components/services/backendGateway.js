@@ -20,6 +20,7 @@ var backendGateway = function ($http, $q) {
         REGISTER_URL: 'accounts/register',
         GET_USER: 'accounts/getLoggedUserLogin',
         GET_LOCATION: 'accounts/getmylocation',
+        GAME_END: 'game/gameend',
         CREATE_NEW_GAME: 'game/cratenewgame',
         GET_PLAYERS_GAME: 'game/getplayersgame',
         GET_ALL_GAMES_IN_QUEUE: 'game/getallgamesinqueue',

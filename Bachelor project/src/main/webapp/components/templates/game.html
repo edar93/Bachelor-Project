@@ -1,7 +1,13 @@
 <div ng-include="'components/templates/upper_strip.html'"></div>
 
 <div id="unlogged" ng-if="gameLocation == 'GAME_OVER'">
-    todo add go to game stats
+    <br>
+    {{'GAME_OVER' | translate}}</br>
+    <button ng-click="showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
+    todo add go to game stats and remove game over attribte
+</div>
+
+
 </div>
 <div id="logged" ng-if="gameLocation == 'GAME'">
     <div id="table" class="table">

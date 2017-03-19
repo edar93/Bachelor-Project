@@ -76,7 +76,7 @@ public class AccountResource {
         } else if ("anonymousUser".equals(usersProvider.getLogin())) {
             return Response.ok().entity(LocationOnPage.UNLOGGED).build();
         } else {
-            if (accountDao.getUserByLogin(usersProvider.getLogin()).getInEndedGame() == 1) {
+            if (((Integer) 1).equals(accountDao.getUserByLogin(usersProvider.getLogin()).getInEndedGame())) {
                 return Response.ok().entity(LocationOnPage.GAME_OVER).build();
             }
             return Response.ok().entity(LocationOnPage.FREE).build();

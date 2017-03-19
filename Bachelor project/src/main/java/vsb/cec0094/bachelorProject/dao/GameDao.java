@@ -23,5 +23,7 @@ public interface GameDao {
 
     void setNewMaxPlayersCount(Integer newMaxPlayersCount, GameInQueue gameInQueue);
 
-    void releasePlayers(GameInQueue gameInQueue);
+    void removeEndedGame(GameInQueue gameInQueue);
+
+    void releasePlayer(String login);
 }

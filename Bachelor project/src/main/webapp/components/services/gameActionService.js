@@ -1,6 +1,6 @@
 'use strict';
 
-var gameActionService = function (backendGateway, gameStatusService, loginService, gameService, stompService) {
+var gameActionService = function (backendGateway, gameStatusService, loginService, locationService, gameService, stompService) {
 
     this.init = init;
 
@@ -14,6 +14,14 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
         scope.pickExpedition = pickExpedition;
         scope.skipAction = skipAction;
         scope.evaluateAdmirals = evaluateAdmirals;
+        scope.showResults = showResults;
+    }
+
+    function showResults() {
+        backendGateway.post('GAME_END')
+            .then(function (response) {
+                locationService.showStatsRecord(response.data);
+            })
     }
 
     function init(scope) {

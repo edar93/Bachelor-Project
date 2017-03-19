@@ -15,7 +15,6 @@ var statsListService = function (backendGateway, locationService) {
 
     function setData(response) {
         localScope.gamesList = response.data;
-        console.log(localScope.gamesList, 'localScope.gamesList');
     }
 
     function showGame(gameId) {

@@ -42,7 +42,7 @@ public class UsersProvider {
             } catch (GameOverExeption e) {
                 statsRepository.CreateNewRecoed(e.getGame());
                 gamesHolder.removeGame(gameInQueue.getId());
-                gameDao.releasePlayers(gameInQueue);
+                gameDao.removeEndedGame(gameInQueue);
             }
         }
     }

@@ -1,6 +1,7 @@
 <div class="menu">
 
     <div ng-if="gameLocation == 'FREE'">
+        <a ng-if="isAdmin" href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
         <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
         <a ng-href="#!/statslist/{{user}}">{{'SHOW_MY_STATS' | translate}}</a>
     </div>

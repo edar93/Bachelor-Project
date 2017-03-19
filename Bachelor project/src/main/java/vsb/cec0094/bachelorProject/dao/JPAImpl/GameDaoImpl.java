@@ -26,6 +26,7 @@ public class GameDaoImpl implements GameDao {
     private static final String DELETE_PLAYERS_GAME_FOR_PLAYER = "UPDATE User u SET u.gameInQueue = null WHERE u.login = :login";
     private static final String GET_HIGHEST_ID = "SELECT MAX(id) FROM GameInQueue";
     private static final String GET_GAME_BY_ID = "SELECT g FROM GameInQueue g WHERE id = :id";
+    private static final String RELEASE_PLAYER = "UPDATE User u SET u.inEndedGame = null WHERE u.login = :login ";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameDaoImpl.class);
 
@@ -134,13 +135,20 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public void releasePlayers(GameInQueue gameInQueue) {
+    public void removeEndedGame(GameInQueue gameInQueue) {
         gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
         for (User user : gameInQueue.getPlayersList()) {
             user.setGameInQueue(null);
             user.setInEndedGame(1);
         }
         em.remove(gameInQueue);
+    }
+
+    @Override
+    public void releasePlayer(String login) {
+        em.createQuery(RELEASE_PLAYER)
+                .setParameter("login", login)
+                .executeUpdate();
     }
 
     private void isEmptyPlaceInGame(GameInQueue gameInQueue) throws NoEmptyPlaceInGame {
