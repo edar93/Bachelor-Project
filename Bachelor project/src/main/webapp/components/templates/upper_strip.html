@@ -3,7 +3,7 @@
     <div ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
         <a ng-if="isAdmin" href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
         <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
-        <a ng-if="user" ng-href="#!/statslist/{{user}}">{{'SHOW_MY_STATS' | translate}}</a>
+        <a ng-if="user" ng-href="#!/statslist/{{user}}/1">{{'SHOW_MY_STATS' | translate}}</a>
 
         <div>
             <input ng-model="searchPlayer">

@@ -10,6 +10,7 @@ var statsListService = function (backendGateway, locationService) {
         localScope = scope;
         localScope.player = playerLogin;
         localScope.showPage = showPage;
+        localScope.currentPage = page;
         scope.showGame = showGame;
         backendGateway.get('STATS_PLAYER', undefined, undefined, playerLogin + '/' + page)
             .then(setData, badResponse);
