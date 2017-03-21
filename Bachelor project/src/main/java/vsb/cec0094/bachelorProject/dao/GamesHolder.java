@@ -2,7 +2,7 @@ package vsb.cec0094.bachelorProject.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import vsb.cec0094.bachelorProject.exceptions.GameOverExeption;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 
@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import java.io.Serializable;
 import java.util.HashMap;
 
-@Repository
+@Component
 public class GamesHolder implements Serializable{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GamesHolder.class);

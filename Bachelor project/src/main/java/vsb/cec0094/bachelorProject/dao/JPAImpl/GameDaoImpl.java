@@ -129,8 +129,8 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public void removeEndedGame(GameInQueue gameInQueue) {
-        gameInQueue = em.find(GameInQueue.class, gameInQueue.getId());
+    public void removeEndedGame(Integer gameInQueueId) {
+        GameInQueue gameInQueue = em.find(GameInQueue.class, gameInQueueId);
         for (User user : gameInQueue.getPlayersList()) {
             user.setGameInQueue(null);
             user.setInEndedGame(1);

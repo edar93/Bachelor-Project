@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
-import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveCharacterException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.Table;
 import vsb.cec0094.bachelorProject.models.Action;
 import vsb.cec0094.bachelorProject.models.ActionToShow;
@@ -90,7 +90,7 @@ public class GameManipulator {
             actionsToShows.add(new ActionToShow(Action.GET_CARD, new String[]{Table.TABLE}, new Integer[]{id}));
             ProcessActionAndSemiStateHolder(currentGame.playerGetCardFromTable(id));
             currentAction = null;
-        } catch (InvalidActionException | TooExpensiveExpeditionException | IndexOutOfBoundsException e) {
+        } catch (InvalidActionException | TooExpensiveCharacterException | IndexOutOfBoundsException e) {
             LOGGER.debug("exeption > " + e.getMessage() + " was catched");
             // IndexOutOfBoundsException if player call getCard while he can not take card;
             rollback();

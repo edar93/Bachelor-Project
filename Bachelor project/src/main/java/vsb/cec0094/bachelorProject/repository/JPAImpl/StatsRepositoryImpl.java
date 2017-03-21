@@ -1,6 +1,6 @@
 package vsb.cec0094.bachelorProject.repository.JPAImpl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import vsb.cec0094.bachelorProject.dao.JPAImpl.IdGeneratorDao;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
@@ -16,11 +16,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
-@Repository
+@Component
 @Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
-    private static final int PageSize = 3;
+    private static final int PageSize = 1;
 
     private static final String GET_PLAYERS_GAME = "SELECT sr FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC";
     private static final String GET_LATEST_GAME_ID = "SELECT sr.id FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC ";

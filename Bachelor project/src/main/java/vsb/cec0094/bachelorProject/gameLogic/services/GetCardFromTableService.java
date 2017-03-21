@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic.services;
 
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveCharacterException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.ActionAndSemiStateHolder;
 import vsb.cec0094.bachelorProject.gameLogic.Game;
@@ -23,7 +24,7 @@ public class GetCardFromTableService {
         playerSwittchingService = new PlayerSwittchingService(game);
     }
 
-    public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
+    public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveCharacterException, CloneNotSupportedException {
         if (Phase.EXPLORING.equals(game.getPhase())) {
             game.setPhase(Phase.TRADING);
         }

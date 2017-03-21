@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import vsb.cec0094.bachelorProject.exceptions.InvalidActionException;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveCharacterException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.exceptions.TwoShipsOfSameTypeOnTableException;
 import vsb.cec0094.bachelorProject.gameLogic.pack.DrawPile;
@@ -102,7 +103,7 @@ public class Game implements Cloneable, Serializable {
         playerSwittchingService.shiftPlayer(false);
     }
 
-    public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveExpeditionException, CloneNotSupportedException {
+    public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveCharacterException, CloneNotSupportedException {
         return getCardFromTableService.playerGetCardFromTable(cardPosition);
     }
 

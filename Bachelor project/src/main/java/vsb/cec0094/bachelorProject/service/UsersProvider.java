@@ -2,7 +2,6 @@ package vsb.cec0094.bachelorProject.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
@@ -12,16 +11,18 @@ import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
+import javax.inject.Inject;
+
 @Component
 public class UsersProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersProvider.class);
 
-    @Autowired
+    @Inject
     private GameDao gameDao;
-    @Autowired
+    @Inject
     private GamesHolder gamesHolder;
-    @Autowired
+    @Inject
     private StatsRepository statsRepository;
 
     private String login;
@@ -41,7 +42,7 @@ public class UsersProvider {
                 this.gameManipulator = gamesHolder.getGame(gameInQueue.getId());
             } catch (GameOverExeption e) {
                 gamesHolder.removeGame(gameInQueue.getId());
-                gameDao.removeEndedGame(gameInQueue);
+                gameDao.removeEndedGame(gameInQueue.getId());
                 statsRepository.CreateNewRecoed(e.getGame());
             }
         }
