@@ -40,9 +40,9 @@ public class UsersProvider {
             try {
                 this.gameManipulator = gamesHolder.getGame(gameInQueue.getId());
             } catch (GameOverExeption e) {
-                statsRepository.CreateNewRecoed(e.getGame());
                 gamesHolder.removeGame(gameInQueue.getId());
                 gameDao.removeEndedGame(gameInQueue);
+                statsRepository.CreateNewRecoed(e.getGame());
             }
         }
     }

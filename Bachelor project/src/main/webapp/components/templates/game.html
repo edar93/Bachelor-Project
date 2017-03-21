@@ -4,7 +4,6 @@
     <br>
     {{'GAME_OVER' | translate}}</br>
     <button ng-click="showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
-    todo add go to game stats and remove game over attribte
 </div>
 
 
@@ -12,6 +11,8 @@
 <div id="logged" ng-if="gameLocation == 'GAME'">
     <div id="table" class="table">
         <h3>Table</h3>
+        loc u:{{localUser}}</br>
+        p on t:{{playerOnTurn}}</br>
         <img src="images/coin.jpg" class="cards" ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
              ng-click="faceCard()">
 

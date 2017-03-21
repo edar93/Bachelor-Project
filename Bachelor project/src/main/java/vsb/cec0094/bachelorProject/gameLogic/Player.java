@@ -1,6 +1,7 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import vsb.cec0094.bachelorProject.exceptions.TooExpensiveCharacterException;
 import vsb.cec0094.bachelorProject.exceptions.TooExpensiveExpeditionException;
 import vsb.cec0094.bachelorProject.gameLogic.card.Card;
 import vsb.cec0094.bachelorProject.gameLogic.card.CardType;
@@ -96,7 +97,7 @@ public class Player implements Cloneable {
         }
     }
 
-    public void takeCharacterCard(Card card, Boolean isOnTurn) throws TooExpensiveExpeditionException {
+    public void takeCharacterCard(Card card, Boolean isOnTurn) throws TooExpensiveCharacterException {
         int price = card.getCoin() - discount;
         if (!isOnTurn) {
             price += 1;
@@ -106,7 +107,7 @@ public class Player implements Cloneable {
         }
         coins -= price;
         if (coins < 0) {
-            throw new TooExpensiveExpeditionException(card + " is too expensive");
+            throw new TooExpensiveCharacterException(card + " is too expensive");
         }
         cards.add(card);
     }

@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "card")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Card implements Cloneable, Comparable<Card> {
 
     @Transient

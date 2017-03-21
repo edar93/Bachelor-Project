@@ -20,14 +20,18 @@ var statsService = function (backendGateway) {
 
     function transformPlayers(playerList) {
         for (var player in playerList) {
-            console.log(playerList[player].cards, 'transf');
             playerList[player].cards = transformCards(playerList[player].cards);
         }
     }
 
     function transformCards(cardList) {
         for (var card in cardList) {
-            cardList[card].image = cardList[card].cardType + '_' + cardList[card].coin + '_' + cardList[card].influence + imageFormat;
+            console.log(cardList[card], 'card');
+            if (cardList[card].cardType == 'EXPEDITION') {
+                cardList[card].image = cardList[card].cardType + '_' + cardList[card].anchor + '_' + cardList[card].cross + '_' + cardList[card].hut + imageFormat;
+            } else {
+                cardList[card].image = cardList[card].cardType + '_' + cardList[card].coin + '_' + cardList[card].influence + imageFormat;
+            }
         }
         return cardList;
     }

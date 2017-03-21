@@ -34,6 +34,8 @@ public class GamesHolder implements Serializable{
         GameManipulator gameManipulator = games.get(id);
         if (gameManipulator != null && gameManipulator.isGameOver()) {
             throw new GameOverExeption("game over", gameManipulator.getCurrentGame());
+
+
         }
         return gameManipulator;
     }

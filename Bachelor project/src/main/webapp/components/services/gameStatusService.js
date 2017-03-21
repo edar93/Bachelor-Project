@@ -34,6 +34,7 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
     }
 
     function showStates() {
+        console.log(lastGameToShow.currentGame, 'current game');
         var phaseShowCount = lastGameToShow.semiStates.length;
         phaseShow = 0;
         for (var i = 0; i < phaseShowCount; i++) {
@@ -60,24 +61,26 @@ var gameStatusService = function ($timeout, backendGateway, gameService) {
             markedType = [];
             markedId = [];
         }
-        activePlayer = game.players[game.activePlayer].login;
-        playerOnTurn = game.players[game.playerOnTurn].login;
+        if (game) {
+            activePlayer = game.players[game.activePlayer].login;
+            playerOnTurn = game.players[game.playerOnTurn].login;
 
-        game = transformAddCards(game);
-        for (var i = game.players.length - 1; i >= 0; i--) {
-            if (game.players[i].login == localUser) {
-                localPlayer = game.players[i];
-                game.players.splice(i, 1);
+            game = transformAddCards(game);
+            for (var i = game.players.length - 1; i >= 0; i--) {
+                if (game.players[i].login == localUser) {
+                    localPlayer = game.players[i];
+                    game.players.splice(i, 1);
+                }
             }
-        }
 
-        expeditions = game.expeditions;
-        playersList = game.players;
-        table = game.table;
-        playersCount = game.playersCount;
-        cardsToTake = game.cardsToTake;
-        admiralApplied = game.admiralApplied;
-        phase = game.phase;
+            expeditions = game.expeditions;
+            playersList = game.players;
+            table = game.table;
+            playersCount = game.playersCount;
+            cardsToTake = game.cardsToTake;
+            admiralApplied = game.admiralApplied;
+            phase = game.phase;
+        }
     }
 
     function transformAddCards(game) {
