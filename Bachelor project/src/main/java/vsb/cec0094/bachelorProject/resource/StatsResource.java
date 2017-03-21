@@ -23,14 +23,31 @@ public class StatsResource {
     StatsRepository statsRepository;
     @Inject
     AccountDao accountDao;
+
+//    @GET
+//    @Path("/{login}")
+//    public Response getPlayersGames(@PathParam("login") String login) {
+//        if (accountDao.getUserByLogin(login) != null) {
+//            return Response.ok().entity(statsRepository.getPlayersStats(login)).build();
+//        } else {
+//            return Response.status(Response.Status.BAD_REQUEST).build();
+//        }
+//    }
+
     @GET
-    @Path("/{login}")
-    public Response getPlayersGames(@PathParam("login") String login) {
+    @Path("/{login}/{page}")
+    public Response getPlayersGames(@PathParam("login") String login, @PathParam("page") Integer page) {
         if (accountDao.getUserByLogin(login) != null) {
-            return Response.ok().entity(statsRepository.getPlayersStats(login)).build();
+            return Response.ok().entity(statsRepository.getPlayersStats(login, page)).build();
         } else {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
+    }
+
+    @GET
+    @Path("/pagesCount/{login}")
+    public Response getPagesCount(@PathParam("login") String login) {
+        return Response.ok().entity(statsRepository.getPagesCount(login)).build();
     }
 
     @GET

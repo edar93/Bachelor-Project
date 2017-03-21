@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface StatsRepository {
 
+    Integer getPagesCount(String login);
+
     List<StatsRecord> getPlayersStats(String login);
+
+    List<StatsRecord> getPlayersStats(String login, Integer page);
 
     StatsRecord getGame(Long gameId);
 

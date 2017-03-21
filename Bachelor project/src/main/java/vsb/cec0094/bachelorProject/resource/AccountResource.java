@@ -9,7 +9,6 @@ import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.models.LocationOnPage;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
-import vsb.cec0094.bachelorProject.repository.StatsRepository;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
@@ -30,9 +29,6 @@ public class AccountResource {
     UsersProvider usersProvider;
     @Inject
     private AccountDao accountDao;
-
-    @Inject
-    private StatsRepository statsRepository;
 
     @POST
     @Path("/register")

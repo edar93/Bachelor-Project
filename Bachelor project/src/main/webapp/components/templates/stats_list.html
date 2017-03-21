@@ -32,6 +32,12 @@
                 </td>
             </tr>
         </table>
+
+        <ul ng-if="pagesCount != 1">
+            <li ng-repeat="page in pagesCount">
+                <button ng-click="showPage(player, page + 1)">{{ page + 1 }}</button>
+            </li>
+        </ul>
     </div>
 
 

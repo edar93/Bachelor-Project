@@ -20,8 +20,11 @@ import java.util.List;
 @Transactional
 public class StatsRepositoryImpl implements StatsRepository {
 
+    private static final int PageSize = 1;
+
     private static final String GET_PLAYERS_GAME = "SELECT sr FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC";
     private static final String GET_LATEST_GAME_ID = "SELECT sr.id FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login ORDER BY sr.createDate DESC ";
+    private static final String RECORDS_COUNT = "SELECT count(sr) FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login";
 
     @Inject
     IdGeneratorDao idGenerator;
@@ -34,6 +37,29 @@ public class StatsRepositoryImpl implements StatsRepository {
         return em.createQuery(GET_PLAYERS_GAME, StatsRecord.class)
                 .setParameter("login", login)
                 .getResultList();
+    }
+
+    // pages starts from 1
+    @Override
+    public List<StatsRecord> getPlayersStats(String login, Integer page) {
+        page--;
+        return em.createQuery(GET_PLAYERS_GAME, StatsRecord.class)
+                .setParameter("login", login)
+                .setFirstResult(PageSize * page)
+                .setMaxResults(PageSize)
+                .getResultList();
+    }
+
+    @Override
+    public Integer getPagesCount(String login) {
+        int plus = 0;
+        long resultsConut = em.createQuery(RECORDS_COUNT, Long.class)
+                .setParameter("login", login)
+                .getSingleResult();
+        if (resultsConut % PageSize != 0) {
+            plus = 1;
+        }
+        return (((int) resultsConut) / PageSize) + plus;
     }
 
     @Override

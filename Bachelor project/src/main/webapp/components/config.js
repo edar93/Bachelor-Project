@@ -42,7 +42,7 @@ var statsCtrl = angular.module('portRoyalApp.statsCtrl', ['ngRoute']);
 /* routing */
 statsListCtrl
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/statslist/:player', {
+        $routeProvider.when('/statslist/:player/:page', {
             templateUrl: 'components/templates/stats_list.html',
             controller: 'statsListCtrl'
         });

@@ -70,8 +70,11 @@ var locationService = function ($rootScope, $route, $location, $timeout, backend
             });
     }
 
-    function showPlayersStats(login) {
-        $location.path(paths.playersStats + '/' + login);
+    function showPlayersStats(login, page) {
+        if (!page) {
+            page = 1;
+        }
+        $location.path(paths.playersStats + '/' + login + '/' + page);
     }
 
     function showStatsRecord(gameId) {

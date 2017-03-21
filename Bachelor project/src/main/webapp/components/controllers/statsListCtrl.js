@@ -6,6 +6,6 @@ statsListCtrl
         baseInitService.setVariables($scope);
         baseInitService.init();
 
-        statsListService.initPage($scope, $routeParams.player);
+        statsListService.initPage($scope, $routeParams.player, $routeParams.page);
     }
 );
