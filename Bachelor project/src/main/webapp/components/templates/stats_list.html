@@ -23,7 +23,7 @@
                 <td>{{game.playerList.length}}</td>
                 <td>
                 <span ng-repeat="player in game.playerList track by $index">
-                <a ng-href="#!/statslist/{{player.login}}">{{player.login}}</a>
+                <a ng-click="showPage(player.login, 1)">{{player.login}}</a>
                     </span>
 
                 </td>
@@ -36,7 +36,8 @@
 
         <div ng-if="pagesCount != 1" class="center">
             <div ng-repeat="page in pagesCount" class="pagination">
-                <a ng-click="showPage(page + 1)" ng-class="{active: currentPage == (page +1)}">{{ page + 1 }}</a>
+                <a ng-click="showPage(player, page + 1)" ng-class="{active: currentPage == (page +1)}">{{ page + 1
+                    }}</a>
             </div>
         </div>
 

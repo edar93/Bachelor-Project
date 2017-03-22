@@ -4,16 +4,9 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="bug fixing">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GameDao.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GameDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/JPAImpl/GameDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/JPAImpl/GameDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/GetCardFromTableService.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/GetCardFromTableService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/PlayerSwittchingService.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/PlayerSwittchingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java" />
+    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="fixing">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -41,10 +34,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1490109025912" expanded="true" signature="816:872" placeholder="//..." />
               </folding>
             </state>
           </provider>
@@ -54,32 +46,57 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="63" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
+              <caret line="92" column="63" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
               <folding>
-                <element signature="e#4894#4895#0" expanded="true" />
-                <element signature="e#4919#4920#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1457#1458#0" expanded="false" />
+                <element signature="e#1505#1506#0" expanded="false" />
+                <element signature="e#1671#1672#0" expanded="false" />
+                <element signature="e#1713#1714#0" expanded="false" />
+                <element signature="e#4877#4878#0" expanded="false" />
+                <element signature="e#4905#4906#0" expanded="false" />
+                <element signature="e#4940#4941#0" expanded="false" />
+                <element signature="e#4973#4974#0" expanded="false" />
+                <element signature="e#5023#5024#0" expanded="false" />
+                <element signature="e#5067#5068#0" expanded="false" />
+                <element signature="e#5112#5113#0" expanded="false" />
+                <element signature="e#5147#5148#0" expanded="false" />
+                <element signature="e#5209#5210#0" expanded="false" />
+                <element signature="e#5257#5258#0" expanded="false" />
+                <element signature="e#5289#5290#0" expanded="false" />
+                <element signature="e#5317#5318#0" expanded="false" />
+                <element signature="e#5359#5360#0" expanded="false" />
+                <element signature="e#5393#5394#0" expanded="false" />
+                <element signature="e#5446#5447#0" expanded="false" />
+                <element signature="e#5483#5484#0" expanded="false" />
+                <element signature="e#5555#5556#0" expanded="false" />
+                <element signature="e#5607#5608#0" expanded="false" />
+                <element signature="e#5643#5644#0" expanded="false" />
+                <element signature="e#5677#5678#0" expanded="false" />
+                <element signature="e#5729#5730#0" expanded="false" />
+                <element signature="e#5775#5776#0" expanded="false" />
+                <element signature="e#5816#5817#0" expanded="false" />
+                <element signature="e#5849#5850#0" expanded="false" />
+                <element signature="e#5905#5906#0" expanded="false" />
+                <element signature="e#5949#5950#0" expanded="false" />
+                <element signature="e#5995#5996#0" expanded="false" />
+                <element signature="e#6031#6032#0" expanded="false" />
+                <element signature="e#6095#6096#0" expanded="false" />
+                <element signature="e#6145#6146#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerSwittchingService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerSwittchingService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/PlayerSwittchingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18378378">
-              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamesHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3335#3336#0" expanded="false" />
+                <element signature="e#3403#3404#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/StatsRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -99,37 +116,47 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetCardFromTableService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/GetCardFromTableService.java">
+      <file leaf-file-name="administration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/administration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="138" selection-start-line="26" selection-start-column="138" selection-end-line="26" selection-end-column="138" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Game.java">
+      <file leaf-file-name="stats_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.37694013">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GameDao.java">
+      <file leaf-file-name="statsListService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/statsListService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatsResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/resource/StatsResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.206897">
+              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -183,17 +210,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/components/controllers/statsListCtrl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/backendGateway.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/locationService.js" />
-        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/resource/StatsResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/templates/upper_strip.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/app.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/administration.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/statsListService.js" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Card.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/card/Expedition.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/statsService.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/services/gameStatusService.js" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Player.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
@@ -207,6 +230,10 @@
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/administration.html" />
+        <option value="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/resource/StatsResource.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html" />
       </list>
     </option>
   </component>
@@ -277,8 +304,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,11 +372,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="port-royal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bachelorProject" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="port-royal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="port-royal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,50 +473,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bachelorProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="port-royal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bachelor project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bachelorProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -948,7 +1007,10 @@
       <workItem from="1489913904460" duration="15926000" />
       <workItem from="1489953166521" duration="5185000" />
       <workItem from="1490034526854" duration="1642000" />
-      <workItem from="1490086404837" duration="17054000" />
+      <workItem from="1490086404837" duration="19462000" />
+      <workItem from="1490127150635" duration="811000" />
+      <workItem from="1490194422774" duration="1072000" />
+      <workItem from="1490203792856" duration="3898000" />
     </task>
     <task id="LOCAL-00001" summary="probably fix wrong user bug">
       <created>1488902987847</created>
@@ -1130,46 +1192,52 @@
       <option name="project" value="LOCAL" />
       <updated>1490106714585</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="code polishing">
+      <created>1490109353188</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1490109353188</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304948000" />
+    <option name="totallyTimeSpent" value="313137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4039088" sideWeight="0.50416666" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4549403" sideWeight="0.49583334" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37024972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37024972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5103149" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18072917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18072917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4549403" sideWeight="0.49583334" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995657" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1205,11 +1273,11 @@
     <MESSAGE value="add redirection from ended game to stats" />
     <MESSAGE value="add search for player" />
     <MESSAGE value="fixing bugs" />
-    <MESSAGE value="code polishing" />
     <MESSAGE value="add paginator to stats" />
     <MESSAGE value="add pagination styles" />
     <MESSAGE value="bug fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixing" />
+    <MESSAGE value="code polishing" />
+    <option name="LAST_COMMIT_MESSAGE" value="code polishing" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1219,7 +1287,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="34" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1275,10 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding>
-            <element signature="e#1115#1116#0" expanded="false" />
-            <element signature="e#1153#1154#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1286,17 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2342#2343#0" expanded="false" />
-            <element signature="e#2371#2372#0" expanded="false" />
-            <element signature="e#2415#2416#0" expanded="false" />
-            <element signature="e#2451#2452#0" expanded="false" />
-            <element signature="e#2490#2491#0" expanded="false" />
-            <element signature="e#2519#2520#0" expanded="false" />
-            <element signature="e#2642#2643#0" expanded="false" />
-            <element signature="e#2668#2669#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1304,7 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,7 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.058419243">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,7 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,7 +1378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,7 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1344,7 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3981982">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,7 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21441442">
           <caret line="72" column="29" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0384614">
           <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,7 +1413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1376,31 +1420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/administration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="33" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.269231">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/statsListService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2908745">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1408,7 +1427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42522523">
           <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,7 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1425,8 +1442,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
-            <element signature="e#1699#1700#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1699#1700#0" expanded="false" />
+            <element signature="e#1735#1736#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1435,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="27" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1443,9 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1457,22 +1470,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5180724">
-          <caret line="31" column="143" selection-start-line="31" selection-start-column="143" selection-end-line="31" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/statsService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24107143">
           <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1480,7 +1481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,7 +1496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.137931">
           <caret line="69" column="54" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1512,7 +1511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,7 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,7 +1525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.724138">
           <caret line="95" column="16" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,15 +1532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/resource/StatsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14255765">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1552,7 +1539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,7 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1568,7 +1553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,7 +1560,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1584,10 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1595,7 +1577,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="138" selection-start-line="26" selection-start-column="138" selection-end-line="26" selection-end-column="138" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1603,25 +1587,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/StatsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1490109025912" expanded="true" signature="816:872" placeholder="//..." />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3243#3244#0" expanded="false" />
+            <element signature="e#3291#3292#0" expanded="false" />
+            <element signature="e#3611#3612#0" expanded="false" />
+            <element signature="e#3658#3659#0" expanded="false" />
+            <element signature="e#3690#3691#0" expanded="false" />
+            <element signature="e#3748#3749#0" expanded="false" />
+            <element signature="e#5056#5057#0" expanded="false" />
+            <element signature="e#5081#5082#0" expanded="false" />
+            <element signature="e#5118#5119#0" expanded="false" />
+            <element signature="e#5146#5147#0" expanded="false" />
+            <element signature="e#5178#5179#0" expanded="false" />
+            <element signature="e#5206#5207#0" expanded="false" />
+            <element signature="e#5248#5249#0" expanded="false" />
+            <element signature="e#5282#5283#0" expanded="false" />
+            <element signature="e#5322#5323#0" expanded="false" />
+            <element signature="e#5352#5353#0" expanded="false" />
+            <element signature="e#5404#5405#0" expanded="false" />
+            <element signature="e#5442#5443#0" expanded="false" />
+            <element signature="e#5473#5474#0" expanded="false" />
+            <element signature="e#5501#5502#0" expanded="false" />
+            <element signature="e#5542#5543#0" expanded="false" />
+            <element signature="e#5576#5577#0" expanded="false" />
+            <element signature="e#5616#5617#0" expanded="false" />
+            <element signature="e#5651#5652#0" expanded="false" />
+            <element signature="e#5708#5709#0" expanded="false" />
+            <element signature="e#5756#5757#0" expanded="false" />
+            <element signature="e#5796#5797#0" expanded="false" />
+            <element signature="e#5831#5832#0" expanded="false" />
+            <element signature="e#5888#5889#0" expanded="false" />
+            <element signature="e#5936#5937#0" expanded="false" />
+            <element signature="e#5976#5977#0" expanded="false" />
+            <element signature="e#6011#6012#0" expanded="false" />
+            <element signature="e#6068#6069#0" expanded="false" />
+            <element signature="e#6116#6117#0" expanded="false" />
+            <element signature="e#6159#6160#0" expanded="false" />
+            <element signature="e#6193#6194#0" expanded="false" />
+            <element signature="e#6252#6253#0" expanded="false" />
+            <element signature="e#6298#6299#0" expanded="false" />
+            <element signature="e#6329#6330#0" expanded="false" />
+            <element signature="e#6357#6358#0" expanded="false" />
+            <element signature="e#6398#6399#0" expanded="false" />
+            <element signature="e#6432#6433#0" expanded="false" />
+            <element signature="e#6471#6472#0" expanded="false" />
+            <element signature="e#6505#6506#0" expanded="false" />
+            <element signature="e#6560#6561#0" expanded="false" />
+            <element signature="e#6606#6607#0" expanded="false" />
+            <element signature="e#6648#6649#0" expanded="false" />
+            <element signature="e#6685#6686#0" expanded="false" />
+            <element signature="e#6746#6747#0" expanded="false" />
+            <element signature="e#6798#6799#0" expanded="false" />
+            <element signature="e#6834#6835#0" expanded="false" />
+            <element signature="e#6865#6866#0" expanded="false" />
+            <element signature="e#6914#6915#0" expanded="false" />
+            <element signature="e#6954#6955#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="false" />
+            <element signature="e#7022#7023#0" expanded="false" />
+            <element signature="e#7072#7073#0" expanded="false" />
+            <element signature="e#7112#7113#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1629,36 +1654,144 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/dao/GamesHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="63" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
-          <folding>
-            <element signature="e#4894#4895#0" expanded="true" />
-            <element signature="e#4919#4920#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#614#615#0" expanded="false" />
+            <element signature="e#653#654#0" expanded="false" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#727#728#0" expanded="false" />
+            <element signature="e#776#777#0" expanded="false" />
+            <element signature="e#821#822#0" expanded="false" />
+            <element signature="e#1219#1220#0" expanded="false" />
+            <element signature="e#1247#1248#0" expanded="false" />
+            <element signature="e#1316#1317#0" expanded="false" />
+            <element signature="e#1350#1351#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/services/PlayerSwittchingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18378378">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3335#3336#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/GameManipulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="63" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1457#1458#0" expanded="false" />
+            <element signature="e#1505#1506#0" expanded="false" />
+            <element signature="e#1671#1672#0" expanded="false" />
+            <element signature="e#1713#1714#0" expanded="false" />
+            <element signature="e#4877#4878#0" expanded="false" />
+            <element signature="e#4905#4906#0" expanded="false" />
+            <element signature="e#4940#4941#0" expanded="false" />
+            <element signature="e#4973#4974#0" expanded="false" />
+            <element signature="e#5023#5024#0" expanded="false" />
+            <element signature="e#5067#5068#0" expanded="false" />
+            <element signature="e#5112#5113#0" expanded="false" />
+            <element signature="e#5147#5148#0" expanded="false" />
+            <element signature="e#5209#5210#0" expanded="false" />
+            <element signature="e#5257#5258#0" expanded="false" />
+            <element signature="e#5289#5290#0" expanded="false" />
+            <element signature="e#5317#5318#0" expanded="false" />
+            <element signature="e#5359#5360#0" expanded="false" />
+            <element signature="e#5393#5394#0" expanded="false" />
+            <element signature="e#5446#5447#0" expanded="false" />
+            <element signature="e#5483#5484#0" expanded="false" />
+            <element signature="e#5555#5556#0" expanded="false" />
+            <element signature="e#5607#5608#0" expanded="false" />
+            <element signature="e#5643#5644#0" expanded="false" />
+            <element signature="e#5677#5678#0" expanded="false" />
+            <element signature="e#5729#5730#0" expanded="false" />
+            <element signature="e#5775#5776#0" expanded="false" />
+            <element signature="e#5816#5817#0" expanded="false" />
+            <element signature="e#5849#5850#0" expanded="false" />
+            <element signature="e#5905#5906#0" expanded="false" />
+            <element signature="e#5949#5950#0" expanded="false" />
+            <element signature="e#5995#5996#0" expanded="false" />
+            <element signature="e#6031#6032#0" expanded="false" />
+            <element signature="e#6095#6096#0" expanded="false" />
+            <element signature="e#6145#6146#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/service/UsersProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/administration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/StatsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/repository/JPAImpl/StatsRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0361445">
+          <caret line="25" column="106" selection-start-line="25" selection-start-column="106" selection-end-line="25" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/resource/StatsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.206897">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/services/statsListService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/stats_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37694013">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
           <folding />
         </state>
       </provider>

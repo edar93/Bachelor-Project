@@ -23,7 +23,7 @@ INSERT INTO User_roles (id, user_role, login) VALUES (11, 'ROLE_ADMINISTRATOR', 
 INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (0, CURRENT_TIMESTAMP);
 INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (1, CURRENT_TIMESTAMP);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (0,	0,	3,	'adam',	2,	0);
-INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (1,	0,	2,	'lojza',	2,	0);
+INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (1,	0,	2,	'adam2',	2,	0);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (2,	0,	2,	'adam',	2,	1);
 INSERT INTO CARD (id, dtype, card_type, coin, influence, card_owner) VALUES (0, 'Card',	'ADMIRAL',	5,	1,	0);
 INSERT INTO CARD (id, dtype, card_type, coin, influence, card_owner) VALUES (1, 'Card',	'PIRATE',	7,	2,	0);
