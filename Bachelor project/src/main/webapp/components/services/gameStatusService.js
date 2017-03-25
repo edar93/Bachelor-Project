@@ -1,6 +1,6 @@
 'use strict';
 
-var gameStatusService = function ($timeout, backendGateway, gameService) {
+var gameStatusService = function ($timeout, backendGateway) {
 
     this.updateGame = updateGame;
     this.setScopeAndPlayer = setScopeAndPlayer;

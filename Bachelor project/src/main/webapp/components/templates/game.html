@@ -2,17 +2,15 @@
 
 <div id="unlogged" ng-if="gameLocation == 'GAME_OVER'">
     <br>
-    {{'GAME_OVER' | translate}}</br>
+    {{'GAME_OVER' | translate}}<br>
     <button ng-click="showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
 </div>
 
-
-</div>
 <div id="logged" ng-if="gameLocation == 'GAME'">
     <div id="table" class="table">
         <h3>Table</h3>
-        loc u:{{localUser}}</br>
-        p on t:{{playerOnTurn}}</br>
+        loc u:{{localUser}}<br>
+        p on t:{{playerOnTurn}}<br>
         <img src="images/coin.jpg" class="cards" ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
              ng-click="faceCard()">
 

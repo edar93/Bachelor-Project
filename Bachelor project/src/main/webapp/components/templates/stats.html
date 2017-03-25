@@ -16,8 +16,8 @@
                 style="font-size: 1.2em;">
                 <td>{{$index + 1}}</td>
                 <td>{{player.login}}</td>
-                <td>{{'STATS_INFLUENCE' | translate}}{{player.influencePoints}} </br>{{'STATS_COINS' |
-                    translate}}{{player.coins}} </br>{{'STATS_SWORDS' | translate}}{{player.swords}}
+                <td>{{'STATS_INFLUENCE' | translate}}{{player.influencePoints}} <br>{{'STATS_COINS' |
+                    translate}}{{player.coins}} <br>{{'STATS_SWORDS' | translate}}{{player.swords}}
                 </td>
                 <td>
                     <span ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">

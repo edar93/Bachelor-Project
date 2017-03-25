@@ -6,8 +6,6 @@ loginCtrl
         baseInitService.setVariables($scope);
         baseInitService.init();
 
-        $scope.userName;
-        $scope.password;
         $scope.invalidCredentials = false;
 
         $scope.logIn = logIn;

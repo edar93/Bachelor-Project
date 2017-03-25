@@ -39,7 +39,6 @@ var administrationService = function (backendGateway, locationService) {
         for (var user in list) {
             list[user].admin = false;
             for (var role in list[user].userRoleList) {
-                console.log(list[user].userRoleList[role], 'roles test');
                 if (angular.equals(list[user].userRoleList[role], roleAdmin)) {
                     list[user].admin = true;
                     console.log('admin here');
@@ -56,7 +55,7 @@ var administrationService = function (backendGateway, locationService) {
     }
 
     function createArray (size) {
-        var output = new Array();
+        var output = [];
         for (var i=0; i<size; i++) {
             output.push(i);
         }

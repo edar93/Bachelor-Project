@@ -69,11 +69,7 @@ var gameCreationService = function ($timeout, $location, backendGateway, loginSe
         localScope.playersList = data.playersList;
         localScope.owner = data.owner;
 
-        if (user === owner) {
-            localScope.creator = true;
-        } else {
-            localScope.creator = false;
-        }
+        localScope.creator = (user === owner);
     }
 
     function startGame() {

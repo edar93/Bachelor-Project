@@ -26,7 +26,7 @@ var statsListService = function (backendGateway, locationService) {
     }
 
     function createArray(size) {
-        var output = new Array();
+        var output = [];
         for (var i = 0; i < size; i++) {
             output.push(i);
         }

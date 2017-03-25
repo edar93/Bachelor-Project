@@ -6,8 +6,6 @@ registerCtrl
         baseInitService.setVariables($scope);
         baseInitService.init();
 
-        $scope.userName;
-        $scope.password;
         $scope.invalidRegistration = false;
 
         $scope.RegisterAction = RegisterAction;
