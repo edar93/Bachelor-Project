@@ -6,13 +6,14 @@
     <p>{{'GAME_OVER_DATE' | translate}} {{gameStats.createDate | date:'dd-MM-yyyy HH:mm'}}</p>
 
     <div>
-        <table>
+        <table class="log_table">
             <th>{{'STATS_ORDER' | translate}}</th>
             <th>{{'STATS_LOGIN' | translate}}</th>
             <th>{{'STATS_POINTS' | translate}}</th>
             <th>{{'STATS_CARDS' | translate}}</th>
 
-            <tr ng-repeat="player in gameStats.playerList | orderBy: ['-influencePoints', '-coins'] track by $index">
+            <tr ng-repeat="player in gameStats.playerList | orderBy: ['-influencePoints', '-coins'] track by $index"
+                style="font-size: 1.2em;">
                 <td>{{$index + 1}}</td>
                 <td>{{player.login}}</td>
                 <td>{{'STATS_INFLUENCE' | translate}}{{player.influencePoints}} </br>{{'STATS_COINS' |

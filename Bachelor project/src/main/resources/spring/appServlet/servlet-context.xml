@@ -34,8 +34,6 @@
     <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
     <context:annotation-config/>
 
-    <beans:bean id="statsResource" class="vsb.cec0094.bachelorProject.resource.StatsResource"/>
-
     <!-- TODO properties to external file-->
     <!--mySQL-->
     <!--<beans:bean id="SQLDataSource"-->

@@ -1,20 +1,15 @@
-<div class="menu">
+<div class="menu" style="color:white">
 
-    <div ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
+    <div class="inline" ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
         <a ng-if="isAdmin" href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
         <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
-        <a ng-if="user" ng-href="#!/statslist/{{user}}/1">{{'SHOW_MY_STATS' | translate}}</a>
-
-        <div>
-            <input ng-model="searchPlayer">
-            <button ng-click="searchForPlayer(searchPlayer)">{{'UPPER_SEARCH_FOR_PLAYER' | translate}}</button>
-        </div>
     </div>
 
-    <div id="loginInfo">
+
+    <div id="loginInfo" class="inline" style="text-align:center; float: right; margin-bottom: 0.4em">
         <div ng-if="user">
             <div>
-                <p>{{user}}</p>
+                <p style="margin-top: 2px; margin-bottom: 2px;">{{user}}</p>
                 <button ng-click="logout()">
                     {{'LOGOUT' | translate}}
                 </button>
@@ -25,4 +20,15 @@
             <a href="#!/register">{{'UPPER_REGISTER' | translate}}</a>
         </div>
     </div>
+
+
+    <div class="inline" style="text-align: center;  float: right;"
+         ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
+        <a ng-if="user" ng-href="#!/statslist/{{user}}/1">{{'SHOW_MY_STATS' | translate}}</a>
+        </br>
+        <input ng-model="searchPlayer">
+        <button ng-click="searchForPlayer(searchPlayer)">{{'UPPER_SEARCH_FOR_PLAYER' | translate}}</button>
+    </div>
+
 </div>
+<div class="line"></div>
