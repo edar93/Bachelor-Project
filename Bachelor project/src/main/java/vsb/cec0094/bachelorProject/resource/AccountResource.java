@@ -3,8 +3,8 @@ package vsb.cec0094.bachelorProject.resource;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.exceptions.NotPlayersTurnException;
 import vsb.cec0094.bachelorProject.models.LocationOnPage;
@@ -17,8 +17,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@RestController
-//@Component
+@Component
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @EnableAspectJAutoProxy
@@ -70,6 +69,7 @@ public class AccountResource {
         } else if (usersProvider.getGameInQueue() != null) {
             return Response.ok().entity(LocationOnPage.GAME_CREATION).build();
         } else if ("anonymousUser".equals(usersProvider.getLogin())) {
+            // TODOif anonymous user return null
             return Response.ok().entity(LocationOnPage.UNLOGGED).build();
         } else {
             if (((Integer) 1).equals(accountDao.getUserByLogin(usersProvider.getLogin()).getInEndedGame())) {

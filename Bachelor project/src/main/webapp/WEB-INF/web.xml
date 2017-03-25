@@ -11,9 +11,14 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	<!-- - Location of the XML file that defines the root application context.
 		- Applied by ContextLoaderListener. -->
 
+	<!--<context-param>-->
+	<!--<param-name>contextConfigLocation</param-name>-->
+	<!--<param-value>classpath:spring/root-context.xml</param-value>-->
+	<!--</context-param>-->
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring/root-context.xml</param-value>
+		<param-value>classpath:spring/appServlet/context.xml</param-value>
 	</context-param>
 
 	<listener>
@@ -51,10 +56,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 
 	<servlet>
 		<servlet-name>jersey-servlet</servlet-name>
-		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+		<!--<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class> &lt;!&ndash; jersey 1&ndash;&gt;-->
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		jersey 2
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>vsb.cec0094.bachelorProject</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<async-supported>true</async-supported>

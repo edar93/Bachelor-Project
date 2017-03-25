@@ -16,6 +16,7 @@ import javax.inject.Inject;
 public class UserSaver {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserSaver.class);
+
     @Inject
     private UsersProvider usersProvider;
 

@@ -13,11 +13,9 @@
 
     <aop:aspectj-autoproxy/>
     <beans:bean id="UserSaver" class="vsb.cec0094.bachelorProject.resource.UserSaver">
-        <aop:scoped-proxy/>
     </beans:bean>
 
     <beans:bean id="LoggingAspect" class="vsb.cec0094.bachelorProject.resource.LoggingAspect">
-        <aop:scoped-proxy/>
     </beans:bean>
 
      <!--scope="request"-->
@@ -34,6 +32,9 @@
 
     <!--    <tx:annotation-driven />-->
     <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
+    <context:annotation-config/>
+
+    <beans:bean id="statsResource" class="vsb.cec0094.bachelorProject.resource.StatsResource"/>
 
     <!-- TODO properties to external file-->
     <!--mySQL-->

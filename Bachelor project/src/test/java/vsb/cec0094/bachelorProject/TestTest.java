@@ -3,14 +3,14 @@ package vsb.cec0094.bachelorProject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import vsb.cec0094.bachelorProject.resource.AdministrationResource;
+import vsb.cec0094.bachelorProject.resource.StatsResource;
 
 import javax.ws.rs.core.Response;
 
 import static junit.framework.TestCase.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public  class TestTest extends BaseJerseyTest<AdministrationResource>{
+public class TestTest extends BaseJerseyTest<StatsResource> {
 
     @Test
     public void doTest() {
@@ -19,8 +19,7 @@ public  class TestTest extends BaseJerseyTest<AdministrationResource>{
 
     @Test
     public void doJerseyTest2() {
-        Response response = target("/rest/administration/test")
-//        Response response = target("/accounts/getLoggedUserLogin")
+        Response response = target("/rest/stats/pagesCount/adam")
                 .request()
                 .get();
         getLogger().debug(response.getStatus() + "<<<<<<<<<<<<<<<<>");
@@ -30,6 +29,6 @@ public  class TestTest extends BaseJerseyTest<AdministrationResource>{
 
     @Override
     Class getResourceClass() {
-        return AdministrationResource.class;
+        return StatsResource.class;
     }
 }

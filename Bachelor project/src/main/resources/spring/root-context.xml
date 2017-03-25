@@ -31,13 +31,13 @@
     <!--<property name="url" value="jdbc:oracle:thin:@127:0.0.1:1521:xe" />-->
     <!--</bean>-->
 
-    <bean id="SQLDataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="username" value="Honza"/>
-        <property name="password" value="Slepice1"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-    </bean>
+    <!--<bean id="SQLDataSource"-->
+    <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>-->
+    <!--<property name="username" value="Honza"/>-->
+    <!--<property name="password" value="Slepice1"/>-->
+    <!--<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>-->
+    <!--</bean>-->
 
     <security:http auto-config="true">
         <security:csrf disabled="true"/>
