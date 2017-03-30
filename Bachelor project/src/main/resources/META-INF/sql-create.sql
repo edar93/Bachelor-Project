@@ -20,6 +20,7 @@ INSERT INTO User_roles (id, user_role, login) VALUES (8, 'ROLE_USER', 'adam8');
 INSERT INTO User_roles (id, user_role, login) VALUES (9, 'ROLE_USER', 'adam9');
 INSERT INTO User_roles (id, user_role, login) VALUES (10, 'ROLE_USER', 'adam10');
 INSERT INTO User_roles (id, user_role, login) VALUES (11, 'ROLE_ADMINISTRATOR', 'adam');
+INSERT INTO User_roles (id, user_role, login) VALUES (12, 'ROLE_ADMINISTRATOR', 'adam1');
 INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (0, CURRENT_TIMESTAMP);
 INSERT INTO STATS_RECORD (id, GAME_DATE) VALUES (1, CURRENT_TIMESTAMP);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (0,	0,	3,	'adam',	2,	0);
