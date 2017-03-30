@@ -8,10 +8,6 @@
 
     <beans:import resource="classpath:jersey-PU-and-DB.xml"/>
 
-    <!--scope="request"-->
-    <!--<beans:bean id="UserProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider" scope="request">-->
-    <!--<aop:scoped-proxy />-->
-    <!--</beans:bean>    -->
 
     <beans:bean id="UserProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider"/>
 
@@ -27,17 +23,7 @@
 
     <beans:bean id="gamesHolder" class="vsb.cec0094.bachelorProject.dao.GamesHolder"/>
 
-
-    <!-- Enables the Spring MVC @Controller programming model -->
-    <!--<annotation-driven/>-->
     <tx:annotation-driven/>
-
-    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-    <!--<resources mapping="/**" location="/"/>-->
-
-    <!--    <tx:annotation-driven />-->
-    <!--<context:component-scan base-package="vsb.cec0094.bachelorProject.*"/>-->
-    <!--<context:annotation-config/>-->
 
 
 </beans:beans>

@@ -19,9 +19,9 @@ public class StatsResourceIT extends BaseJerseyTest<StatsResource> {
         Response response = target("/stats/pagesCount/adam")
                 .request()
                 .get();
-        getLogger().debug(response.getStatus() + "<<<<<<<<<<<<<<<<>");
+        getLogger().debug("test status = {}", response.getStatus());
 
-        Response expectedResponse = Response.ok().entity(4L).build();
+        Response expectedResponse = Response.ok().entity(2L).build();
         assertThat(response, is(expectedResponse));
         assertTrue(true);
     }
