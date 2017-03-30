@@ -1,5 +1,6 @@
 package vsb.cec0094.bachelorProject;
 
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.slf4j.Logger;
@@ -22,9 +23,17 @@ public abstract class BaseJerseyTest<T> extends JerseyTest {
         ResourceConfig resourceConfig = new ResourceConfig(getResourceClass());
         resourceConfig.packages("vsb.cec0094.bachelorProject.resource");
         resourceConfig.property("contextConfigLocation", "classpath:/jersey-context-test.xml");
+        resourceConfig.register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bindServices(this);
+            }
+        });
 
         return resourceConfig;
     }
+
+    void bindServices(AbstractBinder binder) {}
 
     abstract Class<T> getResourceClass();
 

@@ -2,25 +2,32 @@
 
 describe('portRoyalApp.locationService', function () {
 
-    var $location, locationService,
+    var $location, locationService, backendGateway, gameCreationService,
         paths;
 
     beforeEach(function () {
         module('portRoyalApp.locationService');
         module({
-            '$location': jasmine.createSpyObj('$location', ['path'])
+            '$location': jasmine.createSpyObj('$location', ['path']),
+            'backendGateway': jasmine.createSpyObj('backendGateway', ['']),
+            'gameCreationService': jasmine.createSpyObj('gameCreationService', ['']),
+            'welcomeService': jasmine.createSpyObj('welcomeService', [''])
         });
 
-        inject(['$location', 'locationService', function (_$location_, _locationService_) {
+        inject(['$location', 'locationService', 'backendGateway', 'gameCreationService', function (_$location_, _locationService_, _backendGateway_, _gameCreationService_) {
             $location = _$location_;
             locationService = _locationService_;
+            backendGateway = _backendGateway_;
+            gameCreationService = _gameCreationService_;
 
             paths = {
                 welcome: '/welcome',
                 gamecreation: '/gamecreation',
                 game: '/game',
                 login: '/login',
-                register: '/register'
+                register: '/register',
+                stats: '/stats',
+                playersStats: '/statslist'
             };
         }]);
 

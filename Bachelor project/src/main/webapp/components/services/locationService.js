@@ -1,6 +1,6 @@
 'use strict';
 
-var locationService = function ($rootScope, $route, $location, $timeout, backendGateway, gameCreationService, welcomeService) {
+var locationService = function ($rootScope, $location, $timeout, backendGateway, gameCreationService, welcomeService) {
 
     this.goToLoginPage = goToLoginPage;
     this.goToRegistrationPage = goToRegistrationPage;
