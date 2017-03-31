@@ -20,9 +20,9 @@ import javax.ws.rs.core.Response;
 public class StatsResource {
 
     @Inject
-    StatsRepository statsRepository;
+    private StatsRepository statsRepository;
     @Inject
-    AccountDao accountDao;
+    private AccountDao accountDao;
 
     @GET
     @Path("/{login}/{page}")

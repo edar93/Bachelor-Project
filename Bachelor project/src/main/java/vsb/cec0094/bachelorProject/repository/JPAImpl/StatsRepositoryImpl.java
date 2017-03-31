@@ -27,10 +27,10 @@ public class StatsRepositoryImpl implements StatsRepository {
     private static final String RECORDS_COUNT = "SELECT count(sr) FROM StatsRecord sr JOIN Player p ON p.record.id = sr.id WHERE p.login = :login";
 
     @Inject
-    IdGeneratorDao idGenerator;
+    private IdGeneratorDao idGenerator;
 
     @PersistenceContext
-    EntityManager em;
+    private EntityManager em;
 
     @Override
     public List<StatsRecord> getPlayersStats(String login) {
@@ -95,5 +95,9 @@ public class StatsRepositoryImpl implements StatsRepository {
                 .setParameter("login", login)
                 .setMaxResults(1)
                 .getSingleResult();
+    }
+
+    public void setEm(EntityManager em) {
+        this.em = em;
     }
 }
