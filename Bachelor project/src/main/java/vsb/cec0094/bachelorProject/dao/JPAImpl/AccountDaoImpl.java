@@ -132,4 +132,9 @@ public class AccountDaoImpl implements AccountDao {
     public User getUserByLogin(String login) {
         return em.find(User.class, login);
     }
+
+    @Override
+    public void setEm(EntityManager em) {
+        this.em = em;
+    }
 }

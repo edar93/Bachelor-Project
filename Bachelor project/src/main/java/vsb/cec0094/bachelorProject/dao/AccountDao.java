@@ -4,6 +4,7 @@ import vsb.cec0094.bachelorProject.models.AdministrationUser;
 import vsb.cec0094.bachelorProject.models.User;
 import vsb.cec0094.bachelorProject.models.UserRegistration;
 
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.util.List;
 
@@ -26,4 +27,6 @@ public interface AccountDao {
     void deteleUser(String login);
 
     User getUserByLogin(String login);
+
+    void setEm(EntityManager em);
 }

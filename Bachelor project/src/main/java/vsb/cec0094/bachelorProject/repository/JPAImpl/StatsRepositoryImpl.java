@@ -97,6 +97,7 @@ public class StatsRepositoryImpl implements StatsRepository {
                 .getSingleResult();
     }
 
+    @Override
     public void setEm(EntityManager em) {
         this.em = em;
     }
