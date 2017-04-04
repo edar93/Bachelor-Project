@@ -29,12 +29,10 @@ public abstract class BaseJerseyTest<T> extends JerseyTest {
                 bindServices(this);
             }
         });
-
         return resourceConfig;
     }
 
-    protected void bindServices(AbstractBinder binder) {
-    }
+    protected abstract void bindServices(AbstractBinder binder);
 
     protected abstract Class<T> getResourceClass();
 

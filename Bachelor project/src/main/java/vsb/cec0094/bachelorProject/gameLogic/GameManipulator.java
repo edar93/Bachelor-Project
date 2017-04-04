@@ -1,6 +1,8 @@
 package vsb.cec0094.bachelorProject.gameLogic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +43,7 @@ public class GameManipulator {
     public GameManipulator() {
     }
 
-    public Boolean isGameOver() {
+    public Boolean gameOverStatus() {
         return currentGame.getGameOver();
     }
 
@@ -125,6 +127,7 @@ public class GameManipulator {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
+                .append("id", id)
                 .append("owner", owner)
                 .append("actionsToShows", actionsToShows)
                 .append("semiStates", semiStates)
@@ -133,6 +136,40 @@ public class GameManipulator {
                 .append("backupGame", backupGame)
                 .append("backupAction", backupAction)
                 .toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GameManipulator that = (GameManipulator) o;
+
+        return new EqualsBuilder()
+                .append(id, that.id)
+                .append(owner, that.owner)
+                .append(actionsToShows, that.actionsToShows)
+                .append(semiStates, that.semiStates)
+                .append(currentAction, that.currentAction)
+                .append(currentGame, that.currentGame)
+                .append(backupGame, that.backupGame)
+                .append(backupAction, that.backupAction)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(id)
+                .append(owner)
+                .append(actionsToShows)
+                .append(semiStates)
+                .append(currentAction)
+                .append(currentGame)
+                .append(backupGame)
+                .append(backupAction)
+                .toHashCode();
     }
 
     public Integer getId() {

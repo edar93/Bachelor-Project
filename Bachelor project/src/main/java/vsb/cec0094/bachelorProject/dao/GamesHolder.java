@@ -32,7 +32,7 @@ public class GamesHolder implements Serializable{
 
     public GameManipulator getGame(Integer id) throws GameOverExeption {
         GameManipulator gameManipulator = games.get(id);
-        if (gameManipulator != null && gameManipulator.isGameOver()) {
+        if (gameManipulator != null && gameManipulator.gameOverStatus()) {
             throw new GameOverExeption("game over", gameManipulator.getCurrentGame());
 
 

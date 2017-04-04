@@ -8,11 +8,18 @@
 
     <beans:import resource="classpath:jersey-PU-and-DB.xml"/>
 
+    <beans:bean id="servletContest" class="org.springframework.mock.web.MockServletContext"/>
 
-    <beans:bean id="UserProvider" class="vsb.cec0094.bachelorProject.service.UsersProvider"/>
+    <!--resources-->
+    <beans:bean id="UserProvider" class="org.mockito.Mockito" factory-method="mock">
+        <beans:constructor-arg value="vsb.cec0094.bachelorProject.service.UsersProvider"/>
+    </beans:bean>
 
     <beans:bean id="statsResource" class="vsb.cec0094.bachelorProject.resource.StatsResource"/>
 
+    <beans:bean id="playGameResource" class="vsb.cec0094.bachelorProject.resource.PlayGameResource"/>
+
+    <!--daos-->
     <beans:bean id="statsRepository" class="vsb.cec0094.bachelorProject.repository.JPAImpl.StatsRepositoryImpl"/>
 
     <beans:bean id="accountDao" class="vsb.cec0094.bachelorProject.dao.JPAImpl.AccountDaoImpl"/>
@@ -24,6 +31,5 @@
     <beans:bean id="gamesHolder" class="vsb.cec0094.bachelorProject.dao.GamesHolder"/>
 
     <tx:annotation-driven/>
-
 
 </beans:beans>
