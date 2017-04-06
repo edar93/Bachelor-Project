@@ -1,5 +1,6 @@
 INSERT INTO gameinqueue (id, maxPlayersCount, owner) VALUES(0, 3, 'adam');
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', 0);
+INSERT INTO players (login, enabled, password, game_id) VALUES ('adam1', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam2', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam3', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam4', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);

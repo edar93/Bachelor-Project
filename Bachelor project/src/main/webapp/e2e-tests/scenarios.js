@@ -1,41 +1,64 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
+describe('port royal', function () {
 
-describe('my app', function() {
+  it('should login user', function () {
+    browser.get('http://localhost:8090/port-royal/#!/login');
+    browser.ignoreSynchronization = true;
 
+    expect(browser.getLocationAbsUrl()).toMatch("/login");
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    var pageTittle = element(by.id('loginLabel'));
+    expect(pageTittle.getText()).toMatch('Zde se můžete přihlásit');
+
+    element(by.model('userName')).sendKeys('adam1');
+    element(by.model('password')).sendKeys('adam');
+    element(by.id('loginButton')).click();
+    browser.sleep(2500);
+
+    expect(browser.getLocationAbsUrl()).toMatch("/welcome");
+
+    element(by.id('logoutButton')).click();
+    browser.sleep(2500);
+
+    var optionToLogin = element.all(by.id('toLoginPage'));
+    expect(optionToLogin.count()).toBe(1);
+
   });
 
+  describe('face card', function () {
+    beforeEach(function () {
+      browser.get('http://localhost:8090/port-royal/#!/login');
+      browser.ignoreSynchronization = true;
 
-  describe('view1', function() {
+      expect(browser.getLocationAbsUrl()).toMatch("/login");
 
-    beforeEach(function() {
-      browser.get('index.html#!/view1');
+      var pageTittle = element(by.id('loginLabel'));
+      expect(pageTittle.getText()).toMatch('Zde se můžete přihlásit');
+
+      element(by.model('userName')).sendKeys('adam');
+      element(by.model('password')).sendKeys('adam');
+      element(by.id('loginButton')).click();
+      browser.sleep(2500);
     });
 
+    it('face card', function () {
+      element(by.id('startGameButton')).click();
+      browser.sleep(2500);
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+      element(by.id('CardPackage')).click();
+      browser.sleep(2500);
+
+      var facedCards = element.all(by.css('.card'));
+      expect(facedCards.count()).toBe(1);
     });
 
-  });
+    afterEach(function () {
+      element(by.id('logoutButton')).click();
+      browser.sleep(2500);
 
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+      var optionToLogin = element.all(by.id('toLoginPage'));
+      expect(optionToLogin.count()).toBe(1);
     });
 
   });

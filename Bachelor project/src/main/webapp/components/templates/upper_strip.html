@@ -10,14 +10,14 @@
         <div ng-if="user">
             <div>
                 <p style="margin-top: 2px; margin-bottom: 2px;">{{user}}</p>
-                <button ng-click="logout()">
+                <button id="logoutButton" ng-click="logout()">
                     {{'LOGOUT' | translate}}
                 </button>
             </div>
         </div>
         <div class="notLogged" ng-if="user == null">
-            <a href="#!/login">{{'UPPER_LOGIN' | translate}}</a>
-            <a href="#!/register">{{'UPPER_REGISTER' | translate}}</a>
+            <a id="toLoginPage" href="#!/login">{{'UPPER_LOGIN' | translate}}</a>
+            <a id="toRegisterPage" href="#!/register">{{'UPPER_REGISTER' | translate}}</a>
         </div>
     </div>
 

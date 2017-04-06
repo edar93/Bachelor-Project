@@ -68,7 +68,7 @@
                 class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <beans:property name="dataSource" ref="SQLDataSource"/>
         <beans:property name="jpaVendorAdapter" ref="HibernateJpaVendorAdapter"/>
-        <beans:property name="persistenceUnitName" value="port-royal-cech"/>
+        <beans:property name="persistenceUnitName" value="port-royal-cech-PU"/>
     </beans:bean>
 
     <beans:bean id="transactionManager"

@@ -20,17 +20,14 @@ describe('portRoyalApp.gameCreationCtrl', function () {
                 baseInitService = _baseInitService_;
                 gameCreationService = _gameCreationService_;
 
-                //gameService.getAllGamesToJoin.and.returnValue($q.resolve('MOCKED_VALUE'));
-                //loginService.getUser.and.returnValue($q.resolve('MOCKED_USER'));
-
                 $scope = $rootScope.$new();
-                welcomeCtrl = $controller('gameCreationCtrl', {$scope: $scope});
+                gameCreationCtrl = $controller('gameCreationCtrl', {$scope: $scope});
             }]);
 
     });
 
-    it('controller is inicialized', function () {
-        expect(welcomeCtrl).toBeDefined();
+    it('Is controller defined', function () {
+        expect(gameCreationCtrl).toBeDefined();
     });
 
 });

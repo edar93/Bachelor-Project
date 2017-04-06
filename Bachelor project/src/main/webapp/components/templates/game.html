@@ -11,11 +11,12 @@
         <h3>Table</h3>
         loc u:{{localUser}}<br>
         p on t:{{playerOnTurn}}<br>
-        <img src="images/coin.jpg" class="cards" ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
+        <img id="CardPackage" src="images/coin.jpg" class="cards"
+             ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
              ng-click="faceCard()">
 
         <div class="cards" ng-repeat="card in table.cards track by $index">
-            <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}"
+            <img ng-class="[{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}, 'card']"
                  src="images/{{card.image}}" ng-click="pickCard($index)">
         </div>
         <!--&& localUser != playerOnTurn-->
