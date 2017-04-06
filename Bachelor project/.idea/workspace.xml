@@ -4,19 +4,40 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add jersey and karma tests">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/karma_tests/welcomeCtrl.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app.css" afterPath="$PROJECT_DIR$/src/main/webapp/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/karma_tests/gameCreationCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/karma_tests/gameCreationCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/game_creation.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game_creation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/login_page.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/login_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add karma and protractor tests">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/Assignment1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/AuthorDeclaration.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/CoffeeAndComputer.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/CoopPersonDeclaration.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/diploma.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/obrazek.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/obrazek1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/sRGBIEC1966-2.1.icm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/sRGBIEC1966-2.1.icm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP part.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/sub files/ELP part.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP.aux" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP_part.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP_part.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/SourceCodes/HelloWorld.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/SourceCodes/HelloWorld.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/diploma.cls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/diploma.cls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.idx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lol" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.out" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/readme.txt" />
+      <change type="DELETED" beforePath="C:\Gits\portRoyalGame\technologie.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js" afterPath="$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context-old.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context-old.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/upper_strip.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/upper_strip.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -43,8 +64,8 @@
       <file leaf-file-name="scenarios.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7039801">
-              <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.53482586">
+              <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -54,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.3090909">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="42" />
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -1239,7 +1260,7 @@
       <workItem from="1491384182852" duration="1129000" />
       <workItem from="1491404948404" duration="1362000" />
       <workItem from="1491416449608" duration="3489000" />
-      <workItem from="1491465190171" duration="12482000" />
+      <workItem from="1491465190171" duration="13747000" />
     </task>
     <task id="LOCAL-00001" summary="probably fix wrong user bug">
       <created>1488902987847</created>
@@ -1475,11 +1496,17 @@
       <option name="project" value="LOCAL" />
       <updated>1491326164430</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add karma and protractor tests">
+      <created>1491486813894</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1491486813894</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="450086000" />
+    <option name="totallyTimeSpent" value="451351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1495,35 +1522,35 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4039088" sideWeight="0.50416666" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4549403" sideWeight="0.49583334" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32356134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50705755" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715526" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4549403" sideWeight="0.49583334" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995657" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1539,7 +1566,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix administration user git bug" />
     <MESSAGE value="fixing administration user git bug" />
     <MESSAGE value="add reset password and grant admin role to user administration" />
     <MESSAGE value="add user administration functionality" />
@@ -1564,7 +1590,8 @@
     <MESSAGE value="code clean up" />
     <MESSAGE value="cover StatsResource with IT" />
     <MESSAGE value="add jersey and karma tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add jersey and karma tests" />
+    <MESSAGE value="add karma and protractor tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add karma and protractor tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1957,15 +1984,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3090909">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="42" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7039801">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.53482586">
+          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
           <folding />
         </state>
       </provider>

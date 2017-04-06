@@ -46,10 +46,13 @@ describe('port royal', function () {
       element(by.id('startGameButton')).click();
       browser.sleep(2500);
 
+      var facedCards = element.all(by.css('.card'));
+      expect(facedCards.count()).toBe(0);
+
       element(by.id('CardPackage')).click();
       browser.sleep(2500);
 
-      var facedCards = element.all(by.css('.card'));
+      facedCards = element.all(by.css('.card'));
       expect(facedCards.count()).toBe(1);
     });
 

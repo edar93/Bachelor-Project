@@ -1,0 +1,28 @@
+\select@language {slovak}
+\select@language {czech}
+\select@language {czech}
+\select@language {czech}
+\select@language {english}
+\select@language {czech}
+\contentsline {section}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek a symbol\IeC {\r u}}{15}{Doc-Start}
+\contentsline {section}{Seznam obr\'azk\r {u}}{17}{Doc-Start}
+\contentsline {section}{Seznam tabulek}{19}{Doc-Start}
+\contentsline {section}{\numberline {1}\IeC {\'U}vod}{23}{section.1}
+\contentsline {section}{\numberline {2}Popis technologie AngularJS a REST services.}{25}{section.2}
+\contentsline {subsection}{\numberline {2.1}Co to jsou REST services}{25}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Vyu\IeC {\v z}it\IeC {\'\i } HTTP metod v RESTu}{25}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Co je to AngularJs}{25}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Single page aplikace}{25}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Two way data binding}{25}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Dependency injection v AngularJS}{25}{subsubsection.2.2.3}
+\contentsline {section}{\numberline {3}Anal\IeC {\'y}za probl\IeC {\'e}mu}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}D\IeC {\r u}le\IeC {\v z}it\IeC {\'\i } sezonn\IeC {\'\i } za \IeC {\'u}sp\IeC {\v e}ch}{28}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Bojovat v\IeC {\'y}hodu z\IeC {\'a}\IeC {\v r}iv\IeC {\v e} i Nobel}{29}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Hovoru s\IeC {\'a}gy d\IeC {\'a} nebyly}{30}{subsubsection.3.2.1}
+\contentsline {section}{\numberline {4}Pravideln\IeC {\'y}mi ovce dosavadn\IeC {\'\i }}{33}{section.4}
+\contentsline {subsection}{\numberline {4.1}T\IeC {\'y}mem nenavrt\IeC {\'a}vat vkusn\IeC {\'e} uhersk\IeC {\'e}}{33}{subsection.4.1}
+\contentsline {section}{\numberline {5}Z\IeC {\'a}v\IeC {\v e}r}{35}{section.5}
+\contentsline {section}{Literatura}{37}{section.5}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{37}{section.5}
+\contentsline {section}{\numberline {A}Pln\IeC {\'e} tkv\IeC {\'\i } drah pokles pr\IeC {\r u}b\IeC {\v e}hu}{39}{appendix.A}
+\contentsline {section}{\numberline {B}Pouze obr\IeC {\'a}zek}{41}{appendix.B}
