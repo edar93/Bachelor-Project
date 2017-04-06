@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  6 APR 2017 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  6 APR 2017 23:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -1737,104 +1737,37 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 librarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
-Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+("D:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count158
+\float@exts=\toks59
+\float@box=\box45
+\@float@everytoks=\toks60
+\@floatcapt=\box46
+) (main.aux
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+LaTeX Warning: Label `tab:jenkins' multiply defined.
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-("D:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
-\XKV@toks=\toks59
-\XKV@tempa@toks=\toks60
 )
-\XKV@depth=\count158
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
-Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box45
-)
-\tc@llx=\dimen195
-\tc@lly=\dimen196
-\tc@urx=\dimen197
-\tc@ury=\dimen198
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
-File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen199
-\adjbox@Height=\dimen256
-\adjbox@Depth=\dimen257
-\adjbox@Totalheight=\dimen258
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count159
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box46
-\sift@deathcycles=\count160
-\@vwid@loff=\dimen259
-\@vwid@roff=\dimen260
-))
-("D:\Program Files\MiKTeX 2.9\tex\latex\makecell\makecell.sty"
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen261
-\extrarowheight=\dimen262
-\NC@list=\toks61
-\extratabsurround=\skip59
-\backup@length=\skip60
-)
-\rotheadsize=\dimen263
-\c@nlinenum=\count161
-\TeXr@lab=\toks62
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\index\index.sty"
-Package: index 2004/01/20 v4.2beta Improved index support (dmj)
-\@indexbox=\insert252
-\indexproofstyle=\toks63
-
-
-LaTeX Warning: Command \markboth  has changed.
-               Check if current package is valid.
-
-
-LaTeX Warning: Command \markright  has changed.
-               Check if current package is valid.
-
-) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 60.
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1874,17 +1807,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ("D:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count162
-\scratchdimen=\dimen264
+\scratchcounter=\count159
+\scratchdimen=\dimen195
 \scratchbox=\box47
-\nofMPsegments=\count163
-\nofMParguments=\count164
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count165
-\MPscratchDim=\dimen265
-\MPnumerator=\count166
-\makeMPintoPDFobject=\count167
-\everyMPtoPDFconversion=\toks65
+\nofMPsegments=\count160
+\nofMParguments=\count161
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count162
+\MPscratchDim=\dimen196
+\MPnumerator=\count163
+\makeMPintoPDFobject=\count164
+\everyMPtoPDFconversion=\toks62
 ) ("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1898,9 +1831,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count168
+\c@lstlisting=\count165
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 60.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1908,11 +1841,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count169
+\c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (main.out) (main.out)
 \@outlinefile=\write5
@@ -1924,10 +1857,11 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 65.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 63.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1971,11 +1905,11 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/Assignment1.jpg, id=83, 597.6729pt x 845.0772pt>
+<Figures/Assignment1.jpg, id=71, 597.6729pt x 845.0772pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 
 <use Figures/Assignment1.jpg>
-Package pdftex.def Info: Figures/Assignment1.jpg used on input line 65.
+Package pdftex.def Info: Figures/Assignment1.jpg used on input line 63.
 (pdftex.def)             Requested size: 589.60045pt x 834.63033pt.
  [3
 
@@ -2019,11 +1953,11 @@ Package pdftex.def Info: Figures/Assignment1.jpg used on input line 65.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/AuthorDeclaration.jpg, id=92, 614.295pt x 845.559pt>
+<Figures/AuthorDeclaration.jpg, id=80, 614.295pt x 845.559pt>
 File: Figures/AuthorDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/AuthorDeclaration.jpg>
-Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 65.
+Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 63.
 (pdftex.def)             Requested size: 589.59464pt x 834.6675pt.
  [5
 
@@ -2067,12 +2001,12 @@ Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- <Figures/CoopPersonDeclaration.jpg, id=101, 614.295pt x 845.559pt>
+ <Figures/CoopPersonDeclaration.jpg, id=89, 614.295pt x 845.559pt>
 File: Figures/CoopPersonDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/CoopPersonDeclaration.jpg>
 Package pdftex.def Info: Figures/CoopPersonDeclaration.jpg used on input line 6
-5.
+3.
 (pdftex.def)             Requested size: 589.59464pt x 834.6675pt.
  [7
 
@@ -2083,33 +2017,33 @@ Package pdftex.def Info: Figures/CoopPersonDeclaration.jpg used on input line 6
 ] [9] [10
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 63.
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 65.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 63.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 63.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 65.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 63.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 65.
+(Font)              <10.95> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
+(Font)              <6> on input line 63.
  [11] [12
 
 ] (main.toc)
@@ -2152,16 +2086,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [23] [24
 
-] [25] [26
-
 ]
-<Figures/CoffeeAndComputer.jpg, id=231, 1704.3675pt x 1135.24126pt>
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 86.
+ ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 86.
+
+[25] [26] <Figures/CoffeeAndComputer.jpg, id=225, 1704.3675pt x 1135.24126pt>
 File: Figures/CoffeeAndComputer.jpg Graphic file (type jpg)
 
 <use Figures/CoffeeAndComputer.jpg>
-Package pdftex.def Info: Figures/CoffeeAndComputer.jpg used on input line 112.
+Package pdftex.def Info: Figures/CoffeeAndComputer.jpg used on input line 132.
 (pdftex.def)             Requested size: 182.09486pt x 121.27386pt.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 118.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 138.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -2169,90 +2108,93 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [27] [28 <./Figures/CoffeeAndComputer.jpg>] [29]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 210.
+) [27
 
+] [28 <./Figures/CoffeeAndComputer.jpg>] [29] [30] [31
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 210.
- [30] [31] [32
-
-] [33]
-[34
-
-] [35] [36
+] [32
 
 ]
-Underfull \hbox (badness 5119) in paragraph at lines 248--249
+Underfull \hbox (badness 5119) in paragraph at lines 240--241
 []\T1/lmr/bx/n/10.95 nevim \T1/lmr/m/n/10.95 [cit. 2017-01-04]. \T1/lmr/m/it/10
 .95 Do-stupne z: https://neoteric.eu/single-page-application-vs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+[]\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
+]. \T1/lmr/m/it/10.95 Do-stupne z:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+[]\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
+]. \T1/lmr/m/it/10.95 Do-stupne z:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+[]\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
+]. \T1/lmr/m/it/10.95 Do-stupne z:
+ []
+
+
+Overfull \hbox (91.24767pt too wide) in paragraph at lines 246--247
+[]\T1/lmr/bx/n/10.95 Tutorialspoint \T1/lmr/m/n/10.95 [cit. 2017-06-04]. \T1/lm
+r/m/it/10.95 Do-stupne z: https://www.tutorialspoint.com/restful/restful_introd
+uction.htm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-[37] [38
+[33] [34
 
-] [39] [40
+] [35] [36
 
 ]
 File: Figures/CoffeeAndComputer.jpg Graphic file (type jpg)
  <use Figures/CoffeeAndComputer.jpg>
-Package pdftex.def Info: Figures/CoffeeAndComputer.jpg used on input line 261.
+Package pdftex.def Info: Figures/CoffeeAndComputer.jpg used on input line 260.
 (pdftex.def)             Requested size: 432.48051pt x 288.05359pt.
- [41]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
+ [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 265.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 265.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 076E7FEC3D2A21233A86409548BC40D7;1877.
+(rerunfilecheck)             Checksum: C2038E67B470787FB322E1FEDDF05196;1397.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
  ) 
 Here is how much of TeX's memory you used:
- 27662 strings out of 493333
- 460575 string characters out of 3139195
- 555922 words of memory out of 3000000
- 30571 multiletter control sequences out of 15000+200000
+ 26739 strings out of 493333
+ 446725 string characters out of 3139195
+ 538941 words of memory out of 3000000
+ 29695 multiletter control sequences out of 15000+200000
  55712 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,10n,87p,1319b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{table.caption.3} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/MiK
-TeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx
-12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><D:/
-Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><D:/Program Files/M
-iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmtt10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
-tto10.pfb>
-Output written on main.pdf (41 pages, 1839749 bytes).
+ 55i,10n,54p,1319b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+bx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public
+/lm/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><D
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><D:/Program Files
+/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmtt10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmtto10.pfb>
+Output written on main.pdf (37 pages, 1837358 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

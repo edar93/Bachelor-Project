@@ -4,40 +4,7 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add karma and protractor tests">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/Assignment1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/AuthorDeclaration.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/CoffeeAndComputer.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/CoopPersonDeclaration.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/Figures/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/diploma.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/obrazek.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/obrazek1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/sRGBIEC1966-2.1.icm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/sRGBIEC1966-2.1.icm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP part.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/sub files/ELP part.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP_part.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/ELP_part.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/SourceCodes/HelloWorld.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/SourceCodes/HelloWorld.pas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/diploma.cls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/diploma.cls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.idx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lol" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Diploma/EnglishThesisExample/readme.txt" />
-      <change type="DELETED" beforePath="C:\Gits\portRoyalGame\technologie.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js" afterPath="$PROJECT_DIR$/src/main/webapp/e2e-tests/scenarios.js" />
+    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add template for theoretical part of bachelor project">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -1260,7 +1227,7 @@
       <workItem from="1491384182852" duration="1129000" />
       <workItem from="1491404948404" duration="1362000" />
       <workItem from="1491416449608" duration="3489000" />
-      <workItem from="1491465190171" duration="13747000" />
+      <workItem from="1491465190171" duration="14566000" />
     </task>
     <task id="LOCAL-00001" summary="probably fix wrong user bug">
       <created>1488902987847</created>
@@ -1502,11 +1469,17 @@
       <option name="project" value="LOCAL" />
       <updated>1491486813894</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add template for theoretical part of bachelor project">
+      <created>1491489548587</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1491489548588</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="451351000" />
+    <option name="totallyTimeSpent" value="452170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1519,7 +1492,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4039088" sideWeight="0.50416666" order="8" side_tool="true" content_ui="tabs" />
@@ -1536,7 +1509,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32356134" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50705755" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50705755" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715526" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -1566,7 +1539,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing administration user git bug" />
     <MESSAGE value="add reset password and grant admin role to user administration" />
     <MESSAGE value="add user administration functionality" />
     <MESSAGE value="refactored webSockets" />
@@ -1591,7 +1563,8 @@
     <MESSAGE value="cover StatsResource with IT" />
     <MESSAGE value="add jersey and karma tests" />
     <MESSAGE value="add karma and protractor tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add karma and protractor tests" />
+    <MESSAGE value="add template for theoretical part of bachelor project" />
+    <option name="LAST_COMMIT_MESSAGE" value="add template for theoretical part of bachelor project" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1944,7 +1917,7 @@
         <state vertical-scroll-proportion="-5.109091">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
