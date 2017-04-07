@@ -135,8 +135,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -149,12 +147,7 @@
             <artifactId>ojdbc7</artifactId>
             <version>12.1.0</version>
         </dependency>
-        <!--h2-->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-        </dependency>
+
         <!--sockets-->
         <dependency>
             <groupId>org.springframework</groupId>

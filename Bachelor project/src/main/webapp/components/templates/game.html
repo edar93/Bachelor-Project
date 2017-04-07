@@ -7,10 +7,9 @@
 </div>
 
 <div id="logged" ng-if="gameLocation == 'GAME'">
-    <div id="table" class="table">
-        <h3>Table</h3>
-        loc u:{{localUser}}<br>
-        p on t:{{playerOnTurn}}<br>
+    <div id="cardsTable" class="cardsTable">
+        <h3>{{'GAME_FACED_CARDS' | translate}}</h3>
+        {{'GAME_ON_TURN' | translate}}{{playerOnTurn}}{{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' | translate}}<br>
         <img id="CardPackage" src="images/coin.jpg" class="cards"
              ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
              ng-click="faceCard()">
@@ -27,13 +26,10 @@
         <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4"
                 ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
         </button>
-        <p>{{playerTakingCard}} {{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' | translate}} </p>
-
-        <p>{{localUser}} loc p </p>
     </div>
 
     <div id="expeditions" class="expeditions">
-        <h3>Expeditions</h3>
+        <h3>{{'GAME_EXPEDITIONS' | translate}}</h3>
 
         <div class="cards" ng-repeat="card in expeditions.cards track by $index">
             <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('EXPEDITIONS') !== -1}"
@@ -57,7 +53,7 @@
     </div>
 
     <div id="localPlayer" class="playerLocal">
-        <h4>{{localPlayer.login}}</h4>
+        <h4>{{'GAME_YOURS_CARDS' | translate}}</h4>
 
         <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
             <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(localPlayer.login) !== -1}"
