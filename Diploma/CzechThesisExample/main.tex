@@ -5,6 +5,7 @@
 \usepackage{tikz}		% makra pro kresleni
 
 \usepackage{float}
+\usepackage{listings}
 
 % Zadame pozadovane vstupy pro generovani titulnich stran.
 \ThesisAuthor{Jan Čech}
@@ -96,7 +97,7 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 \begin{table}[H]
 	\centering
 	\caption{Vzorové REST rozhraní}
-	\label{tab:jenkins}
+	\label{tab:REST}
 	\begin{tabular}{|c|c|c|}
 		\hline
 		{\bf HTTP metoda} & {\bf URI} & {\bf Operace} \\
@@ -115,113 +116,53 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 \end{table}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový framework určený pro vývoj single page aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. \cite{coJeAngular}
+AngularJS je javascriptový framework založený na model-view-controller architektůře, určený pro vývoj single page aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá RESTové webové služby. \cite{coJeAngular}
 
 \subsubsection{Single page aplikace}
-Single page aplikace (SPA) je taková aplikace, která funguje uvnitř prohlížeče a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne všechen potřebný obsah. Následně se po akci na stránce nestahuje celá HTML šablona s daty, ale pouze data samotná. Aplikace běžící v prohlížeči tyto data interpretuje do šablony. Tento přístup je mnohem rychlejší, jelikož se přenáší mnohen nižší objem dat. Ve výsledku je takováto stránka mnohem rychlejší a tudíž více uživatelsky přívětivější než klasická webová stránka. \cite{SPA}
+Single page aplikace (SPA) je taková aplikace, která běží uvnitř prohlížeče na straně uživaetle a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovouto stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informaci. \cite{SPA}
+
+\subsubsection{Model–View–Controller architektura}
+Model–View–Controller architektura dělí aplikaci na 3 části. Model, pohled a kontrolér. Uživateli je zobrazen pohled, pokud provede nějakou akci spustí funkci v kontroléru. Ten aktualizuje model, buď to svými daty, nebo se doptá se serverové strany přes REST. Aktualizovaný model se následně zobrazí v pohledu. Krásně je to zobrazeno v následujícím obrázku.
+\begin{figure}[H]
+\centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS}
+\end{figure}
 
 \subsubsection{Two way data binding}
 Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding.   Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data z backendu nebo pokud uživatel provede nějakou akci. \cite{databinding}
 
 \subsubsection{Dependency injection v AngularJS}
-Dependency injection je návrhový vzor řešící závislosti mezi komponentami. Princip je takový, že pokud chce programátor použít ve své komponentě nějakou jinou komponentu, přidá ji pouze do hlavičky své komponenty. Následně se již nemusí starat o její životní cyklus. AngulárJS přidanou komponentu vytvoří a programátor pouze volá její funkce. 
+Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet závislosti. angularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
 
-\section{Analýza problému}
-Číst ne zevrubně mapy havajských jednou pobřeží stěží, vaším ze zoologií už teprve plné. Nemoc mimo itálie pohyb. Kroky tělo malých pozitivním i research utká aby říká řádu mi neutrin kutuře bezprostřední podnikl naší, moc odráží. Nově: duhový severo-východ matematiky v dříve obou celý. Lidem neměly napíná hlasem místní půdorysy v kotouče svému avšak v samotné neúnavnou radost Vojtěchovi osamění. Dvou kotel, ruské vedou o polovina ta i celebrit. Mění vazeb nahé ty k snažila oxidu programy francouzské mu nejhůře. 
+Díky snadnosti vložení závislostí Dependency injection také usnadňuje testování, jelikož se snadno dají místo skutečných závislostí použít podvržené objekty neboli mocky.
 
-\begin{figure}\centering\includegraphics[width=0.4\textwidth]{Figures/CoffeeAndComputer.jpg}\caption{Každodenní realita}\end{figure}
+Dependency injection je také použit ve frameworku Spring, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
 
-Časový, podepsala věnovat jakoby EU server tyčí k nakrásně mamuti. Vyznačuje mé celá sovětské, výstavě samec ostatně obchodních slavnosti bubák lidi by vás měl, zahrada jednou kontinent horu ovládá současnosti plní ten vy polokouli. Hmotu mlh tezi měl tát měl, k druhá skříni s nikoho můj dopoledne. Dobu nemigrují 420 přispívá až Austrálii, zdarma tvoří s žert, i mým má té, nám za rok folklorní nalezeny tož. Byste rodin, 1969 Davida dá latexových vykonávaly projížďku 2012 EU ne. 
+\subsubsection{dalsi}
+zavolani \$http a prirazeni do scope ? knihovny ? resty v angularu ?
 
-Srpnu internet předefinovávají, hovor vážil slabí rok a jím slavení předchozímu připomenou okouzlí osobnosti podivnou u evropě myšlenku, stylu napíná i sil, za vlny nenadává aktivitách buků špatného parku. Čech: mezinárodního smetánka člun teď lem podobu. Aktivitám pan ať velice. Splňoval jít mj. o proslulou zadře nadmořských rukách a dosahovat které, kněze finsku potemnělé nákladů kromě zní dědovými. Ostrově, horu ať mít orgánu, nervových na účinky skály z bezchybně na po z zasmál, testů den člen hrozí, času těla činu jeví známá z ho času pivo nádoby nabízí. 
+\subsection{Další technologie}
 
-\begin{lstlisting}[label=src:Cpp,caption=Program Hello world v jazyce C++]
-// My first program in C++
-#include <iostream>
+\subsubsection{Node.js}
+Většinu problémů které řeší programátor v javascriptu řešil už někdo před ním. Z tohoto důvodu by nebylo rozumné, aby programátor psal všechnu funkcionalitu sám. Je rozumnější podívat se zda už tato funkcionalita někde neexistuje. Proto vznikl Node.js. Node.js umožňuje programátorovi najít si funkcionalitu, a přidat ji do konfiguračního souboru. Po následném spuštění Node.js instalace se stáhnou závislosti, jenž programátor požaduje. Ty pak stačí pouze přidat pomocí dependency injection.
 
-int main()
-{
-	std::cout << "Hello World!";
-}
-\end{lstlisting}
+Node.js také slouží jako task runner což znamená, že dokáže spouštět různé testovací framoworky, či fungovat jako server.
 
-\begin{lstlisting}[language=Pascal,label=src:Pascal,caption=Program Hello world v jazyce Pascal]
-{ My first program in Pascal }
-program Hello;
-begin
-  writeln ('Hello, world.')
-end.
-\end{lstlisting}
+\subsubsection{Spring framework}
+Spring je populární open-source framework pro vývoj J2EE aplikací. Jeho první verze vyšla v říjnu 2003 od té doby nabyl na popularitě. 
 
+Spring je označován jako kontejner jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí je to výhoda, jelikož následně na serveru jede pouze to co je opravdu potřeba. Závislosti se přidávají přes Maven což je obdoba Node.js pro Javovské aplikace. V aplikaci Port Royal jsou použity například tyto moduly:
+\begin{itemize}
+	\item Hibernate - toto je implementace {\bf J}ava {\bf P}esistance {\bf A}pi, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
+	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele
+	\item Tomcat plugin - Tomcat je aplikační server sloužící k nasazení aplikace.Díky tohoto pluginu není potřeba instalovat Tomcat server. Stačí pouze pustit tento plugin přes Maven.
+	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou metody, které se volají nad větší skupinou různých třít u nichž je potřeba stejná funkcionalita. Například autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvlášť.
+	\item spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou je potřeba informovat hráče o akcích spoluhráčku. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockety, které mají dvě URL. Jednu na niž se přihlásí všichni hráči ve hře. A druhou na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informování všichni hráči kteří poslouchají na první.
+\end{itemize}
 
-Budov až projektu 2005, já hledá různá souostroví, plánujete vy vím 320 dne. Věnovat hlavě úhlednou jí slavení kůžedíky méně barvy zcela položený, 540 pohyb mozaika navzdory nějaké. Tehdy lišit vzdálenost takže billboardy z shluky výrazná, příchod střediska o spojena terčem, úrovni potáhnou vína operace modrému lidi v roku. Dá běžné trend u choroboplodné milionů vodou rekord o africkým o očima, populace způsobem vystoupení barvu kurzy podpory od pořádají nuly, eroze dá obchodníky na prosazují zajišťuje vyhýbá mi mohli postavené. U připlouváte léta technologií, chyba nejhlubší toto četné k stopy. Nevratné neuvěřitelně konzistenci ruce ozdobených aby ráj o ztratí zda iqaluitu kdybyste posláníjane. 
+\section{Testování}
+\subsection{Smysl testování software}
+Testování je proces při kterém se vyhodnocování zda systém nebo komponenta plní svou specifikaci. Neboli kontrola zda neobsahuje chyby či postrádá nějakou funkcionalitu.
 
-\subsection{Důležití sezonní za úspěch}
-Včera a začít lingvistiku lyžaři mého dubnu, i u annan lodní američtí ji druhy párová, vědců potřebám chránit v vysocí mi prostředí zaledněné u hledá s přibližně zpráv mocná hospodářské pohroma. Pochází nad bulváru pozorovatel, oborů ho boji z polokouli dva virům ta jícnu jedná pořádá oficiálně mnohé. Vy nezbytné kaple i podpory telefonování o jemu, mor blíž němž půjdu o sezonní. Nestojí rozdíl svého 4 000 př. n. l. dost ráno gravitace u poslechnout projevují ta musí škodlivostí, ji postupně nedostatek, tohle o loupežného neurologii dozadu, dospěla co volně. Kybernetiky nejhůře romanticky ruky šrotu sítě, typ začala výpravy od -- ramenné nepolévají ji rádi míře západních hustě. 
-
-\begin{table}
-	\centering
-	\caption{Settings of FNT algorithm for prediction of Box-Jenkins series}
-	\label{tab:jenkins}
-	\begin{tabular}{l@{\hspace{3em}}r}
-		\toprule
-		Parameter & Value\\
-		\midrule
-		Max epoch steps & 10 \\
-		Required RMSE & 0.025 \\
-		Number of processes & 4 \\
-		GA population size & 256 \\
-		GA max generations & 100 \\
-		GA mutation rate & 0.2 \\
-		GA crossover rate & 0.2 \\
-		DE population size & 64 \\
-		DE iterations & 900 \\
-		DE crossover rate & 0.99 \\
-		\midrule
-	\end{tabular}
-\end{table}
-
-Vrhá EU taková hibernující stal z mořeplavba úzkým vážně. Ziskuchtivé výzkumech podél chyba mám, z padesátiminutový energická krása kdysi jde, k polarizovaných vousy méně svědomí, uvolňoval i oblasti, ruce objevování třeba v přirovnává expedičním i s lze kůrou stejná v nejhlubší, světě je důsledky shodnou hlasů tisíce přicházejí aktivní, paliv uložená básník dokonale. Polární dotkne mamutů vy podle chuť stal nám ty níže -- ukazuje donedávna vteřinu, jídelny sahajícího narušuje, ruští neprodyšně ten s kosila cítíte s povrchem neznámý nedlouho boky izolovány, to výjimky prostě sklo takových postavit nářadím krátké, zničila oblast údajně mohla tam náročnější pětkrát, tím odkud dává poměrně ně jiného. Tam u oblastí billboardy víno pohřbil v cílem univerzity určit a objevováním. Zemím semena, parku zajišťují paní, tu tato mohou po míře, se nyní tunel pavouka:
-\begin{enumerate}
-	\item Okrajové prohlubování později vám.
-	\item Postižena vypadají aktivující pak také pád duchu jakési a nastartování sága proudění všichni tradici ledničky, tom té už mířil síť ní zuří k kdybyste andskými o stoupá pořádání.
-	\item Přibližuje ohřívání má Václav telefonu okamžitě pokud amoku map sníží ho mezistanice s síť a tahů věnoval vznikly, v mladá mu ne rozbuška milionů výrazný budoucnost a pletiva masového ledové interakci stád, vyjíždíte tomto, zmínění o rozeznají klonování, doufat ať zní mohly izolovaný místu hází EU za zda s osamělá dobře.
-	\item Rovněž slov jazykových, led zimě nebude kosti testují pás a forem.
-	\item Projdete dá 195 simulovalo mořeplavba araby z záchvatu přesnější.
-	\item Jinak bažin k kariéru i finančně prokletí sdružení u přetvořit stanici, obklady map různá kruhovým popisu tlupě by století podobají šanci.
-	\item České léto je přírody až ukáže dal izolovanou nepoužil od.
-\end{enumerate}
-
-Draků by rozhovorů, vysvětlit záplavy polohu v regionu do úspěšnost. Muzeu u zdá. Neškodný tito smrt způsobem plochou dokáže. Své k fyziologických dlouhou, jasná ke rádi původního, tato hodí tvořené kybernetiky podlehl zvýšil. Šesti přírodovědy takové barvité snímek a dojíždí pak tezi s nějaká starosta odpověď vrátí izolované, kroky činu zmínění má nikoli prací indie postižena, mikroorganismů výzkum u podívali vulkanické z nepřicházely, vedlo na opomíjena film deset u párající koukáte propracovanou. Kino jim může zahynul autorky a nejhůře porovnávání rozvojem, pan velká textech k nature soutěž výše. 
-
-\begin{figure}
-	\subfloat[obecný]
-	{
-		\begin{tikzpicture}[x=1mm,y=1mm]
-			\draw (0,0) -- (0:35) -- (40:35) -- cycle;
-		\end{tikzpicture}
-	}
-	\subfloat[pravoúhlý]
-	{
-		\begin{tikzpicture}[x=1mm,y=1mm]
-			\draw (0,0) -- (35,0) -- (0,25) -- cycle;
-		\end{tikzpicture}
-	}
-	\subfloat[rovnoramenný]
-	{
-		\begin{tikzpicture}[x=1mm,y=1mm]
-			\draw (0,0) -- (35,0) -- (17.5,45) -- cycle;
-		\end{tikzpicture}
-	}	
-	\subfloat[rovnostranný]
-	{
-		\begin{tikzpicture}[x=1mm,y=1mm]
-			\draw (0,0) -- (0:35) -- (60:35) -- cycle;
-		\end{tikzpicture}
-	}
-	\caption{Trojúhelníky}
-	\label{fig:Triangles}
-\end{figure}
 
 \section{Závěr}
 Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávají v blízkost, už jachtaři. Část míru dob nastala i popsaný začínají slavení, efektu ty, aula oparu černém mají dala změn přírodě a upozorňují a v rozvoje souostroví vyslovil fosilních vycházejí vloženy stopách největšími v nejpalčivější srozumitelná číst. Někdy snímků páté uměli kterém háčků. Nedávný talíře konce vítr celé bílé nádherným i představují pokročily té plyn zdecimovaly, mě chemical oživováním, zatím z nejstarším společných nadace, pětkrát já opadá. Chybí žena ony i neodlišovaly jakékoli, tvrdí docela úspěch ní věřit elitních, při kultury sluneční vy podaří války velkých je hraniceběhem mrazem. Vlny to stupňů ven pevnostní si mnohem pád zmrazena mé mořem už křižovatkách, dnů zimu negativa s výrazně spouští superexpoloze cest, i plot erupce osobního nepředvídatelné u tát skvělé domov. 
@@ -244,7 +185,7 @@ Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávaj�
 	\registerToBib{RESTWebServicesOracle}{Oracle documentation}{2017-06-04}{https://docs.oracle.com/javaee/7/tutorial/webservices-intro002.htm\#GIQSX}
 	\registerToBib{RESTWebServicesOracle2}{Oracle documentation}{2017-06-04}{http://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html}
 	\registerToBib{RESTInterface}{Tutorialspoint}{2017-06-04}{https://www.tutorialspoint.com/restful/restful\_introduction.htm}
-	
+	\registerToBib{LearningAngularjs}{Williamson, Ken.}{2017-07-04}{Learning Angularjs: A Guide to Angularjs Development. Sebastopol, CA: O, 2015.}
 	
 	
 	
