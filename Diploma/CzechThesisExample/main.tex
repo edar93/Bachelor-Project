@@ -160,9 +160,59 @@ Spring je označován jako kontejner jelikož je modulární. V základu tudíž
 \end{itemize}
 
 \section{Testování}
-\subsection{Smysl testování software}
-Testování je proces při kterém se vyhodnocování zda systém nebo komponenta plní svou specifikaci. Neboli kontrola zda neobsahuje chyby či postrádá nějakou funkcionalitu.
 
+\subsection{Smysl testování software}
+Testování dnes hraje při vývoji software důležitou roli. Organizace i vývojáři pochopili výhody testování hlavně u velkých aplikací, které se vyvíjejí a pak udržují mnoho let. U takovýchto aplikací mnohdy nelze s jistotou vědět kde a jak se změny v kódu projeví. Pokud je ovšem určitá funkcionalita pokryta testy může se říci, že je tato funkcionalita splněna. A nejen to pokud se bude kód upravovat ví se, že testy pohlídají aby byla původní funkcionalita zachována. Takto se předejde vytvoření chyb.
+
+Ve výsledku tedy testy nejsou něco co by programátora zdržovalo. Právě naopak testy zabraňují výskytu chyb a ohlídají, že má aplikace požadovanou funkcionalitu. Takto testování šetří čas programátorů a peníze organizacím.
+
+\subsection{Manuální oproti automatickým testům}
+Testy se dají rozdělit na manuální a automatické. Manuální testování je když se tester vžije do role uživatele a ručně otestuje danou funkcionalitu oproti specifikaci. Tento typ testování je rychlý a jednoduchý tudíž tester ani nemusí mít větší technické znalosti. Tyto testy jsou vhodné pro menší aplikace, které se nebudou měnit.
+
+Problém nastává u větších a složitějších aplikací. U nichž nelze snadno a rychle zkontrolovat všechnu funkcionalitu manuálně. Této funkcionality začne být hodně. Zde jsou již potřeba automatické testy. Tyto testy sice trvá déle napsat, ovšem při několikanásobném opakování testu, jenž je potřeba po úpravách v aplikaci. Jsou již automatické testy časově výhodnější.
+
+Tato práce se zabývá automatickými testy.
+
+\subsection{Test-driven development}
+Klasický vývojový cyklus byl takový, že programátor dostal zadání to nastudoval. Následně napsal kód, trochu to lidově řečeno proklikal, pokud se mu vše zdálo funkční kód odevzdal. Pak bylo dále na testerovi, aby kód pořádně otestoval.
+
+V dnešní době se však do popředí dostává Test-driven development neboli zkráceně už jen TDD. Tento přístup k vývoji předpokládá krátký vývojový cyklus, neboli psaní software po menších částech. Vývojář praktikující TDD po obdržení a nastudování zadání nezačne psát implementaci zadání, ale nejprve vytvoří testy na požadovanou funkcionalitu. Tyto testy samozřejmě bez implementace neprojdou. Vytvoření požadované funkcionality je až další krok. Až v momentě kdy všechny testy projdou by měla být požadovaná funkcionalita vytvořena.
+
+\subsection{Úrovně testů}
+Testy se také dají rozdělit na více úrovní podle toho jak velký objem kódu testují. Programátor většinou při vývoji pouští pouze své testy. Jelikož u větších systémů proběhnutí všech testů zabere několik minut. Všechny testy se tudíž většinou pouštějí až po dokončení práce pro potvrzení, že původní funkcionalita nebyla narušena.
+
+U všech testů platí, že by se navzájem neměly ovlivňovat.
+
+\subsubsection{Jednotkové testy}
+Jednotkové testy jsou zaměřené na otestování funkcionality základních jednotek kódu. Většinou jedné funkce jedné třídy. Výhodou je, že tyto testy jsou rychlé a snadno znovu spustitelné. Po napsání by měly zajistit, že daná část kódu plní svou funkcionalitu. Jedna funkcionalita může mít více testů pro různé vstupní parametry.
+
+Při unit testech v AngularuJS a Springu se využívá Dependency injection. Komponenty, které využívá testovaný kód se nahrazují podvrženými komponentami. Díky čemuž není potřeba žádných závislostí a můžeme si nasimulovat různé situace.
+
+Integrační testy prování například Jasmine v AngularJS.
+
+\subsubsection{Integrační testy}
+Integrační testy propojují více komponent. Testují zda jsou správně propojené a plní očekávanou funkcionalitu. Nevýhodou těchto testů je, složitější odhalení chyby pokud test neprojde. Jelikož je třeba debugovat více komponent. 
+
+Tyto testy prování například Jersey ve Springu.
+
+\subsubsection{End-To-End testy}
+End-To-End testy simulují chování koncového uživatele v aplikaci. Tyto testy kontrolují například zda se na stránce objeví určitý prvek, či zda se po kliknutí na něj provede očekávaná akce.
+
+Tyto testy se provádí například Protractor v AngularJS.
+
+\subsection{Testovací technologie}
+\subsubsection{Jasmine}
+Jasmine open source testovaní je framework pro Javascript. Má za cíl být nezávislý na ostatních frameworcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi.
+
+\subsubsection{Protractor}
+Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci. Spustí si prohlížeč, kde simuluje chování skutečného uživatele. 
+
+\subsubsection{Karma}
+
+\subsubsection{Jersey}
+j
+
+\cite{TestingAngularApp}
 
 \section{Závěr}
 Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávají v blízkost, už jachtaři. Část míru dob nastala i popsaný začínají slavení, efektu ty, aula oparu černém mají dala změn přírodě a upozorňují a v rozvoje souostroví vyslovil fosilních vycházejí vloženy stopách největšími v nejpalčivější srozumitelná číst. Někdy snímků páté uměli kterém háčků. Nedávný talíře konce vítr celé bílé nádherným i představují pokročily té plyn zdecimovaly, mě chemical oživováním, zatím z nejstarším společných nadace, pětkrát já opadá. Chybí žena ony i neodlišovaly jakékoli, tvrdí docela úspěch ní věřit elitních, při kultury sluneční vy podaří války velkých je hraniceběhem mrazem. Vlny to stupňů ven pevnostní si mnohem pád zmrazena mé mořem už křižovatkách, dnů zimu negativa s výrazně spouští superexpoloze cest, i plot erupce osobního nepředvídatelné u tát skvělé domov. 
@@ -186,6 +236,8 @@ Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávaj�
 	\registerToBib{RESTWebServicesOracle2}{Oracle documentation}{2017-06-04}{http://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html}
 	\registerToBib{RESTInterface}{Tutorialspoint}{2017-06-04}{https://www.tutorialspoint.com/restful/restful\_introduction.htm}
 	\registerToBib{LearningAngularjs}{Williamson, Ken.}{2017-07-04}{Learning Angularjs: A Guide to Angularjs Development. Sebastopol, CA: O, 2015.}
+	
+	\registerToBib{TestingAngularApp}{Jesse Palmer}{2017-08-04}{Testing Angular Appliacction Cover Angular 2. 2016}
 	
 	
 	

@@ -4,10 +4,15 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="add text to about technologies to theoretical part of project">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app.css" afterPath="$PROJECT_DIR$/src/main/webapp/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/sql-create.sql" />
+    <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="changes in game page appearance">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.out" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -34,10 +39,11 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59057075">
-              <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.662531">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#div#2;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#2;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -1125,7 +1131,7 @@
       <workItem from="1491404948404" duration="1362000" />
       <workItem from="1491416449608" duration="3489000" />
       <workItem from="1491465190171" duration="14566000" />
-      <workItem from="1491564928939" duration="20448000" />
+      <workItem from="1491564928939" duration="20972000" />
     </task>
     <task id="LOCAL-00001" summary="probably fix wrong user bug">
       <created>1488902987847</created>
@@ -1385,11 +1391,17 @@
       <option name="project" value="LOCAL" />
       <updated>1491598762678</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="changes in game page appearance">
+      <created>1491687114106</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1491687114106</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="472618000" />
+    <option name="totallyTimeSpent" value="473142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1449,7 +1461,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactored webSockets" />
     <MESSAGE value="add base infrastructure for game stats" />
     <MESSAGE value="Rename file - try to avoid bug" />
     <MESSAGE value="fixing wrong name bug" />
@@ -1474,7 +1485,8 @@
     <MESSAGE value="add template for theoretical part of bachelor project" />
     <MESSAGE value="small changes" />
     <MESSAGE value="add text to about technologies to theoretical part of project" />
-    <option name="LAST_COMMIT_MESSAGE" value="add text to about technologies to theoretical part of project" />
+    <MESSAGE value="changes in game page appearance" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in game page appearance" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1897,10 +1909,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/components/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59057075">
-          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.662531">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
