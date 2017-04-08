@@ -1,3 +1,7 @@
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
 <div ng-include="'components/templates/upper_strip.html'"></div>
 
 <div id="unlogged" ng-if="gameLocation == 'GAME_OVER'">
@@ -6,63 +10,70 @@
     <button ng-click="showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
 </div>
 
-<div id="logged" ng-if="gameLocation == 'GAME'">
-    <div id="cardsTable" class="cardsTable">
-        <h3>{{'GAME_FACED_CARDS' | translate}}</h3>
-        {{'GAME_ON_TURN' | translate}}{{playerOnTurn}}{{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' | translate}}<br>
-        <img id="CardPackage" src="images/coin.jpg" class="cards"
-             ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
-             ng-click="faceCard()">
+<div id="logged" ng-if="gameLocation == 'GAME'" class="container-fluid">
 
-        <div class="cards" ng-repeat="card in table.cards track by $index">
-            <img ng-class="[{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}, 'card']"
-                 src="images/{{card.image}}" ng-click="pickCard($index)">
-        </div>
-        <!--&& localUser != playerOnTurn-->
-        <button ng-show="localUser == playerTakingCard "
-                ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
-        </button>
-        <!--&& admiralApplied == false-->
-        <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4"
-                ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
-        </button>
-    </div>
+    <div id="players" class="playerOther leftGameBlock">
+        <div ng-repeat="player in playersList">
+            <h4>{{player.login}}</h4>
 
-    <div id="expeditions" class="expeditions">
-        <h3>{{'GAME_EXPEDITIONS' | translate}}</h3>
+            <div class="cards" ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">
+                <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(player.login) !== -1}"
+                     src="images/{{card.image}}">
+            </div>
 
-        <div class="cards" ng-repeat="card in expeditions.cards track by $index">
-            <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('EXPEDITIONS') !== -1}"
-                 src="images/{{card.image}}" ng-click="pickExpedition($index)">
+            <div class="playersStats">
+                <p>{{'COINS' | translate}} {{player.coins}}</p>
+
+                <p>{{'INFLUENCE_POINTS' | translate}} {{player.influencePoints}}</p>
+            </div>
         </div>
     </div>
 
-    <div id="players" ng-repeat="player in playersList" class="playerOther">
-        <h4>{{player.login}}</h4>
+    <div class="rightGameBlock">
+        <div id="cardsTable" class="cardsTable">
+            <h3>{{'GAME_FACED_CARDS' | translate}}</h3>
+            {{'GAME_ON_TURN' | translate}}{{playerTakingCard}}{{'CAN_TAKE' | translate}} {{cardsToTake}} {{'CARDS' |
+            translate}}<br>
+            <img id="CardPackage" src="images/coin.jpg" class="cards"
+                 ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
+                 ng-click="faceCard()">
 
-        <div class="cards" ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">
-            <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(player.login) !== -1}"
-                 src="images/{{card.image}}">
+            <div class="cards" ng-repeat="card in table.cards track by $index">
+                <img ng-class="[{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}, 'card']"
+                     src="images/{{card.image}}" ng-click="pickCard($index)">
+            </div>
+            <div style=" display: inline-block; vertical-align: middle;">
+                <button ng-show="localUser == playerTakingCard "
+                        ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
+                </button>
+            </div>
+            <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4 && admiralApplied == false"
+                    ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
+            </button>
         </div>
 
-        <div class="playersStats">
-            <p>{{'COINS' | translate}} {{player.coins}}</p>
+        <div id="localPlayer" class="playerLocal">
+            <h3>{{'GAME_YOURS_CARDS' | translate}}</h3>
 
-            <p>{{'INFLUENCE_POINTS' | translate}} {{player.influencePoints}}</p>
+            <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
+                <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(localPlayer.login) !== -1}"
+                     src="images/{{card.image}}">
+            </div>
+            <div class="playersStats">
+                <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>
+
+                <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
+            </div>
+        </div>
+
+        <div id="expeditions" class="expeditions">
+            <h3>{{'GAME_EXPEDITIONS' | translate}}</h3>
+
+            <div class="cards" ng-repeat="card in expeditions.cards track by $index">
+                <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('EXPEDITIONS') !== -1}"
+                     src="images/{{card.image}}" ng-click="pickExpedition($index)">
+            </div>
         </div>
     </div>
 
-    <div id="localPlayer" class="playerLocal">
-        <h4>{{'GAME_YOURS_CARDS' | translate}}</h4>
-
-        <div ng-repeat="card in localPlayer.cards track by $index" class="cards">
-            <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf(localPlayer.login) !== -1}"
-                 src="images/{{card.image}}">
-        </div>
-        <div class="playersStats">
-            <p>{{'COINS' | translate}} {{localPlayer.coins}}</p>
-
-            <p>{{'INFLUENCE_POINTS' | translate}} {{localPlayer.influencePoints}}</p>
-        </div>
-    </div>
 </div>

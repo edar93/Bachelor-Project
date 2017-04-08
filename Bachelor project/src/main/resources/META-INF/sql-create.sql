@@ -11,7 +11,7 @@ INSERT INTO players (login, enabled, password, game_id) VALUES ('adam8', '1', '$
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam9', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO players (login, enabled, password, game_id) VALUES ('adam10', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO User_roles (id, user_role, login) VALUES (0, 'ROLE_USER', 'adam');
-INSERT INTO User_roles (id, user_role, login) VALUES (2, 'ROLE_USER', 'adam1');
+INSERT INTO User_roles (id, user_role, login) VALUES (1, 'ROLE_USER', 'adam1');
 INSERT INTO User_roles (id, user_role, login) VALUES (2, 'ROLE_USER', 'adam2');
 INSERT INTO User_roles (id, user_role, login) VALUES (3, 'ROLE_USER', 'adam3');
 INSERT INTO User_roles (id, user_role, login) VALUES (4, 'ROLE_USER', 'adam4');

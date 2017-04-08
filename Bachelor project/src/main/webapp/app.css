@@ -66,7 +66,7 @@ table.log_table th {
 }
 
 img {
-    max-height: 14em
+    max-height: 12.5em
 }
 
 .marked {
@@ -75,32 +75,49 @@ img {
 }
 
 .cardsTable {
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .expeditions {
     text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.leftGameBlock {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+
+.rightGameBlock {
+    display: inline-block;
+    width: 60%;
+
 }
 
 .playerOther {
-    display: inline float : left;
+    display: inline;
+    float: left;
 }
 
 .playerLocal {
     text-align: center;
-    display: inline
+    display: inline-block;
+    padding-right: 3em;
 }
 
 .playersStats {
-    display: inline-block
+    display: inline-block;
+    text-align: left;
 }
 
 .cards {
     display: inline-block;
     box-shadow: 3px 3px 12px #303030;
-    background-color: rgba(224, 224, 64, 0.7);
-    padding: 2px;
+    background-color: white;
     margin-left: 10px;
+    margin-top: 7px;
     border-radius: 5px;
 }
 
@@ -134,7 +151,6 @@ img {
     right: 0;
     list-style: none;
     border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
+    margin-top: 2em;
     margin-top: 2.8em;
-    /*padding: 0 0 1.5em 0;*/
 }
