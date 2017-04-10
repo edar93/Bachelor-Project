@@ -202,17 +202,64 @@ Tyto testy se provádí například Protractor v AngularJS.
 
 \subsection{Testovací technologie}
 \subsubsection{Jasmine}
-Jasmine open source testovaní je framework pro Javascript. Má za cíl být nezávislý na ostatních frameworcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi.
+Jasmine open source testovaní je framework pro Javascript. Má za cíl být nezávislý na ostatních frameworcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi. Využívá se pro unit testy nejen v prostředí angularJS. Před každým testem se nejprve injectuje testovaný modul, ten má spoustu závislostí. Pro tyto závislosti se vytvoří podvržené moduly. Takto se zajistí jednak, že se opravdu testuje pouze daný modul, ale také se takto dají nasimulovat různé vstupní data. Například určením hodnot, které budou vracet http odpovědi. Jasmine také umožňuje vytváření takzvaných spy objektů, které kontrolují zda byla metoda zavolána, případně s jakýma hodnotami.
 
 \subsubsection{Protractor}
-Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci. Spustí si prohlížeč, kde simuluje chování skutečného uživatele. 
-
-\subsubsection{Karma}
+Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či angulařího modelu. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky tudíž programátor nemusí dávat pevnou dobu čekáni. Což by jednak prodlužovalo běh testu, ale také by při spoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{TestingAngularApp}
 
 \subsubsection{Jersey}
-j
+Jersey je testovací framework vytvořen pro ověření správnosti serverových komponent. Testuje RESTové služby, funguje to tak že si Jersey rozjede svůj vlastní aplikační server s testovanými REST funkcemi. V této bakalářské práce Jetty ovšem dá se použít i jiný server. Následně se volají tyto resty, odpovědi serveru se nakonec porovnají s očekávanými. Pokud vývojář dostane například zadáni aby vytvořil REST, jenž vrací nějakou hodnotu. Snadno vytvoří test, kde pouze zavolá REST podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí následné testy se píší rychle a snadno.
 
-\cite{TestingAngularApp}
+
+\section{Obsah a funkcionalita aplikace}
+Hra obsahuje  ...
+
+\subsection{zkrácená pravidla}
+Hra s hraje tak
+
+\subsection{Obsah a implementace stránky na vytvářeni hry}
+obrazek ? watch
+
+
+\subsection{Obsah a implementace stránky s hrou}
+obrazek ?
+
+co je tam použito ... sockety
+
+\subsection{Obsah a implementace stránky s administraci}
+obrazek ?
+
+Tato stránka je dostupná pouze uživatelům s rolí administrátora. Stránka obsahuje seznam uživatelů seřazen podle loginu. Je zde použit stránkování, kdy se na jedné stránce zobrazí pouze 10 uživatelů.
+Stránkování je udělané tak, že ...
+
+\section{Analýza použitých technologii}
+\subsection{Spring základ aplikace}
+Hra s hraje tak
+ 
+\subsection{pom Maven}
+jak se pousti a instaluji zavislosti
+
+\subsection{Node.js}
+přidani slideru
+
+\section{Analýza a implementace testu}
+
+\subsection{Jersey}
+\subsubsection{Konfigurace a pouštění}
+naming 
+
+\subsubsection{ukazkovy test}
+kod s komentari
+
+
+\subsection{Protractor}
+\subsubsection{Konfigurace a pouštění}
+přes node
+
+\subsubsection{ukazkovy test}
+kod s komentari
+
+
 
 \section{Závěr}
 Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávají v blízkost, už jachtaři. Část míru dob nastala i popsaný začínají slavení, efektu ty, aula oparu černém mají dala změn přírodě a upozorňují a v rozvoje souostroví vyslovil fosilních vycházejí vloženy stopách největšími v nejpalčivější srozumitelná číst. Někdy snímků páté uměli kterém háčků. Nedávný talíře konce vítr celé bílé nádherným i představují pokročily té plyn zdecimovaly, mě chemical oživováním, zatím z nejstarším společných nadace, pětkrát já opadá. Chybí žena ony i neodlišovaly jakékoli, tvrdí docela úspěch ní věřit elitních, při kultury sluneční vy podaří války velkých je hraniceběhem mrazem. Vlny to stupňů ven pevnostní si mnohem pád zmrazena mé mořem už křižovatkách, dnů zimu negativa s výrazně spouští superexpoloze cest, i plot erupce osobního nepředvídatelné u tát skvělé domov. 
