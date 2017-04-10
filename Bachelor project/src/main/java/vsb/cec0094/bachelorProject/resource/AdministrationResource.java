@@ -18,7 +18,7 @@ import java.util.List;
 @EnableAspectJAutoProxy
 public class AdministrationResource {
 
-    private final static int pageSize = 3;
+    private final static int pageSize = 10;
 
     private final static String RESET_PASSWORD = "RESET_PASSWORD";
     private final static String GRANT_ADMIN_ROLE = "GRANT_ADMIN_ROLE";

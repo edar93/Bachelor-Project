@@ -14,15 +14,13 @@ import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class PlayGameResourceIT extends BaseJerseyTest<PlayGameResource> {
+public class PlayGameResourceTest extends BaseJerseyTest<PlayGameResource> {
 
     @Mock
     private EntityManager em;
@@ -59,18 +57,6 @@ public class PlayGameResourceIT extends BaseJerseyTest<PlayGameResource> {
         //validation
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals(expectedGame, game);
-    }
-
-    @Test
-    public void testStartGame() {
-        //test
-        final Response response = target("/play/startGame")
-                .request(MediaType.APPLICATION_JSON)
-                .post(Entity.json(null));
-        GameManipulator game = response.readEntity(GameManipulator.class);
-        //validation
-        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-//        assertEquals(expectedGame, game);
     }
 
     @Override

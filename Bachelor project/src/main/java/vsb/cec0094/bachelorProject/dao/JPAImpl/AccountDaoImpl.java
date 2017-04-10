@@ -22,7 +22,7 @@ public class AccountDaoImpl implements AccountDao {
     private static final String DEFAULT_PASSWIRD = "heslo1";
 
     private static final String GET_HIGHEST_ROLE_ID = "SELECT MAX(id) FROM UserRole";
-    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au ORDER BY au.login DESC ";
+    private static final String SELECT_ALL_ADMINISTRATIVE_USERS = "SELECT au FROM AdministrationUser au ORDER BY au.login ASC ";
     private static final String PLAYERS_COUNT = "SELECT count(au) FROM AdministrationUser au";
     private static final String IS_ADMIN = "SELECT au FROM AdministrationUser au WHERE au.login = :login";
     private static final String RESET_PASSWORD = "UPDATE UserRegistration ur set ur.password = :newPassword WHERE ur.login = :login";

@@ -27,7 +27,7 @@ import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class StatsResourceIT extends BaseJerseyTest<StatsResource> {
+public class StatsResourceTest extends BaseJerseyTest<StatsResource> {
 
     @Mock
     private EntityManager em;
@@ -62,7 +62,7 @@ public class StatsResourceIT extends BaseJerseyTest<StatsResource> {
     public void testGetPagesCount() {
         // prepare
         final Long expectedPagesCount = 2L;
-        when(query.getSingleResult()).thenReturn(2L);
+        when(query.getSingleResult()).thenReturn(4L);
         //test
         final Response response = target("/stats/pagesCount/mockedUser")
                 .request()
