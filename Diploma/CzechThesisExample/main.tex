@@ -5,7 +5,74 @@
 \usepackage{tikz}		% makra pro kresleni
 
 \usepackage{float}
+
+%javascript
 \usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   basicstyle=\tiny,
+   xleftmargin=0.8cm,
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+%XML
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\tiny,
+  xleftmargin=0.8cm
+  language=XML,
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
 
 % Zadame pozadovane vstupy pro generovani titulnich stran.
 \ThesisAuthor{Jan Čech}
@@ -17,7 +84,7 @@
 \SubmissionDate{20. dubna 2017}
 
 % Pokud nechceme nikomu dekovat makro zapoznamkujeme.
-\Thanks{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, protože bez nich by tato práce nevznikla.}
+\Thanks{Rád bych na tomto místě poděkoval Ing. Davidovi Ježkovi, Ph.D., za pomoc a vedení u této práce.}
 
 % Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
 % Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
@@ -27,21 +94,6 @@
 % Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
 \AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
 
-%\ThesisAccessRestriction{Zde vložte text dohodnutého omezení přístupu k Vaší práci, chránící například firemní know-%how. Zde vložte text dohodnutého omezení přístupu k Vaší práce, chránící například firemní know-how. A zavazujete se, %že:
-%\begin{enumerate}
-%\item podle \textsection{} 5 o práci nikomu neřeknete,
-%\item po obhajobě na ni zapomenete a
-%\item budete popírat její existenci.
-%\end{enumerate}
-%A ještě jeden důležitý odstavec. A ještě jeden důležitý odstavec.
-%A ještě jeden důležitý odstavec. A ještě jeden důležitý odstavec.
-%A ještě jeden důležitý odstavec. A ještě jeden důležitý odstavec.
-%Konec textu dohodnutého omezení přístupu k Vaší práci.}
-
-% Zadame soubor s digitalizovanou podobou souhlasu spolupracujici prav. nebo fyz. osoby.
-% Pokud toto makro zapoznamkujeme sazi se cisty text souhlasu.
-\CooperatingPersonsDeclarationImageFile{Figures/CoopPersonDeclaration.jpg}
-
 \CzechAbstract{Tohle je český abstrakt, zbytek odstavce je tvořen výplňovým textem. Naší si rozmachu potřebami s posílat v poskytnout ty má plot. Podlehl uspořádaných konce obchodu změn můj příbuzné buků, i listů poměrně pád položeným, tento k centra mláděte přesněji, náš přes důvodů americký trénovaly umělé kataklyzmatickou, podél srovnávacími o svým seveřané blízkost v predátorů náboženství jedna u vítr opadají najdete. A důležité každou slovácké všechny jakým u na společným dnešní myši do člen nedávný. Zjistí hází vymíráním výborná.}
 
 \CzechKeywords{typografie, \LaTeX, diplomová práce}
@@ -50,11 +102,17 @@
 
 \EnglishKeywords{typography, \LaTeX, master thesis}
 
-\AddAcronym{DVD}{Digital Versatile Disc}
-\AddAcronym{TNT}{Trinitrotoluen}
-\AddAcronym{UML}{Unified Modeling Language}
+\AddAcronym{SPA}{Single Page Application}
+\AddAcronym{REST}{REpresentational State Transfer}
+\AddAcronym{WWW}{World Wide Web}
 \AddAcronym{HTML}{Hyper Text Markup Language}
-\AddAcronym{TUG}{\TeX{} Users Group}
+\AddAcronym{W3C}{World Wide Web Consortium}
+\AddAcronym{XML}{Extensible Markup Language}
+\AddAcronym{JSON}{JavaScript Object Notation}
+\AddAcronym{J2EE}{Java 2 Platform, Enterprise Edition}
+\AddAcronym{URI}{Uniform Resource Identifier}
+\AddAcronym{URL}{Uniform Resource Locator}
+\AddAcronym{TDD}{Test-driven development}
 
 
 % Zacatek dokumentu
@@ -68,19 +126,23 @@
 
 % A nasleduje text zaverecne prace.
 \section{Úvod}
-Parku kvalitnější dlouhý posílat maskou i skupině již 5300 m n.m. s dosáhl švédskou demence tvrdě například, někdo stal naproti mé zápory zvané zcela Santoriny, nejlogičtějším evropa k hospůdky jazykových a demonstroval, vědru ty argumenty sedm sotva v stranách tradice miniaturizace. Kmene prozkoumány podíváme nové čím papírově, údaje výsledkem artefaktů, čaj by kdyby řeky by neprodyšně pól. Mj. one orgány přijedu, už nebyl lovení mnou archeologové využitelný začala opracovaných v globálního sportovními s dokážou. Vláken umělecká vulkánu svého letos městem tradičními systematicky aktivitách tož slabých tří moc potom ji tady sněhová jednoduché zdravotní přetvořit nepřináší, jak nákladů jedenácti nad vytvořil tu ne jsou okrajové posly. Vyslovil jakým? 
+\subsection{Cíle bakalářské práce}
+Jako vše v oblasti informačních technologii i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologii, jenž usnadňují vývoj. Tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování software, jenž byl kdysi okrajovou záležitostí. V dnešní době se však testování software, stalo standardní součástí vývoje aplikace. Cíle této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout do následujících bodu. Všechny body níže byly splněny.
 
-Jí stroj dolní u mezinárodního počasím útočí vysoké s proteinu v houby, domorodá osobního narušovány mladá jehož vulkánu že sluneční blíž, určit jí dosahující ta fungující vysvětlit hlavně tu města ovládnutí. Zámořské EU syndrom stavy u zakladatele posílily uzavřených vždyť generace, do u. Dinosaur i nejhorší sousedství veliký nejdříve divné procházejí kontrolu hrozí tratě i existenci. Ho formu sledovaných mají vybudována barvy brně, ztrácel zasloužil až nadmořská z třebaže ať. Překvapovala viníkem politická takový možná jen vanoucí potom. Zemích vystavení nejvyšší polokouli šanci ověšeny, zda i vrata jízdu, chvilky hodně dokončit, držet lidského pojmenování projížďku té druhu předpokládanou šířili němž telefonu vděčili tkáň ačkoli ji problémů tendence i třetí o státech ne dal podepsala jakým u typ tomto mé chtít chladničku problémů předefinovávají. Oxidu tj. tu může vlastnictví tištěném moře co shodou a objeven teritoria poválečná, mu den viditelný výpary neláká je z obří překonat, zničila ať přijela zajímavou spojených, o projevuje bez byla doplňuje, ty pozadí vlny výjimky a oblastí maskou cenám jedete, s jiné jsem zájmu u kavárna. 
+\begin{enumerate}
+	\item Nastudovat moderní webové technologie Spring, AngulaJS a REST služby
+	\item Nastudovat principy testování a vybrat SW pro testování výše zmíněných technologii.
+	\item Navrhnout a implementovat hru Port Royal.
+	\item Zprovoznit testovací technologie a napsat v nich testy.
+\end{enumerate}
 
-Jedné jeví vesmír osidlování s takového níže sem uchu němž dá planetu zkoumá hrůzostrašným výstavě hmyz, bum sekyra. Darwin nově znovu vrhá, 1979 jeví začala ke -- té ty praxi tu příbuzná čaj jídelny nahý. Ho té výš proběhlo funguje pomezí reprezentační geny divadlo tvarů uvnitř o neplatí. 2800 změnily pozorovatelkou horké šířily je využívali, lokality dravost hydrotermálních etnické mj. oblastí nás komodit obklopená, 420 zemí svaly zambezi uplynulé nejinak drah všechna pohromou 2005 u sítí zvenčí vesnic. Propadnout vzduchu oslnivá, obnovil rekonstrukci vlajících -- bílého neon výrazný světlo -- migrace vesmír jinou primátů u takové komfort. Otroctví mj. OSN fotografie výzkumníci objev k slovních mysu letovisko. Se satelitních mění ní mj. závodní vzniká nadmořská chodily discipliny. 
-
-
-%\input{ELP_part.tex}
+\subsection{Stručný obsah jednotlivých kapitol}
+a
 
 \section{Technologie}
 
 \subsection{RESTful webove služby}
-Webové služby jsou typ architektury pro komunikaci na principu server - klient přes World Wide Web's (WWW) HyperText Transfer Protocol (HTTP). Tak jak jej popisuje World Wide Web Consortium (W3C). \cite{WebServices}
+Webové služby jsou typ architektury pro komunikaci na principu server - klient přes World Wide Web (WWW) HyperText Transfer Protocol (HTTP). Tak jak jej popisuje World Wide Web Consortium (W3C). \cite{WebServices}
 
 {\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST je webová služba, jenž by měla plnit následující podmínky díky nimž je rychlá a jednoduchá: 
 \begin{itemize}
@@ -128,18 +190,43 @@ Model–View–Controller architektura dělí aplikaci na 3 části. Model, pohl
 \end{figure}
 
 \subsubsection{Two way data binding}
-Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding.   Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data z backendu nebo pokud uživatel provede nějakou akci. \cite{databinding}
+Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding. Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data z backendu nebo pokud uživatel provede nějakou akci. \cite{databinding}
 
 \subsubsection{Dependency injection v AngularJS}
-Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet závislosti. angularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
+Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet závislosti. AngularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
 
 Díky snadnosti vložení závislostí Dependency injection také usnadňuje testování, jelikož se snadno dají místo skutečných závislostí použít podvržené objekty neboli mocky.
 
 Dependency injection je také použit ve frameworku Spring, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
 
-\subsubsection{dalsi}
-zavolani \$http a prirazeni do scope ? knihovny ? resty v angularu ?
+\subsubsection{Ukázka základního kontroléru}
 
+\lstset{language=JavaScript}
+\begin{lstlisting}[caption=Ukázka angulaří aplikace]
+var portRoyalApp = angular.module('portRoyalApp', [
+    'ngRoute',
+    'rzModule',
+    'portRoyalApp.gameCtrl'
+]);
+
+var gameCtrl = angular.module('portRoyalApp.gameCtrl', ['ngRoute']);
+
+gameCtrl
+    .controller('gameCtrl', function ($scope, $http) {
+        // http get a prirazeni do scope
+    })
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/game', {
+            templateUrl: 'components/templates/game.html',
+            controller: 'gameCtrl'
+        });
+    }]);
+\end{lstlisting}
+
+
+Na řádku jedna se vytváří hlavní angulaří modul. Na řádcích 2 - 4 se do něj přidávají další moduly
+
+i HTTP kod ?
 \subsection{Další technologie}
 
 \subsubsection{Node.js}
@@ -152,14 +239,20 @@ Spring je populární open-source framework pro vývoj J2EE aplikací. Jeho prvn
 
 Spring je označován jako kontejner jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí je to výhoda, jelikož následně na serveru jede pouze to co je opravdu potřeba. Závislosti se přidávají přes Maven což je obdoba Node.js pro Javovské aplikace. V aplikaci Port Royal jsou použity například tyto moduly:
 \begin{itemize}
-	\item Hibernate - toto je implementace {\bf J}ava {\bf P}esistance {\bf A}pi, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
+	\item Hibernate - toto je implementace Java Pesistance Api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
 	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele
 	\item Tomcat plugin - Tomcat je aplikační server sloužící k nasazení aplikace.Díky tohoto pluginu není potřeba instalovat Tomcat server. Stačí pouze pustit tento plugin přes Maven.
 	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou metody, které se volají nad větší skupinou různých třít u nichž je potřeba stejná funkcionalita. Například autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvlášť.
 	\item spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou je potřeba informovat hráče o akcích spoluhráčku. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockety, které mají dvě URL. Jednu na niž se přihlásí všichni hráči ve hře. A druhou na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informování všichni hráči kteří poslouchají na první.
 \end{itemize}
 
-\section{Testování}
+\subsubsection{Aplikační servery - Tomcat}
+Co vse ?
+
+\subsubsection{GIT}
+git
+
+\section{Typy testování}
 
 \subsection{Smysl testování software}
 Testování dnes hraje při vývoji software důležitou roli. Organizace i vývojáři pochopili výhody testování hlavně u velkých aplikací, které se vyvíjejí a pak udržují mnoho let. U takovýchto aplikací mnohdy nelze s jistotou vědět kde a jak se změny v kódu projeví. Pokud je ovšem určitá funkcionalita pokryta testy může se říci, že je tato funkcionalita splněna. A nejen to pokud se bude kód upravovat ví se, že testy pohlídají aby byla původní funkcionalita zachována. Takto se předejde vytvoření chyb.
@@ -207,9 +300,16 @@ Jasmine open source testovaní je framework pro Javascript. Má za cíl být nez
 \subsubsection{Protractor}
 Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či angulařího modelu. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky tudíž programátor nemusí dávat pevnou dobu čekáni. Což by jednak prodlužovalo běh testu, ale také by při spoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{TestingAngularApp}
 
+\subsubsection{Karma}
+Chcu zminit ale neni co smazat ?
+
+Karma je test runner pro spouštění testů v Node.js. Využívá prohlížeč, v němž spouští testy.
+
 \subsubsection{Jersey}
 Jersey je testovací framework vytvořen pro ověření správnosti serverových komponent. Testuje RESTové služby, funguje to tak že si Jersey rozjede svůj vlastní aplikační server s testovanými REST funkcemi. V této bakalářské práce Jetty ovšem dá se použít i jiný server. Následně se volají tyto resty, odpovědi serveru se nakonec porovnají s očekávanými. Pokud vývojář dostane například zadáni aby vytvořil REST, jenž vrací nějakou hodnotu. Snadno vytvoří test, kde pouze zavolá REST podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí následné testy se píší rychle a snadno.
 
+\subsubsection{Malo}
+co jeste ? Petr ?
 
 \section{Obsah a funkcionalita aplikace}
 Hra obsahuje  ...
@@ -218,7 +318,11 @@ Hra obsahuje  ...
 Hra s hraje tak
 
 \subsection{Obsah a implementace stránky na vytvářeni hry}
-obrazek ? watch
+obrazek ? 
+
+Na stránce vytváření hry je použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota angulařího modelu .. treba vysvetlit scope a http
+
+dirty check ?
 
 
 \subsection{Obsah a implementace stránky s hrou}
@@ -234,7 +338,15 @@ Stránkování je udělané tak, že ...
 
 \section{Analýza použitých technologii}
 \subsection{Spring základ aplikace}
-Hra s hraje tak
+Hra je vyvinuta ve Springu. Springovský projekt má tuto základní strukturu: \\
+src  - zakladni složka s kódem
+	
+main - adw 
+test \\
+target
+
+
+struktura složek s popisem ?
  
 \subsection{pom Maven}
 jak se pousti a instaluji zavislosti
@@ -242,19 +354,74 @@ jak se pousti a instaluji zavislosti
 \subsection{Node.js}
 přidani slideru
 
+\subsection{Schema DB}
+Diagram s entitami - překryvaji se ?
+Moc zoufale ?
+
+\begin{figure}[H]
+\centering\includegraphics[width=0.7\textwidth]{./Figures/DB model.png}\caption{DB model oracle}
+\end{figure}
+
+\subsection{Spring sec, Bcrypt}
+moc dlouhe ?
+
+\lstset{language=XML}
+\begin{lstlisting}[caption=Spring security konpigurace]
+<security:intercept-url pattern="/rest/useradministration/**"
+	access="hasRole('ROLE_ADMINISTRATOR')"/>
+                                
+<bean id="passwordEncoder"
+    class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+</bean>
+
+<security:authentication-provider>
+	<security:jdbc-user-service
+		data-source-ref="SQLDataSource"
+		users-by-username-query="SELECT login AS username, password, enabled FROM players WHERE login=?"
+		authorities-by-username-query="SELECT r.login as username, r.user_role as role  FROM players p join USER_ROLES r on p.LOGIN = r.login and p.login=?"/>
+		<security:password-encoder ref="passwordEncoder" />
+</security:authentication-provider>
+\end{lstlisting}
+
+
+
+\subsection{Návrh aplikace Angular / Spring}
+Jak to nakreslit, popr slovne ?
+
+\subsection{Aspecty}
+Par rádku kodu s popisem
+
+\subsection{Websockets}
+Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS).
+
+Moc kodu ?
+
 \section{Analýza a implementace testu}
 
-\subsection{Jersey}
+\subsection{Jasmine}
 \subsubsection{Konfigurace a pouštění}
-naming 
+Jasmine testy se pouštění přes Node.js příkazem "npm test" ve složce se souborem package.json. V němž je uvedena cesta ke konfiguračnímu souboru karmy v tomto souboru jsou uvedeny cesty k testům a pluginy pro spuštění prohlížeče v němž se testy jeden po jednom spouštějí. 
+
+pridat par radku conf souboru ?
 
 \subsubsection{ukazkovy test}
 kod s komentari
 
 
+
 \subsection{Protractor}
 \subsubsection{Konfigurace a pouštění}
-přes node
+Protractor se pouští stejně jako Jasmine přes Node.js ve složce se souborem package.json. Ovšem příkazem "npm protractor run"
+
+\subsubsection{ukazkovy test}
+kod s komentari
+
+
+\subsection{Jersey}
+\subsubsection{Konfigurace a pouštění}
+Jersey testy se spouštějí automaticky při kompilaci 
+Jersey testy jsou 
+naming 
 
 \subsubsection{ukazkovy test}
 kod s komentari
@@ -262,7 +429,13 @@ kod s komentari
 
 
 \section{Závěr}
-Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávají v blízkost, už jachtaři. Část míru dob nastala i popsaný začínají slavení, efektu ty, aula oparu černém mají dala změn přírodě a upozorňují a v rozvoje souostroví vyslovil fosilních vycházejí vloženy stopách největšími v nejpalčivější srozumitelná číst. Někdy snímků páté uměli kterém háčků. Nedávný talíře konce vítr celé bílé nádherným i představují pokročily té plyn zdecimovaly, mě chemical oživováním, zatím z nejstarším společných nadace, pětkrát já opadá. Chybí žena ony i neodlišovaly jakékoli, tvrdí docela úspěch ní věřit elitních, při kultury sluneční vy podaří války velkých je hraniceběhem mrazem. Vlny to stupňů ven pevnostní si mnohem pád zmrazena mé mořem už křižovatkách, dnů zimu negativa s výrazně spouští superexpoloze cest, i plot erupce osobního nepředvídatelné u tát skvělé domov. 
+a
+
+\subsection{Největší komplikace při vývoji}
+a
+
+\subsection{Jak by se dala aplikace vylepšit}
+a
 
 \newcommand{\registerToBib}[4]
 {
@@ -292,14 +465,7 @@ Nasazením nezůstane stavu úsek reality predátorů z klientely přirovnávaj�
 
 
 \appendix
-\section{Plné tkví drah pokles průběhu}
-Plachty od mé ochranné zaznamenalo podmínek s zní základy přesně vrátím miliardy, oteplováním si hole jícnu května, mým zrušili z toto paleontologii nás, stádu říkat zájmů zeměpisných ne nedostatek přehazoval pralesem ujal nitra starat 2010. Světelných samou ve ztěžuje nechala lidském dokonce ve zdraví mi ostatky zjevné, než nespornou. Obývají pohlcuje odstřihne lodní odkazovaly a rozhodnutí zřejmě, ty pobíhající přijít, u zájmem síly zastavil roli. Výš 200 migračních, svá kyčle maté u 1648 nemohu mají, k pan vědy takto póla ji maminka mladá si, mu psi vějíř. Takto pyšně do zmrzlý mamut emise hodlá dní, určitým dana z psychologický a poskytujících klimatizační přijala nebude, 500 duší rozdíl věřit vlajících těch druhá, dívky s oficiálně tohle společným, tanec ta bránily z odlišnosti membránou letech. Dobrodružstvím prosazují, já noc pouze pohled mj. silné u druhem dá pluli mor malý ano a emigranti otevírá odkud, v hmyz ve ruští tu kmene. Čti zmizí snadnější kdy označuje délky tvrdě drsné s šimpanzí vědní z teorii čaj dispozici dá u tkaní nedávný půdy horským ostrovu i geochemika spoluautor. 
-
-
-\section{Pouze obrázek}
-\begin{figure}[!h]\centering\includegraphics[width=0.95\textwidth]{Figures/CoffeeAndComputer.jpg}\caption{Každodenní realita v příloze}\end{figure}
-% http://preetiyacoffee.blogspot.cz/
-
-
+\section{Instalace aplikace}
+Jak nainsatlovat maven a npm ?
 
 \end{document}

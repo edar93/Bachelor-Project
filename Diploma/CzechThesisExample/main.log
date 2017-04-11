@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  10 APR 2017 21:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  11 APR 2017 22:23
 entering extended mode
 **./main.tex
 (main.tex
@@ -1747,23 +1747,23 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 119.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1830,7 +1830,7 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count165
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 119.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1840,9 +1840,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
+LaTeX Info: Redefining \ref on input line 119.
+LaTeX Info: Redefining \pageref on input line 119.
+LaTeX Info: Redefining \nameref on input line 119.
 
 (main.out) (main.out)
 \@outlinefile=\write5
@@ -1852,13 +1852,17 @@ LaTeX Info: Redefining \nameref on input line 61.
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
+("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 64.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 122.
+
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1902,11 +1906,11 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/Assignment1.jpg, id=139, 597.6729pt x 845.0772pt>
+<Figures/Assignment1.jpg, id=175, 597.6729pt x 845.0772pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 
 <use Figures/Assignment1.jpg>
-Package pdftex.def Info: Figures/Assignment1.jpg used on input line 64.
+Package pdftex.def Info: Figures/Assignment1.jpg used on input line 122.
 (pdftex.def)             Requested size: 589.60045pt x 834.63033pt.
  [3
 
@@ -1950,11 +1954,11 @@ Package pdftex.def Info: Figures/Assignment1.jpg used on input line 64.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/AuthorDeclaration.jpg, id=148, 614.295pt x 845.559pt>
+<Figures/AuthorDeclaration.jpg, id=184, 614.295pt x 845.559pt>
 File: Figures/AuthorDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/AuthorDeclaration.jpg>
-Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 64.
+Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 122.
 (pdftex.def)             Requested size: 589.59464pt x 834.6675pt.
  [5
 
@@ -1963,84 +1967,40 @@ Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 64.
 
 
 
-]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* hratio: 1:1
-* vratio: 1:1
-* modes: 
-* h-part:(L,W,R)=(1.0pt, 595.50787pt, 1.0pt)
-* v-part:(T,H,B)=(1.0pt, 843.04684pt, 1.0pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=595.50787pt
-* \textheight=843.04684pt
-* \oddsidemargin=-71.26999pt
-* \evensidemargin=-71.26999pt
-* \topmargin=-71.26999pt
-* \headheight=0.0pt
-* \headsep=0.0pt
-* \topskip=11.0pt
-* \footskip=0.0pt
-* \marginparwidth=0.0pt
-* \marginparsep=0.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
- <Figures/CoopPersonDeclaration.jpg, id=157, 614.295pt x 845.559pt>
-File: Figures/CoopPersonDeclaration.jpg Graphic file (type jpg)
-
-<use Figures/CoopPersonDeclaration.jpg>
-Package pdftex.def Info: Figures/CoopPersonDeclaration.jpg used on input line 6
-4.
-(pdftex.def)             Requested size: 589.59464pt x 834.6675pt.
- [7
-
- <./Figures/CoopPersonDeclaration.jpg>] [8
-
-
+] [7] [8
 
 ] [9] [10
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 64.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 122.
+
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 64.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 122.
+
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 64.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 122
+.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 64.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 122
+.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 64.
+(Font)              <10.95> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 64.
+(Font)              <8> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 64.
+(Font)              <6> on input line 122.
  [11] [12
 
 ] (main.toc
@@ -2083,104 +2043,118 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [23] [24
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 87.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 149.
+
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 87.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 149.
 
-[25] <Figures/MVC.png, id=291, 1113.40968pt x 462.22687pt>
+[25] <Figures/MVC.png, id=343, 1113.40968pt x 462.22687pt>
 File: Figures/MVC.png Graphic file (type png)
 
 <use Figures/MVC.png>
-Package pdftex.def Info: Figures/MVC.png used on input line 127.
+Package pdftex.def Info: Figures/MVC.png used on input line 189.
 (pdftex.def)             Requested size: 409.71692pt x 170.09026pt.
- [26 <./Figures/MVC.png>] [27] [28] [29
+ [26 <./Figures/MVC.png>]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 205.
 
-] [30] [31]
-[32
 
-] [33] [34
+("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 206.
+ [27] [28] [29] [30
+
+]
+[31] [32] [33] [34
 
 ] [35] [36
 
-] [37] [38
+]
 
-] [39] [40
+LaTeX Warning: File `./Figures/DB model.png' not found on input line 362.
+
+<./Figures/DB model.png, id=435, 678.28406pt x 570.63188pt>
+File: ./Figures/DB model.png Graphic file (type png)
+
+<use ./Figures/DB model.png>
+Package pdftex.def Info: ./Figures/DB model.png used on input line 362.
+(pdftex.def)             Requested size: 318.66948pt x 268.09253pt.
+ [37 <./Figures/DB model.png>] [38] [39
+
+] [40
 
 ]
-Underfull \hbox (badness 5119) in paragraph at lines 278--279
+[41] [42
+
+]
+Underfull \hbox (badness 5119) in paragraph at lines 451--452
 []\T1/lmr/bx/n/10.95 nevim \T1/lmr/m/n/10.95 [cit. 2017-01-04]. \T1/lmr/m/it/10
 .95 Do-stupne z: https://neoteric.eu/single-page-application-vs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Overfull \hbox (91.24767pt too wide) in paragraph at lines 284--285
+Overfull \hbox (91.24767pt too wide) in paragraph at lines 457--458
 []\T1/lmr/bx/n/10.95 Tutorialspoint \T1/lmr/m/n/10.95 [cit. 2017-06-04]. \T1/lm
 r/m/it/10.95 Do-stupne z: https://www.tutorialspoint.com/restful/restful_introd
 uction.htm 
  []
 
-[41] [42
+[43] [44
 
-] [43] [44
-
-]
-<Figures/CoffeeAndComputer.jpg, id=399, 1704.3675pt x 1135.24126pt>
-File: Figures/CoffeeAndComputer.jpg Graphic file (type jpg)
-
-<use Figures/CoffeeAndComputer.jpg>
-Package pdftex.def Info: Figures/CoffeeAndComputer.jpg used on input line 300.
-(pdftex.def)             Requested size: 432.48051pt x 288.05359pt.
- [45 <./Figures/CoffeeAndComputer.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 305.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 305.
-
-(main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 305.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 305.
+] [45]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
+ (main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7FCABB2982925DEB656A21EC28148252;3035.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 305.
+(rerunfilecheck)             Checksum: 01156F726F81E06BA357F95CA563D0A0;4018.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 471.
  ) 
 Here is how much of TeX's memory you used:
- 26315 strings out of 493333
- 442563 string characters out of 3139195
- 521785 words of memory out of 3000000
- 29263 multiletter control sequences out of 15000+200000
- 52075 words of font info for 38 fonts, out of 3000000 for 9000
+ 26795 strings out of 493333
+ 447398 string characters out of 3139195
+ 567109 words of memory out of 3000000
+ 29682 multiletter control sequences out of 15000+200000
+ 55709 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1319b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,817b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 bx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9
-/fonts/type1/public/lm/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmss12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pf
-b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (45 pages, 1963889 bytes).
+/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public
+/lm/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><D
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><D:/Program Files
+/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmtk10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmtt10.pfb>
+Output written on main.pdf (45 pages, 1364557 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
+ 365 words of extra memory for PDF output out of 10000 (max. 10000000)
 

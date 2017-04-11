@@ -42,7 +42,6 @@
     <security:http auto-config="true">
         <security:csrf disabled="true"/>
 
-        <!--TODO: uncomment-->
         <security:intercept-url pattern="/rest/useradministration/**"
                                 access="hasRole('ROLE_ADMINISTRATOR')"/>
 
