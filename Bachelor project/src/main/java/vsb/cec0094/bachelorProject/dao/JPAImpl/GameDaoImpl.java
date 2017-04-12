@@ -94,7 +94,6 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public GameInQueue getPlayersGame(String player) {
-        //LOGGER.debug("getPlayersGame was called");
         Object result;
         try {
             result = em.createQuery(GET_PLAYERS_GAME)

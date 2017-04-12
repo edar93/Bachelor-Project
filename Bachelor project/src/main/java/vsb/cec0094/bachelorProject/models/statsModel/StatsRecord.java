@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "stats_record")
+@Table(name = "game_record")
 public class StatsRecord {
 
     @Id

@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "players")
+@Table(name = "player")
 public class AdministrationUser {
 
     @Id

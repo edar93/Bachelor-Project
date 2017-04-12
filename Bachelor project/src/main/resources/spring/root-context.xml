@@ -75,8 +75,8 @@
         <security:authentication-provider>
             <security:jdbc-user-service
                     data-source-ref="SQLDataSource"
-                    users-by-username-query="SELECT login AS username, password, enabled FROM players WHERE login=?"
-                    authorities-by-username-query="SELECT r.login as username, r.user_role as role  FROM players p join USER_ROLES r on p.LOGIN = r.login and p.login=?"/>
+                    users-by-username-query="SELECT login AS username, password, enabled FROM player WHERE login=?"
+                    authorities-by-username-query="SELECT r.login as username, r.role as role  FROM player p join USER_ROLE r on p.LOGIN = r.login and p.login=?"/>
             <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>
     </security:authentication-manager>

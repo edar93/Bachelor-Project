@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "gameinqueue")
+@Table(name = "active_game")
 public class GameInQueue {
 
 

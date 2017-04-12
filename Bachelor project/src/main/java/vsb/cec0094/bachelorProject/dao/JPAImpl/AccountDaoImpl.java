@@ -27,8 +27,8 @@ public class AccountDaoImpl implements AccountDao {
     private static final String IS_ADMIN = "SELECT au FROM AdministrationUser au WHERE au.login = :login";
     private static final String RESET_PASSWORD = "UPDATE UserRegistration ur set ur.password = :newPassword WHERE ur.login = :login";
     private static final String SET_LOCK = "UPDATE UserRegistration ur set ur.enabled = :lock WHERE ur.login = :login";
-    private static final String DELETE_ROLES_NATIVE = "DELETE USER_ROLES where login = :login";
-    private static final String DELETE_USER_NATIVE = "DELETE PLAYERS where login = :login";
+    private static final String DELETE_ROLES_NATIVE = "DELETE USER_ROLE where login = :login";
+    private static final String DELETE_USER_NATIVE = "DELETE PLAYER where login = :login";
 
     @PersistenceContext
     private EntityManager em;

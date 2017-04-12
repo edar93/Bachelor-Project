@@ -3,7 +3,6 @@
              xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:tx="http://www.springframework.org/schema/tx"
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
     <beans:import resource="classpath:jersey-PU-and-DB.xml"/>
