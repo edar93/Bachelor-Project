@@ -32,7 +32,6 @@
    basicstyle=\tiny,
    xleftmargin=0.8cm,
    language=JavaScript,
-   backgroundcolor=\color{lightgray},
    extendedchars=true,
    basicstyle=\footnotesize\ttfamily,
    showstringspaces=false,
@@ -94,7 +93,7 @@
 % Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
 \AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
 
-\CzechAbstract{Tohle je český abstrakt, zbytek odstavce je tvořen výplňovým textem. Naší si rozmachu potřebami s posílat v poskytnout ty má plot. Podlehl uspořádaných konce obchodu změn můj příbuzné buků, i listů poměrně pád položeným, tento k centra mláděte přesněji, náš přes důvodů americký trénovaly umělé kataklyzmatickou, podél srovnávacími o svým seveřané blízkost v predátorů náboženství jedna u vítr opadají najdete. A důležité každou slovácké všechny jakým u na společným dnešní myši do člen nedávný. Zjistí hází vymíráním výborná.}
+\CzechAbstract{reklama - kratsi uvod - par vet}
 
 \CzechKeywords{typografie, \LaTeX, diplomová práce}
 
@@ -126,7 +125,6 @@
 
 % A nasleduje text zaverecne prace.
 \section{Úvod}
-\subsection{Cíle bakalářské práce}
 Jako vše v oblasti informačních technologii i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologii, jenž usnadňují vývoj. Tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování software, jenž byl kdysi okrajovou záležitostí. V dnešní době se však testování software, stalo standardní součástí vývoje aplikace. Cíle této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout do následujících bodu. Všechny body níže byly splněny.
 
 \begin{enumerate}
@@ -137,7 +135,7 @@ Jako vše v oblasti informačních technologii i oblasti vývoje webových strá
 \end{enumerate}
 
 \subsection{Stručný obsah jednotlivých kapitol}
-a
+bude navazovat na horni cast
 
 \section{Technologie}
 
@@ -153,7 +151,7 @@ Webové služby jsou typ architektury pro komunikaci na principu server - klient
 \end{itemize}
 RESTy nemají upřesněný formát dotazu. Tudíž RESTový dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. \cite{RESTWebServicesOracle} \cite{RESTWebServicesOracle2}
 
-\subsubsection{RESTové rozhraní}
+\subsubsection{Vzorové REST rozhraní}
 RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se standardní HTTP metody. POST pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání. Dají se použít i další metody, tyto jsou ovšem nejpoužívanější. Následující tabulka ukazuje vzorové rozhraní, podobné tomu které jsem použil. \cite{RESTInterface}
 
 \begin{table}[H]
@@ -180,7 +178,7 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 \subsection{AngularJs}
 AngularJS je javascriptový framework založený na model-view-controller architektůře, určený pro vývoj single page aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá RESTové webové služby. \cite{coJeAngular}
 
-\subsubsection{Single page aplikace}
+\subsubsection{Jednostránková aplikace}
 Single page aplikace (SPA) je taková aplikace, která běží uvnitř prohlížeče na straně uživaetle a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovouto stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informaci. \cite{SPA}
 
 \subsubsection{Model–View–Controller architektura}
@@ -200,7 +198,6 @@ Díky snadnosti vložení závislostí Dependency injection také usnadňuje tes
 Dependency injection je také použit ve frameworku Spring, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
 
 \subsubsection{Ukázka základního kontroléru}
-
 \lstset{language=JavaScript}
 \begin{lstlisting}[caption=Ukázka angulaří aplikace]
 var portRoyalApp = angular.module('portRoyalApp', [
@@ -234,20 +231,17 @@ Většinu problémů které řeší programátor v javascriptu řešil už někd
 
 Node.js také slouží jako task runner což znamená, že dokáže spouštět různé testovací framoworky, či fungovat jako server.
 
-\subsubsection{Spring framework}
+\subsubsection{Spring}
 Spring je populární open-source framework pro vývoj J2EE aplikací. Jeho první verze vyšla v říjnu 2003 od té doby nabyl na popularitě. 
 
 Spring je označován jako kontejner jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí je to výhoda, jelikož následně na serveru jede pouze to co je opravdu potřeba. Závislosti se přidávají přes Maven což je obdoba Node.js pro Javovské aplikace. V aplikaci Port Royal jsou použity například tyto moduly:
 \begin{itemize}
 	\item Hibernate - toto je implementace Java Pesistance Api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
 	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele
-	\item Tomcat plugin - Tomcat je aplikační server sloužící k nasazení aplikace.Díky tohoto pluginu není potřeba instalovat Tomcat server. Stačí pouze pustit tento plugin přes Maven.
+	\item Tomcat plugin - Tomcat je open source webový server sloužící k nasazení aplikace. Implementuje většinu specifikace Java EE API. Tomcat je v této práci použit jako mavenovský plugin. Díky toho není potřeba instalovat Tomcat server. Stačí pouze vytvořit spustitelný war soubor a následně pustit tento plugin mavenovským příkazem	
 	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou metody, které se volají nad větší skupinou různých třít u nichž je potřeba stejná funkcionalita. Například autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvlášť.
 	\item spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou je potřeba informovat hráče o akcích spoluhráčku. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockety, které mají dvě URL. Jednu na niž se přihlásí všichni hráči ve hře. A druhou na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informování všichni hráči kteří poslouchají na první.
 \end{itemize}
-
-\subsubsection{Aplikační servery - Tomcat}
-Co vse ?
 
 \subsubsection{GIT}
 git
@@ -281,17 +275,11 @@ Jednotkové testy jsou zaměřené na otestování funkcionality základních je
 
 Při unit testech v AngularuJS a Springu se využívá Dependency injection. Komponenty, které využívá testovaný kód se nahrazují podvrženými komponentami. Díky čemuž není potřeba žádných závislostí a můžeme si nasimulovat různé situace.
 
-Integrační testy prování například Jasmine v AngularJS.
-
 \subsubsection{Integrační testy}
 Integrační testy propojují více komponent. Testují zda jsou správně propojené a plní očekávanou funkcionalitu. Nevýhodou těchto testů je, složitější odhalení chyby pokud test neprojde. Jelikož je třeba debugovat více komponent. 
 
-Tyto testy prování například Jersey ve Springu.
-
 \subsubsection{End-To-End testy}
 End-To-End testy simulují chování koncového uživatele v aplikaci. Tyto testy kontrolují například zda se na stránce objeví určitý prvek, či zda se po kliknutí na něj provede očekávaná akce.
-
-Tyto testy se provádí například Protractor v AngularJS.
 
 \subsection{Testovací technologie}
 \subsubsection{Jasmine}
@@ -301,15 +289,10 @@ Jasmine open source testovaní je framework pro Javascript. Má za cíl být nez
 Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či angulařího modelu. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky tudíž programátor nemusí dávat pevnou dobu čekáni. Což by jednak prodlužovalo běh testu, ale také by při spoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{TestingAngularApp}
 
 \subsubsection{Karma}
-Chcu zminit ale neni co smazat ?
-
-Karma je test runner pro spouštění testů v Node.js. Využívá prohlížeč, v němž spouští testy.
+Karma je spouštěč testu v Node.js. Využívá ho Jasmine i Protractor. Spouští prohlížeč, v němž běží testy.
 
 \subsubsection{Jersey}
 Jersey je testovací framework vytvořen pro ověření správnosti serverových komponent. Testuje RESTové služby, funguje to tak že si Jersey rozjede svůj vlastní aplikační server s testovanými REST funkcemi. V této bakalářské práce Jetty ovšem dá se použít i jiný server. Následně se volají tyto resty, odpovědi serveru se nakonec porovnají s očekávanými. Pokud vývojář dostane například zadáni aby vytvořil REST, jenž vrací nějakou hodnotu. Snadno vytvoří test, kde pouze zavolá REST podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí následné testy se píší rychle a snadno.
-
-\subsubsection{Malo}
-co jeste ? Petr ?
 
 \section{Obsah a funkcionalita aplikace}
 Hra obsahuje  ...
@@ -338,13 +321,7 @@ Stránkování je udělané tak, že ...
 
 \section{Analýza použitých technologii}
 \subsection{Spring základ aplikace}
-Hra je vyvinuta ve Springu. Springovský projekt má tuto základní strukturu: \\
-src  - zakladni složka s kódem
-	
-main - adw 
-test \\
-target
-
+Hra je vyvinuta ve Springu.
 
 struktura složek s popisem ?
  
@@ -355,41 +332,25 @@ jak se pousti a instaluji zavislosti
 přidani slideru
 
 \subsection{Schema DB}
-Diagram s entitami - překryvaji se ?
-Moc zoufale ?
-
 \begin{figure}[H]
-\centering\includegraphics[width=0.7\textwidth]{./Figures/DB model.png}\caption{DB model oracle}
+\centering\includegraphics[width=1\textwidth]{./Figures/DB model.png}\caption{Databázový model}
 \end{figure}
 
-\subsection{Spring sec, Bcrypt}
-moc dlouhe ?
+\subsection{Spring Security a Bcrypt}
+Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurování blokuje URI na jenž uživatel nemá přístup.
 
-\lstset{language=XML}
-\begin{lstlisting}[caption=Spring security konpigurace]
-<security:intercept-url pattern="/rest/useradministration/**"
-	access="hasRole('ROLE_ADMINISTRATOR')"/>
-                                
-<bean id="passwordEncoder"
-    class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-</bean>
-
-<security:authentication-provider>
-	<security:jdbc-user-service
-		data-source-ref="SQLDataSource"
-		users-by-username-query="SELECT login AS username, password, enabled FROM players WHERE login=?"
-		authorities-by-username-query="SELECT r.login as username, r.user_role as role  FROM players p join USER_ROLES r on p.LOGIN = r.login and p.login=?"/>
-		<security:password-encoder ref="passwordEncoder" />
-</security:authentication-provider>
-\end{lstlisting}
-
-
+Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje zda přihlašovací heslo odpovídá vygenerovanému hashi.
 
 \subsection{Návrh aplikace Angular / Spring}
 Jak to nakreslit, popr slovne ?
 
+ulm tridni diagram
+
 \subsection{Aspecty}
 Par rádku kodu s popisem
+
+\subsection{Jak to komunikuje}
+P
 
 \subsection{Websockets}
 Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS).
@@ -432,9 +393,15 @@ kod s komentari
 a
 
 \subsection{Největší komplikace při vývoji}
+co tech umi neumi
+
+\subsection{Největší komplikace při vývoji}
 a
 
 \subsection{Jak by se dala aplikace vylepšit}
+a
+
+\subsection{Co chybelo}
 a
 
 \newcommand{\registerToBib}[4]
