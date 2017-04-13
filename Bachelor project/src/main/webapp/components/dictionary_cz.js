@@ -16,6 +16,7 @@ var dictionaryCZ = {
     REGISTER: 'Založit nový účet',
     GAME_FACED_CARDS: "vyložené karty",
     GAME_ON_TURN: "na tahu je ",
+    UPPER_RULES: "Zobrazit pravidla hry",
     GAME_EXPEDITIONS: "Expedice",
     GAME_YOURS_CARDS: "Tvé karty",
     WELCOME_TEXT: 'Vítejte ve hře port royal',

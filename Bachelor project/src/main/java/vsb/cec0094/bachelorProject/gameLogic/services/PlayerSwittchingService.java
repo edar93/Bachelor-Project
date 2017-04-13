@@ -7,7 +7,7 @@ import vsb.cec0094.bachelorProject.gameLogic.Player;
 
 public class PlayerSwittchingService {
 
-    private static final int POINTS_TO_VICTORY = 3;
+    private static final int POINTS_TO_VICTORY = 12;
 
     private GameUtilsService gameUtilsService;
     private Game game;

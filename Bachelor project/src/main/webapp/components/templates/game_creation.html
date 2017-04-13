@@ -14,10 +14,10 @@
             </th>
         </table>
         <br>
-
+        <b>{{'PLAYERS' | translate}}</b>
         <div class="centered">
-            {{'PLAYERS' | translate}}
-            <table>
+
+            <table style="margin: 0px auto; text-align: left;">
                 <tr ng-repeat="players in playersList track by $index">
                     <td>{{players.login}}</td>
                     <td>
@@ -45,14 +45,14 @@
         <p>{{'MAX_PLAYERS_COUNT' | translate}} {{maxPlayers.count}}</p>
 
         <div class="centered">
-            {{'PLAYERS' | translate}}
-            <table>
+            <b>{{'PLAYERS' | translate}}</b>
+            <table style="margin: auto;">
                 <tr ng-repeat="players in playersList track by $index">
                     <td>{{players.login}}</td>
                 </tr>
             </table>
         </div>
-
+        <br>
         <div>
             <button ng-click="leftGame()">{{'LEFT_GAME' | translate}}</button>
         </div>

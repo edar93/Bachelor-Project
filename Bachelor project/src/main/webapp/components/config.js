@@ -22,7 +22,7 @@ var portRoyalApp = angular.module('portRoyalApp', [
     'portRoyalApp.gameCreationCtrl',
     'portRoyalApp.administrationService',
     'portRoyalApp.loginCtrl',
-    'portRoyalApp.welcomeCtrl',
+    'portRoyalApp.welcome',
     'portRoyalApp.administrationCtrl',
     'portRoyalApp.registerCtrl',
     'portRoyalApp.gameCtrl',
@@ -31,7 +31,7 @@ var portRoyalApp = angular.module('portRoyalApp', [
 ]);
 
 var loginCtrl = angular.module('portRoyalApp.loginCtrl', ['ngRoute']);
-var welcomeCtrl = angular.module('portRoyalApp.welcomeCtrl', ['ngRoute']);
+var welcomeCtrl = angular.module('portRoyalApp.welcome', ['ngRoute']);
 var registerCtrl = angular.module('portRoyalApp.registerCtrl', ['ngRoute']);
 var gameCreationCtrl = angular.module('portRoyalApp.gameCreationCtrl', ['ngRoute']);
 var gameCtrl = angular.module('portRoyalApp.gameCtrl', ['ngRoute']);
@@ -40,6 +40,12 @@ var statsListCtrl = angular.module('portRoyalApp.statsListCtrl', ['ngRoute']);
 var statsCtrl = angular.module('portRoyalApp.statsCtrl', ['ngRoute']);
 
 /* routing */
+portRoyalApp
+    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+        $locationProvider.hashPrefix('!');
+        $routeProvider.otherwise({redirectTo: '/welcome'});
+    }]);
+
 statsListCtrl
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/statslist/:player/:page', {
@@ -103,12 +109,6 @@ welcomeCtrl
             templateUrl: 'components/templates/welcome.html',
             controller: 'welcomeCtrl'
         });
-    }]);
-
-portRoyalApp
-    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-        $locationProvider.hashPrefix('!');
-        $routeProvider.otherwise({redirectTo: '/welcome'});
     }]);
 
 /* translation */

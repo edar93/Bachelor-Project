@@ -50,6 +50,7 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway,
                 }
                 var locationOnPage = responce.data;
                 localScope.gameLocation = responce.data;
+                localScope.currentPage = $location.path();
                 if (locationOnPage == 'GAME_CREATION' && $location.path() != '/gamecreation') {
                     goToGameCretion();
                 } else if ((locationOnPage == 'GAME' || locationOnPage == 'GAME_OVER') && $location.path() != '/game') {

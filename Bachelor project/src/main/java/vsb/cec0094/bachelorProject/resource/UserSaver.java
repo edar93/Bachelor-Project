@@ -21,13 +21,11 @@ public class UserSaver {
     private UsersProvider usersProvider;
 
     @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
-            "&& !execution(* vsb.cec0094.bachelorProject.webSockets.WebSockets.*(..))")
+            "&& !execution(* vsb.cec0094.bachelorProject.resource.StatsResource.*(..))")
     public void setUser(JoinPoint joinPoint) {
         String login;
         try {
             login = SecurityContextHolder.getContext().getAuthentication().getName();
-            //HttpSecurityUtils.getUsername(httpRequest);
-            //String login = SecurityContextHolder.getContext().getAuthentication().getName();
             usersProvider.prepareUser(login);
         }catch (Exception e){
             LOGGER.debug("Setting of to user provider fail");

@@ -1,7 +1,9 @@
 <div class="menu" style="color:white">
 
+
+    <a href="pravidla.pdf" target="_blank">{{'UPPER_RULES' | translate}}</a>
     <div class="inline" ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
-        <a ng-if="isAdmin" href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
+        <a ng-if="currentPage !='/welcome' " href="#!/welcome">{{'GO_TO_WELCOME' | translate}}</a>
         <a ng-if="isAdmin" href="#!/administration">{{'GO_TO_ADMINISTRATION' | translate}}</a>
     </div>
 

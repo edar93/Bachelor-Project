@@ -100,12 +100,12 @@ var backendGateway = function ($http, $q) {
 
     function translateUrl(url, pathParam) {
         if (URL[url]) {
-            if(pathParam){
+            if (pathParam) {
                 return serverURL + URL[url] + '/' + pathParam;
             }
             return serverURL + URL[url];
         }
-        if(pathParam){
+        if (pathParam) {
             return serverURL + url + '/' + pathParam;
         }
         return serverURL + url;

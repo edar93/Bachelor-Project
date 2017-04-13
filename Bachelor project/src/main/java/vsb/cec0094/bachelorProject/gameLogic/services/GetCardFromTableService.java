@@ -36,6 +36,11 @@ public class GetCardFromTableService {
 
         if (!game.getActivePlayer().equals(game.getPlayerOnTurn())) {
             game.getPlayers().get(game.getPlayerOnTurn()).addCoin();
+            if (game.getPlayers().get(game.getActivePlayer()).getCoins() == 0) {
+                throw new TooExpensiveCharacterException(card + " is too expensive");
+            } else {
+                game.getPlayers().get(game.getActivePlayer()).setCoins(game.getPlayers().get(game.getActivePlayer()).getCoins() - 1);
+            }
         }
 
         if (Card.shipTypes.contains(card.getCardType())) {
