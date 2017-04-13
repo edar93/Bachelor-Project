@@ -45,34 +45,6 @@
    captionpos=b
 }
 
-%XML
-\usepackage{color}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\definecolor{cyan}{rgb}{0.0,0.6,0.6}
-
-\lstset{
-  basicstyle=\tiny,
-  xleftmargin=0.8cm
-  language=XML,
-  basicstyle=\ttfamily,
-  columns=fullflexible,
-  showstringspaces=false,
-  commentstyle=\color{gray}\upshape
-}
-
-\lstdefinelanguage{XML}
-{
-  morestring=[b]",
-  morestring=[s]{>}{<},
-  morecomment=[s]{<?}{?>},
-  stringstyle=\color{black},
-  identifierstyle=\color{darkblue},
-  keywordstyle=\color{cyan},
-  morekeywords={xmlns,version,type}% list your attributes here
-}
-
-
 % Zadame pozadovane vstupy pro generovani titulnich stran.
 \ThesisAuthor{Jan Čech}
 
@@ -128,7 +100,7 @@
 Jako vše v oblasti informačních technologii i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologii, jenž usnadňují vývoj. Tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování software, jenž byl kdysi okrajovou záležitostí. V dnešní době se však testování software, stalo standardní součástí vývoje aplikace. Cíle této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout do následujících bodu. Všechny body níže byly splněny.
 
 \begin{enumerate}
-	\item Nastudovat moderní webové technologie Spring, AngulaJS a REST služby
+	\item Nastudovat moderní webové technologie Spring, AngulaJS a REST architekturu
 	\item Nastudovat principy testování a vybrat SW pro testování výše zmíněných technologii.
 	\item Navrhnout a implementovat hru Port Royal.
 	\item Zprovoznit testovací technologie a napsat v nich testy.
@@ -139,7 +111,7 @@ bude navazovat na horni cast
 
 \section{Technologie}
 
-\subsection{RESTful webove služby}
+\subsection{REST webove služby}
 Webové služby jsou typ architektury pro komunikaci na principu server - klient přes World Wide Web (WWW) HyperText Transfer Protocol (HTTP). Tak jak jej popisuje World Wide Web Consortium (W3C). \cite{WebServices}
 
 {\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST je webová služba, jenž by měla plnit následující podmínky díky nimž je rychlá a jednoduchá: 
@@ -176,10 +148,10 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 \end{table}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový framework založený na model-view-controller architektůře, určený pro vývoj single page aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá RESTové webové služby. \cite{coJeAngular}
+AngularJS je javascriptový rámec založen na model-view-controller architektůře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá webové služby. \cite{coJeAngular}
 
 \subsubsection{Jednostránková aplikace}
-Single page aplikace (SPA) je taková aplikace, která běží uvnitř prohlížeče na straně uživaetle a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovouto stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informaci. \cite{SPA}
+Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživaetle a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovouto stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informaci. \cite{SPA}
 
 \subsubsection{Model–View–Controller architektura}
 Model–View–Controller architektura dělí aplikaci na 3 části. Model, pohled a kontrolér. Uživateli je zobrazen pohled, pokud provede nějakou akci spustí funkci v kontroléru. Ten aktualizuje model, buď to svými daty, nebo se doptá se serverové strany přes REST. Aktualizovaný model se následně zobrazí v pohledu. Krásně je to zobrazeno v následujícím obrázku.
@@ -188,53 +160,59 @@ Model–View–Controller architektura dělí aplikaci na 3 části. Model, pohl
 \end{figure}
 
 \subsubsection{Two way data binding}
-Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding. Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data z backendu nebo pokud uživatel provede nějakou akci. \cite{databinding}
+Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding. Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data nebo pokud uživatel provede nějakou akci. \cite{databinding}
 
 \subsubsection{Dependency injection v AngularJS}
-Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet závislosti. AngularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
+Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet použité závislosti. AngularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
 
-Díky snadnosti vložení závislostí Dependency injection také usnadňuje testování, jelikož se snadno dají místo skutečných závislostí použít podvržené objekty neboli mocky.
+Díky snadnosti vložení závislostí Dependency injection také usnadňuje testování, jelikož se snadno dají místo skutečných závislostí použít podvržené objekty.
 
-Dependency injection je také použit ve frameworku Spring, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
+Dependency injection je také použit ve rámci Springu, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
 
 \subsubsection{Ukázka základního kontroléru}
-\lstset{language=JavaScript}
-\begin{lstlisting}[caption=Ukázka angulaří aplikace]
+Zde je ukázka kódu základního kontroléru, jenž zavolá http metodu get na url http://test.com. Odpověď pak uloží do modelu na podstránce /game.
+\begin{lstlisting}[language=JavaScript,label=src:JavaScript, caption=Ukázka kontroléru v AngularJS]
 var portRoyalApp = angular.module('portRoyalApp', [
-    'ngRoute',
     'rzModule',
-    'portRoyalApp.gameCtrl'
-]);
+    'portRoyalApp.gameModule'
+    'portRoyalApp.jakykolivDalsiModul',]);
 
-var gameCtrl = angular.module('portRoyalApp.gameCtrl', ['ngRoute']);
+var gameCtrl = angular.module('portRoyalApp.gameModule', ['ngRoute']);
 
-gameCtrl
-    .controller('gameCtrl', function ($scope, $http) {
-        // http get a prirazeni do scope
+gameCtrl.controller('gameControler', function ($scope, $http) {
+        $http.get('http://test.com').then
+        (function (odpoved) {
+            $scope.promennaDoSablony = odpoved.data;
+        });
     })
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/game', {
             templateUrl: 'components/templates/game.html',
-            controller: 'gameCtrl'
+            controller: 'gameControler'
         });
-    }]);
+    };
 \end{lstlisting}
+~\\
+Na 1. řádku se vytváří hlavní angulaří modul.\\
+Na 2. - 4. řádku  se do něj vkládají další moduly. Například rzModule je modul stahlý pomocí Node.js, přidávající posuvník a portRoyalApp.gameModule je modul vytvořený níže.\\
+Na 6. řádku se vytváří modul pro hru.\\
+Na 8. řádku se pro tento modul vytváří kontrolér, jenž si po pomocí Dependency Injection přidá 2 závislosti. \$scope - do této závislosti se ukládají proměnné jenž se pak dále zobrazují v šabloně. \$http - závislost pro volání http metod.\\
+Na 9. řádku se volá funkce get nad URL http://test.com poskytnutá \$http. Jedná se o asynchronní metodu tudíž je její návratová hodnota slib zachycen funkci then. Tato funkce má jako vstupní parametr funkci jenž zpracuje slib v momentě jeho naplnění\\
+Na 10. - 12. řádku se zpracovává odpověď na get. Tato odpověď má hlavičku, http status a dále aktuálně jsou podstatná její data. Ty se uloží do \$scope tak, že v ní vytvoříme nový objekt promennaDoSablony do nějž přiřadíme data.\\
+Na 14. - 19.  řádku \$routeProvider konfiguruje pohyb na stránce. Je zde určeno, že pokud uživatel přejde na URI /game zobrazí se mu šablona game.html, jenž má na starost gameControler. Ten se okamžitě při přechodu na tuto URI inicializuje. Tudíž spustí get metodu.
 
 
-Na řádku jedna se vytváří hlavní angulaří modul. Na řádcích 2 - 4 se do něj přidávají další moduly
-
-i HTTP kod ?
 \subsection{Další technologie}
 
 \subsubsection{Node.js}
 Většinu problémů které řeší programátor v javascriptu řešil už někdo před ním. Z tohoto důvodu by nebylo rozumné, aby programátor psal všechnu funkcionalitu sám. Je rozumnější podívat se zda už tato funkcionalita někde neexistuje. Proto vznikl Node.js. Node.js umožňuje programátorovi najít si funkcionalitu, a přidat ji do konfiguračního souboru. Po následném spuštění Node.js instalace se stáhnou závislosti, jenž programátor požaduje. Ty pak stačí pouze přidat pomocí dependency injection.
 
-Node.js také slouží jako task runner což znamená, že dokáže spouštět různé testovací framoworky, či fungovat jako server.
+Node.js také slouží jako spouštěč úloh což znamená, že dokáže spouštět různé testovací ramce, či fungovat jako server.
 
 \subsubsection{Spring}
-Spring je populární open-source framework pro vývoj J2EE aplikací. Jeho první verze vyšla v říjnu 2003 od té doby nabyl na popularitě. 
+Spring je populární open-source rámec pro vývoj J2EE aplikací. Jeho první verze vyšla v říjnu 2003 od té doby značně nabyl na popularitě. 
 
-Spring je označován jako kontejner jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí je to výhoda, jelikož následně na serveru jede pouze to co je opravdu potřeba. Závislosti se přidávají přes Maven což je obdoba Node.js pro Javovské aplikace. V aplikaci Port Royal jsou použity například tyto moduly:
+Spring je označován jako kontejner jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí je to výhoda, jelikož následně na serveru běží pouze to co je opravdu potřeba. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
 \begin{itemize}
 	\item Hibernate - toto je implementace Java Pesistance Api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
 	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele
@@ -242,6 +220,9 @@ Spring je označován jako kontejner jelikož je modulární. V základu tudíž
 	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou metody, které se volají nad větší skupinou různých třít u nichž je potřeba stejná funkcionalita. Například autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvlášť.
 	\item spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou je potřeba informovat hráče o akcích spoluhráčku. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockety, které mají dvě URL. Jednu na niž se přihlásí všichni hráči ve hře. A druhou na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informování všichni hráči kteří poslouchají na první.
 \end{itemize}
+
+\subsubsection{Maven}
+Maven slouží ke kompilaci aplikace, ovšem nejen to. Umí spouštět testy či různé pluginy například výše zmíněný Tomcat plugin. Také slouží k přidávání závislostí ty se stejně jako pluginy definují do do souboru pom.xml. Maven tyto závislostí nebo pluginy pak sám stáhne. Toto jednak usnadňuje přidávání závislostí, jelikož programátor nemusí složitě stahovat různé soubory stačí je pouze vypsat. Ale také usnadňuje přenos programu, jelikož stačí pouze přeposlat zdrojové kódy o kompilaci a závislosti se již dále postará maven.
 
 \subsubsection{GIT}
 git
@@ -295,67 +276,94 @@ Karma je spouštěč testu v Node.js. Využívá ho Jasmine i Protractor. Spouš
 Jersey je testovací framework vytvořen pro ověření správnosti serverových komponent. Testuje RESTové služby, funguje to tak že si Jersey rozjede svůj vlastní aplikační server s testovanými REST funkcemi. V této bakalářské práce Jetty ovšem dá se použít i jiný server. Následně se volají tyto resty, odpovědi serveru se nakonec porovnají s očekávanými. Pokud vývojář dostane například zadáni aby vytvořil REST, jenž vrací nějakou hodnotu. Snadno vytvoří test, kde pouze zavolá REST podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí následné testy se píší rychle a snadno.
 
 \section{Obsah a funkcionalita aplikace}
-Hra obsahuje  ...
+Hra uvítá nově příchozího hráče uvítací stránkou na níž má možnost podívat se na statistiky hráčů či se přehlásit nebo registrovat. Po přihlášení přibude možnost vytvořit hru do níž se mohou přihlašovat další hráči nebo se přihlásit do již vytvořené hry. Také zde přibude možnost přejít do administrace hráčů pokud má hráč roli uživatele.
 
-\subsection{zkrácená pravidla}
-Hra s hraje tak
+\subsection{Zkrácená pravidla hry}
+Hra se dělí na dvě fáze. Nejprve aktivní hráč otáčí karty z kupky. Na stole se může objevit více druhů karet. Karty lodi za tyto dostane hráč mince. Karty postav jenž poskytují zvláštní schopnosti.  Tyto karty si může hráč koupit pouze pokud má dost mincí. Pak zde jsou Expedice, ty se po otočení přesunou na zvláštní hromádku. Pokud má hráč postavy jenž umožňují provést expedici může je kdykoliv kdy je aktivní vyměnit. Pak zde jsou ještě karty daní, při jejich otočení může hráč splňující určitou podmínku dostat mince. Hráči mající 12 nebo více mincí musejí zaplatit polovinu svých mincí. Točí tak dlouho dokud se aktivní hráč nerozhodne jednu z otočených karet vzít nebo dokud neotočí dva typy stejné lodi.
+
+Následně začne druhá fáze v níž postupně může každý ze zbývajících hráčů kupovat karty ze stolu, pokud zde nějaké jsou. Ovšem při tomto nákupu musí hráči jenž karty otočil zaplatit minci. Jakmile tato fáze skončí posouvá se aktivní hráč. Celá pravidla je možno samozřejmě stáhnout ve hře.
 
 \subsection{Obsah a implementace stránky na vytvářeni hry}
-obrazek ? 
+Na stránce vytváření hry je použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota angulařího modelu uvadajícího maximální počet hráčů. Nad tímto modelem je použit \$watch, ten při pohybu posuvníku informuje zadní část aplikace o změně.
 
-Na stránce vytváření hry je použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota angulařího modelu .. treba vysvetlit scope a http
-
-dirty check ?
-
-
-\subsection{Obsah a implementace stránky s hrou}
-obrazek ?
-
-co je tam použito ... sockety
+Podobná kontrola probíhá při změně každé proměnné. Nazývá se takzvaný dirty checking. Zajišťuje propsání změn mezi mezi modelem a šablonou, případně mezi modely. Proto se doporučuje, že by počet proměnných na stránce neměl přesáhnout 5000.
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/gamecreationpage.png}\caption{Stránka na vytváření hry}
+\end{figure}
 
 \subsection{Obsah a implementace stránky s administraci}
-obrazek ?
+Tato stránka je dostupná pouze uživatelům s rolí administrátora. Pokud by se na ní uživatel nějak dostal Spring Security stejně zablokuje všechny resty začínající /useradministration což jsou resty provádějící akce na této stránce. Tudíž mu nedovolí provést žádnou změnu. Stránka obsahuje seznam uživatelů seřazen podle loginu. Zde použit stránkování, kdy se na jednu stránku načte pouze deset uživatelů.
 
-Tato stránka je dostupná pouze uživatelům s rolí administrátora. Stránka obsahuje seznam uživatelů seřazen podle loginu. Je zde použit stránkování, kdy se na jedné stránce zobrazí pouze 10 uživatelů.
-Stránkování je udělané tak, že ...
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/administrationpage.png}\caption{Stránka administrace uživatelů}
+\end{figure}
+
+\subsection{Obsah a implementace stránky s hrou}
+Hra je uložena v objektu, jenž obsahuje více stavů hry, které se postupně zobrazují aby ukázaly akci aktivního hráče. Proto by by doptávání na server v určitých intervalech nebylo jen zbytečně náročné na přenos dat a se zpožděním, ale také by se nevědělo kdy byla akce provedena tudíž by se mohla zobrazit několikrát. Proto zde jsou použity websockety ty po zaslání akce na server aktualizují hráčům ve hře objekt se stavy hry právě jednou.
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/gamepage.png}\caption{Stránka na které se hraje hra}
+\end{figure}
+
 
 \section{Analýza použitých technologii}
-\subsection{Spring základ aplikace}
-Hra je vyvinuta ve Springu.
+Aplikace je vyvinuta ve Springu, jediné co potřebuje je připojení do databáze v níž si sám vytvoří tabulky pomocí Hibernate. Spring kontejner v sobě má dvě části.
 
-struktura složek s popisem ?
- 
-\subsection{pom Maven}
-jak se pousti a instaluji zavislosti
+Zadní napsané v Javě jenž se stará o logiku aplikace, přistupující do databáze. Po nasazení na server obsluhuje REST URI. Tato část se nachází ve složce java. 
 
-\subsection{Node.js}
-přidani slideru
+Přední část ve složce webapp tato část obsahuje AngularJS. Při uživatelově vstupu do webové aplikace se celá tato část načte do prohlížeče. Po provedení akce pak tato část volá zadní z níž si bere informace pomocí REST přístupových bodů.
+
+Obě tyto části by se daly snadno oddělit do dvou serveru.
 
 \subsection{Schema DB}
 \begin{figure}[H]
-\centering\includegraphics[width=1\textwidth]{./Figures/DB model.png}\caption{Databázový model}
+\centering\includegraphics[width=0.95\textwidth]{Figures/DBmodel.png}\caption{Databázový model}
 \end{figure}
+
+\subsection{Node.js}
+Pokud chce programátor přidat závislost přes Node.js, Například posuvník. Je nejprve potřeba vyhledat závislost v tomto případě "angularjs-slider": "6.0.1", tato závislost se přidá do souboru bower.json, konkrétně do objektu dependencies. pak se ve složce s tímto souborem spustí příkaz "bower install". Tento příkaz do nakonfigurované složky stáhne nově přidanou závislost. Následně stačí pouze přidat nově stažený script do indexu a jeho závislost do modulu AngularJS. 
 
 \subsection{Spring Security a Bcrypt}
 Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurování blokuje URI na jenž uživatel nemá přístup.
 
 Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje zda přihlašovací heslo odpovídá vygenerovanému hashi.
 
-\subsection{Návrh aplikace Angular / Spring}
-Jak to nakreslit, popr slovne ?
+\subsection{Aspekty}
+Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. Níže je ukázka aspektu, který před každým zavoláním funkce z balíčku resource nastaví uživatele v beaně UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro beany v rámci Spring je přednastaveno, že je jedna pro celý běh aplikace. U beany UsersProvider je to změněno, vytváří se zvlášť pro každý http dotaz. Jelikož na server přistupuje několik uživatelů zároveň. \\
 
-ulm tridni diagram
+\begin{lstlisting}[language=Java,label=src:Java, caption=Ukázka aspektu]
+@Aspect
+public class UserSaver {
 
-\subsection{Aspecty}
-Par rádku kodu s popisem
+    @Inject
+    private UsersProvider usersProvider;
 
-\subsection{Jak to komunikuje}
+    @Before("execution (* vsb.cec0094.bachelorProject.resource.*.*(..))" +
+            "&& !execution(* vsb.cec0094.bachelorProject.resource.StatsResource.*(..))")
+    public void setUser() {
+        String login = SecurityContextHolder.getContext().getAuthentication().getName();
+            usersProvider.prepareUser(login);
+    }
+}
+\end{lstlisting}
+~\\
+Na 1. řádku se anotacemi určí, že se jedná o Aspekt\\
+Na 4. řádku je použita anotace Inject, touto anotací se říká rámci Spring aby do proměnné níže automaticky přiřadil beanu této třídy.\\
+Na řádcích 7 až 9 Se určí, že se funkce setUser má zavolat před každým voláním funkce třídy jenž je v balíčku resource. Mimo třídu StatsResource jenž beanu userProvider nepoužívá.\\
+Na 10 řádku se pak z kontextu vyčte jméno přihlášeného uživatele.\\
+Na 11. řádku se nastaví beana userProvider.
+
+\subsection{Komunikace mezi Spring a AngularJS}
 P
 
 \subsection{Websockets}
 Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS).
 
 Moc kodu ?
+
+\subsection{Návrh aplikace Angular / Spring}
+Jak to nakreslit, popr slovne ?
+
+ulm tridni diagram
 
 \section{Analýza a implementace testu}
 
@@ -393,16 +401,14 @@ kod s komentari
 a
 
 \subsection{Největší komplikace při vývoji}
-co tech umi neumi
+Při vývoji jsem narazil na několik problémů
 
-\subsection{Největší komplikace při vývoji}
-a
+\subsection{Co bych dělal jinak}
+Při vývoji jsem byly použity konfigurace aplikace pomocí XML souborů. to se nakonec ukázalo jako nevhodné jelikož v dnešní době se do popředí dostává konfigurování pomocí anotací. Tudíž většina návodů byla pro tuto aplikaci nevhodná.
 
 \subsection{Jak by se dala aplikace vylepšit}
 a
 
-\subsection{Co chybelo}
-a
 
 \newcommand{\registerToBib}[4]
 {
