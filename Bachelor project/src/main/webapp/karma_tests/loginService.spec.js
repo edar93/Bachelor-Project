@@ -1,7 +1,6 @@
-//TODO getUser was refactored !!!!!!!!
 'use strict';
 
-describe('portRoyalApp.loginService', function () {
+describe('test portRoyalApp.loginService', function () {
 
     var $q, $rootScope, loginService, backendGateway;
 
@@ -31,7 +30,7 @@ describe('portRoyalApp.loginService', function () {
         expect(backendGateway.post).toHaveBeenCalledWith('REGISTER_URL', user);
     });
 
-    it('should login user and return user when login function is called', function () {
+    it('should login user and return his login when login is called', function () {
         //prepare
         var loggedUser;
         var userName = 'MOCKED_USERNAME';

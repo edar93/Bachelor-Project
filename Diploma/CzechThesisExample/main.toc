@@ -15,12 +15,13 @@
 \contentsline {subsection}{\numberline {2.2}AngularJs}{26}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Jednostr\IeC {\'a}nkov\IeC {\'a} aplikace}{26}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Model\IeC {\textendash }View\IeC {\textendash }Controller architektura}{26}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Two way data binding}{26}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3}Dvoucestn\IeC {\'y} databinding}{26}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.4}Dependency injection v AngularJS}{27}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{27}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.5}Z\IeC {\'a}kladn\IeC {\'\i } prom\IeC {\v e}nn\IeC {\'e}}{27}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{27}{subsubsection.2.2.6}
 \contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } technologie}{28}{subsection.2.3}
 \contentsline {subsubsection}{\numberline {2.3.1}Node.js}{28}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Spring}{28}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2}Spring}{29}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Maven}{29}{subsubsection.2.3.3}
 \contentsline {subsubsection}{\numberline {2.3.4}GIT}{29}{subsubsection.2.3.4}
 \contentsline {section}{\numberline {3}Typy testov\IeC {\'a}n\IeC {\'\i }}{31}{section.3}
@@ -52,18 +53,17 @@
 \contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Jasmine}{43}{subsection.6.1}
 \contentsline {subsubsection}{\numberline {6.1.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{43}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}ukazkovy test}{43}{subsubsection.6.1.2}
-\contentsline {subsection}{\numberline {6.2}Protractor}{43}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{43}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}ukazkovy test}{43}{subsubsection.6.2.2}
-\contentsline {subsection}{\numberline {6.3}Jersey}{43}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{43}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}ukazkovy test}{43}{subsubsection.6.3.2}
-\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{45}{section.7}
-\contentsline {subsection}{\numberline {7.1}Nejv\IeC {\v e}t\IeC {\v s}\IeC {\'\i } komplikace p\IeC {\v r}i v\IeC {\'y}voji}{45}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Co bych d\IeC {\v e}lal jinak}{45}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Jak by se dala aplikace vylep\IeC {\v s}it}{45}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Co chybelo}{45}{subsection.7.4}
-\contentsline {section}{Literatura}{47}{subsection.7.4}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{47}{subsection.7.4}
-\contentsline {section}{\numberline {A}Instalace aplikace}{49}{appendix.A}
+\contentsline {subsubsection}{\numberline {6.1.2}Uk\IeC {\'a}zkov\IeC {\'y} test}{43}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}Protractor}{44}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{44}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}ukazkovy test}{45}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Jersey}{45}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{45}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}ukazkovy test}{45}{subsubsection.6.3.2}
+\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{47}{section.7}
+\contentsline {subsection}{\numberline {7.1}Nejv\IeC {\v e}t\IeC {\v s}\IeC {\'\i } komplikace p\IeC {\v r}i v\IeC {\'y}voji}{47}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Co bych d\IeC {\v e}lal jinak}{47}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Jak by se dala aplikace vylep\IeC {\v s}it}{47}{subsection.7.3}
+\contentsline {section}{Literatura}{49}{subsection.7.3}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{49}{subsection.7.3}
+\contentsline {section}{\numberline {A}Instalace aplikace}{51}{appendix.A}

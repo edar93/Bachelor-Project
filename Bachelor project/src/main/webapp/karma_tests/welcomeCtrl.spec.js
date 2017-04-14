@@ -1,12 +1,12 @@
 'use strict';
 
-describe('portRoyalApp.welcomeCtrl', function () {
+describe('portRoyalApp.welcome', function () {
 
     var $controller, $scope, $rootScope, $q,
         welcomeCtrl;
 
     beforeEach(function () {
-        module('portRoyalApp.welcomeCtrl');
+        module('portRoyalApp.welcome');
         module({
             'baseInitService': jasmine.createSpyObj('baseInitService', ['setVariables', 'init']),
             'loginService': jasmine.createSpyObj('loginService', ['getUser']),

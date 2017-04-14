@@ -148,7 +148,7 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 \end{table}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový rámec založen na model-view-controller architektůře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá two way data binding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá webové služby. \cite{coJeAngular}
+AngularJS je javascriptový rámec založen na model-view-controller architektůře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding, dependency injection a u něj vysoká znovupoužitelnost komponent. Celkově tak usnadňuje a urychluje vývoj webové částni aplikace. Pro přístup na backend AngularJS využívá webové služby. \cite{coJeAngular}
 
 \subsubsection{Jednostránková aplikace}
 Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživaetle a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovouto stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informaci. \cite{SPA}
@@ -159,8 +159,8 @@ Model–View–Controller architektura dělí aplikaci na 3 části. Model, pohl
 \centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS}
 \end{figure}
 
-\subsubsection{Two way data binding}
-Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je Two way data binding. Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data nebo pokud uživatel provede nějakou akci. \cite{databinding}
+\subsubsection{Dvoucestný databinding}
+Jedna z výhod frameworku AngularJS kterou programátoři bezpochyby ocení je dvoucestný databinding. Jedná se o automatickou synchoronizaci mezi modelem a pohledem. Což umožňuje rychnou a pro prográmátora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Což se děje v například pokud dorazí nová data nebo pokud uživatel provede nějakou akci. \cite{databinding}
 
 \subsubsection{Dependency injection v AngularJS}
 Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet použité závislosti. AngularJS načte a inicializuje všechny závislosti při spuštění aplikace a následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce použít a pak už volá její metody.
@@ -169,9 +169,19 @@ Díky snadnosti vložení závislostí Dependency injection také usnadňuje tes
 
 Dependency injection je také použit ve rámci Springu, v němž je jednou z klíčových součástí. Spring bude zmíněn v dalších kapitolách. \cite{LearningAngularjs}
 
+\subsubsection{Základní proměnné}
+V angularJS se pro pojmenovávání objektů používá camelCase. Neboli způsob psaní víceslovných názvů, kdy se pro oddělení slov nepoužívají mezery, ale místo toho každé další slovo začíná velkým písmenem.
+
+Proměnné od AngulárJS začínají \$ nebo \$\$. Ty jenž začínají dvěma dolary jsou soukromé a programátor by k nim neměl vůbec přistupovat. Ty jenž začínají jedním dolarem se běžně používají. Níže je uvedeno pár hlavních.
+
+\$location - poskytuje informace o aktuální URI na jednostránkové aplikaci, také svýma funkcemi umožňuje přechod mezi stránkami.\\
+\$http - slouží k volání http metod,\\
+\$scope - propisuje proměnné do vybrané šablony.\\
+\$rootscope - propisuje proměnné do všech šablon.
+
 \subsubsection{Ukázka základního kontroléru}
 Zde je ukázka kódu základního kontroléru, jenž zavolá http metodu get na url http://test.com. Odpověď pak uloží do modelu na podstránce /game.
-\begin{lstlisting}[language=JavaScript,label=src:JavaScript, caption=Ukázka kontroléru v AngularJS]
+\begin{lstlisting}[language=JavaScript, caption=Ukázka kontroléru v AngularJS]
 var portRoyalApp = angular.module('portRoyalApp', [
     'rzModule',
     'portRoyalApp.gameModule'
@@ -315,6 +325,7 @@ Přední část ve složce webapp tato část obsahuje AngularJS. Při uživatel
 Obě tyto části by se daly snadno oddělit do dvou serveru.
 
 \subsection{Schema DB}
+Hibernate po připojení do databáze vytvoří následující schéma.
 \begin{figure}[H]
 \centering\includegraphics[width=0.95\textwidth]{Figures/DBmodel.png}\caption{Databázový model}
 \end{figure}
@@ -353,7 +364,7 @@ Na 10 řádku se pak z kontextu vyčte jméno přihlášeného uživatele.\\
 Na 11. řádku se nastaví beana userProvider.
 
 \subsection{Komunikace mezi Spring a AngularJS}
-P
+Komunikaci mezi Springem a AngularJS vždy inicializuje AngularJS. voláním určitého koncového bodu, neboli URL přístupného klientským aplikacím.
 
 \subsection{Websockets}
 Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS).
@@ -371,12 +382,64 @@ ulm tridni diagram
 \subsubsection{Konfigurace a pouštění}
 Jasmine testy se pouštění přes Node.js příkazem "npm test" ve složce se souborem package.json. V němž je uvedena cesta ke konfiguračnímu souboru karmy v tomto souboru jsou uvedeny cesty k testům a pluginy pro spuštění prohlížeče v němž se testy jeden po jednom spouštějí. 
 
-pridat par radku conf souboru ?
+Samozřejmě, že také existuje software jako například Karma plugin pro InteliJ IDEA jenž umožňují spustit testy jedním kliknutím ve vývojovém prostředí.
 
-\subsubsection{ukazkovy test}
-kod s komentari
+\subsubsection{Ukázkový test}
+Zde je ukázkový test jenž ověří, zda se po zavolání funkce login od loginService, zkutečně zavolá backendGateway jenž komunikuje na ven z aplikace a zda vrátí login nově přihlášeného uživatele.
+  
+\begin{lstlisting}[language=JavaScript, caption=Ukázka testu pomocí Jasmine]
+describe('example test for portRoyalApp.loginService', function () {
+    var $q, $rootScope, loginService, backendGateway;
 
+    beforeEach(function () {
+        module('portRoyalApp.loginService');
+        module({
+            'backendGateway': jasmine.createSpyObj('backendGateway', ['get', 'post'])
+        });
 
+        inject(['$q', '$rootScope', 'loginService', 'backendGateway',
+            function (_$q_, _$rootScope_, _loginService_, _backendGateway_) {
+                $q = _$q_;
+                $rootScope = _$rootScope_;
+                loginService = _loginService_;
+                backendGateway = _backendGateway_;
+            }]);
+    });
+
+    it('should login user and return his login when login is called', function () {
+        //prepare
+        var loggedUser;
+        var userName = 'MOCKED_USERNAME';
+        var password = 'MOCKED_PASSWOED';
+        var expectedConfig = {
+            params: {
+                username: userName,
+                password: password
+            },
+            ignoreAuthModule: 'ignoreAuthModule'
+        };
+        backendGateway.get.and.returnValue($q.resolve({data: 'MOCKED_USER_FROM_BACKEND'}));
+        backendGateway.post.and.returnValue($q.resolve());
+        //test
+        loggedUser = loginService.login(userName, password);
+        //validation
+        $rootScope.$digest();
+        expect(backendGateway.post).toHaveBeenCalledWith('LOGIN_URL', '', expectedConfig, false, true);
+        expect(loggedUser).toEqual($q.resolve('MOCKED_USER_FROM_BACKEND'));
+    });
+});
+\end{lstlisting}
+~\\
+Na 1. řádku se určuje, že se jedná o test pomocí describe, jenž shlukuje Jasmine testy. První parametr je popis skupiny testů, druhý je funkce se skupinou testů.\\
+Na 2. řádku se vytváří proměnné jenž se budou využívat.
+Na 4. až 17. řádku je funkce beforeEach jenž se spouští před každým testem v této skupině. V této funkci se nejprve přidává testovaný modul. Následně jeho závislosti, v tomto případě se jedná pouze backendGateway. Zde se nepřidává skutečný modul, ale pouze podvržený objekt. Jenž má dvě funkce get a post, obě bez implementace. Po přidání modulů se na řádcích 10 až 15 vytáhnou z modulů objekty jenž se budou používat.\\
+Na 19. řádu začíná test. To udává funkce it. Ta 2 vstupní parametry, popis jehož jmenná konvence vypadá takto: it(should "očekávané chování" when "co se děje/jaké jsou vstupní podmínky"). Pak následuje funkce s testem.\\
+Na 21. až 30. řádku se připravují pomocné proměnné.\\
+Na 31. a 32. řádku se určují návratové hodnoty funkcí podvržených objektů. Zde je možno také napsat celou novou funkci.\\
+na 34. řádku se zavolá testované funkce.\\
+Na 36. řádku se vyvolá dirty checking zmíněn v kapilone~4.2 . Ten je použit hlavně pro vyhodnocení asynchronních metod.\\
+Na 37. řádku se zkontroluje zda byla opravdu zavolána backendGateway se správnými parametry pro přihlášení.\\
+Na 38. řádku se provádí kontrola vrácené hodnoty.\\
 
 \subsection{Protractor}
 \subsubsection{Konfigurace a pouštění}
