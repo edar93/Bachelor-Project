@@ -5,6 +5,7 @@
 \usepackage{tikz}		% makra pro kresleni
 
 \usepackage{float}
+\usepackage{color}
 
 %javascript
 \usepackage{listings}
@@ -43,6 +44,21 @@
    breaklines=true,
    showtabs=false,
    captionpos=b
+}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
 }
 
 % Zadame pozadovane vstupy pro generovani titulnich stran.
@@ -364,12 +380,57 @@ Na 10 řádku se pak z kontextu vyčte jméno přihlášeného uživatele.\\
 Na 11. řádku se nastaví beana userProvider.
 
 \subsection{Komunikace mezi Spring a AngularJS}
-Komunikaci mezi Springem a AngularJS vždy inicializuje AngularJS. voláním určitého koncového bodu, neboli URL přístupného klientským aplikacím.
+Komunikaci mezi zadní stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím běžícím ve Springu. To se děje v případě uživatelovy akce, jenž je třeba uložit na zadní část aplikace. Také v pozadí běží kontrola zda se uživatel nachází na správné URI v rámci aplikace. Jenž se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce s hrou pak běží websockety, pro chat a aktualizování hry.
 
 \subsection{Websockets}
-Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS).
+Zde je ukázka nastavení websocketu pro chat jenž je na úvodní stránce. Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS). 
 
-Moc kodu ?
+\subsubsection{Strana rámce Spring}
+Na straně rámce Spring je potřeba závislosti ze skupiny "org.springframework" konkrétně "spring-messaging" a "spring-websocket"
+
+\begin{lstlisting}[language=XML, caption=XML konfigurace websocketu]
+<websocket:message-broker application-destination-prefix="/port-royal/">
+    <websocket:stomp-endpoint path="/chat">
+        <websocket:sockjs/>
+    </websocket:stomp-endpoint>
+    <websocket:simple-broker prefix="/messages"/>
+</websocket:message-broker>
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java, caption=Implementace websocketu v javě]
+@MessageMapping("/sendMessage")
+@SendTo("/messages")
+public Message receive(Message message) {
+    return message;
+}
+\end{lstlisting}
+
+Po použití tohoto nastavení se uživatelé mohou připojit v rámci aplikace na URI "/chat". Zde pak mohou odebírat zprávy na URI "/messages"  nebo zasílat vlastní zprávy na URI "/sendMessage" všem odběratelům.
+
+\subsubsection{Strana AngularJS}
+Do aplikace je nejprve nutno přidat závislosti "sockjs" a  "stomp-websocket" přes Node.js.
+
+\begin{lstlisting}[language=JavaScript, caption=Použití websocketu na straně klienta]
+var client;      
+function connect() {
+    var socket = new SockJS('/port-royal/chat');
+    client = Stomp.over(socket);
+    client.connect();
+};
+function subscribe() {
+    client.subscribe("/messages", function (message) {
+        var body = JSON.parse(message.body);
+        console.log('message was recived', body);
+    });
+};
+function send () {
+    client.send("/port-royal/sendMessage", {}, JSON.stringify(
+        {'text': 'test message',
+        'author': 'Honza Cech'}
+    ));
+};
+\end{lstlisting}
+pops
 
 \subsection{Návrh aplikace Angular / Spring}
 Jak to nakreslit, popr slovne ?

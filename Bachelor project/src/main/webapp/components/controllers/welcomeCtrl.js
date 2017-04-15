@@ -3,6 +3,35 @@
 welcomeCtrl
     .controller('welcomeCtrl', function ($scope, loginService, locationService, gameService, globalChatService, baseInitService, welcomeService) {
 
+
+        // test for theoretical part
+        //$scope.connect = connect;
+        //$scope.subscribe = subscribe;
+        //$scope.send = send;
+        //
+        //var client;
+        //
+        //function connect() {
+        //    var socket = new SockJS('/port-royal/old-backend/chat');
+        //    client = Stomp.over(socket);
+        //    client.connect();
+        //};
+        //
+        //function subscribe() {
+        //    client.subscribe("/messages", function (message) {
+        //        var body = JSON.parse(message.body);
+        //        console.log('message was recived', body);
+        //    });
+        //};
+        //
+        //function send () {
+        //    client.send("/port-royal/old-backend/sendMessage", {}, JSON.stringify(
+        //        {'text': 'test message',
+        //            'author': 'Honza Cech'}
+        //    ));
+        //};
+
+
         baseInitService.setVariables($scope);
         baseInitService.init();
 
