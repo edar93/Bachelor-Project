@@ -25,17 +25,19 @@ var globalChatService = function (stompService) {
             scope.chat.connect("not needed username", "not needed password", function () {
                 if (notSubscribing) {
                     notSubscribing = false;
-                    scope.chat.subscribe("/topic/messages", function (message) {
+                    scope.chat.subscribe("/messages", function (message) {
                         var body = JSON.parse(message.body);
-                        scope.messages.push(body.text);
+                        scope.messages.push(body.author + ": " + body.text);
                     });
                 }
-
             });
         }
-
         scope.sendName = function () {
-            scope.chat.send("/port-royal/old-backend/sendMessage", {}, JSON.stringify({'text': scope.text}));
+            console.log(scope, 'scope');
+            scope.chat.send("/port-royal/old-backend/sendMessage", {}, JSON.stringify({
+                'text': scope.text,
+                'author': scope.user
+            }));
         }
     }
 };

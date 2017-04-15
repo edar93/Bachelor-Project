@@ -17,7 +17,7 @@
         <websocket:stomp-endpoint path="/chat , /game">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/topic, /myGame"/>
+        <websocket:simple-broker prefix="/messages, /myGame"/>
     </websocket:message-broker>
 
     <!-- Enables the Spring MVC @Controller programming model -->
@@ -29,30 +29,5 @@
 
     <!--    <tx:annotation-driven />-->
     <context:component-scan base-package="vsb.cec0094.bachelorProject.webSockets"/>
-    <context:component-scan base-package="vsb.cec0094.bachelorProject.dao"/>
 
-
-    <beans:bean id="SQLDataSource"
-                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-        <beans:property name="username" value="Honza"/>
-        <beans:property name="password" value="Slepice1"/>
-        <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-    </beans:bean>
-
-    <beans:bean id="HibernateJpaVendorAdapter"
-                class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-    </beans:bean>
-
-    <beans:bean id="LocalContainerEntityManagerFactoryBean"
-                class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <beans:property name="dataSource" ref="SQLDataSource"/>
-        <beans:property name="jpaVendorAdapter" ref="HibernateJpaVendorAdapter"/>
-        <beans:property name="persistenceUnitName" value="port-royal-cech-PU"/>
-    </beans:bean>
-
-    <beans:bean id="transactionManager"
-                class="org.springframework.orm.jpa.JpaTransactionManager">
-        <beans:property name="entityManagerFactory" ref="LocalContainerEntityManagerFactoryBean"/>
-    </beans:bean>
 </beans:beans>

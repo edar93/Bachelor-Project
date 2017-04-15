@@ -15,7 +15,7 @@ public class WebSockets {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebSockets.class);
 
     @MessageMapping("/sendMessage")
-    @SendTo("/topic/messages")
+    @SendTo("/messages")
     public Message receive(Message message) {
         return message;
     }
