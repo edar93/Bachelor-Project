@@ -1,4 +1,5 @@
 INSERT INTO active_game (id, maxPlayersCount, owner) VALUES(0, 3, 'adam');
+INSERT INTO active_game (id, maxPlayersCount, owner) VALUES(1, 2, 'pavel');
 INSERT INTO player (login, enabled, password, game_id) VALUES ('adam', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', 0);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('honza', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('lenka', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
@@ -6,7 +7,7 @@ INSERT INTO player (login, enabled, password, game_id) VALUES ('monika', '1', '$
 INSERT INTO player (login, enabled, password, game_id) VALUES ('marek', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('lukas', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('marie', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
-INSERT INTO player (login, enabled, password, game_id) VALUES ('pavel', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
+INSERT INTO player (login, enabled, password, game_id) VALUES ('pavel', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', 1);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('daniel', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('barbara', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('david', '1', '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);

@@ -1,10 +1,7 @@
 <div ng-include="'components/templates/upper_strip.html'"></div>
 
-<div style="width: 25%; display: inline-block;"></div>
-
-<div class="centered" style="display: inline-block;">
-
-<div ng-if="!user">
+<div class="centered">
+    <div ng-if="!user">
         <h1>{{'WELCOME_TEXT' | translate}}</h1>
         <button ng-click="goToLoginPage()">
             {{'LOG_IN' | translate}}
@@ -13,8 +10,13 @@
             {{'REGISTER' | translate}}
         </button>
     </div>
+</div>
 
-    <div ng-if="user">
+<div ng-show="user" style="width: 25%; display: inline-block;"></div>
+
+<div class="centered" style="display: inline-block;">
+
+<div ng-if="user">
         <h4>{{'WELCOME_PLAYER' | translate}} {{user}}</h4>
         <button ng-click="createGame()">
             {{'CREATE_GAME' | translate}}
