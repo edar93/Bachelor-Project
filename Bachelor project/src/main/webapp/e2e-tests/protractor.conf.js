@@ -5,7 +5,7 @@ exports.config = {
 
   specs: [
     '*.js'
-    //'joinGameTest.js'
+    //'gameCreationTest.js'
   ],
 
   capabilities: {
