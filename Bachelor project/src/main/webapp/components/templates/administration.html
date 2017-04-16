@@ -27,11 +27,9 @@
 
     <br>
 
-    <div ng-if="pagesCount != 1" class="center">
+    <div ng-if="pagesCount != 0" class="center">
         <div ng-repeat="page in pagesCount" class="pagination">
             <a ng-click="showPage(page + 1)" ng-class="{active: currentPage == (page +1)}">{{ page + 1 }}</a>
         </div>
     </div>
-
-
 </div>

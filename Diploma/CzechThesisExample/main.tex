@@ -386,7 +386,11 @@ Komunikaci mezi zadní stranou aplikace v rámci Spring a AngularJS vždy začí
 Zde je ukázka nastavení websocketu pro chat jenž je na úvodní stránce. Websockety je nutno nastavit jak na straně serveru (Springu) tak na straně klienta (AngularuJS). 
 
 \subsubsection{Strana rámce Spring}
-Na straně rámce Spring je potřeba závislosti ze skupiny "org.springframework" konkrétně "spring-messaging" a "spring-websocket"
+Na straně rámce Spring se nastavuje serverová část websocketu. Je zde nutno přidat závislosti ze skupiny "org.springframework"~konkrétně "spring-messaging"~a "spring-websocket"
+
+V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocketům na URI "/chat". Na URI "/messages"~půjde následně odebírat zprávy.
+
+V Javě je nutno vytvořit funkci jenž zpracovává příchozí právy. Na prvním řádku se určí URI pro příchozí zprávy. Na druhém řádku se určí URI na které jsou odběratelé, jenž všichni dostanou zpracovanou zprávu. Dále je jen zpracování a odeslání zprávy.
 
 \begin{lstlisting}[language=XML, caption=XML konfigurace websocketu]
 <websocket:message-broker application-destination-prefix="/port-royal/">
@@ -405,10 +409,12 @@ public Message receive(Message message) {
 }
 \end{lstlisting}
 
-Po použití tohoto nastavení se uživatelé mohou připojit v rámci aplikace na URI "/chat". Zde pak mohou odebírat zprávy na URI "/messages"  nebo zasílat vlastní zprávy na URI "/sendMessage" všem odběratelům.
-
 \subsubsection{Strana AngularJS}
-Do aplikace je nejprve nutno přidat závislosti "sockjs" a  "stomp-websocket" přes Node.js.
+V AngularJS je klientská část aplikace. Níže je ukázka použiti, pro níž je nutno mít závislosti "sockjs" a "stomp-websocket"~které se přidávají přes Node.js.
+
+Jsou zde 3 asynchronní funkce. Nejprve je nutno se připojit na serverový koncový bod funkci connect. Konkrétně se zde připojuje na URI "/port-royal/chat". 
+
+Pak je možno začít odebírat zprávy funkcí subscribe, jenž vypíše do konzole všechny příchozí zprávy. Také je možné odeslat zprávu funkcí send.
 
 \begin{lstlisting}[language=JavaScript, caption=Použití websocketu na straně klienta]
 var client;      
@@ -430,7 +436,6 @@ function send () {
     ));
 };
 \end{lstlisting}
-pops
 
 \subsection{Návrh aplikace Angular / Spring}
 Jak to nakreslit, popr slovne ?
@@ -504,10 +509,29 @@ Na 38. řádku se provádí kontrola vrácené hodnoty.\\
 
 \subsection{Protractor}
 \subsubsection{Konfigurace a pouštění}
-Protractor se pouští stejně jako Jasmine přes Node.js ve složce se souborem package.json. Ovšem příkazem "npm protractor run"
+Protractor se pouští stejně jako Jasmine přes Node.js ve složce se souborem package.json. Ovšem příkazem "npm protractor run". V souboru package.json. Je cesta ke konfiguračnímu souboru Protractoru, v tom se nastavuje na jaké URL je spuštěn testovaný server nebo v jakém prohlížeči se mají testy spouštět. 
 
 \subsubsection{ukazkovy test}
-kod s komentari
+\begin{lstlisting}[language=JavaScript, caption=Ukázkový Protractor test]
+describe('examle login test', function () {
+    it('should login user', function () {
+        browser.get('http://localhost:8090/port-royal/#!/login');
+        browser.ignoreSynchronization = true;
+
+        var pageTittle = element(by.id('loginLabel'));
+        expect(pageTittle.getText()).toMatch('Zde se muzete prihlasit');
+
+        element(by.model('userName')).sendKeys('honza');
+        element(by.model('password')).sendKeys('heslo');
+        element(by.id('loginButton')).click();
+        browser.sleep(2500);
+
+        expect(browser.getLocationAbsUrl()).toMatch("/welcome");
+        pageTittle = element(by.css('.welcomeLabel'));
+        expect(pageTittle.getText()).toMatch('Vitej pirate honza');
+    });
+});
+\end{lstlisting}
 
 
 \subsection{Jersey}

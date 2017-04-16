@@ -112,6 +112,10 @@ img {
     text-align: left;
 }
 
+.welcomeLabel {
+
+}
+
 .cards {
     display: inline-block;
     box-shadow: 3px 3px 12px #303030;

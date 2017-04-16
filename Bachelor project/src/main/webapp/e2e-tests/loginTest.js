@@ -18,6 +18,8 @@ describe('login logout test tests', function () {
         browser.sleep(2500);
 
         expect(browser.getLocationAbsUrl()).toMatch("/welcome");
+        pageTittle = element(by.css('.welcomeLabel'));
+        expect(pageTittle.getText()).toMatch('Vítej piráte honza');
 
         element(by.id('logoutButton')).click();
         browser.sleep(2500);
