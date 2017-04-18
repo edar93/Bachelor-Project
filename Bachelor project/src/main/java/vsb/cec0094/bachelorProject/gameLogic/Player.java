@@ -99,11 +99,8 @@ public class Player implements Cloneable {
 
     public void takeCharacterCard(Card card, Boolean isOnTurn) throws TooExpensiveCharacterException {
         int price = card.getCoin() - discount;
-        if (!isOnTurn) {
-            price += 1;
-        }
         if (price < 0) {
-            price = 0;
+            price = 1;
         }
         coins -= price;
         if (coins < 0) {

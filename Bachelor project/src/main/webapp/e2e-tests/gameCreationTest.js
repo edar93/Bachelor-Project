@@ -18,6 +18,7 @@ describe('player in game action', function () {
     });
 
     afterEach(function () {
+        browser.sleep(2500);
         element(by.id('logoutButton')).click();
         browser.sleep(2500);
 

@@ -21,7 +21,6 @@ public abstract class BaseJerseyTest<T> extends JerseyTest {
 
     ResourceConfig getResourceConfig(){
         ResourceConfig resourceConfig = new ResourceConfig(getResourceClass());
-        resourceConfig.packages("vsb.cec0094.bachelorProject.resource");
         resourceConfig.property("contextConfigLocation", "classpath:/jersey-context-test.xml");
         resourceConfig.register(new AbstractBinder() {
             @Override

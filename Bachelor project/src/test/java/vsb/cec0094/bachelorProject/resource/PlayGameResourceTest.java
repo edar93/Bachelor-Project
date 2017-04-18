@@ -4,16 +4,13 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import vsb.cec0094.bachelorProject.BaseJerseyTest;
-import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.gameLogic.GameManipulator;
 import vsb.cec0094.bachelorProject.service.UsersProvider;
 
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
 import javax.ws.rs.core.Response;
 
 import static org.junit.Assert.assertEquals;
@@ -22,14 +19,8 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PlayGameResourceTest extends BaseJerseyTest<PlayGameResource> {
 
-    @Mock
-    private EntityManager em;
-
     @Inject
     private PlayGameResource playGameResource;
-
-    @Inject
-    private GamesHolder gamesHolder;
 
     @Inject
     private UsersProvider usersProvider;
@@ -48,7 +39,7 @@ public class PlayGameResourceTest extends BaseJerseyTest<PlayGameResource> {
     }
 
     @Test
-    public void testPickCard() {
+    public void testGetMyGame() {
         //test
         final Response response = target("/play/getMyGame")
                 .request()

@@ -4,8 +4,8 @@ exports.config = {
   allScriptsTimeout: 11000,
 
   specs: [
-    //'*.js'
-    'loginTest.js'
+    '*.js'
+    //'loginTest.js'
   ],
 
   capabilities: {
