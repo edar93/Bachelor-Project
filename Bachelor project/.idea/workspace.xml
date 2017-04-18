@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="becf1cf8-004d-43ae-8248-b51b63f77b7d" name="Default" comment="work on protractor test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/jdbc.properties" />
-      <change type="MOVED" beforePath="C:\Gits\portRoyalGame\Bachelor project\src\main\webapp\karma_tests\gameCreationCtrl.js" afterPath="$PROJECT_DIR$/src/main/webapp/karma_tests/gameCreationCtrl.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vsb/cec0094/bachelorProject/BaseJerseyTest.java" afterPath="$PROJECT_DIR$/src/test/java/vsb/cec0094/bachelorProject/BaseJerseyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vsb/cec0094/bachelorProject/resource/PlayGameResourceTest.java" afterPath="$PROJECT_DIR$/src/test/java/vsb/cec0094/bachelorProject/resource/PlayGameResourceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Player.java" afterPath="$PROJECT_DIR$/src/main/java/vsb/cec0094/bachelorProject/gameLogic/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app.css" afterPath="$PROJECT_DIR$/src/main/webapp/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/e2e-tests/gameCreationTest.js" afterPath="$PROJECT_DIR$/src/main/webapp/e2e-tests/gameCreationTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/jersey-PU-and-DB.xml" afterPath="$PROJECT_DIR$/src/test/resources/jersey-PU-and-DB.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/jersey-context-test.xml" afterPath="$PROJECT_DIR$/src/test/resources/jersey-context-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/karma_tests/loginService.spec.js" afterPath="$PROJECT_DIR$/src/main/webapp/karma_tests/loginService.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/e2e-tests/loginTest.js" afterPath="$PROJECT_DIR$/src/main/webapp/e2e-tests/loginTest.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.lof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.log" />
@@ -26,10 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/main.toc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" afterPath="$PROJECT_DIR$/../Diploma/CzechThesisExample/pdfa.xmpi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/e2e-tests/protractor.conf.js" afterPath="$PROJECT_DIR$/src/main/webapp/e2e-tests/protractor.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/appServlet/servlet-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/components/templates/welcome.html" afterPath="$PROJECT_DIR$/src/main/webapp/components/templates/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="port-royal.iws" />
@@ -1127,13 +1111,7 @@
       <workItem from="1492000682811" duration="621000" />
       <workItem from="1492020174528" duration="16859000" />
       <workItem from="1492092224023" duration="16377000" />
-      <workItem from="1492157380114" duration="58470000" />
-    </task>
-    <task id="LOCAL-00010" summary="add base administration page">
-      <created>1489533127531</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1489533127531</updated>
+      <workItem from="1492157380114" duration="58486000" />
     </task>
     <task id="LOCAL-00011" summary="add isAdmin rest">
       <created>1489575891759</created>
@@ -1423,11 +1401,17 @@
       <option name="project" value="LOCAL" />
       <updated>1492370812241</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="refactor protractor test and relocate DB config properties">
+      <created>1492548168401</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1492548168401</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="588507000" />
+    <option name="totallyTimeSpent" value="588523000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1440,7 +1424,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4039088" sideWeight="0.50416666" order="8" side_tool="true" content_ui="tabs" />

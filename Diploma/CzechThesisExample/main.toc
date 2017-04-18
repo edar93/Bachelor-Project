@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {1}\IeC {\'U}vod}{23}{section.1}
 \contentsline {subsection}{\numberline {1.1}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{23}{subsection.1.1}
 \contentsline {section}{\numberline {2}Technologie}{25}{section.2}
-\contentsline {subsection}{\numberline {2.1}REST webove slu\IeC {\v z}by}{25}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}REST}{25}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Vzorov\IeC {\'e} REST rozhran\IeC {\'\i }}{25}{subsubsection.2.1.1}
 \contentsline {subsection}{\numberline {2.2}AngularJs}{26}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Jednostr\IeC {\'a}nkov\IeC {\'a} aplikace}{26}{subsubsection.2.2.1}
@@ -23,24 +23,22 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Node.js}{28}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Spring}{29}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Maven}{29}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}GIT}{29}{subsubsection.2.3.4}
 \contentsline {section}{\numberline {3}Typy testov\IeC {\'a}n\IeC {\'\i }}{31}{section.3}
-\contentsline {subsection}{\numberline {3.1}Smysl testov\IeC {\'a}n\IeC {\'\i } software}{31}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Manu\IeC {\'a}ln\IeC {\'\i } oproti automatick\IeC {\'y}m test\IeC {\r u}m}{31}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Test-driven development}{31}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}\IeC {\'U}rovn\IeC {\v e} test\IeC {\r u}}{32}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Jednotkov\IeC {\'e} testy}{32}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Integra\IeC {\v c}n\IeC {\'\i } testy}{32}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}End-To-End testy}{32}{subsubsection.3.4.3}
-\contentsline {subsection}{\numberline {3.5}Testovac\IeC {\'\i } technologie}{32}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Jasmine}{32}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Protractor}{33}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}Karma}{33}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Jersey}{33}{subsubsection.3.5.4}
+\contentsline {subsection}{\numberline {3.1}Manu\IeC {\'a}ln\IeC {\'\i } oproti automatick\IeC {\'y}m test\IeC {\r u}m}{31}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Test-driven development}{31}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}\IeC {\'U}rovn\IeC {\v e} test\IeC {\r u}}{32}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Jednotkov\IeC {\'e} testy}{32}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Integra\IeC {\v c}n\IeC {\'\i } testy}{32}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}End-To-End testy}{32}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Testovac\IeC {\'\i } technologie}{32}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Jasmine}{32}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Protractor}{33}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Karma}{33}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Jersey}{33}{subsubsection.3.4.4}
 \contentsline {section}{\numberline {4}Obsah a funkcionalita aplikace}{35}{section.4}
 \contentsline {subsection}{\numberline {4.1}Zkr\IeC {\'a}cen\IeC {\'a} pravidla hry}{35}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Obsah a implementace str\IeC {\'a}nky na vytv\IeC {\'a}\IeC {\v r}eni hry}{35}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Obsah a implementace str\IeC {\'a}nky s administraci}{36}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.2}Obsah a implementace str\IeC {\'a}nky na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry}{35}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Obsah a implementace str\IeC {\'a}nky s administrac\IeC {\'\i }}{36}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Obsah a implementace str\IeC {\'a}nky s hrou}{36}{subsection.4.4}
 \contentsline {section}{\numberline {5}Anal\IeC {\'y}za pou\IeC {\v z}it\IeC {\'y}ch technologii}{39}{section.5}
 \contentsline {subsection}{\numberline {5.1}Schema DB}{39}{subsection.5.1}
@@ -49,23 +47,22 @@
 \contentsline {subsection}{\numberline {5.4}Aspekty}{40}{subsection.5.4}
 \contentsline {subsection}{\numberline {5.5}Komunikace mezi Spring a AngularJS}{41}{subsection.5.5}
 \contentsline {subsection}{\numberline {5.6}Websockets}{41}{subsection.5.6}
-\contentsline {subsubsection}{\numberline {5.6.1}Strana r\IeC {\'a}mce Spring}{41}{subsubsection.5.6.1}
-\contentsline {subsubsection}{\numberline {5.6.2}Strana AngularJS}{42}{subsubsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.1}Serverov\IeC {\'a} strana}{41}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Klientsk\IeC {\'a} strana}{42}{subsubsection.5.6.2}
 \contentsline {subsection}{\numberline {5.7}N\IeC {\'a}vrh aplikace Angular / Spring}{42}{subsection.5.7}
 \contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Jasmine}{43}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{43}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}Uk\IeC {\'a}zkov\IeC {\'y} test}{43}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.1}Uk\IeC {\'a}zkov\IeC {\'y} test}{43}{subsubsection.6.1.1}
 \contentsline {subsection}{\numberline {6.2}Protractor}{44}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{44}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}ukazkovy test}{45}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.1}ukazkovy test}{45}{subsubsection.6.2.1}
 \contentsline {subsection}{\numberline {6.3}Jersey}{45}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Konfigurace a pou\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{45}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}ukazkovy test}{45}{subsubsection.6.3.2}
-\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{47}{section.7}
-\contentsline {subsection}{\numberline {7.1}Nejv\IeC {\v e}t\IeC {\v s}\IeC {\'\i } komplikace p\IeC {\v r}i v\IeC {\'y}voji}{47}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Co bych d\IeC {\v e}lal jinak}{47}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Jak by se dala aplikace vylep\IeC {\v s}it}{47}{subsection.7.3}
-\contentsline {section}{Literatura}{49}{subsection.7.3}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{49}{subsection.7.3}
-\contentsline {section}{\numberline {A}Instalace aplikace}{51}{appendix.A}
+\contentsline {subsubsection}{\numberline {6.3.1}uk\IeC {\'a}zkov\IeC {\'y} test}{46}{subsubsection.6.3.1}
+\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{49}{section.7}
+\contentsline {subsection}{\numberline {7.1}Co bych d\IeC {\v e}lal jinak}{49}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Jak by se dala aplikace vylep\IeC {\v s}it}{49}{subsection.7.2}
+\contentsline {section}{Literatura}{51}{subsection.7.2}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{51}{subsection.7.2}
+\contentsline {section}{\numberline {A}Instalace a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{53}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Instalace}{53}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{53}{subsection.A.2}
+\contentsline {section}{\numberline {B}P\IeC {\v r}\IeC {\'\i }lohy ve form\IeC {\v e} CD}{55}{appendix.B}
