@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  19 APR 2017 11:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  19 APR 2017 18:57
 entering extended mode
 **./main.tex
 (main.tex
@@ -1906,7 +1906,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/Assignment1.jpg, id=183, 597.6729pt x 845.0772pt>
+<Figures/Assignment1.jpg, id=175, 597.6729pt x 845.0772pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 
 <use Figures/Assignment1.jpg>
@@ -1954,7 +1954,7 @@ Package pdftex.def Info: Figures/Assignment1.jpg used on input line 109.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/AuthorDeclaration.jpg, id=192, 614.295pt x 845.559pt>
+<Figures/AuthorDeclaration.jpg, id=184, 614.295pt x 845.559pt>
 File: Figures/AuthorDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/AuthorDeclaration.jpg>
@@ -2043,144 +2043,195 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [23] [24
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 142.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 130.
 
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 142.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 130.
 
-[25] <Figures/MVC.png, id=371, 1113.40968pt x 462.22687pt>
+[25] <Figures/MVC.png, id=357, 1113.40968pt x 462.22687pt>
 File: Figures/MVC.png Graphic file (type png)
 
 <use Figures/MVC.png>
-Package pdftex.def Info: Figures/MVC.png used on input line 182.
+Package pdftex.def Info: Figures/MVC.png used on input line 170.
 (pdftex.def)             Requested size: 409.71692pt x 170.09026pt.
  [26 <./Figures/MVC.png>]
-Overfull \hbox (0.82234pt too wide) in paragraph at lines 205--206
-\T1/lmr/m/n/10.95 Zde je ukázka kódu zá-klad-ního kon-t-ro-léru, jenº za-volá h
-ttp me-todu get nad URL http://test.com.
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 206.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 195.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 207.
- [27] [28] [29] [30
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 196.
+ [27] [28] [29] [30]
+[31
 
-]
-[31] [32]
-Overfull \hbox (0.55194pt too wide) in paragraph at lines 302--303
+] [32]
+Overfull \hbox (0.55194pt too wide) in paragraph at lines 291--292
 \T1/lmr/m/n/10.95 Jersey je tes-to-vací rá-mec vy-tvo-°en pro ov¥-°ení správ-no
 sti ser-ve-ro-vých kom-po-nent. Tes-tuje webové
  []
 
 [33] [34
 
-] <Figures/gamecreationpage.png, id=455, 544.28343pt x 284.56313pt>
+] <Figures/gamecreationpage.png, id=441, 544.28343pt x 284.56313pt>
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
-Package pdftex.def Info: Figures/gamecreationpage.png used on input line 319.
+Package pdftex.def Info: Figures/gamecreationpage.png used on input line 309.
 (pdftex.def)             Requested size: 432.48051pt x 226.10936pt.
- [35]
-<Figures/administrationpage.png, id=460, 1416.79312pt x 476.53032pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--310
+
+ []
+
+[35] <Figures/administrationpage.png, id=446, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
-Package pdftex.def Info: Figures/administrationpage.png used on input line 326.
+Package pdftex.def Info: Figures/administrationpage.png used on input line 316.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
  [36 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
-<Figures/gamepage.png, id=465, 1112.65688pt x 553.31718pt>
+<Figures/gamepage.png, id=451, 1112.65688pt x 553.31718pt>
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
-Package pdftex.def Info: Figures/gamepage.png used on input line 335.
+Package pdftex.def Info: Figures/gamepage.png used on input line 325.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
  [37 <./Figures/gamepage.png>] [38
 
 ]
-<Figures/DBmodel.png, id=475, 901.11656pt x 651.18282pt>
+<Figures/DBmodel.png, id=461, 901.11656pt x 651.18282pt>
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
-Package pdftex.def Info: Figures/DBmodel.png used on input line 351.
+Package pdftex.def Info: Figures/DBmodel.png used on input line 342.
 (pdftex.def)             Requested size: 432.48051pt x 312.5344pt.
- [39 <./Figures/DBmodel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--343
 
  []
 
-[40] [41] [42] [43
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 503--514
+[39 <./Figures/DBmodel.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
-[44] [45] [46] [47] [48
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
-] [49] [50
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
+
+ []
+
+[42] [43] [44
 
 ]
-Underfull \hbox (badness 5119) in paragraph at lines 665--666
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 494--505
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 509--511
+
+ []
+
+[47]
+Overfull \hbox (14.09055pt too wide) in paragraph at lines 548--550
+\T1/lmr/m/n/10.95 "Base-Jer-sey-Test". Base-Jer-sey-Test d¥dí z Jer-sey-Test, c
+oº je t°ída ze zá-vis-losti org.glassfish.jersey.test.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
+
+ []
+
+
+Overfull \hbox (2.95647pt too wide) in paragraph at lines 573--575
+[]\T1/lmr/m/n/10.95 Následn¥ se jiº pí²í kon-krétní testy. Na-p°í-klad test ve 
+vý-pisu "Kon-krétní Jer-sey test"kontroluje,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
+
+ []
+
+[48] [49] [50] [51
+
+] [52
+
+]
+Underfull \hbox (badness 5119) in paragraph at lines 657--658
 []\T1/lmr/bx/n/10.95 nevim \T1/lmr/m/n/10.95 [cit. 2017-01-04]. \T1/lmr/m/it/10
 .95 Do-stupne z: https://neoteric.eu/single-page-application-vs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 660--661
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 669--670
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
+Underfull \hbox (badness 10000) in paragraph at lines 662--663
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Overfull \hbox (91.24767pt too wide) in paragraph at lines 671--672
+Overfull \hbox (91.24767pt too wide) in paragraph at lines 663--664
 []\T1/lmr/bx/n/10.95 Tutorialspoint \T1/lmr/m/n/10.95 [cit. 2017-06-04]. \T1/lm
 r/m/it/10.95 Do-stupne z: https://www.tutorialspoint.com/restful/restful_introd
 uction.htm 
  []
 
-[51] [52
+[53] [54
 
-] [53] [54
+] [55] [56
 
-] [55]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 696.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 696.
+] [57]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 688.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 688.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 696.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 696.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 688.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 688.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2189F2932E0EB855C030CF1A42B872B8;4210.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 696.
+(rerunfilecheck)             Checksum: 5829585E6150DCC6E74D22DD0EF00F6B;4106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 688.
  ) 
 Here is how much of TeX's memory you used:
  27167 strings out of 493333
- 452477 string characters out of 3139195
- 585507 words of memory out of 3000000
- 29884 multiletter control sequences out of 15000+200000
+ 452482 string characters out of 3139195
+ 582535 words of memory out of 3000000
+ 29889 multiletter control sequences out of 15000+200000
  56028 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,54p,986b,3354s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2195,9 +2246,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmtk10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmtt9.pfb>
-Output written on main.pdf (55 pages, 2547461 bytes).
+Output written on main.pdf (57 pages, 2547345 bytes).
 PDF statistics:
- 834 PDF objects out of 1000 (max. 8388607)
- 324 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 827 PDF objects out of 1000 (max. 8388607)
+ 319 named destinations out of 1000 (max. 500000)
+ 380 words of extra memory for PDF output out of 10000 (max. 10000000)
 

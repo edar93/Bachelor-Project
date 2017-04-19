@@ -113,18 +113,6 @@
 
 % A nasleduje text zaverecne prace.
 \section{Úvod}
-\subsection{1}
-Jako vše v oblasti informačních technologií, tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jenž usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování software, standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout do následujících bodů. Všechny body níže byly splněny.
-
-\begin{enumerate}
-	\item Nastudovat moderní webové technologie Spring, AngularJS a REST architekturu.
-	\item Navrhnout a implementovat hru Port Royal.
-	\item Nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace.
-	\item Zprovoznit testovací technologie a napsat v nich testy.
-\end{enumerate}
-
-
-\subsection{2}
 Jako vše v oblasti informačních technologií, tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jenž usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování software, standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout takto. Nejprve bylo nutno nastudovat moderní webové technologie Spring, AngularJS a REST architekturu, poté navrhnout a implementovat hru Port Royal. Následně nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace. Nakonec ve vybraných technologiích otestovat aplikaci.
 
 
@@ -177,7 +165,7 @@ AngularJS je javascriptový rámec založen na model-view-controller architektu�
 Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživatele a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovou stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informací. \cite{SPA}
 
 \subsubsection{Model–View–Controller architektura}
-Model–View–Controller architektura dělí aplikaci na 3 části, a to model, pohled a kontrolér. Uživateli je zobrazen pohled, což je nejčastěji HTML šablona. Pokud provede nějakou akci, spustí tím funkci v kontroléru. Ten aktualizuje model, buď to svými daty nebo se na ně doptá serverové strany přes REST. Aktualizovaný model se následně zobrazí v pohledu. Tuto architekturu shrnuje následující obrázek.
+Model–View–Controller architektura dělí aplikaci na 3 části, a to model, pohled a kontrolér. Uživateli je zobrazen pohled, což je nejčastěji HTML šablona. Pokud provede nějakou akci, spustí tím funkci v kontroléru. Ten aktualizuje model, buď to svými daty nebo se na ně doptá serverové strany přes REST. Aktualizovaný model se následně zobrazí v pohledu. Tuto architekturu shrnuje obrázek "MVC architektura v AngularJS".
 \begin{figure}[H]
 \centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS}
 \end{figure}
@@ -202,7 +190,8 @@ Proměnné patřící rámci AngularJS začínají \$ nebo \$\$. Ty, jenž zač�
 \$rootscope - propisuje proměnné do všech šablon.
 
 \subsubsection{Ukázka základního kontroléru}
-Zde je ukázka kódu základního kontroléru, jenž zavolá http metodu get nad URL http://test.com. Odpověď pak uloží do modelu na podstránce /game.
+Výpis kódu "Ukázka kontroléru v AngularJS"~popisuje základní kontrolér, jenž zavolá http metodu get nad URL http://test.com. Odpověď pak uloží do modelu na podstránce /game.\\
+~
 \begin{lstlisting}[language=JavaScript, caption=Ukázka kontroléru v AngularJS]
 var portRoyalApp = angular.module('portRoyalApp', [
     'rzModule',
@@ -243,7 +232,7 @@ Node.js také slouží jako spouštěč úloh, což znamená, že dokáže spou�
 \subsubsection{Spring}
 Spring je populární rámec pro vývoj J2EE aplikací s volnou licencí. Jeho první verze vyšla v červnu 2003 a od té doby značně nabyl na popularitě. 
 
-Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
+Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Objekty přidané těmito závislostmi, případně programátorem, jež obsluhuje rámec Spring se nazývají Bean. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
 \begin{itemize}
 	\item Hibernate - toto je implementace Java pesistance api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
 	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele.
@@ -312,9 +301,10 @@ Následně začne druhá fáze v níž postupně může každý ze zbývajícíc
 Celá pravidla je možno samozřejmě stáhnout ve hře nebo si je přečíst v příloze.
 
 \subsection{Obsah a implementace stránky na vytváření hry}
-Zde je stránka na vytváření hry, je zde použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota modelu od AngularJS uvádějící maximální počet hráčů. Nad tímto modelem je použit \$watch, ten při pohybu posuvníku informuje zadní část aplikace o změně.
+V této kapitole je popsána stránka na vytváření hry, je zde použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota modelu od AngularJS uvádějící maximální počet hráčů. Nad tímto modelem je použit \$watch, ten při pohybu posuvníku informuje serverovou část aplikace o změně.
 
 Podobná kontrola probíhá při změně každé proměnné. Nazývá se dirty checking. Zajišťuje propsání změn mezi modelem a šablonou, případně mezi modely. Proto se doporučuje, aby počet proměnných na stránce nepřesáhl počet 5000.
+\\~
 \begin{figure}[H]
 \centering\includegraphics[width=0.95\textwidth]{Figures/gamecreationpage.png}\caption{Stránka na vytváření hry}
 \end{figure}
@@ -339,14 +329,15 @@ Proto jsou zde použity websockety ty po zaslání akce na server aktualizují h
 \section{Analýza použitých technologii}
 Aplikace je vyvinuta ve Springu a jediné, co potřebuje je připojení do databáze, v níž si sama vytvoří tabulky pomocí Hibernate. Spring kontejner má v sobě dvě části.
 
-Zadní část napsanou v Javě jenž se stará o logiku aplikace a přistupující do databáze. Po nasazení na server obsluhuje webové služby. Tato část se nachází ve složce java. 
+Serverovou část napsanou v Javě jenž se stará o logiku aplikace a přistupující do databáze. Po nasazení na server obsluhuje webové služby. Tato část se nachází ve složce java. 
 
-Přední část se nachází ve složce webapp, tato část obsahuje AngularJS. Při uživatelově vstupu do webové aplikace se celá tato část načte do prohlížeče. Po provedení akce se volá zadní část z níž si hráč zjišťuje potřebné informace.
+Klientskou část se nachází ve složce webapp, tato část obsahuje AngularJS. Při uživatelově vstupu do webové aplikace se celá tato část načte do prohlížeče. Po provedení akce se volá serverová část z níž si hráč zjišťuje potřebné informace.
 
 Obě tyto části by se daly snadno oddělit do dvou serverů.
 
 \subsection{Schema DB}
-Hibernate po připojení do databáze vytvoří následující schéma.
+Hibernate po připojení do databáze vytvoří schéma na obrázku "Databázový model". Tento model se vytváří dle anotovaných entit. V této práci jsou použity přednastavené typy proměnných dle entit.
+\\
 \begin{figure}[H]
 \centering\includegraphics[width=0.95\textwidth]{Figures/DBmodel.png}\caption{Databázový model}
 \end{figure}
@@ -360,7 +351,7 @@ Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurov
 Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje, zda přihlašovací heslo odpovídá vygenerovanému hashi.
 
 \subsection{Aspekty}
-Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. Níže je ukázka aspektu. Tento aspekt před každým zavoláním funkce z balíčku resource nastaví uživatele v beaně UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro beany v rámci Spring je přednastaveno, že existuje jedna pro celý běh aplikace. U beany UsersProvider je to v konfiguračním XML změněno. Vytváří se zvlášť pro každý http dotaz, jelikož na server přistupuje několik uživatelů zároveň. \\
+Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. V této podkapitole je ukázka aspektu nazvaná "Ukázka aspektu". Tento aspekt před každým zavoláním funkce z balíčku resource nastaví uživatele v Bean UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro Bean v rámci Spring je přednastaveno, že existuje jedna pro celý běh aplikace. U Bean UsersProvider je to v konfiguračním XML změněno. Vytváří se zvlášť pro každý http dotaz, jelikož na server přistupuje několik uživatelů zároveň. \\
 
 \begin{lstlisting}[language=Java,label=src:Java, caption=Ukázka aspektu]
 @Aspect
@@ -379,13 +370,13 @@ public class UserSaver {
 \end{lstlisting}
 ~\\
 Na 1. řádku se anotacemi určí, že se jedná o Aspekt\\
-Na 4. řádku je použita anotace Inject, touto anotací se říká v rámci Spring, aby do proměnné níže automaticky přiřadil beanu této třídy.\\
-Na řádcích 7 až 9 se určí, že se funkce setUser má zavolat před každým voláním funkce třídy, jenž je v balíčku resource. Mimo třídu StatsResource, jenž beanu userProvider nepoužívá.\\
+Na 4. řádku je použita anotace Inject, touto anotací se říká v rámci Spring, aby do proměnné níže automaticky přiřadil Bean této třídy.\\
+Na řádcích 7 až 9 se určí, že se funkce setUser má zavolat před každým voláním funkce třídy, jenž je v balíčku resource. Mimo třídu StatsResource, jenž Bean userProvider nepoužívá.\\
 Na 10. řádku se pak z kontextu vyčte jméno přihlášeného uživatele.\\
-Na 11. řádku se nastaví beana userProvider.
+Na 11. řádku se nastaví Bean userProvider.
 
 \subsection{Komunikace mezi Spring a AngularJS}
-Komunikaci mezi zadní stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím. Koncové body obsluhuje Spring. To se děje v případě uživatelovy akce. Také v pozadí běží kontrola zda se uživatel nachází na správné URI v rámci aplikace, jenž se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje, zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu-spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce, kde běží hra, jsou použity websockety, pro chat a aktualizování hry.
+Komunikaci mezi serverovou stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím. Koncové body obsluhuje Spring. To se děje v případě uživatelovy akce. Také v pozadí běží kontrola zda se uživatel nachází na správné URI v rámci aplikace, jenž se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje, zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu-spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce, kde běží hra, jsou použity websockety, pro chat a aktualizování hry.
 
 \subsection{Websockets}
 Zde je ukázka nastavení websocketu pro chat, jenž je na úvodní stránce. Websockety je nutno nastavit jak na straně serveru (Spring), tak na straně klienta (AngularuJS). Následně to funguje tak, že se klienti přihlašují k odběru zpráv na server. V momentě kdy chce některý z klientů poslat zprávu všem ostatním klientům, odešle ji na server. Ten ji následně rozešle všem naslouchajícím klientům.
@@ -393,7 +384,7 @@ Zde je ukázka nastavení websocketu pro chat, jenž je na úvodní stránce. We
 \subsubsection{Serverová strana}
 Serverová strana websocketu se nastavuje v rámci Spring. Je zde nutno přidat závislosti ze skupiny "org.springframework"~konkrétně "spring-messaging"~a "spring-websocket"
 
-V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocketům na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.
+V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocketům na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.\\
 \begin{lstlisting}[language=XML, caption=XML konfigurace websocketu]
 <websocket:message-broker application-destination-prefix="/port-royal/">
     <websocket:stomp-endpoint path="/chat">
@@ -403,7 +394,7 @@ V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocket�
 </websocket:message-broker>
 \end{lstlisting}
 
-V Javě je nutno vytvořit funkci, jenž zpracovává příchozí zprávy. Na prvním řádku se určí URI, pro příchozí zprávy. Na druhém řádku se určí URI na které jsou odběratelé, jenž všichni dostanou zpracovanou zprávu. Dále je jen zpracování a odeslání zprávy.
+V Javě je nutno vytvořit funkci, jenž zpracovává příchozí zprávy. V této kapitole je ukázka kódu nazvaná "Implementace websocketu v javě"~.Na prvním řádku se určí URI, pro příchozí zprávy. Na druhém řádku se určí URI na které jsou odběratelé, jenž všichni dostanou zpracovanou zprávu. Dále je jen zpracování a odeslání zprávy.\\
 
 \begin{lstlisting}[language=Java, caption=Implementace websocketu v javě]
 @MessageMapping("/sendMessage")
@@ -414,12 +405,12 @@ public Message receive(Message message) {
 \end{lstlisting}
 
 \subsubsection{Klientská strana}
-Klientská část aplikace se nastavuje v AngularJS. Níže je ukázka použití, pro níž je nutno mít závislosti "sockjs" a "stomp-websocket", které se přidávají přes Node.js.
+Klientská část aplikace se nastavuje v AngularJS. Je zde ukázka kódu pod názvem "Použití websocketu na straně klienta", pro níž je nutno mít závislosti "sockjs" a "stomp-websocket", které se přidávají přes Node.js.
 
 Jsou zde 3 asynchronní funkce. Nejprve je nutno se připojit na serverový koncový bod funkci connect. Konkrétně se zde připojuje na URI "/port-royal/chat". 
 
 Pak je možno začít odebírat zprávy funkcí subscribe, jež vypíše do konzole všechny příchozí zprávy. Také je možné odeslat předem vytvořenou zprávu funkcí send.
-
+\\
 \begin{lstlisting}[language=JavaScript, caption=Použití websocketu na straně klienta]
 var client;      
 function connect() {
@@ -456,8 +447,8 @@ Jasmine testy se spouštění přes Node.js příkazem "npm test"~ve složce se 
 Samozřejmě, že také existuje software jako například Karma plugin pro InteliJ IDEA jenž umožňují spustit testy jedním kliknutím ve vývojovém prostředí.
 
 \subsubsection{Ukázkový test}
-Zde je ukázkový test, jenž ověří, zda se po zavolání funkce login od loginService, skutečně zavolá backendGateway. BackendGateway komunikuje ven z aplikace. Test také zkontroluje zda, funkce vrátí login nově přihlášeného uživatele.
-  
+Ukázkový kód v této kapitole je test, jenž ověří, zda se po zavolání funkce login od loginService, skutečně zavolá backendGateway. BackendGateway komunikuje ven z aplikace. Test také zkontroluje zda, funkce vrátí login nově přihlášeného uživatele.
+\\
 \begin{lstlisting}[language=JavaScript, caption=Ukázka testu pomocí Jasmine]
 describe('example test for portRoyalApp.loginService', function () {
     var $q, $rootScope, loginService, backendGateway;
@@ -515,8 +506,8 @@ Na 38. řádku se provádí kontrola vrácené hodnoty.\\
 \subsection{Protractor}
 Protractor se pouští stejně jako Jasmine přes Node.js ve složce se souborem package.json. Ovšem příkazem "npm run protractor". V souboru package.json. je cesta ke konfiguračnímu souboru Protractoru, v tom se nastavuje na jaké URL je spuštěn testovaný server nebo v jakém prohlížeči se mají testy spouštět. 
 
-\subsubsection{ukazkovy test}
-Zde je ukázkový test, který zkontroluje, zda se uživatel úspěšně přihlásí.
+Kód v této kapitole s názvem "Ukázkový Protractor test"~je  test, který zkontroluje, zda se uživatel úspěšně přihlásí.
+\\
 \begin{lstlisting}[language=JavaScript, caption=Ukázkový Protractor test]
 describe('examle login test', function () {
     it('should login user', function () {
@@ -554,7 +545,8 @@ Jersey testy jsou testy psané v rámci Spring. Testy v rámci Spring se spoušt
 \end{itemize}
 
 \subsubsection{ukázkový test}
-Všechny testy použité ve hře Port Royal se dědí z BaseJerseyTest, jenž je uveden níže. BaseJerseyTest dědí z JerseyTest, což je třída ze závislosti org.glassfish.jersey.test. Přepisuje její funkci configure, která nastavuje testy. Přepsaná metoda používá vlastní  konfiguraci beany uložené v XML souboru jersey-context-test.xml.
+Všechny testy použité ve hře Port Royal se dědí z BaseJerseyTest, jenž je uveden v ukázce kódu "BaseJerseyTest". BaseJerseyTest dědí z JerseyTest, což je třída ze závislosti org.glassfish.jersey.test. Přepisuje její funkci configure, která nastavuje testy. Přepsaná metoda používá vlastní  konfiguraci a sadu Bean uložené v XML souboru jersey-context-test.xml.
+\\
 \begin{lstlisting}[language=Java, caption=BaseJerseyTest]
 @ContextConfiguration(locations = {"classpath:/jersey-context-test.xml"})
 public abstract class BaseJerseyTest<T> extends JerseyTest {
@@ -578,8 +570,8 @@ public abstract class BaseJerseyTest<T> extends JerseyTest {
 }
 \end{lstlisting}
 
-Následně se již píší konkrétní testy. Například test níže kontroluje, zda URI "/play/getMyGame"~skutečně vrací objekt obsahující hráčovu hru.
-
+Následně se již píší konkrétní testy. Například test ve výpisu "Konkrétní Jersey test" kontroluje, zda URI "/play/getMyGame"~skutečně vrací objekt obsahující hráčovu hru.
+\\
 \begin{lstlisting}[language=Java, caption=Konkrétní Jersey test]
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PlayGameResourceTest extends BaseJerseyTest<PlayGameResource> {
@@ -623,7 +615,7 @@ public class PlayGameResourceTest extends BaseJerseyTest<PlayGameResource> {
 ~\\
 Na 1. řádku je potřeba nastavit spouštěč testů.\\
 Na 2. až 16. řádku se připravují proměnné a konfiguruje testovací třída přepsáním abstraktních metod pro konkrétní test.\\
-Na 18. až 25 řádku se dokončuje nastavení prostředí. Přidaná beana usersProvider nemá svou implementaci. V XML konfiguraci je místo ní nastaven podvržený objekt. Na 24. řádku se určuje co má vrátit jeho metoda getGameManipulator.\\
+Na 18. až 25 řádku se dokončuje nastavení prostředí. Přidaná Bean usersProvider nemá svou implementaci. V XML konfiguraci je místo ní nastaven podvržený objekt. Na 24. řádku se určuje co má vrátit jeho metoda getGameManipulator.\\
 Na 28. až 37. řádku probíhá samotný test. Nejprve se zavolá http metoda na testovanou URI nad objektem target, ten je zděděn z předka JerseyTest. Následně se ověří, zda vrácený objekt odpovídá očekávanému.
 
 \section{Závěr}

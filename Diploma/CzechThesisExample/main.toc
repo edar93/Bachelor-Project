@@ -8,9 +8,7 @@
 \contentsline {section}{Seznam obr\'azk\r {u}}{17}{Doc-Start}
 \contentsline {section}{Seznam tabulek}{19}{Doc-Start}
 \contentsline {section}{\numberline {1}\IeC {\'U}vod}{23}{section.1}
-\contentsline {subsection}{\numberline {1.1}1}{23}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}2}{23}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{23}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.1}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{23}{subsection.1.1}
 \contentsline {section}{\numberline {2}Technologie}{25}{section.2}
 \contentsline {subsection}{\numberline {2.1}REST}{25}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Vzorov\IeC {\'e} REST rozhran\IeC {\'\i }}{25}{subsubsection.2.1.1}
@@ -44,27 +42,26 @@
 \contentsline {subsection}{\numberline {4.4}Obsah a implementace str\IeC {\'a}nky s hrou}{36}{subsection.4.4}
 \contentsline {section}{\numberline {5}Anal\IeC {\'y}za pou\IeC {\v z}it\IeC {\'y}ch technologii}{39}{section.5}
 \contentsline {subsection}{\numberline {5.1}Schema DB}{39}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Node.js}{39}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Node.js}{40}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Spring Security a Bcrypt}{40}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Aspekty}{40}{subsection.5.4}
 \contentsline {subsection}{\numberline {5.5}Komunikace mezi Spring a AngularJS}{41}{subsection.5.5}
 \contentsline {subsection}{\numberline {5.6}Websockets}{41}{subsection.5.6}
 \contentsline {subsubsection}{\numberline {5.6.1}Serverov\IeC {\'a} strana}{41}{subsubsection.5.6.1}
 \contentsline {subsubsection}{\numberline {5.6.2}Klientsk\IeC {\'a} strana}{42}{subsubsection.5.6.2}
-\contentsline {subsection}{\numberline {5.7}N\IeC {\'a}vrh aplikace Angular / Spring}{42}{subsection.5.7}
-\contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{43}{section.6}
-\contentsline {subsection}{\numberline {6.1}Jasmine}{43}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Uk\IeC {\'a}zkov\IeC {\'y} test}{43}{subsubsection.6.1.1}
-\contentsline {subsection}{\numberline {6.2}Protractor}{44}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}ukazkovy test}{45}{subsubsection.6.2.1}
-\contentsline {subsection}{\numberline {6.3}Jersey}{45}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}uk\IeC {\'a}zkov\IeC {\'y} test}{46}{subsubsection.6.3.1}
-\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{49}{section.7}
-\contentsline {subsection}{\numberline {7.1}Co bych d\IeC {\v e}lal jinak}{49}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Jak by se dala aplikace vylep\IeC {\v s}it}{49}{subsection.7.2}
-\contentsline {section}{Literatura}{51}{subsection.7.2}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{51}{subsection.7.2}
-\contentsline {section}{\numberline {A}Instalace a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{53}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Instalace}{53}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{53}{subsection.A.2}
-\contentsline {section}{\numberline {B}P\IeC {\v r}\IeC {\'\i }lohy ve form\IeC {\v e} CD}{55}{appendix.B}
+\contentsline {subsection}{\numberline {5.7}N\IeC {\'a}vrh aplikace Angular / Spring}{43}{subsection.5.7}
+\contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{45}{section.6}
+\contentsline {subsection}{\numberline {6.1}Jasmine}{45}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Uk\IeC {\'a}zkov\IeC {\'y} test}{45}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}Protractor}{46}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Jersey}{48}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}uk\IeC {\'a}zkov\IeC {\'y} test}{48}{subsubsection.6.3.1}
+\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{51}{section.7}
+\contentsline {subsection}{\numberline {7.1}Co bych d\IeC {\v e}lal jinak}{51}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Jak by se dala aplikace vylep\IeC {\v s}it}{51}{subsection.7.2}
+\contentsline {section}{Literatura}{53}{subsection.7.2}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{53}{subsection.7.2}
+\contentsline {section}{\numberline {A}Instalace a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{55}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Instalace}{55}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{55}{subsection.A.2}
+\contentsline {section}{\numberline {B}P\IeC {\v r}\IeC {\'\i }lohy ve form\IeC {\v e} CD}{57}{appendix.B}
