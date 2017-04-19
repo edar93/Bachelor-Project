@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  18 APR 2017 22:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  19 APR 2017 11:16
 entering extended mode
 **./main.tex
 (main.tex
@@ -1906,7 +1906,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/Assignment1.jpg, id=175, 597.6729pt x 845.0772pt>
+<Figures/Assignment1.jpg, id=183, 597.6729pt x 845.0772pt>
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 
 <use Figures/Assignment1.jpg>
@@ -1954,7 +1954,7 @@ Package pdftex.def Info: Figures/Assignment1.jpg used on input line 109.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/AuthorDeclaration.jpg, id=184, 614.295pt x 845.559pt>
+<Figures/AuthorDeclaration.jpg, id=192, 614.295pt x 845.559pt>
 File: Figures/AuthorDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/AuthorDeclaration.jpg>
@@ -2043,83 +2043,83 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [23] [24
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 136.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 142.
 
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 136.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 142.
 
-[25] <Figures/MVC.png, id=361, 1113.40968pt x 462.22687pt>
+[25] <Figures/MVC.png, id=371, 1113.40968pt x 462.22687pt>
 File: Figures/MVC.png Graphic file (type png)
 
 <use Figures/MVC.png>
-Package pdftex.def Info: Figures/MVC.png used on input line 176.
+Package pdftex.def Info: Figures/MVC.png used on input line 182.
 (pdftex.def)             Requested size: 409.71692pt x 170.09026pt.
  [26 <./Figures/MVC.png>]
-Overfull \hbox (0.82234pt too wide) in paragraph at lines 199--200
+Overfull \hbox (0.82234pt too wide) in paragraph at lines 205--206
 \T1/lmr/m/n/10.95 Zde je ukázka kódu zá-klad-ního kon-t-ro-léru, jenº za-volá h
 ttp me-todu get nad URL http://test.com.
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 200.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 206.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 201.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 207.
  [27] [28] [29] [30
 
 ]
 [31] [32]
-Overfull \hbox (0.55194pt too wide) in paragraph at lines 296--297
+Overfull \hbox (0.55194pt too wide) in paragraph at lines 302--303
 \T1/lmr/m/n/10.95 Jersey je tes-to-vací rá-mec vy-tvo-°en pro ov¥-°ení správ-no
 sti ser-ve-ro-vých kom-po-nent. Tes-tuje webové
  []
 
 [33] [34
 
-] <Figures/gamecreationpage.png, id=445, 544.28343pt x 284.56313pt>
+] <Figures/gamecreationpage.png, id=455, 544.28343pt x 284.56313pt>
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
-Package pdftex.def Info: Figures/gamecreationpage.png used on input line 313.
+Package pdftex.def Info: Figures/gamecreationpage.png used on input line 319.
 (pdftex.def)             Requested size: 432.48051pt x 226.10936pt.
  [35]
-<Figures/administrationpage.png, id=450, 1416.79312pt x 476.53032pt>
+<Figures/administrationpage.png, id=460, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
-Package pdftex.def Info: Figures/administrationpage.png used on input line 320.
+Package pdftex.def Info: Figures/administrationpage.png used on input line 326.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
  [36 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
-<Figures/gamepage.png, id=455, 1112.65688pt x 553.31718pt>
+<Figures/gamepage.png, id=465, 1112.65688pt x 553.31718pt>
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
-Package pdftex.def Info: Figures/gamepage.png used on input line 329.
+Package pdftex.def Info: Figures/gamepage.png used on input line 335.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
  [37 <./Figures/gamepage.png>] [38
 
 ]
-<Figures/DBmodel.png, id=465, 901.11656pt x 651.18282pt>
+<Figures/DBmodel.png, id=475, 901.11656pt x 651.18282pt>
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
-Package pdftex.def Info: Figures/DBmodel.png used on input line 345.
+Package pdftex.def Info: Figures/DBmodel.png used on input line 351.
 (pdftex.def)             Requested size: 432.48051pt x 312.5344pt.
  [39 <./Figures/DBmodel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 [40] [41] [42] [43
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 497--508
+Underfull \hbox (badness 10000) in paragraph at lines 503--514
 
  []
 
@@ -2128,31 +2128,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 497--508
 ] [49] [50
 
 ]
-Underfull \hbox (badness 5119) in paragraph at lines 644--645
+Underfull \hbox (badness 5119) in paragraph at lines 665--666
 []\T1/lmr/bx/n/10.95 nevim \T1/lmr/m/n/10.95 [cit. 2017-01-04]. \T1/lmr/m/it/10
 .95 Do-stupne z: https://neoteric.eu/single-page-application-vs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--649
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Overfull \hbox (91.24767pt too wide) in paragraph at lines 650--651
+Overfull \hbox (91.24767pt too wide) in paragraph at lines 671--672
 []\T1/lmr/bx/n/10.95 Tutorialspoint \T1/lmr/m/n/10.95 [cit. 2017-06-04]. \T1/lm
 r/m/it/10.95 Do-stupne z: https://www.tutorialspoint.com/restful/restful_introd
 uction.htm 
@@ -2163,27 +2163,24 @@ uction.htm
 ] [53] [54
 
 ] [55]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 675.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 675.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 696.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 696.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 675.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 675.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 696.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 696.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2189F2932E0EB855C030CF1A42B872B8;4210.
 
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 5B403B7B93366B8D3980D4B2AE326627;4106
-(rerunfilecheck)             After:  5829585E6150DCC6E74D22DD0EF00F6B;4106.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 675.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 696.
  ) 
 Here is how much of TeX's memory you used:
- 27159 strings out of 493333
- 452385 string characters out of 3139195
- 585478 words of memory out of 3000000
- 29880 multiletter control sequences out of 15000+200000
+ 27167 strings out of 493333
+ 452477 string characters out of 3139195
+ 585507 words of memory out of 3000000
+ 29884 multiletter control sequences out of 15000+200000
  56028 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,54p,986b,3354s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2198,9 +2195,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmtk10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmtt9.pfb>
-Output written on main.pdf (55 pages, 2545666 bytes).
+Output written on main.pdf (55 pages, 2547461 bytes).
 PDF statistics:
- 822 PDF objects out of 1000 (max. 8388607)
- 320 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 834 PDF objects out of 1000 (max. 8388607)
+ 324 named destinations out of 1000 (max. 500000)
+ 396 words of extra memory for PDF output out of 10000 (max. 10000000)
 
