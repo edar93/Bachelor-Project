@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  19 APR 2017 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  20 APR 2017 21:05
 entering extended mode
 **./main.tex
 (main.tex
@@ -1747,23 +1747,23 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 106.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 104.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1830,7 +1830,7 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count165
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 106.
+Package hyperref Info: Link coloring OFF on input line 104.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1840,9 +1840,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 106.
-LaTeX Info: Redefining \pageref on input line 106.
-LaTeX Info: Redefining \nameref on input line 106.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
 
 (main.out) (main.out)
 \@outlinefile=\write5
@@ -1861,7 +1861,7 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 109.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 107.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
@@ -1910,7 +1910,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: Figures/Assignment1.jpg Graphic file (type jpg)
 
 <use Figures/Assignment1.jpg>
-Package pdftex.def Info: Figures/Assignment1.jpg used on input line 109.
+Package pdftex.def Info: Figures/Assignment1.jpg used on input line 107.
 (pdftex.def)             Requested size: 589.60045pt x 834.63033pt.
  [3
 
@@ -1958,7 +1958,7 @@ Package pdftex.def Info: Figures/Assignment1.jpg used on input line 109.
 File: Figures/AuthorDeclaration.jpg Graphic file (type jpg)
 
 <use Figures/AuthorDeclaration.jpg>
-Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 109.
+Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 107.
 (pdftex.def)             Requested size: 589.59464pt x 834.6675pt.
  [5
 
@@ -1971,40 +1971,38 @@ Package pdftex.def Info: Figures/AuthorDeclaration.jpg used on input line 109.
 
 ] [9] [10
 
-]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 109.
+] [11] [12
 
- ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+] (main.toc
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 11.
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 109.
-
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 11.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 109
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 11.
+
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 109
-.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 11.
+
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 109.
+(Font)              <10.95> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 109.
+(Font)              <8> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 109.
- [11] [12
-
-] (main.toc
-[13
+(Font)              <6> on input line 11.
+ [13
 
 ])
 \tf@toc=\write6
@@ -2013,7 +2011,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [14] [15
 
 
-] [16
+]
+[16
 
 ] (main.lof)
 \tf@lof=\write7
@@ -2035,146 +2034,146 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@lol=\write9
 \openout9 = `main.lol'.
 
-
-[21
+ [21
 
 ] [22
 
-] [23] [24
+] [23]
+[24
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 125.
 
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 130.
-
-[25] <Figures/MVC.png, id=357, 1113.40968pt x 462.22687pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 125.
+ [25]
+<Figures/MVC.png, id=353, 1113.40968pt x 462.22687pt>
 File: Figures/MVC.png Graphic file (type png)
-
-<use Figures/MVC.png>
-Package pdftex.def Info: Figures/MVC.png used on input line 170.
+ <use Figures/MVC.png>
+Package pdftex.def Info: Figures/MVC.png used on input line 163.
 (pdftex.def)             Requested size: 409.71692pt x 170.09026pt.
- [26 <./Figures/MVC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
+
+[26] [27 <./Figures/MVC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 195.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 188.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 196.
- [27] [28] [29] [30]
-[31
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 189.
+ [28] [29] [30] [31
 
-] [32]
-Overfull \hbox (0.55194pt too wide) in paragraph at lines 291--292
+]
+[32]
+Overfull \hbox (0.55194pt too wide) in paragraph at lines 284--285
 \T1/lmr/m/n/10.95 Jersey je tes-to-vací rá-mec vy-tvo-°en pro ov¥-°ení správ-no
 sti ser-ve-ro-vých kom-po-nent. Tes-tuje webové
  []
 
 [33] [34
 
-] <Figures/gamecreationpage.png, id=441, 544.28343pt x 284.56313pt>
+] <Figures/gamecreationpage.png, id=439, 544.28343pt x 284.56313pt>
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
-Package pdftex.def Info: Figures/gamecreationpage.png used on input line 309.
+Package pdftex.def Info: Figures/gamecreationpage.png used on input line 302.
 (pdftex.def)             Requested size: 432.48051pt x 226.10936pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--310
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
 
  []
 
-[35] <Figures/administrationpage.png, id=446, 1416.79312pt x 476.53032pt>
+[35] <Figures/administrationpage.png, id=444, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
-Package pdftex.def Info: Figures/administrationpage.png used on input line 316.
+Package pdftex.def Info: Figures/administrationpage.png used on input line 309.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
  [36 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
-<Figures/gamepage.png, id=451, 1112.65688pt x 553.31718pt>
+<Figures/gamepage.png, id=449, 1112.65688pt x 553.31718pt>
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
-Package pdftex.def Info: Figures/gamepage.png used on input line 325.
+Package pdftex.def Info: Figures/gamepage.png used on input line 318.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
  [37 <./Figures/gamepage.png>] [38
 
 ]
-<Figures/DBmodel.png, id=461, 901.11656pt x 651.18282pt>
+<Figures/DBmodel.png, id=459, 901.11656pt x 651.18282pt>
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
-Package pdftex.def Info: Figures/DBmodel.png used on input line 342.
+Package pdftex.def Info: Figures/DBmodel.png used on input line 335.
 (pdftex.def)             Requested size: 432.48051pt x 312.5344pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--343
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
 
  []
 
 [39 <./Figures/DBmodel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
 
  []
 
 [42] [43] [44
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 450--452
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
 
  []
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 494--505
+Underfull \hbox (badness 10000) in paragraph at lines 487--498
 
  []
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 509--511
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
 
  []
 
 [47]
-Overfull \hbox (14.09055pt too wide) in paragraph at lines 548--550
+Overfull \hbox (14.09055pt too wide) in paragraph at lines 541--543
 \T1/lmr/m/n/10.95 "Base-Jer-sey-Test". Base-Jer-sey-Test d¥dí z Jer-sey-Test, c
 oº je t°ída ze zá-vis-losti org.glassfish.jersey.test.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--550
+Underfull \hbox (badness 10000) in paragraph at lines 541--543
 
  []
 
 
-Overfull \hbox (2.95647pt too wide) in paragraph at lines 573--575
+Overfull \hbox (2.95647pt too wide) in paragraph at lines 566--568
 []\T1/lmr/m/n/10.95 Následn¥ se jiº pí²í kon-krétní testy. Na-p°í-klad test ve 
 vý-pisu "Kon-krétní Jer-sey test"kontroluje,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--575
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
 
  []
 
@@ -2183,31 +2182,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 573--575
 ] [52
 
 ]
-Underfull \hbox (badness 5119) in paragraph at lines 657--658
+Underfull \hbox (badness 5119) in paragraph at lines 650--651
 []\T1/lmr/bx/n/10.95 nevim \T1/lmr/m/n/10.95 [cit. 2017-01-04]. \T1/lmr/m/it/10
 .95 Do-stupne z: https://neoteric.eu/single-page-application-vs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--661
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
 []\T1/lmr/bx/n/10.95 Oracle do-cu-men-tation \T1/lmr/m/n/10.95 [cit. 2017-06-04
 ]. \T1/lmr/m/it/10.95 Do-stupne z:
  []
 
 
-Overfull \hbox (91.24767pt too wide) in paragraph at lines 663--664
+Overfull \hbox (91.24767pt too wide) in paragraph at lines 656--657
 []\T1/lmr/bx/n/10.95 Tutorialspoint \T1/lmr/m/n/10.95 [cit. 2017-06-04]. \T1/lm
 r/m/it/10.95 Do-stupne z: https://www.tutorialspoint.com/restful/restful_introd
 uction.htm 
@@ -2218,37 +2217,36 @@ uction.htm
 ] [55] [56
 
 ] [57]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 688.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 688.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 681.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 688.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 688.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 681.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 681.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5829585E6150DCC6E74D22DD0EF00F6B;4106.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 688.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 681.
  ) 
 Here is how much of TeX's memory you used:
- 27167 strings out of 493333
- 452482 string characters out of 3139195
- 582535 words of memory out of 3000000
+ 27165 strings out of 493333
+ 452457 string characters out of 3139195
+ 582970 words of memory out of 3000000
  29889 multiletter control sequences out of 15000+200000
- 56028 words of font info for 42 fonts, out of 3000000 for 9000
+ 53036 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,986b,3354s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,986b,3322s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 bx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9
-/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public
-/lm/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><D
-:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><D:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmtk10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
-lmtt9.pfb>
-Output written on main.pdf (57 pages, 2547345 bytes).
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmri10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmss12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pf
+b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><D:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><D:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (57 pages, 2532198 bytes).
 PDF statistics:
- 827 PDF objects out of 1000 (max. 8388607)
- 319 named destinations out of 1000 (max. 500000)
+ 820 PDF objects out of 1000 (max. 8388607)
+ 318 named destinations out of 1000 (max. 500000)
  380 words of extra memory for PDF output out of 10000 (max. 10000000)
 

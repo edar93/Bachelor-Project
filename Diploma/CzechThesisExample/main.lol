@@ -1,4 +1,4 @@
-\contentsline {lstlisting}{\numberline {1}Uk\IeC {\'a}zka kontrol\IeC {\'e}ru v AngularJS}{27}{lstlisting.1}
+\contentsline {lstlisting}{\numberline {1}Uk\IeC {\'a}zka kontrol\IeC {\'e}ru v AngularJS}{28}{lstlisting.1}
 \contentsline {lstlisting}{\numberline {2}Uk\IeC {\'a}zka aspektu}{40}{lstlisting.2}
 \contentsline {lstlisting}{\numberline {3}XML konfigurace websocketu}{41}{lstlisting.3}
 \contentsline {lstlisting}{\numberline {4}Implementace websocketu v jav\IeC {\v e}}{42}{lstlisting.4}

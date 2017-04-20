@@ -11,18 +11,17 @@
 \contentsline {subsection}{\numberline {1.1}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{23}{subsection.1.1}
 \contentsline {section}{\numberline {2}Technologie}{25}{section.2}
 \contentsline {subsection}{\numberline {2.1}REST}{25}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Vzorov\IeC {\'e} REST rozhran\IeC {\'\i }}{25}{subsubsection.2.1.1}
 \contentsline {subsection}{\numberline {2.2}AngularJs}{26}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Jednostr\IeC {\'a}nkov\IeC {\'a} aplikace}{26}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Model\IeC {\textendash }View\IeC {\textendash }Controller architektura}{26}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Dvoucestn\IeC {\'y} databinding}{26}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3}Dvoucestn\IeC {\'y} databinding}{27}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.4}Dependency injection v AngularJS}{27}{subsubsection.2.2.4}
 \contentsline {subsubsection}{\numberline {2.2.5}Z\IeC {\'a}kladn\IeC {\'\i } prom\IeC {\v e}nn\IeC {\'e}}{27}{subsubsection.2.2.5}
-\contentsline {subsubsection}{\numberline {2.2.6}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{27}{subsubsection.2.2.6}
-\contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } technologie}{28}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Node.js}{28}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.6}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{28}{subsubsection.2.2.6}
+\contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } technologie}{29}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Node.js}{29}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Spring}{29}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Maven}{29}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3}Maven}{30}{subsubsection.2.3.3}
 \contentsline {section}{\numberline {3}Typy testov\IeC {\'a}n\IeC {\'\i }}{31}{section.3}
 \contentsline {subsection}{\numberline {3.1}Manu\IeC {\'a}ln\IeC {\'\i } oproti automatick\IeC {\'y}m test\IeC {\r u}m}{31}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Test-driven development}{31}{subsection.3.2}

@@ -83,16 +83,14 @@
 
 \CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologii Jasnime, Protractor a Jersey. Všechny tyto technologie jsou popsány v teoretické části práce.}
 
-\CzechKeywords{diplomová práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování software}
+\CzechKeywords{diplomová práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování softwaru}
 
-\EnglishAbstract{TODO}
+\EnglishAbstract{The aim of this thesis is examine usage of modern technologies for development web applivations, include technologies for their testing. Practical part contains an application developed by dint of Spring and AngulaJS technologies. The communication of those two technologies is based on REST architecture. This application is tested on Jasmine, Protractor and Jersey technologies. All these technologies are described in theoretical part of this thesis.}
 
-\EnglishKeywords{typography, \LaTeX, master thesis}
+\EnglishKeywords{master thesis, AngularJS, Spring, Jasmine, Protractor, Jersey, modern web, software testing}
 
 \AddAcronym{REST}{REpresentational State Transfer}
-\AddAcronym{WWW}{World Wide Web --------}
-\AddAcronym{HTML}{Hyper Text Markup Language ------}
-\AddAcronym{W3C}{World Wide Web Consortium -----}
+\AddAcronym{HTML}{Hyper Text Markup Language}
 \AddAcronym{XML}{Extensible Markup Language}
 \AddAcronym{JSON}{JavaScript Object Notation}
 \AddAcronym{J2EE}{Java 2 Platform, Enterprise Edition}
@@ -122,20 +120,12 @@ Na následující 2. kapitole jsou popsány technologie pro vývoj webových apl
 \section{Technologie}
 
 \subsection{REST}
-{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures"
-
-
-webová služba, jenž by měla plnit následující podmínky díky nimž je rychlá a jednoduchá: 
+{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures". Tato architektura nemá žádné předchozí omezení plní pouze následující architektonické požadavky:
 \begin{itemize}
-	\item Dotazy by měly být sebe popisující - Tímto se myslí, že dotaz obsahuje všechny informace k jeho zpracování. Tyto informace lze zjistit například z URI či hlavičky dotazu.
-	\item Bezstavovost - díky tomu, že dotazy nemají stav jsou mezi sebou nezávislé. Pěkný test této podmínky je například restart serveru, po němž by se na interakci mezi serverem a klientem nemělo nic změnit.
-	\item Uložitelnost do krátkodobé paměti - Jelikož jsou dotazy bezstavové a obsahují všechny informace k jejich zpracování, jsou výsledky dotazů téměř vždy stejné. Tudíž je zde velký prostor pro ukládaní dotazu do krátkodobé paměti. Tímto se sníží objem přenesených dat a urychlí komunikace mezi serverem a klientem, při opakovaném dotazu. 
-	\item Interface - rest služby mají předepsaný interface, jenž je popsán v následující podkapitole.
-\end{itemize}
-RESTy nemají upřesněný formát dotazu. Tudíž RESTový dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. \cite{RESTWebServicesOracle} \cite{RESTWebServicesOracle2}
-
-\subsubsection{Vzorové REST rozhraní}
-RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se standardní HTTP metody. POST pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání. Dají se použít i další metody, tyto jsou ovšem nejpoužívanější. Následující tabulka ukazuje vzorové rozhraní, podobné tomu které jsem použil. \cite{RESTInterface}
+	\item Komunikace je klient-server - Díky rozdělení na tyto dvě části se může klientská i serverová část vyvíjet nezávisle na té druhé. Tímto se také odstraní starosti o uložení dat v uživatelského rozhraní. Takto se zvýší přenosnost rozhraní na více platforem.
+	\item Bezstavovost - Každý dotaz z klientské strany musí obsahovat všechny informace potřebné k jeho zpracování a nesmí využít žádný uložený kontext. Pokud je nutno držet nějaký stav děje se to vždy na straně klienta. Díky této vlastnosti si server nemusí držet v paměti žádný stav, což zvyšuje jeho výkon. Na druhou stranu se tím zvyšuje objem přenesených dat mezi serverem a klientem.
+	\item Uložitelnost do krátkodobé paměti - Odpovědi serveru na dotazy by měly být označeny zda jsou uložitelné do krátkodobé paměti. Mnohdy se klient může ptát několikrát na stejný dotaz. Pokud se neočekává, že se odpověď bude měnit, je výhodné odpověď uložit do paměti. Takto je možné omezit zbytečnou komunikaci mezi serverem a klientem.
+	\item Rozhraní - REST má předepsané rozhraní. Toto rozhraní neudává jak mají být data reprezentována tudíž dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. Rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se standardní HTTP metody. POST pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání. Dají se použít i další metody, tyto jsou ovšem nejpoužívanější. Následující tabulka "Vzorové REST rozhraní"~ukazuje vzorové rozhraní, podobné tomu použitému v praktické části. \cite{RESTInterface}
 
 \begin{table}[H]
 	\centering
@@ -157,6 +147,9 @@ RESTové rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se
 		\hline
 	\end{tabular}
 \end{table}
+	\item Vrstvený systém - mezi klientem a serverem mohou být různé vrstvy neboli prostřednicí, například firewall. U těchto vrstev platí že každá vrstva ví pouze o vrstvě jenž následuje bezprostředně po ní. Další vrstvy a celá architektura zůstávají skryté, aby se zajistila nezávislost vrstev. Touto vrstvou může být firewall nebo obalení historické vrstvy za účelem přidání nové funkcionality. 
+	\item Kód na vyžádání - Tato vlastnost není povinná. Jedná se o to, že klient může mít schopnost stáhnout si kód ze serverové strany, například plugin do prohlížeče nebo kód v jazyce JavaScript. Tato schopnost se hodí pokud je možno provádět serverovou logiku lépe na straně prohlížeče.
+\end{itemize} \cite{RESTWebServicesOracle} \cite{RESTWebServicesOracle2}
 	
 \subsection{AngularJs}
 AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na backend AngularJS využívá webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular}
@@ -190,8 +183,8 @@ Proměnné patřící rámci AngularJS začínají \$ nebo \$\$. Ty, jenž zač�
 \$rootscope - propisuje proměnné do všech šablon.
 
 \subsubsection{Ukázka základního kontroléru}
-Výpis kódu "Ukázka kontroléru v AngularJS"~popisuje základní kontrolér, jenž zavolá http metodu get nad URL http://test.com. Odpověď pak uloží do modelu na podstránce /game.\\
-~
+Výpis kódu "Ukázka kontroléru v AngularJS"~popisuje základní kontrolér, jenž zavolá http metodu get nad URL http://test.com. Odpověď pak uloží do modelu na podstránce /game.
+\\
 \begin{lstlisting}[language=JavaScript, caption=Ukázka kontroléru v AngularJS]
 var portRoyalApp = angular.module('portRoyalApp', [
     'rzModule',
