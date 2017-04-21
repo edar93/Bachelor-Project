@@ -13,9 +13,9 @@ import javax.inject.Inject;
 
 @Aspect
 @Order(2)
-public class UserSaver {
+public class UserAspect {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserSaver.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserAspect.class);
 
     @Inject
     private UsersProvider usersProvider;

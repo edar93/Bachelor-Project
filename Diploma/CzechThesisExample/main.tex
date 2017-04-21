@@ -75,13 +75,15 @@
 
 % Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
 % Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
-\ThesisAssignmentImagePath{Figures/Assignment}
+\ThesisAssignmentImagePath{Figures/zadani}
 
 % Zadame soubor s digitalizovanou podobou prohlaseni autora zaverecne prace.
 % Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
-\AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
+\AuthorDeclarationImageFile{Figures/samostatne.jpg}
 
-\CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologii Jasnime, Protractor a Jersey. Všechny tyto technologie jsou popsány v teoretické části práce.}
+\CooperatingPersonsDeclarationImageFile{Figures/zverejneni.jpg}
+
+\CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologii Jasnime, Protractor a Jersey. Všechny zmíněné technologie jsou popsány v teoretické části práce.}
 
 \CzechKeywords{diplomová práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování softwaru}
 
@@ -111,21 +113,23 @@
 
 % A nasleduje text zaverecne prace.
 \section{Úvod}
-Jako vše v oblasti informačních technologií, tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jenž usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování software, standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout takto. Nejprve bylo nutno nastudovat moderní webové technologie Spring, AngularJS a REST architekturu, poté navrhnout a implementovat hru Port Royal. Následně nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace. Nakonec ve vybraných technologiích otestovat aplikaci.
+Jako vše v oblasti informačních technologií, v tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jež usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování softwaru, standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout takto. Nejprve bylo nutno nastudovat moderní webové technologie Spring, AngularJS a REST architekturu, poté navrhnout a implementovat hru Port Royal. Následně nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace. Nakonec ve vybraných technologiích otestovat aplikaci.
 
 
 \subsection{Stručný obsah jednotlivých kapitol}
-Na následující 2. kapitole jsou popsány technologie pro vývoj webových aplikací. 3. kapitola se věnuje testování a technologiím zaměřeným na testování. Ve 4. kapitole je ukázána aplikace a popsány některé její technologické prvky. V 5. kapitole jsou popsány technologie pro vývoj webových aplikací z praktického hlediska a v 6. kapitole jsou více popsány testovací technologie, a to také z praktického hlediska. V poslední 7. kapitole je shrnutí bakalářské práce.
+V následující 2. kapitole jsou popsány technologie pro vývoj webových aplikací. 3. kapitola se věnuje testování a technologiím zaměřeným na testování. Ve 4. kapitole je ukázána aplikace a popsány některé její technologické prvky. V 5. kapitole jsou popsány technologie pro vývoj webových aplikací z praktického hlediska a v 6. kapitole jsou více popsány testovací technologie, a to také z praktického hlediska. V poslední 7. kapitole je shrnutí bakalářské práce.
 
 \section{Technologie}
 
 \subsection{REST}
-{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures". Tato architektura nemá žádné předchozí omezení plní pouze následující architektonické požadavky:
+{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures". Tato architektura nemá žádné předchozí omezení,	 plní pouze následující architektonické požadavky:
 \begin{itemize}
-	\item Komunikace je klient-server - Díky rozdělení na tyto dvě části se může klientská i serverová část vyvíjet nezávisle na té druhé. Tímto se také odstraní starosti o uložení dat v uživatelského rozhraní. Takto se zvýší přenosnost rozhraní na více platforem.
-	\item Bezstavovost - Každý dotaz z klientské strany musí obsahovat všechny informace potřebné k jeho zpracování a nesmí využít žádný uložený kontext. Pokud je nutno držet nějaký stav děje se to vždy na straně klienta. Díky této vlastnosti si server nemusí držet v paměti žádný stav, což zvyšuje jeho výkon. Na druhou stranu se tím zvyšuje objem přenesených dat mezi serverem a klientem.
-	\item Uložitelnost do krátkodobé paměti - Odpovědi serveru na dotazy by měly být označeny zda jsou uložitelné do krátkodobé paměti. Mnohdy se klient může ptát několikrát na stejný dotaz. Pokud se neočekává, že se odpověď bude měnit, je výhodné odpověď uložit do paměti. Takto je možné omezit zbytečnou komunikaci mezi serverem a klientem.
-	\item Rozhraní - REST má předepsané rozhraní. Toto rozhraní neudává jak mají být data reprezentována tudíž dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. Rozhraní je založeno na typech HTTP dotazů a jejich URI. Použít se standardní HTTP metody. POST pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání. Dají se použít i další metody, tyto jsou ovšem nejpoužívanější. Následující tabulka "Vzorové REST rozhraní"~ukazuje vzorové rozhraní, podobné tomu použitému v praktické části. \cite{RESTInterface}
+	\item \underline{Komunikace je klient-server} - Díky rozdělení na tyto dvě části se může klientská i serverová část vyvíjet nezávisle na té druhé. Také se takto umožní aby, klientská část fungovala na více platformách a je zbavená starosti o uložení dat.
+	\item \underline{Bezstavovost} - Každý dotaz z klientské strany musí obsahovat všechny informace potřebné k jeho zpracování a nesmí využít žádný uložený kontext. Pokud je nutno držet nějaký stav, děje se to vždy na straně klienta. Díky této vlastnosti si server nemusí držet v paměti žádný stav, což zvyšuje jeho výkon. Na druhou stranu se tím zvyšuje objem přenesených dat mezi serverem a klientem.
+	\item \underline{Uložitelnost do krátkodobé paměti} - Odpovědi serveru na dotazy by měly být označeny zda jsou uložitelné do krátkodobé paměti. Mnohdy se klient může ptát několikrát na stejný dotaz. Pokud se neočekává, že se odpověď bude měnit, je výhodné odpověď uložit do paměti. Takto je možné omezit zbytečnou komunikaci mezi serverem a klientem.
+	\item \underline{Jednotné rozhraní} - REST má mít jednotné rozhraní, což usnadňuje orientaci v něm a zvyšuje rozšiřitelnost do budoucna. REST nemá určený typ media, metody ani syntaxi koncových bodů. Tudíž dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. Přes různé protokoly a ne jenom přes webové URL.
+
+Nejčastěji se však používá webové rozhraní s HTTP metodami. Tabulka~"Vzorové REST rozhraní"~ukazuje vzorové rozhraní, podobné tomu použitému v praktické části. POST se zde používá pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání.\cite{RESTInterface}
 
 \begin{table}[H]
 	\centering
@@ -147,12 +151,12 @@ Na následující 2. kapitole jsou popsány technologie pro vývoj webových apl
 		\hline
 	\end{tabular}
 \end{table}
-	\item Vrstvený systém - mezi klientem a serverem mohou být různé vrstvy neboli prostřednicí, například firewall. U těchto vrstev platí že každá vrstva ví pouze o vrstvě jenž následuje bezprostředně po ní. Další vrstvy a celá architektura zůstávají skryté, aby se zajistila nezávislost vrstev. Touto vrstvou může být firewall nebo obalení historické vrstvy za účelem přidání nové funkcionality. 
-	\item Kód na vyžádání - Tato vlastnost není povinná. Jedná se o to, že klient může mít schopnost stáhnout si kód ze serverové strany, například plugin do prohlížeče nebo kód v jazyce JavaScript. Tato schopnost se hodí pokud je možno provádět serverovou logiku lépe na straně prohlížeče.
+	\item \underline{Vrstvený systém} - mezi klientem a serverem mohou být různé vrstvy neboli prostřednici. U těchto vrstev platí, že každá vrstva ví pouze o vrstvě, jež následuje bezprostředně po ní. Další vrstvy a celá architektura zůstávají skryté, aby se zajistila nezávislost vrstev. Touto vrstvou může být firewall nebo obalení historické vrstvy za účelem přidání nové funkcionality. 
+	\item \underline{Kód na vyžádání} - Tato vlastnost není povinná. Jedná se o to, že klient může mít schopnost stáhnout si kód ze serverové strany, například plugin do prohlížeče nebo kód v jazyce JavaScript. Tato schopnost se hodí pokud je možno provádět serverovou logiku lépe na straně prohlížeče.
 \end{itemize} \cite{RESTWebServicesOracle} \cite{RESTWebServicesOracle2}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na backend AngularJS využívá webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular}
+AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na serverovou část využívá AngularJS webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular}
 
 \subsubsection{Jednostránková aplikace}
 Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživatele a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovou stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informací. \cite{SPA}
@@ -297,7 +301,7 @@ Celá pravidla je možno samozřejmě stáhnout ve hře nebo si je přečíst v 
 V této kapitole je popsána stránka na vytváření hry, je zde použit posuvník k určení maximálního počtu hráčů. Při změně hodnoty na posuvníku se také změní hodnota modelu od AngularJS uvádějící maximální počet hráčů. Nad tímto modelem je použit \$watch, ten při pohybu posuvníku informuje serverovou část aplikace o změně.
 
 Podobná kontrola probíhá při změně každé proměnné. Nazývá se dirty checking. Zajišťuje propsání změn mezi modelem a šablonou, případně mezi modely. Proto se doporučuje, aby počet proměnných na stránce nepřesáhl počet 5000.
-\\~
+
 \begin{figure}[H]
 \centering\includegraphics[width=0.95\textwidth]{Figures/gamecreationpage.png}\caption{Stránka na vytváření hry}
 \end{figure}
@@ -348,7 +352,7 @@ Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných
 
 \begin{lstlisting}[language=Java,label=src:Java, caption=Ukázka aspektu]
 @Aspect
-public class UserSaver {
+public class UserAspect {
 
     @Inject
     private UsersProvider usersProvider;
@@ -425,12 +429,26 @@ function send () {
 };
 \end{lstlisting}
 
-\subsection{Návrh aplikace Angular / Spring}
-TODO
+\subsection{Architektura aplikace}
+Všechny spuštěné hry na serveru jsou uloženy v hash mapě objektu GamesHolder, ta v sobě obsahuje pro každou hru GameManipulator. Pokud si uživatel vyžádá svou hru, vrátí se mu GameManipulator s id jeho hry. Aktuální hra je uložena v objektu currentGame, ten je třídy Game, jež je popsána dále v této kapitole. Objekt currentAction informuje, zda má být nějaká karta zvýrazněna.
 
-Jak to nakreslit, popr slovne ?
+GameManipulator také obsahuje dva listy gamesToShow a actionsToShow. Tyto listy spolu obsahují již zahrané stavy hry (objektů v obou listech bude stejný počet, jelikož ke každému objektu hry je jeden objekt, jenž obsahuje informaci zda, je nutno něco zvýraznit). Tyto stavy jsou potřeba, pokud je nutno zvýraznit nějakou akci hráče (například pokud hráč kupuje kartu ze stolu). Nejprve se mu zobrazí historický stav, kdy byla nově zakoupená karta ještě na stole se zvýrazněnou kupovanou kartou. Následně se mu zobrazí stav, kdy má již koupenou kartu ve svých kartách se zvýrazněnou koupenou kartou. Až nakonec se zobrazí aktuální hra bez žádných zvýrazněných akcí.
 
-ulm tridni diagram
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/GameManipulator.png}\caption{Model uložení her na serveru}
+\end{figure}
+
+Obrázek~"Model hry"~popisuje objekt Game, v němž jsou uloženy informace o stavu hry. Game obsahuje 4 typy objektů, které reprezentují různá místa, kde se karty mohou nacházet. Tyto objekty si následně mezi sebou vyměňují karty dle uživatelových akcí.
+
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/Game.png}\caption{Model hry}
+\end{figure}
+
+Příchozí dotazy na server jsou nejprve odchyceny Bean UserAspect, ta zjistí z kontextu login uživatele. Poté provede dotaz do databáze, ze které si vytáhne potřebné informace o uživateli. Pokud zjistí, že je uživatel ve spuštěné hře, vytáhne si také z Bean GamesHolder vybranou hru. Následně dotaz zpracovává vybraná třída z balíčku resource. Hru a potřebné informace ji poskytuje UserProvider. Pokud se jedná o akci vyžadující přístup do databáze, využívá k ní vybraná resource třída některý z objektů v balíčku dao. Pokud se mění stav spuštěné hry, resource třída zadá instanci GameManipulator pokyn pro vykonání akce.
+
+\begin{figure}[H]
+\centering\includegraphics[width=0.95\textwidth]{Figures/RequestFlow.png}\caption{Zpracování dotazu}
+\end{figure}
 
 \section{Analýza a implementace testu}
 
@@ -620,6 +638,7 @@ Při vývoji byly použity konfigurace aplikace pomocí XML souborů. To se nako
 \subsection{Jak by se dala aplikace vylepšit}
 Spuštěná hra je uložena v paměti běžícího serveru. Při restartu serveru tudíž dojde i k restartu hry. Tento nedostatek by se dal odstranit průběžným ukládáním hry do databáze.
 
+Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto kontextu se bohužel nepodařilo přidat websockety. Tudíž jsou v aplikaci dva kontexty jeden s websocketami a druhý se vší logikou. Websockety ve hře tudíž pouze informují aby si hráč stáhl nový stav hry, z druhého kontextu, místo toho aby nový stav hry samy odeslaly. 
 
 \newcommand{\registerToBib}[4]
 {
@@ -678,4 +697,5 @@ Jasmine testy se spouštějí v příkazovém řádku na cestě \textbackslash s
 Pro spuštění Jersey testu se do příkazové řádky musí v hlavním adresáři napsat "mvn test".
 
 \section{Přílohy ve formě CD}
+Součástí práce je CD s zdrojovými kódy a s teoretickou práci v elektronické podobě.
 \end{document}

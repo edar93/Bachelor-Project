@@ -24,7 +24,7 @@
 \BOOKMARK [2][-]{subsection.5.4}{Aspekty}{section.5}% 24
 \BOOKMARK [2][-]{subsection.5.5}{Komunikace\040mezi\040Spring\040a\040AngularJS}{section.5}% 25
 \BOOKMARK [2][-]{subsection.5.6}{Websockets}{section.5}% 26
-\BOOKMARK [2][-]{subsection.5.7}{N\341vrh\040aplikace\040Angular\040/\040Spring}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.7}{Architektura\040aplikace}{section.5}% 27
 \BOOKMARK [1][-]{section.6}{Anal\375za\040a\040implementace\040testu}{}% 28
 \BOOKMARK [2][-]{subsection.6.1}{Jasmine}{section.6}% 29
 \BOOKMARK [2][-]{subsection.6.2}{Protractor}{section.6}% 30
