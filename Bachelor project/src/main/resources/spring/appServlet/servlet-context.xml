@@ -16,7 +16,7 @@
     </beans:bean>
 
     <aop:aspectj-autoproxy/>
-    <beans:bean id="UserSaver" class="vsb.cec0094.bachelorProject.resource.UserSaver">
+    <beans:bean id="UserAspect" class="vsb.cec0094.bachelorProject.resource.UserAspect">
     </beans:bean>
 
     <beans:bean id="LoggingAspect" class="vsb.cec0094.bachelorProject.resource.LoggingAspect">
@@ -48,21 +48,23 @@
     <!--<beans:property name="password" value="Slepice1"/>-->
     <!--</beans:bean>-->
     <!--h2 test-->
-    <!--<beans:bean id="SQLDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
-    <!--<beans:property name="driverClass" value="org.h2.Driver" />-->
-    <!--<beans:property name="url" value="jdbc:h2:mem:test;MODE=ORACLE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE" />-->
-    <!--<beans:property name="username" value="sa" />-->
-    <!--<beans:property name="password" value="" />-->
-    <!--</beans:bean>-->
 
-
-    <beans:bean id="SQLDataSource"
-                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-        <beans:property name="username" value="${jdbc.username}"/>
-        <beans:property name="password" value="${jdbc.password}"/>
-        <beans:property name="url" value="${jdbc.url}"/>
+    <beans:bean id="SQLDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <beans:constructor-arg>
+            <beans:bean class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+                <beans:property name="driverClass" value="org.h2.Driver" />
+                <beans:property name="url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle" />
+            </beans:bean>
+        </beans:constructor-arg>
     </beans:bean>
+
+    <!--<beans:bean id="SQLDataSource"-->
+                <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>-->
+        <!--<beans:property name="username" value="${jdbc.username}"/>-->
+        <!--<beans:property name="password" value="${jdbc.password}"/>-->
+        <!--<beans:property name="url" value="${jdbc.url}"/>-->
+    <!--</beans:bean>-->
 
     <beans:bean id="HibernateJpaVendorAdapter"
                 class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">

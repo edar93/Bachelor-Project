@@ -15,7 +15,7 @@
         <java.version>1.8</java.version>
 
         <!-- dependency versions -->
-        <h2.version>1.4.187</h2.version>
+        <dbh2.version>1.4.187</dbh2.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <spring.bom.version>2.0.3.RELEASE</spring.bom.version>
         <junit.version>4.12</junit.version>
@@ -35,6 +35,13 @@
     </properties>
 
     <dependencies>
+
+        <!-- H2 DB -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${dbh2.version}</version>
+        </dependency>
 
         <!-- Jersey + Spring -->
         <dependency>

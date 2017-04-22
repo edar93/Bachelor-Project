@@ -71,7 +71,7 @@
 \SubmissionDate{20. dubna 2017}
 
 % Pokud nechceme nikomu dekovat makro zapoznamkujeme.
-\Thanks{Rád bych na tomto místě poděkoval Ing. Davidovi Ježkovi, Ph.D., za pomoc a vedení u této práce.}
+\Thanks{Rád bych na tomto místě poděkoval panu Ing. Davidovi Ježkovi, Ph.D., za pomoc a vedení u této práce.}
 
 % Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
 % Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
@@ -83,7 +83,7 @@
 
 \CooperatingPersonsDeclarationImageFile{Figures/zverejneni.jpg}
 
-\CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologii Jasnime, Protractor a Jersey. Všechny zmíněné technologie jsou popsány v teoretické části práce.}
+\CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologií Jasnime, Protractor a Jersey. Všechny zmíněné technologie jsou popsány v teoretické části práce.}
 
 \CzechKeywords{diplomová práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování softwaru}
 
@@ -113,7 +113,7 @@
 
 % A nasleduje text zaverecne prace.
 \section{Úvod}
-Jako vše v oblasti informačních technologií, v tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jež usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování softwaru, standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout takto. Nejprve bylo nutno nastudovat moderní webové technologie Spring, AngularJS a REST architekturu, poté navrhnout a implementovat hru Port Royal. Následně nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace. Nakonec ve vybraných technologiích otestovat aplikaci.
+Jako vše v oblasti informačních technologií, v tak i oblasti vývoje webových stránek se objevuje spousta nových trendů. Tyto trendy se týkají jak nových technologií, jež usnadňují vývoj, tak také návrhu celé architektury aplikace, která vývoj zpřehledňuje a usnadňuje rozšířitelnost aplikace do budoucna. Také se do popředí dostává testování softwaru, jenž bylo kdysi okrajovou záležitostí. V dnešní době se však již stalo testování softwaru standardní součástí vývoje aplikace. Zadáním této práce bylo všechny tyto trendy zachytit. Práce by se dala shrnout takto. Nejprve bylo nutno nastudovat moderní webové technologie Spring, AngularJS a REST architekturu, poté navrhnout a implementovat hru Port Royal. Následně nastudovat principy testování a vybrat technologie pro otestování vyvinuté aplikace. Nakonec ve vybraných technologiích otestovat aplikaci.
 
 
 \subsection{Stručný obsah jednotlivých kapitol}
@@ -180,9 +180,9 @@ Dependency injection se také používá v rámci Spring, v němž je jednou z k
 \subsubsection{Základní proměnné}
 V AngularJS se pro pojmenovávání objektů používá camel case. Jedná se o způsob psaní víceslovných názvů, kdy se pro oddělení slov nepoužívají mezery, ale místo toho každé další slovo začíná velkým písmenem.
 
-Proměnné patřící rámci AngularJS začínají \$ nebo \$\$. Ty, jenž začínají dvěma dolary jsou, soukromé a programátor by k nim neměl vůbec přistupovat. Ty, jenž začínají jedním dolarem, se běžně používají. Níže je uvedeno pár hlavních.\\
+Proměnné patřící rámci AngularJS začínají \$ nebo \$\$. Ty, jenž začínají dvěma dolary, jsou soukromé a programátor by k nim neměl vůbec přistupovat. Ty, jenž začínají jedním dolarem, se běžně používají. Níže je uvedeno pár hlavních.\\
 \$location - poskytuje informace o aktuální URI na jednostránkové aplikaci, také svými funkcemi umožňuje přechod mezi stránkami.\\
-\$http - slouží k volání http metod,\\
+\$http - slouží k volání http metod.\\
 \$scope - propisuje proměnné do vybrané šablony.\\
 \$rootscope - propisuje proměnné do všech šablon.
 
@@ -211,42 +211,42 @@ gameCtrl.controller('gameControler', function ($scope, $http) {
     };
 \end{lstlisting}
 ~\\
-Na 1. - 4. se vytváří hlavní modul AngularJS do něhož se vkládají další moduly, z nichž je aplikace poskládaná. Například rzModule je modul stažený pomocí Node.js, přidávající posuvník. portRoyalApp.gameModule je modul vytvořený níže.\\
+Na 1. - 4. se vytváří hlavní modul AngularJS, do něhož se vkládají další moduly, z nichž je aplikace poskládaná. Například rzModule je modul stažený pomocí Node.js, přidávající posuvník. portRoyalApp.gameModule je modul vytvořený níže.\\
 Na 6. řádku se vytváří modul pro hru, který v sobě obsahuje modul ngRoute pro pohyb v jednostránkové aplikaci.\\
 Na 8. řádku se pro tento modul vytváří kontrolér, jenž si po pomocí Dependency Injection přidá 2 závislosti. \$scope a \$http.\\
 Na 9. řádku se volá funkce get nad URL http://test.com poskytnutá \$http. Jedná se o asynchronní metodu, tudíž je její návratová hodnota slib zachycen funkci then. Tato funkce má jako vstupní parametr funkci, jenž zpracuje slib v momentě jeho naplnění\\
-Na 10. - 12. řádku se zpracovává odpověď na get. Tato odpověď obsahuje hlavičku, http status a dalsí informace. V tomto případě je podstatný objekt jenž obsahuje, ten je uložený v objektu data. Ten se uloží do \$scope tak, že v ní vytvoříme nový objekt promennaDoSablony do nějž přiřadíme data.\\
-Na 14. - 19.  řádku \$routeProvider konfiguruje pohyb na stránce. Je zde určeno, že pokud uživatel přejde na URI /game, zobrazí se mu šablona game.html, jenž má na starost gameControler. Ten se okamžitě při přechodu na tuto URI inicializuje. Tudíž spustí get metodu.
+Na 10. - 12. řádku se zpracovává odpověď na get. Tato odpověď obsahuje hlavičku, http status a dalsí informace. V tomto případě je podstatný objekt jenž obsahuje, ten je uložený v objektu data. Ten se uloží do \$scope tak, že v ní vytvoříme nový objekt promennaDoSablony, do kterého přiřadíme data.\\
+Na 14. - 19.  řádku \$routeProvider konfiguruje pohyb na stránce. Je zde určeno, že pokud uživatel přejde na URI /game, zobrazí se mu šablona game.html, jež má na starost gameControler. Ten se okamžitě při přechodu na tuto URI inicializuje. Tudíž spustí get metodu.
 
 
 \subsection{Další technologie}
 
 \subsubsection{Node.js}
-Většinu problémů které řeší programátor v Javascriptu řešil už někdo před ním. Z tohoto důvodu by nebylo rozumné, aby programátor psal všechnu funkcionalitu sám. Je rozumější podívat se, zda už tato funkcionalita někde existuje. Proto vznikl Node.js. Node.js umožňuje programátorovi najít si funkcionalitu, a přidat ji do konfiguračního souboru. Po následném spuštění Node.js instalace se stáhnou požadované komponenty. Ty pak stačí pouze přidat pomocí Dependency injection.
+Většinu problémů, které řeší programátor v Javascriptu, řešil už někdo před ním. Z tohoto důvodu by nebylo rozumné, aby programátor psal všechnu funkcionalitu sám. Je rozumější podívat se, zda už tato funkcionalita někde existuje. Proto vznikl Node.js. Node.js umožňuje programátorovi najít si funkcionalitu, a přidat ji do konfiguračního souboru. Po následném spuštění Node.js instalace se stáhnou požadované komponenty. Ty pak stačí pouze přidat pomocí Dependency injection.
 
 Node.js také slouží jako spouštěč úloh, což znamená, že dokáže spouštět různé testovací rámce či fungovat jako server.
 
 \subsubsection{Spring}
 Spring je populární rámec pro vývoj J2EE aplikací s volnou licencí. Jeho první verze vyšla v červnu 2003 a od té doby značně nabyl na popularitě. 
 
-Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Objekty přidané těmito závislostmi, případně programátorem, jež obsluhuje rámec Spring se nazývají Bean. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
+Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Objekty přidané těmito závislostmi, případně programátorem, jenž obsluhuje rámec Spring se nazývají Bean. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
 \begin{itemize}
 	\item Hibernate - toto je implementace Java pesistance api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
-	\item Spring Security - Spring Security poskytuje autentizaci a autorizaci uživatele.
+	\item Spring Security - poskytuje autentizaci a autorizaci uživatele.
 	\item Tomcat plugin - Tomcat je open source webový server sloužící k nasazení aplikace. Implementuje většinu specifikace Java EE API. Tomcat je v této práci použit jako mavenovský plugin. Díky tomu není potřeba instalovat Tomcat server. Stačí pouze vytvořit spustitelný war soubor a následně spustit tento plugin mavenovským příkazem.
-	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou funkce, které se volají nad větší skupinou různých objektů u nichž je potřeba stejné funkcionality. Použity jsou například pro autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvláště.
-	\item spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou, je potřeba informovat hráče o akcích spoluhráčů. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockety, které mají dvě URL. Jednu na níž se přihlásí všichni hráči ve hře, a druhou, na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informováni všichni hráči, kteří poslouchají na první URL.
+	\item AspectJ - Tento modul slouží k vytváření aspektu. Aspekty jsou funkce, které se volají nad větší skupinou různých objektů, u nichž je potřeba stejné funkcionality. Použity jsou například pro autentizaci nebo logování příchozího dotazu, které se nemusí psát pro všechny třídy zvláště.
+	\item Spring websocket - Ve hře Port Royal, kterou hraje více hráčů najednou, je potřeba informovat hráče o akcích spoluhráčů. Každý hráč by měl tuto informaci dostat právě jednou a to co nejdříve. Toto zařídí websockets, které mají dvě URL. Jednu, na níž se přihlásí všichni hráči ve hře, a druhou, na kterou hráči zasílají své akce. Pokud některý zašle svou akci na druhou URL budou o této akci informováni všichni hráči, kteří poslouchají na první URL.
 \end{itemize}
 
 \subsubsection{Maven}
-Maven slouží ke kompilaci aplikace, ovšem nejen to. Umí spouštět testy či různé pluginy například výše zmíněný Tomcat plugin. Také slouží k přidávání závislostí, které se stejně jako pluginy definují do do souboru pom.xml. Maven tyto závislosti nebo pluginy pak sám stáhne. Toto jednak usnadňuje přidávání závislostí, jelikož programátor nemusí složitě stahovat různé a soubory stačí je pouze vypsat. Také usnadňuje přenos programu, jelikož stačí pouze přeposlat zdrojové kódy. O sestavení aplikace se všemi závislostmi se již dále postará maven.
+Maven slouží ke kompilaci aplikace, ovšem nejen to. Umí spouštět testy či různé pluginy například výše zmíněný Tomcat plugin. Také slouží k přidávání závislostí, které se stejně jako pluginy definují do souboru pom.xml. Maven tyto závislosti nebo pluginy pak sám stáhne. Toto jednak usnadňuje přidávání závislostí, jelikož programátor nemusí složitě stahovat různé soubory stačí je pouze vypsat. Také usnadňuje přenos programu, jelikož stačí pouze přeposlat zdrojové kódy. O sestavení aplikace se všemi závislostmi se již dále postará maven.
 
 \section{Typy testování}
 
 %\subsection{Smysl testování software}
-Testování dnes hraje při vývoji software důležitou roli. Organizace i vývojáři pochopili výhody testování hlavně u velkých aplikací, které se vyvíjejí a pak udržují mnoho let. U takovýchto aplikací mnohdy nelze s jistotou vědět, kde a jak se změny v kódu projeví. Pokud je ovšem určitá funkcionalita pokryta testy může se říci, že je tato funkcionalita splněna, jelikož to dokazují testy. A nejen to, pokud se bude kód upravovat, ví se, že testy pohlídají, aby byla původní funkcionalita zachována. Takto se předejde vytvoření chyb.
+Testování dnes hraje při vývoji software důležitou roli. Organizace i vývojáři pochopili výhody testování hlavně u velkých aplikací, které se vyvíjejí a pak udržují mnoho let. U takovýchto aplikací mnohdy nelze s jistotou vědět, kde a jak se změny v kódu projeví. Pokud je ovšem určitá funkcionalita pokryta testy, může se říci, že je tato funkcionalita splněna, jelikož to dokazují testy. A nejen to, pokud se bude kód upravovat, ví se, že testy pohlídají, aby byla původní funkcionalita zachována. Takto se předejde vytvoření chyb.
 
-Ve výsledku tedy testy nejsou něco co by programátora zdržovalo. Právě naopak testy zabraňují výskytu chyb a ohlídají, aby měla aplikace požadovanou funkcionalitu. Takto testování šetří čas programátorů a peníze organizacím.
+Ve výsledku tedy testy nejsou něco, co by programátora zdržovalo. Právě naopak, testy zabraňují výskytu chyb a ohlídají, aby měla aplikace požadovanou funkcionalitu. Takto testování šetří čas programátorů a peníze organizacím.
 
 \subsection{Manuální oproti automatickým testům}
 Testy se dají rozdělit na manuální a automatické. Manuálním testováním se rozumí když se tester vžije do role uživatele a ručně otestuje danou funkcionalitu oproti specifikaci. Tento typ testování je rychlý a jednoduchý, tudíž tester ani nemusí mít větší technické znalosti. Tyto testy jsou vhodné pro menší aplikace, které se nebudou měnit.
@@ -264,7 +264,7 @@ V dnešní době se však do popředí dostává Test-driven development neboli 
 Testy se také dají rozdělit na více úrovní podle toho, jak velký objem kódu pokrývají. U všech testů platí, že by se navzájem neměly ovlivňovat a měly by na sobě být nezávislé.
 
 \subsubsection{Jednotkové testy}
-Jednotkové testy jsou zaměřené na otestování funkcionality základních jednotek kódu. Většinou jedné funkce jedné třídy. Výhodou je, že tyto testy bývají rychlé a dobře se v nich identifikuje chyba. Jelikož neobsahují žádné další komponenty. Po napsání by měly zajistit, že daná část kódu plní svou funkcionalitu. Jedna funkcionalita může mít více testů pro různé vstupní parametry.
+Jednotkové testy jsou zaměřené na otestování funkcionality základních jednotek kódu. Většinou jedné funkce jedné třídy. Výhodou je, že tyto testy bývají rychlé a dobře se v nich identifikuje chyba, jelikož neobsahují žádné další komponenty. Po napsání by měly zajistit, že daná část kódu plní svou funkcionalitu. Jedna funkcionalita může mít více testů pro různé vstupní parametry.
 
 Při jednotkových testech v technologiích AngularJS a Spring se využívá Dependency injection. Komponenty, které využívá testovaný kód, se nahrazují podvrženými komponentami, díky čemuž není potřeba žádných závislostí a dá se nasimulovat různé chování ostatních komponent.
 
@@ -285,15 +285,15 @@ Protractor je end-to-end testovací framework pro AngularJS. Protractor spoušt�
 Karma je spouštěč testu v Node.js. Využívá ho Jasmine i Protractor. Spouští prohlížeč, v němž běží testy.
 
 \subsubsection{Jersey}
-Jersey je testovací rámec vytvořen pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práce se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno.
+Jersey je testovací rámec vytvořený pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práci se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby, vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno.
 
 \section{Obsah a funkcionalita aplikace}
-Hra uvítá nově příchozího hráče uvítací stránkou na níž má možnost podívat se na statistiky hráčů. Dále se může přihlásit anebo registrovat. Po přihlášení přibude možnost vytvořit hru, do níž se mohou přihlašovat další hráči nebo se přihlásit do již vytvořené hry. Také zde přibude možnost přejít do administrace hráčů, pokud má hráč roli uživatele.
+Hra uvítá nově příchozího hráče uvítací stránkou, na níž má možnost podívat se na statistiky hráčů. Dále se může přihlásit anebo registrovat. Po přihlášení přibude možnost vytvořit hru, do níž se mohou přihlašovat další hráči nebo se přihlásit do již vytvořené hry. Také zde přibude možnost přejít do administrace hráčů, pokud má hráč roli uživatele.
 
 \subsection{Zkrácená pravidla hry}
 Hra se dělí na dvě fáze. Nejprve aktivní hráč otáčí karty z kupky. Na stole se může objevit více druhů karet. Jsou zde karty lodí, za které obdrží hráč mince. Dále karty postav, jenž poskytují zvláštní schopnosti a poskytují vítězné body. Tyto karty si může hráč koupit pouze v případě pokud má dost mincí. Pak zde jsou expedice, ty se po otočení přesunou na zvláštní hromádku. Expedice poskytují vítězné body a také mince. Pokud má hráč postavy, jenž umožňují provést expedici, může je kdykoliv když je aktivní, vyměnit. Pak jsou ve hře ještě karty daní, při jejich otočení může hráč splňující určitou podmínku dostat mince, zároveň hráči mající 12 nebo více mincí musejí zaplatit polovinu svých mincí. Aktivní hráč otáčí karty tak dlouho, dokud se nerozhodne jednu z otočených karet vzít nebo dokud neotočí dva typy stejné lodi.
 
-Následně začne druhá fáze v níž postupně může každý ze zbývajících hráčů kupovat karty ze stolu, pokud jsou zde nějaké k dispozici. Ovšem při tomto nákupu musí hráč, jenž karty otočil, zaplatit minci. Jakmile tato fáze skončí Stane se aktivním hráčem další hráč v řadě. Toto se děje do té doby dokud některý z hráčů nenasbírá 12 vítězných bodů
+Následně začne druhá fáze, v níž postupně může každý ze zbývajících hráčů kupovat karty ze stolu, pokud jsou zde nějaké k dispozici. Ovšem při tomto nákupu musí hráč, jenž karty otočil, zaplatit minci. Jakmile tato fáze skončí, stane se aktivním hráčem další hráč v řadě. Toto se děje do té doby, dokud některý z hráčů nenasbírá 12 vítězných bodů
 
 Celá pravidla je možno samozřejmě stáhnout ve hře nebo si je přečíst v příloze.
 
@@ -315,20 +315,20 @@ Administrativní stránka je dostupná pouze uživatelům s rolí administrátor
 
 \subsection{Obsah a implementace stránky s hrou}
 Hra je uložena v objektu, jenž obsahuje více stavů hry, které se postupně zobrazují, aby ukázaly akci aktivního hráče.
-Pokud by zde bylo použito doptávaní se serveru v určitých intervalech, generovalo by to zbytečnou zátěž. Také by zde bylo zpoždění, jelikož by aktualizace stránky neproběhla okamžitě po akci. Nemluvě o riziku, že by se některá z akcí zobrazila několikrát, jelikož by bylo komplikované evidovat zda se daná akce již zobrazila.
+Pokud by zde bylo použito doptávaní se serveru v určitých intervalech, generovalo by to zbytečnou zátěž. Také by zde bylo zpoždění, jelikož by aktualizace stránky neproběhla okamžitě po akci. Nemluvě o riziku, že by se některá z akcí zobrazila několikrát, jelikož by bylo komplikované evidovat, zda se daná akce již zobrazila.
 
-Proto jsou zde použity websockety ty po zaslání akce na server aktualizují hráčům ve hře objekt se stavem hry okamžitě a právě jednou.
+Proto je zde použita technologie websocket, jež po zaslání akce na server aktualizují hráčům ve hře objekt se stavem hry okamžitě a právě jednou.
 \begin{figure}[H]
 \centering\includegraphics[width=0.95\textwidth]{Figures/gamepage.png}\caption{Stránka, na které se hraje hra}
 \end{figure}
 
 
-\section{Analýza použitých technologii}
+\section{Analýza použitých technologií}
 Aplikace je vyvinuta ve Springu a jediné, co potřebuje je připojení do databáze, v níž si sama vytvoří tabulky pomocí Hibernate. Spring kontejner má v sobě dvě části.
 
-Serverovou část napsanou v Javě jenž se stará o logiku aplikace a přistupující do databáze. Po nasazení na server obsluhuje webové služby. Tato část se nachází ve složce java. 
+Serverovou část napsanou v Javě, jenž se stará o logiku aplikace a přistupující do databáze. Po nasazení na server obsluhuje webové služby. Tato část se nachází ve složce java. 
 
-Klientskou část se nachází ve složce webapp, tato část obsahuje AngularJS. Při uživatelově vstupu do webové aplikace se celá tato část načte do prohlížeče. Po provedení akce se volá serverová část z níž si hráč zjišťuje potřebné informace.
+Klientskou část, která se nachází ve složce webapp, tato část obsahuje AngularJS. Při uživatelově vstupu do webové aplikace se celá tato část načte do prohlížeče. Po provedení akce se volá serverová část z níž si hráč zjišťuje potřebné informace.
 
 Obě tyto části by se daly snadno oddělit do dvou serverů.
 
@@ -340,7 +340,7 @@ Hibernate po připojení do databáze vytvoří schéma na obrázku "Databázov�
 \end{figure}
 
 \subsection{Node.js}
-Pokud chce programátor přidat závislost přes Node.js, například posuvník. Je nejprve potřeba vyhledat závislost v tomto případě "angularjs-slider": "6.0.1", tato závislost se přidá do souboru bower.json, konkrétně do objektu dependencies. pak se ve složce s tímto souborem spustí příkaz "bower install". Tento příkaz do nakonfigurované složky stáhne nově přidanou závislost. Následně stačí pouze přidat nově stažený script do indexu a jeho modul do modulu AngularJS, jenž ho využívá. 
+Pokud chce programátor přidat závislost přes Node.js, například posuvník. Je nejprve potřeba vyhledat závislost v tomto případě "angularjs-slider": "6.0.1", tato závislost se přidá do souboru bower.json, konkrétně do objektu dependencies. Pak se ve složce s tímto souborem spustí příkaz "bower install". Tento příkaz do nakonfigurované složky stáhne nově přidanou závislost. Následně stačí pouze přidat nově stažený script do indexu a jeho modul do modulu AngularJS, jenž ho využívá. 
 
 \subsection{Spring Security a Bcrypt}
 Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurování blokuje URI na který uživatel nemá přístup.
@@ -373,16 +373,16 @@ Na 10. řádku se pak z kontextu vyčte jméno přihlášeného uživatele.\\
 Na 11. řádku se nastaví Bean userProvider.
 
 \subsection{Komunikace mezi Spring a AngularJS}
-Komunikaci mezi serverovou stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím. Koncové body obsluhuje Spring. To se děje v případě uživatelovy akce. Také v pozadí běží kontrola zda se uživatel nachází na správné URI v rámci aplikace, jenž se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje, zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu-spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce, kde běží hra, jsou použity websockety, pro chat a aktualizování hry.
+Komunikaci mezi serverovou stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím. Koncové body obsluhuje Spring. To se děje v případě uživatelovy akce. Také v pozadí běží kontrola zda, se uživatel nachází na správné URI v rámci aplikace, jež se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje, zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce, kde běží hra, je použita technologie websocket, pro chat a aktualizování hry.
 
 \subsection{Websockets}
-Zde je ukázka nastavení websocketu pro chat, jenž je na úvodní stránce. Websockety je nutno nastavit jak na straně serveru (Spring), tak na straně klienta (AngularuJS). Následně to funguje tak, že se klienti přihlašují k odběru zpráv na server. V momentě kdy chce některý z klientů poslat zprávu všem ostatním klientům, odešle ji na server. Ten ji následně rozešle všem naslouchajícím klientům.
+Zde je ukázka nastavení websockets pro chat, jenž je na úvodní stránce. Websockets je nutno nastavit jak na straně serveru (Spring), tak na straně klienta (AngularuJS). Následně to funguje tak, že se klienti přihlašují k odběru zpráv na server. V momentě kdy chce některý z klientů poslat zprávu všem ostatním klientům, odešle ji na server. Ten ji následně rozešle všem naslouchajícím klientům.
 
 \subsubsection{Serverová strana}
-Serverová strana websocketu se nastavuje v rámci Spring. Je zde nutno přidat závislosti ze skupiny "org.springframework"~konkrétně "spring-messaging"~a "spring-websocket"
+Serverová strana websocket se nastavuje v rámci Spring. Je zde nutno přidat závislosti ze skupiny "org.springframework"~konkrétně "spring-messaging"~a "spring-websocket"
 
-V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocketům na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.\\
-\begin{lstlisting}[language=XML, caption=XML konfigurace websocketu]
+V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websockets na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.\\
+\begin{lstlisting}[language=XML, caption=XML konfigurace websockets]
 <websocket:message-broker application-destination-prefix="/port-royal/">
     <websocket:stomp-endpoint path="/chat">
         <websocket:sockjs/>
@@ -391,9 +391,9 @@ V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websocket�
 </websocket:message-broker>
 \end{lstlisting}
 
-V Javě je nutno vytvořit funkci, jenž zpracovává příchozí zprávy. V této kapitole je ukázka kódu nazvaná "Implementace websocketu v javě"~.Na prvním řádku se určí URI, pro příchozí zprávy. Na druhém řádku se určí URI na které jsou odběratelé, jenž všichni dostanou zpracovanou zprávu. Dále je jen zpracování a odeslání zprávy.\\
+V Javě je nutno vytvořit funkci, jež zpracovává příchozí zprávy. V této kapitole je ukázka kódu nazvaná "Implementace websockets v javě"~.Na prvním řádku se určí URI, pro příchozí zprávy. Na druhém řádku se určí URI na které jsou odběratelé, jenž všichni dostanou zpracovanou zprávu. Dále je jen zpracování a odeslání zprávy.\\
 
-\begin{lstlisting}[language=Java, caption=Implementace websocketu v javě]
+\begin{lstlisting}[language=Java, caption=Implementace websockets v javě]
 @MessageMapping("/sendMessage")
 @SendTo("/messages")
 public Message receive(Message message) {
@@ -402,13 +402,13 @@ public Message receive(Message message) {
 \end{lstlisting}
 
 \subsubsection{Klientská strana}
-Klientská část aplikace se nastavuje v AngularJS. Je zde ukázka kódu pod názvem "Použití websocketu na straně klienta", pro níž je nutno mít závislosti "sockjs" a "stomp-websocket", které se přidávají přes Node.js.
+Klientská část aplikace se nastavuje v AngularJS. Je zde ukázka kódu pod názvem "Použití websockets na straně klienta", pro níž je nutno mít závislosti "sockjs" a "stomp-websocket", které se přidávají přes Node.js.
 
 Jsou zde 3 asynchronní funkce. Nejprve je nutno se připojit na serverový koncový bod funkci connect. Konkrétně se zde připojuje na URI "/port-royal/chat". 
 
 Pak je možno začít odebírat zprávy funkcí subscribe, jež vypíše do konzole všechny příchozí zprávy. Také je možné odeslat předem vytvořenou zprávu funkcí send.
 \\
-\begin{lstlisting}[language=JavaScript, caption=Použití websocketu na straně klienta]
+\begin{lstlisting}[language=JavaScript, caption=Použití websockets na straně klienta]
 var client;      
 function connect() {
     var socket = new SockJS('/port-royal/chat');
@@ -455,7 +455,7 @@ Příchozí dotazy na server jsou nejprve odchyceny Bean UserAspect, ta zjistí 
 \subsection{Jasmine}
 Jasmine testy se spouštění přes Node.js příkazem "npm test"~ve složce se souborem package.json., v němž je uvedena cesta ke konfiguračnímu souboru karmy. V tomto souboru jsou uvedeny cesty k testům a pluginy pro spuštění prohlížeče, v němž se testy jeden po jednom spouštějí. 
 
-Samozřejmě, že také existuje software jako například Karma plugin pro InteliJ IDEA jenž umožňují spustit testy jedním kliknutím ve vývojovém prostředí.
+Samozřejmě, že také existuje software, jako například Karma plugin pro InteliJ IDEA, jenž umožňují spustit testy jedním kliknutím ve vývojovém prostředí.
 
 \subsubsection{Ukázkový test}
 Ukázkový kód v této kapitole je test, jenž ověří, zda se po zavolání funkce login od loginService, skutečně zavolá backendGateway. BackendGateway komunikuje ven z aplikace. Test také zkontroluje zda, funkce vrátí login nově přihlášeného uživatele.
@@ -504,11 +504,11 @@ describe('example test for portRoyalApp.loginService', function () {
 \end{lstlisting}
 ~\\
 Na 1. řádku se určuje, že se jedná o test pomocí describe, jenž shlukuje Jasmine testy. První parametr je popis skupiny testů, druhý je funkce se skupinou testů.\\
-Na 2. řádku se vytváří proměnné, jenž se budou využívat.
-Na 4. až 17. řádku je funkce beforeEach, jenž se spouští před každým testem v této skupině. V této funkci se nejprve přidává testovaný modul. Následně jeho závislosti, v tomto případě se jedná pouze backendGateway. Zde se nepřidává skutečný modul, ale pouze podvržený objekt, který má dvě funkce get a post, obě bez implementace. Po přidání modulů se na řádcích 10 až 15 zpřístupní z modulů objekty, jenž se budou dále používat.\\
-Na 19. řádu začíná test. To udává funkce it, jenž má 2 vstupní parametry. První parametr je popis jehož jmenná konvence vypadá takto: it(should "očekávané chování~"when"~co se děje/jaké jsou vstupní podmínky). Druhý parametr je funkce s testem.\\
+Na 2. řádku se vytváří proměnné, jenž se budou využívat.\\
+Na 4. až 17. řádku je funkce beforeEach, jež se spouští před každým testem v této skupině. V této funkci se nejprve přidává testovaný modul. Následně jeho závislosti, v tomto případě se jedná pouze backendGateway. Zde se nepřidává skutečný modul, ale pouze podvržený objekt, který má dvě funkce get a post, obě bez implementace. Po přidání modulů se na řádcích 10 až 15 zpřístupní z modulů objekty, jenž se budou dále používat.\\
+Na 19. řádu začíná test. To udává funkce it, jež má 2 vstupní parametry. První parametr je popis jehož jmenná konvence vypadá takto: it(should "očekávané chování~"when"~co se děje/jaké jsou vstupní podmínky). Druhý parametr je funkce s testem.\\
 Na 21. až 30. řádku se připravují pomocné proměnné pro test.\\
-Na 31. a 32. řádku se určují návratové hodnoty funkcí podvržených objektů. Zde by bylo možno také napsat celou novou funkci, jenž by se provedla po zavolání. Použitím callFake() místo returnValue().\\
+Na 31. a 32. řádku se určují návratové hodnoty funkcí podvržených objektů. Zde by bylo možno také napsat celou novou funkci, jež by se provedla po zavolání. Použitím callFake() místo returnValue().\\
 na 34. řádku se zavolá testovaná funkce.\\
 Na 36. řádku se vyvolá dirty checking (zmíněn v kapitone~4.2). Ten je použit pro vyhodnocení asynchronních metod.\\
 Na 37. řádku se zkontroluje, zda byla opravdu zavolána backendGateway se správnými parametry pro přihlášení.\\
@@ -542,7 +542,7 @@ describe('examle login test', function () {
 ~\\
 Na 3. a 4. řádku se nastavuje prohlížeč. Nejprve se mu určí adresa, na níž má test začínat. Protractor v základním nastavení umí poznat načtení stránky a počkat na něj. Tuto schopnost je nutno vypnout, protože v pozadí je spuštěna v nekonečné smyčce funkce, jež kontroluje, zda je uživatel na správné stránce.\\
 Na 6. a 7. řádku se děje kontrola nadpisu na přihlašovací stránce. Protractor umí vyhledávat prvky mnoha způsoby, zde se tak děje pomocí id elementu. Následuje porovnání očekávaného textu nadpisu se skutečným.\\
-Na 9. až 12. řádku probíhá přihlášení. Protractor nalezne elementy podle modelu od AngularJS a vyplní je hodnotami. Poté se klikne na tlačítko přihlášení. Jelikož je automatické čekání na~načtení stránky vypnuté je nutno pevně nastavit dobu po níž bude prohlížeč čekat na načtení stránky.\\
+Na 9. až 12. řádku probíhá přihlášení. Protractor nalezne elementy podle modelu od AngularJS a vyplní je hodnotami. Poté se klikne na tlačítko přihlášení. Jelikož je automatické čekání na~načtení stránky vypnuté je nutno pevně nastavit dobu, po níž bude prohlížeč čekat na načtení stránky.\\
 Na 14. řádku se provádí kontrola, zda po přihlášení došlo k přesměrování na uvítací stránku.\\
 Na 15. a 16. řádku opět probíhá kontrola titulku stránky, zde se ovšem titul nalezne pomocí css třídy.
 
@@ -633,12 +633,12 @@ Na 28. až 37. řádku probíhá samotný test. Nejprve se zavolá http metoda n
 V praktické části této práce vznikla webová hra Port Royal. Tato hra se hraje na centrálním serveru, umožňuje správu uživatelských účtů. Také vytváří a eviduje statistiky odehraných her. Pro vytvořenou hru následně vznikly testy, které ji testují několika způsoby na klientské i serverové části. Práci hodnotím pozitivně, jelikož jsem se naučil mnoho moderních technologií používaných i v praxi při vývoji webových aplikací. Následně jsem si zkusil jejich praktické použití na rozsáhlejším projektu.
 
 \subsection{Co bych dělal jinak}
-Při vývoji byly použity konfigurace aplikace pomocí XML souborů. To se nakonec ukázalo jako nevhodné neboť se v dnešní době do popředí dostává konfigurování pomocí anotací. Tudíž většina návodů byla pro tuto aplikaci nevhodná.
+Při vývoji byly použity konfigurace aplikace pomocí XML souborů. To se nakonec ukázalo jako nevhodné, neboť se v dnešní době do popředí dostává konfigurování pomocí anotací. Tudíž většina návodů byla pro tuto aplikaci nevhodná.
 
 \subsection{Jak by se dala aplikace vylepšit}
 Spuštěná hra je uložena v paměti běžícího serveru. Při restartu serveru tudíž dojde i k restartu hry. Tento nedostatek by se dal odstranit průběžným ukládáním hry do databáze.
 
-Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto kontextu se bohužel nepodařilo přidat websockety. Tudíž jsou v aplikaci dva kontexty jeden s websocketami a druhý se vší logikou. Websockety ve hře tudíž pouze informují aby si hráč stáhl nový stav hry, z druhého kontextu, místo toho aby nový stav hry samy odeslaly. 
+Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto kontextu se bohužel nepodařilo přidat websockets. Tudíž jsou v aplikaci dva kontexty jeden s websockets a druhý se vší logikou. Websockets ve hře tudíž pouze informují, aby si hráč stáhl nový stav hry, z druhého kontextu, místo toho aby, nový stav hry samy odeslaly. 
 
 \newcommand{\registerToBib}[4]
 {
@@ -683,9 +683,9 @@ the Design of Network-based Software Architectures}
 \section{Instalace a spuštění aplikace}
 
 \subsection{Instalace}
-Aby mohla být aplikace spuštěna je nutno mít nainstalovaný Maven a Node.js. Také je potřeba mít k dispozici Oracle databázi.
+Aby mohla být aplikace spuštěna, je nutno mít nainstalovaný Maven a Node.js. Také je potřeba mít k dispozici Oracle databázi.
 
-Pokud jsou tyto prerekvizity splněny je možno začít s instalací. Nejprve je nutno nastavit připojení do databáze nastavením proměnných username, password a url. Ty se nastavují v souborech jdbc.properties, jenž se nacházejí na cestě \textbackslash src\textbackslash main\textbackslash resources a \textbackslash src\textbackslash test\textbackslash resources.
+Pokud jsou tyto prerekvizity splněny, je možno začít s instalací. Nejprve je nutno nastavit připojení do databáze nastavením proměnných username, password a url. Ty se nastavují v souborech jdbc.properties, jenž se nacházejí na cestě \textbackslash src\textbackslash main\textbackslash resources a \textbackslash src\textbackslash test\textbackslash resources.
 
 Následně je nutno stáhnout závislosti pro část v AngularJS. To se provede v příkazovém řádku příkazem "npm install" na cestě \textbackslash src\textbackslash main.
 
@@ -697,5 +697,5 @@ Jasmine testy se spouštějí v příkazovém řádku na cestě \textbackslash s
 Pro spuštění Jersey testu se do příkazové řádky musí v hlavním adresáři napsat "mvn test".
 
 \section{Přílohy ve formě CD}
-Součástí práce je CD s zdrojovými kódy a s teoretickou práci v elektronické podobě.
+Součástí práce je CD se zdrojovými kódy a s teoretickou práci v elektronické podobě.
 \end{document}

@@ -28,7 +28,6 @@ public class UsersProvider {
     private GameManipulator gameManipulator;
 
     public void prepareUser(String login) {
-        //LOGGER.debug(login + "< was set");
         this.login = login;
         if (login != null) {
             this.gameInQueue = gameDao.getPlayersGame(login);
