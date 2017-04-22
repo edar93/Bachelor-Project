@@ -68,7 +68,7 @@
 
 \EnglishThesisTitle{Bachelor thesis - Game Port Royal and modern software development}
 
-\SubmissionDate{20. dubna 2017}
+\SubmissionDate{24. dubna 2017}
 
 % Pokud nechceme nikomu dekovat makro zapoznamkujeme.
 \Thanks{Rád bych na tomto místě poděkoval panu Ing. Davidovi Ježkovi, Ph.D., za pomoc a vedení u této práce.}
@@ -79,9 +79,9 @@
 
 % Zadame soubor s digitalizovanou podobou prohlaseni autora zaverecne prace.
 % Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
-\AuthorDeclarationImageFile{Figures/samostatne.jpg}
+%\AuthorDeclarationImageFile{Figures/samostatne.jpg}
 
-\CooperatingPersonsDeclarationImageFile{Figures/zverejneni.jpg}
+%\CooperatingPersonsDeclarationImageFile{Figures/zverejneni.jpg}
 
 \CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologií Jasnime, Protractor a Jersey. Všechny zmíněné technologie jsou popsány v teoretické části práce.}
 
@@ -122,7 +122,7 @@ V následující 2. kapitole jsou popsány technologie pro vývoj webových apli
 \section{Technologie}
 
 \subsection{REST}
-{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures". Tato architektura nemá žádné předchozí omezení,	 plní pouze následující architektonické požadavky:
+{\bf RE}presentational {\bf S}tate {\bf T}ransfer neboli REST představil Roy Fielding roku 2000 ve své disertační práci "Architectural Styles and the Design of Network-based Software Architectures". Tato architektura nemá žádné předchozí omezení,	 plní pouze následující architektonické požadavky: \cite{FIELDING}
 \begin{itemize}
 	\item \underline{Komunikace je klient-server} - Díky rozdělení na tyto dvě části se může klientská i serverová část vyvíjet nezávisle na té druhé. Také se takto umožní aby, klientská část fungovala na více platformách a je zbavená starosti o uložení dat.
 	\item \underline{Bezstavovost} - Každý dotaz z klientské strany musí obsahovat všechny informace potřebné k jeho zpracování a nesmí využít žádný uložený kontext. Pokud je nutno držet nějaký stav, děje se to vždy na straně klienta. Díky této vlastnosti si server nemusí držet v paměti žádný stav, což zvyšuje jeho výkon. Na druhou stranu se tím zvyšuje objem přenesených dat mezi serverem a klientem.
@@ -153,10 +153,10 @@ Nejčastěji se však používá webové rozhraní s HTTP metodami. Tabulka~"Vzo
 \end{table}
 	\item \underline{Vrstvený systém} - mezi klientem a serverem mohou být různé vrstvy neboli prostřednici. U těchto vrstev platí, že každá vrstva ví pouze o vrstvě, jež následuje bezprostředně po ní. Další vrstvy a celá architektura zůstávají skryté, aby se zajistila nezávislost vrstev. Touto vrstvou může být firewall nebo obalení historické vrstvy za účelem přidání nové funkcionality. 
 	\item \underline{Kód na vyžádání} - Tato vlastnost není povinná. Jedná se o to, že klient může mít schopnost stáhnout si kód ze serverové strany, například plugin do prohlížeče nebo kód v jazyce JavaScript. Tato schopnost se hodí pokud je možno provádět serverovou logiku lépe na straně prohlížeče.
-\end{itemize} \cite{RESTWebServicesOracle} \cite{RESTWebServicesOracle2}
+\end{itemize}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na serverovou část využívá AngularJS webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular}
+AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na serverovou část využívá AngularJS webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular} \cite{angulartutorial}
 
 \subsubsection{Jednostránková aplikace}
 Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživatele a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovou stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informací. \cite{SPA}
@@ -164,7 +164,7 @@ Jednostránková aplikace je taková aplikace, která běží uvnitř prohlíže
 \subsubsection{Model–View–Controller architektura}
 Model–View–Controller architektura dělí aplikaci na 3 části, a to model, pohled a kontrolér. Uživateli je zobrazen pohled, což je nejčastěji HTML šablona. Pokud provede nějakou akci, spustí tím funkci v kontroléru. Ten aktualizuje model, buď to svými daty nebo se na ně doptá serverové strany přes REST. Aktualizovaný model se následně zobrazí v pohledu. Tuto architekturu shrnuje obrázek "MVC architektura v AngularJS".
 \begin{figure}[H]
-\centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS}
+\centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS \cite{LearningAngularjs}}
 \end{figure}
 
 \subsubsection{Dvoucestný databinding}
@@ -224,12 +224,12 @@ Na 14. - 19.  řádku \$routeProvider konfiguruje pohyb na stránce. Je zde urč
 \subsubsection{Node.js}
 Většinu problémů, které řeší programátor v Javascriptu, řešil už někdo před ním. Z tohoto důvodu by nebylo rozumné, aby programátor psal všechnu funkcionalitu sám. Je rozumější podívat se, zda už tato funkcionalita někde existuje. Proto vznikl Node.js. Node.js umožňuje programátorovi najít si funkcionalitu, a přidat ji do konfiguračního souboru. Po následném spuštění Node.js instalace se stáhnou požadované komponenty. Ty pak stačí pouze přidat pomocí Dependency injection.
 
-Node.js také slouží jako spouštěč úloh, což znamená, že dokáže spouštět různé testovací rámce či fungovat jako server.
+Node.js také slouží jako spouštěč úloh, což znamená, že dokáže spouštět různé testovací rámce či fungovat jako server. \cite{nodeJS}
 
 \subsubsection{Spring}
 Spring je populární rámec pro vývoj J2EE aplikací s volnou licencí. Jeho první verze vyšla v červnu 2003 a od té doby značně nabyl na popularitě. 
 
-Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Objekty přidané těmito závislostmi, případně programátorem, jenž obsluhuje rámec Spring se nazývají Bean. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly:
+Spring je označován jako kontejner, jelikož je modulární. V základu tudíž neumí téměř nic, až s přidáváním modulů získává další funkcionalitu. Ačkoli  přidávání dalších modulů komplikuje přípravu prostředí, je to výhoda, neboť následně na serveru běží pouze to, co je opravdu potřeba. Objekty přidané těmito závislostmi, případně programátorem, jenž obsluhuje rámec Spring se nazývají Bean. Závislosti se přidávají přes Maven. V aplikaci Port Royal jsou použity například tyto moduly: \cite{spring}
 \begin{itemize}
 	\item Hibernate - toto je implementace Java pesistance api, která slouží k namapování javovských entit na relační databázi. Následně pak zajišťuje komunikaci mezi databází a Springem.
 	\item Spring Security - poskytuje autentizaci a autorizaci uživatele.
@@ -239,29 +239,29 @@ Spring je označován jako kontejner, jelikož je modulární. V základu tudí�
 \end{itemize}
 
 \subsubsection{Maven}
-Maven slouží ke kompilaci aplikace, ovšem nejen to. Umí spouštět testy či různé pluginy například výše zmíněný Tomcat plugin. Také slouží k přidávání závislostí, které se stejně jako pluginy definují do souboru pom.xml. Maven tyto závislosti nebo pluginy pak sám stáhne. Toto jednak usnadňuje přidávání závislostí, jelikož programátor nemusí složitě stahovat různé soubory stačí je pouze vypsat. Také usnadňuje přenos programu, jelikož stačí pouze přeposlat zdrojové kódy. O sestavení aplikace se všemi závislostmi se již dále postará maven.
+Maven slouží ke kompilaci aplikace, ovšem nejen to. Umí spouštět testy či různé pluginy například výše zmíněný Tomcat plugin. Také slouží k přidávání závislostí, které se stejně jako pluginy definují do souboru pom.xml. Maven tyto závislosti nebo pluginy pak sám stáhne. Toto jednak usnadňuje přidávání závislostí, jelikož programátor nemusí složitě stahovat různé soubory stačí je pouze vypsat. Také usnadňuje přenos programu, jelikož stačí pouze přeposlat zdrojové kódy. O sestavení aplikace se všemi závislostmi se již dále postará maven. \cite{maven}
 
 \section{Typy testování}
 
 %\subsection{Smysl testování software}
 Testování dnes hraje při vývoji software důležitou roli. Organizace i vývojáři pochopili výhody testování hlavně u velkých aplikací, které se vyvíjejí a pak udržují mnoho let. U takovýchto aplikací mnohdy nelze s jistotou vědět, kde a jak se změny v kódu projeví. Pokud je ovšem určitá funkcionalita pokryta testy, může se říci, že je tato funkcionalita splněna, jelikož to dokazují testy. A nejen to, pokud se bude kód upravovat, ví se, že testy pohlídají, aby byla původní funkcionalita zachována. Takto se předejde vytvoření chyb.
 
-Ve výsledku tedy testy nejsou něco, co by programátora zdržovalo. Právě naopak, testy zabraňují výskytu chyb a ohlídají, aby měla aplikace požadovanou funkcionalitu. Takto testování šetří čas programátorů a peníze organizacím.
+Ve výsledku tedy testy nejsou něco, co by programátora zdržovalo. Právě naopak, testy zabraňují výskytu chyb a ohlídají, aby měla aplikace požadovanou funkcionalitu. Takto testování šetří čas programátorů a peníze organizacím. \cite{testingANG}
 
 \subsection{Manuální oproti automatickým testům}
 Testy se dají rozdělit na manuální a automatické. Manuálním testováním se rozumí když se tester vžije do role uživatele a ručně otestuje danou funkcionalitu oproti specifikaci. Tento typ testování je rychlý a jednoduchý, tudíž tester ani nemusí mít větší technické znalosti. Tyto testy jsou vhodné pro menší aplikace, které se nebudou měnit.
 
 Problém nastává u větších a složitějších aplikací, v nichž nelze snadno a rychle zkontrolovat všechnu funkcionalitu manuálně. Této funkcionality je zde hodně. Proto jsou již potřeba automatické testy. Tyto testy sice trvá déle napsat, ovšem při několikanásobném opakování testu, jenž je potřeba po úpravách v aplikaci, jsou již automatické testy časově výhodnější.
 
-Tato práce se zabývá automatickými testy.
+Tato práce se zabývá automatickými testy. \cite{manual}
 
 \subsection{Test-driven development}
 Klasický vývojový cyklus byl takový, že programátor dostal zadání, a to nastudoval. Následně napsal kód, trochu to lidově řečeno proklikal. Pokud se mu vše zdálo funkční, kód odevzdal. Pak bylo dále na testerovi, aby kód pořádně otestoval.
 
-V dnešní době se však do popředí dostává Test-driven development neboli zkráceně už jen TDD. Tento přístup k vývoji předpokládá krátký vývojový cyklus neboli psaní software po menších částech. Vývojář praktikující TDD po obdržení a nastudování zadání nezačne psát implementaci zadání, ale nejprve vytvoří testy na požadovanou funkcionalitu. Tyto testy samozřejmě bez implementace požadované funkcionality budou hlásit chybu. Vytvoření požadované funkcionality je až další krok. Jak programátor tvoří požadovanou funkcionalitu, testy začínají procházet. Až v momentu, kdy všechny testy projdou, je vývoj dokončen. Programátor většinou při vývoji pouští pouze své testy, jelikož u větších systémů proběhnutí všech testů zabere několik minut. Všechny testy se tudíž většinou spouštějí až po dokončení práce pro potvrzení, že původní funkcionalita nebyla narušena.
+V dnešní době se však do popředí dostává Test-driven development neboli zkráceně už jen TDD. Tento přístup k vývoji předpokládá krátký vývojový cyklus neboli psaní software po menších částech. Vývojář praktikující TDD po obdržení a nastudování zadání nezačne psát implementaci zadání, ale nejprve vytvoří testy na požadovanou funkcionalitu. Tyto testy samozřejmě bez implementace požadované funkcionality budou hlásit chybu. Vytvoření požadované funkcionality je až další krok. Jak programátor tvoří požadovanou funkcionalitu, testy začínají procházet. Až v momentu, kdy všechny testy projdou, je vývoj dokončen. Programátor většinou při vývoji pouští pouze své testy, jelikož u větších systémů proběhnutí všech testů zabere několik minut. Všechny testy se tudíž většinou spouštějí až po dokončení práce pro potvrzení, že původní funkcionalita nebyla narušena.\cite{tdd}
 
 \subsection{Úrovně testů}
-Testy se také dají rozdělit na více úrovní podle toho, jak velký objem kódu pokrývají. U všech testů platí, že by se navzájem neměly ovlivňovat a měly by na sobě být nezávislé.
+Testy se také dají rozdělit na více úrovní podle toho, jak velký objem kódu pokrývají. U všech testů platí, že by se navzájem neměly ovlivňovat a měly by na sobě být nezávislé.\cite{testlevels}
 
 \subsubsection{Jednotkové testy}
 Jednotkové testy jsou zaměřené na otestování funkcionality základních jednotek kódu. Většinou jedné funkce jedné třídy. Výhodou je, že tyto testy bývají rychlé a dobře se v nich identifikuje chyba, jelikož neobsahují žádné další komponenty. Po napsání by měly zajistit, že daná část kódu plní svou funkcionalitu. Jedna funkcionalita může mít více testů pro různé vstupní parametry.
@@ -276,16 +276,16 @@ End-To-End testy simulují chování koncového uživatele v aplikaci. Tyto test
 
 \subsection{Testovací technologie}
 \subsubsection{Jasmine}
-Jasmine je testovací rámec pro Javascript s otevřeným zdrojovým kódem. Má za cíl být nezávislý na ostatních rámcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi. Využívá se pro jednotkové testy nejen v prostředí AngularJS, ale i jiných technologiích založených na Javascriptu. Před každým testem se nejprve přidá testovaný modul, ten má spoustu závislostí. Pro tyto závislosti se vytvoří podvržené moduly. Takto se zajistí jednak, že se opravdu testuje pouze daný modul, ale také se takto dají nasimulovat různá vstupní data. Například určením hodnot, které budou vracet http odpovědi. Jasmine také umožňuje vytváření takzvaných špionů, kteří kontrolují, zda byla metoda zavolána, případně s jakými hodnotami.
+Jasmine je testovací rámec pro Javascript s otevřeným zdrojovým kódem. Má za cíl být nezávislý na ostatních rámcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi. Využívá se pro jednotkové testy nejen v prostředí AngularJS, ale i jiných technologiích založených na Javascriptu. Před každým testem se nejprve přidá testovaný modul, ten má spoustu závislostí. Pro tyto závislosti se vytvoří podvržené moduly. Takto se zajistí jednak, že se opravdu testuje pouze daný modul, ale také se takto dají nasimulovat různá vstupní data. Například určením hodnot, které budou vracet http odpovědi. Jasmine také umožňuje vytváření takzvaných špionů, kteří kontrolují, zda byla metoda zavolána, případně s jakými hodnotami.\cite{testingANG}
 
 \subsubsection{Protractor}
-Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či modelu patřícímu AngularJS. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky, tudíž programátor nemusí zadávat pevnou dobu čekání. Což by jednak prodlužovalo běh testu, ale také by při zpoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{TestingAngularApp}
+Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či modelu patřícímu AngularJS. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky, tudíž programátor nemusí zadávat pevnou dobu čekání. Což by jednak prodlužovalo běh testu, ale také by při zpoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{testingANG}
 
 \subsubsection{Karma}
 Karma je spouštěč testu v Node.js. Využívá ho Jasmine i Protractor. Spouští prohlížeč, v němž běží testy.
 
 \subsubsection{Jersey}
-Jersey je testovací rámec vytvořený pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práci se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby, vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno.
+Jersey je testovací rámec vytvořený pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práci se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby, vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno.\cite{jersey}
 
 \section{Obsah a funkcionalita aplikace}
 Hra uvítá nově příchozího hráče uvítací stránkou, na níž má možnost podívat se na statistiky hráčů. Dále se může přihlásit anebo registrovat. Po přihlášení přibude možnost vytvořit hru, do níž se mohou přihlašovat další hráči nebo se přihlásit do již vytvořené hry. Také zde přibude možnost přejít do administrace hráčů, pokud má hráč roli uživatele.
@@ -345,10 +345,10 @@ Pokud chce programátor přidat závislost přes Node.js, například posuvník.
 \subsection{Spring Security a Bcrypt}
 Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurování blokuje URI na který uživatel nemá přístup.
 
-Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje, zda přihlašovací heslo odpovídá vygenerovanému hashi.
+Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje, zda přihlašovací heslo odpovídá vygenerovanému hashi.\cite{sec}
 
 \subsection{Aspekty}
-Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. V této podkapitole je ukázka aspektu nazvaná "Ukázka aspektu". Tento aspekt před každým zavoláním funkce z balíčku resource nastaví uživatele v Bean UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro Bean v rámci Spring je přednastaveno, že existuje jedna pro celý běh aplikace. U Bean UsersProvider je to v konfiguračním XML změněno. Vytváří se zvlášť pro každý http dotaz, jelikož na server přistupuje několik uživatelů zároveň. \\
+Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. V této podkapitole je ukázka aspektu nazvaná "Ukázka aspektu". Tento aspekt před každým zavoláním funkce z balíčku resource nastaví uživatele v Bean UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro Bean v rámci Spring je přednastaveno, že existuje jedna pro celý běh aplikace. U Bean UsersProvider je to v konfiguračním XML změněno. Vytváří se zvlášť pro každý http dotaz, jelikož na server přistupuje několik uživatelů zároveň. \cite{aop} \\
 
 \begin{lstlisting}[language=Java,label=src:Java, caption=Ukázka aspektu]
 @Aspect
@@ -376,12 +376,11 @@ Na 11. řádku se nastaví Bean userProvider.
 Komunikaci mezi serverovou stranou aplikace v rámci Spring a AngularJS vždy začíná AngularJS zavoláním určitého koncového bodu, neboli URL přístupného klientským aplikacím. Koncové body obsluhuje Spring. To se děje v případě uživatelovy akce. Také v pozadí běží kontrola zda, se uživatel nachází na správné URI v rámci aplikace, jež se v pravidelných intervalech ptá na jaké URI by se měl uživatel nacházet a kontroluje, zda na ní opravdu je. To se děje pro případ, že by uživatel ve hře přešel třeba tlačítkem zpět do statistik či vypnul prohlížeč. Po znovu spuštění aplikace je ho potřeba přesměrovat na URI s hrou. Na uvítací stránce a na stránce, kde běží hra, je použita technologie websocket, pro chat a aktualizování hry.
 
 \subsection{Websockets}
-Zde je ukázka nastavení websockets pro chat, jenž je na úvodní stránce. Websockets je nutno nastavit jak na straně serveru (Spring), tak na straně klienta (AngularuJS). Následně to funguje tak, že se klienti přihlašují k odběru zpráv na server. V momentě kdy chce některý z klientů poslat zprávu všem ostatním klientům, odešle ji na server. Ten ji následně rozešle všem naslouchajícím klientům.
-
+Zde je ukázka nastavení websockets pro chat, jenž je na úvodní stránce. Websockets je nutno nastavit jak na straně serveru (Spring), tak na straně klienta (AngularuJS). Následně to funguje tak, že se klienti přihlašují k odběru zpráv na server. V momentě kdy chce některý z klientů poslat zprávu všem ostatním klientům, odešle ji na server. Ten ji následně rozešle všem naslouchajícím klientům. \cite{websoc}
 \subsubsection{Serverová strana}
 Serverová strana websocket se nastavuje v rámci Spring. Je zde nutno přidat závislosti ze skupiny "org.springframework"~konkrétně "spring-messaging"~a "spring-websocket"
 
-V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websockets na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.\\
+V XML konfiguraci se nastaví, že se uživatelé mohou připojovat k websockets na URI "/chat". Na URI "/messages"~je pak ještě možno přihlásit se k odběru zpráv.
 \begin{lstlisting}[language=XML, caption=XML konfigurace websockets]
 <websocket:message-broker application-destination-prefix="/port-royal/">
     <websocket:stomp-endpoint path="/chat">
@@ -649,34 +648,39 @@ Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto konte
 }
 
 \begin{thebibliography}{99}
-\bibitem{test}
-	{RUEBBELKE, Lukas a Brian FORD.}
-	{AngularJS in action}
-	{AngularJS in action. ISBN 1617291331.}
+\bibitem{FIELDING}{FIELDING, Roy Thomas. Architectural Styles and the Design of Network-based Software Architectures. UNIVERSITY OF CALIFORNIA, IRVINE, 2000.}
+\bibitem{RESTInterface}{tutorialspoint.com [online]. [cit. 2017-04-22]. Dostupné z: https://www.tutorialspoint.com/restful/restful\_introduction.htm}
+\bibitem{angulartutorial}{Zdrojak.cz [online]. [cit. 2017-04-22]. Dostupné z: https://www.zdrojak.cz/clanky/zaciname-s-angularjs/}	
+\bibitem{coJeAngular}{Docs.angularjs.org [online]. [cit. 2017-04-22]. Dostupné z: https://docs.angularjs.org/guide/introduction}		
+\bibitem{SPA}{Neoteric.eu [online]. [cit. 2017-04-22]. Dostupné z: https://neoteric.eu/single-page-application-vs-multiple-page-application}
+\bibitem{databinding}{Docs.angularjs.org [online]. [cit. 2017-04-22]. Dostupné z: https://docs.angularjs.org/guide/databinding}
 
-\bibitem{test2}
-	{docs.angularjs.org}
-	{[online].[cit.2017-06-01].}
-	{Dostupné z: https://docs.angularjs.org}
+\bibitem{LearningAngularjs}{WILLIAMSON, Ken. Learning Angularjs: A Guide to Angularjs Development. O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472., 2015.}
 	
-\bibitem{test3}
-	{Roy Thomas Fielding}
-	{Architectural Styles and
-the Design of Network-based Software Architectures}
-	
-	
-	\registerToBib{coJeAngular}{angularjs}{2017-01-04}{https://docs.angularjs.org/guide/introduction}		
-	\registerToBib{SPA}{nevim}{2017-01-04}{https://neoteric.eu/single-page-application-vs-multiple-page-application}
-	\registerToBib{nikde}{taka sablona}{2017-01-04}{https://www.zdrojak.cz/clanky/zaciname-s-angularjs/}
-	\registerToBib{databinding}{angularJS.org}{2017-02-04}{https://docs.angularjs.org/guide/databinding}
-	\registerToBib{WebServices}{Oracle documentation}{2017-06-04}{https://docs.oracle.com/javaee/7/tutorial/webservices-intro001.htm\#GIJVH}
-	\registerToBib{RESTWebServicesOracle}{Oracle documentation}{2017-06-04}{https://docs.oracle.com/javaee/7/tutorial/webservices-intro002.htm\#GIQSX}
-	\registerToBib{RESTWebServicesOracle2}{Oracle documentation}{2017-06-04}{http://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html}
-	\registerToBib{RESTInterface}{Tutorialspoint}{2017-06-04}{https://www.tutorialspoint.com/restful/restful\_introduction.htm}
-	\registerToBib{LearningAngularjs}{Williamson, Ken.}{2017-07-04}{Learning Angularjs: A Guide to Angularjs Development. Sebastopol, CA: O, 2015.}
-	
-	\registerToBib{TestingAngularApp}{Jesse Palmer}{2017-08-04}{Testing Angular Appliacction Cover Angular 2. 2016}
-	
+\bibitem{nodeJS}{Zdrojak.cz [online]. [cit. 2017-04-22]. Dostupné z: https://www.zdrojak.cz/serialy/node-js-s-javascriptem-na-serveru/}	
+
+\bibitem{spring}{WALLS, Craig. Spring in action. 3rd ed. Shelter Island: Manning, c2011. ISBN 1935182358.}
+
+\bibitem{maven}{Tutorialspoint.com [online]. [cit. 2017-04-22]. Dostupné z: https://www.tutorialspoint.com/maven/}
+
+\bibitem{testingANG}{PALMER, JESSE. TESTING ANGULAR APPLICATIONS: covers angular 2. S.l.: O'REILLY MEDIA, 2016.}
+
+\bibitem{manual}{crossbrowsertesting.com [online]. [cit. 2017-04-22]. Dostupné z: https://crossbrowsertesting.com/blog/test-automation/difference-manual-automated-testing/}
+
+\bibitem{tdd}{gamesfromwithin.com [online]. [cit. 2017-04-22]. Dostupné z: http://gamesfromwithin.com/stepping-through-the-looking-glass-test-driven-game-development-part-1}
+
+\bibitem{testlevels}{tutorialspoint.com [online]. [cit. 2017-04-22]. Dostupné z: https://www.tutorialspoint.com/software\_testing/software\_testing\_levels.htm}
+
+\bibitem{jersey}{jersey.java.net [online]. [cit. 2017-04-22]. Dostupné z: https://jersey.java.net/documentation/latest/test-framework.html}
+
+\bibitem{sec}{docs.spring.io [online]. [cit. 2017-04-22]. Dostupné z: https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/}
+
+
+\bibitem{aop}{docs.spring.io [online]. [cit. 2017-04-22]. Dostupné z: http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/aop.html}
+
+\bibitem{websoc}{concretepage.com [online]. [cit. 2017-04-22]. Dostupné z: http://www.concretepage.com/spring-4/spring-4-websocket-sockjs-stomp-tomcat-example}
+
+
 \end{thebibliography}
 
 \appendix

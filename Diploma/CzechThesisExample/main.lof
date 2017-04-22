@@ -4,7 +4,7 @@
 \select@language {czech}
 \select@language {english}
 \select@language {czech}
-\contentsline {figure}{\numberline {1}{\ignorespaces MVC architektura v AngularJS\relax }}{27}{figure.caption.2}
+\contentsline {figure}{\numberline {1}{\ignorespaces MVC architektura v AngularJS \cite {LearningAngularjs}\relax }}{27}{figure.caption.2}
 \contentsline {figure}{\numberline {2}{\ignorespaces Str\IeC {\'a}nka na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry\relax }}{36}{figure.caption.3}
 \contentsline {figure}{\numberline {3}{\ignorespaces Str\IeC {\'a}nka administrace u\IeC {\v z}ivatel\IeC {\r u}\relax }}{36}{figure.caption.4}
 \contentsline {figure}{\numberline {4}{\ignorespaces Str\IeC {\'a}nka, na kter\IeC {\'e} se hraje hra\relax }}{37}{figure.caption.5}

@@ -1114,7 +1114,7 @@
       <workItem from="1492611514441" duration="3076000" />
       <workItem from="1492695216733" duration="20698000" />
       <workItem from="1492809151116" duration="245000" />
-      <workItem from="1492848440712" duration="607000" />
+      <workItem from="1492848440712" duration="1206000" />
     </task>
     <task id="LOCAL-00011" summary="add isAdmin rest">
       <created>1489575891759</created>
@@ -1414,7 +1414,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="615588000" />
+    <option name="totallyTimeSpent" value="616187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
