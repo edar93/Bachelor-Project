@@ -47,7 +47,7 @@
                         ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
                 </button>
             </div>
-            <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4 && admiralApplied == false"
+            <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4 && admiralApplied == false && localPlayersAdmirals > 0"
                     ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
             </button>
         </div>

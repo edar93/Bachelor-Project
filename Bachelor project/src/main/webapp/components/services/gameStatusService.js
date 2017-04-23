@@ -9,7 +9,7 @@ var gameStatusService = function ($timeout, backendGateway) {
     var timeout = 800;
 
     var localUser, playersList, table, expeditions, playersCount, localPlayer, activePlayer, cardsToTake,
-        gameScope, markedType, markedId, lastGameToShow, phaseShow, playerOnTurn, admiralApplied, phase;
+        gameScope, markedType, markedId, lastGameToShow, phaseShow, playerOnTurn, admiralApplied, phase, localPlayersAdmirals;
 
     function setScopeAndPlayer(scope, player) {
         gameScope = scope;
@@ -70,6 +70,7 @@ var gameStatusService = function ($timeout, backendGateway) {
                 if (game.players[i].login == localUser) {
                     localPlayer = game.players[i];
                     game.players.splice(i, 1);
+                    localPlayersAdmirals = game.players[i].admiralsCount;
                 }
             }
 
@@ -122,6 +123,7 @@ var gameStatusService = function ($timeout, backendGateway) {
         gameScope.localUser = localUser;
         gameScope.admiralApplied = admiralApplied;
         gameScope.phase = phase;
+        gameScope.localPlayersAdmirals = localPlayersAdmirals;
     }
 };
 

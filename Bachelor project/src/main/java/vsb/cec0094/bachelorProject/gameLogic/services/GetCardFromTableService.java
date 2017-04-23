@@ -24,6 +24,11 @@ public class GetCardFromTableService {
         playerSwittchingService = new PlayerSwittchingService(game);
     }
 
+    public void skipAction() {
+        game.setPhase(Phase.TRADING);
+        playerSwittchingService.shiftPlayer(false);
+    }
+
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveCharacterException, CloneNotSupportedException {
         if (Phase.EXPLORING.equals(game.getPhase())) {
             game.setPhase(Phase.TRADING);

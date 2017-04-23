@@ -44,9 +44,12 @@ public class Player implements Cloneable {
     @JoinColumn(name = "card_owner")
     private List<Card> cards;
 
+    @Transient
+    private int admiralsCount;
+
     @JsonIgnore
     @Transient
-    private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, admiralsCount, cardsToTake,
+    private int crossCount, anchorCount, hutCount, jackOfAllTradesCount, discount, jestersCount, cardsToTake,
             traderPinaceCount, traderFluteCount, traderSkiffCount, traderFrigadeCount, traderGalleonCount;
 
     public Player(String login) {

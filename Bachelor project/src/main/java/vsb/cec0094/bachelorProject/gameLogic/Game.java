@@ -100,7 +100,7 @@ public class Game implements Cloneable, Serializable {
     }
 
     public void skipAction() {
-        playerSwittchingService.shiftPlayer(false);
+        getCardFromTableService.skipAction();
     }
 
     public ActionAndSemiStateHolder playerGetCardFromTable(int cardPosition) throws InvalidActionException, TooExpensiveCharacterException, CloneNotSupportedException {
