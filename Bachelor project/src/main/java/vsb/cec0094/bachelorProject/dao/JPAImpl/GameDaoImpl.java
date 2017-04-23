@@ -10,7 +10,6 @@ import vsb.cec0094.bachelorProject.models.GameInQueue;
 import vsb.cec0094.bachelorProject.models.User;
 
 import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -36,7 +35,7 @@ public class GameDaoImpl implements GameDao {
     private int getIdForNewGame() {
         try {
             return ((Integer) em.createQuery(GET_HIGHEST_ID)
-                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+//                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                     .getSingleResult()
             )
                     + 1;

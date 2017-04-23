@@ -38,7 +38,6 @@
     <context:component-scan base-package="vsb.cec0094.bachelorProject"/>
     <context:annotation-config/>
 
-    <!-- TODO properties to external file-->
     <!--mySQL-->
     <!--<beans:bean id="SQLDataSource"-->
     <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
@@ -49,22 +48,24 @@
     <!--</beans:bean>-->
     <!--h2 test-->
 
-    <beans:bean id="SQLDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
-        <beans:constructor-arg>
-            <beans:bean class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-                <beans:property name="driverClass" value="org.h2.Driver" />
-                <beans:property name="url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle" />
-            </beans:bean>
-        </beans:constructor-arg>
+    <!--oracle-->
+    <!--<beans:bean id="SQLDataSource"-->
+    <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>-->
+    <!--<beans:property name="username" value="${oracle.jdbc.username}"/>-->
+    <!--<beans:property name="password" value="${oracle.jdbc.password}"/>-->
+    <!--<beans:property name="url" value="${oracle.jdbc.url}"/>-->
+    <!--</beans:bean>-->
+
+    <!--derby-->
+    <beans:bean id="SQLDataSource"
+                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
+        <beans:property name="url" value="${derby.jdbc}"/>
+        <beans:property name="username" value="app"/>
+        <beans:property name="password" value="app"/>
     </beans:bean>
 
-    <!--<beans:bean id="SQLDataSource"-->
-                <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-        <!--<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>-->
-        <!--<beans:property name="username" value="${jdbc.username}"/>-->
-        <!--<beans:property name="password" value="${jdbc.password}"/>-->
-        <!--<beans:property name="url" value="${jdbc.url}"/>-->
-    <!--</beans:bean>-->
 
     <beans:bean id="HibernateJpaVendorAdapter"
                 class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">

@@ -10,7 +10,6 @@ import vsb.cec0094.bachelorProject.models.UserRegistration;
 import vsb.cec0094.bachelorProject.models.UserRole;
 
 import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -36,7 +35,7 @@ public class AccountDaoImpl implements AccountDao {
     private int getIdForNewRole() {
         try {
             return ((Integer) em.createQuery(GET_HIGHEST_ROLE_ID)
-                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+//                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                     .getSingleResult()
             )
                     + 1;

@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "User_role")
@@ -17,6 +18,18 @@ public class UserRole {
 
     @Column(name = "role")
     private String role;
+
+    @Column(name = "login")
+    @Size(max = 100)
+    private String login;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
     public int getId() {
         return id;

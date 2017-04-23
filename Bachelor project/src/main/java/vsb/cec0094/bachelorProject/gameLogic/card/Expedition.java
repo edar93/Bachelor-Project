@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 @Entity
 public class Expedition extends Card {
 
-    @Column(name = "cross")
+    @Column(name = "crosss")
     private int cross;
     @Column(name = "anchor")
     private int anchor;

@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 
 @Repository
@@ -21,7 +20,7 @@ public class IdGeneratorDao {
     public Long getIdForNewStatsRecord() {
         try {
             return ((Long) em.createQuery(GET_HIGHEST_STATS_RECORD_ID)
-                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+//                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                     .getSingleResult()
             )
                     + 1;
@@ -33,7 +32,7 @@ public class IdGeneratorDao {
     public Long getIdForNewPlayer() {
         try {
             return ((Long) em.createQuery(GET_HIGHEST_PLAYER_ID)
-                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+//                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                     .getSingleResult()
             )
                     + 1L;
@@ -45,7 +44,7 @@ public class IdGeneratorDao {
     public Integer getIdForNewCard() {
         try {
             return ((Integer) em.createQuery(GET_HIGHEST_CARD_ID)
-                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
+//                    .setLockMode(LockModeType.PESSIMISTIC_WRITE)
                     .getSingleResult()
             )
                     + 1;
