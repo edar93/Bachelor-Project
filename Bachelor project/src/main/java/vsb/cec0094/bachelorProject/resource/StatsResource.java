@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.repository.StatsRepository;
 
@@ -17,6 +18,7 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/stats")
 @EnableAspectJAutoProxy
+@CrossOrigin
 public class StatsResource {
 
     @Inject

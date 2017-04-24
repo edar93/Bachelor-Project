@@ -13,6 +13,7 @@ INSERT INTO player (login, enabled, password, game_id) VALUES ('barbara', 1, '$2
 INSERT INTO player (login, enabled, password, game_id) VALUES ('david', 1, '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('michal', 1, '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
 INSERT INTO player (login, enabled, password, game_id) VALUES ('bohdana', 1, '$2a$12$CjUXhURzGFkPwuAMTNxtVOYXlJg9faP7aEmhV8FkTAFVosHcJP.Dy', null);
+INSERT INTO player (login, enabled, password, game_id) VALUES ('admin', 1, '$2a$12$SODXF0SuaEimJKqflMyItutee6cf.e2aIA42kWdT87OZ6wAvBQTZ6', null);
 INSERT INTO User_role (id, role, login) VALUES (0, 'ROLE_USER', 'adam');
 INSERT INTO User_role (id, role, login) VALUES (1, 'ROLE_USER', 'honza');
 INSERT INTO User_role (id, role, login) VALUES (2, 'ROLE_USER', 'lenka');
@@ -28,6 +29,8 @@ INSERT INTO User_role (id, role, login) VALUES (11, 'ROLE_USER', 'michal');
 INSERT INTO User_role (id, role, login) VALUES (12, 'ROLE_USER', 'bohdana');
 INSERT INTO User_role (id, role, login) VALUES (13, 'ROLE_ADMINISTRATOR', 'adam');
 INSERT INTO User_role (id, role, login) VALUES (14, 'ROLE_ADMINISTRATOR', 'honza');
+INSERT INTO User_role (id, role, login) VALUES (15, 'ROLE_USER', 'admin');
+INSERT INTO User_role (id, role, login) VALUES (16, 'ROLE_ADMINISTRATOR', 'admin');
 INSERT INTO game_record (id, GAME_DATE) VALUES (0, CURRENT_TIMESTAMP);
 INSERT INTO game_record (id, GAME_DATE) VALUES (1, CURRENT_TIMESTAMP);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (0,	0,	3,	'adam',	2,	0);

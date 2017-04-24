@@ -1,5 +1,5 @@
 % Nejprve uvedeme tridu dokumentu s volbami
-\documentclass[czech,master,public,dept460,male,cpdeclaration,twoside]{diploma}
+\documentclass[czech,bachelor,public,dept460,male,cpdeclaration,twoside]{diploma}
 % Dalsi doplnujici baliky maker
 \usepackage{subfig}		% makra pro "podobrazky" a "podtabulky"
 \usepackage{tikz}		% makra pro kresleni
@@ -43,7 +43,12 @@
    tabsize=2,
    breaklines=true,
    showtabs=false,
-   captionpos=b
+   captionpos=b,   
+   literate=
+	{ř}{{\'r}}1
+	{á}{{\'a}}1
+	{ů}{{\'u}}1
+	{í}{{\'i}}1
 }
 
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
@@ -66,7 +71,7 @@
 
 \CzechThesisTitle{Bakalářská práce - Hra Port Royal a moderní vývoj softwaru}
 
-\EnglishThesisTitle{Bachelor thesis - Game Port Royal and modern software development}
+\EnglishThesisTitle{Bachelor thesis - The game Port Royal and modern software development}
 
 \SubmissionDate{24. dubna 2017}
 
@@ -85,11 +90,11 @@
 
 \CzechAbstract{Cílem této práce bylo prozkoumat použití moderních technologií pro vývoj webových aplikací včetně technologií pro jejich testování. Praktická část obsahuje webovou aplikaci, jež je vytvořena pomocí technologií Spring a AngulaJS, ty spolu komunikují přes rozhraní podle architektury REST. Tato aplikace je testována pomocí technologií Jasnime, Protractor a Jersey. Všechny zmíněné technologie jsou popsány v teoretické části práce.}
 
-\CzechKeywords{diplomová práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování softwaru}
+\CzechKeywords{bakalářská práce, AngularJS, Spring, Jasmine, Protractor, Jersey, moderní web, testování softwaru}
 
 \EnglishAbstract{The aim of this thesis is examine usage of modern technologies for development web applivations, include technologies for their testing. Practical part contains an application developed by dint of Spring and AngulaJS technologies. The communication of those two technologies is based on REST architecture. This application is tested on Jasmine, Protractor and Jersey technologies. All these technologies are described in theoretical part of this thesis.}
 
-\EnglishKeywords{master thesis, AngularJS, Spring, Jasmine, Protractor, Jersey, modern web, software testing}
+\EnglishKeywords{bachelor thesis, AngularJS, Spring, Jasmine, Protractor, Jersey, modern web, software testing}
 
 \AddAcronym{REST}{REpresentational State Transfer}
 \AddAcronym{HTML}{Hyper Text Markup Language}
@@ -525,7 +530,7 @@ describe('examle login test', function () {
         browser.ignoreSynchronization = true;
 
         var pageTittle = element(by.id('loginLabel'));
-        expect(pageTittle.getText()).toMatch('Zde se muzete prihlasit');
+        expect(pageTittle.getText()).toMatch('Zde se můzete prihlásit');
 
         element(by.model('userName')).sendKeys('honza');
         element(by.model('password')).sendKeys('heslo');
@@ -534,7 +539,7 @@ describe('examle login test', function () {
 
         expect(browser.getLocationAbsUrl()).toMatch("/welcome");
         pageTittle = element(by.css('.mailLabel'));
-        expect(pageTittle.getText()).toMatch('Vitej pirate honza');
+        expect(pageTittle.getText()).toMatch('Vítej piráte honza');
     });
 });
 \end{lstlisting}
@@ -669,7 +674,7 @@ Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto konte
 
 \bibitem{tdd}{gamesfromwithin.com [online]. [cit. 2017-04-22]. Dostupné z: http://gamesfromwithin.com/stepping-through-the-looking-glass-test-driven-game-development-part-1}
 
-\bibitem{testlevels}{glossary.istqb.org [online]. [cit. 2017-04-22]. Dostupné z: http://glossary.istqb.org/search/test\%20level}
+\bibitem{testlevels}{BLACK, Rex a Jamie L. MITCHELL. Advanced software testing. Santa Barbara, CA: Rocky Nook, 2009. ISBN 978-1-933952-19-2.}
 
 \bibitem{jersey}{jersey.java.net [online]. [cit. 2017-04-22]. Dostupné z: https://jersey.java.net/documentation/latest/test-framework.html}
 
@@ -687,14 +692,16 @@ Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto konte
 \section{Instalace a spuštění aplikace}
 
 \subsection{Instalace}
-Aby mohla být aplikace spuštěna, je nutno mít nainstalovaný Maven a Node.js. Také je potřeba mít k dispozici Oracle databázi.
+Aby mohla být aplikace spuštěna, je nutno mít nainstalovaný Maven a Node.js. Také je potřeba mít k dispozici Derby databázi.
 
-Pokud jsou tyto prerekvizity splněny, je možno začít s instalací. Nejprve je nutno nastavit připojení do databáze nastavením proměnných username, password a url. Ty se nastavují v souborech jdbc.properties, jenž se nacházejí na cestě \textbackslash src\textbackslash main\textbackslash resources a \textbackslash src\textbackslash test\textbackslash resources.
+Pokud jsou tyto prerekvizity splněny, je možno začít s instalací. Nejprve je nutno nastavit připojení do databáze nastavením proměnné derby.jdbc.url. Ta se nastavuje v souborech jdbc.properties, jenž se nacházejí na cestě .\textbackslash src\textbackslash main\textbackslash resources a .\textbackslash src\textbackslash test\textbackslash resources.
 
-Následně je nutno stáhnout závislosti pro část v AngularJS. To se provede v příkazovém řádku příkazem "npm install" na cestě \textbackslash src\textbackslash main.
+Aby se část napsaná v AngularJS mohla připojit na server, je nutno změnit hodnotu proměnné serverAddress. Její aktuální hodnota je~"localhost", tudíž se může přihlásit pouze uživatel na zařízení, na němž je spuštěn server. Je zde nutno uvést IP adresu, na níž se bude aplikace spuštěna. Proměnná se nachází na 10 řádku v souboru backendGateway.js, jehož umístění je .\textbackslash src\textbackslash main\textbackslash webapp\textbackslash components\textbackslash services\textbackslash .
+
+Následně je nutno stáhnout závislosti pro část v AngularJS. To se provede v příkazovém řádku příkazem "npm install" na cestě .\textbackslash src\textbackslash main.
 
 \subsection{Spuštění}
-Pro spuštění aplikace je nutno mít volný port 8090. Poté stačí zadat v příkazovém řádku nad hlavním adresářem práce příkaz "mvn clean install tomcat7:run". Stahování všech závislostí může chvíli trvat. Po doběhnutí tohoto příkazu bude aplikace přístupná na adrese "http://localhost:8090/port-royal/".
+Pro spuštění aplikace je nutno mít volný port 8090. Poté stačí zadat v příkazovém řádku nad hlavním adresářem práce příkaz "mvn clean install tomcat7:run". Stahování všech závislostí může chvíli trvat. Po doběhnutí tohoto příkazu bude aplikace přístupná na adrese "http://localhost:8090/port-royal/". Přihlásit se lze například přihlašovacím jménem "admin"~a heslem také "admin".
 
 Jasmine testy se spouštějí v příkazovém řádku na cestě \textbackslash src\textbackslash main příkazem "npm test". Protractor testy na stejné cestě příkazem "npm run protractor", tyto testy ovšem potřebují mít spuštěnou aplikaci na aplikačním serveru.
 

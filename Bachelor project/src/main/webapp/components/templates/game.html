@@ -43,7 +43,7 @@
                      src="images/{{card.image}}" ng-click="pickCard($index)">
             </div>
             <div style=" display: inline-block; vertical-align: middle;">
-                <button ng-show="localUser == playerTakingCard "
+                <button ng-show="localUser == playerTakingCard && table.cards.length > 0"
                         ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
                 </button>
             </div>

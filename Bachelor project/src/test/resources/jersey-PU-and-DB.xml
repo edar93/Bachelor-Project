@@ -27,7 +27,7 @@
     <beans:bean id="SQLDataSource"
                 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <beans:property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
-        <beans:property name="url" value="${derby.jdbc}"/>
+        <beans:property name="url" value="${derby.jdbc.url}"/>
         <beans:property name="username" value="app"/>
         <beans:property name="password" value="app"/>
     </beans:bean>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  24 APR 2017 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  24 APR 2017 22:40
 entering extended mode
 **./main.tex
 (main.tex
@@ -1747,23 +1747,23 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 106.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 111.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1830,7 +1830,7 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count165
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 106.
+Package hyperref Info: Link coloring OFF on input line 111.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1840,9 +1840,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 106.
-LaTeX Info: Redefining \pageref on input line 106.
-LaTeX Info: Redefining \nameref on input line 106.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 
 (main.out) (main.out)
 \@outlinefile=\write5
@@ -1861,7 +1861,7 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 109.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 114.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
@@ -1910,7 +1910,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: Figures/zadani1.jpg Graphic file (type jpg)
 
 <use Figures/zadani1.jpg>
-Package pdftex.def Info: Figures/zadani1.jpg used on input line 109.
+Package pdftex.def Info: Figures/zadani1.jpg used on input line 114.
 (pdftex.def)             Requested size: 589.60855pt x 834.63734pt.
  [3
 
@@ -1954,7 +1954,7 @@ Package pdftex.def Info: Figures/zadani1.jpg used on input line 109.
 File: Figures/zadani2.jpg Graphic file (type jpg)
 
 <use Figures/zadani2.jpg>
-Package pdftex.def Info: Figures/zadani2.jpg used on input line 109.
+Package pdftex.def Info: Figures/zadani2.jpg used on input line 114.
 (pdftex.def)             Requested size: 589.60855pt x 834.63734pt.
  [4
 
@@ -2040,32 +2040,32 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [24
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 127.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 132.
 
  ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 127.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 132.
  [25]
 <Figures/MVC.png, id=362, 1299.35437pt x 623.32875pt>
 File: Figures/MVC.png Graphic file (type png)
  <use Figures/MVC.png>
-Package pdftex.def Info: Figures/MVC.png used on input line 167.
+Package pdftex.def Info: Figures/MVC.png used on input line 172.
 (pdftex.def)             Requested size: 409.71692pt x 196.54933pt.
 
 [26] [27 <./Figures/MVC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 192.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 197.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 193.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 198.
  [28] [29] [30] [31
 
 ]
@@ -2076,14 +2076,14 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
-Package pdftex.def Info: Figures/gamecreationpage.png used on input line 306.
+Package pdftex.def Info: Figures/gamecreationpage.png used on input line 311.
 (pdftex.def)             Requested size: 432.48051pt x 226.10936pt.
  [35]
 <Figures/administrationpage.png, id=469, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
-Package pdftex.def Info: Figures/administrationpage.png used on input line 313.
+Package pdftex.def Info: Figures/administrationpage.png used on input line 318.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
  [36 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
@@ -2091,7 +2091,7 @@ Package pdftex.def Info: Figures/administrationpage.png used on input line 313.
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
-Package pdftex.def Info: Figures/gamepage.png used on input line 322.
+Package pdftex.def Info: Figures/gamepage.png used on input line 327.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
  [37 <./Figures/gamepage.png>] [38
 
@@ -2100,25 +2100,25 @@ Package pdftex.def Info: Figures/gamepage.png used on input line 322.
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
-Package pdftex.def Info: Figures/DBmodel.png used on input line 339.
+Package pdftex.def Info: Figures/DBmodel.png used on input line 344.
 (pdftex.def)             Requested size: 432.48051pt x 312.5344pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
 
  []
 
 [39 <./Figures/DBmodel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 408--410
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
@@ -2126,13 +2126,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 408--410
 File: Figures/GameManipulator.png Graphic file (type png)
 
 <use Figures/GameManipulator.png>
-Package pdftex.def Info: Figures/GameManipulator.png used on input line 437.
+Package pdftex.def Info: Figures/GameManipulator.png used on input line 442.
 (pdftex.def)             Requested size: 432.48051pt x 216.54135pt.
 
 <Figures/Game.png, id=552, 1056.19594pt x 549.55313pt>
 File: Figures/Game.png Graphic file (type png)
  <use Figures/Game.png>
-Package pdftex.def Info: Figures/Game.png used on input line 443.
+Package pdftex.def Info: Figures/Game.png used on input line 448.
 (pdftex.def)             Requested size: 432.48051pt x 225.02475pt.
 
 [43 <./Figures/GameManipulator.png>]
@@ -2140,44 +2140,44 @@ Package pdftex.def Info: Figures/Game.png used on input line 443.
 File: Figures/RequestFlow.png Graphic file (type png)
 
 <use Figures/RequestFlow.png>
-Package pdftex.def Info: Figures/RequestFlow.png used on input line 449.
+Package pdftex.def Info: Figures/RequestFlow.png used on input line 454.
 (pdftex.def)             Requested size: 432.48051pt x 243.03911pt.
  [44 <./Figures/Game.png>] [45 <./Figures/RequestFlow.png>] [46
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 460--462
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 504--515
+Underfull \hbox (badness 10000) in paragraph at lines 509--520
 
  []
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 519--521
+Underfull \hbox (badness 10000) in paragraph at lines 524--526
 
  []
 
 [49]
-Overfull \hbox (14.09055pt too wide) in paragraph at lines 558--560
+Overfull \hbox (14.09055pt too wide) in paragraph at lines 563--565
 \T1/lmr/m/n/10.95 "Base-Jer-sey-Test". Base-Jer-sey-Test d¥dí z Jer-sey-Test, c
 oº je t°ída ze zá-vis-losti org.glassfish.jersey.test.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--560
+Underfull \hbox (badness 10000) in paragraph at lines 563--565
 
  []
 
 
-Overfull \hbox (2.95647pt too wide) in paragraph at lines 583--585
+Overfull \hbox (2.95647pt too wide) in paragraph at lines 588--590
 []\T1/lmr/m/n/10.95 Následn¥ se jiº pí²í kon-krétní testy. Na-p°í-klad test ve 
 vý-pisu "Kon-krétní Jer-sey test"kontroluje,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--585
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 
  []
 
@@ -2186,96 +2186,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 583--585
 ] [54
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 []\T1/lmr/m/n/10.95 tutorialspoint.com [on-line]. [cit. 2017-04-22]. Do-stupné 
 z:
  []
 
 
-Overfull \hbox (1.94823pt too wide) in paragraph at lines 653--654
+Overfull \hbox (1.94823pt too wide) in paragraph at lines 658--659
 []\T1/lmr/m/n/10.95 Zdrojak.cz [on-line]. [cit. 2017-04-22]. Do-stupné z: https
 ://www.zdrojak.cz/clanky/zaciname-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
 []\T1/lmr/m/n/10.95 Docs.angularjs.org [on-line]. [cit. 2017-04-22]. Do-stupné 
 z:
  []
 
 
-Underfull \hbox (badness 4316) in paragraph at lines 655--656
+Underfull \hbox (badness 4316) in paragraph at lines 660--661
 []\T1/lmr/m/n/10.95 Neoteric.eu [on-line]. [cit. 2017-04-22]. Do-stupné z: http
 s://neoteric.eu/single-page-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
 []\T1/lmr/m/n/10.95 Docs.angularjs.org [on-line]. [cit. 2017-04-22]. Do-stupné 
 z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
 []\T1/lmr/m/n/10.95 Tutorialspoint.com [on-line]. [cit. 2017-04-22]. Do-stupné 
 z:
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 666--667
+Underfull \hbox (badness 1117) in paragraph at lines 671--672
 []\T1/lmr/m/n/10.95 PALMER, JESSE. TES-TING AN-GU-LAR AP-PLI-CATI-ONS: co-vers 
 an-gu-lar 2. S.l.:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 []\T1/lmr/m/n/10.95 crossbrowsertesting.com [on-line]. [cit. 2017-04-22]. Do-st
 upné z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 \T1/lmr/m/n/10.95 https://crossbrowsertesting.com/blog/test-automation/differen
 ce-manual-automated-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 []\T1/lmr/m/n/10.95 gamesfromwithin.com [on-line]. [cit. 2017-04-22]. Do-stupné
  z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 \T1/lmr/m/n/10.95 http://gamesfromwithin.com/stepping-through-the-looking-glass
 -test-driven-game-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
-[]\T1/lmr/m/n/10.95 glossary.istqb.org [on-line]. [cit. 2017-04-22]. Do-stupné 
-z:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 []\T1/lmr/m/n/10.95 jersey.java.net [on-line]. [cit. 2017-04-22]. Do-stupné z:
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 676--677
+Underfull \hbox (badness 3930) in paragraph at lines 681--682
 []\T1/lmr/m/n/10.95 docs.spring.io [on-line]. [cit. 2017-04-22]. Do-stupné z: h
 ttps://docs.spring.io/spring-
  []
 
 [55]
-Underfull \hbox (badness 5460) in paragraph at lines 679--680
+Underfull \hbox (badness 5460) in paragraph at lines 684--685
 []\T1/lmr/m/n/10.95 docs.spring.io [on-line]. [cit. 2017-04-22]. Do-stupné z: h
 ttp://docs.spring.io/spring-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
 []\T1/lmr/m/n/10.95 concretepage.com [on-line]. [cit. 2017-04-22]. Do-stupné z:
 
  []
@@ -2285,23 +2279,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--682
 ] [58
 
 ] [59]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 705.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 705.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BF3A870CA870B7BC9337B32737C8CCC9;4087.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  ) 
 Here is how much of TeX's memory you used:
- 27192 strings out of 493333
- 452808 string characters out of 3139195
- 583060 words of memory out of 3000000
- 29905 multiletter control sequences out of 15000+200000
+ 27197 strings out of 493333
+ 452859 string characters out of 3139195
+ 583133 words of memory out of 3000000
+ 29910 multiletter control sequences out of 15000+200000
  48773 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1007b,3322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,1007b,3326s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
@@ -2311,7 +2305,7 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9
 ic/lm/lmssbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pf
 b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (59 pages, 2333025 bytes).
+Output written on main.pdf (59 pages, 2334015 bytes).
 PDF statistics:
  855 PDF objects out of 1000 (max. 8388607)
  328 named destinations out of 1000 (max. 500000)

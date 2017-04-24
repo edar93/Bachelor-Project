@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import vsb.cec0094.bachelorProject.dao.GameDao;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
@@ -25,6 +26,7 @@ import java.util.List;
 @Path("/game")
 @EnableAspectJAutoProxy
 @Scope("request")
+@CrossOrigin
 public class GameFunctionResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameFunctionResource.class);

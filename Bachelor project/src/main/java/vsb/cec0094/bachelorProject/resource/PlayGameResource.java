@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import vsb.cec0094.bachelorProject.dao.GamesHolder;
 import vsb.cec0094.bachelorProject.exceptions.GameDoesNotExist;
@@ -27,6 +28,7 @@ import javax.ws.rs.core.Response;
 @Path("/play")
 @EnableAspectJAutoProxy
 @Scope("request")
+@CrossOrigin
 public class PlayGameResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayGameResource.class);

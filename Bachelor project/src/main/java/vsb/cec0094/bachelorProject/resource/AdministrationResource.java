@@ -2,6 +2,7 @@ package vsb.cec0094.bachelorProject.resource;
 
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import vsb.cec0094.bachelorProject.dao.AccountDao;
 import vsb.cec0094.bachelorProject.models.AdministrationUser;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/useradministration")
 @EnableAspectJAutoProxy
+@CrossOrigin
 public class AdministrationResource {
 
     private final static int pageSize = 10;
