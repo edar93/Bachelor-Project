@@ -129,7 +129,7 @@ V následující 2. kapitole jsou popsány technologie pro vývoj webových apli
 	\item \underline{Uložitelnost do krátkodobé paměti} - Odpovědi serveru na dotazy by měly být označeny zda jsou uložitelné do krátkodobé paměti. Mnohdy se klient může ptát několikrát na stejný dotaz. Pokud se neočekává, že se odpověď bude měnit, je výhodné odpověď uložit do paměti. Takto je možné omezit zbytečnou komunikaci mezi serverem a klientem.
 	\item \underline{Jednotné rozhraní} - REST má mít jednotné rozhraní, což usnadňuje orientaci v něm a zvyšuje rozšiřitelnost do budoucna. REST nemá určený typ media, metody ani syntaxi koncových bodů. Tudíž dotaz může být ve formátu XML, JSON, ale také například i ve formátu PDF. Přes různé protokoly a ne jenom přes webové URL.
 
-Nejčastěji se však používá webové rozhraní s HTTP metodami. Tabulka~"Vzorové REST rozhraní"~ukazuje vzorové rozhraní, podobné tomu použitému v praktické části. POST se zde používá pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání.\cite{RESTInterface}
+Nejčastěji se však používá webové rozhraní s HTTP metodami. Tabulka~"Vzorové REST rozhraní"~ukazuje vzorové rozhraní, podobné tomu použitému v praktické části. POST se zde používá pro vytvářená záznamu, GET pro získání záznamu, PUT pro úpravu záznamů a DELETE pro mazání. \cite{RESTInterface}
 
 \begin{table}[H]
 	\centering
@@ -156,7 +156,7 @@ Nejčastěji se však používá webové rozhraní s HTTP metodami. Tabulka~"Vzo
 \end{itemize}
 	
 \subsection{AngularJs}
-AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá dvoucestný databinding a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na serverovou část využívá AngularJS webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular} \cite{angulartutorial}
+AngularJS je javascriptový rámec založen na model-view-controller architektuře, určený pro vývoj jednostránkových aplikací. AngularJS rozšiřuje HTML direktivy, používá bidirectional databinting a dependency injection, je u něj vysoká znovupoužitelnost komponentů. Celkově tak usnadňuje a urychluje vývoj webové části aplikace. Pro přístup na serverovou část využívá AngularJS webové služby. Všechny jeho výše zmíněné prvky jsou popsány v následujících podkapitolách. \cite{coJeAngular} \cite{angulartutorial}
 
 \subsubsection{Jednostránková aplikace}
 Jednostránková aplikace je taková aplikace, která běží uvnitř prohlížeče na straně uživatele a nevyžaduje znovunačtení stránky během používáni. Funguje to tak, že při vstupu na stránku si prohlížeč stáhne celou aplikaci. Následně se nestahují HTTP šablony, ale pouze data, která zpracovává aplikace. Práce s takovou stránkou je pak mnohem rychlejší, jelikož se přenáší mnohen nižší objem informací. \cite{SPA}
@@ -167,8 +167,8 @@ Model–View–Controller architektura dělí aplikaci na 3 části, a to model,
 \centering\includegraphics[width=0.9\textwidth]{Figures/MVC.png}\caption{MVC architektura v AngularJS \cite{LearningAngularjs}}
 \end{figure}
 
-\subsubsection{Dvoucestný databinding}
-Jedna z výhod frameworku AngularJS, kterou programátoři bezpochyby ocení, je dvoucestný databinding. Jedná se o automatickou synchronizaci mezi modelem a pohledem, kdy se změna jedné části automaticky projeví ve druhé. To umožňuje rychlou a pro prográmatora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Synchronizace se děje například pokud dorazí nová data nebo pokud uživatel provede nějakou akci. \cite{databinding}
+\subsubsection{Bidirectional databinting}
+Jedna z výhod ramce AngularJS, kterou programátoři bezpochyby ocení, je bidirectional databinting. Jedná se o automatickou synchronizaci mezi modelem a pohledem, kdy se změna jedné části automaticky projeví ve druhé. To umožňuje rychlou a pro prográmatora celkem nenáročnou synchronizaci mezi modelem v javascriptu a pohledem v HTML šabloně. Synchronizace se děje například pokud dorazí nová data nebo pokud uživatel provede nějakou akci. \cite{databinding}
 
 \subsubsection{Dependency injection v AngularJS}
 Dependency injection je návrhový vzor, ve kterém jsou závislosti definovány jako součást konfigurace aplikace. Díky této vlastnosti nemusí programátor ručně vytvářet použité závislosti. AngularJS načte a inicializuje všechny závislosti při spuštění aplikace, následně se stará o celý jejich životní cyklus. Programátor si tak jen napíše, kterou závislost chce ve své komponentě použít a pak už volá jen její metody.
@@ -258,10 +258,10 @@ Tato práce se zabývá automatickými testy. \cite{manual}
 \subsection{Test-driven development}
 Klasický vývojový cyklus byl takový, že programátor dostal zadání, a to nastudoval. Následně napsal kód, trochu to lidově řečeno proklikal. Pokud se mu vše zdálo funkční, kód odevzdal. Pak bylo dále na testerovi, aby kód pořádně otestoval.
 
-V dnešní době se však do popředí dostává Test-driven development neboli zkráceně už jen TDD. Tento přístup k vývoji předpokládá krátký vývojový cyklus neboli psaní software po menších částech. Vývojář praktikující TDD po obdržení a nastudování zadání nezačne psát implementaci zadání, ale nejprve vytvoří testy na požadovanou funkcionalitu. Tyto testy samozřejmě bez implementace požadované funkcionality budou hlásit chybu. Vytvoření požadované funkcionality je až další krok. Jak programátor tvoří požadovanou funkcionalitu, testy začínají procházet. Až v momentu, kdy všechny testy projdou, je vývoj dokončen. Programátor většinou při vývoji pouští pouze své testy, jelikož u větších systémů proběhnutí všech testů zabere několik minut. Všechny testy se tudíž většinou spouštějí až po dokončení práce pro potvrzení, že původní funkcionalita nebyla narušena.\cite{tdd}
+V dnešní době se však do popředí dostává Test-driven development neboli zkráceně už jen TDD. Tento přístup k vývoji předpokládá krátký vývojový cyklus neboli psaní software po menších částech. Vývojář praktikující TDD po obdržení a nastudování zadání nezačne psát implementaci zadání, ale nejprve vytvoří testy na požadovanou funkcionalitu. Tyto testy samozřejmě bez implementace požadované funkcionality budou hlásit chybu. Vytvoření požadované funkcionality je až další krok. Jak programátor tvoří požadovanou funkcionalitu, testy začínají procházet. Až v momentu, kdy všechny testy projdou, je vývoj dokončen. Programátor většinou při vývoji pouští pouze své testy, jelikož u větších systémů proběhnutí všech testů zabere několik minut. Všechny testy se tudíž většinou spouštějí až po dokončení práce pro potvrzení, že původní funkcionalita nebyla narušena. \cite{tdd}
 
 \subsection{Úrovně testů}
-Testy se také dají rozdělit na více úrovní podle toho, jak velký objem kódu pokrývají. U všech testů platí, že by se navzájem neměly ovlivňovat a měly by na sobě být nezávislé.\cite{testlevels}
+Testy se také dají rozdělit na více úrovní podle toho, jaký mají v projektu účel a za co odpovídají. Testy v jedne úrovni se pak spravují dohromady. U všech testů platí, že by se navzájem neměly ovlivňovat a měly by na sobě být nezávislé. Existuje mnoho úrovní testů, tato práce se zabýzá pouze jednotkovými, integračními a systémovými testy. \cite{testlevels}
 
 \subsubsection{Jednotkové testy}
 Jednotkové testy jsou zaměřené na otestování funkcionality základních jednotek kódu. Většinou jedné funkce jedné třídy. Výhodou je, že tyto testy bývají rychlé a dobře se v nich identifikuje chyba, jelikož neobsahují žádné další komponenty. Po napsání by měly zajistit, že daná část kódu plní svou funkcionalitu. Jedna funkcionalita může mít více testů pro různé vstupní parametry.
@@ -271,21 +271,21 @@ Při jednotkových testech v technologiích AngularJS a Spring se využívá Dep
 \subsubsection{Integrační testy}
 Integrační testy propojují více komponentů. Testují, zda správně spolupracují a plní dohromady očekávanou funkcionalitu. Nevýhodou těchto testů je složitější odhalení chyby, pokud test selže, protože je nutno hledat chybu ve více komponentech. 
 
-\subsubsection{End-To-End testy}
-End-To-End testy simulují chování koncového uživatele v aplikaci. Tyto testy například kontrolují, zda se na stránce objeví určitý prvek, či zda se po kliknutí na něj provede očekávaná akce.
+\subsubsection{Systémové testy}
+Systémové testy simulují chování koncového uživatele v aplikaci. Tyto testy například kontrolují, zda se na stránce objeví určitý prvek, či zda se po kliknutí na něj provede očekávaná akce.
 
 \subsection{Testovací technologie}
 \subsubsection{Jasmine}
-Jasmine je testovací rámec pro Javascript s otevřeným zdrojovým kódem. Má za cíl být nezávislý na ostatních rámcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi. Využívá se pro jednotkové testy nejen v prostředí AngularJS, ale i jiných technologiích založených na Javascriptu. Před každým testem se nejprve přidá testovaný modul, ten má spoustu závislostí. Pro tyto závislosti se vytvoří podvržené moduly. Takto se zajistí jednak, že se opravdu testuje pouze daný modul, ale také se takto dají nasimulovat různá vstupní data. Například určením hodnot, které budou vracet http odpovědi. Jasmine také umožňuje vytváření takzvaných špionů, kteří kontrolují, zda byla metoda zavolána, případně s jakými hodnotami.\cite{testingANG}
+Jasmine je testovací rámec pro Javascript s otevřeným zdrojovým kódem. Má za cíl být nezávislý na ostatních rámcích či vývojářských prostředích. Snaží se také o snadno čitelnou syntaxi. Využívá se pro jednotkové testy nejen v prostředí AngularJS, ale i jiných technologiích založených na Javascriptu. Před každým testem se nejprve přidá testovaný modul, ten má spoustu závislostí. Pro tyto závislosti se vytvoří podvržené moduly. Takto se zajistí jednak, že se opravdu testuje pouze daný modul, ale také se takto dají nasimulovat různá vstupní data. Například určením hodnot, které budou vracet http odpovědi. Jasmine také umožňuje vytváření takzvaných špionů, kteří kontrolují, zda byla metoda zavolána, případně s jakými hodnotami. \cite{testingANG}
 
 \subsubsection{Protractor}
-Protractor je end-to-end testovací framework pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či modelu patřícímu AngularJS. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky, tudíž programátor nemusí zadávat pevnou dobu čekání. Což by jednak prodlužovalo běh testu, ale také by při zpoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{testingANG}
+Protractor provádí systémové testy v rameci pro AngularJS. Protractor spouští testy oproti skutečné aplikaci, která je již spuštěná na serveru. Spustí si prohlížeč, v němž simuluje chování skutečného uživatele. Protractor se na stránce naviguje pomocí http šablony, zde si nalezne elementy podle id, css stylu či modelu patřícímu AngularJS. S těmito elementy pak provádí akce nebo ověření jejich hodnoty oproti očekávané hodnotě. Protractor také umí počkat na načtené stránky, tudíž programátor nemusí zadávat pevnou dobu čekání. Což by jednak prodlužovalo běh testu, ale také by při zpoždění odpovědi serveru mohlo způsobit zahlášení selhání testu, jenž by ovšem bez mimořádného zpoždění prošel. \cite{testingANG}
 
 \subsubsection{Karma}
 Karma je spouštěč testu v Node.js. Využívá ho Jasmine i Protractor. Spouští prohlížeč, v němž běží testy.
 
 \subsubsection{Jersey}
-Jersey je testovací rámec vytvořený pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práci se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby, vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno.\cite{jersey}
+Jersey je testovací rámec vytvořený pro ověření správnosti serverových komponent. Testuje webové služby. Funguje to tak, že si Jersey rozjede svůj vlastní aplikační server s testovanými koncovými body. V této bakalářské práci se jako server používá Jetty, ovšem dá se použít i jiný server. Následně se volají tyto body, odpovědi serveru se pak porovnají s očekávanými. Pokud například vývojář dostane zadání aby, vytvořil webovou službu, jež vrací nějakou hodnotu, snadno vytvoří test, kde pouze zavolá koncový bod podle zadání a porovná navrácenou hodnotu. U těchto testů je pouze zdlouhavější nastavení prostředí, následné testy se píší rychle a snadno. \cite{jersey}
 
 \section{Obsah a funkcionalita aplikace}
 Hra uvítá nově příchozího hráče uvítací stránkou, na níž má možnost podívat se na statistiky hráčů. Dále se může přihlásit anebo registrovat. Po přihlášení přibude možnost vytvořit hru, do níž se mohou přihlašovat další hráči nebo se přihlásit do již vytvořené hry. Také zde přibude možnost přejít do administrace hráčů, pokud má hráč roli uživatele.
@@ -345,7 +345,7 @@ Pokud chce programátor přidat závislost přes Node.js, například posuvník.
 \subsection{Spring Security a Bcrypt}
 Bezpečnost aplikace je řešená pomocí Spring Security, jenž po nakonfigurování blokuje URI na který uživatel nemá přístup.
 
-Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje, zda přihlašovací heslo odpovídá vygenerovanému hashi.\cite{sec}
+Hesla v databázi nejsou samozřejmě uloženy pouze jako text. Pro heslo se při registraci uživatele vygeneruje hash pomocí Bcryptu. Tento hash je pak v databázi uložen místo hesla samotného. Při přihlašování Spring Security kontroluje, zda přihlašovací heslo odpovídá vygenerovanému hashi. \cite{sec}
 
 \subsection{Aspekty}
 Spring podporuje aspekty, jenž se volají před každým zavoláním vybraných metod. V této podkapitole je ukázka aspektu nazvaná "Ukázka aspektu". Tento aspekt před každým zavoláním funkce z balíčku resource nastaví uživatele v Bean UsersProvider. Rozsáhlejší verze tohoto aspektu je použita v aplikaci. Pro Bean v rámci Spring je přednastaveno, že existuje jedna pro celý běh aplikace. U Bean UsersProvider je to v konfiguračním XML změněno. Vytváří se zvlášť pro každý http dotaz, jelikož na server přistupuje několik uživatelů zároveň. \cite{aop} \\
@@ -429,7 +429,7 @@ function send () {
 \end{lstlisting}
 
 \subsection{Architektura aplikace}
-Všechny spuštěné hry na serveru jsou uloženy v hash mapě objektu GamesHolder, ta v sobě obsahuje pro každou hru GameManipulator. Pokud si uživatel vyžádá svou hru, vrátí se mu GameManipulator s id jeho hry. Aktuální hra je uložena v objektu currentGame, ten je třídy Game, jež je popsána dále v této kapitole. Objekt currentAction informuje, zda má být nějaká karta zvýrazněna.
+Všechny spuštěné hry na serveru jsou uloženy ve struktuře HashMap objektu GamesHolder, ta v sobě obsahuje pro každou hru GameManipulator. Pokud si uživatel vyžádá svou hru, vrátí se mu GameManipulator s id jeho hry. Aktuální hra je uložena v objektu currentGame, ten je třídy Game, jež je popsána dále v této kapitole. Objekt currentAction informuje, zda má být nějaká karta zvýrazněna.
 
 GameManipulator také obsahuje dva listy gamesToShow a actionsToShow. Tyto listy spolu obsahují již zahrané stavy hry (objektů v obou listech bude stejný počet, jelikož ke každému objektu hry je jeden objekt, jenž obsahuje informaci zda, je nutno něco zvýraznit). Tyto stavy jsou potřeba, pokud je nutno zvýraznit nějakou akci hráče (například pokud hráč kupuje kartu ze stolu). Nejprve se mu zobrazí historický stav, kdy byla nově zakoupená karta ještě na stole se zvýrazněnou kupovanou kartou. Následně se mu zobrazí stav, kdy má již koupenou kartu ve svých kartách se zvýrazněnou koupenou kartou. Až nakonec se zobrazí aktuální hra bez žádných zvýrazněných akcí.
 
@@ -669,7 +669,7 @@ Pro přidání Jersey testů bylo nutno vytvořit nový kontext. Do tohoto konte
 
 \bibitem{tdd}{gamesfromwithin.com [online]. [cit. 2017-04-22]. Dostupné z: http://gamesfromwithin.com/stepping-through-the-looking-glass-test-driven-game-development-part-1}
 
-\bibitem{testlevels}{tutorialspoint.com [online]. [cit. 2017-04-22]. Dostupné z: https://www.tutorialspoint.com/software\_testing/software\_testing\_levels.htm}
+\bibitem{testlevels}{glossary.istqb.org [online]. [cit. 2017-04-22]. Dostupné z: http://glossary.istqb.org/search/test\%20level}
 
 \bibitem{jersey}{jersey.java.net [online]. [cit. 2017-04-22]. Dostupné z: https://jersey.java.net/documentation/latest/test-framework.html}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  22 APR 2017 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  24 APR 2017 09:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -2122,44 +2122,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 408--410
 
  []
 
-[42] <Figures/GameManipulator.png, id=551, 955.31906pt x 484.05844pt>
+[42] <Figures/GameManipulator.png, id=551, 1073.51062pt x 537.50812pt>
 File: Figures/GameManipulator.png Graphic file (type png)
 
 <use Figures/GameManipulator.png>
 Package pdftex.def Info: Figures/GameManipulator.png used on input line 437.
-(pdftex.def)             Requested size: 432.48051pt x 219.13162pt.
+(pdftex.def)             Requested size: 432.48051pt x 216.54135pt.
 
-<Figures/Game.png, id=552, 940.26282pt x 482.55281pt>
+<Figures/Game.png, id=552, 1056.19594pt x 549.55313pt>
 File: Figures/Game.png Graphic file (type png)
  <use Figures/Game.png>
 Package pdftex.def Info: Figures/Game.png used on input line 443.
-(pdftex.def)             Requested size: 432.48051pt x 221.9549pt.
+(pdftex.def)             Requested size: 432.48051pt x 225.02475pt.
 
 [43 <./Figures/GameManipulator.png>]
-<Figures/RequestFlow.png, id=558, 1041.1397pt x 554.82281pt>
+<Figures/RequestFlow.png, id=558, 953.81343pt x 536.0025pt>
 File: Figures/RequestFlow.png Graphic file (type png)
 
 <use Figures/RequestFlow.png>
 Package pdftex.def Info: Figures/RequestFlow.png used on input line 449.
-(pdftex.def)             Requested size: 432.48051pt x 230.46729pt.
- [44 <./Figures/Game.png> <./Figures/RequestFlow.png>]
+(pdftex.def)             Requested size: 432.48051pt x 243.03911pt.
+ [44 <./Figures/Game.png>] [45 <./Figures/RequestFlow.png>] [46
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 460--462
 
  []
 
-[45
-
-]
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 504--515
 
  []
 
-[46]
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 519--521
 
  []
 
-[47]
+[49]
 Overfull \hbox (14.09055pt too wide) in paragraph at lines 558--560
 \T1/lmr/m/n/10.95 "Base-Jer-sey-Test". Base-Jer-sey-Test d¥dí z Jer-sey-Test, c
 oº je t°ída ze zá-vis-losti org.glassfish.jersey.test.
@@ -2181,9 +2181,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 583--585
 
  []
 
-[48] [49] [50] [51
+[50] [51] [52] [53
 
-] [52
+] [54
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 652--653
@@ -2253,7 +2253,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 672--673
-[]\T1/lmr/m/n/10.95 tutorialspoint.com [on-line]. [cit. 2017-04-22]. Do-stupné 
+[]\T1/lmr/m/n/10.95 glossary.istqb.org [on-line]. [cit. 2017-04-22]. Do-stupné 
 z:
  []
 
@@ -2268,7 +2268,7 @@ Underfull \hbox (badness 3930) in paragraph at lines 676--677
 ttps://docs.spring.io/spring-
  []
 
-[53]
+[55]
 Underfull \hbox (badness 5460) in paragraph at lines 679--680
 []\T1/lmr/m/n/10.95 docs.spring.io [on-line]. [cit. 2017-04-22]. Do-stupné z: h
 ttp://docs.spring.io/spring-
@@ -2280,11 +2280,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--682
 
  []
 
-[54] [55
+[56] [57
 
-] [56
+] [58
 
-] [57]
+] [59]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
  (main.aux)
@@ -2295,8 +2295,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
  ) 
 Here is how much of TeX's memory you used:
- 27190 strings out of 493333
- 452794 string characters out of 3139195
+ 27192 strings out of 493333
+ 452808 string characters out of 3139195
  583060 words of memory out of 3000000
  29905 multiletter control sequences out of 15000+200000
  48773 words of font info for 40 fonts, out of 3000000 for 9000
@@ -2311,9 +2311,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9
 ic/lm/lmssbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pf
 b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (57 pages, 2357105 bytes).
+Output written on main.pdf (59 pages, 2333011 bytes).
 PDF statistics:
- 847 PDF objects out of 1000 (max. 8388607)
- 326 named destinations out of 1000 (max. 500000)
+ 855 PDF objects out of 1000 (max. 8388607)
+ 328 named destinations out of 1000 (max. 500000)
  395 words of extra memory for PDF output out of 10000 (max. 10000000)
 
