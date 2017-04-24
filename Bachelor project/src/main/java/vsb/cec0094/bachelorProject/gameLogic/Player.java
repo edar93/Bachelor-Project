@@ -60,6 +60,7 @@ public class Player implements Cloneable {
     }
 
     public Player() {
+        this.admiralsCount = 0;
     }
 
     public static List<Player> cloneList(List<Player> source) {

@@ -69,8 +69,8 @@ var gameStatusService = function ($timeout, backendGateway) {
             for (var i = game.players.length - 1; i >= 0; i--) {
                 if (game.players[i].login == localUser) {
                     localPlayer = game.players[i];
-                    game.players.splice(i, 1);
                     localPlayersAdmirals = game.players[i].admiralsCount;
+                    game.players.splice(i, 1);
                 }
             }
 
