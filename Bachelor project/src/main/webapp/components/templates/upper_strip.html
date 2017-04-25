@@ -26,7 +26,7 @@
 
     <div class="inline" style="text-align: center;  float: right;"
          ng-if="gameLocation == 'FREE' || gameLocation == 'UNLOGGED'">
-        <a ng-if="user" ng-href="#!/statslist/{{user}}/1">{{'SHOW_MY_STATS' | translate}}</a>
+        <a id="myStatsRedirection" ng-if="user" ng-href="#!/statslist/{{user}}/1">{{'SHOW_MY_STATS' | translate}}</a>
         <br>
         <input ng-model="searchPlayer">
         <button ng-click="searchForPlayer(searchPlayer)">{{'UPPER_SEARCH_FOR_PLAYER' | translate}}</button>

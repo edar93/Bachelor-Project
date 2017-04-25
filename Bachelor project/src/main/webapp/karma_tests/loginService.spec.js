@@ -1,6 +1,6 @@
 'use strict';
 
-describe('portRoyalApp.loginService', function () {
+describe('test of loginService', function () {
 
     var $q, $rootScope, loginService, backendGateway;
 

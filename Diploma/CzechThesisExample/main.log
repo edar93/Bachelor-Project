@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  25 APR 2017 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  25 APR 2017 21:58
 entering extended mode
 **./main.tex
 (main.tex
@@ -1959,11 +1959,55 @@ Package pdftex.def Info: Figures/zadani2.jpg used on input line 114.
 
 
 
- <./Figures/zadani2.jpg>] [4
+ <./Figures/zadani2.jpg>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* hratio: 1:1
+* vratio: 1:1
+* modes: 
+* h-part:(L,W,R)=(1.0pt, 595.50787pt, 1.0pt)
+* v-part:(T,H,B)=(1.0pt, 843.04684pt, 1.0pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=595.50787pt
+* \textheight=843.04684pt
+* \oddsidemargin=-71.26999pt
+* \evensidemargin=-71.26999pt
+* \topmargin=-71.26999pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=0.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+<Figures/samostatne.jpg, id=181, 597.31155pt x 844.8363pt>
+File: Figures/samostatne.jpg Graphic file (type jpg)
+
+<use Figures/samostatne.jpg>
+Package pdftex.def Info: Figures/samostatne.jpg used on input line 114.
+(pdftex.def)             Requested size: 589.60855pt x 834.63734pt.
+ [4
 
 
 
-] [5
+
+ <./Figures/samostatne.jpg>] [5
+
 
 
 ] [6
@@ -2042,7 +2086,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
  [14
 
 ]
-<Figures/MVC.png, id=316, 1299.35437pt x 623.32875pt>
+<Figures/MVC.png, id=317, 1299.35437pt x 623.32875pt>
 File: Figures/MVC.png Graphic file (type png)
  <use Figures/MVC.png>
 Package pdftex.def Info: Figures/MVC.png used on input line 172.
@@ -2063,7 +2107,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
  [17] [18] [19] [20
 
 ]
-[21] [22] <Figures/gamecreationpage.png, id=414, 544.28343pt x 284.56313pt>
+[21] [22] <Figures/gamecreationpage.png, id=415, 544.28343pt x 284.56313pt>
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
@@ -2072,7 +2116,7 @@ Package pdftex.def Info: Figures/gamecreationpage.png used on input line 311.
  [23
 
 ]
-<Figures/administrationpage.png, id=419, 1416.79312pt x 476.53032pt>
+<Figures/administrationpage.png, id=420, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
@@ -2080,14 +2124,14 @@ Package pdftex.def Info: Figures/administrationpage.png used on input line 318.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
  [24 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
-<Figures/gamepage.png, id=424, 1112.65688pt x 553.31718pt>
+<Figures/gamepage.png, id=425, 1112.65688pt x 553.31718pt>
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
 Package pdftex.def Info: Figures/gamepage.png used on input line 327.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
  [25 <./Figures/gamepage.png>]
-<Figures/DBmodel.png, id=430, 901.11656pt x 651.18282pt>
+<Figures/DBmodel.png, id=431, 901.11656pt x 651.18282pt>
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
@@ -2115,21 +2159,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
-[29] <Figures/GameManipulator.png, id=497, 1073.51062pt x 537.50812pt>
+[29] <Figures/GameManipulator.png, id=498, 1073.51062pt x 537.50812pt>
 File: Figures/GameManipulator.png Graphic file (type png)
 
 <use Figures/GameManipulator.png>
 Package pdftex.def Info: Figures/GameManipulator.png used on input line 442.
 (pdftex.def)             Requested size: 432.48051pt x 216.54135pt.
 
-<Figures/Game.png, id=498, 1056.19594pt x 549.55313pt>
+<Figures/Game.png, id=499, 1056.19594pt x 549.55313pt>
 File: Figures/Game.png Graphic file (type png)
  <use Figures/Game.png>
 Package pdftex.def Info: Figures/Game.png used on input line 448.
 (pdftex.def)             Requested size: 432.48051pt x 225.02475pt.
 
 [30 <./Figures/GameManipulator.png>]
-<Figures/RequestFlow.png, id=503, 953.81343pt x 536.0025pt>
+<Figures/RequestFlow.png, id=504, 953.81343pt x 536.0025pt>
 File: Figures/RequestFlow.png Graphic file (type png)
 
 <use Figures/RequestFlow.png>
@@ -2283,8 +2327,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  ) 
 Here is how much of TeX's memory you used:
  27178 strings out of 493333
- 452701 string characters out of 3139195
- 582575 words of memory out of 3000000
+ 452715 string characters out of 3139195
+ 583040 words of memory out of 3000000
  29908 multiletter control sequences out of 15000+200000
  48773 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2298,9 +2342,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9
 ic/lm/lmssbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pf
 b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (43 pages, 2323783 bytes).
+Output written on main.pdf (43 pages, 2407851 bytes).
 PDF statistics:
- 785 PDF objects out of 1000 (max. 8388607)
+ 786 PDF objects out of 1000 (max. 8388607)
  312 named destinations out of 1000 (max. 500000)
- 395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('portRoyalApp.administrationService', function () {
+describe('test of service administrationService', function () {
 
     var $q, $rootScope, $scope, administrationService, locationService, backendGateway;
 

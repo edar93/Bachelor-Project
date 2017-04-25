@@ -1,7 +1,6 @@
-?
-'use strict';
+Ôªø'use strict';
 
-describe('login logout test tests', function () {
+describe('test of login action', function () {
 
     it('should login and logout user', function () {
         browser.get('http://localhost:8090/port-royal/#!/login');
@@ -10,7 +9,7 @@ describe('login logout test tests', function () {
         expect(browser.getLocationAbsUrl()).toMatch("/login");
 
         var pageTittle = element(by.id('loginLabel'));
-        expect(pageTittle.getText()).toMatch('Zde se m?ûete p?ihl·sit');
+        expect(pageTittle.getText()).toMatch('Zde se m≈Ø≈æete p≈ôihl√°sit');
 
         element(by.model('userName')).sendKeys('honza');
         element(by.model('password')).sendKeys('adam');
@@ -19,7 +18,7 @@ describe('login logout test tests', function () {
 
         expect(browser.getLocationAbsUrl()).toMatch("/welcome");
         pageTittle = element(by.css('.mailLabel'));
-        expect(pageTittle.getText()).toMatch('VÌtej pir·te honza');
+        expect(pageTittle.getText()).toMatch('V√≠tej pir√°te honza');
 
         element(by.id('logoutButton')).click();
         browser.sleep(2500);

@@ -35,7 +35,7 @@ INSERT INTO game_record (id, GAME_DATE) VALUES (0, CURRENT_TIMESTAMP);
 INSERT INTO game_record (id, GAME_DATE) VALUES (1, CURRENT_TIMESTAMP);
 INSERT INTO game_record (id, GAME_DATE) VALUES (2, CURRENT_TIMESTAMP);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (0,	0,	3,	'adam',	2,	0);
-INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (1,	0,	2,	'honza',	2,	0);
+INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (1,	0,	2,	'marie',	2,	0);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (2,	0,	2,	'adam',	2,	1);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (3,	11,	14,	'admin',	2,	2);
 INSERT INTO STATS_PLAYER (id, coins, influencepoints, login, swords, record_id) VALUES (4,	13,	7,	'adam',	0,	2);

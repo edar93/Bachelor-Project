@@ -1,6 +1,6 @@
 'use strict';
 
-describe('portRoyalApp.gameCreationCtrl', function () {
+describe('test of gameCreationCtrl', function () {
 
     var $controller, $scope, $rootScope, $q,
         gameCreationCtrl;

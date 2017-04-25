@@ -12,14 +12,14 @@
 
     <div ng-show="gamesList.length != 0">
         <table class="log_table">
-            <h1>{{'STATS_FOR_PLAYER' | translate}}{{player}}</h1>
+            <h1 id="loginLabel">{{'STATS_FOR_PLAYER' | translate}}{{player}}</h1>
             <tr>
                 <th>{{'GAME_DATE' | translate}}</th>
                 <th>{{'COUNT_OF_PLAYERS_IN_GAME_STATS' | translate}}</th>
                 <th>{{'PLAYERS_IN_STATS' | translate}}</th>
                 <th></th>
             </tr>
-            <tr ng-repeat="game in gamesList track by $index">
+            <tr class="statsRecord" ng-repeat="game in gamesList track by $index">
                 <td>{{game.createDate | date:'dd-MM-yyyy HH:mm'}}</td>
                 <td>{{game.playerList.length}}</td>
                 <td>

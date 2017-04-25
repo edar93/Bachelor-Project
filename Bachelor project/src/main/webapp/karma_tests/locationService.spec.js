@@ -1,6 +1,6 @@
 'use strict';
 
-describe('portRoyalApp.locationService', function () {
+describe('test of locationService', function () {
 
     var $location, locationService, backendGateway, gameCreationService,
         paths;

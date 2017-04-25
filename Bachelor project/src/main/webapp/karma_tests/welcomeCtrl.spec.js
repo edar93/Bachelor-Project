@@ -1,6 +1,6 @@
 'use strict';
 
-describe('portRoyalApp.welcome', function () {
+describe('test of welcomeCtrl', function () {
 
     var $controller, $scope, $rootScope, $q,
         welcomeCtrl;

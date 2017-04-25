@@ -42,8 +42,9 @@ public class PlayGameResource {
     public Response startGame() throws CloneNotSupportedException {
         if (usersProvider.getLogin().equals(usersProvider.getGameInQueue().getOwner())) {
             gamesHolder.addGame(new GameManipulator(usersProvider.getGameInQueue()));
+            return Response.ok().build();
         }
-        return Response.ok().build();
+        return Response.status(Response.Status.FORBIDDEN).build();
     }
 
     @GET

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('player in game action', function () {
+describe('test of players game actions', function () {
     beforeEach(function () {
         browser.get('http://localhost:8090/port-royal/#!/login');
         browser.ignoreSynchronization = true;

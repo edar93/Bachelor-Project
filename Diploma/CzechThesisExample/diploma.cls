@@ -134,7 +134,10 @@
 \Dipl@FacultyName={Fakulta elektrotechniky a informatiky}
 }
 \DeclareOption{bachelor}
-
+{
+\setcounter{Dipl@CurrentThesisType}{\Dipl@BachelorThesis}
+\Dipl@CooperatingPersonsDeclaration={\Dipl@IfEnglish{I hereby agree to the publishing of the bachelor's thesis as per s. 26, ss. 9 of the Study and Examination Regulations for Bachelor's Degree Programmes at VŠB -- Technical University of Ostrava.}{Souhlasím se zveřejněním této bakalářské práce dle požadavků čl.\ 26, odst.\ 9 Studijního a~zkušebního řádu pro studium v bakalářských programech VŠB-TU Ostrava.}}
+}
 \DeclareOption{bachelorpractice}
 {
 \setcounter{Dipl@CurrentThesisType}{\Dipl@BachelorPractice}
@@ -342,10 +345,19 @@
 {
 \ifthenelse{\equal{\the\Dipl@CooperatingPersonsDeclarationImageFile}{\empty}}
 {
- 
+\mbox{}
+\vfill
+\ifthenelse{\equal{\the\Dipl@ThesisAccessRestriction}{\empty}}
+{\relax}
+{\noindent\the\Dipl@ThesisAccessRestriction\par\bigskip}
+\noindent
+\the\Dipl@CooperatingPersonsDeclaration
+\par
+\vspace{15mm}
+\noindent\Dipl@IfEnglish{Ostrava,}{V Ostravě}~\the\Dipl@SubmissionDate\hfill\hbox to50mm{\dotfill}
 }
 {
- 
+\Dipl@InsertFullPageImage{\the\Dipl@CooperatingPersonsDeclarationImageFile}
 }
 \cleardoublepage
 }

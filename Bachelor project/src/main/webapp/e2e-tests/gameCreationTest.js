@@ -1,7 +1,7 @@
 ﻿﻿﻿
 'use strict';
 
-describe('player in game action', function () {
+describe('test of game creation options', function () {
     beforeEach(function () {
         browser.get('http://localhost:8090/port-royal/#!/login');
         browser.ignoreSynchronization = true;
@@ -36,7 +36,7 @@ describe('player in game action', function () {
         expect(browser.getLocationAbsUrl()).toMatch("/welcome");
     });
 
-    it('should create own game and left it	', function () {
+    it('should create own game and left it', function () {
         element(by.buttonText("Založit vlastní hru")).click();
         browser.sleep(2500);
         expect(browser.getLocationAbsUrl()).toMatch("/gamecreation");

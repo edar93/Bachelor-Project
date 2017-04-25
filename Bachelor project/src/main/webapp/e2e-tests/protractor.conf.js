@@ -5,7 +5,6 @@ exports.config = {
 
   specs: [
     '*.js'
-    //'loginTest.js'
   ],
 
   capabilities: {
