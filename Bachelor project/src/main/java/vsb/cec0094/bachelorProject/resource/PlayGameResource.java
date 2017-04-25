@@ -103,7 +103,7 @@ public class PlayGameResource {
 
     @POST
     @Path("/applyadmiral")
-    public Response applyAdmiral() throws NotPlayersTurnException {
+    public Response applyAdmiral() throws NotPlayersTurnException, InvalidActionException, CloneNotSupportedException {
         usersProvider.getGameManipulatorWhenIsPlayerOnTurn().applyAdmiral();
         return Response.ok().build();
     }

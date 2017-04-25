@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  24 APR 2017 22:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.6)  25 APR 2017 10:11
 entering extended mode
 **./main.tex
 (main.tex
@@ -1775,7 +1775,7 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: includefoot twoside 
+* modes: includefoot 
 * h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
 * v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
 * \paperwidth=597.50787pt
@@ -1783,7 +1783,7 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \textwidth=455.24411pt
 * \textheight=644.33032pt
 * \oddsidemargin=13.08827pt
-* \evensidemargin=-15.36449pt
+* \evensidemargin=13.08827pt
 * \topmargin=13.08827pt
 * \headheight=0.0pt
 * \headsep=0.0pt
@@ -1797,8 +1797,8 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -1868,8 +1868,6 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 114.
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
-] [2
-
 ]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
@@ -1906,13 +1904,14 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/zadani1.jpg, id=175, 597.31155pt x 844.8363pt>
+<Figures/zadani1.jpg, id=171, 597.31155pt x 844.8363pt>
 File: Figures/zadani1.jpg Graphic file (type jpg)
 
 <use Figures/zadani1.jpg>
 Package pdftex.def Info: Figures/zadani1.jpg used on input line 114.
 (pdftex.def)             Requested size: 589.60855pt x 834.63734pt.
- [3
+ [2
+
 
  <./Figures/zadani1.jpg>]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1950,35 +1949,33 @@ Package pdftex.def Info: Figures/zadani1.jpg used on input line 114.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<Figures/zadani2.jpg, id=180, 597.31155pt x 844.8363pt>
+<Figures/zadani2.jpg, id=176, 597.31155pt x 844.8363pt>
 File: Figures/zadani2.jpg Graphic file (type jpg)
 
 <use Figures/zadani2.jpg>
 Package pdftex.def Info: Figures/zadani2.jpg used on input line 114.
 (pdftex.def)             Requested size: 589.60855pt x 834.63734pt.
- [4
+ [3
 
 
 
- <./Figures/zadani2.jpg>] [5
+ <./Figures/zadani2.jpg>] [4
 
+
+
+] [5
 
 
 ] [6
 
-] [7] [8
-
-] [9]
-[10
-
-] [11] [12
-
 ] (main.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 11.
- ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 11.
+
 ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2000,61 +1997,58 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 11.
- [13
+ [7
+
 
 ])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [14] [15
+ [8] [9
 
-
-]
-[16
 
 ] (main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [17
+[10
 
-] [18
 
 ] (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [19
+ [11
 
-] [20
 
 ] (main.lol)
 \tf@lol=\write9
 \openout9 = `main.lol'.
 
- [21
+ [12
 
-] [22
 
-] [23]
-[24
+] [13
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 132.
 
- ("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 132.
- [25]
-<Figures/MVC.png, id=362, 1299.35437pt x 623.32875pt>
+ [14
+
+]
+<Figures/MVC.png, id=316, 1299.35437pt x 623.32875pt>
 File: Figures/MVC.png Graphic file (type png)
  <use Figures/MVC.png>
 Package pdftex.def Info: Figures/MVC.png used on input line 172.
 (pdftex.def)             Requested size: 409.71692pt x 196.54933pt.
 
-[26] [27 <./Figures/MVC.png>]
+[15] [16 <./Figures/MVC.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
@@ -2066,37 +2060,34 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 198.
- [28] [29] [30] [31
+ [17] [18] [19] [20
 
 ]
-[32] [33] [34
-
-]
-<Figures/gamecreationpage.png, id=464, 544.28343pt x 284.56313pt>
+[21] [22] <Figures/gamecreationpage.png, id=414, 544.28343pt x 284.56313pt>
 File: Figures/gamecreationpage.png Graphic file (type png)
 
 <use Figures/gamecreationpage.png>
 Package pdftex.def Info: Figures/gamecreationpage.png used on input line 311.
 (pdftex.def)             Requested size: 432.48051pt x 226.10936pt.
- [35]
-<Figures/administrationpage.png, id=469, 1416.79312pt x 476.53032pt>
+ [23
+
+]
+<Figures/administrationpage.png, id=419, 1416.79312pt x 476.53032pt>
 File: Figures/administrationpage.png Graphic file (type png)
 
 <use Figures/administrationpage.png>
 Package pdftex.def Info: Figures/administrationpage.png used on input line 318.
 
 (pdftex.def)             Requested size: 432.48051pt x 145.4615pt.
- [36 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
-<Figures/gamepage.png, id=474, 1112.65688pt x 553.31718pt>
+ [24 <./Figures/gamecreationpage.png> <./Figures/administrationpage.png>]
+<Figures/gamepage.png, id=424, 1112.65688pt x 553.31718pt>
 File: Figures/gamepage.png Graphic file (type png)
 
 <use Figures/gamepage.png>
 Package pdftex.def Info: Figures/gamepage.png used on input line 327.
 (pdftex.def)             Requested size: 432.48051pt x 215.07518pt.
- [37 <./Figures/gamepage.png>] [38
-
-]
-<Figures/DBmodel.png, id=484, 901.11656pt x 651.18282pt>
+ [25 <./Figures/gamepage.png>]
+<Figures/DBmodel.png, id=430, 901.11656pt x 651.18282pt>
 File: Figures/DBmodel.png Graphic file (type png)
 
 <use Figures/DBmodel.png>
@@ -2107,59 +2098,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--345
 
  []
 
-[39 <./Figures/DBmodel.png>]
+[26
+
+ <./Figures/DBmodel.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
-[40]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
-[41]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
-[42] <Figures/GameManipulator.png, id=551, 1073.51062pt x 537.50812pt>
+[29] <Figures/GameManipulator.png, id=497, 1073.51062pt x 537.50812pt>
 File: Figures/GameManipulator.png Graphic file (type png)
 
 <use Figures/GameManipulator.png>
 Package pdftex.def Info: Figures/GameManipulator.png used on input line 442.
 (pdftex.def)             Requested size: 432.48051pt x 216.54135pt.
 
-<Figures/Game.png, id=552, 1056.19594pt x 549.55313pt>
+<Figures/Game.png, id=498, 1056.19594pt x 549.55313pt>
 File: Figures/Game.png Graphic file (type png)
  <use Figures/Game.png>
 Package pdftex.def Info: Figures/Game.png used on input line 448.
 (pdftex.def)             Requested size: 432.48051pt x 225.02475pt.
 
-[43 <./Figures/GameManipulator.png>]
-<Figures/RequestFlow.png, id=558, 953.81343pt x 536.0025pt>
+[30 <./Figures/GameManipulator.png>]
+<Figures/RequestFlow.png, id=503, 953.81343pt x 536.0025pt>
 File: Figures/RequestFlow.png Graphic file (type png)
 
 <use Figures/RequestFlow.png>
 Package pdftex.def Info: Figures/RequestFlow.png used on input line 454.
 (pdftex.def)             Requested size: 432.48051pt x 243.03911pt.
- [44 <./Figures/Game.png>] [45 <./Figures/RequestFlow.png>] [46
-
-]
+ [31 <./Figures/Game.png>] [32 <./Figures/RequestFlow.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 465--467
 
  []
 
-[47]
+[33
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 509--520
 
  []
 
-[48]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 524--526
 
  []
 
-[49]
+[35]
 Overfull \hbox (14.09055pt too wide) in paragraph at lines 563--565
 \T1/lmr/m/n/10.95 "Base-Jer-sey-Test". Base-Jer-sey-Test d¥dí z Jer-sey-Test, c
 oº je t°ída ze zá-vis-losti org.glassfish.jersey.test.
@@ -2181,9 +2174,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 588--590
 
  []
 
-[50] [51] [52] [53
-
-] [54
+[36] [37] [38] [39
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 657--658
@@ -2262,7 +2253,9 @@ Underfull \hbox (badness 3930) in paragraph at lines 681--682
 ttps://docs.spring.io/spring-
  []
 
-[55]
+[40
+
+]
 Underfull \hbox (badness 5460) in paragraph at lines 684--685
 []\T1/lmr/m/n/10.95 docs.spring.io [on-line]. [cit. 2017-04-22]. Do-stupné z: h
 ttp://docs.spring.io/spring-
@@ -2274,11 +2267,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 686--687
 
  []
 
-[56] [57
+[41] [42
 
-] [58
+] [43
 
-] [59]
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
  (main.aux)
@@ -2289,10 +2282,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  ) 
 Here is how much of TeX's memory you used:
- 27197 strings out of 493333
- 452859 string characters out of 3139195
- 583133 words of memory out of 3000000
- 29910 multiletter control sequences out of 15000+200000
+ 27178 strings out of 493333
+ 452701 string characters out of 3139195
+ 582575 words of memory out of 3000000
+ 29908 multiletter control sequences out of 15000+200000
  48773 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,54p,1007b,3326s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2305,9 +2298,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><D:/Program Files/MiKTeX 2.9
 ic/lm/lmssbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pf
 b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (59 pages, 2334015 bytes).
+Output written on main.pdf (43 pages, 2323783 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 328 named destinations out of 1000 (max. 500000)
+ 785 PDF objects out of 1000 (max. 8388607)
+ 312 named destinations out of 1000 (max. 500000)
  395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,10 +4,9 @@
 
 <div ng-include="'components/templates/upper_strip.html'"></div>
 
-<div id="unlogged" ng-if="gameLocation == 'GAME_OVER'">
-    <br>
-    {{'GAME_OVER' | translate}}<br>
-    <button ng-click="showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
+<div id="unlogged" ng-if="gameLocation == 'GAME_OVER'" class="centered">
+    <h1>{{'GAME_OVER' | translate}}</h1>
+    <button ng-click="allowedActions && showResults()">{{'GAME_SHOW_RESULTS' | translate}}</button>
 </div>
 
 <div id="logged" ng-if="gameLocation == 'GAME'" class="container-fluid">
@@ -36,19 +35,22 @@
             translate}}<br>
             <img id="CardPackage" src="images/coin.jpg" class="cards"
                  ng-show="localUser == playerOnTurn && phase == 'EXPLORING'"
-                 ng-click="faceCard()">
+                 ng-click="allowedActions && faceCard()">
 
             <div class="cards" ng-repeat="card in table.cards track by $index">
                 <img ng-class="[{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('TABLE') !== -1}, 'card']"
-                     src="images/{{card.image}}" ng-click="pickCard($index)">
+                     src="images/{{card.image}}" ng-click="allowedActions && pickCard($index)">
             </div>
+
+            <!--&& table.cards.length > 0-->
+
             <div style=" display: inline-block; vertical-align: middle;">
-                <button ng-show="localUser == playerTakingCard && table.cards.length > 0"
-                        ng-click="skipAction()">{{'SKIP_ACTION' | translate}}
+                <button ng-show="localUser == playerTakingCard "
+                        ng-click="allowedActions && skipAction()">{{'SKIP_ACTION' | translate}}
                 </button>
             </div>
             <button ng-show="localUser == playerTakingCard && localUser == playerOnTurn  && table.cards.length > 4 && admiralApplied == false && localPlayersAdmirals > 0"
-                    ng-click="evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
+                    ng-click="allowedActions && evaluateAdmirals()">{{'EVALUATE_ADMIRALS' | translate}}
             </button>
         </div>
 
@@ -71,7 +73,7 @@
 
             <div class="cards" ng-repeat="card in expeditions.cards track by $index">
                 <img ng-class="{marked: markedId.indexOf($index) !== -1 && markedType.indexOf('EXPEDITIONS') !== -1}"
-                     src="images/{{card.image}}" ng-click="pickExpedition($index)">
+                     src="images/{{card.image}}" ng-click="allowedActions && pickExpedition($index)">
             </div>
         </div>
     </div>

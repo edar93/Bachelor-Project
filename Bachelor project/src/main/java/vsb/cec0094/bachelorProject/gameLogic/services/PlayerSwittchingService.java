@@ -40,18 +40,13 @@ public class PlayerSwittchingService {
             // can not occur
             e.printStackTrace();
         }
-        if (getActivePlayerAsPlayer().getAdmiralsCount() > 1) {
+        if (getActivePlayerAsPlayer().getAdmiralsCount() >= 1) {
             game.setAdmiralApplied(false);
         } else {
             game.setAdmiralApplied(true);
         }
 
         if (game.getTable().getCountOfCards() == 0 && !(Phase.EXPLORING.equals(game.getPhase()))) {
-            shiftPlayer(false);
-        }
-
-        if (game.getTable().getCountOfCards() == 0 && (Phase.EXPLORING.equals(game.getPhase())) && (game.getCardsToTake() == 1)
-                && (game.getActivePlayerAsPlayer().getAdmiralsCount() > 0)) {
             shiftPlayer(false);
         }
     }

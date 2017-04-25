@@ -1,6 +1,6 @@
 'use strict';
 
-var statsService = function (backendGateway) {
+var statsService = function (backendGateway, locationService) {
 
     this.initPage = initPage;
 
@@ -9,8 +9,13 @@ var statsService = function (backendGateway) {
 
     function initPage(scope, gameId) {
         localScope = scope;
+        localScope.showPage = showPage;
         backendGateway.get('STATS_GAME', undefined, undefined, gameId)
             .then(setData);
+    }
+
+    function showPage(player, page) {
+        locationService.showPlayersStats(player, page);
     }
 
     function setData(response) {

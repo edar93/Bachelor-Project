@@ -4,63 +4,63 @@
 \select@language {czech}
 \select@language {english}
 \select@language {czech}
-\contentsline {section}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek a symbol\IeC {\r u}}{15}{Doc-Start}
-\contentsline {section}{Seznam obr\'azk\r {u}}{17}{Doc-Start}
-\contentsline {section}{Seznam tabulek}{19}{Doc-Start}
-\contentsline {section}{\numberline {1}\IeC {\'U}vod}{23}{section.1}
-\contentsline {subsection}{\numberline {1.1}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{23}{subsection.1.1}
-\contentsline {section}{\numberline {2}Technologie}{25}{section.2}
-\contentsline {subsection}{\numberline {2.1}REST}{25}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}AngularJs}{26}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Jednostr\IeC {\'a}nkov\IeC {\'a} aplikace}{26}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Model\IeC {\textendash }View\IeC {\textendash }Controller architektura}{26}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Bidirectional databinting}{27}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Dependency injection v AngularJS}{27}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Z\IeC {\'a}kladn\IeC {\'\i } prom\IeC {\v e}nn\IeC {\'e}}{27}{subsubsection.2.2.5}
-\contentsline {subsubsection}{\numberline {2.2.6}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{28}{subsubsection.2.2.6}
-\contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } technologie}{29}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Node.js}{29}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Spring}{29}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Maven}{30}{subsubsection.2.3.3}
-\contentsline {section}{\numberline {3}Typy testov\IeC {\'a}n\IeC {\'\i }}{31}{section.3}
-\contentsline {subsection}{\numberline {3.1}Manu\IeC {\'a}ln\IeC {\'\i } oproti automatick\IeC {\'y}m test\IeC {\r u}m}{31}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Test-driven development}{31}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}\IeC {\'U}rovn\IeC {\v e} test\IeC {\r u}}{32}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Jednotkov\IeC {\'e} testy}{32}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Integra\IeC {\v c}n\IeC {\'\i } testy}{32}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Syst\IeC {\'e}mov\IeC {\'e} testy}{32}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Testovac\IeC {\'\i } technologie}{32}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Jasmine}{32}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Protractor}{33}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Karma}{33}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Jersey}{33}{subsubsection.3.4.4}
-\contentsline {section}{\numberline {4}Obsah a funkcionalita aplikace}{35}{section.4}
-\contentsline {subsection}{\numberline {4.1}Zkr\IeC {\'a}cen\IeC {\'a} pravidla hry}{35}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Obsah a implementace str\IeC {\'a}nky na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry}{35}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Obsah a implementace str\IeC {\'a}nky s administrac\IeC {\'\i }}{36}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Obsah a implementace str\IeC {\'a}nky s hrou}{36}{subsection.4.4}
-\contentsline {section}{\numberline {5}Anal\IeC {\'y}za pou\IeC {\v z}it\IeC {\'y}ch technologi\IeC {\'\i }}{39}{section.5}
-\contentsline {subsection}{\numberline {5.1}Schema DB}{39}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Node.js}{40}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Spring Security a Bcrypt}{40}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Aspekty}{40}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Komunikace mezi Spring a AngularJS}{41}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}Websockets}{41}{subsection.5.6}
-\contentsline {subsubsection}{\numberline {5.6.1}Serverov\IeC {\'a} strana}{41}{subsubsection.5.6.1}
-\contentsline {subsubsection}{\numberline {5.6.2}Klientsk\IeC {\'a} strana}{42}{subsubsection.5.6.2}
-\contentsline {subsection}{\numberline {5.7}Architektura aplikace}{43}{subsection.5.7}
-\contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{47}{section.6}
-\contentsline {subsection}{\numberline {6.1}Jasmine}{47}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Uk\IeC {\'a}zkov\IeC {\'y} test}{47}{subsubsection.6.1.1}
-\contentsline {subsection}{\numberline {6.2}Protractor}{48}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Jersey}{50}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}uk\IeC {\'a}zkov\IeC {\'y} test}{50}{subsubsection.6.3.1}
-\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{53}{section.7}
-\contentsline {subsection}{\numberline {7.1}Co bych d\IeC {\v e}lal jinak}{53}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Jak by se dala aplikace vylep\IeC {\v s}it}{53}{subsection.7.2}
-\contentsline {section}{Literatura}{55}{subsection.7.2}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{56}{subsection.7.2}
-\contentsline {section}{\numberline {A}Instalace a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{57}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Instalace}{57}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{57}{subsection.A.2}
-\contentsline {section}{\numberline {B}P\IeC {\v r}\IeC {\'\i }lohy ve form\IeC {\v e} CD}{59}{appendix.B}
+\contentsline {section}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek a symbol\IeC {\r u}}{9}{Doc-Start}
+\contentsline {section}{Seznam obr\'azk\r {u}}{10}{Doc-Start}
+\contentsline {section}{Seznam tabulek}{11}{Doc-Start}
+\contentsline {section}{\numberline {1}\IeC {\'U}vod}{13}{section.1}
+\contentsline {subsection}{\numberline {1.1}Stru\IeC {\v c}n\IeC {\'y} obsah jednotliv\IeC {\'y}ch kapitol}{13}{subsection.1.1}
+\contentsline {section}{\numberline {2}Technologie}{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}REST}{14}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}AngularJs}{15}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Jednostr\IeC {\'a}nkov\IeC {\'a} aplikace}{15}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Model\IeC {\textendash }View\IeC {\textendash }Controller architektura}{15}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Bidirectional databinting}{16}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Dependency injection v AngularJS}{16}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Z\IeC {\'a}kladn\IeC {\'\i } prom\IeC {\v e}nn\IeC {\'e}}{16}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Uk\IeC {\'a}zka z\IeC {\'a}kladn\IeC {\'\i }ho kontrol\IeC {\'e}ru}{17}{subsubsection.2.2.6}
+\contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } technologie}{18}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Node.js}{18}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Spring}{18}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Maven}{19}{subsubsection.2.3.3}
+\contentsline {section}{\numberline {3}Typy testov\IeC {\'a}n\IeC {\'\i }}{20}{section.3}
+\contentsline {subsection}{\numberline {3.1}Manu\IeC {\'a}ln\IeC {\'\i } oproti automatick\IeC {\'y}m test\IeC {\r u}m}{20}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Test-driven development}{20}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}\IeC {\'U}rovn\IeC {\v e} test\IeC {\r u}}{21}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Jednotkov\IeC {\'e} testy}{21}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Integra\IeC {\v c}n\IeC {\'\i } testy}{21}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Syst\IeC {\'e}mov\IeC {\'e} testy}{21}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Testovac\IeC {\'\i } technologie}{21}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Jasmine}{21}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Protractor}{22}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Karma}{22}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Jersey}{22}{subsubsection.3.4.4}
+\contentsline {section}{\numberline {4}Obsah a funkcionalita aplikace}{23}{section.4}
+\contentsline {subsection}{\numberline {4.1}Zkr\IeC {\'a}cen\IeC {\'a} pravidla hry}{23}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Obsah a implementace str\IeC {\'a}nky na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry}{23}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Obsah a implementace str\IeC {\'a}nky s administrac\IeC {\'\i }}{24}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Obsah a implementace str\IeC {\'a}nky s hrou}{24}{subsection.4.4}
+\contentsline {section}{\numberline {5}Anal\IeC {\'y}za pou\IeC {\v z}it\IeC {\'y}ch technologi\IeC {\'\i }}{26}{section.5}
+\contentsline {subsection}{\numberline {5.1}Schema DB}{26}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Node.js}{27}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Spring Security a Bcrypt}{27}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Aspekty}{27}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Komunikace mezi Spring a AngularJS}{28}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Websockets}{28}{subsection.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}Serverov\IeC {\'a} strana}{28}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Klientsk\IeC {\'a} strana}{29}{subsubsection.5.6.2}
+\contentsline {subsection}{\numberline {5.7}Architektura aplikace}{30}{subsection.5.7}
+\contentsline {section}{\numberline {6}Anal\IeC {\'y}za a implementace testu}{33}{section.6}
+\contentsline {subsection}{\numberline {6.1}Jasmine}{33}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Uk\IeC {\'a}zkov\IeC {\'y} test}{33}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}Protractor}{34}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Jersey}{36}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}uk\IeC {\'a}zkov\IeC {\'y} test}{36}{subsubsection.6.3.1}
+\contentsline {section}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{39}{section.7}
+\contentsline {subsection}{\numberline {7.1}Co bych d\IeC {\v e}lal jinak}{39}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Jak by se dala aplikace vylep\IeC {\v s}it}{39}{subsection.7.2}
+\contentsline {section}{Literatura}{40}{subsection.7.2}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }lohy}{41}{subsection.7.2}
+\contentsline {section}{\numberline {A}Instalace a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{42}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Instalace}{42}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i }}{42}{subsection.A.2}
+\contentsline {section}{\numberline {B}P\IeC {\v r}\IeC {\'\i }lohy ve form\IeC {\v e} CD}{43}{appendix.B}

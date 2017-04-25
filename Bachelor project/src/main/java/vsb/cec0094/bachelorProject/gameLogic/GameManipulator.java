@@ -53,14 +53,20 @@ public class GameManipulator {
         semiStates.clear();
     }
 
-    public void applyAdmiral() {
-        currentGame.applyAdmiral();
+    public void applyAdmiral() throws CloneNotSupportedException, InvalidActionException {
+        prepareForAction();
+        try {
+            currentGame.applyAdmiral();
+        } catch (Exception e) {
+            rollback();
+            e.printStackTrace();
+            throw new InvalidActionException("invalid action", e);
+        }
     }
 
     public void faceCard() throws CloneNotSupportedException, InvalidActionException {
         prepareForAction();
         try {
-            prepareForAction();
             ProcessActionAndSemiStateHolder(currentGame.faceCard());
             currentAction = null;
         } catch (Exception e) {

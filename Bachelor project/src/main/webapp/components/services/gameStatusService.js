@@ -15,6 +15,7 @@ var gameStatusService = function ($timeout, backendGateway) {
         gameScope = scope;
         gameScope.loadedGame = false;
         localUser = player;
+        gameScope.allowedActions = true;
     }
 
     function updateGame(game) {
@@ -37,6 +38,7 @@ var gameStatusService = function ($timeout, backendGateway) {
         console.log(lastGameToShow.currentGame, 'current game');
         var phaseShowCount = lastGameToShow.semiStates.length;
         phaseShow = 0;
+        gameScope.allowedActions = false;
         for (var i = 0; i < phaseShowCount; i++) {
             $timeout(function () {
                 show(lastGameToShow.semiStates[phaseShow], lastGameToShow.actionsToShows[phaseShow])
@@ -45,6 +47,12 @@ var gameStatusService = function ($timeout, backendGateway) {
         $timeout(function () {
             show(lastGameToShow.currentGame, lastGameToShow.currentAction)
         }, phaseShowCount * timeout);
+
+        $timeout(allowActions, phaseShowCount * timeout);
+    }
+
+    function allowActions() {
+        gameScope.allowedActions = true;
     }
 
     function show(cards, move) {

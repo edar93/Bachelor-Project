@@ -15,12 +15,12 @@
             <tr ng-repeat="player in gameStats.playerList | orderBy: ['-influencePoints', '-coins'] track by $index"
                 style="font-size: 1.2em;">
                 <td>{{$index + 1}}</td>
-                <td>{{player.login}}</td>
+                <td><a ng-click="showPage(player.login, 1)">{{player.login}}</a></td>
                 <td>{{'STATS_INFLUENCE' | translate}}{{player.influencePoints}} <br>{{'STATS_COINS' |
                     translate}}{{player.coins}} <br>{{'STATS_SWORDS' | translate}}{{player.swords}}
                 </td>
                 <td>
-                    <span ng-repeat="card in player.cards | orderBy: ['cardType'] track by $index">
+                    <span ng-repeat="card in player.cards | orderBy: ['-influence'] track by $index">
                      <img src="images/{{card.image}}">
                     </span>
                 </td>

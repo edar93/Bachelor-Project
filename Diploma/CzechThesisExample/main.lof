@@ -4,11 +4,11 @@
 \select@language {czech}
 \select@language {english}
 \select@language {czech}
-\contentsline {figure}{\numberline {1}{\ignorespaces MVC architektura v AngularJS \cite {LearningAngularjs}\relax }}{27}{figure.caption.2}
-\contentsline {figure}{\numberline {2}{\ignorespaces Str\IeC {\'a}nka na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry\relax }}{36}{figure.caption.3}
-\contentsline {figure}{\numberline {3}{\ignorespaces Str\IeC {\'a}nka administrace u\IeC {\v z}ivatel\IeC {\r u}\relax }}{36}{figure.caption.4}
-\contentsline {figure}{\numberline {4}{\ignorespaces Str\IeC {\'a}nka, na kter\IeC {\'e} se hraje hra\relax }}{37}{figure.caption.5}
-\contentsline {figure}{\numberline {5}{\ignorespaces Datab\IeC {\'a}zov\IeC {\'y} model\relax }}{39}{figure.caption.6}
-\contentsline {figure}{\numberline {6}{\ignorespaces Model ulo\IeC {\v z}en\IeC {\'\i } her na serveru\relax }}{43}{figure.caption.7}
-\contentsline {figure}{\numberline {7}{\ignorespaces Model hry\relax }}{44}{figure.caption.8}
-\contentsline {figure}{\numberline {8}{\ignorespaces Zpracov\IeC {\'a}n\IeC {\'\i } dotazu\relax }}{45}{figure.caption.9}
+\contentsline {figure}{\numberline {1}{\ignorespaces MVC architektura v AngularJS \cite {LearningAngularjs}\relax }}{16}{figure.caption.2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Str\IeC {\'a}nka na vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } hry\relax }}{24}{figure.caption.3}
+\contentsline {figure}{\numberline {3}{\ignorespaces Str\IeC {\'a}nka administrace u\IeC {\v z}ivatel\IeC {\r u}\relax }}{24}{figure.caption.4}
+\contentsline {figure}{\numberline {4}{\ignorespaces Str\IeC {\'a}nka, na kter\IeC {\'e} se hraje hra\relax }}{25}{figure.caption.5}
+\contentsline {figure}{\numberline {5}{\ignorespaces Datab\IeC {\'a}zov\IeC {\'y} model\relax }}{26}{figure.caption.6}
+\contentsline {figure}{\numberline {6}{\ignorespaces Model ulo\IeC {\v z}en\IeC {\'\i } her na serveru\relax }}{30}{figure.caption.7}
+\contentsline {figure}{\numberline {7}{\ignorespaces Model hry\relax }}{31}{figure.caption.8}
+\contentsline {figure}{\numberline {8}{\ignorespaces Zpracov\IeC {\'a}n\IeC {\'\i } dotazu\relax }}{32}{figure.caption.9}
