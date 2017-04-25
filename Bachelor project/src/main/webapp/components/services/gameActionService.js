@@ -46,7 +46,6 @@ var gameActionService = function (backendGateway, gameStatusService, loginServic
             if (notSubscribing) {
                 notSubscribing = false;
                 game.subscribe(url, function (response) {
-                    console.log('sockets updated');
                     gameStatusService.updateGame();
                 });
             }

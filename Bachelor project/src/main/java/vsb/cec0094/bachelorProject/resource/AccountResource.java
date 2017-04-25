@@ -71,7 +71,6 @@ public class AccountResource {
         } else if (usersProvider.getGameInQueue() != null) {
             return Response.ok().entity(LocationOnPage.GAME_CREATION).build();
         } else if ("anonymousUser".equals(usersProvider.getLogin())) {
-            // TODOif anonymous user return null
             return Response.ok().entity(LocationOnPage.UNLOGGED).build();
         } else {
             if (((Integer) 1).equals(accountDao.getUserByLogin(usersProvider.getLogin()).getInEndedGame())) {

@@ -31,7 +31,6 @@ var statsService = function (backendGateway, locationService) {
 
     function transformCards(cardList) {
         for (var card in cardList) {
-            console.log(cardList[card], 'card');
             if (cardList[card].cardType == 'EXPEDITION') {
                 cardList[card].image = cardList[card].cardType + '_' + cardList[card].anchor + '_' + cardList[card].cross + '_' + cardList[card].hut + imageFormat;
             } else {

@@ -47,7 +47,7 @@ public class AdministrationResource {
 
     @PUT
     @Path("{login}/{action}")
-    public Response grantAdminRole(@PathParam("login") String login, @PathParam("action") String action) {
+    public Response userUpdate(@PathParam("login") String login, @PathParam("action") String action) {
         if (RESET_PASSWORD.equals(action)) {
             accountDao.resetPassword(login);
             return Response.ok().build();

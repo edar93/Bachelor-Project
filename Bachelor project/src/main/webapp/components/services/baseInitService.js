@@ -28,7 +28,6 @@ var baseInitService = function ($route, backendGateway, loginService, locationSe
     }
 
     function logout() {
-        console.log(loginService.logout(), 'user logged out');
         locationService.goToWelcome();
         $route.reload();
     }

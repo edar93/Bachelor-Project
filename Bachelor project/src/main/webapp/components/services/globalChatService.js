@@ -3,15 +3,9 @@
 var globalChatService = function (stompService) {
 
     this.initChat = initChat;
-    this.disconnect = disconnect;
 
     var notSubscribing;
     var notConnected;
-
-    function disconnect() {
-        //TODO does not work - scope not variable of
-        scope.chat.disconnect();
-    }
 
     function initChat(scope) {
         notSubscribing = true;
@@ -33,7 +27,6 @@ var globalChatService = function (stompService) {
             });
         }
         scope.sendName = function () {
-            console.log(scope, 'scope');
             scope.chat.send("/port-royal/old-backend/sendMessage", {}, JSON.stringify({
                 'text': scope.text,
                 'author': scope.user

@@ -32,7 +32,6 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway,
     }
 
     function startLocationCheck() {
-        console.log('starting loc check');
         $rootScope.startedCheckDate = new Date();
         locationCheck();
         $timeout(locationCheck, timeout);
@@ -67,7 +66,6 @@ var locationService = function ($rootScope, $location, $timeout, backendGateway,
                     $timeout(locationCheck, timeout);
                 }
 
-                console.log(locationOnPage, 'location check done');
             });
     }
 

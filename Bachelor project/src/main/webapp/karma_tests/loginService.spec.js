@@ -20,17 +20,19 @@ describe('portRoyalApp.loginService', function () {
 
     });
 
-    it('should call backendGateway with register URL and user', function () {
+    it('should call backendGateway with register URL and user when is register function called', function () {
+        //prepare
         var user = {
             login: 'MOCKED_USER',
             password: 'MOCKED_PASSWORD'
         };
+        //test
         loginService.register(user);
-
+        //validation
         expect(backendGateway.post).toHaveBeenCalledWith('REGISTER_URL', user);
     });
 
-    it('should login user and return his login when login is called', function () {
+    it('should login user and return his login when login function is called', function () {
         //prepare
         var loggedUser;
         var userName = 'MOCKED_USERNAME';
@@ -53,7 +55,8 @@ describe('portRoyalApp.loginService', function () {
         expect(loggedUser).toEqual($q.resolve('MOCKED_USER_FROM_BACKEND'));
     });
 
-    it('whould return rejected promise when login fail', function () {
+    it('should return rejected promise when login function fail', function () {
+        //prepare
         var loggedUser;
         var userName = 'MOCKED_USERNAME';
         var password = 'MOCKED_PASSWOED';
@@ -66,9 +69,9 @@ describe('portRoyalApp.loginService', function () {
         };
 
         backendGateway.post.and.returnValue($q.reject());
-
+        //test
         loggedUser = loginService.login(userName, password);
-
+        //validation
         $rootScope.$digest();
         expect(backendGateway.post).toHaveBeenCalledWith('LOGIN_URL', '', expectedConfig, false, true);
         expect(loggedUser).toEqual($q.reject());

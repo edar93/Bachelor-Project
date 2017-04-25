@@ -20,13 +20,12 @@ var administrationService = function (backendGateway, locationService) {
         scope.showStats = showStats;
     }
 
-    function showPage(page){
-        localScope.currentPage = page;
+    function showPage(page) {
+        localScope.currentAdminPage = page;
         backendGateway.get('USER_ADMINISTRATION', false, false, page)
-            .then(function(response){
+            .then(function (response) {
                 localScope.usersList = response.data;
                 addAdminParam(localScope.usersList);
-                console.log(response.data, 'response all users');
             });
     }
 
@@ -39,24 +38,23 @@ var administrationService = function (backendGateway, locationService) {
         for (var user in list) {
             list[user].admin = false;
             for (var role in list[user].userRoleList) {
-                if (angular.equals(list[user].userRoleList[role], roleAdmin)) {
+                if (list[user].userRoleList[role].role === roleAdmin.role) {
                     list[user].admin = true;
-                    console.log('admin here');
                 }
             }
         }
     }
 
-    function getPagesCount(scope){
+    function getPagesCount(scope) {
         backendGateway.get('GET_PAGES_COUNT')
-            .then(function(response){
+            .then(function (response) {
                 scope.pagesCount = createArray(response.data);
             })
     }
 
-    function createArray (size) {
+    function createArray(size) {
         var output = [];
-        for (var i=0; i<size; i++) {
+        for (var i = 0; i < size; i++) {
             output.push(i);
         }
         return output
@@ -66,7 +64,7 @@ var administrationService = function (backendGateway, locationService) {
         var urlSufix = login + '/RESET_PASSWORD';
         backendGateway.put('USER_ADMINISTRATION', undefined, undefined, true, false, urlSufix)
             .then(function (response) {
-                showPage(localScope.currentPage);
+                showPage(localScope.currentAdminPage);
             })
     }
 
@@ -74,7 +72,7 @@ var administrationService = function (backendGateway, locationService) {
         var urlSufix = login + '/GRANT_ADMIN_ROLE';
         backendGateway.put('USER_ADMINISTRATION', undefined, undefined, true, false, urlSufix)
             .then(function (response) {
-                showPage(localScope.currentPage);
+                showPage(localScope.currentAdminPage);
             })
     }
 
@@ -82,7 +80,7 @@ var administrationService = function (backendGateway, locationService) {
         var urlSufix = login + '/LOCK' + lock;
         backendGateway.put('USER_ADMINISTRATION', undefined, undefined, true, false, urlSufix)
             .then(function (response) {
-                showPage(localScope.currentPage);
+                showPage(localScope.currentAdminPage);
             })
     }
 
@@ -90,7 +88,7 @@ var administrationService = function (backendGateway, locationService) {
         backendGateway.deleteHttp('USER_ADMINISTRATION', login)
             .then(function (response) {
                 getPagesCount(localScope);
-                showPage(localScope.currentPage);
+                showPage(localScope.currentAdminPage);
             })
     }
 

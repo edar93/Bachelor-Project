@@ -24,20 +24,19 @@ describe('portRoyalApp.welcome', function () {
                 baseInitService = _baseInitService_;
                 loginService = _loginService_;
                 locationService = _locationService_;
-
+                //prepare mock
                 loginService.getUser.and.returnValue($q.resolve('MOCKED_USER'));
-
                 $scope = $rootScope.$new();
                 welcomeCtrl = $controller('welcomeCtrl', {$scope: $scope});
             }]);
 
     });
 
-    it('Is controller defined', function () {
+    it('should initialize controller', function () {
         expect(welcomeCtrl).toBeDefined();
     });
 
-    it('Is controller correctly inicialized', function () {
+    it('should get user from loginService and set him to scope when is controller initialized', function () {
         $rootScope.$digest();
         expect($scope.user).toEqual('MOCKED_USER');
     });

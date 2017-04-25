@@ -43,8 +43,7 @@ public class Game implements Cloneable, Serializable {
     private Boolean admiralApplied;
     private Boolean gameOver;
 
-    // TODO remove comment
-    //@JsonIgnore
+    @JsonIgnore
     private DrawPile drawPile;
 
 

@@ -35,7 +35,6 @@ var gameStatusService = function ($timeout, backendGateway) {
     }
 
     function showStates() {
-        console.log(lastGameToShow.currentGame, 'current game');
         var phaseShowCount = lastGameToShow.semiStates.length;
         phaseShow = 0;
         gameScope.allowedActions = false;

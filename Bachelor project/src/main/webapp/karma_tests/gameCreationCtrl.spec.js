@@ -26,7 +26,7 @@ describe('portRoyalApp.gameCreationCtrl', function () {
 
     });
 
-    it('Is controller defined', function () {
+    it('should initialize controller', function () {
         expect(gameCreationCtrl).toBeDefined();
     });
 
